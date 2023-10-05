@@ -277,7 +277,7 @@
       <convert type="ServiceName">Reference</convert>
     </widget>
     <widget backgroundColor="background5" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="124,964" valign="center" render="Label" size="950,64" source="session.CurrentService" transparent="1" zPosition="110">
-      <convert type="ServiceNameEx">ServiceNumberAndNameAndProvider</convert>
+      <convert type="ServiceNameEx">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
     </widget>
     <widget position="1331,982" render="Pixmap" size="61,26" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
       <convert type="ConditionalShowHide">Blink</convert>
