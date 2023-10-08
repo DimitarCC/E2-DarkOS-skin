@@ -477,8 +477,20 @@
 	</screen>
 	
 	<screen name="Screen_Window_Full_Pig">
-		<ePixmap pixmap="win_full_bg.png" position="5,5" size="1905,1070" alphatest="blend" zPosition="-7"/>
-		<ePixmap pixmap="win_full_overlay.png" position="7,7" size="1901,996" alphatest="blend" zPosition="-6"/>
+		<ePixmap pixmap="Screens/win_full_tl.png" position="5,5" size="24,24" alphatest="blend" zPosition="-6"/>
+		<ePixmap pixmap="Screens/win_full_tr.png" position="1893,5" size="24,24" alphatest="blend" zPosition="-6"/>
+		<ePixmap pixmap="Screens/win_full_bl.png" position="5,982" size="24,94" alphatest="blend" zPosition="-6"/>
+		<ePixmap pixmap="Screens/win_full_br.png" position="1893,982" size="24,94" alphatest="blend" zPosition="-6"/>
+
+		<eLabel position="29,5" size="1864,2" backgroundColor="background5" zPosition="-7" />
+		<eLabel position="29,7" size="1864,22" backgroundColor="background" zPosition="-7" />
+		
+		<eLabel position="5,29" size="2,982" backgroundColor="background5" zPosition="-7" />
+		<eLabel position="7,29" size="1908,975" backgroundColor="background" zPosition="-7" />
+		<eLabel position="1915,29" size="2,982" backgroundColor="background5" zPosition="-7" />
+		
+		<eLabel position="29,1004" size="1864,72" backgroundColor="background5" zPosition="-7" />
+		
 		<eLabel position="25,75" size="1865,1" backgroundColor="separator" zPosition="-5" />
 		<widget source="session.VideoPicture" render="Pig" position="1530,105" size="350,220" zPosition="10" backgroundColor="transparent" />
 		<widget source="Title" render="Label" position="40,5" size="1000,70" font="Bold; 30" backgroundColor="background2" transparent="1" halign="left" noWrap="1" valign="center" zPosition="3" foregroundColor="yellow" />
@@ -572,8 +584,19 @@
 	</screen>
 
 	<screen name="Screen_Menu1">
-		<ePixmap pixmap="screen_menu_1_bg.png" position="370,118" size="1180,844" alphatest="blend" zPosition="-7"/>
-		<ePixmap pixmap="screen_menu_1_overlay.png" position="372,120" size="1176,780" alphatest="blend" zPosition="-6"/>
+		<ePixmap pixmap="Screens/screen_menu_1_tl.png" position="370,118" size="24,24" alphatest="blend" zPosition="-6"/>
+		<ePixmap pixmap="Screens/screen_menu_1_tr.png" position="1526,118" size="24,24" alphatest="blend" zPosition="-6"/>
+		<ePixmap pixmap="Screens/screen_menu_1_bl.png" position="370,878" size="24,84" alphatest="blend" zPosition="-6"/>
+		<ePixmap pixmap="Screens/screen_menu_1_br.png" position="1526,878" size="24,84" alphatest="blend" zPosition="-6"/>
+
+		<eLabel position="394,118" size="1132,2" backgroundColor="background5" zPosition="-7" />
+		<eLabel position="394,120" size="1132,22" backgroundColor="background" zPosition="-7" />
+		
+		<eLabel position="370,142" size="2,736" backgroundColor="background5" zPosition="-7" />
+		<eLabel position="372,142" size="1176,758" backgroundColor="background" zPosition="-7" />
+		<eLabel position="1548,142" size="2,736" backgroundColor="background5" zPosition="-7" />
+		
+		<eLabel position="393,900" size="1134,62" backgroundColor="background5" zPosition="-7" />
 
 		<widget source="Title" render="Label" position="395,120" size="800,64" font="Bold; 36" backgroundColor="background2" transparent="1" halign="left" noWrap="1" valign="center" zPosition="3" foregroundColor="yellow" />
 		<widget backgroundColor="black" font="Bold; 40" foregroundColor="white" halign="right" position="1408,120" render="Label" size="120,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
@@ -598,7 +621,7 @@
 		  <convert type="ServiceName">Reference</convert>
 		</widget>
 		<widget backgroundColor="black" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="390,864" valign="center" render="Label" size="950,51" source="session.CurrentService" transparent="1" zPosition="110">
-		  <convert type="ServiceNameEx">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
+		  <convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
 		</widget>
 		<eLabel position="1345,878" size="2,28" zPosition="-9" backgroundColor="dark_grey" />
 		

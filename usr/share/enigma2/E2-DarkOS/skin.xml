@@ -61,10 +61,10 @@
     <color name="#e5b243" value="#00e5b243" />
     <color name="#eeeeee" value="#00eeeeee" />
     <color name="#ffffff" value="#00ffffff" />
-    <color name="background" value="#00111111" />
+    <color name="background" value="#02111111" />
     <color name="background2" value="#0017191a" />
     <color name="background3" value="#00252525" />
-    <color name="background5" value="#00454545" />
+    <color name="background5" value="#02444444" />
     <color name="background6" value="#00353535" />
     <color name="basictemplatecolor" value="#00000000" />
     <color name="black" value="#00000000" />
@@ -117,8 +117,9 @@
     <parameter name="ConfigListSlider" value="22,3" />
     <parameter name="ChoicelistName" value="72,5,800,31" />
     <parameter name="ChoicelistNameSingle" value="15,5,800,31" />
-    <parameter name="ChoicelistIcon" value="15,0,45,45" />
+    <parameter name="ChoicelistIcon" value="15,0,45,47" />
     <parameter name="ChoicelistButtonIcon" value="15,10,45,30" />
+	<parameter name="ChoicelistUseGraphicalSeparator" value="1" />
     <parameter name="ChoicelistSeparatorColor" value="0x00555556" />
     <parameter name="ExpandableListIcon" value="0,0,55,38" />
     <parameter name="ExpandableListDescr" value="55,2,1000,45" />
@@ -136,11 +137,61 @@
     <parameter name="MenuIconsSize" value="48" />
     <parameter name="ConfigListSeperator" value="500" />
 	<parameter name="PluginBrowserDownloadIcon" value="10,0,90,76" />
+	<parameter name="ScreenParamSeparatorChar" value="  •  " />
   </parameters>
   <switchpixmap>
     <pixmap name="menu_on" filename="icons/menu_on.png" />
     <pixmap name="menu_off" filename="icons/menu_off.png" />
   </switchpixmap>
+  <stringparameters>
+	<stringparam key="ScreenParamSeparatorChar" value="  •  "/>
+  </stringparameters>
+  <menuicons>
+	<menuicon key="default" image="menu/missing.svg" />
+	<menuicon key="tuner_setup" image="menu/tuner_setup.svg" />
+	<menuicon key="a_setup" image="menu/a_setup.svg" />
+	<menuicon key="animation_setup" image="menu/animation_setup.svg" />
+	<menuicon key="audio_icon" image="menu/audio_icon.svg" />
+	<menuicon key="auto_scan" image="menu/auto_scan.svg" />
+	<menuicon key="autolanguage_setup" image="menu/autolanguage_setup.svg" />
+	<menuicon key="av_setup" image="menu/av_setup.svg" />
+	<menuicon key="ci_assign" image="menu/ci_assign.svg" />
+	<menuicon key="ci_setup" image="menu/ci_setup.svg" />
+	<menuicon key="devices_selection" image="menu/devices_selection.svg" />
+	<menuicon key="display_skin_selector" image="menu/display_skin_selector.svg" />
+	<menuicon key="epg_menu" image="menu/epg_menu.svg" />
+	<menuicon key="epg_setup" image="menu/epg_setup.svg" />
+	<menuicon key="factory_reset" image="menu/factory_reset.svg" />
+	<menuicon key="gui_settings" image="menu/gui_settings.svg" />
+	<menuicon key="hardisk_selection" image="menu/hardisk_selection.svg" />
+	<menuicon key="info_screen" image="menu/info_screen.svg" />
+	<menuicon key="hdmi_cec" image="menu/hdmi_cec.svg" />
+	<menuicon key="input_device_setup" image="menu/input_device_setup.svg" />
+	<menuicon key="keyboard" image="menu/keyboard.svg" />
+	<menuicon key="keyboard_setup" image="menu/keyboard_setup.svg" />
+	<menuicon key="language_setup" image="menu/language_setup.svg" />
+	<menuicon key="manual_scan" image="menu/manual_scan.svg" />
+	<menuicon key="network_setup" image="menu/network_setup.svg" />
+	<menuicon key="network_tools" image="menu/network_tools.svg" />
+	<menuicon key="osd_video_audio_selection" image="menu/osd_video_audio_selection.svg" />
+	<menuicon key="parental_setup" image="menu/parental_setup.svg" />
+	<menuicon key="plugin_selection" image="menu/plugin_selection.svg" />
+	<menuicon key="primary_skin_selector" image="menu/primary_skin_selector.svg" />
+	<menuicon key="record_paths" image="menu/record_paths.svg" />
+	<menuicon key="restart" image="menu/restart.svg" />
+	<menuicon key="restart_enigma" image="menu/restart_enigma.svg" />
+	<menuicon key="service_searching_selection" image="menu/service_searching_selection.svg" />
+	<menuicon key="setup_selection" image="menu/setup_selection.svg" />
+	<menuicon key="sleep" image="menu/sleep.svg" />
+	<menuicon key="standby" image="menu/standby.svg" />
+	<menuicon key="standby_restart_list" image="menu/standby_restart_list.svg" />
+	<menuicon key="system_selection" image="menu/system_selection.svg" />
+	<menuicon key="timer_edit" image="menu/timer_edit.svg" />
+	<menuicon key="timezone_setup" image="menu/timezone_setup.svg" />
+	<menuicon key="tuner_setup" image="menu/tuner_setup.svg" />
+	<menuicon key="usage_setup" image="menu/usage_setup.svg" />
+	<menuicon key="video_selection" image="menu/video_selection.svg" />
+  </menuicons>
   <!-- Window -->
   <windowstyle id="0" type="skinned">
     <title offset="25,10" font="Bold;36" />
@@ -179,7 +230,69 @@
   </windowstyle>
   <include filename="skin_templates.xml" />
   <include filename="skin_plugins.xml" />
-  
+  <!--LCD Display-->
+  <screen name="InfoBarSummary" position="5,5" size="470,310">
+    <ePixmap position="0,0" size="390,230" pixmap="display_bg.png" zPosition="-1" />
+    <widget source="session.RecordState" render="Pixmap" position="214,20" size="68,23" pixmap="iconsVFD/rec2.png" alphatest="blend" zPosition="2">
+      <convert type="ConditionalShowHide">Blink</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="20,20" size="48,23" pixmap="iconsVFD/ico_format_on.png" alphatest="blend" zPosition="2">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">0,719</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="20,20" size="48,23" pixmap="iconsVFD/ico_hd_on.png" alphatest="blend" zPosition="2">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">720,1081</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="20,20" size="48,23" pixmap="iconsVFD/ico_4k_on.png" alphatest="blend" zPosition="2">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">1440,2161</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="78,20" size="48,23" pixmap="iconsVFD/ico_txt_on.png" alphatest="blend" zPosition="2">
+      <convert type="ServiceInfo">HasTelext</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="146,20" size="48,23" pixmap="iconsVFD/ico_dolby_on.png" alphatest="blend" zPosition="2">
+      <convert type="ServiceInfo">IsMultichannel</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="305,20" size="48,23" pixmap="iconsVFD/ico_crypt_on.png" alphatest="blend" zPosition="2">
+      <convert type="ServiceInfo">IsCrypted</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <!--<widget source="session.CurrentService" render="Pixmap" position="323,10" size="23,23" zPosition="2" pixmap="iconsVFD/sat.png" alphatest="blend">
+		  <convert type="ServiceInfo">TunerSystemIsSat</convert>
+		  <convert type="ConditionalShowHide"/>
+		</widget>-->
+    <widget source="session.FrontendInfo" render="FixedLabel" font="Bold;22" backgroundColor="black" transparent="1" foregroundColor="green" position="427,20" size="23,23" valign="center" text="B" zPosition="2">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">0,0</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" render="FixedLabel" font="Bold;22" backgroundColor="black" transparent="1" foregroundColor="green" position="427,20" size="23,23" valign="center" text="A" zPosition="2">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">1,1</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <!-- Channellogo (Picon) -->
+    <widget source="session.CurrentService" render="Picon" position="40,105" size="160,90" alphatest="blend" zPosition="1">
+      <convert type="ServiceName">Reference</convert>
+    </widget>
+    <!-- Service Number-->
+    <widget source="session.CurrentService" render="Label" font="ExtraF_3;80" foregroundColor="#26b5ff" backgroundColor="black" position="240,100" size="200,100" halign="center" valign="center" noWrap="1" transparent="1" zPosition="3">
+      <convert type="ServiceName">•,NUMBER</convert>
+    </widget>
+    <widget source="session.Event_Now" render="Progress" position="20,270" size="430,20" borderWidth="1" backgroundColor="black">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <!-- <eLabel position="0,150" size="400,2" backgroundColor="grey2" /> -->
+    <!--<widget font="GoodT;50" foregroundColor="un41c8ff" backgroundColor="black" halign="center" position="0,200" render="Label" size="400,45" source="global.CurrentTime" transparent="1" valign="center">
+		  <convert type="ClockToText">Format:%H:%M</convert>
+		</widget>-->
+  </screen>
   <!-- Volume -->
   <screen position="710,65" size="474,50" name="Volume" title="Volume" flags="wfNoBorder" backgroundColor="transparent" zPosition="1">
     <ePixmap position="0,0" size="474,50" pixmap="vol_bg.png" alphatest="blend" zPosition="-11" />
@@ -277,7 +390,7 @@
       <convert type="ServiceName">Reference</convert>
     </widget>
     <widget backgroundColor="background5" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="124,964" valign="center" render="Label" size="950,64" source="session.CurrentService" transparent="1" zPosition="110">
-      <convert type="ServiceNameEx">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
+      <convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
     </widget>
     <widget position="1331,982" render="Pixmap" size="61,26" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
       <convert type="ConditionalShowHide">Blink</convert>
@@ -443,7 +556,7 @@
       <convert type="ServiceName">Reference</convert>
     </widget>
     <widget backgroundColor="background5" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="122,964" valign="center" render="Label" size="950,60" source="session.CurrentService" zPosition="110">
-      <convert type="ServiceNameEx">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
+      <convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
     </widget>
     <widget position="1331,982" render="Pixmap" size="61,26" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
       <convert type="ConditionalShowHide">Blink</convert>
@@ -592,12 +705,12 @@
   <screen name="ChannelSelection" title="Channel Selection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Window_Full_Pig" />
     <eLabel position="1200,105" size="1,870" backgroundColor="separator" zPosition="-5" />
-    <widget name="list" transparent="1" position="25,112" size="1145,862" enableWrapAround="1" colorServiceDescription="light_yellow" colorServiceDescriptionSelected="light_yellow" 
+    <widget name="list" transparent="1" position="25,112" size="1145,862" enableWrapAround="1" colorServiceDescription="light_yellow" colorServiceDescriptionSelected="light_yellow" colorEventProgressbarBorder="blue" colorEventProgressbarBorderSelected="blue" colorEventProgressbar="blue" colorEventProgressbarSelected="yellow" picServiceEventProgressbar="window/progress.png" forgroundColorEventProgressbarBorder="background" foregroundColorServiceNotAvail="#777777" backgroundColor="transparent" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background3" backgroundColorMarkedSelected="background3" scrollbarWidth="3" /><widget name="list" transparent="1" position="25,112" size="1145,862" enableWrapAround="1" colorServiceDescription="light_yellow" colorServiceDescriptionSelected="light_yellow" 
 					colorEventProgressbarBorder="blue" colorEventProgressbarBorderSelected="blue" colorEventProgressbar="blue" colorEventProgressbarSelected="yellow" 
 					picServiceEventProgressbar="window/progress.png" forgroundColorEventProgressbarBorder="background" foregroundColorServiceNotAvail="#777777" 
 					backgroundColor="transparent" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" 
 					scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background3" backgroundColorMarkedSelected="background3" 
-					scrollbarWidth="3" progressbarHeight="15" progressBarWidth="60" progressPercentWidth="80" itemHeight="45" serviceItemHeight="45" fieldMargins="15" nonplayableMargins="15"/>
+					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="45" serviceItemHeight="45" fieldMargins="15" nonplayableMargins="15"/>
 
     <widget render="Label" source="ServiceEvent" backgroundColor="background2" halign="left" font="Regular; 30" position="1235,455" size="645,343" transparent="1">
       <convert type="EventName">FullDescription</convert>
@@ -808,7 +921,9 @@
     <eLabel position="25,405" size="1,576" backgroundColor="separator" zPosition="10" />
     <eLabel position="1890,405" size="1,576" backgroundColor="separator" zPosition="10" />
     <widget name="list" position="25,405" size="1867,576" itemHeight="72" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" backgroundColor="background" transparent="1" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" EntryBackgroundColorSelected="background3" EntryForegroundColorSelected="foreground" ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="#00323c4d" ServiceNameBackgroundColorSelected="#00fcc000" ServiceBorderVerWidth="3" EventBorderVerWidth="3" RecIconSize="32" IconXPadding="6" IconYPadding="4" EntryBorderColor="separator" EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryFont="Regular;28" ServiceFont="Regular;28" />
-    <widget name="epgentrydetails" backgroundColor="background" font="Regular; 28" position="850,95" size="610,50" transparent="1" halign="right" valign="center" />
+    <widget source="Event" render="Label" backgroundColor="background" font="Regular; 28" position="850,95" size="610,50" transparent="1" halign="right" valign="center" >
+		<convert type="EventName">•,FORMAT_STRING</convert>
+	</widget>
     <eLabel position="1510,102" size="1,225" backgroundColor="separator" zPosition="-5" />
     <widget source="Event" render="Label" position="30,95" size="900,50" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
       <convert type="EventName">Name</convert>
@@ -1240,7 +1355,9 @@
     <widget render="Label" source="Service" halign="left" backgroundColor="background2" position="30,175" size="1490,140" font="Regular; 30" transparent="1">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
-    <widget name="moviedetails" backgroundColor="background" font="Regular; 28" position="870,100" size="610,38" transparent="1" halign="right" valign="center" />
+    <widget render="Label" source="Service" backgroundColor="background" font="Regular; 28" position="870,100" size="610,38" transparent="1" halign="right" valign="center" >
+		<convert type="MovieInfo">•,TIMECREATED,DURATION,FILESIZE</convert>
+	</widget>
     <eLabel position="1510,100" size="1,225" backgroundColor="separator" zPosition="-5" />
     <widget source="Service" render="Label" position="30,85" size="900,70" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
       <convert type="EventName">Name</convert>
@@ -1468,10 +1585,10 @@
   </screen>
   <screen name="PluginDownloadBrowser" title="Downloadable plugins" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
-  <widget name="text" position="399,190" size="1110,75" zPosition="-1" transparent="1" font="Regular;32" valign="center" halign="center" />
-  <widget name="list" position="396,271" size="1130,574" itemHeight="76" font="Regular;28" scrollbarMode="showNever" valign="center" />
-  <widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
-</screen>
+	<widget name="text" position="399,190" size="1110,75" zPosition="-1" transparent="1" font="Regular;32" valign="center" halign="center" />
+	<widget name="list" position="396,271" size="1130,574" itemHeight="76" font="Regular;28" scrollbarMode="showNever" valign="center" />
+	<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+  </screen>
   <screen name="FileBrowser" title="DVD File Browser" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
     <widget name="filelist" position="780,100" size="1110,912" scrollbarMode="showOnDemand" />
@@ -2079,7 +2196,6 @@
   </screen>
   <!-- MessageBox -->
   <screen name="MessageBox" title="Message" position="center,center" size="960,15">
-    <widget name="title_sep" position="10,10" size="780,2" backgroundColor="dark_grey" />
     <widget name="text" position="870,105" size="1020,900" font="Regular;33" />
     <widget name="ErrorPixmap" pixmap="icons/input_error.png" position="780,105" size="80,80" alphatest="blend" />
     <widget name="QuestionPixmap" pixmap="icons/input_question.png" position="780,105" size="80,80" alphatest="blend" />
@@ -2088,11 +2204,16 @@
     <widget name="list" textOffset="20, 2" position="30,560" size="720,380" itemHeight="45" font="Regular;28" />
     <widget name="autoresize" position="0,0" size="0,0" font="Regular;28" noWrap="1" />
     <applet type="onLayoutFinish">
-from enigma import eSize, ePoint
+from enigma import eSize, ePoint, gRGB
+from Components.Label import Label
 if self.timerRunning:
 	titleheight = 0
 else:
 	titleheight = 0
+
+self["title_sep"] = Label("")
+self["title_sep"].GUIcreate(self.instance)
+self["title_sep"].instance.setBackgroundColor(gRGB(0x00555556))
 orgwidth = self.instance.size().width()
 orgheight = self.instance.size().height()
 orgpos = self.instance.position()
@@ -2117,8 +2238,10 @@ if (listwidth &gt; 1280):
 if (listwidth &gt; wsizex):
 	wsizex = listwidth
 wsize = (wsizex, wsizey + titleheight)
-titleSepsize = (wsizex + 40, 2)
+titleSepsize = (wsizex - 10, 2)
 self.instance.resize(eSize(*wsize))
+self["title_sep"].instance.move(ePoint(5, 0))
+self["title_sep"].instance.resize(eSize(*titleSepsize))
 self["text"].instance.move(ePoint(130, 30 + titleheight))
 self["text"].instance.resize(eSize(*textsize))
 self["ErrorPixmap"].instance.move(ePoint(30, 30 + titleheight))
@@ -2137,7 +2260,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   </screen>
   <!-- MessageBoxSimple -->
   <screen name="MessageBoxSimple" position="center,center" size="960,15" title="Message" zPosition="10">
-    <widget name="title_sep" position="100,10" size="780,2" backgroundColor="dark_grey" />
     <widget name="text" position="100,12" size="780,0" font="Regular;32" />
     <widget name="ErrorPixmap" pixmap="icons/input_error.png" position="10,10" size="80,80" alphatest="blend" />
     <widget name="QuestionPixmap" pixmap="icons/input_question.png" position="10,10" size="80,80" alphatest="blend" />
@@ -2146,11 +2268,16 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
     <widget name="list" textOffset="20, 2" position="150,150" size="720,570" itemHeight="45" font="Regular;28" />
     <widget name="autoresize" position="0,0" size="0,0" font="Regular;28" noWrap="1" />
     <applet type="onLayoutFinish">
-from enigma import eSize, ePoint
+from enigma import eSize, ePoint, gRGB
+from Components.Label import Label
 if self.timerRunning:
 	titleheight = 0
 else:
 	titleheight = 0
+	
+self["title_sep"] = Label("")
+self["title_sep"].GUIcreate(self.instance)
+self["title_sep"].instance.setBackgroundColor(gRGB(0x00555556))
 orgwidth = self.instance.size().width()
 orgheight = self.instance.size().height()
 orgpos = self.instance.position()
@@ -2175,8 +2302,10 @@ if (listwidth &gt; 1280):
 if (listwidth &gt; wsizex):
 	wsizex = listwidth
 wsize = (wsizex, wsizey + titleheight)
-titleSepsize = (wsizex + 40, 2)
+titleSepsize = (wsizex - 10, 2)
 self.instance.resize(eSize(*wsize))
+self["title_sep"].instance.move(ePoint(5, 0))
+self["title_sep"].instance.resize(eSize(*titleSepsize))
 self["text"].instance.move(ePoint(130, 30 + titleheight))
 self["text"].instance.resize(eSize(*textsize))
 self["ErrorPixmap"].instance.move(ePoint(30, 30 + titleheight))
