@@ -119,7 +119,7 @@
     <parameter name="ChoicelistNameSingle" value="15,5,800,31" />
     <parameter name="ChoicelistIcon" value="15,0,45,47" />
     <parameter name="ChoicelistButtonIcon" value="15,10,45,30" />
-	<parameter name="ChoicelistUseGraphicalSeparator" value="1" />
+	  <parameter name="ChoicelistUseGraphicalSeparator" value="1" />
     <parameter name="ChoicelistSeparatorColor" value="0x00555556" />
     <parameter name="ExpandableListIcon" value="0,0,55,38" />
     <parameter name="ExpandableListDescr" value="55,2,1000,45" />
@@ -136,16 +136,13 @@
     <parameter name="AutomaticVolumeAdjustmentEntryList1" value="1000,2,80,35" />
     <parameter name="MenuIconsSize" value="48" />
     <parameter name="ConfigListSeperator" value="500" />
-	<parameter name="PluginBrowserDownloadIcon" value="10,0,90,76" />
-	<parameter name="ScreenParamSeparatorChar" value="  •  " />
+	  <parameter name="PluginBrowserDownloadIcon" value="10,0,90,76" />
+	  <parameter name="ScreenParamSeparatorChar" value="*  •  " />
   </parameters>
   <switchpixmap>
     <pixmap name="menu_on" filename="icons/menu_on.png" />
     <pixmap name="menu_off" filename="icons/menu_off.png" />
   </switchpixmap>
-  <stringparameters>
-	<stringparam key="ScreenParamSeparatorChar" value="  •  "/>
-  </stringparameters>
   <menuicons>
 	<menuicon key="default" image="menu/missing.svg" />
 	<menuicon key="tuner_setup" image="menu/tuner_setup.svg" />

@@ -1,8 +1,15 @@
 from enigma import ePixmap
 from Components.Renderer.Renderer import Renderer
-from Tools.HardwareInfo import HardwareInfo
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import SCOPE_CURRENT_SKIN, resolveFilename
+
+try:
+	from SystemInfo import BoxInfo
+	model = BoxInfo.getItem("model")
+except:
+	from Tools.HardwareInfo import HardwareInfo
+	model = HardwareInfo().get_device_model()
+
 
 class BoxLogo(Renderer):
 	def __init__(self):
@@ -21,7 +28,6 @@ class BoxLogo(Renderer):
 	def onShow(self):
 		print("[BoxLogo] show")
 		if self.instance:
-			model = HardwareInfo().get_device_model()
 			print("[BoxLogo] model: " + model)
 			pngname = resolveFilename(SCOPE_CURRENT_SKIN, "icons/logos/" + model + ".svg")
 			is_svg = pngname.endswith(".svg")
