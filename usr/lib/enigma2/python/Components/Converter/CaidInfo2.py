@@ -1,8 +1,9 @@
 #
-#  CaidInfo2 - Converter
-#  ver 1.2.3 15.02.2015
+#  CaidInfo2-mod - Converter
+#  ver 1.2.3a 08.10.2023
 #
-#  Coded by bigroma & 2boom
+#  Coded originaly by bigroma & 2boom
+#  Coded (mod) by DimitarCC
 
 from Components.Converter.Converter import Converter
 from enigma import iServiceInformation, iPlayableService
