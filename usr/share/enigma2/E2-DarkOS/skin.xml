@@ -228,7 +228,7 @@
   <include filename="skin_templates.xml" />
   <include filename="skin_plugins.xml" />
   <!--LCD Display-->
-  <screen name="InfoBarSummary" position="5,5" size="470,310">
+  <!--<screen name="InfoBarSummary" position="5,5" size="470,310">
     <ePixmap position="0,0" size="390,230" pixmap="display_bg.png" zPosition="-1" />
     <widget source="session.RecordState" render="Pixmap" position="214,20" size="68,23" pixmap="iconsVFD/rec2.png" alphatest="blend" zPosition="2">
       <convert type="ConditionalShowHide">Blink</convert>
@@ -259,12 +259,12 @@
     <widget source="session.CurrentService" render="Pixmap" position="305,20" size="48,23" pixmap="iconsVFD/ico_crypt_on.png" alphatest="blend" zPosition="2">
       <convert type="ServiceInfo">IsCrypted</convert>
       <convert type="ConditionalShowHide" />
-    </widget>
+    </widget>-->
     <!--<widget source="session.CurrentService" render="Pixmap" position="323,10" size="23,23" zPosition="2" pixmap="iconsVFD/sat.png" alphatest="blend">
 		  <convert type="ServiceInfo">TunerSystemIsSat</convert>
 		  <convert type="ConditionalShowHide"/>
 		</widget>-->
-    <widget source="session.FrontendInfo" render="FixedLabel" font="Bold;22" backgroundColor="black" transparent="1" foregroundColor="green" position="427,20" size="23,23" valign="center" text="B" zPosition="2">
+    <!--<widget source="session.FrontendInfo" render="FixedLabel" font="Bold;22" backgroundColor="black" transparent="1" foregroundColor="green" position="427,20" size="23,23" valign="center" text="B" zPosition="2">
       <convert type="FrontendInfo">NUMBER</convert>
       <convert type="ValueRange">0,0</convert>
       <convert type="ConditionalShowHide" />
@@ -273,23 +273,23 @@
       <convert type="FrontendInfo">NUMBER</convert>
       <convert type="ValueRange">1,1</convert>
       <convert type="ConditionalShowHide" />
-    </widget>
+    </widget>-->
     <!-- Channellogo (Picon) -->
-    <widget source="session.CurrentService" render="Picon" position="40,105" size="160,90" alphatest="blend" zPosition="1">
+    <!--<widget source="session.CurrentService" render="Picon" position="40,105" size="160,90" alphatest="blend" zPosition="1">
       <convert type="ServiceName">Reference</convert>
-    </widget>
+    </widget>-->
     <!-- Service Number-->
-    <widget source="session.CurrentService" render="Label" font="ExtraF_3;80" foregroundColor="#26b5ff" backgroundColor="black" position="240,100" size="200,100" halign="center" valign="center" noWrap="1" transparent="1" zPosition="3">
+    <!--<widget source="session.CurrentService" render="Label" font="ExtraF_3;80" foregroundColor="#26b5ff" backgroundColor="black" position="240,100" size="200,100" halign="center" valign="center" noWrap="1" transparent="1" zPosition="3">
       <convert type="ServiceName">•,NUMBER</convert>
     </widget>
     <widget source="session.Event_Now" render="Progress" position="20,270" size="430,20" borderWidth="1" backgroundColor="black">
       <convert type="EventTime">Progress</convert>
-    </widget>
+    </widget>-->
     <!-- <eLabel position="0,150" size="400,2" backgroundColor="grey2" /> -->
     <!--<widget font="GoodT;50" foregroundColor="un41c8ff" backgroundColor="black" halign="center" position="0,200" render="Label" size="400,45" source="global.CurrentTime" transparent="1" valign="center">
 		  <convert type="ClockToText">Format:%H:%M</convert>
 		</widget>-->
-  </screen>
+  <!--</screen>-->
   <!-- Volume -->
   <screen position="710,65" size="474,50" name="Volume" title="Volume" flags="wfNoBorder" backgroundColor="transparent" zPosition="1">
     <ePixmap position="0,0" size="474,50" pixmap="vol_bg.png" alphatest="blend" zPosition="-11" />

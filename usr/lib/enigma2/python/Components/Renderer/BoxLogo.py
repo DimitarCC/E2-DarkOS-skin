@@ -1,7 +1,7 @@
 from enigma import ePixmap
 from Components.Renderer.Renderer import Renderer
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import SCOPE_CURRENT_SKIN, resolveFilename
+from Tools.Directories import SCOPE_GUISKIN, resolveFilename
 
 try:
 	from SystemInfo import BoxInfo
@@ -16,7 +16,7 @@ class BoxLogo(Renderer):
 		Renderer.__init__(self)
 		self.width = 302
 		self.height = 60
-		defaultPngName = resolveFilename(SCOPE_CURRENT_SKIN, "icons/logos/deflogo.svg")
+		defaultPngName = resolveFilename(SCOPE_GUISKIN, "icons/logos/deflogo.svg")
 		is_svg = defaultPngName.endswith(".svg")
 		self.defaultLogo = LoadPixmap(defaultPngName, width=self.width, height=0 if is_svg else self.height)
 		
@@ -29,7 +29,7 @@ class BoxLogo(Renderer):
 		print("[BoxLogo] show")
 		if self.instance:
 			print("[BoxLogo] model: " + model)
-			pngname = resolveFilename(SCOPE_CURRENT_SKIN, "icons/logos/" + model + ".svg")
+			pngname = resolveFilename(SCOPE_GUISKIN, "icons/logos/" + model + ".svg")
 			is_svg = pngname.endswith(".svg")
 			png = LoadPixmap(pngname, width=self.width, height=0 if is_svg else self.height)
 			if png != None:
