@@ -179,6 +179,7 @@
   </windowstyle>
   <include filename="skin_templates.xml" />
   <include filename="skin_plugins.xml" />
+  <include filename="skin_openvix.xml" />
   
   <!-- Volume -->
   <screen position="710,65" size="474,50" name="Volume" title="Volume" flags="wfNoBorder" backgroundColor="transparent" zPosition="1">

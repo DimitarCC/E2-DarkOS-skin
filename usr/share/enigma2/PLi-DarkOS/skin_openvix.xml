@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+  <screen name="AboutOE" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="About" />
+  </screen>
+
+  <screen name="SystemMemoryInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="About" />
+  </screen>
+
+  <screen name="SystemNetworkInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="About" />
+    <panel position="110,-50"  size="e,e">
+      <panel name="__NetworkStatusTemplate__" />
+    </panel>
+  </screen>
+
+  <screen name="Devices" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="Screen_1_1" />
+    <widget source="TunerHeader" render="Label" position="125,150" size="1696,38" font="Bold;30" transparent="0" zPosition="1"/>
+    <widget source="nims" render="Label" position="125,190" size="1696,300" font="Regular;28" transparent="0" zPosition="1" noWrap="1"/>
+    <widget source="HDDHeader" render="Label" position="125,498" size="1696,38" font="Bold;30" transparent="0" zPosition="1"/>
+    <widget source="hdd" render="Label" position="125,537" size="1696,300" font="Regular;28" transparent="0" zPosition="1" noWrap="1"/>
+    <widget source="MountsHeader" render="Label" position="125,723" size="1696,38" font="Bold;30" transparent="0" zPosition="1"/>
+    <widget source="mounts" render="Label" position="125,762" size="1696,195" font="Regular;28" transparent="0" zPosition="1" noWrap="1"/>
+  </screen>
+</skin>
