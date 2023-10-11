@@ -2037,6 +2037,7 @@
     <widget name="InfoPixmap" pixmap="icons/input_info.png" position="780,105" size="80,80" alphatest="blend" />
     <widget name="WarningPixmap" pixmap="icons/input_warning.png" position="780,105" size="80,80" alphatest="blend" />
     <widget name="list" textOffset="20, 2" position="30,560" size="720,380" itemHeight="45" font="Regular;28" />
+    <widget name="autoresize" conditional="autoresize" position="0,0" size="0,0" font="Regular;28" noWrap="1" />
     <applet type="onLayoutFinish">
 from enigma import eSize, ePoint, gRGB
 from Components.Label import Label
@@ -2100,6 +2101,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
     <widget name="InfoPixmap" pixmap="icons/input_info.png" position="10,10" size="80,80" alphatest="blend" />
     <widget name="WarningPixmap" pixmap="icons/input_warning.png" position="10,10" size="80,80" alphatest="blend" />
     <widget name="list" textOffset="20, 2" position="150,150" size="720,570" itemHeight="45" font="Regular;28" />
+    <widget name="autoresize" conditional="autoresize" position="0,0" size="0,0" font="Regular;28" noWrap="1" />
     <applet type="onLayoutFinish">
 from enigma import eSize, ePoint, gRGB
 from Components.Label import Label
