@@ -143,7 +143,7 @@
     <pixmap name="menu_on" filename="icons/menu_on.png" />
     <pixmap name="menu_off" filename="icons/menu_off.png" />
   </switchpixmap>
-  <menuicons>
+    <menuicons>
 	<menuicon key="default" image="menu/missing.svg" />
 	<menuicon key="tuner_setup" image="menu/tuner_setup.svg" />
 	<menuicon key="a_setup" image="menu/a_setup.svg" />
@@ -331,170 +331,7 @@
     <panel name="InfoBarTemplate" />
   </screen>
   <screen name="SecondInfoBarSimple" title="Second InfoBar" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_1" />
-    <eLabel position="104,724" size="1712,2" zPosition="-5" backgroundColor="dark_grey" />
-    <eLabel position="959,64" size="2,48" zPosition="-5" backgroundColor="dark_grey" />
-    <eLabel position="959,130" size="2,580" zPosition="-5" backgroundColor="dark_grey" />
-    <widget backgroundColor="background" font="Regular; 35" noWrap="1" position="114,65" render="Label" size="730,45" source="session.Event_Now" transparent="1" foregroundColor="light_yellow">
-      <convert type="EventName">Name</convert>
-    </widget>
-    <widget backgroundColor="black" font="Bold; 30" halign="left" position="114,133" render="Label" size="60,40" source="session.Event_Now" transparent="1">
-      <convert type="EventTime">StartTime</convert>
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget backgroundColor="black" font="Bold; 30" halign="left" position="174,133" render="Label" size="70,40" source="session.Event_Now" transparent="1">
-      <convert type="EventTime">EndTime</convert>
-      <convert type="ClockToText">Format:- %H:%M</convert>
-    </widget>
-    <widget source="session.Event_Now" render="Label" position="244,130" size="620,40" font="Bold;30" halign="center" valign="center" foregroundColor="blue" transparent="1" zPosition="1">
-      <convert type="EventName">Genre</convert>
-    </widget>
-    <widget source="session.Event_Now" render="Label" position="889,68" size="60,33" font="Regular;30" halign="right" foregroundColor="blue" backgroundColor="secondBG" transparent="1" zPosition="1">
-      <convert type="EventName">SmallRating</convert>
-    </widget>
-    <widget backgroundColor="black" font="Bold; 30" foregroundColor="potem" halign="right" position="840,130" render="Label" size="100,40" source="session.Event_Now" transparent="1">
-      <convert type="EventTime">Remaining</convert>
-      <convert type="RemainingToText">InMinutes</convert>
-    </widget>
-    <widget backgroundColor="black" font="Regular; 30" foregroundColor="white" position="114,185" render="Label" size="842,505" source="session.Event_Now" transparent="1">
-      <convert type="EventName">FullDescription</convert>
-    </widget>
-    <eLabel backgroundColor="black" font="Bold; 35" foregroundColor="light_green" position="975,65" size="125,45" text="Next:" transparent="1" />
-    <widget backgroundColor="black" font="Bold; 30" halign="left" position="975,133" render="Label" size="60,40" source="session.Event_Next" transparent="1">
-      <convert type="EventTime">StartTime</convert>
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget backgroundColor="black" font="Bold; 30" halign="left" position="1035,133" render="Label" size="70,40" source="session.Event_Next" transparent="1">
-      <convert type="EventTime">EndTime</convert>
-      <convert type="ClockToText">Format:- %H:%M</convert>
-    </widget>
-    <widget source="session.Event_Next" render="Label" position="1105,130" size="620,40" font="Bold;30" halign="center" valign="center" foregroundColor="blue" transparent="1" zPosition="1">
-      <convert type="EventName">Genre</convert>
-    </widget>
-    <widget source="session.Event_Next" render="Label" position="1740,68" size="60,33" font="Regular;30" halign="right" foregroundColor="blue" backgroundColor="secondBG" transparent="1" zPosition="1">
-      <convert type="EventName">SmallRating</convert>
-    </widget>
-    <widget backgroundColor="black" font="Bold; 30" halign="right" position="1700,130" render="Label" size="100,40" source="session.Event_Next" transparent="1" foregroundColor="potem">
-      <convert type="EventTime">Remaining</convert>
-      <convert type="RemainingToText">InMinutes</convert>
-    </widget>
-    <widget backgroundColor="black" font="Regular; 35" noWrap="1" position="1064,65" render="Label" size="640,45" source="session.Event_Next" transparent="1">
-      <convert type="EventName">Name</convert>
-    </widget>
-    <widget backgroundColor="black" font="Regular; 30" position="975,185" render="Label" size="842,505" source="session.Event_Next" transparent="1">
-      <convert type="EventName">FullDescription</convert>
-    </widget>
-    <widget alphatest="blend" position="138,782" render="Picon" size="227,130" source="session.CurrentService" zPosition="1" transparent="1" backgroundColor="secondBG">
-      <convert type="ServiceName">Reference</convert>
-    </widget>
-    <widget backgroundColor="background5" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="124,964" valign="center" render="Label" size="950,64" source="session.CurrentService" transparent="1" zPosition="110">
-      <convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
-    </widget>
-    <widget position="1331,982" render="Pixmap" size="61,26" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
-      <convert type="ConditionalShowHide">Blink</convert>
-    </widget>
-    <ePixmap pixmap="icons/ico_subs_off_d.png" position="1402,981" size="40,28" alphatest="blend" />
-    <widget source="session.CurrentService" render="Pixmap" pixmap="icons/ico_subs_on.png" position="1402,981" size="40,28" zPosition="2" alphatest="blend">
-      <convert type="ServiceInfo">SubservicesAvailable</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <ePixmap pixmap="icons/ml_s_alt2_off_d.png" position="1506,982" size="31,25" alphatest="blend" />
-    <widget source="session.CurrentService" render="Pixmap" pixmap="icons/ml_s_alt2.png" position="1506,982" size="31,25" zPosition="2" alphatest="blend">
-      <convert type="ServiceInfo">AudioTracksAvailable</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <ePixmap pixmap="icons/subs_s_off_d.png" position="1454,981" size="40,25" alphatest="blend" />
-    <widget source="session.CurrentService" render="Pixmap" pixmap="icons/subs_s.png" position="1454,981" size="40,25" zPosition="2" alphatest="blend">
-      <convert type="ServiceInfo">SubtitlesAvailable</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <ePixmap pixmap="icons/hbbtv_s_off_d.png" size="48,24" position="1591,982" alphatest="blend" />
-    <widget render="Pixmap" pixmap="icons/hbbtv_s.png" size="48,24" position="1591,982" zPosition="2" alphatest="blend" source="session.CurrentService">
-      <convert type="ServiceInfo">HasHBBTV</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <ePixmap pixmap="icons/crypt_s_off_d.png" position="1546,983" size="40,23" alphatest="blend" />
-    <widget source="session.CurrentService" render="Pixmap" pixmap="icons/crypt_s.png" position="1546,983" size="40,23" zPosition="2" alphatest="blend">
-      <convert type="ServiceInfo">IsCrypted</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <ePixmap pixmap="icons/dd_s_off_d.png" size="40,25" position="1652,981" alphatest="blend" />
-    <widget source="session.CurrentService" render="Pixmap" pixmap="icons/dd_s.png" size="40,25" position="1652,981" zPosition="2" alphatest="blend">
-      <convert type="ServiceInfo">IsMultichannel</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <ePixmap pixmap="icons/ico_txt_off_d.png" size="50,25" position="1701,981" alphatest="blend" />
-    <widget source="session.CurrentService" render="Pixmap" pixmap="icons/ico_txt_on.png" size="50,25" position="1701,981" zPosition="2" alphatest="blend">
-      <convert type="ServiceInfo">HasTelext</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="icons/SD_s_n_d_d.png" size="50,25" position="1753,981" zPosition="2" alphatest="blend">
-      <convert type="ServiceInfo">VideoHeight</convert>
-      <convert type="ValueRange">-1,1</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="icons/SD_s_n.png" size="50,25" position="1753,981" zPosition="2" alphatest="blend">
-      <convert type="ServiceInfo">VideoHeight</convert>
-      <convert type="ValueRange">1,719</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="icons/HD_s_n.png" size="50,25" position="1753,981" zPosition="2" alphatest="blend">
-      <convert type="ServiceInfo">VideoHeight</convert>
-      <convert type="ValueRange">720,1081</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="icons/4K_s_n.png" size="50,25" position="1753,981" zPosition="2" alphatest="blend">
-      <convert type="ServiceInfo">VideoHeight</convert>
-      <convert type="ValueRange">1440,2161</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget backgroundColor="background2" font="Bold; 60" foregroundColor="white" halign="center" position="1521,762" render="Label" size="320,70" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget backgroundColor="background2" font="Bold; 30" foregroundColor="white" halign="center" position="1521,832" render="Label" size="320,45" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
-      <convert type="ClockToText">Format: %d %B %Y</convert>
-    </widget>
-    <widget source="session.FrontendStatus" render="FixedLabel" text="SNR" position="433,900" size="75,24" borderWidth="1" borderColor="black" transparent="1" zPosition="2" font="Regular;21">
-      <convert type="FrontendInfo">SNR</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendStatus" render="Progress" position="430,927" size="300,5" backgroundColor="background" foregroundColor="blue" zPosition="1" borderWidth="1" borderColor="grey">
-      <convert type="FrontendInfo">SNR</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendStatus" render="Label" position="577,900" size="150,24" borderWidth="1" borderColor="black" zPosition="2" backgroundColor="background5" transparent="1" halign="right" font="Regular;21">
-      <convert type="FrontendInfo">SNR</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendStatus" render="FixedLabel" text="AGC" position="853,900" size="75,24" borderWidth="1" borderColor="black" transparent="1" zPosition="2" font="Regular;21">
-      <convert type="FrontendInfo">AGC</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendStatus" render="Progress" position="850,927" size="300,5" backgroundColor="background" foregroundColor="blue" zPosition="1" borderWidth="1" borderColor="grey">
-      <convert type="FrontendInfo">AGC</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendStatus" render="Label" position="997,900" size="150,24" borderWidth="1" borderColor="black" zPosition="2" backgroundColor="background5" transparent="1" halign="right" font="Regular;21">
-      <convert type="FrontendInfo">AGC</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendStatus" render="FixedLabel" text="BER" position="1270,905" size="60,24" borderWidth="1" borderColor="black" halign="left" transparent="1" zPosition="1" font="Regular;21">
-      <convert type="FrontendInfo">BER</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendStatus" render="Label" position="1330,905" size="75,24" borderWidth="1" borderColor="black" zPosition="1" backgroundColor="background5" transparent="1" halign="right" font="Regular;21">
-      <convert type="FrontendInfo">BER</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.CurrentService" render="Label" position="423,782" size="1125,35" backgroundColor="background" zPosition="1" foregroundColor="foreground" transparent="1" font="Regular;26" valign="center" halign="center">
-      <convert type="PliExtraInfo">ServiceInfo</convert>
-    </widget>
-    <widget source="session.CurrentService" render="Label" position="423,820" size="1125,35" backgroundColor="background" font="Regular; 26" transparent="1" zPosition="21" halign="center">
-      <convert type="CaidInfo2" />
-    </widget>
-    <widget source="session.CurrentService" render="Label" position="1453,895" size="325,40" backgroundColor="background" zPosition="1" foregroundColor="foreground" font="Regular;30" valign="center" halign="right">
-      <convert type="PliExtraInfo">CryptoBar</convert>
-    </widget>
+    <panel name="SecondInfoBar" />
   </screen>
   <screen name="SecondInfoBar" title="Second InfoBar" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_1" />
@@ -1582,9 +1419,9 @@
     <widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
   </screen>
   <screen name="PluginDownloadBrowser" title="Downloadable plugins" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="Screen_Menu1" />
+	<panel name="Screen_Menu1" />
 	<widget name="text" position="399,190" size="1110,75" zPosition="-1" transparent="1" font="Regular;32" valign="center" halign="center" />
-	<widget name="list" position="396,271" size="1130,574" itemHeight="76" font="Regular;28" scrollbarMode="showNever" valign="center" />
+	<widget name="list" position="396,230" size="1130,610" itemHeight="76" font="Regular;28" scrollbarMode="showNever" valign="center" />
 	<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
   </screen>
   <screen name="FileBrowser" title="DVD File Browser" position="fill" flags="wfNoBorder">
@@ -2193,14 +2030,13 @@
     <eLabel text="Leave message" position="251,1030" size="370,38" backgroundColor="secondBG" font="Regular;34" halign="left" transparent="1" zPosition="1" />
   </screen>
   <!-- MessageBox -->
-  <screen name="MessageBox" title="Message" position="center,center" size="960,15">
+  <screen name="MessageBox" title="Message" position="center,center" size="920,15">
     <widget name="text" position="870,105" size="1020,900" font="Regular;33" />
     <widget name="ErrorPixmap" pixmap="icons/input_error.png" position="780,105" size="80,80" alphatest="blend" />
     <widget name="QuestionPixmap" pixmap="icons/input_question.png" position="780,105" size="80,80" alphatest="blend" />
     <widget name="InfoPixmap" pixmap="icons/input_info.png" position="780,105" size="80,80" alphatest="blend" />
     <widget name="WarningPixmap" pixmap="icons/input_warning.png" position="780,105" size="80,80" alphatest="blend" />
     <widget name="list" textOffset="20, 2" position="30,560" size="720,380" itemHeight="45" font="Regular;28" />
-    <widget name="autoresize" position="0,0" size="0,0" font="Regular;28" noWrap="1" />
     <applet type="onLayoutFinish">
 from enigma import eSize, ePoint, gRGB
 from Components.Label import Label
@@ -2230,7 +2066,7 @@ else:
   wsizey += 20
 if (420 &gt; wsizex):
 	wsizex = 420
-listwidth = self.getListWidth() + 10
+listwidth = self.getListWidth() + 20
 if (listwidth &gt; 1280):
 	listwidth = 1280
 if (listwidth &gt; wsizex):
@@ -2264,7 +2100,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
     <widget name="InfoPixmap" pixmap="icons/input_info.png" position="10,10" size="80,80" alphatest="blend" />
     <widget name="WarningPixmap" pixmap="icons/input_warning.png" position="10,10" size="80,80" alphatest="blend" />
     <widget name="list" textOffset="20, 2" position="150,150" size="720,570" itemHeight="45" font="Regular;28" />
-    <widget name="autoresize" position="0,0" size="0,0" font="Regular;28" noWrap="1" />
     <applet type="onLayoutFinish">
 from enigma import eSize, ePoint, gRGB
 from Components.Label import Label
@@ -2294,7 +2129,7 @@ else:
   wsizey += 20
 if (420 &gt; wsizex):
 	wsizex = 420
-listwidth = self.getListWidth() + 10
+listwidth = self.getListWidth() + 20
 if (listwidth &gt; 1280):
 	listwidth = 1280
 if (listwidth &gt; wsizex):
@@ -2343,7 +2178,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   <!-- Skin Selector -->
   <screen name="SkinSelector" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
-    <widget name="preview" position="767,554" size="420,315" alphatest="blend" />
+    <widget name="preview" position="767,554" size="420,315" alphatest="blend" backgroundColor="transparent"/>
     <widget source="description" render="Label" position="394,198" size="0,0" font="Regular;24" valign="center" />
     <widget source="skins" render="Listbox" position="394,198" size="1130,350" enableWrapAround="1" scrollbarMode="showNever">
       <convert type="TemplatedMultiContent">
@@ -2469,8 +2304,8 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
     </widget>
     <widget name="config" position="450,360" size="1440,643" itemHeight="49" font="Regular;40" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" />
     <widget name="introduction" position="0,0" size="0,0" zPosition="0" />
-
-    <!-- ORB TSID ONID for openvix -->
+	
+	<!-- ORB TSID ONID for openvix -->
     <widget source="pos" conditional="pos" render="FixedLabel" text="Orb Pos:" position="450,340" size="180,45" font="Regular;40" halign="right">
       <convert type="ConditionalShowHide"/>
     </widget>
