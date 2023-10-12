@@ -1605,7 +1605,7 @@
     <panel position="right" size="154,*">
       <panel position="top" size="*,50"/>
       <panel position="top" size="154,500">
-        <panel name="RcPanel"/>
+      <panel name="RcPanel"/>
       </panel>
     </panel>
   </screen>
@@ -1972,9 +1972,9 @@
     <widget name="bus" position="416,541" size="1110,37" font="Regular;36" />
   </screen>
   <!-- Help -->
-	<screen name="HelpMenu" position="fill" flags="wfNoBorder">
-		<panel name="PigLessTemplate"/>
-		<widget name="list" conditional="arrowdown" position="30,100" size="1100,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand"/><!-- belongs to old HelpMenu -->
+  <screen name="HelpMenu" position="fill" flags="wfNoBorder">
+    <panel name="PigLessTemplate"/>
+    <widget name="list" conditional="arrowdown" position="30,100" size="1100,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand"/><!-- belongs to old HelpMenu -->
 		<widget name="long_key" conditional="long_key" position="1636,922" size="600,30" foregroundColor="yellow" font="Regular;24" halign="center"/><!-- belongs to old HelpMenu -->
 		<widget name="longshift_key0" conditional="longshift_key1" position="1225,615" size="600,30" foregroundColor="yellow" font="Regular;24" halign="center"/>
 		<widget name="longshift_key1" conditional="longshift_key1" position="1225,645" size="600,30" foregroundColor="yellow" font="Regular;24" halign="center"/>
@@ -2091,7 +2091,7 @@
 				#}
 			</convert>
 		</widget>
-	</screen>
+  </screen>
   <!-- PPanel -->
   <screen flags="wfNoBorder" name="ToplevelPPanel" position="fill" title="Toplevel PPanel">
     <panel name="PigTemplate" />
