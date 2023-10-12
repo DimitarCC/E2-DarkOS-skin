@@ -119,7 +119,7 @@
     <parameter name="ChoicelistNameSingle" value="15,5,800,31" />
     <parameter name="ChoicelistIcon" value="15,0,45,47" />
     <parameter name="ChoicelistButtonIcon" value="15,10,45,30" />
-	  <parameter name="ChoicelistUseGraphicalSeparator" value="1" />
+	<parameter name="ChoicelistUseGraphicalSeparator" value="1" />
     <parameter name="ChoicelistSeparatorColor" value="0x00555556" />
     <parameter name="ExpandableListIcon" value="0,0,55,38" />
     <parameter name="ExpandableListDescr" value="55,2,1000,45" />
@@ -136,8 +136,8 @@
     <parameter name="AutomaticVolumeAdjustmentEntryList1" value="1000,2,80,35" />
     <parameter name="MenuIconsSize" value="48" />
     <parameter name="ConfigListSeperator" value="500" />
-	  <parameter name="PluginBrowserDownloadIcon" value="10,0,90,76" />
-	  <parameter name="ScreenParamSeparatorChar" value="*  •  " />
+	<parameter name="PluginBrowserDownloadIcon" value="10,0,90,76" />
+	<parameter name="ScreenParamSeparatorChar" value="*  •  " />
   </parameters>
   <switchpixmap>
     <pixmap name="menu_on" filename="icons/menu_on.png" />
@@ -334,7 +334,9 @@
     <panel name="SecondInfoBar" />
   </screen>
   <screen name="SecondInfoBar" title="Second InfoBar" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_1" />
+	<panel position="96,54" size="1728,990">
+		<panel name="Screen_1" />
+    </panel>
     <eLabel position="104,724" size="1712,2" zPosition="-5" backgroundColor="dark_grey" />
     <eLabel position="959,64" size="2,48" zPosition="-5" backgroundColor="dark_grey" />
     <eLabel position="959,130" size="2,580" zPosition="-5" backgroundColor="dark_grey" />
@@ -628,40 +630,32 @@
     </widget>
   </screen>
   <screen name="EventView" position="fill" title="Eventview" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_1" />
-    <panel name="Color_Buttons_Screen_1" />
-    <widget name="epg_eventname" position="125,147" size="1110,70" backgroundColor="background" font="Regular;30" halign="left" valign="top" foregroundColor="light_green" />
-    <widget source="Event" render="Label" position="1582,147" size="200,80" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Regular;32" halign="right" valign="top">
-      <convert type="EventName">Rating</convert>
-    </widget>
-    <widget name="channel" position="125,195" size="1110,50" font="Bold; 36" halign="left" foregroundColor="light_yellow" backgroundColor="background" transparent="1" />
-    <widget name="datetime" position="125,895" size="340,40" font="Bold; 28" halign="left" backgroundColor="background" transparent="1" />
-    <widget name="duration" position="465,895" size="340,40" font="Bold; 28" halign="left" foregroundColor="light_green" backgroundColor="background" transparent="1" />
-    <widget source="Event" render="Label" position="810,895" size="670,35" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Regular;32" halign="left">
-      <convert type="EventName">Genre</convert>
-    </widget>
-    <widget name="FullDescription" position="125,266" size="1690,430" font="Regular; 32" backgroundColor="background" halign="block" scrollbarMode="showNever" />
-	<widget addon="Pager" connection="FullDescription" position="125,736" size="1690,25" />
-    <!-- prawa strona -->
-    <widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="1382,56" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <!-- <widget backgroundColor="background2" font="Bold; 30" foregroundColor="white" halign="center" position="1340,461" render="Label" size="420,35" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
-		  <convert type="ClockToText">Format: %A  %d %B</convert>
-		</widget> -->
-    <eLabel position="118,56" size="420,64" font="Bold; 36" halign="left" valign="center" foregroundColor="yellow" backgroundColor="background2" transparent="1" text="Current program" />
-    <widget alphatest="blend" position="1515,774" render="Picon" size="227,130" source="Service" zPosition="1" transparent="1" backgroundColor="background">
-      <convert type="ServiceName">Reference</convert>
-    </widget>
-    <ePixmap position="1722,979" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
-    <!-- <eLabel backgroundColor="red" position="1340,739" size="4,35" zPosition="2" />
-		<eLabel backgroundColor="green" position="1340,789" size="4,35" zPosition="2" />
-		<eLabel backgroundColor="yellow" position="1340,839" size="4,35" zPosition="2" />
-		<eLabel backgroundColor="blue" position="1340,889" size="4,35" zPosition="2" />
-		<widget backgroundColor="background2" font="Regular; 26" halign="left" position="1360,735" size="360,45" name="key_red" transparent="1" valign="center" zPosition="4" />
-		<widget backgroundColor="background2" font="Regular; 26" halign="left" position="1360,785" size="360,45" name="key_green" transparent="1" valign="center" zPosition="4" />
-		<widget backgroundColor="background2" font="Regular; 26" halign="left" position="1360,835" size="360,45" name="key_yellow" transparent="1" valign="center" zPosition="4" />
-		<widget backgroundColor="background2" font="Regular; 26" halign="left" position="1360,885" size="360,45" name="key_blue" transparent="1" valign="center" zPosition="4" /> -->
+	<panel position="96,54" size="1728,987">
+		<panel name="Screen_1" />
+		<!--<panel position="40,e-68" size="e-234,62">
+			<panel name="Color_Buttons_Screen_1" />
+		</panel>-->
+		<widget name="epg_eventname" position="30,93" size="e-260,70" backgroundColor="background" font="Regular;30" halign="left" valign="top" foregroundColor="light_green" />
+		<widget source="Event" render="Label" position="e-240,93" size="200,80" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Regular;32" halign="right" valign="top">
+		  <convert type="EventName">Rating</convert>
+		</widget>
+		<widget name="channel" position="30,140" size="e-620,50" font="Bold; 36" halign="left" foregroundColor="light_yellow" backgroundColor="background" transparent="1" />
+		<widget name="datetime" position="30,e-140" size="340,40" font="Bold; 28" halign="left" backgroundColor="background" transparent="1" />
+		<widget name="duration" position="370,e-140" size="340,40" font="Bold; 28" halign="left" foregroundColor="light_green" backgroundColor="background" transparent="1" />
+		<widget source="Event" render="Label" position="714,e-145" size="670,45" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Regular;32" halign="left">
+		  <convert type="EventName">Genre</convert>
+		</widget>
+		<widget name="FullDescription" position="30,212" size="e-50,e-500" font="Regular; 32" backgroundColor="background" halign="block" scrollbarMode="showNever" />
+		<widget addon="Pager" connection="FullDescription" position="30,212+e-475" size="e-50,25" />
+		<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
+		  <convert type="ClockToText">Default</convert>
+		</widget>
+		<eLabel position="22,2" size="e-420,64" font="Bold; 36" halign="left" valign="center" foregroundColor="yellow" backgroundColor="background2" transparent="1" text="Current program" />
+		<widget alphatest="blend" position="e-284,e-230" render="Picon" size="227,130" source="Service" zPosition="1" transparent="1" backgroundColor="background">
+		  <convert type="ServiceName">Reference</convert>
+		</widget>
+		<ePixmap position="e-74,e-70" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
+	</panel>
   </screen>
   <!--<screen name="EventView" title="Eventview" position="fill" flags="wfNoBorder">
 		<panel name="SelectionTemplate"/>
@@ -935,10 +929,10 @@
     <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
   </screen>
   <!-- Softcam Setup -->
-  <screen name="SoftcamSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent" size="1925,1080">
-    <panel name="Screen_menu2" />
-    <widget name="config" position="514,221" size="889,150" itemHeight="45" font="Regular;28"  />
-    <widget name="info" position="518,383" size="885,473" font="Fixed;27" />
+  <screen name="SoftcamSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent" size="1920,1080">
+	<panel name="Screen_menu2" />
+	<widget name="config" position="514,221" size="889,150" itemHeight="45" font="Regular;28"  />
+	<widget name="info" position="518,383" size="885,473" font="Fixed;27" />
   </screen>
   <!-- ChoiceBox -->
   <screen name="ChoiceBox" position="0,0" size="1920,1080" title="Choice Box" flags="wfNoBorder" backgroundColor="transparent">
