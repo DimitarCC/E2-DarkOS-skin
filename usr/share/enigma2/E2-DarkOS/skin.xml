@@ -583,7 +583,6 @@
     </widget>
     <ePixmap position="1638,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_epg.png" />
     <ePixmap position="1699,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
-    <ePixmap position="1814,1020" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
   </screen>
   <!-- Simple channelselection -->
   <screen name="SimpleChannelSelection" position="fill" title="Channel Selection" flags="wfNoBorder">
@@ -762,7 +761,6 @@
     </widget>
     <ePixmap position="1638,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_epg.png" />
     <ePixmap position="1699,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
-    <ePixmap position="1814,1020" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
     <!--<panel name="SelectionTemplate"/>
 		<panel name="KeyMenuTemplate"/>
 		<panel name="KeyInfoTemplate"/>
@@ -1194,7 +1192,6 @@
     <ePixmap position="1577,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_pvr.png" />
     <ePixmap position="1638,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_epg.png" />
     <ePixmap position="1699,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
-    <ePixmap position="1814,1020" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
     <!--<panel name="SelectionTemplate"/>
 		<panel name="KeyMenuInfoTemplate"/>
 		<panel name="KeyVideoTemplate"/>
@@ -2361,8 +2358,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   <!-- About -->
   <screen name="About" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_1_1" />
-    <widget name="AboutScrollLabel" font="Regular;28" position="125,150" size="1696,800" zPosition="2" split="1" dividechar=":" colposition="0" backgroundColor="background" />
-    <ePixmap position="1725,978" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
+    <widget name="AboutScrollLabel" font="Regular;28" position="125,150" size="1696,776" zPosition="2" split="1" dividechar=":" colposition="0" backgroundColor="background" />
   </screen>
   <!-- Memory Info -->
   <screen name="MemoryInfo" position="fill" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1923,1080">
