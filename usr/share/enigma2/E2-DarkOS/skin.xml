@@ -593,7 +593,9 @@
     <panel name="Screen_Window_Full_Pig" />
     <ePixmap position="1638,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_epg.png" />
     <ePixmap position="1699,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
-    <ePixmap position="1814,1020" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
+	<panel position="1814,1020" size="54,34">
+		<panel name="BrandLogoTemplate" />
+	</panel>
     <widget name="list" position="26,91" size="1130,890" itemHeight="45" setEventItemFont="Regular;32" setColWidths="120,220" setColGap="40" setIconDistance="10" transparent="1" scrollbarMode="showNever" />
     <widget source="Service" render="Label" position="1160,342" size="720,30" foregroundColor="transponderinfo" font="Regular;26" valign="center" halign="center" transparent="1" zPosition="1">
       <convert type="TransponderInfo" />
@@ -653,7 +655,9 @@
 		<widget alphatest="blend" position="e-284,e-230" render="Picon" size="227,130" source="Service" zPosition="1" transparent="1" backgroundColor="background">
 		  <convert type="ServiceName">Reference</convert>
 		</widget>
-		<ePixmap position="e-74,e-70" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
+		<panel position="e-74,e-70" size="54,34">
+			<panel name="BrandLogoTemplate" />
+		</panel>
 	</panel>
   </screen>
   <!--<screen name="EventView" title="Eventview" position="fill" flags="wfNoBorder">
@@ -708,7 +712,9 @@
   <!-- EPG Search -->
   <screen name="EPGSearch" title="EPG Search" position="fill" flags="wfNoBorder">
     <panel name="Screen_Window_Full_Pig" />
-    <ePixmap position="1814,1020" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
+    <panel position="1814,1020" size="54,34">
+		<panel name="BrandLogoTemplate" />
+	</panel>
     <ePixmap position="1699,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
     <widget name="list" position="29,96" size="1130,890" itemHeight="45" setEventItemFont="Regular;32" setEventTimeFont="Regular;32" setColWidths="120,220" setColGap="40" setIconDistance="-5" setPiconSize="50,30" setPiconDistance="0" setPboxDistance="80" backgroundColor="background" transparent="1" scrollbarMode="showNever" />
     <widget source="Service" render="Label" position="1180,356" size="580,30" foregroundColor="transponderinfo" font="Regular;26" valign="center" halign="left" transparent="1" zPosition="1">
@@ -823,7 +829,9 @@
     </widget>
     <ePixmap position="1638,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_epg.png" />
     <ePixmap position="1699,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
-    <ePixmap position="1814,1020" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
+    <panel position="1814,1020" size="54,34">
+		<panel name="BrandLogoTemplate" />
+	</panel>
   </screen>
   <screen name="GraphMultiEpgSetup" position="fill" title="Electronic Program Guide Setup" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
@@ -2482,7 +2490,9 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
     <widget name="pused" position="857,679" size="105,30" font="Regular;21" zPosition="1" halign="right" backgroundColor="secondBG" transparent="1" />
     <widget name="slide" position="970,138" size="20,782" render="Progress" zPosition="1" borderWidth="1" orientation="orBottomToTop" />
     <widget name="params" rowsincolumn="26" position="125,140" size="1674,782" />
-    <ePixmap position="1725,978" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
+	<panel position="1725,978" size="54,34">
+		<panel name="BrandLogoTemplate" />
+	</panel>
   </screen>
   <!-- Commit Info -->
   <screen name="CommitInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -2490,7 +2500,9 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
     <ePixmap pixmap="buttons/left.png" position="957,976" size="34,34" alphatest="blend" zPosition="3" />
     <ePixmap pixmap="buttons/right.png" position="1453,977" size="34,34" alphatest="blend" zPosition="3" />
     <widget name="AboutScrollLabel" font="Regular;26" position="121,138" size="1674,804" zPosition="2" halign="left" />
-    <ePixmap position="1725,978" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
+    <panel position="1725,978" size="54,34">
+		<panel name="BrandLogoTemplate" />
+	</panel>
   </screen>
   <!-- Troubleshoot -->
   <screen name="Troubleshoot" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -2498,7 +2510,9 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
     <ePixmap pixmap="buttons/left.png" position="957,976" size="34,34" alphatest="blend" zPosition="3" />
     <ePixmap pixmap="buttons/right.png" position="1453,977" size="34,34" alphatest="blend" zPosition="3" />
     <widget name="AboutScrollLabel" font="Regular;26" position="121,138" size="1674,804" zPosition="2" halign="left" />
-    <ePixmap position="1725,978" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
+    <panel position="1725,978" size="54,34">
+		<panel name="BrandLogoTemplate" />
+	</panel>
   </screen>
   <!-- Translation Info -->
   <screen flags="wfNoBorder" name="TranslationInfo" position="fill" backgroundColor="transparent">

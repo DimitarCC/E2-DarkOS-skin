@@ -137,6 +137,10 @@
 	<screen name="keyInfo_Menu1">
 		<ePixmap pixmap="buttons/key_epg.png" alphatest="blend" position="1359,911" size="52,38" />
 	</screen>
+	
+	<screen name="BrandLogoTemplate">
+		<widget source="global.CurrentTime" render="BoxLogo" logoType="brand" position="0,0" size="54,34" zPosition="-3" alphatest="blend" />
+	</screen>
 
 	<screen name="TopTemplate">
 		<eLabel position="0,0" size="1920,87" backgroundColor="toptemplatecolor"/>
@@ -178,7 +182,7 @@
 		<eLabel position="94,864" size="522,62" backgroundColor="background5" zPosition="-7" />
 
 		<widget source="title" render="Label" position="85,864" size="510,62" font="Regular; 34" halign="right" valign="center" backgroundColor="black" transparent="1" />
-		 <widget source="menu" render="Listbox" position="72,287" size="564,565" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
+		<widget source="menu" render="Listbox" position="72,297" size="564,540" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
 			<convert type="TemplatedMultiContent">
 						{"template": [ MultiContentEntryText(pos = (97,5),size = (435,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0),
 									   MultiContentEntryPixmapAlphaBlend(pos = (32,5),size = (48,48), png = 5)],
@@ -186,15 +190,17 @@
 						"itemHeight": 60
 						}
 					</convert>
-		 </widget>
-		 <widget source="global.CurrentTime" render="BoxLogo" position="203,175" size="302,65" zPosition="10" alphatest="blend" />
-		 <eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5" />
+		</widget>
+		<widget source="global.CurrentTime" render="BoxLogo" position="203,175" size="302,65" zPosition="10" alphatest="blend" />
+		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5" />
 	</screen>
 		
 	<screen name="Screen_menu2">
 		<panel position="495,136" size="932,825">
 			<panel name="Screen_1" />
-			<ePixmap position="e-74,e-70" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
+			<panel position="e-74,e-70" size="54,34">
+				<panel name="BrandLogoTemplate" />
+			</panel>
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
 			  <convert type="ClockToText">Default</convert>
 			</widget>
@@ -483,7 +489,9 @@
 			<panel name="Color_Buttons_Screen_1" />
 		</panel>
 		
-		<ePixmap position="e-70,e-57" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />	
+		<panel position="e-70,e-57" size="54,34">
+			<panel name="BrandLogoTemplate" />
+		</panel>
 	</screen>
 
 	<screen name="Screen_1">
@@ -511,7 +519,9 @@
 	<screen name="Screen_1_1">
 		<panel position="96,54" size="1728,972">
 			<panel name="Screen_1" />
-			<ePixmap position="e-74,e-70" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
+			<panel position="e-74,e-70" size="54,34">
+				<panel name="BrandLogoTemplate" />
+			</panel>
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
 			  <convert type="ClockToText">Default</convert>
 			</widget>
@@ -525,7 +535,9 @@
 	<screen name="Screen_Menu1">
 		<panel position="370,118" size="1180,858">
 			<panel name="Screen_1" />
-			<ePixmap position="e-74,e-70" size="54,34" pixmap="window/vulogo.svg" zPosition="-3" alphatest="blend" />
+			<panel position="e-74,e-70" size="54,34">
+				<panel name="BrandLogoTemplate" />
+			</panel>
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
 			  <convert type="ClockToText">Default</convert>
 			</widget>
