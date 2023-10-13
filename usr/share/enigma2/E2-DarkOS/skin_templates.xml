@@ -33,7 +33,7 @@
 		  <convert type="ClockToText">Format: %d %B</convert>
 		</widget>
 		<widget alphatest="blend" path="icons/audioicon" position="1605,860" render="AudioIcon" size="85,50" source="session.CurrentService" zPosition="10">
-		  <convert type="VAudioInfo">AudioIcon</convert>
+		  <convert type="VidAudioInfo">AudioIcon</convert>
 		</widget>
 
 		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/mpeg2.png" size="80,40" position="1700,869" zPosition="2" alphatest="blend">
