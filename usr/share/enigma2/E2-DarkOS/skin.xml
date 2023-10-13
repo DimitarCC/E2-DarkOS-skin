@@ -1380,8 +1380,8 @@ self.autoResize()
     <panel name="Screen_Menu1" />
     <panel name="keyInfo_Menu1" />
     <widget name="timerlist" position="396,210" size="1130,5*90" scrollbarMode="showNever" itemHeight="90" iconMargin="20" rowSplit="42" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" />
-    <widget addon="Pager" connection="timerlist" position="396,734" size="1130,25" transparent="1" backgroundColor="background" />
-    <widget name="description" position="395,776" size="1130,80" backgroundColor="background" font="Regular;30" halign="center" />
+    <widget addon="Pager" connection="timerlist" position="396,665" size="1130,25" transparent="1" backgroundColor="background" />
+    <widget name="description" position="395,705" size="1130,150" backgroundColor="background" font="Regular;30" halign="center" />
   </screen>
   <screen name="TimerLog" position="fill" title="Timer log" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
