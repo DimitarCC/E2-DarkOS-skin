@@ -729,7 +729,7 @@
     <panel name="Screen_Menu1" />
     <widget source="help" render="Label" position="30,570" size="0,0" backgroundColor="background" transparent="1" font="Regular;30" />
     <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <screen name="EPGSearchHistory" title="EPGSearch - History" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
@@ -828,7 +828,7 @@
   <screen name="GraphMultiEpgSetup" position="fill" title="Electronic Program Guide Setup" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"  />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <screen name="SelectBouquet" position="fill" title="Choose bouquet" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_menu2" />
@@ -864,14 +864,14 @@
     <!-- <panel name="VKeyIconPanel"/> -->
     <!--widget name="HelpWindow" pixmap="buttons/vkey_icon.png" position="75,615" zPosition="1" size="1,1" transparent="1" alphatest="on" /-->
     <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"  />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
     <!-- <widget name="description" position="30,570" size="0,0" font="Regular;30" valign="top" /> -->
   </screen>
   <!-- Scan setup -->
   <screen name="ScanSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"  />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
     <widget name="introduction" position="0,0" size="0,0" />
     <widget name="description" position="30,570" size="0,0" font="Regular;30" valign="top" />
   </screen>
@@ -879,7 +879,7 @@
   <screen name="ScanSimple" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"  />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
     <widget name="footer" position="0,0" size="0,0" />
   </screen>
   <!-- Service Scan -->
@@ -911,7 +911,7 @@
   <screen name="FastScanScreen" title="Fast Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
     <widget name="introduction" position="780,975" size="0,0" font="Regular;33" halign="center" />
   </screen>
   <screen name="FastScanStatus" title="Fast Scan" position="fill" flags="wfNoBorder">
@@ -924,7 +924,7 @@
   <screen name="RecordPathsSettings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <!-- Softcam Setup -->
   <screen name="SoftcamSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent" size="1920,1080">
@@ -937,7 +937,10 @@
     <panel name="Screen_menu2" />
     <widget name="text" position="525,220" size="880,80" font="Bold; 30" foregroundColor="potem" backgroundColor="background" valign="center" />
     <widget name="list" position="515,330" size="889,498" itemHeight="45" backgroundColor="background" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" transparent="1" />
-    <widget addon="Pager" connection="list" position="516,838" size="887,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="list" position="516,838" size="887,25" transparent="1" backgroundColor="background" />
+	<applet type="onLayoutFinish">
+self.autoResize()
+	</applet>
     <!-- <widget name="description" position="30,613" size="720,256" zPosition="1" font="Regular;28"/> -->
   </screen>
   <!-- Extensions menu -->
@@ -949,7 +952,7 @@
   <screen name="SelectImage" title="" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_menu2" />
     <widget name="list" position="515,230" size="889,592" itemHeight="45" backgroundColor="background" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" transparent="1" />
-    <widget addon="Pager" connection="list" position="516,838" size="887,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="list" position="516,838" size="887,25" transparent="1" backgroundColor="background"/>
   </screen>
   <!-- SortbyChoiceBox -->
   <screen name="SortbyChoiceBox" title="" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -1031,7 +1034,7 @@
   <screen name="VideoEnhancementSetup" position="fill" title="VideoEnhancementSetup" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <!-- PVR State -->
   <screen name="PVRState" position="192,172" size="225,45" backgroundColor="transparent" zPosition="2" flags="wfNoBorder">
@@ -1291,7 +1294,7 @@
 					}
 				</convert>
     </widget>
-    <widget addon="Pager" connection="streams" position="515,835" size="889,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="streams" position="515,835" size="889,25" transparent="1" backgroundColor="background" />
     <eLabel backgroundColor="red" position="535,239" size="4,35" zPosition="2" />
     <eLabel backgroundColor="green" position="535,285" size="4,35" zPosition="2" />
     <eLabel backgroundColor="yellow" position="535,330" size="4,35" zPosition="2" />
@@ -1340,7 +1343,7 @@
   <screen name="ChannelContextMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_menu2" />
   <widget name="menu" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" />
-  <widget addon="Pager" connection="menu" position="512,849" size="889,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+  <widget addon="Pager" connection="menu" position="512,849" size="889,25" transparent="1" backgroundColor="background" />
 </screen>
   <!-- Minute input -->
   <screen name="MinuteInput" position="center,center" size="360,82" flags="wfNoBorder">
@@ -1353,13 +1356,13 @@
   <screen name="MovieContextMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_menu2" />
   <widget name="menu" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" />
-  <widget addon="Pager" connection="menu" position="512,849" size="889,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+  <widget addon="Pager" connection="menu" position="512,849" size="889,25" transparent="1" backgroundColor="background"/>
 </screen>
   <!-- MovieBrowserConfig -->
   <screen name="MovieBrowserConfiguration" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
   <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   <widget name="description" position="30,550" size="0,0" font="Regular;30" halign="left" />
 </screen>
   <!-- Bouquet Selector -->
@@ -1371,13 +1374,13 @@
   <screen name="TimerEntry" position="fill" title="Timer entry" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <screen name="TimerEditList" position="fill" title="Timer Overview" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <panel name="keyInfo_Menu1" />
     <widget name="timerlist" position="396,210" size="1130,5*90" scrollbarMode="showNever" itemHeight="90" iconMargin="20" rowSplit="42" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" />
-    <widget addon="Pager" connection="timerlist" position="396,734" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="timerlist" position="396,734" size="1130,25" transparent="1" backgroundColor="background" />
     <widget name="description" position="395,776" size="1130,80" backgroundColor="background" font="Regular;30" halign="center" />
   </screen>
   <screen name="TimerLog" position="fill" title="Timer log" flags="wfNoBorder" backgroundColor="transparent">
@@ -1402,18 +1405,18 @@
   <screen name="TimerSelection" position="fill" title="Timer selection" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="timerlist" position="396,210" size="1130,635" scrollbarMode="showNever" itemHeight="76" rowSplit="42" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" />
-    <widget addon="Pager" connection="timerlist" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="timerlist" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <screen name="PluginBrowser" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="list" position="396,225" size="1130,610" scrollbarMode="showNever" />
-    <widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <screen name="PluginDownloadBrowser" title="Downloadable plugins" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 	<panel name="Screen_Menu1" />
 	<widget name="text" position="399,190" size="1110,75" zPosition="-1" transparent="1" font="Regular;32" valign="center" halign="center" />
 	<widget name="list" position="396,230" size="1130,610" itemHeight="76" font="Regular;28" scrollbarMode="showNever" valign="center" />
-	<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+	<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <screen name="FileBrowser" title="DVD File Browser" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
@@ -1433,18 +1436,18 @@
   <screen flags="wfNoBorder" name="SoftwareManagerSetup" position="fill" title="SoftwareManager setup" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
   <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   <widget source="introduction" render="Label" position="30,570" size="0,0" zPosition="10" font="Regular;30" halign="center" valign="center" backgroundColor="#25062748" transparent="1" />
 </screen>
   <screen name="BackupScreen" title="Backup is running" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
   <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 </screen>
   <screen name="BackupSelection" title="Select files/folders to backup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
   <widget name="checkList" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-  <widget addon="Pager" connection="checkList" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+  <widget addon="Pager" connection="checkList" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 </screen>
   <!-- Opkg installer -->
   <screen name="OpkgInstaller" position="fill" flags="wfNoBorder">
@@ -1586,7 +1589,7 @@
   <screen name="RestoreScreen" title="Restore is running" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
   <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 </screen>
   <!-- Restore -->
   <screen name="RestoreMenu" title="Restore Backups" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -1756,7 +1759,7 @@
   <screen name="NameserverSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
   <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   <widget source="introduction" render="Label" position="780,975" size="0,0" transparent="1" zPosition="10" font="Regular;30" valign="center" halign="center" />
 </screen>
   <screen name="NetworkAdapterSelection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -1956,7 +1959,7 @@
   <screen name="InputDeviceSetup" title="Input device setup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="config" position="396,210" size="1130,600" itemHeight="45" font="Regular;28" scrollbarMode="showNever"/>
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
     <widget source="introduction" render="Label" position="396,834" size="1130,45" backgroundColor="darkgrey" shadowColor="black" shadowOffset="-2,-2" zPosition="1" transparent="1" font="Regular;30" halign="center" />
   </screen>
   <!-- Harddisk selection -->
@@ -2308,7 +2311,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
 			}
 		</convert>
     </widget>
-    <widget addon="Pager" connection="nimlist" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="nimlist" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
     <panel name="keyInfo_Menu1" />
   </screen>
   <!-- AutoDiseqC -->
@@ -2323,7 +2326,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   <screen name="NimSetup" title="Reception Settings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="config" position="387,201" size="1145,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever"/>
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
     <widget name="description" position="30,570" size="0,0" itemHeight="38" font="Regular;30" valign="top" />
   </screen>
   <!-- Positioner setup -->
@@ -2507,7 +2510,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   <screen name="StreamingClientsInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
   <widget name="menu" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"/>
-  <widget addon="Pager" connection="menu" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+  <widget addon="Pager" connection="menu" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   <widget name="info" position="408,213" size="1110,38" font="Regular;28" halign="center" transparent="1" zPosition="2" />
 </screen>
   <!-- Virtual Keyboard -->
@@ -2528,7 +2531,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   <screen name="AC3LipSyncSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
   <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"/>
-  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   <widget name="PluginInfo" position="30,570" size="0,0" zPosition="4" font="Regular;27" foregroundColor="uncccccc" />
 </screen>
   <!-- AC3LipSync -->
@@ -2628,7 +2631,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   <screen name="ParentalControlSetup" position="fill" title="Parental control setup" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <screen name="ParentalControlEditor" position="fill" title="Parental control services Editor" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
@@ -2686,7 +2689,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
     <widget name="title" position="396,212" size="900,35" font="Regular;32" />
     <widget name="subtitle" position="396,248" size="900,35" font="Regular;32" />
     <widget name="entries" position="396,294" size="1130,510" itemHeight="35" font="Regular;32" scrollbarMode="showOnDemand" />
-    <widget addon="Pager" connection="entries" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="entries" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
     <widget name="bottom" position="397,797" size="900,35" font="Regular;32" />
   </screen>
   <!-- Common interface - selection -->
@@ -2694,7 +2697,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
     <panel name="Screen_Menu1" />
     <widget name="text" position="395,202" size="1100,35" font="Regular;32" />
     <widget name="entries" position="396,245" size="1130,600" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
-    <widget addon="Pager" connection="entries" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="entries" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <!-- Subservices Quickzap -->
   <screen name="SubservicesQuickzap" position="c-384,c-15" size="768,300" title="Subservices" backgroundColor="transparent" flags="wfNoBorder">
@@ -2711,13 +2714,13 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   <screen name="OSD3DSetupScreen" position="fill" title="Select Location" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <!-- EcmInfo -->
   <screen name="EcmInfoConfigMenu" position="fill" title="Select Location" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
   <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 </screen>
   <!-- Standby -->
   <screen name="Standby" position="fill" flags="wfNoBorder">
