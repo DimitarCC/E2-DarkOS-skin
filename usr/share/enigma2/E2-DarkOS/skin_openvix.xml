@@ -33,28 +33,28 @@
     <panel name="HotkeySetupSelect"/>
   </screen>
   
-  <!-- screen name="GraphicalEPGPIG" position="center,100*f" size="1190*f,580*f">
+  <screen name="GraphicalEPGPIG" position="fill" flags="wfNoBorder">
     <panel name="GraphMultiEPG"/>
-    <widget name="bouquetlist" position="425*f,360*f" size="740*f,160*f" font="Regular;18*f" itemHeight="40*f" zPosition="4" transparent="0" scrollbarMode="showOnDemand"/>
+    <widget name="bouquetlist" position="1512,80" size="384,7*38" font="Regular;28" itemHeight="38" zPosition="100" transparent="0" scrollbarMode="showNever"/>
   </screen>
   
-  <screen name="GraphicalEPG" position="center,center" size="770*f,526*f">
+  <screen name="GraphicalEPG" position="fill" flags="wfNoBorder">
     <panel name="GraphMultiEPGList"/>
   </screen>
   
-  <screen name="CronTimers"  position="center,center+25*f" size="830*f,600*f">
-    <widget name="key" position="15*f,15*f" size="800*f,24*f" font="Regular;20*f" halign="center" transparent="1" valign="center"/>
-    <widget source="list" render="Listbox" position="15*f,50*f" size="800*f,340*f" font="Regular;20*f" itemHeight="25*f" halign="center" 
-      scrollbarMode="showOnDemand" selectionDisabled="0">
+  <screen name="CronTimers" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="Screen_Menu1" />
+    <widget name="key" position="396,210" size="1130,35" font="Regular;30" halign="center" transparent="1" valign="center"/>
+    <widget source="list" render="Listbox" position="396,255" size="1130,9*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" halign="center" selectionDisabled="0" backgroundColor="background">
       <convert type="StringList"/>
     </widget>
-    <widget name="lab1" position="15*f,410*f" size="150*f,26*f" font="Regular;20*f" valign="center"/>
-    <widget name="labdisabled" position="210*f,410*f" size="150*f,30*f" font="Regular;20*f" valign="center" halign="center" backgroundColor="red"/>
-    <widget name="labactive" position="210*f,410*f" size="150*f,30*f" zPosition="1" font="Regular;20*f" valign="center" halign="center" backgroundColor="green"/>
-    <widget name="lab2" position="15*f,460*f" size="150*f,26*f" font="Regular;20*f" valign="center" transparent="0"/>
-    <widget name="labstop" position="210*f,460*f" size="150*f,26*f" font="Regular;20*f" valign="center" halign="center" backgroundColor="red"/>
-    <widget name="labrun" position="210*f,460*f" size="150*f,26*f" zPosition="1" font="Regular;20*f" valign="center" halign="center" backgroundColor="green"/>
-    <widget name="footnote" position="15*f,500*f" size="800*f,26*f" font="Regular;20*f" valign="center" foregroundColor="grey"/>
-    <panel name="DynamicButtonsTemplate"/>
-  </screen -->
+    <widget name="lab1" position="396,700" size="275,42" font="Regular;28" valign="center"/>
+    <widget name="labdisabled" position="675,700" size="150,42" font="Regular;28" valign="center" halign="center" backgroundColor="red"/>
+    <widget name="labactive" position="675,700" size="150,42" zPosition="1" font="Regular;28" valign="center" halign="center" backgroundColor="green"/>
+    <widget name="lab2" position="396,750" size="275,42" font="Regular;28" valign="center"/>
+    <widget name="labstop" position="675,750" size="150,42" font="Regular;28" valign="center" halign="center" backgroundColor="red"/>
+    <widget name="labrun" position="675,750" size="150,42" font="Regular;28" zPosition="1" valign="center" halign="center" backgroundColor="green"/>
+    <widget name="footnote" position="396,853" size="1130,32" font="Regular;28" valign="center" foregroundColor="grey"/>
+  </screen>
+
 </skin>
