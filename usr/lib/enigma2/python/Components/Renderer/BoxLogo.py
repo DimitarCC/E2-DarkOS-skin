@@ -4,7 +4,7 @@ from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import SCOPE_GUISKIN, resolveFilename
 
 try:
-	from SystemInfo import BoxInfo
+	from Components.SystemInfo import BoxInfo
 	model = BoxInfo.getItem("model")
 except:
 	from Tools.HardwareInfo import HardwareInfo
