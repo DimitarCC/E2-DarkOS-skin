@@ -2496,12 +2496,9 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   <!-- Commit Info -->
   <screen name="CommitInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_1_1" />
-    <ePixmap pixmap="buttons/left.png" position="957,976" size="34,34" alphatest="blend" zPosition="3" />
-    <ePixmap pixmap="buttons/right.png" position="1453,977" size="34,34" alphatest="blend" zPosition="3" />
+    <ePixmap pixmap="buttons/left.png" position="1640,960" size="34,34" alphatest="blend" zPosition="3" />
+    <ePixmap pixmap="buttons/right.png" position="1690,960" size="34,34" alphatest="blend" zPosition="3" />
     <widget name="AboutScrollLabel" font="Regular;26" position="121,138" size="1674,804" zPosition="2" halign="left" />
-    <panel position="1725,978" size="54,34">
-		<panel name="BrandLogoTemplate" />
-	</panel>
   </screen>
   <!-- Troubleshoot -->
   <screen name="Troubleshoot" position="fill" flags="wfNoBorder" backgroundColor="transparent">
