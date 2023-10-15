@@ -2154,77 +2154,77 @@
 		<widget name="message" position="center,center" size="706,156" font="Regular;30" valign="center" halign="center"/>
 	</screen>
 
-	<!-- AutoBouquetsMaker (ABM) -->
-	<screen flags="wfNoBorder" name="AutoBouquetsMaker_Menu" position="fill">
-		<panel name="PigTemplate"/>
-		<widget source="list" render="Listbox" transparent="0" position="780,100" size="1110,912" scrollbarMode="showOnDemand" >
+  <!-- AutoBouquetsMaker (ABM) -->
+  <screen name="AutoBouquetsMaker_Setup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="Screen_Menu1" />
+    <widget name="config" position="396,210" size="1130,10*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+    <widget name="pleasewait" position="396,210" size="1130,10*45" font="Regular;28" halign="center" valign="center" transparent="0" zPosition="5"/>
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+    <widget name="description" position="396,700" size="1130,150" font="Regular;30" halign="center" valign="top"/>
+  </screen>
+  
+  <screen name="AutoBouquetsMaker_Menu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1" />
+		<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,11*60" scrollbarMode="showNever" >
 			<convert type="TemplatedMultiContent">
 				{"template": [
-				MultiContentEntryPixmapAlphaTest(pos = (18,6), size = (48,48), png = 0),
-				MultiContentEntryText(pos = (87,7), size = (660,57), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+				MultiContentEntryPixmapAlphaTest(pos = (18,12), size = (48,48), png = 0),
+				MultiContentEntryText(pos = (87,11), size = (1060,49), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
 				],
-				"fonts": [gFont("Regular",33)],
+				"fonts": [gFont("Regular",30)],
 				"itemHeight": 60
 				}
 			</convert>
 		</widget>
-	</screen>
-	<screen flags="wfNoBorder" name="AutoBouquetsMaker_Ordering" position="fill">
-		<panel name="PigTemplate"/>
-		<widget source="list" render="Listbox" transparent="0" position="780,100" size="1110,912" scrollbarMode="showOnDemand">
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+  </screen>
+
+  <screen name="AutoBouquetsMaker_Ordering" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1" />
+		<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,14*45" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-				MultiContentEntryText(pos = (18,1), size = (660,48), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0),
-				MultiContentEntryPixmapAlphaTest(pos = (657,0), size = (60,60), png = 1),
+				MultiContentEntryText(pos = (18,0), size = (1060,45), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
 				],
-				"fonts": [gFont("Regular",27)],
+				"fonts": [gFont("Regular",28)],
 				"itemHeight": 45
 				}
 			</convert>
 		</widget>
-	</screen>
-	<screen flags="wfNoBorder" name="AutoBouquetsMaker_HideSections" position="fill">
-		<panel name="PigTemplate"/>
-		<widget source="list" render="Listbox" transparent="0" position="780,100" size="1110,912" scrollbarMode="showOnDemand">
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+  </screen>
+  
+  <screen name="AutoBouquetsMaker_HideSections" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1" />
+		<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,14*45" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-					MultiContentEntryPixmapAlphaBlend(pos = (10,2), size = (38,36), png = 0),
-					MultiContentEntryText(pos = (47,0), size = (600,45), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
-					MultiContentEntryText(pos = (450,0), size = (180,45), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					MultiContentEntryPixmapAlphaBlend(pos = (20,2), size = (38,36), png = 0),
+					MultiContentEntryText(pos = (67,0), size = (700,45), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
+					MultiContentEntryText(pos = (780,0), size = (330,45), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 2),
 					],
-					"fonts": [gFont("Regular",33)],
+					"fonts": [gFont("Regular",28)],
 					"itemHeight":45
 				}
 			</convert>
 		</widget>
-	</screen>
-	<screen flags="wfNoBorder" name="AutoBouquetsMaker_Log" position="fill">
-		<panel name="PigTemplate"/>
-		<widget name="description" position="30,570" size="720,300" itemHeight="38" font="Regular;30" valign="top"/>
-	</screen>
-	<screen flags="wfNoBorder" name="AutoBouquetsMaker_Setup" position="fill">
-		<panel name="PigTemplate"/>
-		<widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" transparent="1"/>
-		<widget name="description" position="30,570" size="720,300" itemHeight="38" font="Regular;30" valign="top"/>
-	</screen>
-	<screen flags="wfNoBorder" name="AutoBouquetsMaker_KeepBouquets" position="fill">
-		<panel name="PigTemplate"/>
-		<widget source="list" render="Listbox" transparent="0" position="780,100" size="1110,912" scrollbarMode="showOnDemand">
-			<convert type="TemplatedMultiContent">
-				{"template": [
-				MultiContentEntryText(pos = (18,1), size = (660,48), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0),
-				MultiContentEntryPixmapAlphaTest(pos = (657,0), size = (60,60), png = 1),
-				],
-				"fonts": [gFont("Regular",27)],
-				"itemHeight": 45
-				}
-			</convert>
-		</widget>
-	</screen>
-	<screen flags="wfNoBorder" name="AutoBouquetsMaker_About" position="fill">
-		<panel name="PigTemplate"/>
-		<widget name="about" position="840,214" size="754,540" font="Regular;24"/>
-	</screen>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+  </screen>
+
+  <screen name="AutoBouquetsMaker_KeepBouquets" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="AutoBouquetsMaker_HideSections" />
+  </screen>
+
+  <screen name="AutoBouquetsMaker_Log" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="Screen_Menu1" />
+    <widget name="list" position="396,210" size="1130,630" itemHeight="38" font="Regular;28" valign="top"/>
+  </screen>
+
+  <screen name="AutoBouquetsMaker_About" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="Screen_Menu1" />
+    <widget name="about" position="396,210" size="1130,660" font="Regular;28" backgroundColor="background" />
+    <widget name="oealogo" conditional="oealogo" position="1350,728" size="176,142" backgroundColor="background" transparent="1" alphatest="blend"/>
+  </screen>
 
 	<!-- FileBrowser -->
 	<screen name="FilebrowserScreen" position="fill" title="File Browser">
