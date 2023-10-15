@@ -607,27 +607,32 @@
 	</screen>
 
 	<!-- Cross EPG -->
+  <screen name="downloader" position="0,0" size="1920,60" backgroundColor="transpBlack" flags="wfNoBorder"> <!-- Cross EPG satellite download screen -->
+    <panel name="DownloadBar"/>
+  </screen>
 
-	<screen flags="wfNoBorder" name="CrossEPG_Menu" position="fill" title="CrossEPG Menu">
-		<panel name="PigTemplate"/>
-		<widget source="list" render="Listbox" transparent="0" position="780,100" size="1110,912" scrollbarMode="showOnDemand" >
+	<screen name="CrossEPG_Menu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1" />
+		<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,11*60" scrollbarMode="showNever" >
 			<convert type="TemplatedMultiContent">
-		{"template": [
-			MultiContentEntryPixmapAlphaTest(pos = (18,6), size = (48,48), png = 0),
-			MultiContentEntryText(pos = (87,7), size = (660,57), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
-			],
-			"fonts": [gFont("Regular",33)],
-			"itemHeight": 60
-		}
-	</convert>
+				{"template": [
+				MultiContentEntryPixmapAlphaTest(pos = (18,12), size = (48,48), png = 0),
+				MultiContentEntryText(pos = (87,11), size = (1060,49), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+				],
+				"fonts": [gFont("Regular",30)],
+				"itemHeight": 60
+				}
+			</convert>
 		</widget>
-	</screen>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+  </screen>
 
-	<screen flags="wfNoBorder" name="CrossEPG_Setup" position="fill" title="CrossEPG Setup">
-		<panel name="PigTemplate"/>
-		<widget name="information" position="30,450" size="720,450" halign="center" valign="center" font="Regular;33"/>
-		<widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" transparent="1"/>
-	</screen>
+  <screen name="CrossEPG_Setup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="Screen_Menu1" />
+    <widget name="config" position="396,210" size="1130,10*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+    <widget name="information" position="396,700" size="1130,150" font="Regular;30" halign="center" valign="top"/>
+  </screen>
 
 	<screen flags="wfNoBorder" name="CrossEPG_Info" position="fill" title="CrossEPG Info">
 		<panel name="PigTemplate"/>
@@ -644,36 +649,36 @@
 		<widget name="hashes_count" position="900,649" size="900,37" font="Regular;33"/>
 	</screen>
 
-	<screen flags="wfNoBorder" name="CrossEPG_Extra" position="fill" title="CrossEPG Extra">
-		<panel name="PigTemplate"/>
-		<widget name="menu" scrollbarMode="showOnDemand" font="Regular;33" position="780,100" size="1110,912" transparent="1"/>
+	<screen name="CrossEPG_Extra" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1" />
+		<widget name="menu" scrollbarMode="showNever" font="Regular;33" position="396,210" size="1130,10*45" transparent="1"/>
+		<widget addon="Pager" connection="menu" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
 
-	<screen flags="wfNoBorder" name="CrossEPG_Providers" position="fill" title="CrossEPG Providers">
-		<panel name="PigTemplate"/>
-		<widget source="list" render="Listbox" transparent="0" position="780,100" size="1110,912" scrollbarMode="showOnDemand">
+	<screen name="CrossEPG_Providers" position="fill" title="CrossEPG Providers" flags="wfNoBorder">
+		<panel name="Screen_Menu1" />
+		<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,10*60" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
 	{"template": [
-	MultiContentEntryText(pos = (18,1), size = (660,48), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0),
-	MultiContentEntryPixmapAlphaTest(pos = (657,0), size = (60,60), png = 1),
+	MultiContentEntryText(pos = (18,0), size = (660,60), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+	MultiContentEntryPixmapAlphaTest(pos = (1060,10), size = (60,60), png = 1),
 	],
-	"fonts": [gFont("Regular",27)],
-	"itemHeight": 45
+	"fonts": [gFont("Regular",30)],
+	"itemHeight": 60
 	}
 			</convert>
 		</widget>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
 
-	<screen flags="wfNoBorder" name="CrossEPG_About" position="fill" title="About CrossEPG">
-		<panel name="PigTemplate"/>
-		<widget name="about" position="840,214" size="754,540" font="Regular;24"/>
-		<widget name="rytec_pix" position="1177,787" size="105,105"/>
-		<widget name="krkadoni_pix" position="1177,900" size="105,33"/>
-	</screen>
+  <screen name="CrossEPG_About" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="Screen_Menu1" />
+    <widget name="about" position="396,210" size="1130,660" font="Regular;28" backgroundColor="background" />
+  </screen>
 
 	<screen flags="wfNoBorder" name="CrossEPG_Ordering" position="fill" title="Cross EPG - Providers start order">
-		<panel name="PigTemplate"/>
-		<widget name="list" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" transparent="1" scrollbarMode="showOnDemand"/>
+		<panel name="Screen_Menu1" />
+		<widget name="list" position="396,210" size="1130,660" itemHeight="38" font="Regular;28" transparent="1" scrollbarMode="showNever"/>
 	</screen>
 
 	<!-- AtmoLight -->
@@ -2224,6 +2229,20 @@
     <panel name="Screen_Menu1" />
     <widget name="about" position="396,210" size="1130,660" font="Regular;28" backgroundColor="background" />
     <widget name="oealogo" conditional="oealogo" position="1350,728" size="176,142" backgroundColor="background" transparent="1" alphatest="blend"/>
+  </screen>
+
+  <screen name="AutoBouquetsMaker" position="0,0" size="1920,60" backgroundColor="transpBlack" flags="wfNoBorder">
+    <panel name="DownloadBar"/>
+  </screen>
+
+  <!-- TerrestrialScan -->
+  <screen name="TerrestrialScan" position="0,0" size="1920,60" backgroundColor="transpBlack" flags="wfNoBorder">
+    <panel name="DownloadBar"/>
+  </screen>
+
+  <!-- MisPlsLcnScan -->
+  <screen name="MisPlsLcnScan" position="0,0" size="1920,60" backgroundColor="transpBlack" flags="wfNoBorder">
+    <panel name="DownloadBar"/>
   </screen>
 
 	<!-- FileBrowser -->
