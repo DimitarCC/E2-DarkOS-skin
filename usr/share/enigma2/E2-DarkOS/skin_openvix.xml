@@ -57,4 +57,21 @@
     <widget name="footnote" position="396,853" size="1130,32" font="Regular;28" valign="center" foregroundColor="grey"/>
   </screen>
 
+  <screen name="LogManager"  position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1" />
+		<widget name="list" position="396,210" size="1130,16*38" transparent="0" enableWrapAround="1" scrollbarMode="showNever" font="Regular;30"/>
+		<applet type="onLayoutFinish">
+self["list"].instance.setItemHeight(38)
+		</applet>
+		<widget addon="Pager" connection="list" position="396,665" size="1130,25" transparent="1" backgroundColor="background" />
+	</screen>
+
+	<screen name="LogManagerViewLog" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1" />
+		<widget name="list" position="396,210" size="1130,660" font="Console;27"/>
+	</screen>
+	<screen name="LogManagerFb" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="LogManagerViewLog"/>
+	</screen>
+
 </skin>
