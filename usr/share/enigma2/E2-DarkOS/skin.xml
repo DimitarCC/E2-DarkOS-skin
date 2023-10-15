@@ -2132,6 +2132,11 @@ self.autoResize()
     <widget name="text" position="396,210" size="1130,635" font="Regular;30" halign="block"/>
     <!-- widget addon="Pager" connection="text" position="396,849" size="1130,25" transparent="1" backgroundColor="background" /> not implemented in PLi yet for ScrollLabel -->
   </screen>
+  <screen name="TextBoxSplit" title="Message" position="fill" flags="wfNoBorder">
+    <panel name="Screen_Menu1" />
+    <widget name="text" position="396,210" size="1130,635" font="Regular;30" halign="block" split="1" dividechar=":" colposition="0"/>
+    <!-- widget addon="Pager" connection="text" position="396,849" size="1130,25" transparent="1" backgroundColor="background" /> not implemented in PLi yet for ScrollLabel -->
+  </screen>
   <!-- MessageBox -->
   <screen name="MessageBox" title="Message" position="center,center" size="920,15">
     <widget name="text" position="870,105" size="1020,900" font="Regular;33" />
