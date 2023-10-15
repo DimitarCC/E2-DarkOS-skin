@@ -946,9 +946,9 @@
     <widget name="text" position="525,220" size="880,80" font="Bold; 30" foregroundColor="potem" backgroundColor="background" valign="center" />
     <widget name="list" position="515,330" size="889,498" itemHeight="45" backgroundColor="background" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" transparent="1" />
     <widget addon="Pager" connection="list" position="516,838" size="887,25" transparent="1" backgroundColor="background" />
-	<applet type="onLayoutFinish">
+	<!-- applet type="onLayoutFinish">
 self.autoResize()
-	</applet>
+	</applet -->
     <!-- <widget name="description" position="30,613" size="720,256" zPosition="1" font="Regular;28"/> -->
   </screen>
   <!-- Extensions menu -->
