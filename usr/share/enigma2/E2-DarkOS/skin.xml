@@ -732,10 +732,8 @@
     </widget>
   </screen>
   <screen name="EPGSearchSetup" title="EPGSearch Setup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
+    <panel name="ConfigScreenTemplate" />
     <widget source="help" render="Label" position="30,570" size="0,0" backgroundColor="background" transparent="1" font="Regular;30" />
-    <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <screen name="EPGSearchHistory" title="EPGSearch - History" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
@@ -834,9 +832,7 @@
 	</panel>
   </screen>
   <screen name="GraphMultiEpgSetup" position="fill" title="Electronic Program Guide Setup" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"  />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+    <panel name="ConfigScreenTemplate" />
   </screen>
   <screen name="SelectBouquet" position="fill" title="Choose bouquet" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_menu2" />
@@ -868,26 +864,17 @@
   </screen>
   <!--Setup Configs -->
   <screen name="Setup" title="Setup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <!-- <panel name="VKeyIconPanel"/> -->
-    <!--widget name="HelpWindow" pixmap="buttons/vkey_icon.png" position="75,615" zPosition="1" size="1,1" transparent="1" alphatest="on" /-->
-    <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"  />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
-    <!-- <widget name="description" position="30,570" size="0,0" font="Regular;30" valign="top" /> -->
+    <panel name="ConfigScreenTemplate" />
   </screen>
   <!-- Scan setup -->
   <screen name="ScanSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"  />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+    <panel name="ConfigScreenTemplate" />
     <widget name="introduction" position="0,0" size="0,0" />
     <widget name="description" position="30,570" size="0,0" font="Regular;30" valign="top" />
   </screen>
   <!-- Scan simple -->
   <screen name="ScanSimple" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"  />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+    <panel name="ConfigScreenTemplate" />
     <widget name="footer" position="0,0" size="0,0" />
   </screen>
   <!-- Service Scan -->
@@ -917,9 +904,7 @@
   </screen>
   <!-- FastScan -->
   <screen name="FastScanScreen" title="Fast Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+    <panel name="ConfigScreenTemplate" />
     <widget name="introduction" position="780,975" size="0,0" font="Regular;33" halign="center" />
   </screen>
   <screen name="FastScanStatus" title="Fast Scan" position="fill" flags="wfNoBorder">
@@ -930,9 +915,7 @@
   </screen>
   <!-- RecordPathSettings -->
   <screen name="RecordPathsSettings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+    <panel name="ConfigScreenTemplate" />
   </screen>
   <!-- Softcam Setup -->
   <screen name="SoftcamSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent" size="1920,1080">
@@ -942,10 +925,10 @@
   </screen>
   <!-- ChoiceBox -->
   <screen name="ChoiceBox" position="0,0" size="1920,1080" title="Choice Box" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_menu2" />
+	<panel name="Screen_menu2" />
     <widget name="text" position="525,220" size="880,80" font="Bold; 30" foregroundColor="potem" backgroundColor="background" valign="center" />
     <widget name="list" position="515,330" size="889,498" itemHeight="45" backgroundColor="background" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" transparent="1" />
-    <widget addon="Pager" connection="list" position="516,838" size="887,25" transparent="1" backgroundColor="background" />
+	<widget addon="Pager" connection="list" position="516,838" size="887,25" transparent="1" backgroundColor="background" />
 	<!-- applet type="onLayoutFinish">
 self.autoResize()
 	</applet -->
@@ -1040,9 +1023,7 @@ self.autoResize()
     <widget name="videomode" position="0,0" size="570,60" backgroundColor="transparent" transparent="1" font="Regular;39" borderColor="black" borderWidth="2" valign="center" halign="left" />
   </screen>
   <screen name="VideoEnhancementSetup" position="fill" title="VideoEnhancementSetup" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+    <panel name="ConfigScreenTemplate" />
   </screen>
   <!-- PVR State -->
   <screen name="PVRState" position="192,172" size="225,45" backgroundColor="transparent" zPosition="2" flags="wfNoBorder">
@@ -1368,9 +1349,7 @@ self.autoResize()
 </screen>
   <!-- MovieBrowserConfig -->
   <screen name="MovieBrowserConfiguration" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="Screen_Menu1" />
-  <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+  <panel name="ConfigScreenTemplate" />
   <widget name="description" position="30,550" size="0,0" font="Regular;30" halign="left" />
 </screen>
   <!-- Bouquet Selector -->
@@ -1380,9 +1359,7 @@ self.autoResize()
 </screen>
   <!-- Timers -->
   <screen name="TimerEntry" position="fill" title="Timer entry" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+    <panel name="ConfigScreenTemplate" />
   </screen>
   <screen name="TimerEditList" position="fill" title="Timer Overview" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
@@ -1421,10 +1398,8 @@ self.autoResize()
     <widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <screen name="PluginDownloadBrowser" title="Downloadable plugins" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-	<panel name="Screen_Menu1" />
+	<panel name="PluginBrowser" />
 	<widget name="text" position="399,190" size="1110,75" zPosition="-1" transparent="1" font="Regular;32" valign="center" halign="center" />
-	<widget name="list" position="396,230" size="1130,610" itemHeight="76" font="Regular;28" scrollbarMode="showNever" valign="center" />
-	<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <screen name="FileBrowser" title="DVD File Browser" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
@@ -1442,15 +1417,11 @@ self.autoResize()
   </screen>
   <!-- Softwaremanager -->
   <screen flags="wfNoBorder" name="SoftwareManagerSetup" position="fill" title="SoftwareManager setup" backgroundColor="transparent">
-  <panel name="Screen_Menu1" />
-  <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+  <panel name="ConfigScreenTemplate" />
   <widget source="introduction" render="Label" position="30,570" size="0,0" zPosition="10" font="Regular;30" halign="center" valign="center" backgroundColor="#25062748" transparent="1" />
 </screen>
   <screen name="BackupScreen" title="Backup is running" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="Screen_Menu1" />
-  <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+  <panel name="ConfigScreenTemplate" />
 </screen>
   <screen name="BackupSelection" title="Select files/folders to backup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
@@ -1595,9 +1566,7 @@ self.autoResize()
   </screen>
   <!-- Restore screen -->
   <screen name="RestoreScreen" title="Restore is running" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="Screen_Menu1" />
-  <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+  <panel name="ConfigScreenTemplate" />
 </screen>
   <!-- Restore -->
   <screen name="RestoreMenu" title="Restore Backups" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -1765,9 +1734,7 @@ self.autoResize()
   <widget name="HelpWindow" position="75,615" size="1,1" transparent="1" zPosition="1" alphatest="on" />
 </screen>
   <screen name="NameserverSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="Screen_Menu1" />
-  <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+  <panel name="ConfigScreenTemplate" />
   <widget source="introduction" render="Label" position="780,975" size="0,0" transparent="1" zPosition="10" font="Regular;30" valign="center" halign="center" />
 </screen>
   <screen name="NetworkAdapterSelection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -1965,9 +1932,7 @@ self.autoResize()
     <widget source="introduction" render="Label" position="390,847" size="1145,40" backgroundColor="darkgrey" shadowColor="black" shadowOffset="-2,-2" zPosition="1" transparent="1" font="Regular;30" halign="center" />
   </screen>
   <screen name="InputDeviceSetup" title="Input device setup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <widget name="config" position="396,210" size="1130,600" itemHeight="45" font="Regular;28" scrollbarMode="showNever"/>
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+    <panel name="ConfigScreenTemplate" />
     <widget source="introduction" render="Label" position="396,834" size="1130,45" backgroundColor="darkgrey" shadowColor="black" shadowOffset="-2,-2" zPosition="1" transparent="1" font="Regular;30" halign="center" />
   </screen>
   <!-- Harddisk selection -->
@@ -2134,22 +2099,36 @@ self.autoResize()
     <!-- widget addon="Pager" connection="text" position="396,849" size="1130,25" transparent="1" backgroundColor="background" /> not implemented in PLi yet for ScrollLabel -->
   </screen>
   <screen name="TextBoxSplit" title="Message" position="fill" flags="wfNoBorder">
-    <panel name="Screen_Menu1" />
-    <widget name="text" position="396,210" size="1130,635" font="Regular;30" halign="block" split="1" dividechar=":" colposition="0"/>
-    <!-- widget addon="Pager" connection="text" position="396,849" size="1130,25" transparent="1" backgroundColor="background" /> not implemented in PLi yet for ScrollLabel -->
+    <panel name="TextBox" />
   </screen>
   <!-- MessageBox -->
-  <screen name="MessageBox" title="Message" position="center,center" size="920,15">
-    <widget name="text" position="870,105" size="1020,900" font="Regular;33" />
-    <widget name="ErrorPixmap" pixmap="icons/input_error.png" position="780,105" size="80,80" alphatest="blend" />
-    <widget name="QuestionPixmap" pixmap="icons/input_question.png" position="780,105" size="80,80" alphatest="blend" />
-    <widget name="InfoPixmap" pixmap="icons/input_info.png" position="780,105" size="80,80" alphatest="blend" />
-    <widget name="WarningPixmap" pixmap="icons/input_warning.png" position="780,105" size="80,80" alphatest="blend" />
-    <widget name="list" textOffset="20, 2" position="30,560" size="720,380" itemHeight="45" font="Regular;28" />
+  <screen name="MessageBox" title="Message" position="center,center" size="920,15" flags="wfNoBorder" backgroundColor="transparent">
+	<panel name="MessageBoxSimple" />
+  </screen>
+  <!-- MessageBoxSimple -->
+  <screen name="MessageBoxSimple" position="center,center" size="960,15" title="Message" zPosition="10" flags="wfNoBorder" backgroundColor="transparent">
+	<widget source="Title" render="Label" position="15,3" size="250,40" font="Bold; 28" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" zPosition="2" />
+    <widget name="text" position="100,12" size="780,0" font="Regular;32" transparent="1" backgroundColor="transparent"/>
+    <widget name="ErrorPixmap" pixmap="icons/input_error.png" position="10,10" size="80,80" alphatest="blend" />
+    <widget name="QuestionPixmap" pixmap="icons/input_question.png" position="10,10" size="80,80" alphatest="blend" />
+    <widget name="InfoPixmap" pixmap="icons/input_info.png" position="10,10" size="80,80" alphatest="blend" />
+    <widget name="WarningPixmap" pixmap="icons/input_warning.png" position="10,10" size="80,80" alphatest="blend" />
+    <widget name="list" textOffset="20, 2" position="150,150" size="720,570" itemHeight="45" font="Regular;28" zPosition="2" transparent="1" backgroundColor="transparent" />
     <widget name="autoresize" conditional="autoresize" position="0,0" size="0,0" font="Regular;28" noWrap="1" />
     <applet type="onLayoutFinish">
-from enigma import eSize, ePoint, gRGB
+from enigma import ePoint, eSize, getDesktop, gRGB, BT_ALPHABLEND
 from Components.Label import Label
+from Components.Pixmap import Pixmap
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
+from Tools.LoadPixmap import LoadPixmap
+from Components.Renderer.BoxLogo import setLogo
+
+pxtlc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tl.png"))
+pxtrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tr.png"))
+pxblc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_bl.png"))
+pxbrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_br.png"))
+
+
 if self.timerRunning:
 	titleheight = 0
 else:
@@ -2162,9 +2141,9 @@ orgwidth = self.instance.size().width()
 orgheight = self.instance.size().height()
 orgpos = self.instance.position()
 textsize = self["text"].getSize()
-textsize = (textsize[0] + 76, textsize[1] + 30)
+textsize = (textsize[0] + 76, textsize[1] + 50)
 wsizex = textsize[0] + 140
-wsizey = textsize[1]
+wsizey = textsize[1] + 110
 lenlist = len(self.list)*45
 if (lenlist &gt; 380):
 	lenlist = 380
@@ -2182,88 +2161,61 @@ if (listwidth &gt; 1280):
 if (listwidth &gt; wsizex):
 	wsizex = listwidth
 wsize = (wsizex, wsizey + titleheight)
-titleSepsize = (wsizex - 10, 2)
 self.instance.resize(eSize(*wsize))
-self["title_sep"].instance.move(ePoint(5, 0))
-self["title_sep"].instance.resize(eSize(*titleSepsize))
-self["text"].instance.move(ePoint(130, 30 + titleheight))
+self["text"].instance.move(ePoint(130, 75 + titleheight))
 self["text"].instance.resize(eSize(*textsize))
-self["ErrorPixmap"].instance.move(ePoint(30, 30 + titleheight))
+self["ErrorPixmap"].instance.move(ePoint(30, 80 + titleheight))
 self["ErrorPixmap"].instance.resize(eSize(80,80))
-self["QuestionPixmap"].instance.move(ePoint(30, 30 + titleheight))
+self["QuestionPixmap"].instance.move(ePoint(30, 80 + titleheight))
 self["QuestionPixmap"].instance.resize(eSize(80,80))
-self["InfoPixmap"].instance.move(ePoint(30, 30 + titleheight))
+self["InfoPixmap"].instance.move(ePoint(30, 80 + titleheight))
 self["InfoPixmap"].instance.resize(eSize(80,80))
 if self.type == self.TYPE_YESNO:
 	listsize = (wsizex-20, lenlist)
-	self["list"].instance.move(ePoint(10, wsizey - lenlist + titleheight - 3))
+	self["list"].instance.move(ePoint(10, wsizey - lenlist + titleheight - 94 - 3))
 	self["list"].instance.resize(eSize(*listsize))
 newwidth = wsize[0]
 self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + (orgheight - wsizey) // 2))
-	</applet>
-  </screen>
-  <!-- MessageBoxSimple -->
-  <screen name="MessageBoxSimple" position="center,center" size="960,15" title="Message" zPosition="10">
-    <widget name="text" position="100,12" size="780,0" font="Regular;32" />
-    <widget name="ErrorPixmap" pixmap="icons/input_error.png" position="10,10" size="80,80" alphatest="blend" />
-    <widget name="QuestionPixmap" pixmap="icons/input_question.png" position="10,10" size="80,80" alphatest="blend" />
-    <widget name="InfoPixmap" pixmap="icons/input_info.png" position="10,10" size="80,80" alphatest="blend" />
-    <widget name="WarningPixmap" pixmap="icons/input_warning.png" position="10,10" size="80,80" alphatest="blend" />
-    <widget name="list" textOffset="20, 2" position="150,150" size="720,570" itemHeight="45" font="Regular;28" />
-    <widget name="autoresize" conditional="autoresize" position="0,0" size="0,0" font="Regular;28" noWrap="1" />
-    <applet type="onLayoutFinish">
-from enigma import eSize, ePoint, gRGB
-from Components.Label import Label
-if self.timerRunning:
-	titleheight = 0
-else:
-	titleheight = 0
-	
-self["title_sep"] = Label("")
-self["title_sep"].GUIcreate(self.instance)
-self["title_sep"].instance.setBackgroundColor(gRGB(0x00555556))
-orgwidth = self.instance.size().width()
-orgheight = self.instance.size().height()
-orgpos = self.instance.position()
-textsize = self["text"].getSize()
-textsize = (textsize[0] + 76, textsize[1] + 30)
-wsizex = textsize[0] + 140
-wsizey = textsize[1]
-lenlist = len(self.list)*45
-if (lenlist &gt; 380):
-	lenlist = 380
-if (96 &gt; wsizey):
-	wsizey = 96
-if self.type == self.TYPE_YESNO:
-	wsizey += lenlist + 25
-else:
-  wsizey += 20
-if (420 &gt; wsizex):
-	wsizex = 420
-listwidth = self.getListWidth() + 20
-if (listwidth &gt; 1280):
-	listwidth = 1280
-if (listwidth &gt; wsizex):
-	wsizex = listwidth
-wsize = (wsizex, wsizey + titleheight)
-titleSepsize = (wsizex - 10, 2)
-self.instance.resize(eSize(*wsize))
-self["title_sep"].instance.move(ePoint(5, 0))
-self["title_sep"].instance.resize(eSize(*titleSepsize))
-self["text"].instance.move(ePoint(130, 30 + titleheight))
-self["text"].instance.resize(eSize(*textsize))
-self["ErrorPixmap"].instance.move(ePoint(30, 30 + titleheight))
-self["ErrorPixmap"].instance.resize(eSize(80,80))
-self["QuestionPixmap"].instance.move(ePoint(30, 30 + titleheight))
-self["QuestionPixmap"].instance.resize(eSize(80,80))
-self["InfoPixmap"].instance.move(ePoint(30, 30 + titleheight))
-self["InfoPixmap"].instance.resize(eSize(80,80))
-if self.type == self.TYPE_YESNO:
-	listsize = (wsizex-20, lenlist)
-	self["list"].instance.move(ePoint(10, wsizey - lenlist + titleheight - 3))
-	self["list"].instance.resize(eSize(*listsize))
-newwidth = wsize[0]
-self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + (orgheight - wsizey) // 2))
+self["title_sep"].instance.move(ePoint(10, 45))
+self["title_sep"].instance.resize(eSize(wsizex - 20, 1))
+self["tlc"] = Pixmap()
+self["tlc"].GUIcreate(self.instance)
+self["tlc"].setPixmap(pxtlc)
+self["tlc"].instance.resize(eSize(24,24))
+self["tlc"].instance.move(ePoint(0,0))
+self["trc"] = Pixmap()
+self["trc"].GUIcreate(self.instance)
+self["trc"].setPixmap(pxtrc)
+self["trc"].instance.resize(eSize(24,24))
+self["trc"].instance.move(ePoint(wsizex-24,0))
+self["blc"] = Pixmap()
+self["blc"].GUIcreate(self.instance)
+self["blc"].setPixmap(pxblc)
+self["blc"].instance.resize(eSize(24,104))
+self["blc"].instance.move(ePoint(0,wsizey-104))
+self["brc"] = Pixmap()
+self["brc"].GUIcreate(self.instance)
+self["brc"].setPixmap(pxbrc)
+self["brc"].instance.resize(eSize(24,104))
+self["brc"].instance.move(ePoint(wsizex-24,wsizey-104))
+self["bcGround"] = Label("")
+self["bcGround"].GUIcreate(self.instance)
+self["bcGround"].instance.setBackgroundColor(gRGB(0x02444444))
+self["bcGround"].instance.resize(eSize(*(wsizex, wsizey - 20)))
+self["bcGround"].instance.move(ePoint(0,0))
+self["bcGround"].setZPosition(-7)
+self["bcGroundOver"] = Label("")
+self["bcGroundOver"].GUIcreate(self.instance)
+self["bcGroundOver"].instance.setBackgroundColor(gRGB(0x02111111))
+self["bcGroundOver"].instance.resize(eSize(*(wsizex-4, wsizey - 20-64)))
+self["bcGroundOver"].instance.move(ePoint(2,2))
+self["bcGroundOver"].setZPosition(-7)
+self["logo"] = Pixmap()
+self["logo"].GUIcreate(self.instance)
+self["logo"].instance.resize(eSize(54,34))
+self["logo"].instance.move(ePoint(wsizex-74,wsizey-70))
+self["logo"].instance.setAlphatest(BT_ALPHABLEND)
+setLogo(self["logo"].instance, "brand", 54, 34)
 	</applet>
   </screen>
   <!-- TimeDateInput -->
@@ -2331,9 +2283,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   </screen>
   <!-- Nim setup -->
   <screen name="NimSetup" title="Reception Settings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <widget name="config" position="387,201" size="1145,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever"/>
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+    <panel name="ConfigScreenTemplate" />
     <widget name="description" position="30,570" size="0,0" itemHeight="38" font="Regular;30" valign="top" />
   </screen>
   <!-- Positioner setup -->
@@ -2496,19 +2446,13 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   <!-- Commit Info -->
   <screen name="CommitInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_1_1" />
-    <ePixmap pixmap="buttons/left.png" position="1640,960" size="34,34" alphatest="blend" zPosition="3" />
-    <ePixmap pixmap="buttons/right.png" position="1690,960" size="34,34" alphatest="blend" zPosition="3" />
+    <ePixmap pixmap="buttons/left.png" position="957,976" size="34,34" alphatest="blend" zPosition="3" />
+    <ePixmap pixmap="buttons/right.png" position="1453,977" size="34,34" alphatest="blend" zPosition="3" />
     <widget name="AboutScrollLabel" font="Regular;26" position="121,138" size="1674,804" zPosition="2" halign="left" />
   </screen>
   <!-- Troubleshoot -->
   <screen name="Troubleshoot" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_1_1" />
-    <ePixmap pixmap="buttons/left.png" position="957,976" size="34,34" alphatest="blend" zPosition="3" />
-    <ePixmap pixmap="buttons/right.png" position="1453,977" size="34,34" alphatest="blend" zPosition="3" />
-    <widget name="AboutScrollLabel" font="Regular;26" position="121,138" size="1674,804" zPosition="2" halign="left" />
-    <panel position="1725,978" size="54,34">
-		<panel name="BrandLogoTemplate" />
-	</panel>
+    <panel name="CommitInfo" />
   </screen>
   <!-- Translation Info -->
   <screen flags="wfNoBorder" name="TranslationInfo" position="fill" backgroundColor="transparent">
@@ -2539,9 +2483,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   </screen>
   <!-- AC3LipSyncSetup -->
   <screen name="AC3LipSyncSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="Screen_Menu1" />
-  <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"/>
-  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+  <panel name="ConfigScreenTemplate" />
   <widget name="PluginInfo" position="30,570" size="0,0" zPosition="4" font="Regular;27" foregroundColor="uncccccc" />
 </screen>
   <!-- AC3LipSync -->
@@ -2639,9 +2581,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   </screen>
   <!-- Parental Control -->
   <screen name="ParentalControlSetup" position="fill" title="Parental control setup" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+    <panel name="ConfigScreenTemplate" />
   </screen>
   <screen name="ParentalControlEditor" position="fill" title="Parental control services Editor" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
@@ -2722,15 +2662,11 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + 
   </screen>
   <!-- OSD3D Setup -->
   <screen name="OSD3DSetupScreen" position="fill" title="Select Location" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" />
-    <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+    <panel name="ConfigScreenTemplate" />
   </screen>
   <!-- EcmInfo -->
   <screen name="EcmInfoConfigMenu" position="fill" title="Select Location" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="Screen_Menu1" />
-  <widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-  <widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+  <panel name="ConfigScreenTemplate" />
 </screen>
   <!-- Standby -->
   <screen name="Standby" position="fill" flags="wfNoBorder">

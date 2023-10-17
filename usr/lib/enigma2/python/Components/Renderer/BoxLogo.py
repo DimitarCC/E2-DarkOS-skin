@@ -11,6 +11,36 @@ except:
 	model = HardwareInfo().get_device_model()
 
 
+def getLogoPngName(logoType):
+		logoname = ""
+		if logoType == "model":
+			return model or ""
+		elif logoType == "brand":
+			if model and model in ("vuzero4k", "vusolo4k", "vuuno4kse", "vuduo4k", "vuduo4kse", "vuultimo4k"):
+				logoname = "vulogo"
+		return logoname
+
+def getDefaultLogo(logoType, width, height):
+		if logoType == "model":
+			defaultPngName = resolveFilename(SCOPE_GUISKIN, "icons/logos/deflogo.svg")
+		else:
+			defaultPngName = resolveFilename(SCOPE_GUISKIN, "icons/logos/deflogo-small.svg")
+
+		is_svg = defaultPngName.endswith(".svg")
+		return LoadPixmap(defaultPngName, width=width, height=0 if is_svg else height)
+
+def setLogo(px, logoType, width, height):
+	pngname = resolveFilename(SCOPE_GUISKIN, "icons/logos/" + getLogoPngName(logoType) + ".svg")
+	is_svg = pngname.endswith(".svg")
+	png = LoadPixmap(pngname, width=width, height=0 if is_svg else height)
+	if png != None:
+		px.setPixmap(png)
+	else:
+		defaultLogo = getDefaultLogo(logoType, width, height)
+		if defaultLogo != None:
+			px.setPixmap(defaultLogo)
+
+
 class BoxLogo(Renderer):
 	def __init__(self):
 		Renderer.__init__(self)
@@ -33,31 +63,5 @@ class BoxLogo(Renderer):
 				
 	def onShow(self):
 		if self.instance:
-			pngname = resolveFilename(SCOPE_GUISKIN, "icons/logos/" + self.getLogoPngName() + ".svg")
-			is_svg = pngname.endswith(".svg")
-			png = LoadPixmap(pngname, width=self.instance.size().width(), height=0 if is_svg else self.instance.size().height())
-			if png != None:
-				self.instance.setPixmap(png)
-			else:
-				defaultLogo = self.getDefaultLogo()
-				if defaultLogo != None:
-					self.instance.setPixmap(defaultLogo)
-
-	def getDefaultLogo(self):
-		if self.logoType == "model":
-			defaultPngName = resolveFilename(SCOPE_GUISKIN, "icons/logos/deflogo.svg")
-		else:
-			defaultPngName = resolveFilename(SCOPE_GUISKIN, "icons/logos/deflogo-small.svg")
-
-		is_svg = defaultPngName.endswith(".svg")
-		return LoadPixmap(defaultPngName, width=self.instance.size().width(), height=0 if is_svg else self.instance.size().height())
-	
-	def getLogoPngName(self):
-		logoname = ""
-		if self.logoType == "model":
-			return model
-		elif self.logoType == "brand":
-			if model in ("vuzero4k", "vusolo4k", "vuuno4kse", "vuduo4k", "vuduo4kse", "vuultimo4k"):
-				logoname = "vulogo"
-		return logoname
+			setLogo(self.instance, self.logoType, self.instance.size().width(), self.instance.size().height())
 	
