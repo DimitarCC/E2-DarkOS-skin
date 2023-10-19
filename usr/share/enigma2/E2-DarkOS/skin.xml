@@ -1175,7 +1175,7 @@ self.autoResize()
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
     <widget render="Label" source="Service" backgroundColor="background" font="Regular; 28" position="870,100" size="610,38" transparent="1" halign="right" valign="center" >
-		<convert type="MovieInfo">•,TIMECREATED,DURATION,FILESIZE</convert>
+		<convert type="MovieInfo">  •  ,TIMECREATED,DURATION,FILESIZE</convert>
 	</widget>
     <eLabel position="1510,100" size="1,225" backgroundColor="separator" zPosition="-5" />
     <widget source="Service" render="Label" position="30,85" size="900,70" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
