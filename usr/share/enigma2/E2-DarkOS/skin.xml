@@ -121,6 +121,7 @@
     <parameter name="ChoicelistButtonIcon" value="15,10,45,30" />
 	<parameter name="ChoicelistUseGraphicalSeparator" value="1" />
     <parameter name="ChoicelistSeparatorColor" value="0x00555556" />
+	  <parameter name="HelpMenuListHlp" value="15,2,800,31" />
     <parameter name="ExpandableListIcon" value="0,0,55,38" />
     <parameter name="ExpandableListDescr" value="55,2,1000,45" />
     <parameter name="VirtualKeyBoard" value="69,68" />
@@ -393,7 +394,7 @@
       <convert type="ServiceName">Reference</convert>
     </widget>
     <widget backgroundColor="background5" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="122,964" valign="center" render="Label" size="950,60" source="session.CurrentService" zPosition="110">
-      <convert type="ServiceName">  •  ,NUMBER,NAME,ORBPOS,PROVIDER</convert>
+      <convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
     </widget>
     <widget position="1331,982" render="Pixmap" size="61,26" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
       <convert type="ConditionalShowHide">Blink</convert>
@@ -754,7 +755,7 @@
     <eLabel position="1890,405" size="1,576" backgroundColor="separator" zPosition="10" />
     <widget name="list" position="25,405" size="1867,576" itemHeight="72" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" backgroundColor="background" transparent="1" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" EntryBackgroundColorSelected="background3" EntryForegroundColorSelected="foreground" ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="#00323c4d" ServiceNameBackgroundColorSelected="#00fcc000" ServiceBorderVerWidth="3" EventBorderVerWidth="3" RecIconSize="32" IconXPadding="6" IconYPadding="4" EntryBorderColor="separator" EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryFont="Regular;28" ServiceFont="Regular;28" />
     <widget source="Event" render="Label" backgroundColor="background" font="Regular; 28" position="850,95" size="610,50" transparent="1" halign="right" valign="center" >
-		<convert type="EventName">•,FORMAT_STRING</convert>
+		<convert type="EventName">•,FORMAT</convert>
 	</widget>
     <eLabel position="1510,102" size="1,225" backgroundColor="separator" zPosition="-5" />
     <widget source="Event" render="Label" position="30,95" size="900,50" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
@@ -924,15 +925,89 @@
 	<widget name="info" position="518,383" size="885,473" font="Fixed;27" />
   </screen>
   <!-- ChoiceBox -->
-  <screen name="ChoiceBox" position="0,0" size="1920,1080" title="Choice Box" flags="wfNoBorder" backgroundColor="transparent">
-	<panel name="Screen_menu2" />
-    <widget name="text" position="525,220" size="880,80" font="Bold; 30" foregroundColor="potem" backgroundColor="background" valign="center" />
-    <widget name="list" position="515,330" size="889,498" itemHeight="45" backgroundColor="background" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" transparent="1" />
-	<widget addon="Pager" connection="list" position="516,838" size="887,25" transparent="1" backgroundColor="background" />
-	<!-- applet type="onLayoutFinish">
-self.autoResize()
-	</applet -->
-    <!-- <widget name="description" position="30,613" size="720,256" zPosition="1" font="Regular;28"/> -->
+  <screen name="ChoiceBox" position="0,0" size="1920,15" title="Choice Box" flags="wfNoBorder" backgroundColor="transparent">
+	<widget source="Title" render="Label" position="15,3" size="250,40" font="Bold; 28" halign="left" foregroundColor="yellow" backgroundColor="transparent" valign="center" zPosition="2" transparent="1" />
+    <widget name="text" position="-e,-e" size="880,30" font="Bold; 30" foregroundColor="potem" backgroundColor="background" valign="center" />
+    <widget name="list" position="515,330" size="889,498" itemHeight="45" backgroundColor="background" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" transparent="1" zPosition="2" />
+	<applet type="onLayoutFinish">
+from enigma import ePoint, eSize, getDesktop, gRGB, BT_ALPHABLEND
+from Components.Label import Label
+from Components.Pixmap import Pixmap
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
+from Tools.LoadPixmap import LoadPixmap
+from Components.Renderer.BoxLogo import setLogo
+
+pxtlc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tl.png"))
+pxtrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tr.png"))
+pxblc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_bl.png"))
+pxbrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_br.png"))
+
+self["title_sep"] = Label("")
+self["title_sep"].GUIcreate(self.instance)
+self["title_sep"].instance.setBackgroundColor(gRGB(0x00555556))
+
+textsize = self["text"].getSize()
+textHeight = textsize[1]
+textpos = self["text"].instance.position()
+if textpos.x() &lt; 0 and textpos.y() &lt; 0: 
+	textHeight = 0
+count = len(self.list)
+count, scrollbar = (10, self["list"].instance.getScrollbarWidth() + 5) if count > 10 else (count, 0)
+offset = self["list"].l.getItemSize().height() * count
+wsizex = max(self["list"].instance.getMaxItemTextWidth(), textsize[0]) + 10 + 30
+descriptionHeight = 0
+wsizey = textHeight + offset + descriptionHeight + 50 + 104
+# move and resize screen
+self["list"].move(5, textHeight + 60)
+self.instance.resize(eSize(*(wsizex, wsizey)))
+# resize list
+self["list"].resize(wsizex - 10, offset)
+# center window
+width, height = getDesktop(0).size().width(), getDesktop(0).size().height()
+wintlcpos = ePoint((width - wsizex) // 2, (height - wsizey) // 2)
+self.instance.move(wintlcpos)
+self["title_sep"].instance.move(ePoint(10, 45))
+self["title_sep"].instance.resize(eSize(wsizex - 20, 1))
+self["tlc"] = Pixmap()
+self["tlc"].GUIcreate(self.instance)
+self["tlc"].setPixmap(pxtlc)
+self["tlc"].instance.resize(eSize(24,24))
+self["tlc"].instance.move(ePoint(0,0))
+self["trc"] = Pixmap()
+self["trc"].GUIcreate(self.instance)
+self["trc"].setPixmap(pxtrc)
+self["trc"].instance.resize(eSize(24,24))
+self["trc"].instance.move(ePoint(wsizex-24,0))
+self["blc"] = Pixmap()
+self["blc"].GUIcreate(self.instance)
+self["blc"].setPixmap(pxblc)
+self["blc"].instance.resize(eSize(24,104))
+self["blc"].instance.move(ePoint(0,wsizey-104))
+self["brc"] = Pixmap()
+self["brc"].GUIcreate(self.instance)
+self["brc"].setPixmap(pxbrc)
+self["brc"].instance.resize(eSize(24,104))
+self["brc"].instance.move(ePoint(wsizex-24,wsizey-104))
+self["bcGround"] = Label("")
+self["bcGround"].GUIcreate(self.instance)
+self["bcGround"].instance.setBackgroundColor(gRGB(0x02444444))
+self["bcGround"].instance.resize(eSize(*(wsizex, wsizey - 20)))
+self["bcGround"].instance.move(ePoint(0,0))
+self["bcGround"].setZPosition(-7)
+self["bcGroundOver"] = Label("")
+self["bcGroundOver"].GUIcreate(self.instance)
+self["bcGroundOver"].instance.setBackgroundColor(gRGB(0x02111111))
+self["bcGroundOver"].instance.resize(eSize(*(wsizex-4, wsizey - 20-64)))
+self["bcGroundOver"].instance.move(ePoint(2,2))
+self["bcGroundOver"].setZPosition(-7)
+self["logo"] = Pixmap()
+self["logo"].GUIcreate(self.instance)
+self["logo"].instance.resize(eSize(54,34))
+self["logo"].instance.move(ePoint(wsizex-74,wsizey-70))
+self["logo"].instance.setAlphatest(BT_ALPHABLEND)
+setLogo(self["logo"].instance, "brand", 54, 34)
+	</applet>
+    <widget name="description" position="-e,-e" size="720,256" zPosition="1" font="Regular;28"/>
   </screen>
   <!-- Extensions menu -->
   <screen name="ExtensionsList" title="" position="fill" flags="wfNoBorder" backgroundColor="transparent" size="1931,1080">
@@ -1175,7 +1250,7 @@ self.autoResize()
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
     <widget render="Label" source="Service" backgroundColor="background" font="Regular; 28" position="870,100" size="610,38" transparent="1" halign="right" valign="center" >
-		<convert type="MovieInfo">  •  ,TIMECREATED,DURATION,FILESIZE</convert>
+		<convert type="MovieInfo">•,TIMECREATED,DURATION,FILESIZE</convert>
 	</widget>
     <eLabel position="1510,100" size="1,225" backgroundColor="separator" zPosition="-5" />
     <widget source="Service" render="Label" position="30,85" size="900,70" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
@@ -1950,7 +2025,7 @@ self.autoResize()
   <!-- Help -->
   <screen name="HelpMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_1_1" />
-    <widget name="list" conditional="arrowdown" position="125,150" size="1400,20*38" itemHeight="38" font="Regular;28" scrollbarMode="showNever"/><!-- belongs to old HelpMenu -->
+    <widget name="list" conditional="arrowdown" position="125,150" size="1200,20*38" itemHeight="38" font="Regular;28" scrollbarMode="showNever"/><!-- belongs to old HelpMenu -->
 		<widget name="long_key" conditional="long_key" position="1430,800" size="375,30" foregroundColor="yellow" font="Regular;24" halign="center"/><!-- belongs to old HelpMenu -->
 		<widget name="longshift_key0" conditional="longshift_key1" position="1430,800" size="375,30" foregroundColor="yellow" font="Regular;24" halign="center"/>
 		<widget name="longshift_key1" conditional="longshift_key1" position="1430,830" size="375,30" foregroundColor="yellow" font="Regular;24" halign="center"/>
@@ -1966,7 +2041,7 @@ self.autoResize()
 				    "default": [
 				      57,  # itemHeight
 				      [
-					MultiContentEntryText(pos=(0, 0), size=(1100, 57), font=1, text=1),
+					MultiContentEntryText(pos=(0, 6), size=(1100, 57), font=1, text=1),
 				      ]
 				    ],
 				    # Simple help with headings
@@ -1975,8 +2050,8 @@ self.autoResize()
 				    "default+headings": [  # data[1:] = [helpText]
 				      57,  # itemHeight
 				      [
-					MultiContentEntryText(pos=(0, 0), size=(1100, 57), font=0, text=1),
-					MultiContentEntryText(pos=(30, 0), size=(1070, 57), font=1, text=2),
+					MultiContentEntryText(pos=(0, 6), size=(1100, 57), font=0, text=1),
+					MultiContentEntryText(pos=(30, 6), size=(1070, 57), font=1, text=2),
 				      ]
 				    ],
 				    # Extended help with no headings
@@ -2108,7 +2183,7 @@ self.autoResize()
   <!-- MessageBoxSimple -->
   <screen name="MessageBoxSimple" position="center,center" size="960,15" title="Message" zPosition="10" flags="wfNoBorder" backgroundColor="transparent">
 	<widget source="Title" render="Label" position="15,3" size="250,40" font="Bold; 28" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" zPosition="2" />
-    <widget name="text" position="100,12" size="780,0" font="Regular;32" transparent="1" backgroundColor="transparent"/>
+    <widget name="text" position="100,12" size="780,0" font="Regular;32" backgroundColor="background"/>
     <widget name="ErrorPixmap" pixmap="icons/input_error.png" position="10,10" size="80,80" alphatest="blend" />
     <widget name="QuestionPixmap" pixmap="icons/input_question.png" position="10,10" size="80,80" alphatest="blend" />
     <widget name="InfoPixmap" pixmap="icons/input_info.png" position="10,10" size="80,80" alphatest="blend" />
@@ -2141,18 +2216,20 @@ orgwidth = self.instance.size().width()
 orgheight = self.instance.size().height()
 orgpos = self.instance.position()
 textsize = self["text"].getSize()
-textsize = (textsize[0] + 76, textsize[1] + 50)
+textsize = (textsize[0] + 76, textsize[1])
 wsizex = textsize[0] + 140
-wsizey = textsize[1] + 110
+if (75 + textsize[1]) &gt; 180:
+	wsizey = textsize[1] + 80 + 84
+else:
+	wsizey = 180 + 96
 lenlist = len(self.list)*45
 if (lenlist &gt; 380):
 	lenlist = 380
-if (96 &gt; wsizey):
-	wsizey = 96
-if self.type == self.TYPE_YESNO:
-	wsizey += lenlist + 25
-else:
-  wsizey += 20
+if (180 &gt; wsizey):
+	wsizey = 180
+
+wsizey += lenlist + 25
+
 if (420 &gt; wsizex):
 	wsizex = 420
 listwidth = self.getListWidth() + 20
@@ -2166,6 +2243,8 @@ self["text"].instance.move(ePoint(130, 75 + titleheight))
 self["text"].instance.resize(eSize(*textsize))
 self["ErrorPixmap"].instance.move(ePoint(30, 80 + titleheight))
 self["ErrorPixmap"].instance.resize(eSize(80,80))
+self["WarningPixmap"].instance.move(ePoint(30, 80 + titleheight))
+self["WarningPixmap"].instance.resize(eSize(80,80))
 self["QuestionPixmap"].instance.move(ePoint(30, 80 + titleheight))
 self["QuestionPixmap"].instance.resize(eSize(80,80))
 self["InfoPixmap"].instance.move(ePoint(30, 80 + titleheight))
