@@ -2446,22 +2446,22 @@ setLogo(self["logo"].instance, "brand", 54, 34)
     <widget name="introduction" position="0,0" size="0,0" zPosition="0" />
 	
 	<!-- ORB TSID ONID for openvix -->
-    <widget source="pos" conditional="pos" render="FixedLabel" text="Orb Pos:" position="450,340" size="180,45" font="Regular;40" halign="right">
+    <widget source="pos" conditional="pos" render="FixedLabel" text="Orb Pos:" position="450,940" size="180,45" font="Regular;40" halign="right">
       <convert type="ConditionalShowHide"/>
     </widget>
-    <widget source="pos" conditional="pos" render="Label" position="640,340" size="150,45" backgroundColor="darkgrey" font="Regular;40" foregroundColor="selectedFG" halign="center">
+    <widget source="pos" conditional="pos" render="Label" position="640,940" size="150,45" backgroundColor="darkgrey" font="Regular;40" foregroundColor="selectedFG" halign="center">
       <convert type="ConditionalShowHide"/>
     </widget>
-    <widget source="onid" conditional="onid" render="FixedLabel" text="ONID:" position="880,340" size="180,45" font="Regular;40" halign="right">
+    <widget source="onid" conditional="onid" render="FixedLabel" text="ONID:" position="880,940" size="180,45" font="Regular;40" halign="right">
       <convert type="ConditionalShowHide"/>
     </widget>
-    <widget source="onid" conditional="onid" render="Label" position="1065,340" size="150,45" backgroundColor="darkgrey" font="Regular;40" foregroundColor="selectedFG" halign="center">
+    <widget source="onid" conditional="onid" render="Label" position="1065,940" size="150,45" backgroundColor="darkgrey" font="Regular;40" foregroundColor="selectedFG" halign="center">
       <convert type="ConditionalShowHide"/>
     </widget>
-    <widget source="tsid" conditional="tsid" render="FixedLabel" text="TSID:" position="1315,340" size="180,45" font="Regular;40" halign="right">
+    <widget source="tsid" conditional="tsid" render="FixedLabel" text="TSID:" position="1315,940" size="180,45" font="Regular;40" halign="right">
       <convert type="ConditionalShowHide"/>
     </widget>
-    <widget source="tsid" conditional="tsid" render="Label" position="1520,340" size="150,45" backgroundColor="darkgrey" font="Regular;40" foregroundColor="selectedFG" halign="center">
+    <widget source="tsid" conditional="tsid" render="Label" position="1520,940" size="150,45" backgroundColor="darkgrey" font="Regular;40" foregroundColor="selectedFG" halign="center">
       <convert type="ConditionalShowHide"/>
     </widget>
   </screen>
