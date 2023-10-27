@@ -121,7 +121,7 @@
     <parameter name="ChoicelistButtonIcon" value="15,10,45,30" />
 	<parameter name="ChoicelistUseGraphicalSeparator" value="1" />
     <parameter name="ChoicelistSeparatorColor" value="0x00555556" />
-	  <parameter name="HelpMenuListHlp" value="15,2,800,31" />
+	<parameter name="HelpMenuListHlp" value="15,2,800,31" />
     <parameter name="ExpandableListIcon" value="0,0,55,38" />
     <parameter name="ExpandableListDescr" value="55,2,1000,45" />
     <parameter name="VirtualKeyBoard" value="69,68" />
@@ -324,7 +324,7 @@
   </screen>
   <screen name="ClockScreen" position="center,30" size="235,55" zPosition="-1" backgroundColor="transparent" title="Clock" flags="wfNoBorder">
     <widget render="Label" position="1,1" size="180,55" backgroundColor="transparent" transparent="1" zPosition="0" foregroundColor="orange" font="Bold;50" valign="center" halign="right" borderWidth="2" borderColor="black" source="global.CurrentTime">
-      <convert type="ClockToText">%H:%M</convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
     </widget>
   </screen>
   <!-- InfoBars -->
@@ -543,12 +543,12 @@
   <screen name="ChannelSelection" title="Channel Selection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Window_Full_Pig" />
     <eLabel position="1200,105" size="1,870" backgroundColor="separator" zPosition="-5" />
-    <widget name="list" transparent="1" position="25,112" size="1145,862" enableWrapAround="1" colorServiceDescription="light_yellow" colorServiceDescriptionSelected="light_yellow" colorEventProgressbarBorder="blue" colorEventProgressbarBorderSelected="blue" colorEventProgressbar="blue" colorEventProgressbarSelected="yellow" picServiceEventProgressbar="window/progress.png" forgroundColorEventProgressbarBorder="background" foregroundColorServiceNotAvail="#777777" backgroundColor="transparent" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background3" backgroundColorMarkedSelected="background3" scrollbarWidth="3" /><widget name="list" transparent="1" position="25,112" size="1145,862" enableWrapAround="1" colorServiceDescription="light_yellow" colorServiceDescriptionSelected="light_yellow" 
+	<widget name="list" position="25,112" size="1145,895" enableWrapAround="1" colorServiceDescription="light_yellow" colorServiceDescriptionSelected="light_yellow" 
 					colorEventProgressbarBorder="blue" colorEventProgressbarBorderSelected="blue" colorEventProgressbar="blue" colorEventProgressbarSelected="yellow" 
 					picServiceEventProgressbar="window/progress.png" forgroundColorEventProgressbarBorder="background" foregroundColorServiceNotAvail="#777777" 
-					backgroundColor="transparent" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" 
+					backgroundColor="background" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" 
 					scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background3" backgroundColorMarkedSelected="background3" 
-					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="45" serviceItemHeight="45" fieldMargins="15" nonplayableMargins="15"/>
+					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="43" serviceItemHeight="43" fieldMargins="0" nonplayableMargins="0"/>
 
     <widget render="Label" source="ServiceEvent" backgroundColor="background2" halign="left" font="Regular; 30" position="1235,455" size="645,343" transparent="1">
       <convert type="EventName">FullDescription</convert>
@@ -1438,15 +1438,16 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   </screen>
   <screen name="TimerEditList" position="fill" title="Timer Overview" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
-    <panel name="keyInfo_Menu1" />
-    <widget name="timerlist" position="396,210" size="1130,5*90" scrollbarMode="showNever" itemHeight="90" iconMargin="20" rowSplit="42" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" />
+    <widget name="timerlist" position="396,210" size="1130,5*90" scrollbarMode="showNever" itemHeight="90" iconMargin="30" rowSplit="42" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" sidesMargin="20" />
     <widget addon="Pager" connection="timerlist" position="396,665" size="1130,25" transparent="1" backgroundColor="background" />
     <widget name="description" position="395,705" size="1130,150" backgroundColor="background" font="Regular;30" halign="center" />
   </screen>
   <screen name="TimerLog" position="fill" title="Timer log" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
-  <widget name="loglist" position="391,210" size="1130,635" itemHeight="38" scrollbarMode="showOnDemand" font="Regular;32" />
-  <widget name="logentry" position="398,855" size="1130,35" font="Regular;32" halign="center" />
+  <widget name="loglist" position="391,210" size="1130,535" itemHeight="38" scrollbarMode="showNever" font="Regular;32" textOffset="20,0" />
+  <eLabel position="391,760" size="1130,2" backgroundColor="separator" zPosition="-5" />
+  <widget name="logentry" position="420,790" size="1090,35" font="Regular;32" halign="center" />
+  <widget addon="Pager" connection="loglist" position="396,850" size="1130,25" transparent="1" backgroundColor="background" />
 </screen>
   <screen name="TimerSanityConflict" position="fill" title="Timer sanity error" flags="wfNoBorder">
     <panel name="PigTemplate" />
@@ -1474,7 +1475,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   </screen>
   <screen name="PluginDownloadBrowser" title="Downloadable plugins" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 	<panel name="PluginBrowser" />
-	<widget name="text" position="399,190" size="1110,75" zPosition="-1" transparent="1" font="Regular;32" valign="center" halign="center" />
+	<widget name="text" position="399,225" size="1110,75" zPosition="-1" transparent="1" font="Regular;32" valign="center" halign="center" />
   </screen>
   <screen name="FileBrowser" title="DVD File Browser" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
@@ -2350,7 +2351,6 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		</convert>
     </widget>
     <widget addon="Pager" connection="nimlist" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
-    <panel name="keyInfo_Menu1" />
   </screen>
   <!-- AutoDiseqC -->
   <screen name="AutoDiseqc" title="Auto DiseqC" position="fill" flags="wfNoBorder">

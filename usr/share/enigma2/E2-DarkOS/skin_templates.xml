@@ -5,8 +5,8 @@
 		<ePixmap pixmap="infobar_bg.png" position="38,862" size="1839,184" alphatest="blend" zPosition="-11"/>
 		<ePixmap pixmap="infobar_overlay.png" position="370,864" size="1505,180" alphatest="blend" zPosition="-11"/>
 		<eLabel position="380,915" size="1485,2" zPosition="-9" backgroundColor="dark_grey" />
-		<widget name="stateicon" position="160,915" size="90,90" alphatest="blend" zPosition="10"/>
-		<widget name="statetext"  foregroundColor="white" halign="left" position="260,960" size="90,45" font="Bold; 40" transparent="1"/>
+		<widget name="statusicon" position="160,915" zPosition="3" size="90,90" alphatest="blend" pixmaps="icons/pvr/play.svg,icons/pvr/pause.svg,icons/pvr/stop.svg,icons/pvr/ff.svg,icons/pvr/rew.svg,icons/pvr/slow.svg"/>
+		<widget name="speed"  foregroundColor="white" halign="left" position="260,960" size="90,45" font="Bold; 40" transparent="1"/>
 		<widget source="session.CurrentService" render="Label" position="400,935" size="1120,50" font="Regular; 44" valign="center" noWrap="1" backgroundColor="background" transparent="1">
 		  <convert type="ServiceName">Name</convert>
 		</widget>
@@ -179,18 +179,9 @@
 	</screen>
 	
 	<screen name="ConfigButtonsTemplate">
-		<widget source="key_help" conditional="key_help" render="Pixmap" pixmap="buttons/key_help.png" alphatest="blend" position="e-370+124,e-65" size="36,26" zPosition="10">
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="key_pvr" conditional="key_pvr" render="Pixmap" pixmap="buttons/key_pvr.png" alphatest="blend" position="e-370+186,e-65" size="36,26" zPosition="10">
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="key_menu" conditional="key_menu" render="Pixmap" pixmap="buttons/key_menu.png" alphatest="blend" position="e-370+186,e-65" size="36,26" zPosition="10">
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="VKeyIcon" conditional="VKeyIcon" render="Pixmap" pixmap="buttons/key_text.png" alphatest="blend" position="e-370+186,e-65" size="36,26" zPosition="10">
-			<convert type="ConditionalShowHide"/>
-		</widget>
+		<widget addon="ButtonSequence" connection="key_info,key_help,key_pvr,key_menu,VKeyIcon" 
+			pixmaps="key_info:buttons/key_epg.png,key_help:buttons/key_help.png,key_pvr:buttons/key_pvr.png,key_menu:buttons/key_menu.png,VKeyIcon:buttons/key_text.png" 
+			position="e-220-126,e-65" size="220,36" transparent="1" backgroundColor="transparent" alignment="right" zPosition="10"/>
 	</screen>
 	
 	<screen name="FrameTemplate">
@@ -212,7 +203,7 @@
 	<screen name="MenuTemplate">
 		<panel name="FrameTemplate"/>
 
-		<widget source="title" render="Label" position="85,864" size="510,62" font="Regular; 34" halign="right" valign="center" backgroundColor="black" transparent="1" />
+		<widget source="title" render="Label" position="72,864" size="544,62" font="Regular; 34" halign="right" valign="center" backgroundColor="black" transparent="1" />
 		<widget source="menu" render="Listbox" position="72,297" size="564,540" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
 			<convert type="TemplatedMultiContent">
 						{"template": [ MultiContentEntryText(pos = (97,5),size = (435,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0),
