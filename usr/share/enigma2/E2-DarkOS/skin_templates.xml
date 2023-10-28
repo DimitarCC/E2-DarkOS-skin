@@ -181,7 +181,7 @@
 	<screen name="ConfigButtonsTemplate">
 		<widget addon="ButtonSequence" connection="key_info,key_help,key_pvr,key_menu,key_text,VKeyIcon" 
 			pixmaps="key_info:buttons/key_epg.png,key_help:buttons/key_help.png,key_pvr:buttons/key_pvr.png,key_menu:buttons/key_menu.png,key_text:buttons/key_text.png,VKeyIcon:buttons/key_text.png" 
-			position="e-220-126,e-65" size="220,36" transparent="1" backgroundColor="transparent" alignment="right" zPosition="10"/>
+			position="0,0" size="220,36" transparent="1" backgroundColor="transparent" alignment="right" zPosition="10"/>
 	</screen>
 	
 	<screen name="FrameTemplate">
@@ -550,6 +550,9 @@
 			</widget>
 			<widget source="Title" render="Label" position="15,2" size="e-260,60" font="Bold; 30" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" />
 		</panel>
+		<panel position="e-220-190,e-100" size="220,36">
+		  <panel name="ConfigButtonsTemplate"/>
+		</panel>
 		
 		<eLabel position="104,120" size="1712,2" zPosition="-5" backgroundColor="dark_grey" />
 
@@ -565,7 +568,9 @@
 			  <convert type="ClockToText">Default</convert>
 			</widget>
 			<widget source="Title" render="Label" position="15,2" size="e-260,60" font="Bold; 30" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" />
-			<panel name="ConfigButtonsTemplate"/>
+			<panel position="e-220-126,e-65" size="220,36">
+			  <panel name="ConfigButtonsTemplate"/>
+			</panel>
 		</panel>
 	</screen>
 	
