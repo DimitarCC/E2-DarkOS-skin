@@ -2753,4 +2753,18 @@ setLogo(self["logo"].instance, "brand", 54, 34)
       <convert type="ClientsStreaming">INFO_RESOLVE_SHORT</convert>
     </widget>
   </screen>
+  	<!-- Ipkg installer -->
+	<screen name="IpkgInstaller" position="fill" backgroundColor="transparent" flags="wfNoBorder">
+		<panel name="ConfigScreenTemplate"/>
+		<widget source="introduction" conditional="introduction" render="Label" position="145,865" size="1630,35" backgroundColor="background" zPosition="10" transparent="1" foregroundColor="yellow" font="Regular;28" halign="center"/>
+		<widget source="lab1" conditional="lab1" render="Label" position="145,865" size="1630,35" backgroundColor="background" zPosition="10" transparent="1" foregroundColor="yellow" font="Regular;28" halign="center"/>
+	</screen>
+	<screen name="LocationBox" position="fill" backgroundColor="transparent" flags="wfNoBorder">
+		<panel name="Screen_1_1"/>
+		<widget name="text" position="125,150" size="1670,37" font="Regular;33"/>
+		<widget name="target" position="125,195" size="1670,37" valign="center" font="Regular;33"/>
+		<widget name="filelist" position="125,190" size="1670,310" zPosition="1" scrollbarMode="showOnDemand" selectionDisabled="1"/>
+		<widget name="textbook" position="125,562" size="1670,37" font="Regular;33"/>
+		<widget name="booklist" position="132,607" itemHeight="38" font="Regular;28" size="1656,38*8" zPosition="2" scrollbarMode="showOnDemand"/>
+	</screen>
 </skin>

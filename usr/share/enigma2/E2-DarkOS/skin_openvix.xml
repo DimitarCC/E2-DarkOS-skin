@@ -57,7 +57,7 @@
     <widget name="footnote" position="396,853" size="1130,32" font="Regular;28" valign="center" foregroundColor="grey"/>
   </screen>
 
-  <screen name="LogManager"  position="fill" flags="wfNoBorder" backgroundColor="transparent">
+  <screen name="LogManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
 		<widget name="list" position="396,210" size="1130,16*38" transparent="0" enableWrapAround="1" scrollbarMode="showNever" font="Regular;30"/>
 		<applet type="onLayoutFinish">
@@ -73,5 +73,207 @@ self["list"].instance.setItemHeight(38)
 	<screen name="LogManagerFb" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="LogManagerViewLog"/>
 	</screen>
+	
+	<screen name="VixListTemplate">
+		<panel name="Screen_1_1"/>
+		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever"/>
+		<widget name="lab1" conditional="lab1" position="145,755" size="1630,100" zPosition="1" font="Regular;28" halign="center" valign="center" foregroundColor="orange" transparent="1"/>
+		<widget name="backupstatus" conditional="backupstatus" position="145,865" size="1630,40" font="Regular;28" zPosition="5" foregroundColor="orange" valign="center" halign="center"/>
+		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
+	</screen>
 
+	<!--Vix Menu -->
+	<screen name="VIXMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<!-- This is the menu list -->
+		<widget source="menu" render="Listbox" position="125,150" size="1670,600" zPosition="3" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+			{"template": [
+					MultiContentEntryText(pos = (75,15),size = (1670,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 1),# index 0 is the MenuText,
+				],
+			"fonts": [gFont("Regular",36)],
+			"itemHeight": 75
+			}
+			</convert>
+		</widget>
+		<!-- This is the description of menu list item -->
+		<widget source="menu" render="Listbox" position="125,800" size="1670,120" backgroundColor="darkgrey" zPosition="3" selectionDisabled="1" transparent="1" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">
+			{"template": [
+					MultiContentEntryText(pos = (20,0),size = (1630,120),flags = RT_HALIGN_CENTER|RT_VALIGN_TOP|RT_WRAP,text = 2),# index 0 is the MenuText,
+				],
+			"fonts": [gFont("Regular",30)],
+			"itemHeight": 120
+			}
+			</convert>
+		</widget>
+	</screen>
+
+	<!-- VIXBackupManager -->
+	<screen name="VIXBackupManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="VixListTemplate"/>
+	</screen>
+
+	<!-- VIXBackupManager -->
+	<screen name="VIXBackupManagerLogView" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="VixListTemplate"/>
+	</screen>
+
+	<!-- VIXImageManager -->
+	<screen name="VIXImageManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="VixListTemplate"/>
+	</screen>
+
+	<!-- VIXImageManagerDownload -->
+	<screen name="ImageManagerDownload" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="VixListTemplate"/>
+	</screen>
+
+	<!--PLI call this screen IpkgInstaller -->
+	<screen name="VIXIPKInstaller" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="IpkgInstaller"/>
+	</screen>
+
+	<!-- VIX Script runner -->
+	<screen name="VIXScriptRunner" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="IpkgInstaller"/>
+ 	</screen>
+
+ 	<!-- VIXSwapManager -->
+	<screen name="VIXSwap" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="autostart_off" position="396,210" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+		<widget name="autostart_on" position="396,210" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+		<widget name="lab1" position="475,210" size="950,75" font="Regular;30"/>
+		<widget name="lab2" position="396,350" size="225,45" font="Regular;30" valign="center"/>
+		<widget name="labplace" position="620,349" size="330,45" font="Regular;30" valign="center"/>
+		<widget name="lab3" position="396,394" size="225,45" font="Regular;30" valign="center"/>
+		<widget name="labsize" position="620,394" size="330,45" font="Regular;30" valign="center"/>
+		<widget name="lab4" position="396,439" size="225,45" font="Regular;30" valign="center"/>
+		<widget name="inactive" position="620,439" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="red"/>
+		<widget name="active" position="620,439" size="150,45" font="Regular;30" valign="center" zPosition="1" halign="center" backgroundColor="green"/>
+	</screen>
+
+	<!-- VixMountManager -->
+	<screen name="VIXDevicesPanel"  position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget source="list" render="Listbox" position="396,210" size="1130,672" transparent="1" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (135,7),size = (975,39),font=0,flags = RT_HALIGN_LEFT,text = 0),# index 0 is the name
+						MultiContentEntryText(pos = (135,49),size = (975,57),font=1,flags = RT_HALIGN_LEFT,text = 1),# index 1 is the state
+						MultiContentEntryPixmapAlphaTest(pos = (22,7),size = (72,72),png = 2),# index 2 is the status pixmap
+					],
+				"fonts": [gFont("Regular",33),gFont("Regular",25)],
+				"itemHeight": 112
+				}
+			</convert>
+		</widget>
+		<widget name="lab1" position="406,690" halign="center" size="1110,34" zPosition="1" font="Regular;30" valign="top" transparent="1"/>
+	</screen>
+
+	<!-- Vix MountManager Setup -->
+	<screen name="DeviceMountSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+		<widget name="lab1" position="145,865" halign="center" size="1630,30" font="Regular;30" valign="center" zPosition="10"/>
+	</screen>
+
+	<!-- Vix MountManager Setup -->
+	<screen name="VIXSoftcamManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="lab2" position="396,210" size="255,45" font="Regular;33" halign="left" zPosition="2" foregroundColor="foreground"/>
+		<widget name="activecam" position="673,210" size="360,225" font="Regular;30" halign="left" zPosition="2" noWrap="1" foregroundColor="foreground"/>
+		<widget name="lab1" position="396,481" size="255,40" font="Regular;30" halign="left" zPosition="2" foregroundColor="foreground"/>
+		<widget name="list" position="673,481" size="450,9*40" font="SelectionList;30" scrollbarMode="showOnDemand" valign="center" foregroundColor="foreground" enableWrapAround="1"/>
+		<applet type="onLayoutFinish">
+			self["list"].instance.setItemHeight(40)
+		</applet>
+	</screen>
+
+	<!-- ViX plugin spinner -->
+	<screen name="SoftcamSpinnerTemplate">
+		<panel name="Screen_Menu1"/>
+		<widget name="connect" position="center,c-150" size="96,96" zPosition="10"
+			pixmaps="/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy1.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy2.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy3.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy4.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy5.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy6.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy7.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy8.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy9.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy9.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy10.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy11.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy12.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy13.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy14.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy15.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy17.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy18.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy19.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy20.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy21.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy22.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy23.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy24.png"
+			transparent="1" alphatest="blend"/>
+		<widget name="lab1" position="center,c+50" halign="center" size="754,90" zPosition="10" font="Regular;30" valign="top"/>
+	</screen>
+
+	<screen name="VIXStartCam" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="SoftcamSpinnerTemplate"/>
+	</screen>
+
+	<screen name="VIXStopCam" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="SoftcamSpinnerTemplate"/>
+	</screen>
+
+	<!-- NetworkMountsMenu -->
+	<screen name="NetworkMountsMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<widget name="menulist" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" zPosition="10" scrollbarMode="showNever"/>
+		<widget source="introduction" render="Label" position="145,865" zPosition="10" size="1630,30" font="Regular;28" foregroundColor="yellow" valign="center" halign="center"/>
+	</screen>
+
+		<!-- oscam -->
+	<screen name="OscamInfoMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<widget name="mainmenu" position="125,150" size="1670,810" font="Regular;33" zPosition="10" itemHeight="45" scrollbarMode="showOnDemand" enableWrapAround="1"/>
+	</screen>
+
+ 	<screen name="OscamInfoConfigScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+		<widget name="status" render="Label" position="145,865" size="1630,30" zPosition="20" font="Regular;32" halign="center" valign="center"/>
+ 	</screen>
+
+	<!-- HistoryZapSelector -->
+	<screen name="HistoryZapSelector" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<widget source="menu" render="Listbox" position="125,150" size="1670,750" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (120, 0), size = (15, 45), font = 0, flags = RT_HALIGN_CENTER | RT_VALIGN_CENTER, text = 1), #arrow
+						MultiContentEntryText(pos = (145, 0), size = (350, 30), font = 0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 2, color = 0x00ffffff, color_sel = 0x00ffc000), #service name
+						MultiContentEntryText(pos = (425, 0), size = (450, 30), font = 0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 3, color = 0x00ffffff, color_sel = 0x00ffc000), #event name
+						MultiContentEntryText(pos = (145, 30), size = (350, 30), font = 0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 7, color = 0x00ffffff, color_sel = 0x00ffc000), #orbital position
+						MultiContentEntryText(pos = (425, 30), size = (450, 30), font = 0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 5, color = 0x00ffffff, color_sel = 0x00ffc000), #duration
+						MultiContentEntryText(pos = (10, 70), size = (1650, 90), font = 4, flags = RT_HALIGN_LEFT|RT_WRAP, text = 4, color = 0x00ffffff, color_sel = 0x00ffc000), #epg
+						MultiContentEntryPixmapAlphaBlend(pos=(0, 5), size=(110, 60), png=6, flags = BT_SCALE) #picon must be last otherwise won't work
+						],
+				 "fonts": [gFont("Regular", 24), gFont("Regular", 20), gFont("Regular", 17), gFont("Regular", 16), gFont("Regular", 26)],
+				 "itemHeight": 150
+				}
+			</convert>
+		</widget>
+		<widget addon="Pager" connection="menu" position="396,915" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+
+	<!-- Record now / record next -->
+	<screen name="RecordTimerQuestion" position="center,center" size="350,295" zPosition="5" flags="wfNoBorder">
+		<widget name="text" position="0,0" size="0,0" font="Regular;21"/>
+		<widget name="list" position="15,15" size="330,150" enableWrapAround="1"/>
+		<applet type="onLayoutFinish">
+			self.autoResize()
+		</applet>
+	</screen>
+	
+		<!-- AnimationSetupConfig -->
+	<screen name="AnimationSetupConfig" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+	</screen>
+
+	<!-- AnimationSetupScreen -->
+	<screen name="AnimationSetupScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+	</screen>
+
+	<!-- MovieListTags  -->
+	<!-- Press Radio button while in movie list  -->
+	<screen name="MovieListTags" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+	</screen>
+
+	<!-- VuplusKexec -->
+ 	<screen name="VuplusKexec" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+ 	</screen>
 </skin>
