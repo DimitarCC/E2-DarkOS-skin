@@ -575,9 +575,17 @@
 	</screen>
 	
 	<screen name="ConfigScreenTemplate">
-		<panel name="Screen_Menu1" />
-		<widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
-		<widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+		<panel name="Screen_1_1" />
+		<widget name="config" conditional="config" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget addon="Pager" conditional="config" connection="config" position="396,915" size="1130,25" transparent="1" backgroundColor="background" />
+		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget addon="Pager" conditional="list" connection="list" position="396,915" size="1130,25" transparent="1" backgroundColor="background" />
+		<widget name="HelpWindow" conditional="HelpWindow" pixmap="icons/vkey_icon.png" position="1920,150" zPosition="1" size="1,1" transparent="1" alphatest="blend"/><!-- hidden at the moment -->
+		<widget name="description" objectTypes="description,Button,Label" position="145,755" size="1630,100" font="Regular;28" valign="top" halign="center"/>
+		<widget source="description" render="Label" objectTypes="description,StaticText" position="145,755" size="1630,100" font="Regular;28" valign="top" halign="center"/>
+		<widget name="introduction" conditional="introduction" position="0,0" size="0,0"/><!-- hidden -->
+		<widget name="footnote" objectTypes="footnote,Button,Label" position="145,865" zPosition="1000" size="1630,30" font="Regular;28" foregroundColor="yellow" valign="center" halign="center"/>
+		<widget source="footnote" render="Label" objectTypes="footnote,StaticText" position="145,865" zPosition="1000" size="1630,30" font="Regular;28" foregroundColor="yellow" valign="center" halign="center"/>
 	</screen>
 
 <!-- Infobar Template -->
