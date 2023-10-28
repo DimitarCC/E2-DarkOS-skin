@@ -870,13 +870,10 @@
   <!-- Scan setup -->
   <screen name="ScanSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="ConfigScreenTemplate" />
-    <widget name="introduction" position="0,0" size="0,0" />
-    <widget name="description" position="30,570" size="0,0" font="Regular;30" valign="top" />
   </screen>
   <!-- Scan simple -->
   <screen name="ScanSimple" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="ConfigScreenTemplate" />
-    <widget name="footer" position="0,0" size="0,0" />
   </screen>
   <!-- Service Scan -->
   <screen name="ServiceScan" title="Service scan" position="fill" flags="wfNoBorder">
@@ -906,7 +903,6 @@
   <!-- FastScan -->
   <screen name="FastScanScreen" title="Fast Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="ConfigScreenTemplate" />
-    <widget name="introduction" position="780,975" size="0,0" font="Regular;33" halign="center" />
   </screen>
   <screen name="FastScanStatus" title="Fast Scan" position="fill" flags="wfNoBorder">
     <panel name="BasicTemplate" />
@@ -1425,7 +1421,6 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   <!-- MovieBrowserConfig -->
   <screen name="MovieBrowserConfiguration" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="ConfigScreenTemplate" />
-  <widget name="description" position="30,550" size="0,0" font="Regular;30" halign="left" />
 </screen>
   <!-- Bouquet Selector -->
   <screen name="BouquetSelector" position="fill" title="Choose bouquet" flags="wfNoBorder" backgroundColor="transparent">
@@ -1494,7 +1489,6 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   <!-- Softwaremanager -->
   <screen flags="wfNoBorder" name="SoftwareManagerSetup" position="fill" title="SoftwareManager setup" backgroundColor="transparent">
   <panel name="ConfigScreenTemplate" />
-  <widget source="introduction" render="Label" position="30,570" size="0,0" zPosition="10" font="Regular;30" halign="center" valign="center" backgroundColor="#25062748" transparent="1" />
 </screen>
   <screen name="BackupScreen" title="Backup is running" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="ConfigScreenTemplate" />
@@ -1811,7 +1805,6 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 </screen>
   <screen name="NameserverSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="ConfigScreenTemplate" />
-  <widget source="introduction" render="Label" position="780,975" size="0,0" transparent="1" zPosition="10" font="Regular;30" valign="center" halign="center" />
 </screen>
   <screen name="NetworkAdapterSelection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
@@ -2009,7 +2002,6 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   </screen>
   <screen name="InputDeviceSetup" title="Input device setup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="ConfigScreenTemplate" />
-    <widget source="introduction" render="Label" position="396,834" size="1130,45" backgroundColor="darkgrey" shadowColor="black" shadowOffset="-2,-2" zPosition="1" transparent="1" font="Regular;30" halign="center" />
   </screen>
   <!-- Harddisk selection -->
   <screen name="HarddiskSelection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -2363,7 +2355,6 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   <!-- Nim setup -->
   <screen name="NimSetup" title="Reception Settings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="ConfigScreenTemplate" />
-    <widget name="description" position="30,570" size="0,0" itemHeight="38" font="Regular;30" valign="top" />
   </screen>
   <!-- Positioner setup -->
   <screen name="PositionerSetup" title="Positioner setup" position="fill" flags="wfNoBorder">
