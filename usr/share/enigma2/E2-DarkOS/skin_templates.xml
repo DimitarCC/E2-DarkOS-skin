@@ -550,7 +550,7 @@
 			</widget>
 			<widget source="Title" render="Label" position="15,2" size="e-260,60" font="Bold; 30" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" />
 		</panel>
-		<panel position="e-220-190,e-100" size="220,36">
+		<panel position="e-220-220,e-100" size="220,36">
 		  <panel name="ConfigButtonsTemplate"/>
 		</panel>
 		
