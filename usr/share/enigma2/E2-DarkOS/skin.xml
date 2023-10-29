@@ -582,8 +582,6 @@
       <convert type="EventTime">Remaining</convert>
       <convert type="RemainingToText">InMinutes</convert>
     </widget>
-    <ePixmap position="1638,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_epg.png" />
-    <ePixmap position="1699,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
   </screen>
   <!-- Simple channelselection -->
   <screen name="SimpleChannelSelection" position="fill" title="Channel Selection" flags="wfNoBorder">
@@ -594,9 +592,6 @@
     <panel name="Screen_Window_Full_Pig" />
     <ePixmap position="1638,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_epg.png" />
     <ePixmap position="1699,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
-	<panel position="1814,1020" size="54,34">
-		<panel name="BrandLogoTemplate" />
-	</panel>
     <widget name="list" position="26,91" size="1130,890" itemHeight="45" setEventItemFont="Regular;32" setColWidths="120,220" setColGap="40" setIconDistance="10" transparent="1" scrollbarMode="showNever" />
     <widget source="Service" render="Label" position="1160,342" size="720,30" foregroundColor="transponderinfo" font="Regular;26" valign="center" halign="center" transparent="1" zPosition="1">
       <convert type="TransponderInfo" />
@@ -713,9 +708,6 @@
   <!-- EPG Search -->
   <screen name="EPGSearch" title="EPG Search" position="fill" flags="wfNoBorder">
     <panel name="Screen_Window_Full_Pig" />
-    <panel position="1814,1020" size="54,34">
-		<panel name="BrandLogoTemplate" />
-	</panel>
     <ePixmap position="1699,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
     <widget name="list" position="29,96" size="1130,890" itemHeight="45" setEventItemFont="Regular;32" setEventTimeFont="Regular;32" setColWidths="120,220" setColGap="40" setIconDistance="-5" setPiconSize="50,30" setPiconDistance="0" setPboxDistance="80" backgroundColor="background" transparent="1" scrollbarMode="showNever" />
     <widget source="Service" render="Label" position="1180,356" size="580,30" foregroundColor="transponderinfo" font="Regular;26" valign="center" halign="left" transparent="1" zPosition="1">
@@ -764,8 +756,6 @@
     <widget source="Event" render="Label" position="30,175" size="1465,140" font="Regular; 30" backgroundColor="background" transparent="1">
       <convert type="EventName">FullDescription</convert>
     </widget>
-    <ePixmap position="1638,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_epg.png" />
-    <ePixmap position="1699,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
     <!--<panel name="SelectionTemplate"/>
 		<panel name="KeyMenuTemplate"/>
 		<panel name="KeyInfoTemplate"/>
@@ -828,9 +818,6 @@
     </widget>
     <ePixmap position="1638,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_epg.png" />
     <ePixmap position="1699,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
-    <panel position="1814,1020" size="54,34">
-		<panel name="BrandLogoTemplate" />
-	</panel>
   </screen>
   <screen name="GraphMultiEpgSetup" position="fill" title="Electronic Program Guide Setup" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="ConfigScreenTemplate" />
@@ -1252,9 +1239,6 @@ setLogo(self["logo"].instance, "brand", 54, 34)
     <widget source="Service" render="Label" position="30,85" size="900,70" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
       <convert type="EventName">Name</convert>
     </widget>
-    <ePixmap position="1577,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_pvr.png" />
-    <ePixmap position="1638,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_epg.png" />
-    <ePixmap position="1699,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
     <!--<panel name="SelectionTemplate"/>
 		<panel name="KeyMenuInfoTemplate"/>
 		<panel name="KeyVideoTemplate"/>
