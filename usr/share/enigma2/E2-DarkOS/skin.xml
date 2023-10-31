@@ -114,6 +114,8 @@
   </colors>
   <parameters>
     <parameter name="AutoscaleSVG" value="1" />
+	<parameter name="AutotimerEnabledIcon" value="24,8,32,32"/>
+	<parameter name="AutotimerRecordIcon" value="78,10,30,30"/>
     <parameter name="ConfigListSlider" value="22,3" />
     <parameter name="ChoicelistName" value="72,5,800,31" />
     <parameter name="ChoicelistNameSingle" value="15,5,800,31" />
@@ -1383,29 +1385,29 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 			</convert>
 		</widget>
 	</screen>-->
-  <!-- ChannelContextMenu -->
-  <screen name="ChannelContextMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="Screen_menu2" />
-  <widget name="menu" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" />
-  <widget addon="Pager" connection="menu" position="512,849" size="889,25" transparent="1" backgroundColor="background" />
-</screen>
+	<!-- ChannelContextMenu -->
+	<screen name="ChannelContextMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_menu2" />
+		<widget name="menu" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" />
+		<widget addon="Pager" connection="menu" position="512,849" size="889,25" transparent="1" backgroundColor="background" />
+	</screen>
   <!-- Minute input -->
-  <screen name="MinuteInput" position="center,center" size="360,82" flags="wfNoBorder">
-  <ePixmap position="0,0" size="364,86" pixmap="chzap_bg.png" alphatest="blend" zPosition="-9" />
-  <ePixmap position="2,2" size="360,82" pixmap="chzap_overlay.png" alphatest="blend" zPosition="-8" />
-  <eLabel text="Seek" position="30,22" size="150,37" backgroundColor="secondBG" foregroundColor="secondFG" transparent="1" font="Regular;34" />
-  <widget name="minutes" transparent="1" position="180,22" size="150,37" halign="right" font="Regular;34" zPosition="1" />
-</screen>
-  <!-- MovieContextMenu -->
-  <screen name="MovieContextMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="Screen_menu2" />
-  <widget name="menu" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" />
-  <widget addon="Pager" connection="menu" position="512,849" size="889,25" transparent="1" backgroundColor="background"/>
-</screen>
-  <!-- MovieBrowserConfig -->
-  <screen name="MovieBrowserConfiguration" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="ConfigScreenTemplate" />
-</screen>
+	<screen name="MinuteInput" position="center,center" size="360,82" flags="wfNoBorder">
+	<ePixmap position="0,0" size="364,86" pixmap="chzap_bg.png" alphatest="blend" zPosition="-9" />
+	<ePixmap position="2,2" size="360,82" pixmap="chzap_overlay.png" alphatest="blend" zPosition="-8" />
+	<eLabel text="Seek" position="30,22" size="150,37" backgroundColor="secondBG" foregroundColor="secondFG" transparent="1" font="Regular;34" />
+	<widget name="minutes" transparent="1" position="180,22" size="150,37" halign="right" font="Regular;34" zPosition="1" />
+	</screen>
+	<!-- MovieContextMenu -->
+	<screen name="MovieContextMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_menu2" />
+		<widget name="config" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" />
+		<widget addon="Pager" connection="config" position="512,849" size="889,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<!-- MovieBrowserConfig -->
+	<screen name="MovieBrowserConfiguration" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate" />
+	</screen>
   <!-- Bouquet Selector -->
   <screen name="BouquetSelector" position="fill" title="Choose bouquet" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_menu2" />
@@ -1416,10 +1418,11 @@ setLogo(self["logo"].instance, "brand", 54, 34)
     <panel name="ConfigScreenTemplate" />
   </screen>
   <screen name="TimerEditList" position="fill" title="Timer Overview" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <widget name="timerlist" position="396,210" size="1130,5*90" scrollbarMode="showNever" itemHeight="90" iconMargin="30" rowSplit="42" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" sidesMargin="20" />
-    <widget addon="Pager" connection="timerlist" position="396,665" size="1130,25" transparent="1" backgroundColor="background" />
-    <widget name="description" position="395,705" size="1130,150" backgroundColor="background" font="Regular;30" halign="center" />
+    <panel name="Screen_1_1" />
+    <widget name="timerlist" position="135,160" size="1650,6*90" scrollbarMode="showNever" itemHeight="90" iconMargin="30" rowSplit="45" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" sidesMargin="20" />
+    <widget addon="Pager" connection="timerlist" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
+	<eLabel position="135,720" size="1650,2" backgroundColor="background5" zPosition="-7" />
+    <widget name="description" position="145,730" size="1620,150" backgroundColor="background" font="Regular;30" halign="center" valign="center"/>
   </screen>
   <screen name="TimerLog" position="fill" title="Timer log" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />

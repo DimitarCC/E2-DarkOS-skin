@@ -1326,6 +1326,10 @@
 		<widget name="itemdetails" position="30,600" size="720,210" font="Regular;30" halign="left" valign="top"/>
 		<widget name="statuslabel" position="30,562" size="720,37" font="Regular;24" halign="left"/>
 	</screen>
+	
+	<screen name="OpenWebifConfig" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate" />
+	</screen>
 
 	<!-- Auto Timer -->
 
@@ -1351,47 +1355,40 @@
 		<widget name="HelpWindow" pixmap="buttons/key_text.png" position="810,660" zPosition="1" size="1,1" transparent="1" alphatest="on"/>
 	</screen>
 
-	<screen name="AutoTimer" title="Auto Timer" position="fill" flags="wfNoBorder">
-		<panel name="PigTemplate"/>
-		<widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28"/>
+	<screen name="AutoTimer" title="Auto Timer" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="AutoTimerServiceEditor"/>
 	</screen>
 
-	<screen name="AutoTimerSettings" title="AutoTimer Settings" position="fill" flags="wfNoBorder">
-		<panel name="PigTemplate"/>
-		<panel name="VKeyIconPanel"/>
-		<widget name="HelpWindow" position="center,650" size="80,0"/>
-		<widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" background="background"/>
-		<widget source="help" render="Label" position="30,600" size="720,300" backgroundColor="background" transparent="1" font="Regular;30"/>
+	<screen name="AutoTimerSettings" title="AutoTimer Settings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="AutoTimerEditor"/>
+		<widget name="HelpWindow" position="e,650" size="80,0"/>
 	</screen>
 
-	<screen name="AutoTimerEditor" title="Edit AutoTimer" position="fill" flags="wfNoBorder">
-		<panel name="PigTemplate"/>
-		<panel name="VKeyIconPanel"/>
-		<widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand"/>
-		<widget source="help" render="Label" position="30,600" size="720,300" backgroundColor="background" transparent="1" font="Regular;30"/>
+	<screen name="AutoTimerEditor" title="Edit AutoTimer" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="AutoTimerServiceEditor"/>
+		<widget source="help" render="Label" position="145,755" size="1630,100" font="Regular;28" valign="center" halign="center"/>
 	</screen>
 
-	<screen name="AutoTimerFilterEditor" title="Edit AutoTimer Filters" position="fill" flags="wfNoBorder">
-		<panel name="PigTemplate"/>
-		<panel name="VKeyIconPanel"/>
-		<widget name="HelpWindow" position="center,450" size="80,0"/>
-		<widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" background="background"/>
+	<screen name="AutoTimerFilterEditor" title="Edit AutoTimer Filters" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="AutoTimerServiceEditor"/>
+		<widget name="HelpWindow" position="e,450" size="80,0"/>
 	</screen>
 
-	<screen name="AutoTimerServiceEditor" title="Edit AutoTimer Services" position="fill" flags="wfNoBorder">
-		<panel name="PigTemplate"/>
-		<widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" backgroundColor="background" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand"/>
+	<screen name="AutoTimerServiceEditor" title="Edit AutoTimer Services" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1" />
+		<widget name="config" conditional="config" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget addon="Pager" conditional="config" connection="config" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
 
-	<screen name="AutoTimerImporter" title="Import AutoTimer" position="fill" flags="wfNoBorder">
-		<panel name="PigTemplate"/>
+	<screen name="AutoTimerImporter" title="Import AutoTimer" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
 		<widget name="list" position="780,100" size="1110,912" itemHeight="45" backgroundColor="background" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand"/>
 	</screen>
 
-	<screen name="AutoTimerOverview" title="AutoTimer Overview" position="fill" flags="wfNoBorder">
-		<panel name="PigTemplate"/>
-		<panel name="KeyMenuInfoTemplate"/>
-		<widget name="entries" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" backgroundColor="background" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand"/>
+	<screen name="AutoTimerOverview" title="AutoTimer Overview" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1" />
+		<widget name="entries" position="115,160" size="1690,8*90" scrollbarMode="showNever" itemHeight="90" rowSplit1="50" rowSplit2="45" rowHeight="42" iconMargin="20" EventNameFont="Regular;33" ServiceNameFont="Regular;33" DayNameFont="Regular;30" />
+		<widget addon="Pager" connection="entries" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
 
 	<screen name="AutoTimerPreview" title="Preview AutoTimer" position="fill" flags="wfNoBorder">

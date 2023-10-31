@@ -247,11 +247,11 @@ self["list"].instance.setItemHeight(38)
 		<widget addon="Pager" connection="menu" position="396,915" size="1130,25" transparent="1" backgroundColor="background"/>
 	</screen>
 
-  <!-- Record now / record next -->
-  <screen name="RecordTimerQuestion" position="center,center" size="350,295" zPosition="5" flags="wfNoBorder">
-	<widget name="text" position="0,0" size="0,0" font="Regular;21"/>
-	<widget name="list" position="15,15" size="330,150" enableWrapAround="1" itemHeight="45"/>
-	<applet type="onLayoutFinish">
+	<!-- Record now / record next -->
+	<screen name="RecordTimerQuestion" position="center,center" size="350,295" zPosition="5" flags="wfNoBorder" backgroundColor="background">
+		<widget name="text" position="0,0" size="0,0" font="Regular;21"/>
+		<widget name="list" position="15,15" size="330,150" enableWrapAround="1" itemHeight="45"/>
+		<applet type="onLayoutFinish">
 from enigma import ePoint, eSize, getDesktop, gRGB, BT_ALPHABLEND
 from Components.Label import Label
 from Components.Pixmap import Pixmap
@@ -316,8 +316,8 @@ self["bcGroundOver"].instance.setBackgroundColor(gRGB(0x02111111))
 self["bcGroundOver"].instance.resize(eSize(*(wsizex-4, wsizey - 4)))
 self["bcGroundOver"].instance.move(ePoint(2,2))
 self["bcGroundOver"].setZPosition(-7)
-	</applet>
-  </screen>
+		</applet>
+	</screen>
 	
 		<!-- AnimationSetupConfig -->
 	<screen name="AnimationSetupConfig" position="fill" flags="wfNoBorder" backgroundColor="transparent">

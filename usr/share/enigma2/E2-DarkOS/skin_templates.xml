@@ -508,7 +508,7 @@
 	
 	<screen name="Screen_1">
 		<panel name="Screen_Base" />
-		<panel position="2,e-68" size="e-284,62">
+		<panel position="2,e-68" size="e-275,62">
 			<panel name="Color_Buttons_Screen_1" />
 		</panel>
 	</screen>
