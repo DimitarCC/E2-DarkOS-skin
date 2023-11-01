@@ -450,7 +450,7 @@
 	<screen name="Color_Buttons_Screen_1">
 		<widget addon="ColorButtonsSequence" connection="key_red,key_green,key_yellow,key_blue" 
 			pixmaps="key_red:buttons/key_red.png,key_green:buttons/key_green.png,key_yellow:buttons/key_yellow.png,key_blue:buttons/key_blue.png" 
-			position="0,0" size="e,36" font="Regular;26" backgroundColor="background5" alignment="left" zPosition="10" spacingButtons="40" spacingPixmapText="10" />
+			position="0,0" size="e,36" font="Regular;26" backgroundColor="background5" alignment="left" zPosition="10" spacing="40" spacingPixmapText="10" />
 	</screen>
 	
 	<screen name="Screen_Window_Full_Pig">
