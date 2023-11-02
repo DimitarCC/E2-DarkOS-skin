@@ -453,7 +453,7 @@
 			position="0,0" size="e,36" font="Regular;26" backgroundColor="background5" alignment="left" zPosition="10" spacing="40" spacingPixmapText="10" />
 	</screen>
 	
-	<screen name="Screen_Window_Full_Pig">
+	<screen name="Screen_Window_Full">
 		<ePixmap pixmap="Screens/win_full_tl.png" position="5,5" size="24,24" alphatest="blend" zPosition="-6"/>
 		<ePixmap pixmap="Screens/win_full_tr.png" position="1893,5" size="24,24" alphatest="blend" zPosition="-6"/>
 		<ePixmap pixmap="Screens/win_full_bl.png" position="5,982" size="24,94" alphatest="blend" zPosition="-6"/>
@@ -469,7 +469,6 @@
 		<eLabel position="29,1004" size="1864,72" backgroundColor="background5" zPosition="-7" />
 		
 		<eLabel position="25,75" size="1865,1" backgroundColor="separator" zPosition="-5" />
-		<widget source="session.VideoPicture" render="Pig" position="1530,105" size="350,220" zPosition="10" backgroundColor="transparent" />
 		<widget source="Title" render="Label" position="40,5" size="1000,70" font="Bold; 30" backgroundColor="background2" transparent="1" halign="left" noWrap="1" valign="center" zPosition="3" foregroundColor="yellow" />
 		<widget backgroundColor="black" font="Bold; 40" foregroundColor="white" halign="right" position="1755,5" render="Label" size="120,70" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
 		  <convert type="ClockToText">Default</convert>
@@ -486,6 +485,11 @@
 		<panel position="e-70,e-57" size="54,34">
 			<panel name="BrandLogoTemplate" />
 		</panel>
+	</screen>
+	
+	<screen name="Screen_Window_Full_Pig">
+		<panel name="Screen_Window_Full" />
+		<widget source="session.VideoPicture" render="Pig" position="1530,105" size="350,220" zPosition="10" backgroundColor="transparent" />
 	</screen>
 
 	<screen name="Screen_Base">
