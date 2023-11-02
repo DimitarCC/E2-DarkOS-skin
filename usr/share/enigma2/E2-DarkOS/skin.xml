@@ -1042,21 +1042,8 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   <widget name="choosen" position="1182,401" size="703,545" scrollbarMode="showOnDemand" />
   <widget name="description" position="1179,957" size="708,29" zPosition="1" font="Regular;24" halign="center" />
 </screen>
-  <!--CI Config Menu -->
-  <screen name="CIconfigMenu" title="CI Assignment" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="Screen_Menu1" />
-  <widget source="CAidList_desc" render="Label" position="473,198" size="990,45" backgroundColor="background" transparent="1" font="Regular;36" />
-  <eLabel position="473,252" size="990,3" backgroundColor="black" />
-  <eLabel position="473,251" size="990,3" backgroundColor="grey" />
-  <widget source="CAidList" render="Label" position="474,267" size="990,112" backgroundColor="background" transparent="1" font="Regular;33" />
-  <widget source="ServiceList_desc" render="Label" position="475,391" size="990,45" backgroundColor="background" transparent="1" font="Regular;36" />
-  <eLabel position="473,459" size="990,3" backgroundColor="black" />
-  <eLabel position="473,459" size="990,3" backgroundColor="grey" />
-  <widget name="ServiceList" position="522,476" size="900,400" backgroundColor="background" zPosition="1" transparent="1" scrollbarMode="showOnDemand" />
-  <widget source="ServiceList_info" render="Label" position="473,473" size="990,400" backgroundColor="background" zPosition="2" transparent="1" font="Regular;33" />
-</screen>
-  <!-- Console -->
-  <screen name="Console" title="Command execution" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+<!-- Console -->
+<screen name="Console" title="Command execution" position="fill" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
   <widget name="text" position="394,204" size="1130,680" itemHeight="38" font="Fixed;28" transparent="1" foregroundColor="white" scrollbarMode="showOnDemand" />
 </screen>
@@ -1526,7 +1513,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 			</convert>
     </widget>
   </screen>
-  <screen name="UpdatePlugin" position="fill" flags="wfNoBorder">
+  <screen name="UpdatePlugin" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PigTemplate" />
     <widget source="package" render="Label" position="780,110" size="1110,35" backgroundColor="darkgrey" transparent="1" font="Regular;32" />
     <widget source="status" render="Label" position="780,163" size="1110,70" backgroundColor="darkgrey" transparent="1" font="Regular;32" />
