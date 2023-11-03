@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <skin>
-  <!-- Skin: E2-DarkOS - Author: DimitarCC -->
+  <!-- Skin: E2-DarkOS - Authors: DimitarCC, Huevos -->
   <!-- This skin is a Freeware. But is permited use on any E2 image that include the required changes. -->
   <!-- You can change this skin as you like as long as keep the credits. -->
-  <!-- DO NOT REMOVE OR CHANGE THE SECOND LINE IN !!! -->
+  <!-- DO NOT REMOVE OR CHANGE THE LINES ABOVE !!! -->
   <!-- Head -->
   <output id="0">
     <resolution bpp="32" xres="1920" yres="1080" />
