@@ -778,5 +778,20 @@
 			<convert type="ProgressToText">InPercent</convert>
 		</widget>
 	</screen>
+
+	<!-- Feeds status template -->
+	<screen name="FeedsStatusTemplate" position="fill" flags="wfNoBorder">
+		<widget name="feedStatusMSG" conditional="feedStatusMSG" position="1202,400" size="690,300" font="Regular;28" zPosition="1000" foregroundColor="yellow" halign="center"/>
+		<widget name="tl_off" pixmap="icons/aoff.png" position="1343,165" size="36,97" alphatest="on"/>
+		<widget name="tl_red" pixmap="icons/ared.png" position="1343,165" size="36,97" alphatest="on"/>
+		<widget name="tl_yellow" pixmap="icons/ayellow.png" position="1343,165" size="36,97" alphatest="on"/>
+		<widget name="tl_green" pixmap="icons/agreen.png" position="1343,165" size="36,97" alphatest="on"/>
+	</screen>
+
+	<!-- Slider template -->
+	<screen name="SliderTemplate" position="fill" flags="wfNoBorder">
+		<widget name="slider" position="30,970" size="1110,20" zPosition="100" transparent="1"/>
+		<widget name="activityslider" position="30,990" size="1860,6" pixmap="window/slider100.png" transparent="1" zPosition="100"/>
+	</screen>
 </skin>
 
