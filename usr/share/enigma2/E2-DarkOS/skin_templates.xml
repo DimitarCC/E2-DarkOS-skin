@@ -193,15 +193,16 @@
 		<panel name="FrameTemplate"/>
 
 		<widget source="title" render="Label" position="72,864" size="544,62" font="Regular; 34" halign="right" valign="center" backgroundColor="black" transparent="1" />
-		<widget source="menu" render="Listbox" position="72,297" size="564,540" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
+		<widget source="menu" render="Listbox" position="72,277" size="564,540" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
 			<convert type="TemplatedMultiContent">
 						{"template": [ MultiContentEntryText(pos = (97,5),size = (435,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0),
 									   MultiContentEntryPixmapAlphaBlend(pos = (32,5),size = (48,48), png = 5)],
 						"fonts": [gFont("Regular",34)],
 						"itemHeight": 60
 						}
-					</convert>
+			</convert>
 		</widget>
+		<widget addon="Pager" connection="menu" position="72,827" size="564,25" transparent="1" backgroundColor="background"/>
 		<widget source="global.CurrentTime" render="BoxLogo" position="203,175" size="302,65" zPosition="10" alphatest="blend" />
 		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5" />
 	</screen>
