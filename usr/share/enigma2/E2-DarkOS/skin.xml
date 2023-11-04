@@ -1676,6 +1676,10 @@ setLogo(self["logo"].instance, "brand", 54, 34)
       </panel>
     </panel>
   </screen>
+	<!-- Network wizard -->
+	<screen name="NetworkWizard" position="fill" flags="wfNoBorder">
+		<panel name="DefaultWizard"/>
+	</screen>
   <!-- Video wizard -->
   <screen name="VideoWizard" position="fill" flags="wfNoBorder">
     <panel name="WizardMarginsTemplate" />
