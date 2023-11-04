@@ -1523,7 +1523,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   </screen>
 
   <!--Softwareupdate choices -->
-	<screen name="SoftwareUpdateChoices" position="fill" flags="wfNoBorder">
+	<screen name="SoftwareUpdateChoices" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Window_Full_Pig"/>
 		<eLabel position="1200,105" size="1,870" backgroundColor="separator" zPosition="-5" />
 		<widget name="list" position="25,100" size="1110,550" itemHeight="50" font="Regular;30" scrollbarMode="showOnDemand"/>
