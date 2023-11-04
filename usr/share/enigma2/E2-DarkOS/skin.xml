@@ -2181,110 +2181,110 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		<widget name="list" textOffset="20, 2" position="150,150" size="720,570" itemHeight="45" font="Regular;28" zPosition="2" transparent="1" backgroundColor="transparent" />
 		<widget name="autoresize" conditional="autoresize" position="0,0" size="0,0" font="Regular;28" noWrap="1" />
 		<applet type="onLayoutFinish">
-	from enigma import ePoint, eSize, getDesktop, gRGB, BT_ALPHABLEND
-	from Components.Label import Label
-	from Components.Pixmap import Pixmap
-	from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
-	from Tools.LoadPixmap import LoadPixmap
-	from Components.Renderer.BoxLogo import setLogo
+from enigma import ePoint, eSize, getDesktop, gRGB, BT_ALPHABLEND
+from Components.Label import Label
+from Components.Pixmap import Pixmap
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
+from Tools.LoadPixmap import LoadPixmap
+from Components.Renderer.BoxLogo import setLogo
 
-	pxtlc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tl.png"))
-	pxtrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tr.png"))
-	pxblc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_bl.png"))
-	pxbrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_br.png"))
+pxtlc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tl.png"))
+pxtrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tr.png"))
+pxblc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_bl.png"))
+pxbrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_br.png"))
 
 
-	if self.timerRunning:
-		titleheight = 0
-	else:
-		titleheight = 0
+if self.timerRunning:
+	titleheight = 0
+else:
+	titleheight = 0
 
-	self["title_sep"] = Label("")
-	self["title_sep"].GUIcreate(self.instance)
-	self["title_sep"].instance.setBackgroundColor(gRGB(0x00555556))
-	orgwidth = self.instance.size().width()
-	orgheight = self.instance.size().height()
-	orgpos = self.instance.position()
-	textsize = self["text"].getSize()
-	textsize = (textsize[0] + 76, textsize[1])
-	wsizex = textsize[0] + 140
-	if (75 + textsize[1]) &gt; 180:
-		wsizey = textsize[1] + 80 + 84
-	else:
-		wsizey = 180 + 96
-	lenlist = len(self.list)*45
-	if (lenlist &gt; 380):
-		lenlist = 380
-	if (180 &gt; wsizey):
-		wsizey = 180
+self["title_sep"] = Label("")
+self["title_sep"].GUIcreate(self.instance)
+self["title_sep"].instance.setBackgroundColor(gRGB(0x00555556))
+orgwidth = self.instance.size().width()
+orgheight = self.instance.size().height()
+orgpos = self.instance.position()
+textsize = self["text"].getSize()
+textsize = (textsize[0] + 76, textsize[1])
+wsizex = textsize[0] + 140
+if (75 + textsize[1]) &gt; 180:
+	wsizey = textsize[1] + 80 + 84
+else:
+	wsizey = 180 + 96
+lenlist = len(self.list)*45
+if (lenlist &gt; 380):
+	lenlist = 380
+if (180 &gt; wsizey):
+	wsizey = 180
 
-	wsizey += lenlist + 25
+wsizey += lenlist + 25
 
-	if (420 &gt; wsizex):
-		wsizex = 420
-	listwidth = self.getListWidth() + 20
-	if (listwidth &gt; 1280):
-		listwidth = 1280
-	if (listwidth &gt; wsizex):
-		wsizex = listwidth
-	wsize = (wsizex, wsizey + titleheight)
-	self.instance.resize(eSize(*wsize))
-	self["text"].instance.move(ePoint(130, 75 + titleheight))
-	self["text"].instance.resize(eSize(*textsize))
-	self["ErrorPixmap"].instance.move(ePoint(30, 80 + titleheight))
-	self["ErrorPixmap"].instance.resize(eSize(80,80))
-	self["WarningPixmap"].instance.move(ePoint(30, 80 + titleheight))
-	self["WarningPixmap"].instance.resize(eSize(80,80))
-	self["QuestionPixmap"].instance.move(ePoint(30, 80 + titleheight))
-	self["QuestionPixmap"].instance.resize(eSize(80,80))
-	self["InfoPixmap"].instance.move(ePoint(30, 80 + titleheight))
-	self["InfoPixmap"].instance.resize(eSize(80,80))
-	if self.type == self.TYPE_YESNO:
-		listsize = (wsizex-20, lenlist)
-		self["list"].instance.move(ePoint(10, wsizey - lenlist + titleheight - 94 - 3))
-		self["list"].instance.resize(eSize(*listsize))
-	newwidth = wsize[0]
-	self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + (orgheight - wsizey) // 2))
-	self["title_sep"].instance.move(ePoint(10, 45))
-	self["title_sep"].instance.resize(eSize(wsizex - 20, 1))
-	self["tlc"] = Pixmap()
-	self["tlc"].GUIcreate(self.instance)
-	self["tlc"].setPixmap(pxtlc)
-	self["tlc"].instance.resize(eSize(24,24))
-	self["tlc"].instance.move(ePoint(0,0))
-	self["trc"] = Pixmap()
-	self["trc"].GUIcreate(self.instance)
-	self["trc"].setPixmap(pxtrc)
-	self["trc"].instance.resize(eSize(24,24))
-	self["trc"].instance.move(ePoint(wsizex-24,0))
-	self["blc"] = Pixmap()
-	self["blc"].GUIcreate(self.instance)
-	self["blc"].setPixmap(pxblc)
-	self["blc"].instance.resize(eSize(24,104))
-	self["blc"].instance.move(ePoint(0,wsizey-104))
-	self["brc"] = Pixmap()
-	self["brc"].GUIcreate(self.instance)
-	self["brc"].setPixmap(pxbrc)
-	self["brc"].instance.resize(eSize(24,104))
-	self["brc"].instance.move(ePoint(wsizex-24,wsizey-104))
-	self["bcGround"] = Label("")
-	self["bcGround"].GUIcreate(self.instance)
-	self["bcGround"].instance.setBackgroundColor(gRGB(0x02444444))
-	self["bcGround"].instance.resize(eSize(*(wsizex, wsizey - 20)))
-	self["bcGround"].instance.move(ePoint(0,0))
-	self["bcGround"].setZPosition(-7)
-	self["bcGroundOver"] = Label("")
-	self["bcGroundOver"].GUIcreate(self.instance)
-	self["bcGroundOver"].instance.setBackgroundColor(gRGB(0x02111111))
-	self["bcGroundOver"].instance.resize(eSize(*(wsizex-4, wsizey - 20-64)))
-	self["bcGroundOver"].instance.move(ePoint(2,2))
-	self["bcGroundOver"].setZPosition(-7)
-	self["logo"] = Pixmap()
-	self["logo"].GUIcreate(self.instance)
-	self["logo"].instance.resize(eSize(54,34))
-	self["logo"].instance.move(ePoint(wsizex-74,wsizey-70))
-	self["logo"].instance.setAlphatest(BT_ALPHABLEND)
-	setLogo(self["logo"].instance, "brand", 54, 34)
+if (420 &gt; wsizex):
+	wsizex = 420
+listwidth = self.getListWidth() + 20
+if (listwidth &gt; 1280):
+	listwidth = 1280
+if (listwidth &gt; wsizex):
+	wsizex = listwidth
+wsize = (wsizex, wsizey + titleheight)
+self.instance.resize(eSize(*wsize))
+self["text"].instance.move(ePoint(130, 75 + titleheight))
+self["text"].instance.resize(eSize(*textsize))
+self["ErrorPixmap"].instance.move(ePoint(30, 80 + titleheight))
+self["ErrorPixmap"].instance.resize(eSize(80,80))
+self["WarningPixmap"].instance.move(ePoint(30, 80 + titleheight))
+self["WarningPixmap"].instance.resize(eSize(80,80))
+self["QuestionPixmap"].instance.move(ePoint(30, 80 + titleheight))
+self["QuestionPixmap"].instance.resize(eSize(80,80))
+self["InfoPixmap"].instance.move(ePoint(30, 80 + titleheight))
+self["InfoPixmap"].instance.resize(eSize(80,80))
+if self.type == self.TYPE_YESNO:
+	listsize = (wsizex-20, lenlist)
+	self["list"].instance.move(ePoint(10, wsizey - lenlist + titleheight - 94 - 3))
+	self["list"].instance.resize(eSize(*listsize))
+newwidth = wsize[0]
+self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + (orgheight - wsizey) // 2))
+self["title_sep"].instance.move(ePoint(10, 45))
+self["title_sep"].instance.resize(eSize(wsizex - 20, 1))
+self["tlc"] = Pixmap()
+self["tlc"].GUIcreate(self.instance)
+self["tlc"].setPixmap(pxtlc)
+self["tlc"].instance.resize(eSize(24,24))
+self["tlc"].instance.move(ePoint(0,0))
+self["trc"] = Pixmap()
+self["trc"].GUIcreate(self.instance)
+self["trc"].setPixmap(pxtrc)
+self["trc"].instance.resize(eSize(24,24))
+self["trc"].instance.move(ePoint(wsizex-24,0))
+self["blc"] = Pixmap()
+self["blc"].GUIcreate(self.instance)
+self["blc"].setPixmap(pxblc)
+self["blc"].instance.resize(eSize(24,104))
+self["blc"].instance.move(ePoint(0,wsizey-104))
+self["brc"] = Pixmap()
+self["brc"].GUIcreate(self.instance)
+self["brc"].setPixmap(pxbrc)
+self["brc"].instance.resize(eSize(24,104))
+self["brc"].instance.move(ePoint(wsizex-24,wsizey-104))
+self["bcGround"] = Label("")
+self["bcGround"].GUIcreate(self.instance)
+self["bcGround"].instance.setBackgroundColor(gRGB(0x02444444))
+self["bcGround"].instance.resize(eSize(*(wsizex, wsizey - 20)))
+self["bcGround"].instance.move(ePoint(0,0))
+self["bcGround"].setZPosition(-7)
+self["bcGroundOver"] = Label("")
+self["bcGroundOver"].GUIcreate(self.instance)
+self["bcGroundOver"].instance.setBackgroundColor(gRGB(0x02111111))
+self["bcGroundOver"].instance.resize(eSize(*(wsizex-4, wsizey - 20-64)))
+self["bcGroundOver"].instance.move(ePoint(2,2))
+self["bcGroundOver"].setZPosition(-7)
+self["logo"] = Pixmap()
+self["logo"].GUIcreate(self.instance)
+self["logo"].instance.resize(eSize(54,34))
+self["logo"].instance.move(ePoint(wsizex-74,wsizey-70))
+self["logo"].instance.setAlphatest(BT_ALPHABLEND)
+setLogo(self["logo"].instance, "brand", 54, 34)
 		</applet>
 	</screen>
 	<!-- TimeDateInput -->
