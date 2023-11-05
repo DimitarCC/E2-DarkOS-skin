@@ -592,7 +592,7 @@
   <!-- EPG Stuff -->
   <screen name="EPGSelection" position="fill" flags="wfNoBorder">
     <panel name="Screen_Window_Full_Pig" />
-    <widget name="list" position="26,91" size="1130,890" itemHeight="45" setEventItemFont="Regular;32" setColWidths="120,220" setColGap="40" setIconDistance="10" transparent="1" scrollbarMode="showNever" />
+    <widget name="list" position="26,91" size="1130,890" itemHeight="45" setEventItemFont="Regular;32" setColWidths="120,220" setColGap="40" setIconDistance="10" transparent="1" scrollbarMode="showNever" sidesMargin="25" />
     <widget source="Service" render="Label" position="1160,342" size="720,30" foregroundColor="transponderinfo" font="Regular;26" valign="center" halign="center" transparent="1" zPosition="1">
       <convert type="TransponderInfo" />
     </widget>
