@@ -1047,7 +1047,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   <panel name="Screen_Menu1" />
   <widget name="text" position="394,204" size="1130,680" itemHeight="38" font="Fixed;28" transparent="1" foregroundColor="white" scrollbarMode="showOnDemand" />
 </screen>
-  <screen name="Console_Pig" title="Command execution" position="fill" flags="wfNoBorder">
+  <screen name="Console_Pig" title="Command execution" position="fill" flags="wfNoBorder"><!-- only in PLi -->
     <panel name="PigTemplate" />
     <widget name="text" position="825,100" size="1035,912" itemHeight="38" font="Fixed;28" transparent="1" foregroundColor="white" scrollbarMode="showOnDemand" />
   </screen>
@@ -1439,12 +1439,12 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 	<widget name="text" position="399,225" size="1110,75" zPosition="-1" transparent="1" font="Regular;32" valign="center" halign="center" />
   </screen>
   <screen name="FileBrowser" title="DVD File Browser" position="fill" flags="wfNoBorder">
-    <panel name="PigTemplate" />
-    <widget name="filelist" position="780,100" size="1110,912" scrollbarMode="showOnDemand" />
+    <panel name="Screen_Menu1" />
+    <widget name="filelist" position="396,201" size="1110,640" scrollbarMode="showOnDemand" />
   </screen>
   <screen name="ServiceInfoSimple" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
-    <widget name="infolist" position="398,201" size="1120,640" itemHeight="38" font="Regular;28" selectionDisabled="1" scrollbarMode="showOnDemand" />
+    <widget name="infolist" position="396,201" size="1110,17*38" itemHeight="38" font="Regular;28" selectionDisabled="1" scrollbarMode="showOnDemand" />
   </screen>
   <screen name="ServiceInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="ServiceInfoSimple" />
@@ -1465,13 +1465,13 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   <widget addon="Pager" connection="checkList" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 </screen>
   <!-- Opkg installer -->
-  <screen name="OpkgInstaller" position="fill" flags="wfNoBorder">
+  <screen name="OpkgInstaller" position="fill" flags="wfNoBorder"><!-- only in PLi -->
     <panel name="PigTemplate" />
     <eLabel text="Install extensions" position="30,7" size="1830,75" backgroundColor="secondBG" transparent="1" zPosition="1" font="Regular;36" valign="center" halign="left" />
     <widget name="list" position="780,100" size="1110,798" itemHeight="38" font="Regular;28" backgroundColor="background" zPosition="3" transparent="1" scrollbarMode="showOnDemand" />
     <widget source="introduction" render="Label" position="780,975" size="1110,37" backgroundColor="background" zPosition="1" transparent="1" foregroundColor="white" font="Regular;33" halign="center" />
   </screen>
-  <screen name="Opkg" title="Installing Software" position="fill" flags="wfNoBorder">
+  <screen name="Opkg" title="Installing Software" position="fill" flags="wfNoBorder"><!-- only in PLi -->
     <panel name="PigTemplate" />
     <widget name="package" position="780,110" size="1110,35" backgroundColor="darkgrey" transparent="1" font="Regular;32" />
     <widget name="status" position="780,163" size="1110,70" backgroundColor="darkgrey" transparent="1" font="Regular;32" />
@@ -1479,17 +1479,17 @@ setLogo(self["logo"].instance, "brand", 54, 34)
     <widget name="activityslider" position="30,1024" size="1860,6" pixmap="window/slider100.png" transparent="1" zPosition="2" />
   </screen>
   <!-- Choose upgrade source -->
-  <screen name="OPKGMenu" title="Select OPKG source" position="fill" flags="wfNoBorder">
+  <screen name="OPKGMenu" title="Select OPKG source" position="fill" flags="wfNoBorder"><!-- only in PLi -->
     <panel name="PigTemplate" />
     <widget name="filelist" position="780,105" size="1110,450" itemHeight="38" font="Regular;28" zPosition="3" transparent="1" scrollbarMode="showOnDemand" />
   </screen>
   <!-- Edit upgrade source -->
-  <screen name="OPKGSource" title="OPKG source" position="fill" flags="wfNoBorder">
+  <screen name="OPKGSource" title="OPKG source" position="fill" flags="wfNoBorder"><!-- only in PLi -->
     <panel name="PigTemplate" />
     <widget name="text" position="30,570" size="1860,45" font="Regular;34" zPosition="3" transparent="1" />
   </screen>
   <!-- Packet Manager -->
-  <screen name="PacketManager" title="OPKG upgrade" position="fill" flags="wfNoBorder">
+  <screen name="PacketManager" title="OPKG upgrade" position="fill" flags="wfNoBorder"><!-- only in PLi -->
     <panel name="PigTemplate" />
     <widget source="list" render="Listbox" position="780,105" size="1110,858" zPosition="3" transparent="1" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
@@ -1522,7 +1522,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		<widget name="text" position="25,700" size="1110,200" font="Regular;30" zPosition="2" foregroundColor="yellow" valign="bottom"/>
 		<panel name="FeedsStatusTemplate"/>
 	</screen>
-  <screen name="UpdatePluginMenu" title="Softwaremanager" position="fill" flags="wfNoBorder">
+  <screen name="UpdatePluginMenu" title="Softwaremanager" position="fill" flags="wfNoBorder"><!-- only in PLi -->
     <panel name="PigTemplate" />
     <panel name="KeyMenuTemplate" />
     <widget source="menu" render="Listbox" position="780,105" size="1110,900" zPosition="3" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand">
@@ -1546,7 +1546,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 			</convert>
     </widget>
   </screen>
-  <screen name="PluginManager" title="Plugin manager" position="fill" flags="wfNoBorder">
+  <screen name="PluginManager" title="Plugin manager" position="fill" flags="wfNoBorder"><!-- only in PLi -->
     <panel name="PigTemplate" />
     <widget source="list" render="Listbox" position="780,105" size="1110,825" transparent="1" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
@@ -1570,7 +1570,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
     </widget>
     <widget source="status" render="Label" position="780,975" size="1110,37" shadowColor="black" shadowOffset="-2,-2" transparent="1" font="Regular;33" halign="center" />
   </screen>
-  <screen name="PluginManagerInfo" title="Plugin manager activity" position="fill" flags="wfNoBorder">
+  <screen name="PluginManagerInfo" title="Plugin manager activity" position="fill" flags="wfNoBorder"><!-- only in PLi -->
     <panel name="PigTemplate" />
     <widget source="list" render="Listbox" position="780,105" size="1110,787" transparent="1" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
@@ -1586,7 +1586,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
     </widget>
     <widget source="status" render="Label" position="780,960" size="1110,37" backgroundColor="background" transparent="1" font="Regular;33" halign="center" />
   </screen>
-  <screen name="PluginManagerHelp" title="Plugin manager help" position="fill" flags="wfNoBorder">
+  <screen name="PluginManagerHelp" title="Plugin manager help" position="fill" flags="wfNoBorder"><!-- only in PLi -->
     <panel name="PigTemplate" />
     <widget source="list" render="Listbox" position="780,105" size="1110,787" transparent="1" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
@@ -1602,7 +1602,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
     </widget>
     <widget source="status" render="Label" position="780,960" size="1110,37" backgroundColor="background" transparent="1" font="Regular;33" halign="center" />
   </screen>
-  <screen name="PluginDetails" position="fill" title="Plugin Details" flags="wfNoBorder">
+  <screen name="PluginDetails" position="fill" title="Plugin Details" flags="wfNoBorder"><!-- only in PLi -->
     <panel name="PigTemplate" />
     <widget name="statuspic" position="1306,952" size="48,48" alphatest="on" />
     <widget source="author" render="Label" position="780,105" size="1100,45" zPosition="10" font="Regular;28" backgroundColor="background" transparent="1" />
@@ -1729,7 +1729,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   </screen>
   <!-- ImageWizard -->
   <screen name="ImageWizard" position="fill" flags="wfNoBorder">
-    <panel name="PigTemplate" />
+    <panel name="Screen_Window_Full" />
     <eLabel text="Welcome..." position="30,7" size="1830,75" backgroundColor="secondBG" transparent="1" zPosition="1" font="Regular;36" valign="center" halign="left" />
     <widget name="text" position="1090,153" size="510,495" font="Regular;33" />
     <widget source="list" render="Listbox" position="864,661" size="735,270" scrollbarMode="showOnDemand">
@@ -1741,7 +1741,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
     <widget name="wizard" pixmap="wizard.png" position="811,120" size="165,261" zPosition="10" alphatest="on" />
     <widget name="rc" position="1623,148" size="231,750" zPosition="10" pixmaps="rc.png,rcold.png" alphatest="on" />
   </screen>
-  <screen name="SoftwareManagerInfo" title="SoftwareManager information" position="fill" flags="wfNoBorder">
+  <screen name="SoftwareManagerInfo" title="SoftwareManager information" position="fill" flags="wfNoBorder"><!-- only in PLi -->
     <panel name="PigTemplate" />
     <widget source="list" render="Listbox" position="780,100" size="1110,912" scrollbarMode="showOnDemand" selectionDisabled="0">
       <convert type="TemplatedMultiContent">
@@ -1872,7 +1872,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		</widget>
 		<widget source="introduction" render="Label" position="405,780" size="1110,34" transparent="1" zPosition="10" font="Regular;30" valign="center" halign="center" />
 	</screen>
-	<screen name="UserManager" title="UserManager" position="fill" flags="wfNoBorder">
+	<screen name="UserManager" title="UserManager" position="fill" flags="wfNoBorder"><!-- What is this? -->
 		<panel name="PigTemplate" />
 		<widget source="config" render="Listbox" position="780,105" size="1110,630" zPosition="3" transparent="1" scrollbarMode="showOnDemand">
 		<convert type="TemplatedMultiContent">
@@ -1887,7 +1887,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		</widget>
 		<widget source="introduction" render="Label" position="780,975" size="1110,34" backgroundColor="background" transparent="1" font="Regular;30" halign="center" />
 	</screen>
-	<screen name="AutoMountView" position="fill" flags="wfNoBorder">
+	<screen name="AutoMountView" position="fill" flags="wfNoBorder"><!-- What is this? -->
 		<panel name="PigTemplate" />
 		<widget source="legend1" render="Label" position="780,105" size="300,75" transparent="1" zPosition="1" font="Regular;27" valign="center" halign="left" />
 		<widget source="legend2" render="Label" position="1080,105" size="525,75" transparent="1" zPosition="1" font="Regular;27" valign="center" halign="center" />
@@ -1919,7 +1919,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		<panel name="ConfigScreenTemplate" />
 	</screen>
 	<!-- WirelessLan -->
-	<screen name="WlanStatus" position="fill" title="Wireless Network State" flags="wfNoBorder">
+	<screen name="WlanStatus" position="fill" title="Wireless Network State" flags="wfNoBorder"><!-- Needs doing -->
 		<panel name="PigTemplate" />
 		<widget source="LabelBSSID" render="Label" position="885,120" size="300,37" valign="left" font="Regular;30" transparent="1" foregroundColor="white" />
 		<widget source="LabelESSID" render="Label" position="885,225" size="300,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
@@ -1938,7 +1938,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		<widget source="Statustext" render="Label" position="742,880" size="300,37" zPosition="10" font="Regular;31" halign="right" transparent="1" />
 		<widget name="statuspic" pixmaps="buttons/button_green.png,buttons/button_green_off.png" position="1050,888" zPosition="10" size="22,24" transparent="1" alphatest="on" />
 	</screen>
-	<screen name="WlanScan" position="fill" title="Choose a Wireless Network" flags="wfNoBorder">
+	<screen name="WlanScan" position="fill" title="Choose a Wireless Network" flags="wfNoBorder"><!-- Needs doing -->
 		<panel name="PigTemplate" />
 		<widget source="list" render="Listbox" position="780,105" size="1110,525" scrollbarMode="showOnDemand">
 		<convert type="TemplatedMultiContent">
@@ -2271,9 +2271,8 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		</applet>
 	</screen>
 	<!-- TimeDateInput -->
-	<screen name="TimeDateInput" title="Time/Date Input" position="fill" flags="wfNoBorder">
-		<panel name="PigTemplate" />
-		<widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" transparent="1" scrollbarMode="showOnDemand" />
+	<screen name="TimeDateInput" title="Time/Date Input" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate" />
 	</screen>
 	<!-- Language selection -->
 	<screen name="LanguageSelection" title="Language selection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -2570,7 +2569,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		<widget name="key_blue" position="440,40" zPosition="4" size="160,22" font="Regular;20" valign="center" halign="left" backgroundColor="#232323" foregroundColor="#ffffff" transparent="1" />
 	</screen>
 	<!-- AutoBackup -->
-	<screen name="Config" position="fill" flags="wfNoBorder">
+	<screen name="Config" position="fill" flags="wfNoBorder"><!-- What is this? -->
 		<panel name="PigTemplate" />
 		<panel name="KeyMenuTemplate" />
 		<widget name="config" position="780,105" size="1110,300" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
@@ -2578,14 +2577,14 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		<widget name="status" position="780,540" size="1110,410" font="Console;20" />
 	</screen>
 	<!-- PicturePlayer -->
-	<screen name="picshow" position="fill" flags="wfNoBorder">
+	<screen name="picshow" position="fill" flags="wfNoBorder"><!-- Needs doing -->
 		<panel name="PigTemplate" />
 		<panel name="KeyMenuTemplate" />
 		<widget name="thn" position="363,547" size="390,375" alphatest="on" />
 		<widget name="filelist" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" zPosition="3" scrollbarMode="showOnDemand" />
 		<widget name="label" position="783,975" size="390,34" transparent="1" font="Regular;30" />
 	</screen>
-	<screen name="Pic_Exif" title="Info" position="fill" flags="wfNoBorder">
+	<screen name="Pic_Exif" title="Info" position="fill" flags="wfNoBorder"><!-- Needs doing -->
 		<panel name="PigTemplate" />
 		<widget source="menu" render="Listbox" position="780,105" size="1110,892" selectionDisabled="1" transparent="1" scrollbarMode="showOnDemand">
 		<convert type="TemplatedMultiContent">
@@ -2597,10 +2596,10 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		</widget>
 	</screen>
 	<screen name="Pic_Setup" title="Settings" position="fill" flags="wfNoBorder">
-		<panel name="PigTemplate" />
+		<panel name="PigTemplate" /><!-- Needs doing -->
 		<widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" transparent="1" scrollbarMode="showOnDemand" />
 	</screen>
-	<screen name="Pic_Full_View" position="fill" title="Picture" flags="wfNoBorder">
+	<screen name="Pic_Full_View" position="fill" title="Picture" flags="wfNoBorder"><!-- Needs doing -->
 		<widget name="pic" position="fill" zPosition="1" alphatest="on" />
 		<eLabel position="22,22" size="45,37" zPosition="2" backgroundColor="black" transparent="1" />
 		<widget name="point" position="25,25" size="31,31" zPosition="3" pixmap="icons/record.png" alphatest="on" />
@@ -2609,10 +2608,10 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 	</screen>
 	<!-- Inputbox -->
 	<screen name="InputBox" position="fill" title="Input" flags="wfNoBorder">
-		<panel name="PigTemplate" />
-		<widget name="text" position="780,105" size="1110,39" font="Regular;33" />
-		<ePixmap pixmap="buttons/vkey_text.png" position="927,210" size="816,78" zPosition="-4" alphatest="on" />
-		<widget name="input" position="932,227" size="806,45" font="Regular;38" valign="center" />
+		<panel name="Screen_Menu1" />
+		<widget name="text" position="396,210" size="1110,39" font="Regular;33" />
+		<ePixmap pixmap="buttons/vkey_text.png" position="543,315" size="816,78" zPosition="-1" alphatest="on" />
+		<widget name="input" position="548,332" size="806,45" font="Regular;38" valign="center" />
 	</screen>
 	<!-- Location Box -->
 	<screen name="LocationBox" position="fill" title="Select Location" flags="wfNoBorder">
