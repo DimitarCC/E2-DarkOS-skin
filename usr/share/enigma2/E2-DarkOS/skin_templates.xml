@@ -169,7 +169,7 @@
 
 	<screen name="ConfigButtonsTemplate">
 		<widget addon="ButtonSequence" connection="key_info,key_help,key_pvr,key_next,key_menu,key_previous,key_text,VKeyIcon" 
-			pixmaps="key_info:buttons/key_epg.png,key_help:buttons/key_help.png,key_pvr:buttons/key_pvr.png,key_menu:buttons/key_menu.png,key_text:buttons/key_text.png,VKeyIcon:buttons/key_text.png,key_previous:buttons/key_prev.png,key_next:buttons/key_next.png" 
+			pixmaps="key_info:buttons/key_info.png,key_help:buttons/key_help.png,key_pvr:buttons/key_pvr.png,key_menu:buttons/key_menu.png,key_text:buttons/key_text.png,VKeyIcon:buttons/key_text.png,key_previous:buttons/key_prev.png,key_next:buttons/key_next.png" 
 			position="0,0" size="220,36" transparent="1" backgroundColor="transparent" alignment="right" zPosition="10"/>
 	</screen>
 	
