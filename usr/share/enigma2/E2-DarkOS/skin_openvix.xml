@@ -339,4 +339,121 @@ self["bcGroundOver"].setZPosition(-7)
  	<screen name="VuplusKexec" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
  	</screen>
+ 	
+ 	<screen name="NetworkInadynLog" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Window_Full"/>
+		<widget name="infotext" position="25,123" size="1870,855" font="Regular;24"/>
+	</screen>
+
+	<screen name="NetworkVpnLog" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Window_Full"/>
+		<widget name="infotext" position="25,123" size="1870,855" font="Regular;24"/>
+	</screen>
+
+	<!-- NetworkInadyn -->
+	<screen name="NetworkInadyn" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1" /><!-- panel name="Screen_Window_Full"/ -->
+		<panel position="380,125" size="e,e"><!-- convert Screen_Window_Full to Screen_Menu1 -->
+			<widget name="autostart" position="25,163" size="150,45" font="Regular;30" valign="center" transparent="0"/>
+			<widget name="labdisabled" position="175,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="red" zPosition="1"/>
+			<widget name="labactive" position="175,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="status" position="370,163" size="225,45" font="Regular;30" valign="center" transparent="0"/>
+			<widget name="labstop" position="610,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="red" zPosition="1"/>
+			<widget name="labrun" position="610,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="time" position="25,274" size="225,90" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labtime" position="340,274" size="465,90" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="username" position="25,390" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labuser" position="340,390" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="password" position="25,450" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labpass" position="340,450" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="alias" position="25,510" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labalias" position="340,510" size="465,45" font="Regular;30" valign="top" backgroundColor="background"/>
+			<widget name="sinactive" position="25,607" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="sactive" position="25,607" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+			<widget name="system" position="85,607" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labsys" position="340,607" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+		</panel>
+	</screen>
+
+	<!-- NetworkMiniDLNA -->
+	<screen name="NetworkMiniDLNA" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<panel position="-450,60" size="e,e">
+			<widget name="autostart" position="870,163" size="150,45" font="Regular;30" valign="center" transparent="0"/>
+			<widget name="labdisabled" position="1020,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="red" zPosition="1"/>
+			<widget name="labactive" position="1020,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="status" position="1215,163" size="225,45" font="Regular;30" valign="center" transparent="0"/>
+			<widget name="labstop" position="1455,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="red" zPosition="1"/>
+			<widget name="labrun" position="1455,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="username" position="870,274" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labuser" position="1185,274" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="iface" position="870,330" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labiface" position="1185,330" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="port" position="870,390" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labport" position="1185,390" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="serialno" position="870,450" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labserialno" position="1185,450" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="sharedir" position="870,510" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labsharedir" position="1185,510" size="720,123" font="Regular;30" valign="top" backgroundColor="background"/>
+			<widget name="inotify" position="870,607" size="270,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="inotifyinactive" position="1200,607" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="inotifyactive" position="1200,607" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+			<widget name="tivo" position="870,667" size="270,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="tivoinactive" position="1200,667" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="tivoactive" position="1200,667" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+			<widget name="dlna" position="870,727" size="300,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="dlnainactive" position="1200,727" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="dlnaactive" position="1200,727" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+		</panel>
+	</screen>
+
+	<!-- NetworkServiceSetup -->
+	<screen name="NetworkServiceSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="lab1" position="405,225" size="225,45" font="Regular;30" valign="center" transparent="0"/>
+		<widget name="labactive" position="645,225" size="375,45" font="Regular;30" valign="center" transparent="0"/>
+		<widget name="lab1" position="405,225" size="225,45" font="Regular;30" valign="center" transparent="0"/>
+		<widget name="lab2" position="405,390" size="225,45" font="Regular;30" valign="top" transparent="0"/>
+		<widget name="labstop" position="645,390" size="375,45" font="Regular;30" valign="center" halign="center" backgroundColor="red"/>
+		<widget name="labrun" position="645,390" size="375,45" zPosition="1" font="Regular;30" valign="center" halign="center" backgroundColor="green"/>
+	</screen>
+
+	<screen name="uShareSelection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="BackupSelection"/>
+	</screen>
+
+		<!-- NetworkuShare -->
+	<screen name="NetworkuShare" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<panel position="-450,60" size="e,e">
+			<widget name="autostart" position="870,163" size="150,36" font="Regular;30" valign="center" transparent="0"/>
+			<widget name="labdisabled" position="1030,159" size="150,36" font="Regular;30" valign="center" halign="center" backgroundColor="red" zPosition="1"/>
+			<widget name="labactive" position="1030,159" size="150,36" font="Regular;30" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="status" position="1290,163" size="225,36" font="Regular;30" valign="center" transparent="0"/>
+			<widget name="labstop" position="1530,159" size="150,36" font="Regular;30" valign="center" halign="center" backgroundColor="red" zPosition="1"/>
+			<widget name="labrun" position="1530,159" size="150,36" font="Regular;30" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="username" position="870,250" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labuser" position="1185,250" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="iface" position="870,300" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labiface" position="1185,300" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="port" position="870,350" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labport" position="1185,350" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="telnetport" position="870,400" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labtelnetport" position="1185,400" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="sharedir" position="870,450" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labsharedir" position="1185,450" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="web" position="870,550" size="270,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="webinactive" position="1200,550" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="webactive" position="1200,550" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+			<widget name="telnet" position="870,600" size="270,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="telnetinactive" position="1200,600" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="telnetactive" position="1200,600" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+			<widget name="xbox" position="870,650" size="300,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="xboxinactive" position="1200,650" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="xboxactive" position="1200,650" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+			<widget name="dlna" position="870,700" size="300,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="dlnainactive" position="1200,700" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="dlnaactive" position="1200,700" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+		</panel>
+	</screen>
 </skin>

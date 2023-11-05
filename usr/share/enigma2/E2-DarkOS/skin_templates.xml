@@ -794,5 +794,15 @@
 		<widget name="slider" position="30,970" size="1110,20" zPosition="100" transparent="1"/>
 		<widget name="activityslider" position="30,990" size="1860,6" pixmap="window/slider100.png" transparent="1" zPosition="100"/>
 	</screen>
+	
+	<screen name="VirtualKeyBoardTemplate">
+		<widget name="prompt" position="4,0" size="810,39" font="Regular;30" noWrap="1" transparent="1" valign="top"/>
+		<widget name="text" position="4,70" size="952,48" font="Regular;38" halign="right" noWrap="1" transparent="1" valign="center"/>
+		<ePixmap pixmap="buttons/vkey_text.png" position="0,69" size="960,50" alphatest="on" zPosition="-4"/>
+		<widget name="list" position="4,160" size="952,340" selectionDisabled="1" transparent="1"/>
+		<widget name="locale" position="4,540" size="800,39" font="Regular;30" foregroundColor="#a08500" transparent="1"/>
+		<widget name="mode" position="856,540" size="100,39" font="Regular;30" halign="right" transparent="1" valign="center"/>
+		<widget name="language" position="0,0" size="0,0" font="Regular;30" foregroundColor="#a08500" halign="right" transparent="1"/>
+	</screen>
 </skin>
 
