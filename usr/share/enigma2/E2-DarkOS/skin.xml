@@ -1418,19 +1418,11 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   <widget name="logentry" position="420,790" size="1090,35" font="Regular;32" halign="center" />
   <widget addon="Pager" connection="loglist" position="396,850" size="1130,25" transparent="1" backgroundColor="background" />
 </screen>
-  <screen name="TimerSanityConflict" position="fill" title="Timer sanity error" flags="wfNoBorder">
-    <panel name="PigTemplate" />
-    <widget source="key_red" position="780,110" size="34,34" render="Pixmap" pixmap="buttons/red.png" alphatest="on" />
-    <widget name="key_red" position="840,110" size="370,38" backgroundColor="black" zPosition="1" transparent="1" font="Regular;34" halign="left" />
-    <widget source="key_green" position="1350,110" size="34,34" render="Pixmap" pixmap="buttons/green.png" alphatest="on" />
-    <widget name="key_green" position="1410,110" size="370,38" backgroundColor="black" zPosition="1" transparent="1" font="Regular;34" halign="left" />
-    <widget name="timer1" position="780,165" size="1110,150" itemHeight="75" rowSplit="40" setEventNameFont="Regular;32" setServiceNameFont="Regular;30" setFont="Regular;27" satPosLeft="250" scrollbarMode="showNever" />
-    <widget source="key_yellow" position="780,390" size="34,34" render="Pixmap" pixmap="buttons/yellow.png" alphatest="on" />
-    <widget name="key_yellow" position="840,390" size="370,38" backgroundColor="black" zPosition="1" transparent="1" font="Regular;34" halign="left" />
-    <widget source="key_blue" position="1350,390" size="34,34" render="Pixmap" pixmap="buttons/blue.png" alphatest="on" />
-    <widget name="key_blue" position="1410,390" size="370,38" backgroundColor="black" zPosition="1" transparent="1" font="Regular;34" halign="left" />
-    <widget name="timer2" position="780,450" size="1110,150" itemHeight="75" rowSplit="40" setEventNameFont="Regular;32" setServiceNameFont="Regular;30" setFont="Regular;27" satPosLeft="250" scrollbarMode="showNever" />
-    <widget name="list" position="780,705" size="1110,152" itemHeight="38" font="Regular;28" valign="center" scrollbarMode="showOnDemand" />
+  <screen name="TimerSanityConflict" position="fill" title="Timer sanity error" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="Screen_Menu1" />
+    <widget name="timer1" position="396,210" size="1110,150" itemHeight="75" rowSplit="40" setEventNameFont="Regular;32" setServiceNameFont="Regular;30" setFont="Regular;27" satPosLeft="250" scrollbarMode="showNever" />
+    <widget name="timer2" position="396,400" size="1110,150" itemHeight="75" rowSplit="40" setEventNameFont="Regular;32" setServiceNameFont="Regular;30" setFont="Regular;27" satPosLeft="250" scrollbarMode="showNever" />
+    <widget name="list" position="396,590" size="1110,152" itemHeight="38" font="Regular;28" valign="center" scrollbarMode="showOnDemand" />
   </screen>
   <screen name="TimerSelection" position="fill" title="Timer selection" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
