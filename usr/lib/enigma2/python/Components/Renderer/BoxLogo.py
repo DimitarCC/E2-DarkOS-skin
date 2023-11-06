@@ -18,6 +18,8 @@ def getLogoPngName(logoType):
 		elif logoType == "brand":
 			if model and model in ("vuzero4k", "vusolo4k", "vuuno4kse", "vuduo4k", "vuduo4kse", "vuultimo4k"):
 				logoname = "vulogo"
+			elif model and model in ("dagsmv200"):
+				logoname = "qviart"
 		return logoname
 
 def getDefaultLogo(logoType, width, height):
