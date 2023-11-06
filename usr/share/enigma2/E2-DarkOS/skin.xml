@@ -601,7 +601,7 @@
     <widget source="Event" render="Label" position="1160,382" size="720,35" foregroundColor="secondFG" font="Regular;32" transparent="1">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="Event" render="Label" position="1159,500" size="720,315" transparent="1" font="Regular;30" halign="block">
+    <widget source="Event" render="Label" position="1159,427" size="720,500" transparent="1" font="Regular;30" halign="block">
       <convert type="EventName">FullDescription</convert>
     </widget>
     <widget source="Event" render="Label" position="1162,958" size="330,34" backgroundColor="background" transparent="1" foregroundColor="secondFG" font="Regular;30">
@@ -742,7 +742,7 @@
     <panel name="Screen_Window_Full_Pig" />
     <eLabel position="25,350" size="1865,1" backgroundColor="separator" zPosition="-5" />
     <widget name="timeline_now" position="5,405" zPosition="2" size="19,577" scale="stretch" pixmap="window/timeline-now.png" alphatest="blend" />
-    <widget name="timeline_text" position="75,365" size="1820,40" zPosition="2" foregroundColor="foreground" backgroundColor="background" />
+    <widget name="timeline_text" position="35,365" size="1860,40" zPosition="2" foregroundColor="foreground" backgroundColor="background" />
     <eLabel position="25,405" size="1865,1" backgroundColor="separator" zPosition="10" />
     <eLabel position="25,981" size="1865,1" backgroundColor="separator" zPosition="10" />
     <eLabel position="25,405" size="1,576" backgroundColor="separator" zPosition="10" />
@@ -1213,7 +1213,8 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   <screen name="MovieSelection" title="Movie Selection" position="fill" flags="wfNoBorder">
     <panel name="Screen_Window_Full_Pig" />
     <eLabel position="25,350" size="1860,1" backgroundColor="separator" zPosition="-5" />
-    <widget name="list" transparent="1" position="20,365" size="1875,620" scrollbarMode="showOnDemand" itemHeights="100,75,45" fontSizesOriginal="36,26,24" fontSizesCompact="36,28" fontSizesMinimal="34,30" pbarShift="17" pbarHeight="20" pbarLargeWidth="72" spaceRight="3" columnsOriginal="270,300" columnsCompactDescription="240,220,240" compactColumn="300" treeDescription="250" partIconeShiftMinimal="8" partIconeShiftCompact="2" partIconeShiftOriginal="3" iconsWidth="33" spaceIconeText="6" trashShift="4" dirShift="3" />
+    <widget name="list" transparent="1" position="20,365" size="1875,585" scrollbarMode="showNever" itemHeights="100,75,45" fontSizesOriginal="36,26,24" fontSizesCompact="36,28" fontSizesMinimal="34,30" pbarShift="17" pbarHeight="20" pbarLargeWidth="72" spaceLeft="25" spaceRight="25" dateWidth="260" columnsOriginal="270,300" columnsCompactDescription="240,220,240" compactColumn="300" treeDescription="250" partIconeShiftMinimal="8" partIconeShiftCompact="2" partIconeShiftOriginal="3" iconsWidth="33" spaceIconeText="6" trashShift="4" dirShift="3" />
+	<widget addon="Pager" connection="list" position="20,960" size="1875,25" transparent="1" backgroundColor="background" />
     <widget render="Label" source="Service" halign="left" backgroundColor="background2" position="30,175" size="1490,140" font="Regular; 30" transparent="1">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>

@@ -456,4 +456,41 @@ self["bcGroundOver"].setZPosition(-7)
 			<widget name="dlnaactive" position="1200,700" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
 		</panel>
 	</screen>
+	<screen name="EventViewSimple" position="fill" flags="wfNoBorder"  backgroundColor="transparent">
+		<panel position="96,54" size="1728,987">
+			<panel name="Screen_1" />
+			<widget source="Service" render="Label" position="30,93" size="e-260,70" backgroundColor="background" font="Regular;30" halign="left" valign="top" foregroundColor="light_green" >
+				<convert type="MovieInfo">Name</convert>
+			</widget>
+			<widget source="Event" render="Label" position="e-240,93" size="200,80" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Regular;32" halign="right" valign="top">
+			  <convert type="EventName">Rating</convert>
+			</widget>
+			<widget source="Service" render="Label" position="30,140" size="e-620,50" font="Bold; 36" halign="left" foregroundColor="light_yellow" backgroundColor="background" transparent="1">
+				<convert type="MovieInfo">RecordServiceName</convert>
+			</widget>
+			<widget source="Event" render="Label" position="30,e-140" size="340,40" font="Bold; 28" halign="left" backgroundColor="background" transparent="1">
+				<convert type="EventTime">Times</convert>
+				<convert type="ClockToText">LongFullDate,Default</convert>
+			</widget>
+			<widget name="duration" position="370,e-140" size="340,40" font="Bold; 28" halign="left" foregroundColor="light_green" backgroundColor="background" transparent="1" />
+			<widget source="Event" render="Label" position="714,e-145" size="670,45" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Regular;32" halign="left">
+			  <convert type="EventName">Genre</convert>
+			</widget>
+			<widget name="FullDescription" position="30,212" size="e-50,e-500" font="Regular; 32" backgroundColor="background" halign="block" scrollbarMode="showNever" />
+			<widget addon="Pager" connection="FullDescription" position="30,212+e-475" size="e-50,25" />
+			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
+			  <convert type="ClockToText">Default</convert>
+			</widget>
+			<eLabel position="22,2" size="e-420,64" font="Bold; 36" halign="left" valign="center" foregroundColor="yellow" backgroundColor="background2" transparent="1" text="Current program" />
+			<widget alphatest="blend" position="e-284,e-230" render="Picon" size="227,130" source="Service" zPosition="1" transparent="1" backgroundColor="background">
+			  <convert type="MovieInfo">RecordServiceRef</convert>
+			</widget>
+			<panel position="e-74,e-70" size="54,34">
+				<panel name="BrandLogoTemplate" />
+			</panel>
+		</panel>
+		<!--<widget source="session.Event_Next" render="Label" position="22,900" size="690,39" font="Regular;33" halign="center" foregroundColor="selectedFG">
+			<convert type="EventName">NameNext</convert>
+		</widget>-->
+	</screen>
 </skin>
