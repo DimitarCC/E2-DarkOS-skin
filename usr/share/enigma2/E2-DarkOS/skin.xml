@@ -231,6 +231,8 @@
   <include filename="skin_templates.xml" />
   <include filename="skin_plugins.xml" />
   <include filename="skin_openvix.xml" />
+  <include filename="skin_openbh.xml" />
+  <include filename="skin_openpli.xml" />
   <!--LCD Display-->
   <!--<screen name="InfoBarSummary" position="5,5" size="470,310">
     <ePixmap position="0,0" size="390,230" pixmap="display_bg.png" zPosition="-1" />
@@ -599,7 +601,7 @@
     <widget source="Event" render="Label" position="1160,382" size="720,35" foregroundColor="secondFG" font="Regular;32" transparent="1">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="Event" render="Label" position="1159,439" size="720,315" transparent="1" font="Regular;30" halign="block">
+    <widget source="Event" render="Label" position="1159,500" size="720,315" transparent="1" font="Regular;30" halign="block">
       <convert type="EventName">FullDescription</convert>
     </widget>
     <widget source="Event" render="Label" position="1162,958" size="330,34" backgroundColor="background" transparent="1" foregroundColor="secondFG" font="Regular;30">
@@ -1045,10 +1047,6 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   <panel name="Screen_Menu1" />
   <widget name="text" position="394,204" size="1130,680" itemHeight="38" font="Fixed;28" transparent="1" foregroundColor="white" scrollbarMode="showOnDemand" />
 </screen>
-  <screen name="Console_Pig" title="Command execution" position="fill" flags="wfNoBorder"><!-- only in PLi -->
-    <panel name="PigTemplate" />
-    <widget name="text" position="825,100" size="1035,912" itemHeight="38" font="Fixed;28" transparent="1" foregroundColor="white" scrollbarMode="showOnDemand" />
-  </screen>
   <!-- NumberZap -->
   <screen name="NumberZapExt" position="40,40" size="860,155" title=" " flags="wfNoBorder" backgroundColor="transparent">
   <ePixmap position="2,2" size="856,151" pixmap="extzap_overlay.png" zPosition="-11" alphatest="blend" />
@@ -1462,47 +1460,6 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   <widget name="checkList" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
   <widget addon="Pager" connection="checkList" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 </screen>
-  <!-- Opkg installer -->
-  <screen name="OpkgInstaller" position="fill" flags="wfNoBorder"><!-- only in PLi -->
-    <panel name="PigTemplate" />
-    <eLabel text="Install extensions" position="30,7" size="1830,75" backgroundColor="secondBG" transparent="1" zPosition="1" font="Regular;36" valign="center" halign="left" />
-    <widget name="list" position="780,100" size="1110,798" itemHeight="38" font="Regular;28" backgroundColor="background" zPosition="3" transparent="1" scrollbarMode="showOnDemand" />
-    <widget source="introduction" render="Label" position="780,975" size="1110,37" backgroundColor="background" zPosition="1" transparent="1" foregroundColor="white" font="Regular;33" halign="center" />
-  </screen>
-  <screen name="Opkg" title="Installing Software" position="fill" flags="wfNoBorder"><!-- only in PLi -->
-    <panel name="PigTemplate" />
-    <widget name="package" position="780,110" size="1110,35" backgroundColor="darkgrey" transparent="1" font="Regular;32" />
-    <widget name="status" position="780,163" size="1110,70" backgroundColor="darkgrey" transparent="1" font="Regular;32" />
-    <widget name="slider" position="780,440" size="1110,20" zPosition="2" transparent="1" />
-    <widget name="activityslider" position="30,1024" size="1860,6" pixmap="window/slider100.png" transparent="1" zPosition="2" />
-  </screen>
-  <!-- Choose upgrade source -->
-  <screen name="OPKGMenu" title="Select OPKG source" position="fill" flags="wfNoBorder"><!-- only in PLi -->
-    <panel name="PigTemplate" />
-    <widget name="filelist" position="780,105" size="1110,450" itemHeight="38" font="Regular;28" zPosition="3" transparent="1" scrollbarMode="showOnDemand" />
-  </screen>
-  <!-- Edit upgrade source -->
-  <screen name="OPKGSource" title="OPKG source" position="fill" flags="wfNoBorder"><!-- only in PLi -->
-    <panel name="PigTemplate" />
-    <widget name="text" position="30,570" size="1860,45" font="Regular;34" zPosition="3" transparent="1" />
-  </screen>
-  <!-- Packet Manager -->
-  <screen name="PacketManager" title="OPKG upgrade" position="fill" flags="wfNoBorder"><!-- only in PLi -->
-    <panel name="PigTemplate" />
-    <widget source="list" render="Listbox" position="780,105" size="1110,858" zPosition="3" transparent="1" scrollbarMode="showOnDemand">
-      <convert type="TemplatedMultiContent">
-		{"template": [
-		MultiContentEntryText(pos = (7,1), size = (975,36), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
-		MultiContentEntryText(pos = (7,40), size = (975,36), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
-		MultiContentEntryPixmapAlphaTest(pos = (993,0), size = (72,72), png = 4), # index 5 is the status pixmap
-		MultiContentEntryPixmapAlphaTest(pos = (0,76), size = (1110,3), png = 5), # index 6 is the div pixmap
-		],
-		"fonts": [gFont("Regular",33),gFont("Regular",27)],
-		"itemHeight": 78
-		}
-			</convert>
-    </widget>
-  </screen>
   <screen name="UpdatePlugin" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Window_Full_Pig" />
     <eLabel position="1200,105" size="1,870" backgroundColor="separator" zPosition="-5" />
@@ -1512,7 +1469,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
     <panel name="FeedsStatusTemplate"/>
   </screen>
 
-  <!--Softwareupdate choices -->
+  	<!--Softwareupdate choices -->
 	<screen name="SoftwareUpdateChoices" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Window_Full_Pig"/>
 		<eLabel position="1200,105" size="1,870" backgroundColor="separator" zPosition="-5" />
@@ -1520,103 +1477,15 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		<widget name="text" position="25,700" size="1110,200" font="Regular;30" zPosition="2" foregroundColor="yellow" valign="bottom"/>
 		<panel name="FeedsStatusTemplate"/>
 	</screen>
-  <screen name="UpdatePluginMenu" title="Softwaremanager" position="fill" flags="wfNoBorder"><!-- only in PLi -->
-    <panel name="PigTemplate" />
-    <panel name="KeyMenuTemplate" />
-    <widget source="menu" render="Listbox" position="780,105" size="1110,900" zPosition="3" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand">
-      <convert type="TemplatedMultiContent">
-			{"template": [
-					MultiContentEntryText(pos = (75,15),size = (1035,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 1),# index 0 is the MenuText,
-				],
-			"fonts": [gFont("Regular",36)],
-			"itemHeight": 75
-			}
-			</convert>
-    </widget>
-    <widget source="menu" render="Listbox" position="30,570" size="720,240" backgroundColor="darkgrey" zPosition="3" selectionDisabled="1" transparent="1" foregroundColor="white" scrollbarMode="showNever">
-      <convert type="TemplatedMultiContent">
-			{"template": [
-					MultiContentEntryText(pos = (0,0),size = (720,240),flags = RT_HALIGN_LEFT|RT_VALIGN_TOP|RT_WRAP,text = 2),# index 0 is the MenuText,
-				],
-			"fonts": [gFont("Regular",30)],
-			"itemHeight": 240
-			}
-			</convert>
-    </widget>
-  </screen>
-  <screen name="PluginManager" title="Plugin manager" position="fill" flags="wfNoBorder"><!-- only in PLi -->
-    <panel name="PigTemplate" />
-    <widget source="list" render="Listbox" position="780,105" size="1110,825" transparent="1" scrollbarMode="showOnDemand">
-      <convert type="TemplatedMultiContent">
-				{"templates":
-				{"default": (82,[
-				MultiContentEntryText(pos = (0,3), size = (975,36), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
-				MultiContentEntryText(pos = (0,45), size = (975,33), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
-				MultiContentEntryPixmapAlphaTest(pos = (1000,17), size = (48,48), png = 5), # index 5 is the status pixmap
-				MultiContentEntryPixmapAlphaTest(pos = (0,80), size = (1110,3), png = 6), # index 6 is the div pixmap
-				]),
-				"category": (75,[
-				MultiContentEntryText(pos = (0,1), size = (1050,36), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
-				MultiContentEntryText(pos = (0,42), size = (1050,30), font=2, flags = RT_HALIGN_LEFT, text = 1), # index 1 is the description
-				MultiContentEntryPixmapAlphaTest(pos = (0,73), size = (1110,3), png = 3), # index 3 is the div pixmap
-				])
-				},
-				"fonts": [gFont("Regular",33),gFont("Regular",27),gFont("Regular",24)],
-				"itemHeight": 82
-				}
-			</convert>
-    </widget>
-    <widget source="status" render="Label" position="780,975" size="1110,37" shadowColor="black" shadowOffset="-2,-2" transparent="1" font="Regular;33" halign="center" />
-  </screen>
-  <screen name="PluginManagerInfo" title="Plugin manager activity" position="fill" flags="wfNoBorder"><!-- only in PLi -->
-    <panel name="PigTemplate" />
-    <widget source="list" render="Listbox" position="780,105" size="1110,787" transparent="1" scrollbarMode="showOnDemand">
-      <convert type="TemplatedMultiContent">
-				{"template": [
-						MultiContentEntryPixmapAlphaTest(pos = (27,21),size = (72,72),png = 2),# index 2 is the status pixmap
-						MultiContentEntryText(pos = (135,7),size = (975,39),font=0,flags = RT_HALIGN_LEFT,text = 0),# index 0 is the name
-						MultiContentEntryText(pos = (135,49),size = (975,57),font=1,flags = RT_HALIGN_LEFT,text = 1),# index 1 is the state
-					],
-				"fonts": [gFont("Regular",33),gFont("Regular",25)],
-				"itemHeight": 112
-				}
-			</convert>
-    </widget>
-    <widget source="status" render="Label" position="780,960" size="1110,37" backgroundColor="background" transparent="1" font="Regular;33" halign="center" />
-  </screen>
-  <screen name="PluginManagerHelp" title="Plugin manager help" position="fill" flags="wfNoBorder"><!-- only in PLi -->
-    <panel name="PigTemplate" />
-    <widget source="list" render="Listbox" position="780,105" size="1110,787" transparent="1" scrollbarMode="showOnDemand">
-      <convert type="TemplatedMultiContent">
-				{"template": [
-						MultiContentEntryText(pos = (135,7),size = (975,39),font=0,flags = RT_HALIGN_LEFT,text = 0),# index 0 is the name
-						MultiContentEntryText(pos = (135,49),size = (975,57),font=1,flags = RT_HALIGN_LEFT,text = 1),# index 1 is the state
-						MultiContentEntryPixmapAlphaTest(pos = (22,7),size = (72,72),png = 2),# index 2 is the status pixmap
-					],
-				"fonts": [gFont("Regular",33),gFont("Regular",25)],
-				"itemHeight": 112
-				}
-			</convert>
-    </widget>
-    <widget source="status" render="Label" position="780,960" size="1110,37" backgroundColor="background" transparent="1" font="Regular;33" halign="center" />
-  </screen>
-  <screen name="PluginDetails" position="fill" title="Plugin Details" flags="wfNoBorder"><!-- only in PLi -->
-    <panel name="PigTemplate" />
-    <widget name="statuspic" position="1306,952" size="48,48" alphatest="on" />
-    <widget source="author" render="Label" position="780,105" size="1100,45" zPosition="10" font="Regular;28" backgroundColor="background" transparent="1" />
-    <widget name="detailtext" position="780,200" size="1100,350" font="Regular;28" backgroundColor="background" transparent="1" />
-    <widget name="screenshot" position="780,400" size="600,600" alphatest="on" halign="left" />
-    <widget name="divpic" position="0,0" size="0,0" />
-  </screen>
-  <!-- Restore screen -->
-  <screen name="RestoreScreen" title="Restore is running" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="ConfigScreenTemplate" />
-</screen>
-  <!-- Restore -->
-  <screen name="RestoreMenu" title="Restore Backups" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="Screen_menu2" />
-  <widget name="filelist" position="513,216" size="889,580" itemHeight="45" font="Regular;28" backgroundColor="darkgrey" zPosition="3" transparent="1" scrollbarMode="showNever" />
-</screen>
+  	<!-- Restore screen -->
+  	<screen name="RestoreScreen" title="Restore is running" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate" />
+	</screen>
+  	<!-- Restore -->
+  	<screen name="RestoreMenu" title="Restore Backups" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+  		<panel name="Screen_menu2" />
+  		<widget name="filelist" position="513,216" size="889,580" itemHeight="45" font="Regular;28" backgroundColor="darkgrey" zPosition="3" transparent="1" scrollbarMode="showNever" />
+	</screen>
   <!-- Extra margin for wizard, never know how bad the TV is... -->
   <screen name="WizardMarginsTemplate">
     <panel position="left" size="10%,*" />
@@ -1738,20 +1607,6 @@ setLogo(self["logo"].instance, "brand", 54, 34)
     <widget name="languagetext" position="860,485" size="165,34" font="Regular;28" />
     <widget name="wizard" pixmap="wizard.png" position="811,120" size="165,261" zPosition="10" alphatest="on" />
     <widget name="rc" position="1623,148" size="231,750" zPosition="10" pixmaps="rc.png,rcold.png" alphatest="on" />
-  </screen>
-  <screen name="SoftwareManagerInfo" title="SoftwareManager information" position="fill" flags="wfNoBorder"><!-- only in PLi -->
-    <panel name="PigTemplate" />
-    <widget source="list" render="Listbox" position="780,100" size="1110,912" scrollbarMode="showOnDemand" selectionDisabled="0">
-      <convert type="TemplatedMultiContent">
-			{"template": [
-					MultiContentEntryText(pos = (0,0), size = (1080,39), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
-					],
-			"fonts": [gFont("Regular",28),gFont("Regular",30)],
-			"itemHeight": 38
-			}
-		</convert>
-    </widget>
-    <widget source="introduction" render="Label" position="30,560" size="720,34" zPosition="10" font="Regular;30" halign="left" backgroundColor="secondBG" transparent="1" />
   </screen>
   <screen name="AdapterSetupConfiguration" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
