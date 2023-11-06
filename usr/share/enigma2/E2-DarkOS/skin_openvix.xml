@@ -456,4 +456,144 @@ self["bcGroundOver"].setZPosition(-7)
 			<widget name="dlnaactive" position="1200,700" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
 		</panel>
 	</screen>
+	
+	<!-- OpenBH section -->
+	<screen name="OBHMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="VIXMenu"/>
+	</screen>
+
+	<screen name="OpenBhBackupManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="VixListTemplate"/>
+	</screen>
+
+	<screen name="OpenBhBackupManagerLogView" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="VixListTemplate"/>
+	</screen>
+
+	<screen name="OpenBhImageManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="VixListTemplate"/>
+	</screen>
+
+	<screen name="OpenBhImageManagerDownload" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="VixListTemplate"/>
+	</screen>
+
+	<screen name="OpenBhIPKInstaller" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="VIXIPKInstaller"/>
+	</screen>
+
+	<screen name="OpenBhScriptRunner" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="VIXScriptRunner"/>
+	</screen>
+
+	<screen name="OpenBhSwap" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="VIXSwap"/>
+	</screen>
+
+	<screen name="DeliteDevicesPanel" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="VIXDevicesPanel"/>
+	</screen>
+
+	<screen name="DeliteSetupDevicePanelConf" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="DeviceMountSetup"/>
+	</screen>
+
+	<screen name="DeliteGreenPanel"  position="fill" flags="wfNoBorder" title="OpenBh Green Panel" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget source="list" render="Listbox" position="396,225" size="1130,590" scrollbarMode="showNever" >
+			<convert type="TemplatedMultiContent">
+                                {"template": [
+                                             MultiContentEntryText(pos = (195,4), size = (970,83), flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0),
+											 MultiContentEntryText(pos = (195, 50), size = (915, 45), font=1, text = 1),
+											 MultiContentEntryPixmapAlphaTest(pos = (5, 10), size = (150, 60), png = 2, flags = BT_SCALE)
+        	 	        ],
+        	 	        "fonts": [gFont("Regular", 30),gFont("Regular", 20)],
+        	 	        "itemHeight": 83,
+        	 	        }
+			</convert>
+		</widget>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+	</screen>
+	<screen name="DeliteBluePanel"  position="fill" flags="wfNoBorder" title="OpenBh Blue Panel" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="list" position="500,225" size="635,55" enableWrapAround="1" font="Regular;36" itemHeight="55" zPosition="2" textOffset="10,8" scrollbarMode="showNever"/>
+		<widget name="lab1" position="1200,285" size="290,35" font="Regular;28" zPosition="2" halign="left"/>
+		<widget name="lab3" position="805,285" size="185,35" font="Regular;28" halign="left" zPosition="2"/>
+		<widget name="activecam" position="510,285" size="450,35" font="Regular;28" halign="left" zPosition="2"/>
+		<widget name="Ilab1" position="510,325" size="640,35" font="Regular;28" zPosition="2"/>
+		<widget name="Ilab2" position="510,363" size="640,35" font="Regular;28" zPosition="2"/>
+		<widget name="Ilab3" position="510,401" size="640,35" font="Regular;28" zPosition="2"/>
+		<widget name="Ilab4" position="510,439" size="640,35" font="Regular;28" zPosition="2"/>
+		<widget name="Ecmtext" position="510,505" size="790,370" font="Regular;24" halign="left" zPosition="2"/>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+	</screen>
+	    <screen name="BhsysInfo2"  position="fill" flags="wfNoBorder" title="OpenBh System Info" backgroundColor="transparent">
+	    <panel name="Screen_1_1"/>
+		<widget name="smallmon" position="830,495" size="250,240" font="Regular; 28" foregroundColor="white" halign="center" zPosition="4"/>
+		<ePixmap pixmap="buttons/meter_1.png" position="190,130" size="292,292" alphatest="blend"/>
+		<ePixmap pixmap="buttons/meter_1.png" position="500,130" size="292,292" alphatest="blend"/>
+		<ePixmap pixmap="buttons/meter_1.png" position="810,130" size="292,292" alphatest="blend"/>
+		<ePixmap pixmap="buttons/meter_1.png" position="1120,130" size="292,292" alphatest="blend"/>
+		<ePixmap pixmap="buttons/meter_1.png" position="1430,130" size="292,292" alphatest="blend"/>
+		<ePixmap pixmap="buttons/meter_1.png" position="190,465" size="292,292" alphatest="blend"/>
+		<ePixmap pixmap="buttons/meter_1.png" position="500,465" size="292,292" alphatest="blend"/>
+		<ePixmap pixmap="buttons/meter_1.png" position="1120,465" size="292,292" alphatest="blend"/>
+		<ePixmap pixmap="buttons/meter_2.png" position="1430,465" size="292,292" alphatest="blend"/>
+		<widget name="ramg" position="262,200" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
+		<widget name="swapg" position="572,200" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
+		<widget name="memtg" position="882,200" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
+		<widget name="flashg" position="1192,200" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
+		<widget name="spacetg" position="1502,200" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
+		<widget name="mmcfg" position="262,535" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
+		<widget name="usbg" position="572,535" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
+		<widget name="hddg" position="1192,535" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
+		<widget name="hddtempg" position="1502,535" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
+		<eLabel text="Ram" position="245,425" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<eLabel text="Swap" position="555,425" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<eLabel text="Total Mem" position="865,425" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<eLabel text="Flash" position="1175,425" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<eLabel text="Total Space" position="1485,425" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<eLabel text="Micro SD" position="245,760" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<eLabel text="USB" position="555,760" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<eLabel text="HDD Space" position="1175,760" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<eLabel text="HDD Temp" position="1485,760" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<ePixmap pixmap="buttons/moni.png" position="810,465" size="292,292" alphatest="blend" backgroundColor="background"/>
+		<ePixmap pixmap="buttons/monibutton.png" size="70,30" position="545,820" alphatest="blend"/>
+		<ePixmap pixmap="buttons/monibutton.png" size="70,30" position="695,820" alphatest="blend"/>
+		<ePixmap pixmap="buttons/monibutton.png" size="70,30" position="855,820" alphatest="blend"/>
+		<ePixmap pixmap="buttons/monibutton.png" size="70,30" position="1020,820" alphatest="blend"/>
+		<ePixmap pixmap="buttons/monibutton.png" size="70,30" position="1160,820" alphatest="blend"/>
+		<ePixmap pixmap="buttons/monibutton.png" size="70,30" position="1325,820" alphatest="blend"/>
+		<eLabel text="Ssh" position="545,870" zPosition="1" size="90,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<eLabel text="Telnet" position="667,870" zPosition="1" size="130,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<eLabel text="Ftp" position="847,870" zPosition="1" size="90,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<eLabel text="Vpn" position="1018,870" zPosition="1" size="90,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<eLabel text="Samba" position="1138,870" zPosition="1" size="130,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<eLabel text="Nfs" position="1320,870" zPosition="1" size="90,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
+		<widget name="spy0" size="45,45" position="545,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy1" size="45,45" position="585,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy2" size="45,45" position="695,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy3" size="45,45" position="735,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy4" size="45,45" position="855,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy5" size="45,45" position="895,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy6" size="45,45" position="1020,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy7" size="45,45" position="1060,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy8" size="45,45" position="1160,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy9" size="45,45" position="1200,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy10" size="45,45" position="1325,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy11" size="45,45" position="1365,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
+		<ePixmap pixmap="buttons/epg_b.png" position="230,795" size="52,52" alphatest="blend"/>
+		<ePixmap pixmap="buttons/epg_b.png" position="230,850" size="52,52" alphatest="blend"/>
+		<ePixmap pixmap="buttons/epg_b.png" position="230,905" size="52,52" alphatest="blend"/>
+		<eLabel text="1" position="247,805" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
+		<eLabel text="2" position="247,860" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
+		<eLabel text="3" position="247,915" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
+		<eLabel text="Settings" position="290,805" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
+		<eLabel text="Service Info" position="290,860" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
+		<eLabel text="About" position="290,920" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
+		<widget name="moni" size="0,0" position="0,0" zPosition="4" foregroundColor="white" backgroundColor="background"/>
+		<widget name="monipix" size="0,0" position="0,0"/>
+		<widget name="moni2" position="100,75" size="1718,882" font="Regular;28" foregroundColor="foreground" backgroundColor="background" zPosition="5"/>
+	</screen>
+	
 </skin>
