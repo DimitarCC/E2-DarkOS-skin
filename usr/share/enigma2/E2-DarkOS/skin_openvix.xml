@@ -32,16 +32,16 @@
   <screen name="ButtonSetupSelect" title="" position="fill" flags="wfNoBorder">
     <panel name="HotkeySetupSelect"/>
   </screen>
-  
+
   <screen name="GraphicalEPGPIG" position="fill" flags="wfNoBorder">
     <panel name="GraphMultiEPG"/>
     <widget name="bouquetlist" position="1512,80" size="384,7*38" font="Regular;28" itemHeight="38" zPosition="100" transparent="0" scrollbarMode="showNever"/>
   </screen>
-  
+
   <screen name="GraphicalEPG" position="fill" flags="wfNoBorder">
     <panel name="GraphMultiEPGList"/>
   </screen>
-  
+
   <screen name="CronTimers" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="key" position="396,210" size="1130,35" font="Regular;30" halign="center" transparent="1" valign="center"/>
@@ -73,7 +73,7 @@ self["list"].instance.setItemHeight(38)
 	<screen name="LogManagerFb" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="LogManagerViewLog"/>
 	</screen>
-	
+
 	<screen name="VixListTemplate">
 		<panel name="Screen_1_1"/>
 		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever"/>
@@ -267,7 +267,7 @@ pxbrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/small_br.png"))
 textsize = self["text"].getSize()
 textHeight = textsize[1]
 textpos = self["text"].instance.position()
-if textpos.x() &lt; 0 and textpos.y() &lt; 0: 
+if textpos.x() &lt; 0 and textpos.y() &lt; 0:
 	textHeight = 0
 count = len(self.list)
 count, scrollbar = (10, self["list"].instance.getScrollbarWidth() + 5) if count > 10 else (count, 0)
@@ -318,7 +318,7 @@ self["bcGroundOver"].instance.move(ePoint(2,2))
 self["bcGroundOver"].setZPosition(-7)
 		</applet>
 	</screen>
-	
+
 		<!-- AnimationSetupConfig -->
 	<screen name="AnimationSetupConfig" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
@@ -339,7 +339,7 @@ self["bcGroundOver"].setZPosition(-7)
  	<screen name="VuplusKexec" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
  	</screen>
- 	
+
  	<screen name="NetworkInadynLog" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Window_Full"/>
 		<widget name="infotext" position="25,123" size="1870,855" font="Regular;24"/>
