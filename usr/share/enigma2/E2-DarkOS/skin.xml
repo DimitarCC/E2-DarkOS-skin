@@ -624,7 +624,7 @@
       <convert type="EventTime">Duration</convert>
       <convert type="ClockToText">AsLengthHours</convert>
     </widget>
-    <widget source="ServiceEvent" render="Picon" position="1200,150" size="220,132" zPosition="12" alphatest="blend">
+    <widget source="Service" render="Picon" position="1200,150" size="220,132" zPosition="12" alphatest="blend">
       <convert type="ServiceName">Reference</convert>
     </widget>
   </screen>
@@ -742,7 +742,7 @@
     <panel name="Screen_Window_Full_Pig" />
     <eLabel position="25,350" size="1865,1" backgroundColor="separator" zPosition="-5" />
     <widget name="timeline_now" position="5,405" zPosition="2" size="19,577" scale="stretch" pixmap="window/timeline-now.png" alphatest="blend" />
-    <widget name="timeline_text" position="35,365" size="1860,40" zPosition="2" foregroundColor="foreground" backgroundColor="background" />
+    <widget name="timeline_text" position="25,365" size="1867,40" zPosition="2" foregroundColor="foreground" backgroundColor="background" />
     <eLabel position="25,405" size="1865,1" backgroundColor="separator" zPosition="10" />
     <eLabel position="25,981" size="1865,1" backgroundColor="separator" zPosition="10" />
     <eLabel position="25,405" size="1,576" backgroundColor="separator" zPosition="10" />
