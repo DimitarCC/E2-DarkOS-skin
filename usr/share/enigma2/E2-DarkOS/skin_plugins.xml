@@ -2364,4 +2364,54 @@
 			</convert>
 		</widget>
 	</screen>
+
+	<!-- MSN Weather -->
+
+	<screen name="MSNWeatherPlugin" position="fill" title="Weather Plugin" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<panel position="400,208" size="1100,818">
+			<widget render="Label" source="caption" position="10,10" zPosition="1" size="600,60" font="Bold;40" backgroundColor="background"/>
+			<widget render="Label" source="observationtime" position="e-370,10" zPosition="1" size="380,30" font="Regular;20" backgroundColor="background" halign="right" />
+			<widget render="Label" source="observationpoint" position="e-440,50" zPosition="1" size="450,40" font="Regular;20" backgroundColor="background" halign="right" />
+			<widget name="currenticon" position="10,120" zPosition="1" size="350,240" alphatest="blend"/>
+			<widget render="Label" source="currentTemp" position="440,170" zPosition="1" size="200,80" font="Bold;50" backgroundColor="background" valign="center"/>
+			<widget render="Label" source="feelsliketemp" position="440,260" zPosition="1" size="200,40" font="Bold;35" backgroundColor="background" valign="center"/>
+			<widget render="Label" source="condition" position="680,170" zPosition="1" size="300,40" font="Bold;35" backgroundColor="background" valign="center"/>
+			<widget render="Label" source="wind_condition" position="680,220" zPosition="1" size="300,40" font="Bold;35" backgroundColor="background" valign="center"/>
+			<widget render="Label" source="humidity" position="680,270" zPosition="1" size="300,40" font="Bold;35" backgroundColor="background" valign="center"/>
+			<widget render="Label" source="weekday1" position="10,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background" />
+			<widget name="weekday1_icon" position="10,450" zPosition="1" size="200,132" alphatest="blend"/>
+			<widget render="Label" source="weekday1_temp" position="10,590" zPosition="1" size="200,70" halign="center" valign="top" font="Bold;28" backgroundColor="background"/>
+			<widget render="Label" source="weekday2" position="(e-20)/5 + (e-20)/5 - 200,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background" />
+			<widget name="weekday2_icon" position="(e-20)/5 + (e-20)/5 - 200,450" zPosition="1" size="200,132" alphatest="blend"/>
+			<widget render="Label" source="weekday2_temp" position="(e-20)/5 + (e-20)/5 - 200,590" zPosition="1" size="200,70" halign="center" valign="top" font="Bold;28" backgroundColor="background"/>
+			<widget render="Label" source="weekday3" position="(e-20)/5*2 + (e-20)/5 - 200,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background" />
+			<widget name="weekday3_icon" position="(e-20)/5*2 + (e-20)/5 - 200,450" zPosition="1" size="200,132" alphatest="blend"/>
+			<widget render="Label" source="weekday3_temp" position="(e-20)/5*2 + (e-20)/5 - 200,590" zPosition="1" size="200,70" halign="center" valign="top" font="Bold;28" backgroundColor="background"/>
+			<widget render="Label" source="weekday4" position="(e-20)/5*3 + (e-20)/5 - 200,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background" />
+			<widget name="weekday4_icon" position="(e-20)/5*3 + (e-20)/5 - 200,450" zPosition="1" size="200,132" alphatest="blend"/>
+			<widget render="Label" source="weekday4_temp" position="(e-20)/5*3 + (e-20)/5 - 200,590" zPosition="1" size="200,70" halign="center" valign="top" font="Bold;28" backgroundColor="background"/>
+			<widget render="Label" source="weekday5" position="(e-20)/5*4 + (e-20)/5 - 200,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background" />
+			<widget name="weekday5_icon" position="(e-20)/5*4 + (e-20)/5 - 200,450" zPosition="1" size="200,132" alphatest="blend"/>
+			<widget render="Label" source="weekday5_temp" position="(e-20)/5*4 + (e-20)/5 - 200,590" zPosition="1" size="200,70" halign="center" valign="top" font="Bold;28" backgroundColor="background"/>
+		</panel>
+	</screen>
+
+	<screen name="MSNWeatherPluginEntryConfigScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+	</screen>
+
+	<screen name="MSNWeatherPluginEntriesListConfigScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+		<widget render="Label" source="city" position="145,150" size="400,50" font="Bold;35" halign="left" backgroundColor="background"/>
+		<widget render="Label" source="degreetype" position="900,150" size="130,50" font="Bold;35" halign="left" backgroundColor="background"/>
+		<widget name="entrylist" conditional="entrylist" position="125,200" size="1670,12*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget addon="Pager" conditional="entrylist" connection="entrylist" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
+	</screen>
+
+	<screen name="MSNWeatherPluginSearch" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+		<widget name="entrylist" conditional="entrylist" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget addon="Pager" conditional="entrylist" connection="entrylist" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
+	</screen>
 </skin>
