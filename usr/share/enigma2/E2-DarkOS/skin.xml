@@ -631,9 +631,6 @@
   <screen name="EventView" position="fill" title="Eventview" flags="wfNoBorder" backgroundColor="transparent">
 	<panel position="96,54" size="1728,987">
 		<panel name="Screen_1" />
-		<!--<panel position="40,e-68" size="e-234,62">
-			<panel name="Color_Buttons_Screen_1" />
-		</panel>-->
 		<widget name="epg_eventname" position="30,93" size="e-260,70" backgroundColor="background" font="Regular;30" halign="left" valign="top" foregroundColor="light_green" />
 		<widget source="Event" render="Label" position="e-240,93" size="200,80" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Regular;32" halign="right" valign="top">
 		  <convert type="EventName">Rating</convert>
@@ -658,37 +655,7 @@
 		</panel>
 	</panel>
   </screen>
-  <!--<screen name="EventView" title="Eventview" position="fill" flags="wfNoBorder">
-		<panel name="SelectionTemplate"/>
-		<panel name="KeyMenuTemplate"/>
-		<widget name="epg_eventname" position="780,100" size="1110,70" transparent="1" font="Regular;30" halign="left" foregroundColor="foreground"/>
-		<widget name="FullDescription" position="780,176" size="1110,836" transparent="1" font="Regular;30" halign="block"/>
-		<widget source="Service" render="Label" position="30,525" size="720,30" foregroundColor="transponderinfo" font="Regular;26" valign="center" halign="center" transparent="1" zPosition="1">
-			<convert type="TransponderInfo"/>
-		</widget>
-		<widget name="channel" position="30,592" size="720,45" transparent="1" font="Regular;33" halign="left"/>
-		<widget name="datetime" position="30,652" size="720,45" transparent="1" font="Regular;33" halign="left"/>
-		<widget name="duration" position="30,712" size="720,45" transparent="1" font="Regular;33" halign="left"/>
-		<widget source="session.Event_Now" render="Label" position="135,712" size="285,45" transparent="1" zPosition="1" foregroundColor="foreground" font="Regular;32" halign="right">
-			<convert type="EventTime">Remaining</convert>
-			<convert type="RemainingToText">InMinutes</convert>
-		</widget>
-		<widget source="session.Event_Now" render="Label" position="30,772" size="720,35" transparent="1" zPosition="1" foregroundColor="blue" font="Regular;32" halign="left">
-			<convert type="EventName">Genre</convert>
-		</widget>
-		<widget source="session.Event_Now" render="Label" position="30,832" size="720,35" transparent="1" zPosition="1" foregroundColor="blue" font="Regular;32" halign="left">
-			<convert type="EventName">Rating</convert>
-		</widget>
-		<widget source="Event" render="Label" position="30,902" size="60,45" font="Regular;24" backgroundColor="secondBG" zPosition="1" transparent="1" foregroundColor="foreground" halign="left">
-			<convert type="EventName">Pdc</convert>
-		</widget>
-		<widget source="Event" render="Label" position="100,902" size="150,45" font="Regular;24" backgroundColor="secondBG" zPosition="1" transparent="1" foregroundColor="foreground" halign="left">
-			<convert type="EventName">PdcTime</convert>
-		</widget>
-		<widget source="session.Event_Next" render="Label" position="30,975" size="720,35" font="Regular;30" halign="left" foregroundColor="secondFG" transparent="1">
-			<convert type="EventName">NameNext</convert>
-		</widget>
-	</screen>-->
+
   <screen name="EPGSelectionMulti" title="EPG Selection" position="fill" flags="wfNoBorder">
     <panel name="SelectionTemplate" />
     <panel name="KeyMenuInfoTemplate" />

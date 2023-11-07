@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin>
-	<screen name="Console_Pig" title="Command execution" position="fill" flags="wfNoBorder">
-    	<panel name="PigTemplate" />
-    	<widget name="text" position="825,100" size="1035,912" itemHeight="38" font="Fixed;28" transparent="1" foregroundColor="white" scrollbarMode="showOnDemand" />
+	<screen name="Console_Pig" title="Command execution" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1" />
+    	<widget name="text" position="30,93" size="e-60,e-93-84-25" itemHeight="45" font="Fixed;28" transparent="1" foregroundColor="white" scrollbarMode="showNever" />
+		<widget addon="Pager" connection="text" position="30,e-84-25" size="e-60,25" />
   	</screen>
 	<!-- Opkg installer -->
 	<screen name="OpkgInstaller" position="fill" flags="wfNoBorder">
@@ -32,47 +33,47 @@
 	<screen name="PacketManager" title="OPKG upgrade" position="fill" flags="wfNoBorder">
 		<panel name="PigTemplate" />
 		<widget source="list" render="Listbox" position="780,105" size="1110,858" zPosition="3" transparent="1" scrollbarMode="showOnDemand">
-		<convert type="TemplatedMultiContent">
-			{"template": [
-			MultiContentEntryText(pos = (7,1), size = (975,36), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
-			MultiContentEntryText(pos = (7,40), size = (975,36), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
-			MultiContentEntryPixmapAlphaTest(pos = (993,0), size = (72,72), png = 4), # index 5 is the status pixmap
-			MultiContentEntryPixmapAlphaTest(pos = (0,76), size = (1110,3), png = 5), # index 6 is the div pixmap
-			],
-			"fonts": [gFont("Regular",33),gFont("Regular",27)],
-			"itemHeight": 78
-			}
-				</convert>
+			<convert type="TemplatedMultiContent">
+				{"template": [
+				MultiContentEntryText(pos = (7,1), size = (975,36), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+				MultiContentEntryText(pos = (7,40), size = (975,36), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
+				MultiContentEntryPixmapAlphaTest(pos = (993,0), size = (72,72), png = 4), # index 5 is the status pixmap
+				MultiContentEntryPixmapAlphaTest(pos = (0,76), size = (1110,3), png = 5), # index 6 is the div pixmap
+				],
+				"fonts": [gFont("Regular",33),gFont("Regular",27)],
+				"itemHeight": 78
+				}
+			</convert>
 		</widget>
 	</screen>
-	<screen name="UpdatePluginMenu" title="Softwaremanager" position="fill" flags="wfNoBorder"><!-- only in PLi -->
+	<screen name="UpdatePluginMenu" title="Softwaremanager" position="fill" flags="wfNoBorder">
 		<panel name="PigTemplate" />
 		<panel name="KeyMenuTemplate" />
 		<widget source="menu" render="Listbox" position="780,105" size="1110,900" zPosition="3" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand">
-		<convert type="TemplatedMultiContent">
+			<convert type="TemplatedMultiContent">
 				{"template": [
 						MultiContentEntryText(pos = (75,15),size = (1035,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 1),# index 0 is the MenuText,
 					],
 				"fonts": [gFont("Regular",36)],
 				"itemHeight": 75
 				}
-				</convert>
+			</convert>
 		</widget>
 		<widget source="menu" render="Listbox" position="30,570" size="720,240" backgroundColor="darkgrey" zPosition="3" selectionDisabled="1" transparent="1" foregroundColor="white" scrollbarMode="showNever">
-		<convert type="TemplatedMultiContent">
+			<convert type="TemplatedMultiContent">
 				{"template": [
 						MultiContentEntryText(pos = (0,0),size = (720,240),flags = RT_HALIGN_LEFT|RT_VALIGN_TOP|RT_WRAP,text = 2),# index 0 is the MenuText,
 					],
 				"fonts": [gFont("Regular",30)],
 				"itemHeight": 240
 				}
-				</convert>
+			</convert>
 		</widget>
 	</screen>
-	<screen name="PluginManager" title="Plugin manager" position="fill" flags="wfNoBorder"><!-- only in PLi -->
+	<screen name="PluginManager" title="Plugin manager" position="fill" flags="wfNoBorder">
 		<panel name="PigTemplate" />
 		<widget source="list" render="Listbox" position="780,105" size="1110,825" transparent="1" scrollbarMode="showOnDemand">
-		<convert type="TemplatedMultiContent">
+			<convert type="TemplatedMultiContent">
 					{"templates":
 					{"default": (82,[
 					MultiContentEntryText(pos = (0,3), size = (975,36), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
@@ -89,14 +90,14 @@
 					"fonts": [gFont("Regular",33),gFont("Regular",27),gFont("Regular",24)],
 					"itemHeight": 82
 					}
-				</convert>
+			</convert>
 		</widget>
 		<widget source="status" render="Label" position="780,975" size="1110,37" shadowColor="black" shadowOffset="-2,-2" transparent="1" font="Regular;33" halign="center" />
 	</screen>
-	<screen name="PluginManagerInfo" title="Plugin manager activity" position="fill" flags="wfNoBorder"><!-- only in PLi -->
+	<screen name="PluginManagerInfo" title="Plugin manager activity" position="fill" flags="wfNoBorder">
 		<panel name="PigTemplate" />
 		<widget source="list" render="Listbox" position="780,105" size="1110,787" transparent="1" scrollbarMode="showOnDemand">
-		<convert type="TemplatedMultiContent">
+			<convert type="TemplatedMultiContent">
 					{"template": [
 							MultiContentEntryPixmapAlphaTest(pos = (27,21),size = (72,72),png = 2),# index 2 is the status pixmap
 							MultiContentEntryText(pos = (135,7),size = (975,39),font=0,flags = RT_HALIGN_LEFT,text = 0),# index 0 is the name
@@ -105,14 +106,14 @@
 					"fonts": [gFont("Regular",33),gFont("Regular",25)],
 					"itemHeight": 112
 					}
-				</convert>
+			</convert>
 		</widget>
 		<widget source="status" render="Label" position="780,960" size="1110,37" backgroundColor="background" transparent="1" font="Regular;33" halign="center" />
 	</screen>
-	<screen name="PluginManagerHelp" title="Plugin manager help" position="fill" flags="wfNoBorder"><!-- only in PLi -->
+	<screen name="PluginManagerHelp" title="Plugin manager help" position="fill" flags="wfNoBorder">
 		<panel name="PigTemplate" />
 		<widget source="list" render="Listbox" position="780,105" size="1110,787" transparent="1" scrollbarMode="showOnDemand">
-		<convert type="TemplatedMultiContent">
+			<convert type="TemplatedMultiContent">
 					{"template": [
 							MultiContentEntryText(pos = (135,7),size = (975,39),font=0,flags = RT_HALIGN_LEFT,text = 0),# index 0 is the name
 							MultiContentEntryText(pos = (135,49),size = (975,57),font=1,flags = RT_HALIGN_LEFT,text = 1),# index 1 is the state
@@ -121,11 +122,11 @@
 					"fonts": [gFont("Regular",33),gFont("Regular",25)],
 					"itemHeight": 112
 					}
-				</convert>
+			</convert>
 		</widget>
 		<widget source="status" render="Label" position="780,960" size="1110,37" backgroundColor="background" transparent="1" font="Regular;33" halign="center" />
 	</screen>
-	<screen name="PluginDetails" position="fill" title="Plugin Details" flags="wfNoBorder"><!-- only in PLi -->
+	<screen name="PluginDetails" position="fill" title="Plugin Details" flags="wfNoBorder">
 		<panel name="PigTemplate" />
 		<widget name="statuspic" position="1306,952" size="48,48" alphatest="on" />
 		<widget source="author" render="Label" position="780,105" size="1100,45" zPosition="10" font="Regular;28" backgroundColor="background" transparent="1" />
@@ -133,10 +134,10 @@
 		<widget name="screenshot" position="780,400" size="600,600" alphatest="on" halign="left" />
 		<widget name="divpic" position="0,0" size="0,0" />
 	</screen>
-	<screen name="SoftwareManagerInfo" title="SoftwareManager information" position="fill" flags="wfNoBorder"><!-- only in PLi -->
+	<screen name="SoftwareManagerInfo" title="SoftwareManager information" position="fill" flags="wfNoBorder">
 		<panel name="PigTemplate" />
 		<widget source="list" render="Listbox" position="780,100" size="1110,912" scrollbarMode="showOnDemand" selectionDisabled="0">
-		<convert type="TemplatedMultiContent">
+			<convert type="TemplatedMultiContent">
 				{"template": [
 						MultiContentEntryText(pos = (0,0), size = (1080,39), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
 						],

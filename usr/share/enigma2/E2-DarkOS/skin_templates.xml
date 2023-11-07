@@ -133,10 +133,6 @@
 		</widget>
 		<eLabel position="42,105" size="225,195" backgroundColor="transparent" borderWidth="2" font="Regular;37" borderColor="black" halign="left" text=">" zPosition="1"/> -->
 	</screen>
-
-	<screen name="keyInfo_Menu1">
-		<ePixmap pixmap="buttons/key_epg.png" alphatest="blend" position="1359,911" size="52,38" />
-	</screen>
 	
 	<screen name="BrandLogoTemplate">
 		<widget source="global.CurrentTime" render="BoxLogo" logoType="brand" position="0,0" size="54,34" zPosition="-3" alphatest="blend" />
@@ -161,11 +157,6 @@
 		<eLabel position="0,1022" size="1920,58" backgroundColor="basictemplatecolor"/>
 		<ePixmap pixmap="border/smallshadowline.png" position="0,1020" size="1920,3"/>
 	</screen>
-
-	<screen name="TextTemplate">
-		<widget name="text" position="30,528" size="720,481" backgroundColor="secondBG" transparent="1" zPosition="1" font="Regular;30"/>
-	</screen>
-	
 
 	<screen name="ConfigButtonsTemplate">
 		<widget addon="ButtonSequence" connection="key_info,key_help,key_pvr,key_next,key_menu,key_previous,key_text,VKeyIcon" 
