@@ -552,7 +552,7 @@
 					picServiceEventProgressbar="window/progress.png" forgroundColorEventProgressbarBorder="background" foregroundColorServiceNotAvail="#777777" 
 					backgroundColor="background" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" 
 					scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background3" backgroundColorMarkedSelected="background3" 
-					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="43" serviceItemHeight="43" fieldMargins="0" nonplayableMargins="0"/>
+					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="43" serviceItemHeight="43" nonplayableMargins="0"/>
 
     <widget render="Label" source="ServiceEvent" backgroundColor="background2" halign="left" font="Regular; 30" position="1235,455" size="645,343" transparent="1">
       <convert type="EventName">FullDescription</convert>
@@ -624,7 +624,7 @@
       <convert type="EventTime">Duration</convert>
       <convert type="ClockToText">AsLengthHours</convert>
     </widget>
-    <widget source="Service" render="Picon" position="1200,150" size="220,132" zPosition="12" alphatest="blend">
+    <widget source="Service" render="Picon" position="e-304,e-270" size="220,132" zPosition="12" alphatest="blend">
       <convert type="ServiceName">Reference</convert>
     </widget>
   </screen>
@@ -647,7 +647,7 @@
 		  <convert type="ClockToText">Default</convert>
 		</widget>
 		<eLabel position="22,2" size="e-420,64" font="Bold; 36" halign="left" valign="center" foregroundColor="yellow" backgroundColor="background2" transparent="1" text="Current program" />
-		<widget alphatest="blend" position="e-284,e-230" render="Picon" size="227,130" source="Service" zPosition="1" transparent="1" backgroundColor="background">
+		<widget alphatest="blend" position="e-304,e-270" render="Picon" size="220,132" source="Service" zPosition="1" transparent="1" backgroundColor="background">
 		  <convert type="ServiceName">Reference</convert>
 		</widget>
 		<panel position="e-74,e-70" size="54,34">
