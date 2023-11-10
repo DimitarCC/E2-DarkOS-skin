@@ -1740,42 +1740,45 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		<panel name="ConfigScreenTemplate" />
 	</screen>
 	<!-- WirelessLan -->
-	<screen name="WlanStatus" position="fill" title="Wireless Network State" flags="wfNoBorder"><!-- Needs doing -->
-		<panel name="PigTemplate" />
-		<widget source="LabelBSSID" render="Label" position="885,120" size="300,37" valign="left" font="Regular;30" transparent="1" foregroundColor="white" />
-		<widget source="LabelESSID" render="Label" position="885,225" size="300,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
-		<widget source="LabelQuality" render="Label" position="885,285" size="300,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
-		<widget source="LabelSignal" render="Label" position="885,345" size="300,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
-		<widget source="LabelBitrate" render="Label" position="885,405" size="300,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
-		<widget source="LabelEnc" render="Label" position="885,465" size="300,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
-		<widget source="BSSID" render="Label" position="1200,120" size="495,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
-		<widget source="ESSID" render="Label" position="1200,225" size="495,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
-		<widget source="quality" render="Label" position="1200,285" size="495,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
-		<widget source="signal" render="Label" position="1200,345" size="495,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
-		<widget source="bitrate" render="Label" position="1200,405" size="495,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
-		<widget source="enc" render="Label" position="1200,465" size="495,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
-		<widget source="IFtext" render="Label" position="1200,880" size="247,37" zPosition="10" font="Regular;31" halign="right" transparent="1" />
-		<widget source="IF" render="Label" position="1455,880" size="375,37" zPosition="10" font="Regular;31" halign="left" transparent="1" />
-		<widget source="Statustext" render="Label" position="742,880" size="300,37" zPosition="10" font="Regular;31" halign="right" transparent="1" />
-		<widget name="statuspic" pixmaps="buttons/button_green.png,buttons/button_green_off.png" position="1050,888" zPosition="10" size="22,24" transparent="1" alphatest="on" />
+	<screen name="WlanStatus" position="fill" title="Wireless Network State" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1" />
+		<panel position="-769,54" size="1728,992">
+			<widget source="LabelBSSID" render="Label" position="885,120" size="300,37" valign="left" font="Regular;30" backgroundColor="background"/>
+			<widget source="LabelESSID" render="Label" position="885,225" size="300,37" valign="center" font="Regular;30" backgroundColor="background"/>
+			<widget source="LabelQuality" render="Label" position="885,285" size="300,37" valign="center" font="Regular;30" backgroundColor="background" />
+			<widget source="LabelSignal" render="Label" position="885,345" size="300,37" valign="center" font="Regular;30" backgroundColor="background" />
+			<widget source="LabelBitrate" render="Label" position="885,405" size="300,37" valign="center" font="Regular;30" backgroundColor="background" />
+			<widget source="LabelEnc" render="Label" position="885,465" size="300,37" valign="center" font="Regular;30" backgroundColor="background" />
+			<widget source="BSSID" render="Label" position="1200,120" size="495,37" valign="center" font="Regular;30" backgroundColor="background" />
+			<widget source="ESSID" render="Label" position="1200,225" size="495,37" valign="center" font="Regular;30" backgroundColor="background" />
+			<widget source="quality" render="Label" position="1200,285" size="495,37" valign="center" font="Regular;30" backgroundColor="background" />
+			<widget source="signal" render="Label" position="1200,345" size="495,37" valign="center" font="Regular;30" backgroundColor="background" />
+			<widget source="bitrate" render="Label" position="1200,405" size="495,37" valign="center" font="Regular;30" backgroundColor="background" />
+			<widget source="enc" render="Label" position="1200,465" size="495,37" valign="center" font="Regular;30" backgroundColor="background" />
+			<widget source="IFtext" render="Label" position="1200,880" size="247,37" zPosition="10" font="Regular;31" halign="right" backgroundColor="background" />
+			<widget source="IF" render="Label" position="1455,880" size="375,37" zPosition="10" font="Regular;31" halign="left" backgroundColor="background" />
+			<widget source="Statustext" render="Label" position="742,840" size="300,37" zPosition="10" font="Regular;31" halign="right" transparent="1" />
+			<widget name="statuspic" pixmaps="icons/lock_on.png,icons/lock_off.png" position="1050,842" zPosition="10" size="32,32" transparent="1" alphatest="blend" />
+		</panel>
 	</screen>
-	<screen name="WlanScan" position="fill" title="Choose a Wireless Network" flags="wfNoBorder"><!-- Needs doing -->
-		<panel name="PigTemplate" />
-		<widget source="list" render="Listbox" position="780,105" size="1110,525" scrollbarMode="showOnDemand">
-		<convert type="TemplatedMultiContent">
-			{"template": [
-					MultiContentEntryText(pos = (15,3), size = (825,37), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the essid
-					MultiContentEntryText(pos = (15,39), size = (262,30), font=1, flags = RT_HALIGN_LEFT, text = 5), # index 5 is the interface
-					MultiContentEntryText(pos = (300,39), size = (262,30), font=1, flags = RT_HALIGN_LEFT, text = 4), # index 4 is the encryption
-					MultiContentEntryText(pos = (600,3), size = (352,30), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the signal
-					MultiContentEntryText(pos = (600,39), size = (352,30), font=1, flags = RT_HALIGN_LEFT, text = 3), # index 3 is the maxrate
-				],
-			"fonts": [gFont("Regular",33),gFont("Regular",27)],
-			"itemHeight": 75
-			}
-		</convert>
+	<screen name="WlanScan" position="fill" title="Choose a Wireless Network" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1" />
+		<widget source="list" render="Listbox" position="125,150" size="1670,8*75" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (15,3), size = (825,37), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the essid
+						MultiContentEntryText(pos = (15,39), size = (262,30), font=1, flags = RT_HALIGN_LEFT, text = 5), # index 5 is the interface
+						MultiContentEntryText(pos = (300,39), size = (262,30), font=1, flags = RT_HALIGN_LEFT, text = 4), # index 4 is the encryption
+						MultiContentEntryText(pos = (600,3), size = (352,30), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the signal
+						MultiContentEntryText(pos = (600,39), size = (352,30), font=1, flags = RT_HALIGN_LEFT, text = 3), # index 3 is the maxrate
+					],
+				"fonts": [gFont("Regular",33),gFont("Regular",27)],
+				"itemHeight": 75
+				}
+			</convert>
 		</widget>
-		<widget source="info" render="Label" position="780,975" size="1110,34" font="Regular;30" halign="center" valign="center" transparent="1" />
+		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
+		<widget source="info" render="Label" position="145,755" size="1630,100" font="Regular;28" halign="center" valign="center" transparent="1" />
 	</screen>
 	<!-- Input Device Configuration -->
 	<screen name="InputDeviceSelection" title="Select input device" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -1930,29 +1933,6 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 				</convert>
 			</widget>
 			<widget addon="Pager" connection="list" position="396,915" size="1130,25" transparent="1" backgroundColor="background" />
-	</screen>
-	<!-- PPanel -->
-	<screen flags="wfNoBorder" name="ToplevelPPanel" position="fill" title="Toplevel PPanel">
-		<panel name="PigTemplate" />
-		<widget name="nodelist" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
-		<widget name="helptext" position="30,560" size="720,390" font="Regular;30" valign="center" halign="left" />
-	</screen>
-	<screen flags="wfNoBorder" name="PPanel" position="fill" title="PPanel">
-		<panel name="PigTemplate" />
-		<widget name="nodelist" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
-		<widget name="helptext" position="30,560" size="720,390" font="Regular;30" valign="center" halign="left" />
-	</screen>
-	<screen flags="wfNoBorder" name="File" position="fill" title="PPanel File">
-		<panel name="PigTemplate" />
-		<widget name="progress" position="30,1024" size="1860,6" pixmap="window/slider100.png" transparent="1" />
-	</screen>
-	<screen flags="wfNoBorder" name="Tarball" position="fill" title="PPanel Entry">
-		<panel name="PigTemplate" />
-		<widget name="progress" position="30,1024" size="1860,6" pixmap="window/slider100.png" transparent="1" />
-	</screen>
-	<screen flags="wfNoBorder" name="Execute" position="fill" title="PPanel Entry">
-		<panel name="BasicTemplate" />
-		<widget name="linelist" position="30,100" size="1860,912" itemHeight="38" font="Fixed;28" transparent="1" foregroundColor="white" scrollbarMode="showOnDemand" />
 	</screen>
 	<!-- TextBox -->
 	<screen name="TextBox" title="Message" position="fill" flags="wfNoBorder">
@@ -2352,25 +2332,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 	<panel name="ConfigScreenTemplate" />
 	<widget name="PluginInfo" position="30,570" size="0,0" zPosition="4" font="Regular;27" foregroundColor="uncccccc" />
 	</screen>
-	<!-- AC3LipSync -->
-	<!--screen name="AC3LipSync" position="30,22" size="900,690" title="Audio Sync" zPosition="1" backgroundColor="#ff000000" flags="wfNoBorder">
-			<ePixmap pixmap="~/img/AudioSyncBGHD.png" zPosition="1" position="0,0" size="900,690" alphatest="on" transparent="1"/>
-			<widget name="ServiceInfoLabel" zPosition="4" position="30,22" size="165,30" font="Regular;21" backgroundColor="#232323" foregroundColor="#dddddd" transparent="1"/>
-			<widget name="ServiceInfo" zPosition="4" position="210,22" size="285,30" font="Regular;21" backgroundColor="#232323" foregroundColor="#ffffff" transparent="1"/>
-			<widget name="ChannelImg" pixmaps="~/img/OptionButtonOffHD.png,~/img/OptionButtonOnHD.png" position="30,64" zPosition="2" size="16,16" transparent="1" alphatest="on"/>
-			<widget name="ChannelLabel" zPosition="2" position="54,60" size="240,30" font="Regular;21" halign="left" valign="center" transparent="1" backgroundColor="#232323" foregroundColors="#ffffff,#fe6b1b"/>
-			<widget name="GlobalImg" pixmaps="~/img/OptionButtonOff.png,~/img/OptionButtonOnHD.png" position="330,64" zPosition="2" size="16,16" transparent="1" alphatest="on"/>
-			<widget name="GlobalLabel" zPosition="2" position="354,60" size="298,30" font="Regular;21" halign="left" valign="center" transparent="1" backgroundColor="#232323" foregroundColors="#ffffff,#fe6b1b"/>
-			<ePixmap pixmap="~/img/AudioSyncBarBGVertHD.png" zPosition="2" position="45,105" size="31,555" alphatest="on" transparent="1"/>
-			<widget name="AudioSliderBar" pixmap="~/img/AudioSyncBarVert.png" zPosition="3" position="45,105" size="31,555" transparent="1" orientation="orBottomToTop"/>
-			<widget name="AudioSlider" zPosition="4" position="7,367" size="105,30" font="Regular;21" halign="center" valign="center" backgroundColor="#232323" foregroundColor="#eeeeee" transparent="1"/>
-			<ePixmap pixmap="buttons/red.png" position="465,22" zPosition="5" size="30,30" transparent="1" alphatest="on"/>
-			<ePixmap pixmap="buttons/green.png" position="622,22" zPosition="5" size="30,30" transparent="1" alphatest="on"/>
-			<ePixmap pixmap="buttons/blue.png" position="622,60" zPosition="5" size="30,30" transparent="1" alphatest="on"/>
-			<widget name="key_red" position="502,22" zPosition="4" size="127,30" font="Regular;21" valign="center" halign="left" backgroundColor="#232323" foregroundColor="#ffffff" transparent="1"/>
-			<widget name="key_green" position="660,22" zPosition="4" size="127,30" font="Regular;21" valign="center" halign="left" backgroundColor="#232323" foregroundColor="#ffffff" transparent="1"/>
-			<widget name="key_blue" position="660,60" zPosition="4" size="240,30" font="Regular;21" valign="center" halign="left" backgroundColor="#232323" foregroundColor="#ffffff" transparent="1"/>
-		</screen-->
+
 	<screen name="AC3LipSync" position="20,15" size="600,460" title="Audio Sync" zPosition="1" backgroundColor="transparent" flags="wfNoBorder">
 		<ePixmap pixmap="~/img/AudioSyncBG.png" zPosition="1" position="0,0" size="600,460" alphatest="on" transparent="1" />
 		<widget name="ServiceInfoLabel" zPosition="4" position="20,15" size="110,22" font="Regular;20" backgroundColor="#232323" foregroundColor="#dddddd" transparent="1" />
@@ -2389,62 +2351,45 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		<widget name="key_green" position="440,15" zPosition="4" size="85,22" font="Regular;20" valign="center" halign="left" backgroundColor="#232323" foregroundColor="#ffffff" transparent="1" />
 		<widget name="key_blue" position="440,40" zPosition="4" size="160,22" font="Regular;20" valign="center" halign="left" backgroundColor="#232323" foregroundColor="#ffffff" transparent="1" />
 	</screen>
-	<!-- AutoBackup -->
-	<screen name="Config" position="fill" flags="wfNoBorder"><!-- What is this? -->
-		<panel name="PigTemplate" />
-		<panel name="KeyMenuTemplate" />
-		<widget name="config" position="780,105" size="1110,300" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
-		<widget name="statusbar" position="780,495" size="1110,35" font="Regular;32" />
-		<widget name="status" position="780,540" size="1110,410" font="Console;20" />
-	</screen>
 	<!-- PicturePlayer -->
-	<screen name="picshow" position="fill" flags="wfNoBorder"><!-- Needs doing -->
-		<panel name="PigTemplate" />
-		<panel name="KeyMenuTemplate" />
-		<widget name="thn" position="363,547" size="390,375" alphatest="on" />
-		<widget name="filelist" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" zPosition="3" scrollbarMode="showOnDemand" />
-		<widget name="label" position="783,975" size="390,34" transparent="1" font="Regular;30" />
+	<screen name="picshow" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1" />
+		<panel position="120,56" size="1720,902">
+			<widget name="thn" position="30,10" size="390,375" alphatest="blend" />
+			<widget name="filelist" position="450,10" size="1110,19*45" itemHeight="45" font="Regular;28" zPosition="3" scrollbarMode="showNever" />
+			<widget name="label" position="450,868" size="390,34" transparent="1" font="Regular;30" />
+		</panel>
 	</screen>
-	<screen name="Pic_Exif" title="Info" position="fill" flags="wfNoBorder"><!-- Needs doing -->
-		<panel name="PigTemplate" />
-		<widget source="menu" render="Listbox" position="780,105" size="1110,892" selectionDisabled="1" transparent="1" scrollbarMode="showOnDemand">
-		<convert type="TemplatedMultiContent">
-					{"template": [MultiContentEntryText(pos = (7,10),size = (375,45),flags = RT_HALIGN_LEFT,text = 0),
-					MultiContentEntryText(pos = (390,10),size = (645,45),flags = RT_HALIGN_LEFT,text = 1)],
-					"fonts": [gFont("Regular",30)],
-					"itemHeight": 52 }
-				</convert>
+	<screen name="Pic_Exif" title="Info" position="fill" flags="wfNoBorder">
+		<panel name="Screen_1_1" />
+		<widget source="menu" render="Listbox" position="125,150" size="1670,11*52" selectionDisabled="1" transparent="1" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">
+				{"template": [MultiContentEntryText(pos = (7,10),size = (375,45),flags = RT_HALIGN_LEFT,text = 0),
+				MultiContentEntryText(pos = (390,10),size = (645,45),flags = RT_HALIGN_LEFT,text = 1)],
+				"fonts": [gFont("Regular",30)],
+				"itemHeight": 52 }
+			</convert>
 		</widget>
+		<widget addon="Pager" conditional="menu" connection="menu" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
-	<screen name="Pic_Setup" title="Settings" position="fill" flags="wfNoBorder">
-		<panel name="PigTemplate" /><!-- Needs doing -->
-		<widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" transparent="1" scrollbarMode="showOnDemand" />
+	<screen name="Pic_Setup" title="Settings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate" />
 	</screen>
-	<screen name="Pic_Full_View" position="fill" title="Picture" flags="wfNoBorder"><!-- Needs doing -->
-		<widget name="pic" position="fill" zPosition="1" alphatest="on" />
+	<screen name="Pic_Full_View" position="fill" title="Picture" flags="wfNoBorder" backgroundColor="background">
+		<widget name="pic" position="fill" zPosition="1" alphatest="blend" />
 		<eLabel position="22,22" size="45,37" zPosition="2" backgroundColor="black" transparent="1" />
-		<widget name="point" position="25,25" size="31,31" zPosition="3" pixmap="icons/record.png" alphatest="on" />
-		<widget name="play_icon" position="25,25" size="24,24" zPosition="3" pixmap="icons/ico_mp_play.png" alphatest="on" />
+		<widget name="point" position="25,25" size="31,31" zPosition="3" pixmap="icons/record.png" alphatest="blend" />
+		<widget name="play_icon" position="25,25" size="24,24" zPosition="3" pixmap="icons/ico_mp_play.png" alphatest="blend" />
 		<widget source="file" render="Label" position="90,22" size="900,34" zPosition="3" font="Regular;30" halign="left" noWrap="1" foregroundColor="foreground" backgroundColor="black" transparent="1" borderWidth="2" />
 	</screen>
 	<!-- Inputbox -->
-	<screen name="InputBox" position="fill" title="Input" flags="wfNoBorder">
+	<screen name="InputBox" position="fill" title="Input" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
 		<widget name="text" position="396,210" size="1110,39" font="Regular;33" />
-		<ePixmap pixmap="buttons/vkey_text.png" position="543,315" size="816,78" zPosition="-1" alphatest="on" />
+		<ePixmap pixmap="buttons/vkey_text.png" position="543,315" size="816,78" zPosition="-1" alphatest="blend" />
 		<widget name="input" position="548,332" size="806,45" font="Regular;38" valign="center" />
 	</screen>
-	<!-- Location Box -->
-	<screen name="LocationBox" position="fill" title="Select Location" flags="wfNoBorder">
-		<panel name="PigTemplate" />
-		<panel name="KeyMenuTemplate" />
-		<panel name="KeyChannelTemplate" />
-		<widget name="text" position="780,105" size="1110,38" font="Regular;33" />
-		<widget name="target" position="780,150" size="1110,38" valign="center" font="Regular;33" />
-		<widget name="filelist" position="780,197" size="1110,304" zPosition="1" scrollbarMode="showOnDemand" selectionDisabled="1" />
-		<widget name="textbook" position="780,517" size="1110,38" font="Regular;33" />
-		<widget name="booklist" position="787,562" itemHeight="38" font="Regular;28" size="1102,456" zPosition="2" scrollbarMode="showOnDemand" />
-	</screen>
+
 	<!-- Parental Control -->
 	<screen name="ParentalControlSetup" position="fill" title="Parental control setup" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate" />
@@ -2555,6 +2500,8 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		<widget source="introduction" conditional="introduction" render="Label" position="145,865" size="1630,35" backgroundColor="background" zPosition="10" transparent="1" foregroundColor="yellow" font="Regular;28" halign="center"/>
 		<widget source="lab1" conditional="lab1" render="Label" position="145,865" size="1630,35" backgroundColor="background" zPosition="10" transparent="1" foregroundColor="yellow" font="Regular;28" halign="center"/>
 	</screen>
+
+	<!-- Location Box -->
 	<screen name="LocationBox" position="fill" backgroundColor="transparent" flags="wfNoBorder">
 		<panel name="Screen_1_1"/>
 		<widget name="text" position="125,150" size="1670,37" font="Regular;33"/>

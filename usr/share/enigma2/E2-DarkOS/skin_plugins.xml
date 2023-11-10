@@ -2414,4 +2414,28 @@
 		<widget name="entrylist" conditional="entrylist" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
 		<widget addon="Pager" conditional="entrylist" connection="entrylist" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
+
+	<!-- PPanel -->
+	<screen flags="wfNoBorder" name="ToplevelPPanel" position="fill" title="Toplevel PPanel">
+		<panel name="PigTemplate" />
+		<widget name="nodelist" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
+		<widget name="helptext" position="30,560" size="720,390" font="Regular;30" valign="center" halign="left" />
+	</screen>
+	<screen flags="wfNoBorder" name="PPanel" position="fill" title="PPanel">
+		<panel name="PigTemplate" />
+		<widget name="nodelist" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
+		<widget name="helptext" position="30,560" size="720,390" font="Regular;30" valign="center" halign="left" />
+	</screen>
+	<screen flags="wfNoBorder" name="File" position="fill" title="PPanel File">
+		<panel name="PigTemplate" />
+		<widget name="progress" position="30,1024" size="1860,6" pixmap="window/slider100.png" transparent="1" />
+	</screen>
+	<screen flags="wfNoBorder" name="Tarball" position="fill" title="PPanel Entry">
+		<panel name="PigTemplate" />
+		<widget name="progress" position="30,1024" size="1860,6" pixmap="window/slider100.png" transparent="1" />
+	</screen>
+	<screen flags="wfNoBorder" name="Execute" position="fill" title="PPanel Entry">
+		<panel name="BasicTemplate" />
+		<widget name="linelist" position="30,100" size="1860,912" itemHeight="38" font="Fixed;28" transparent="1" foregroundColor="white" scrollbarMode="showOnDemand" />
+	</screen>
 </skin>

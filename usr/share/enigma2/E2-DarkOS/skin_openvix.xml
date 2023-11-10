@@ -482,7 +482,7 @@ self["bcGroundOver"].setZPosition(-7)
 			  <convert type="ClockToText">Default</convert>
 			</widget>
 			<eLabel position="22,2" size="e-420,64" font="Bold; 36" halign="left" valign="center" foregroundColor="yellow" backgroundColor="background2" transparent="1" text="Current program" />
-			<widget alphatest="blend" position="e-284,e-230" render="Picon" size="227,130" source="Service" zPosition="1" transparent="1" backgroundColor="background">
+			<widget alphatest="blend" position="e-304,e-270" render="Picon" size="227,130" source="Service" zPosition="1" transparent="1" backgroundColor="background">
 			  <convert type="MovieInfo">RecordServiceRef</convert>
 			</widget>
 			<panel position="e-74,e-70" size="54,34">
