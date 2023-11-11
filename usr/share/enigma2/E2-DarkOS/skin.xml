@@ -1355,7 +1355,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		<widget name="config" conditional="config" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" /><!-- for OE-A -->
 		<widget addon="Pager" conditional="config" connection="config" position="512,849" size="889,25" transparent="1" backgroundColor="background"/>
 		<widget name="menu" conditional="menu" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" /><!-- for PLi -->
-		<widget addon="Pager" conditional="menu" connection="config" position="512,849" size="889,25" transparent="1" backgroundColor="background"/>
+		<widget addon="Pager" conditional="menu" connection="menu" position="512,849" size="889,25" transparent="1" backgroundColor="background"/>
 	</screen>
 	<!-- MovieBrowserConfig -->
 	<screen name="MovieBrowserConfiguration" position="fill" flags="wfNoBorder" backgroundColor="transparent">
