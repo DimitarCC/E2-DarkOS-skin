@@ -369,7 +369,6 @@
     <widget backgroundColor="background" font="Regular; 30" foregroundColor="white" position="114,185" render="Label" size="842,505" source="session.Event_Now">
       <convert type="EventName">FullDescription</convert>
     </widget>
-    <eLabel backgroundColor="background" font="Bold; 35" foregroundColor="light_green" position="975,65" size="80,45" text="Next:" />
     <widget backgroundColor="background" font="Bold; 30" halign="left" position="975,133" render="Label" size="60,40" source="session.Event_Next">
       <convert type="EventTime">StartTime</convert>
       <convert type="ClockToText">Default</convert>
@@ -388,7 +387,7 @@
       <convert type="EventTime">Remaining</convert>
       <convert type="RemainingToText">InMinutes</convert>
     </widget>
-    <widget backgroundColor="background" font="Regular; 35" noWrap="1" position="1064,65" render="Label" size="640,45" source="session.Event_Next">
+    <widget backgroundColor="background" font="Regular; 35" noWrap="1" position="975,65" render="Label" size="730,45" source="session.Event_Next">
       <convert type="EventName">Name</convert>
     </widget>
     <widget backgroundColor="background" font="Regular; 30" position="975,185" render="Label" size="842,505" source="session.Event_Next">
@@ -543,7 +542,7 @@
     <widget name="chapter" position="30,22" size="180,39" font="Regular;34" backgroundColor="secondBG" foregroundColor="secondFG" transparent="1" />
     <widget name="number" position="210,22" size="120,39" halign="right" font="Regular;34" zPosition="1" transparent="1" />
   </screen>
-  <!-- Channel,EPG,EventInfo -->
+   <!-- Channel,EPG,EventInfo -->
   <screen name="ChannelSelection" title="Channel Selection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Window_Full_Pig" />
     <eLabel position="1200,105" size="1,870" backgroundColor="separator" zPosition="-5" />
@@ -557,8 +556,11 @@
     <widget render="Label" source="ServiceEvent" backgroundColor="background2" halign="left" font="Regular; 30" position="1235,455" size="645,343" transparent="1">
       <convert type="EventName">FullDescription</convert>
     </widget>
-    <eLabel text="Next:" position="1235,815" size="115,40" font="Regular; 31" backgroundColor="background" halign="left" transparent="1" foregroundColor="potem" />
-    <widget transparent="1" render="NextEpgInfo" position="1235,860" size="600,120" source="ServiceEvent" timeColor="light_yellow" backgroundColor="background" foregroundColor="white" noLabel="1" noWrap="1" font="Regular;30" NumberOfItems="3">
+    <widget source="ServiceEvent" render="FixedLabel" text="" position="1235,820" size="645,2" backgroundColor="separator">
+		<convert type="EventName">Name</convert>
+		<convert type="ConditionalShowHide"/>
+	</widget>
+    <widget transparent="1" render="NextEpgInfo" position="1235,860" size="645,120" source="ServiceEvent" timeColor="light_yellow" backgroundColor="background" foregroundColor="white" noLabel="1" noWrap="1" font="Regular;30" NumberOfItems="3">
     </widget>
     <widget source="ServiceEvent" render="Picon" position="1260,145" size="220,132" zPosition="12" alphatest="blend">
       <convert type="ServiceName">Reference</convert>
@@ -569,16 +571,11 @@
     <widget source="ServiceEvent" render="Label" position="1235,395" size="645,40" font="Regular; 34" backgroundColor="background2" transparent="1" halign="left" noWrap="1" foregroundColor="light_green">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="ServiceEvent" render="Label" position="1250,345" size="80,30" font="Bold; 26" backgroundColor="background2" transparent="1">
-      <convert type="EventTime">StartTime</convert>
-      <convert type="ClockToText" />
-    </widget>
-    <widget source="ServiceEvent" render="Label" position="1307,345" size="105,30" font="Bold; 26" backgroundColor="background2" transparent="1">
-      <convert type="EventTime">EndTime</convert>
-      <convert type="ClockToText">Format:- %H:%M</convert>
+    <widget source="ServiceEvent" render="Label" position="1240,345" size="160,30" font="Bold; 26" backgroundColor="background2" transparent="1">
+      <convert type="EventName">•,TIMERANGE</convert>
     </widget>
     <!--<eLabel backgroundColor="progress" position="1350,752" size="412,4" transparent="0" zPosition="3" />-->
-    <widget source="ServiceEvent" render="Progress" position="1390,360" size="412,4" backgroundColor="background" foregroundColor="blue" transparent="1" zPosition="6">
+    <widget source="ServiceEvent" render="Progress" position="1380,360" size="412,4" backgroundColor="background" foregroundColor="blue" transparent="1" zPosition="6">
       <convert type="EventTime">Progress</convert>
       <!--<convert type="ConditionalShowHide"/>-->
     </widget>
@@ -716,7 +713,7 @@
     <eLabel position="1890,405" size="1,576" backgroundColor="separator" zPosition="10" />
     <widget name="list" position="25,405" size="1867,576" itemHeight="72" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" backgroundColor="background" transparent="1" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" EntryBackgroundColorSelected="background3" EntryForegroundColorSelected="foreground" ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="#00323c4d" ServiceNameBackgroundColorSelected="#00fcc000" ServiceBorderVerWidth="3" EventBorderVerWidth="3" RecIconSize="32" IconXPadding="6" IconYPadding="4" EntryBorderColor="separator" EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryFont="Regular;28" ServiceFont="Regular;28" />
     <widget source="Event" render="Label" backgroundColor="background" font="Regular; 28" position="850,95" size="610,50" transparent="1" halign="right" valign="center" >
-		<convert type="EventName">•,FORMAT</convert>
+		<convert type="EventName">•,TIMERANGE,DURATION</convert>
 	</widget>
     <eLabel position="1510,102" size="1,225" backgroundColor="separator" zPosition="-5" />
     <widget source="Event" render="Label" position="30,95" size="900,50" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
