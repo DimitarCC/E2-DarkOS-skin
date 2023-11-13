@@ -2,8 +2,8 @@
 <skin>
 	<screen name="Console_Pig" title="Command execution" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />
-    	<widget name="text" position="30,93" size="e-60,e-93-84-25" itemHeight="45" font="Fixed;28" transparent="1" foregroundColor="white" scrollbarMode="showNever" />
-		<widget addon="Pager" connection="text" position="30,e-84-25" size="e-60,25" />
+		<widget name="text" position="125,150" size="1670,13*45" itemHeight="45" font="Fixed;28" backgroundColor="background" foregroundColor="white" scrollbarMode="showNever" />
+		<widget addon="Pager" connection="text" position="145,915" size="1630,25" backgroundColor="background"/>
   	</screen>
 	<!-- Opkg installer -->
 	<screen name="OpkgInstaller" position="fill" flags="wfNoBorder">
