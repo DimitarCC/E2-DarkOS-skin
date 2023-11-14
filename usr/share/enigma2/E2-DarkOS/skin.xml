@@ -565,7 +565,7 @@
     <widget name="chapter" position="30,22" size="180,39" font="Regular;34" backgroundColor="secondBG" foregroundColor="secondFG" transparent="1" />
     <widget name="number" position="210,22" size="120,39" halign="right" font="Regular;34" zPosition="1" transparent="1" />
   </screen>
-   <!-- Channel,EPG,EventInfo -->
+  <!-- Channel,EPG,EventInfo -->
   <screen name="ChannelSelection" title="Channel Selection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Window_Full_Pig" />
     <eLabel position="1200,105" size="1,870" backgroundColor="separator" zPosition="-5" />
@@ -574,7 +574,7 @@
 					picServiceEventProgressbar="window/progress.png" forgroundColorEventProgressbarBorder="background" foregroundColorServiceNotAvail="#777777" 
 					backgroundColor="background" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" 
 					scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background3" backgroundColorMarkedSelected="background3" 
-					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="43" serviceItemHeight="43" nonplayableMargins="0"/>
+					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="43" serviceItemHeight="43" nonplayableMargins="0" textSeparator="  •  " sidesMargin="20"/>
 
     <widget render="Label" source="ServiceEvent" backgroundColor="background2" halign="left" font="Regular; 30" position="1235,455" size="645,343" transparent="1">
       <convert type="EventName">FullDescription</convert>
@@ -614,14 +614,15 @@
   <!-- EPG Stuff -->
   <screen name="EPGSelection" position="fill" flags="wfNoBorder">
     <panel name="Screen_Window_Full_Pig" />
-    <widget name="list" position="26,91" size="1130,890" itemHeight="45" setEventItemFont="Regular;32" setColWidths="120,220" setColGap="40" setIconDistance="10" transparent="1" scrollbarMode="showNever" sidesMargin="25" />
+	<eLabel position="1135,105" size="1,870" backgroundColor="separator" zPosition="-5" />
+    <widget name="list" position="26,91" size="1095,890" itemHeight="45" setEventItemFont="Regular;32" setColWidths="120,220" setColGap="40" setIconDistance="10" transparent="1" scrollbarMode="showNever" sidesMargin="25" />
     <widget source="Service" render="Label" position="1160,342" size="720,30" foregroundColor="transponderinfo" font="Regular;26" valign="center" halign="center" transparent="1" zPosition="1">
       <convert type="TransponderInfo" />
     </widget>
     <widget source="Event" render="Label" position="1160,382" size="720,35" foregroundColor="secondFG" font="Regular;32" transparent="1">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="Event" render="Label" position="1159,427" size="720,500" transparent="1" font="Regular;30" halign="block">
+    <widget source="Event" render="Label" position="1159,427" size="720,510" transparent="1" font="Regular;30" halign="block">
       <convert type="EventName">FullDescription</convert>
     </widget>
     <widget source="Event" render="Label" position="1162,958" size="330,34" backgroundColor="background" transparent="1" foregroundColor="secondFG" font="Regular;30">
@@ -644,7 +645,7 @@
       <convert type="EventTime">Duration</convert>
       <convert type="ClockToText">AsLengthHours</convert>
     </widget>
-    <widget source="Service" render="Picon" position="e-304,e-270" size="220,132" zPosition="12" alphatest="blend">
+    <widget source="Service" render="Picon" position="1230,145" size="220,132" zPosition="12" alphatest="blend">
       <convert type="ServiceName">Reference</convert>
     </widget>
   </screen>
