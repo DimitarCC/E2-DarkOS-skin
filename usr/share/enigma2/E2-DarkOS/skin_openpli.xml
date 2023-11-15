@@ -5,7 +5,8 @@
 		<widget name="text" position="125,150" size="1670,13*45" itemHeight="45" font="Fixed;28" backgroundColor="background" foregroundColor="white" scrollbarMode="showNever" />
 		<widget addon="Pager" connection="text" position="145,915" size="1630,25" backgroundColor="background"/>
   	</screen>
-	<!-- Opkg installer -->
+	<!--This is PLi plugins and special screens that have to be done-->
+	<!-- Opkg installer
 	<screen name="OpkgInstaller" position="fill" flags="wfNoBorder">
 		<panel name="PigTemplate" />
 		<eLabel text="Install extensions" position="30,7" size="1830,75" backgroundColor="secondBG" transparent="1" zPosition="1" font="Regular;36" valign="center" halign="left" />
@@ -19,17 +20,17 @@
 		<widget name="slider" position="780,440" size="1110,20" zPosition="2" transparent="1" />
 		<widget name="activityslider" position="30,1024" size="1860,6" pixmap="window/slider100.png" transparent="1" zPosition="2" />
 	</screen>
-	<!-- Choose upgrade source -->
+
 	<screen name="OPKGMenu" title="Select OPKG source" position="fill" flags="wfNoBorder">
 		<panel name="PigTemplate" />
 		<widget name="filelist" position="780,105" size="1110,450" itemHeight="38" font="Regular;28" zPosition="3" transparent="1" scrollbarMode="showOnDemand" />
 	</screen>
-	<!-- Edit upgrade source -->
+
 	<screen name="OPKGSource" title="OPKG source" position="fill" flags="wfNoBorder">
 		<panel name="PigTemplate" />
 		<widget name="text" position="30,570" size="1860,45" font="Regular;34" zPosition="3" transparent="1" />
 	</screen>
-	<!-- Packet Manager -->
+
 	<screen name="PacketManager" title="OPKG upgrade" position="fill" flags="wfNoBorder">
 		<panel name="PigTemplate" />
 		<widget source="list" render="Listbox" position="780,105" size="1110,858" zPosition="3" transparent="1" scrollbarMode="showOnDemand">
@@ -147,13 +148,11 @@
 			</convert>
 		</widget>
 		<widget source="introduction" render="Label" position="30,560" size="720,34" zPosition="10" font="Regular;30" halign="left" backgroundColor="secondBG" transparent="1" />
-	</screen>
+	</screen> -->
 	<!-- AutoBackup -->
-	<screen name="Config" position="fill" flags="wfNoBorder"><!-- What is this? -->
-		<panel name="PigTemplate" />
-		<panel name="KeyMenuTemplate" />
-		<widget name="config" position="780,105" size="1110,300" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
-		<widget name="statusbar" position="780,495" size="1110,35" font="Regular;32" />
-		<widget name="status" position="780,540" size="1110,410" font="Console;20" />
+	<screen name="Config" position="fill" flags="wfNoBorder">
+		<panel name="ConfigScreenTemplate" />
+		<widget name="statusbar" position="145,865" zPosition="5" size="1630,30" font="Regular;28" />
+		<widget name="status" position="145,755" size="1630,100" font="Regular;28" />
 	</screen>
 </skin>

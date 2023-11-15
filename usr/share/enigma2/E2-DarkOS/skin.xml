@@ -51,22 +51,18 @@
   </fonts>
   <!-- Colors -->
   <colors>
-    <color name="#1c2c5c" value="#001c2c5c" />
     <color name="#232323" value="#00232323" />
     <color name="#25062748" value="#25062748" />
     <color name="#254f7497" value="#254f7497" />
     <color name="#26b5ff" value="#0026b5ff" />
     <color name="#7f000000" value="#7f000000" />
     <color name="#dddddd" value="#00dddddd" />
-    <color name="#e5b243" value="#00e5b243" />
     <color name="#eeeeee" value="#00eeeeee" />
     <color name="#ffffff" value="#00ffffff" />
     <color name="background" value="#02111111" />
     <color name="background2" value="#0017191a" />
     <color name="background3" value="#00252525" />
     <color name="background5" value="#02444444" />
-    <color name="background6" value="#00353535" />
-    <color name="basictemplatecolor" value="#00000000" />
     <color name="black" value="#00000000" />
     <color name="blue" value="#00879ce1" />
     <color name="bluetransparent" value="#08001e4b" />
@@ -76,33 +72,23 @@
     <color name="fallback" value="#00b0b0c0" />
     <color name="foreground" value="#00f0f0f0" />
     <color name="green" value="#0056c856" />
-    <color name="greentransparent" value="#08004c00" />
     <color name="grey" value="#00b6b6b6" />
-    <color name="infobarBG" value="#41080808" />
     <color name="light_green" value="#000bc97f" />
     <color name="light_yellow" value="#00fdfc93" />
     <color name="listbox" value="#000f56a4" />
-    <color name="notavailable" value="#005e5e5e" />
     <color name="noTransBG" value="#00101214" />
     <color name="orange" value="#00ffc000" />
     <color name="potem" value="#008fe66d" />
     <color name="progress" value="#00242426" />
-    <color name="rds_text_bg" value="#00003258" />
     <color name="red" value="#00ff4a3c" />
-    <color name="redtransparent" value="#084c0000" />
-    <color name="rssviewtop" value="#00005050" />
     <color name="secondBG" value="#18101214" />
     <color name="secondFG" value="#00f9c731" />
-    <color name="selectedBG" value="#06303240" />
     <color name="selectedFG" value="#00fcc000" />
-    <color name="selectorcolor" value="#06303240" />
     <color name="separator" value="#01555555" />
     <color name="toptemplatecolor" value="#000d0f16" />
     <color name="transparent" value="#ff000000" />
     <color name="transpBlack" value="#2d101214" />
-    <color name="transpDark" value="#54242424" />
     <color name="transponderinfo" value="#00f0f0f0" />
-    <color name="transpWhite" value="#70f0f0f0" />
     <color name="un33333a" value="#0033333a" />
     <color name="un40a0aa0" value="#040a0aa0" />
     <color name="un4a00a0a" value="#04a00a0a" />
@@ -2373,37 +2359,6 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 		<widget name="key_red" position="335,15" zPosition="4" size="85,22" font="Regular;20" valign="center" halign="left" backgroundColor="#232323" foregroundColor="#ffffff" transparent="1" />
 		<widget name="key_green" position="440,15" zPosition="4" size="85,22" font="Regular;20" valign="center" halign="left" backgroundColor="#232323" foregroundColor="#ffffff" transparent="1" />
 		<widget name="key_blue" position="440,40" zPosition="4" size="160,22" font="Regular;20" valign="center" halign="left" backgroundColor="#232323" foregroundColor="#ffffff" transparent="1" />
-	</screen>
-	<!-- PicturePlayer -->
-	<screen name="picshow" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_1_1" />
-		<panel position="120,56" size="1720,902">
-			<widget name="thn" position="30,10" size="390,375" alphatest="blend" />
-			<widget name="filelist" position="450,10" size="1110,19*45" itemHeight="45" font="Regular;28" zPosition="3" scrollbarMode="showNever" />
-			<widget name="label" position="450,868" size="390,34" transparent="1" font="Regular;30" />
-		</panel>
-	</screen>
-	<screen name="Pic_Exif" title="Info" position="fill" flags="wfNoBorder">
-		<panel name="Screen_1_1" />
-		<widget source="menu" render="Listbox" position="125,150" size="1670,11*52" selectionDisabled="1" transparent="1" scrollbarMode="showNever">
-			<convert type="TemplatedMultiContent">
-				{"template": [MultiContentEntryText(pos = (7,10),size = (375,45),flags = RT_HALIGN_LEFT,text = 0),
-				MultiContentEntryText(pos = (390,10),size = (645,45),flags = RT_HALIGN_LEFT,text = 1)],
-				"fonts": [gFont("Regular",30)],
-				"itemHeight": 52 }
-			</convert>
-		</widget>
-		<widget addon="Pager" conditional="menu" connection="menu" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
-	</screen>
-	<screen name="Pic_Setup" title="Settings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="ConfigScreenTemplate" />
-	</screen>
-	<screen name="Pic_Full_View" position="fill" title="Picture" flags="wfNoBorder" backgroundColor="background">
-		<widget name="pic" position="fill" zPosition="1" alphatest="blend" />
-		<eLabel position="22,22" size="45,37" zPosition="2" backgroundColor="black" transparent="1" />
-		<widget name="point" position="25,25" size="31,31" zPosition="3" pixmap="icons/record.png" alphatest="blend" />
-		<widget name="play_icon" position="25,25" size="24,24" zPosition="3" pixmap="icons/ico_mp_play.png" alphatest="blend" />
-		<widget source="file" render="Label" position="90,22" size="900,34" zPosition="3" font="Regular;30" halign="left" noWrap="1" foregroundColor="foreground" backgroundColor="black" transparent="1" borderWidth="2" />
 	</screen>
 	<!-- Inputbox -->
 	<screen name="InputBox" position="fill" title="Input" flags="wfNoBorder" backgroundColor="transparent">
