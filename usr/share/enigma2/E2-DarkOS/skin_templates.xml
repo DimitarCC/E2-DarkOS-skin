@@ -182,7 +182,7 @@
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
 			  <convert type="ClockToText">Default</convert>
 			</widget>
-			<widget source="Title" render="Label" position="15,2" size="e-260,60" font="Bold; 30" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" />
+			<widget source="Title" render="Label" position="20,2" size="e-260,60" font="Bold; 34" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" />
 			<panel position="e-220-110,e-65" size="220,36">
 			  <panel name="ConfigButtonsTemplate"/>
 			</panel>
@@ -212,7 +212,7 @@
 		<eLabel position="29,1004" size="1864,72" backgroundColor="background5" zPosition="-7" />
 		
 		<eLabel position="25,75" size="1865,1" backgroundColor="separator" zPosition="-5" />
-		<widget source="Title" render="Label" position="40,5" size="1000,70" font="Bold; 30" backgroundColor="background2" transparent="1" halign="left" noWrap="1" valign="center" zPosition="3" foregroundColor="yellow" />
+		<widget source="Title" render="Label" position="45,5" size="1000,70" font="Bold; 34" backgroundColor="background2" transparent="1" halign="left" noWrap="1" valign="center" zPosition="3" foregroundColor="yellow" />
 		<widget backgroundColor="black" font="Bold; 40" foregroundColor="white" halign="right" position="1755,5" render="Label" size="120,70" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
 		  <convert type="ClockToText">Default</convert>
 		</widget>
@@ -269,7 +269,7 @@
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
 			  <convert type="ClockToText">Default</convert>
 			</widget>
-			<widget source="Title" render="Label" position="15,2" size="e-260,60" font="Bold; 30" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" />
+			<widget source="Title" render="Label" position="20,2" size="e-260,60" font="Bold; 34" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" />
 		</panel>
 		<panel position="e-220-220,e-100" size="220,36">
 		  <panel name="ConfigButtonsTemplate"/>
@@ -288,7 +288,7 @@
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
 			  <convert type="ClockToText">Default</convert>
 			</widget>
-			<widget source="Title" render="Label" position="15,2" size="e-260,60" font="Bold; 30" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" />
+			<widget source="Title" render="Label" position="20,2" size="e-260,60" font="Bold; 34" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" />
 			<panel position="e-220-126,e-65" size="220,36">
 			  <panel name="ConfigButtonsTemplate"/>
 			</panel>

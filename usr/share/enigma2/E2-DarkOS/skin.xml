@@ -1187,7 +1187,10 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   <screen name="MovieSelection" title="Movie Selection" position="fill" flags="wfNoBorder">
     <panel name="Screen_Window_Full_Pig" />
     <eLabel position="25,350" size="1860,1" backgroundColor="separator" zPosition="-5" />
-    <widget name="list" transparent="1" position="20,365" size="1875,585" scrollbarMode="showNever" itemHeights="100,75,45" fontSizesOriginal="36,26,24" fontSizesCompact="36,28" fontSizesMinimal="34,30" pbarShift="17" pbarHeight="20" pbarLargeWidth="72" spaceLeft="25" spaceRight="25" dateWidth="260" columnsOriginal="270,300" columnsCompactDescription="240,220,240" compactColumn="300" treeDescription="250" partIconeShiftMinimal="8" partIconeShiftCompact="2" partIconeShiftOriginal="3" iconsWidth="33" spaceIconeText="6" trashShift="4" dirShift="3" />
+    <widget name="list" transparent="1" position="20,365" size="1875,585" scrollbarMode="showNever" itemHeights="100,75,45" fontSizesOriginal="36,26,24" 
+		fontSizesCompact="36,28" fontSizesMinimal="34,30" pbarShift="17" pbarHeight="20" pbarLargeWidth="72" spaceLeft="25" spaceRight="25" dateWidth="260" 
+		columnsOriginal="270,300" columnsCompactDescription="240,220,240" compactColumn="300" treeDescription="250" partIconeShiftMinimal="8" 
+		partIconeShiftCompact="2" partIconeShiftOriginal="3" iconsWidth="33" spaceIconeText="6" trashShift="4" dirShift="3" font="Regular,30" itemHeight="65" />
 	<widget addon="Pager" connection="list" position="20,960" size="1875,25" transparent="1" backgroundColor="background" />
     <widget render="Label" source="Service" halign="left" backgroundColor="background2" position="30,175" size="1490,140" font="Regular; 30" transparent="1">
       <convert type="EventName">ExtendedDescription</convert>
