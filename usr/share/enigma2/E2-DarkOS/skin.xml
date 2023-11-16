@@ -1185,69 +1185,25 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   </screen>
   <!-- Movie Selection -->
   <screen name="MovieSelection" title="Movie Selection" position="fill" flags="wfNoBorder">
-    <panel name="Screen_Window_Full_Pig" />
-    <eLabel position="25,350" size="1860,1" backgroundColor="separator" zPosition="-5" />
-    <widget name="list" transparent="1" position="20,365" size="1875,585" scrollbarMode="showNever" itemHeights="100,75,45" fontSizesOriginal="36,26,24" 
-		fontSizesCompact="36,28" fontSizesMinimal="34,30" pbarShift="17" pbarHeight="20" pbarLargeWidth="72" spaceLeft="25" spaceRight="25" dateWidth="260" 
-		columnsOriginal="270,300" columnsCompactDescription="240,220,240" compactColumn="300" treeDescription="250" partIconeShiftMinimal="8" 
-		partIconeShiftCompact="2" partIconeShiftOriginal="3" iconsWidth="33" spaceIconeText="6" trashShift="4" dirShift="3" font="Regular,30" itemHeight="65" />
+	<panel name="Screen_Window_Full_Pig" />
+	<eLabel position="25,380" size="1860,1" backgroundColor="separator" zPosition="-5" />
+	<widget name="list" transparent="1" position="20,400" size="1875,540" scrollbarMode="showNever" itemHeights="100,75,45" fontSizesOriginal="36,26,24" fontSizesCompact="36,28" fontSizesMinimal="34,30" pbarShift="17" pbarHeight="20" pbarLargeWidth="72" spaceLeft="25" spaceRight="25" dateWidth="260" columnsOriginal="270,300" columnsCompactDescription="240,220,240" compactColumn="300" treeDescription="250" partIconeShiftMinimal="8" partIconeShiftCompact="2" partIconeShiftOriginal="3" iconsWidth="33" spaceIconeText="6" trashShift="4" dirShift="3" font="Regular,30" itemHeight="60" />
 	<widget addon="Pager" connection="list" position="20,960" size="1875,25" transparent="1" backgroundColor="background" />
-    <widget render="Label" source="Service" halign="left" backgroundColor="background2" position="30,175" size="1490,140" font="Regular; 30" transparent="1">
-      <convert type="EventName">ExtendedDescription</convert>
-    </widget>
-    <widget render="Label" source="Service" backgroundColor="background" font="Regular; 28" position="870,100" size="610,38" transparent="1" halign="right" valign="center" >
+	<widget render="Label" source="Service" halign="left" backgroundColor="background2" position="30,215" size="1470,140" font="Regular; 30" transparent="1">
+	<convert type="EventName">ExtendedDescription</convert>
+	</widget>
+	<widget render="Label" source="Service" backgroundColor="background" font="Regular; 28" position="870,100" size="610,38" transparent="1" halign="right" valign="center" >
 		<convert type="MovieInfo">•,TIMECREATED,DURATION,FILESIZE</convert>
 	</widget>
-    <eLabel position="1510,100" size="1,225" backgroundColor="separator" zPosition="-5" />
-    <widget source="Service" render="Label" position="30,85" size="900,70" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
-      <convert type="EventName">Name</convert>
-    </widget>
-    <!--<panel name="SelectionTemplate"/>
-		<panel name="KeyMenuInfoTemplate"/>
-		<panel name="KeyVideoTemplate"/>
-		<ePixmap pixmap="dvr/scale1024.png" position="30,538" size="720,12" zPosition="1"/>
-		<widget source="session.CurrentService" render="PositionGauge" position="30,535" size="720,18" transparent="1" zPosition="4" pointer="dvr/position_pointer1.png:720,4">
-			<convert type="ServicePosition">Gauge</convert>
-		</widget>
-		<widget source="session.CurrentService" render="Label" position="37,494" size="135,30" backgroundColor="transparent" transparent="1" zPosition="4" foregroundColor="grey" borderWidth="2" font="Regular;27" borderColor="black" valign="center" halign="left">
-			<convert type="ServicePosition">Position,ShowHours</convert>
-		</widget>
-		<widget source="session.CurrentService" render="Label" position="502,494" size="240,30" backgroundColor="transparent" transparent="1" zPosition="4" foregroundColor="grey" borderWidth="2" font="Regular;27" borderColor="black" valign="center" halign="right">
-			<convert type="ServicePosition">Remaining,Plus,ShowHours</convert>
-		</widget>
-		<widget source="Service" render="Label" position="30,562" size="120,36" foregroundColor="grey" font="Regular;30" halign="left" transparent="1">
-			<convert type="ServiceTime">Duration</convert>
-			<convert type="ClockToText">AsLength</convert>
-		</widget>
-		<widget source="Service" render="Label" position="187,562" size="160,37" font="Regular;30" foregroundColor="grey" halign="center" transparent="1">
-			<convert type="ServiceTime">StartTime</convert>
-			<convert type="ClockToText">ShortDate</convert>
-		</widget>
-		<widget source="Service" render="Label" position="382,562" size="367,37" zPosition="1" foregroundColor="grey" font="Regular;30" halign="right">
-			<convert type="MovieInfo">RecordServiceName</convert>
-		</widget>
-
-		<widget name="waitingtext" position="780,100" size="1110,912" font="Regular;33" halign="center" valign="center" zPosition="4"/>
-		<widget name="chosenletter" position="780,100" size="1110,912" foregroundColor="yellow" font="Regular;112" halign="center" valign="center" transparent="1" zPosition="4"/>
-		<widget name="list" position="780,108" size="1110,900" scrollbarMode="showOnDemand" itemHeights="100,75,45" fontSizesOriginal="36,26,24" fontSizesCompact="36,28" fontSizesMinimal="34,30"
-						pbarShift="17" pbarHeight="20" pbarLargeWidth="72" spaceRight="3" columnsOriginal="270,300" columnsCompactDescription="240,220,240" compactColumn="300"
-						treeDescription="250" partIconeShiftMinimal="8" partIconeShiftCompact="2" partIconeShiftOriginal="3" iconsWidth="33" spaceIconeText="6" trashShift="4" dirShift="3"/>
-		<widget source="Service" render="Label" position="30,600" size="720,72" foregroundColor="secondFG" font="Regular;30" transparent="1">
-			<convert type="MovieInfo">ShortDescription</convert>
-		</widget>
-		<widget source="Service" render="Label" position="30,675" size="720,288" font="Regular;31" valign="center" halign="block">
-			<convert type="MovieInfo">MetaDescription</convert>
-		</widget>
-		<widget source="Service" render="Label" position="30,975" size="180,34" transparent="1" foregroundColor="grey" font="Regular;30">
-			<convert type="MovieInfo">FileSize</convert>
-		</widget>
-		<widget name="freeDiskSpace" position="195,975" size="555,34" foregroundColor="grey" font="Regular;30" transparent="1" halign="right"/>
-
-		<widget name="movie_sort" pixmaps="icons/az.png,icons/newtop.png,icons/shuffle.png,icons/za.png,icons/oldtop.png,icons/faz.png,icons/fza.png,icons/default.png" position="1282,57" zPosition="1" size="52,30" transparent="1" alphatest="on"/>
-		<widget name="movie_off" pixmaps="icons/ask.png,icons/movielist.png,icons/quit.png,icons/pause.png,icons/playlist.png,icons/playlistquit.png,icons/loop.png,icons/rep.png" position="1335,57" zPosition="1" size="52,30" transparent="1" alphatest="on"/>
-		<widget name="DescriptionBorder" position="0,0" size="0,0"/>-->
+	<widget render="Label" source="Service" backgroundColor="background" font="Bold; 36" position="30,155" size="610,38"  foregroundColor="light_yellow" halign="left" valign="center" >
+		<convert type="MovieInfo">RecordServiceName</convert>
+	</widget>
+	<eLabel position="1510,100" size="1,225" backgroundColor="separator" zPosition="-5" />
+	<widget source="Service" render="Label" position="30,85" size="900,70" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
+	<convert type="EventName">Name</convert>
+	</widget>
   </screen>
-  <!-- NumercalTextInputHelpDialog -->
+	<!-- NumercalTextInputHelpDialog -->
   <screen name="NumericalTextInputHelpDialog" position="center,675" size="846,246" backgroundColor="background" zPosition="2" flags="wfNoBorder">
     <eLabel position="0,0" size="846,246" backgroundColor="yellowtransparent" zPosition="-1" />
     <widget name="key1" position="3,3" size="280,60" font="Regular;30" valign="center" halign="center" />
