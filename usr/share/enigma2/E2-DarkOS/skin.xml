@@ -560,7 +560,7 @@
 					picServiceEventProgressbar="window/progress.png" forgroundColorEventProgressbarBorder="background" foregroundColorServiceNotAvail="#777777" 
 					backgroundColor="background" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" 
 					scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background3" backgroundColorMarkedSelected="background3" 
-					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="53" itemHeightTwoLine="86" nonplayableMargins="0" textSeparator="  •  " sidesMargin="20" markerLine="1" 
+					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="53" serviceItemHeight="53" itemHeightTwoLine="86" nonplayableMargins="0" textSeparator="  •  " sidesMargin="20" markerLine="1" 
 					markerTextAlignment="center" markerLineColor="separator"/>
 
     <widget render="Label" source="ServiceEvent" backgroundColor="background2" halign="left" font="Regular; 30" position="1235,455" size="645,343" transparent="1">
