@@ -517,22 +517,6 @@
   <!-- Movie Player Infobar -->
   <screen name="MoviePlayer" title="InfoBar" position="fill" backgroundColor="transparent" flags="wfNoBorder">
     <panel name="PlayerTemplate" />
-    <!-- <widget source="session.CurrentService" render="Pixmap" pixmap="infobar/ico_dolby_on.png" position="1467,107" size="50,32" zPosition="2" alphatest="on">
-			<convert type="ServiceInfo">IsMultichannel</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="infobar/ico_format_hd.png" position="1518,107" size="60,32" zPosition="4" alphatest="on">
-			<convert type="ServiceInfo">IsHD</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="infobar/ico_format_16_9.png" position="1518,107" size="60,32" zPosition="2" alphatest="on">
-			<convert type="ServiceInfo">IsSDAndWidescreen</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="infobar/ico_format_4_3.png" position="1518,107" size="60,32" zPosition="2" alphatest="on">
-			<convert type="ServiceInfo">IsSDAndNotWidescreen</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget> -->
   </screen>
   <!-- DVD Player Infobar -->
   <screen name="DVDPlayer" title="InfoBar" position="150,67" size="1620,352" backgroundColor="transparent" flags="wfNoBorder">
