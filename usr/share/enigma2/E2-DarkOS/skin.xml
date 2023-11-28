@@ -538,15 +538,15 @@
   <!-- Channel,EPG,EventInfo -->
   <screen name="ChannelSelection" title="Channel Selection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Window_Full_Pig" />
-    <eLabel position="1200,105" size="1,870" backgroundColor="separator" zPosition="-5" />
+    <eLabel position="1200,95" size="1,890" backgroundColor="separator" zPosition="-5" />
 	<widget name="list" position="20,95" size="1160,860" enableWrapAround="1" colorServiceDescription="light_yellow" colorServiceDescriptionSelected="light_yellow" 
 					colorEventProgressbarBorder="blue" colorEventProgressbarBorderSelected="blue" colorEventProgressbar="blue" colorEventProgressbarSelected="yellow" 
 					picServiceEventProgressbar="window/progress.png" forgroundColorEventProgressbarBorder="background" foregroundColorServiceNotAvail="#777777" 
 					backgroundColor="background" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" 
 					scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background3" backgroundColorMarkedSelected="background3" 
-					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="53" serviceItemHeight="53" itemHeightTwoLine="86" nonplayableMargins="0" textSeparator="  •  " sidesMargin="20" markerLine="1" 
+					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="53" itemHeightTwoLine="86" nonplayableMargins="0" textSeparator="  •  " sidesMargin="20" markerLine="1" 
 					markerTextAlignment="center" markerLineColor="separator"/>
-
+	<widget addon="Pager" connection="list" position="20,965" size="1160,25" transparent="1" backgroundColor="background" />
     <widget render="Label" source="ServiceEvent" backgroundColor="background2" halign="left" font="Regular; 30" position="1235,455" size="645,343" transparent="1">
       <convert type="EventName">FullDescription</convert>
     </widget>
@@ -1301,10 +1301,10 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   </screen>
   <screen name="TimerEditList" position="fill" title="Timer Overview" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_1_1" />
-    <widget name="timerlist" position="135,160" size="1650,6*90" scrollbarMode="showNever" itemHeight="90" iconMargin="30" rowSplit="45" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" sidesMargin="20" />
-    <widget addon="Pager" connection="timerlist" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
-	<eLabel position="135,720" size="1650,2" backgroundColor="background5" zPosition="-7" />
-    <widget name="description" position="145,730" size="1620,150" backgroundColor="background" font="Regular;30" halign="center" valign="center"/>
+    <eLabel position="1240,140" size="1,805" backgroundColor="separator" zPosition="-5" />
+    <widget name="timerlist" position="120,145" size="1100,8*90" scrollbarMode="showNever" itemHeight="90" iconMargin="30" rowSplit="45" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" sidesMargin="20" />
+    <widget addon="Pager" connection="timerlist" position="135,915" size="1100,25" transparent="1" backgroundColor="background" />
+    <widget name="description" position="1255,160" size="530,780" backgroundColor="background2" halign="block" valign="center" font="Regular;30" transparent="1"/>
   </screen>
   <screen name="TimerLog" position="fill" title="Timer log" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="Screen_Menu1" />
