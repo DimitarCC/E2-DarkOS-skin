@@ -127,6 +127,8 @@
     <parameter name="ConfigListSeperator" value="500" />
 	<parameter name="PluginBrowserDownloadIcon" value="10,0,90,76" />
 	<parameter name="ScreenParamSeparatorChar" value="*  •  " />
+	<parameter name="ServiceInfoLeft" value="0,0,843,36"/>
+    <parameter name="ServiceInfoRight" value="843,0,1696,36"/>
   </parameters>
   <switchpixmap>
     <pixmap name="menu_on" filename="icons/menu_on.png" />
@@ -1338,12 +1340,12 @@ setLogo(self["logo"].instance, "brand", 54, 34)
     <widget name="filelist" position="396,201" size="1110,640" scrollbarMode="showOnDemand" />
   </screen>
   <screen name="ServiceInfoSimple" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="Screen_Menu1" />
-    <widget name="infolist" position="396,201" size="1110,17*38" itemHeight="38" font="Regular;28" selectionDisabled="1" scrollbarMode="showOnDemand" />
+    <panel name="Screen_1_1" />
+    <widget name="infolist" position="125,150" size="1696,776" itemHeight="38" font="Regular;28" selectionDisabled="1" scrollbarMode="showOnDemand" />
   </screen>
   <screen name="ServiceInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="ServiceInfoSimple" />
-    <widget source="session.CurrentService" render="Label" position="386,839" size="1153,37" transparent="1" zPosition="1" foregroundColor="foreground" font="Regular;33" valign="top" halign="center">
+    <widget source="session.CurrentService" render="Label" position="386,900" size="1153,37" transparent="1" zPosition="1" foregroundColor="foreground" font="Regular;33" valign="top" halign="center">
       <convert type="ServiceInfo">HasHBBTV</convert>
     </widget>
   </screen>
