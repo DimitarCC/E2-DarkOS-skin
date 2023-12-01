@@ -99,7 +99,7 @@
     <color name="yellowtransparent" value="#084b4b00" />
   </colors>
   <parameters>
-    <parameter name="AutoscaleSVG" value="1" />
+	<parameter name="AutoscaleSVG" value="1" />
 	<parameter name="AutotimerEnabledIcon" value="24,8,32,32"/>
 	<parameter name="AutotimerRecordIcon" value="78,10,30,30"/>
     <parameter name="ConfigListSlider" value="22,3" />
@@ -448,7 +448,7 @@
       <convert type="ServiceInfo">HasTelext</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-        <widget source="session.CurrentService" render="Pixmap" pixmap="icons/SD_s_n.png" size="50,25" position="1753,981" zPosition="2" alphatest="blend">
+    <widget source="session.CurrentService" render="Pixmap" pixmap="icons/SD_s_n.png" size="50,25" position="1753,981" zPosition="2" alphatest="blend">
 		<convert type="ServiceInfo">IsSD</convert>
 		<convert type="ConditionalShowHide"/>
     </widget>
@@ -474,7 +474,7 @@
       <convert type="FrontendInfo">SNR</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.FrontendStatus" render="Label" position="577,900" size="150,24" borderWidth="1" borderColor="black" zPosition="2" backgroundColor="background" transparent="1" halign="right" font="Regular;21">
+    <widget source="session.FrontendStatus" render="Label" position="577,900" size="150,24" borderWidth="1" borderColor="black" zPosition="2" backgroundColor="background" halign="right" font="Regular;21">
       <convert type="FrontendInfo">SNR</convert>
       <convert type="ConditionalShowHide" />
     </widget>
@@ -486,7 +486,7 @@
       <convert type="FrontendInfo">AGC</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.FrontendStatus" render="Label" position="997,900" size="150,24" borderWidth="1" borderColor="black" zPosition="2" backgroundColor="background" transparent="1" halign="right" font="Regular;21">
+    <widget source="session.FrontendStatus" render="Label" position="997,900" size="150,24" borderWidth="1" borderColor="black" zPosition="2" backgroundColor="background" halign="right" font="Regular;21">
       <convert type="FrontendInfo">AGC</convert>
       <convert type="ConditionalShowHide" />
     </widget>
@@ -511,7 +511,7 @@
   <!-- Movie Player Infobar -->
   <screen name="MoviePlayer" title="InfoBar" position="fill" backgroundColor="transparent" flags="wfNoBorder">
     <panel name="PlayerTemplate" />
-  </screen>
+      </screen>
   <!-- DVD Player Infobar -->
   <screen name="DVDPlayer" title="InfoBar" position="150,67" size="1620,352" backgroundColor="transparent" flags="wfNoBorder">
     <panel name="PlayerTemplate" />
@@ -1041,7 +1041,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 	<ePixmap position="1235,935" size="32,32" pixmap="icons/hddfree.png" alphatest="blend" zPosition="1" scale="1" />
 	<widget name="freeDiskSpace" position="1290,935" size="555,34" font="Regular;30" backgroundColor="background" halign="left"/>
   </screen>
-	<!-- NumercalTextInputHelpDialog -->
+  <!-- NumercalTextInputHelpDialog -->
   <screen name="NumericalTextInputHelpDialog" position="center,675" size="846,246" backgroundColor="background" zPosition="2" flags="wfNoBorder">
     <eLabel position="0,0" size="846,246" backgroundColor="yellowtransparent" zPosition="-1" />
     <widget name="key1" position="3,3" size="280,60" font="Regular;30" valign="center" halign="center" />
