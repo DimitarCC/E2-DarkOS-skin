@@ -322,13 +322,13 @@
 		<widget backgroundColor="black" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="390,864" valign="center" render="Label" size="950,51" source="session.CurrentService" transparent="1" zPosition="110">
 		  <convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
 		</widget>
-		<eLabel position="1345,878" size="2,28" zPosition="-9" backgroundColor="dark_grey" />
+		<eLabel position="1325,878" size="2,28" zPosition="-9" backgroundColor="dark_grey" />
 		
-		<widget source="session.CurrentService" render="Label" position="1352,876" size="90,32" transparent="1" zPosition="1" backgroundColor="background" foregroundColor="green" font="Bold;25" valign="center" halign="center">
+		<widget source="session.CurrentService" render="Label" position="1333,876" size="60,32" transparent="1" zPosition="1" backgroundColor="background" foregroundColor="green" font="Bold;25" valign="center" halign="center">
 			<convert type="CaidInfo2">CryptInfo3</convert>
 		</widget>
 		
-		<eLabel position="1444,878" size="2,28" zPosition="-9" backgroundColor="dark_grey" />
+		<eLabel position="1398,878" size="2,28" zPosition="-9" backgroundColor="dark_grey" />
 		<ePixmap pixmap="icons/ico_subs_off.png" position="1464,878" size="40,28" alphatest="blend"/>
 		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/ico_subs_on.png" position="1464,878" size="40,28" zPosition="2" alphatest="blend">
 			<convert type="ServiceInfo">SubservicesAvailable</convert>
@@ -364,11 +364,6 @@
 			<convert type="ServiceInfo">HasTelext</convert>
 			<convert type="ConditionalShowHide"/>
 		</widget>
-		<!--<widget source="session.CurrentService" render="Pixmap" pixmap="icons/SD_s_n_d.png" size="50,25" position="1815,880" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">VideoHeight</convert>
-			<convert type="ValueRange">-1,1</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>-->
 		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/SD_s_n.png" size="50,25" position="1815,880" zPosition="2" alphatest="blend">
 			<convert type="ServiceInfo">IsSD</convert>
 			<convert type="ConditionalShowHide"/>
@@ -382,8 +377,14 @@
 			<convert type="ConditionalShowHide"/>
 		</widget>
 		
-		<widget position="1250,878" render="Pixmap" size="61,26" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
+		<widget position="1254,880" render="Pixmap" size="49,22" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
 		  <convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+		
+		<ePixmap pixmap="icons/streaming_off.png" position="1413,879" size="43,26" alphatest="blend"/>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/streaming.png" position="1413,879" size="43,26" zPosition="3" alphatest="blend">
+			<convert type="ClientsStreaming"/>
+			<convert type="ConditionalShowHide"/>
 		</widget>
 		
 		<widget backgroundColor="dark_grey" font="Bold;32" halign="left" noWrap="1" position="390,927" render="Label" size="80,45" source="session.Event_Now" transparent="1" valign="center" zPosition="3" foregroundColor="light_yellow">
