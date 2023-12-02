@@ -1027,7 +1027,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
 			pbarLargeWidth="72" spaceLeft="25" spaceRight="25" dateWidth="260" columnsOriginal="270,300" columnsCompactDescription="240,220,240" compactColumn="300" treeDescription="250" partIconeShiftMinimal="8" partIconeShiftCompact="2" 
 			partIconeShiftOriginal="3" iconsWidth="33" spaceIconeText="6" trashShift="4" dirShift="3" font="Regular,30" itemHeight="55" />
 	<widget addon="Pager" connection="list" position="20,960" size="1160,25" transparent="1" backgroundColor="background" />
-	<widget render="Label" source="Service" halign="left" backgroundColor="background2" position="1235,530" size="645,380" font="Regular; 30" transparent="1">
+	<widget render="Label" source="Service" halign="left" backgroundColor="background2" position="1235,530" size="645,340" font="Regular; 30" transparent="1">
 		<convert type="EventName">ExtendedDescription</convert>
 	</widget>
 	<widget render="Label" source="Service" backgroundColor="background" font="Regular; 28" position="1235,460" size="645,40" halign="left" valign="center" foregroundColor="yellow">

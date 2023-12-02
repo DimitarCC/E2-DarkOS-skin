@@ -344,8 +344,8 @@
 			<convert type="ServiceInfo">SubtitlesAvailable</convert>
 			<convert type="ConditionalShowHide"/>
 		</widget>
-		<ePixmap pixmap="icons/hbbtv_s_off.png" size="48,24" position="1653,881" alphatest="blend"/>
-		<widget render="Pixmap" pixmap="icons/hbbtv_s.png" size="48,24" position="1653,881" zPosition="2" alphatest="blend" source="session.CurrentService">
+		<ePixmap pixmap="icons/hbbtv_s_off.png" size="48,24" position="1656,881" alphatest="blend"/>
+		<widget render="Pixmap" pixmap="icons/hbbtv_s.png" size="48,24" position="1656,881" zPosition="2" alphatest="blend" source="session.CurrentService">
 			<convert type="ServiceInfo">HasHBBTV</convert>
 			<convert type="ConditionalShowHide"/>
 		</widget>
