@@ -389,8 +389,8 @@
 	</screen>
 
 	<screen name="AutoTimerImporter" title="Import AutoTimer" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_1_1"/>
-		<widget name="list" position="780,100" size="1110,912" itemHeight="45" backgroundColor="background" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand"/>
+		<panel name="Screen_menu2"/>
+		<widget name="list" position="516,222" size="889,630" itemHeight="45" backgroundColor="background" enableWrapAround="1" scrollbarMode="showNever"/>
 	</screen>
 
 	<screen name="AutoTimerOverview" title="AutoTimer Overview" position="fill" flags="wfNoBorder" backgroundColor="transparent">
