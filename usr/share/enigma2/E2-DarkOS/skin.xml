@@ -562,8 +562,11 @@
 	</widget>
     <widget transparent="1" render="NextEpgInfo" position="1235,860" size="645,120" source="ServiceEvent" timeColor="light_yellow" backgroundColor="background" foregroundColor="white" noLabel="1" noWrap="1" font="Regular;30" NumberOfItems="3">
     </widget>
-    <widget source="ServiceEvent" render="Picon" position="1260,145" size="220,132" zPosition="12" alphatest="blend">
+    <widget source="ServiceEvent" render="Picon" position="1260,115" size="220,132" zPosition="12" alphatest="blend">
       <convert type="ServiceName">Reference</convert>
+    </widget>
+	<widget source="ServiceEvent" render="Label" position="1260,280" size="220,40" zPosition="14" font="Bold; 34" backgroundColor="background" foregroundColor="light_green" transparent="1" halign="center" noWrap="1">
+      <convert type="ServiceName">•,TUNERSYSTEM,ORBPOS</convert>
     </widget>
     <!--<widget backgroundColor="background2" font="Bold; 40" halign="left" position="1200,140" render="Label" size="645,50" source="ServiceEvent" transparent="1" valign="center">
 		  <convert type="ServiceName">Name</convert>
