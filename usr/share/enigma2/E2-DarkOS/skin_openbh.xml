@@ -1,48 +1,483 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin>
-	<screen name="OBHMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="VIXMenu"/>
+	<screen name="AboutOE" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="About"/>
 	</screen>
-
+	<screen name="SystemMemoryInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="About"/>
+	</screen>
+	<screen name="SystemNetworkInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="About"/>
+		<panel position="110,-50" size="e,e">
+			<panel name="__NetworkStatusTemplate__"/>
+		</panel>
+	</screen>
+	<screen name="Devices" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<widget source="TunerHeader" render="Label" position="125,150" size="1696,38" font="Bold;30" transparent="0" zPosition="1"/>
+		<widget source="nims" render="Label" position="125,190" size="1696,300" font="Regular;28" transparent="0" zPosition="1" noWrap="1"/>
+		<widget source="HDDHeader" render="Label" position="125,498" size="1696,38" font="Bold;30" transparent="0" zPosition="1"/>
+		<widget source="hdd" render="Label" position="125,537" size="1696,300" font="Regular;28" transparent="0" zPosition="1" noWrap="1"/>
+		<widget source="MountsHeader" render="Label" position="125,723" size="1696,38" font="Bold;30" transparent="0" zPosition="1"/>
+		<widget source="mounts" render="Label" position="125,762" size="1696,195" font="Regular;28" transparent="0" zPosition="1" noWrap="1"/>
+	</screen>
+	<screen name="ButtonSetup" title="" position="fill" flags="wfNoBorder">
+		<panel name="HotkeySetup"/>
+	</screen>
+	<screen name="ButtonSetupSelect" title="" position="fill" flags="wfNoBorder">
+		<panel name="HotkeySetupSelect"/>
+	</screen>
+	<screen name="GraphicalEPGPIG" position="fill" flags="wfNoBorder">
+		<panel name="GraphMultiEPG"/>
+		<widget name="bouquetlist" position="1512,80" size="384,7*38" font="Regular;28" itemHeight="38" zPosition="100" transparent="0" scrollbarMode="showNever"/>
+	</screen>
+	<screen name="GraphicalEPG" position="fill" flags="wfNoBorder">
+		<panel name="GraphMultiEPGList"/>
+	</screen>
+	<screen name="CronTimers" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="key" position="396,210" size="1130,35" font="Regular;30" halign="center" transparent="1" valign="center"/>
+		<widget source="list" render="Listbox" position="396,255" size="1130,9*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" halign="center" selectionDisabled="0" backgroundColor="background">
+			<convert type="StringList"/>
+		</widget>
+		<widget name="lab1" position="396,700" size="275,42" font="Regular;28" valign="center"/>
+		<widget name="labdisabled" position="675,700" size="150,42" font="Regular;28" valign="center" halign="center" backgroundColor="red"/>
+		<widget name="labactive" position="675,700" size="150,42" zPosition="1" font="Regular;28" valign="center" halign="center" backgroundColor="green"/>
+		<widget name="lab2" position="396,750" size="275,42" font="Regular;28" valign="center"/>
+		<widget name="labstop" position="675,750" size="150,42" font="Regular;28" valign="center" halign="center" backgroundColor="red"/>
+		<widget name="labrun" position="675,750" size="150,42" font="Regular;28" zPosition="1" valign="center" halign="center" backgroundColor="green"/>
+		<widget name="footnote" position="396,853" size="1130,32" font="Regular;28" valign="center" foregroundColor="grey"/>
+	</screen>
+	<screen name="LogManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="list" position="396,210" size="1130,16*38" transparent="0" enableWrapAround="1" scrollbarMode="showNever" font="Regular;30"/>
+		<applet type="onLayoutFinish">
+self["list"].instance.setItemHeight(38)
+		</applet>
+		<widget addon="Pager" connection="list" position="396,665" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<screen name="LogManagerViewLog" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="list" position="396,210" size="1130,660" font="Console;27"/>
+	</screen>
+	<screen name="LogManagerFb" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="LogManagerViewLog"/>
+	</screen>
+	<screen name="VixListTemplate">
+		<panel name="Screen_1_1"/>
+		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" textOffset="15,5" font="Regular;28" scrollbarMode="showNever"/>
+		<widget name="lab1" conditional="lab1" position="145,755" size="1630,100" zPosition="1" font="Regular;28" halign="center" valign="center" foregroundColor="orange" transparent="1"/>
+		<widget name="backupstatus" conditional="backupstatus" position="145,865" size="1630,40" font="Regular;28" zPosition="5" foregroundColor="orange" valign="center" halign="center"/>
+		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<!--OBH Menu -->
+	<screen name="OBHMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<!-- This is the menu list -->
+		<widget source="menu" render="Listbox" position="125,150" size="1670,600" zPosition="3" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+			{"template": [
+					MultiContentEntryText(pos = (75,15),size = (1670,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 1),# index 0 is the MenuText,
+				],
+			"fonts": [gFont("Regular",36)],
+			"itemHeight": 75
+			}
+			</convert>
+		</widget>
+		<!-- This is the description of menu list item -->
+		<widget source="menu" render="Listbox" position="125,800" size="1670,120" backgroundColor="darkgrey" zPosition="3" selectionDisabled="1" transparent="1" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">
+			{"template": [
+					MultiContentEntryText(pos = (20,0),size = (1630,120),flags = RT_HALIGN_CENTER|RT_VALIGN_TOP|RT_WRAP,text = 2),# index 0 is the MenuText,
+				],
+			"fonts": [gFont("Regular",30)],
+			"itemHeight": 120
+			}
+			</convert>
+		</widget>
+	</screen>
+	<!-- OBHBackupManager -->
 	<screen name="OpenBhBackupManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="VixListTemplate"/>
 	</screen>
-
+	<!-- OBHBackupManager -->
 	<screen name="OpenBhBackupManagerLogView" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="VixListTemplate"/>
 	</screen>
-
+	<!-- OBHImageManager -->
 	<screen name="OpenBhImageManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="VixListTemplate"/>
 	</screen>
-
+	<!-- OBHImageManagerDownload -->
 	<screen name="OpenBhImageManagerDownload" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="VixListTemplate"/>
 	</screen>
-
+	<!--PLI call this screen IpkgInstaller -->
 	<screen name="OpenBhIPKInstaller" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="VIXIPKInstaller"/>
+		<panel name="IpkgInstaller"/>
 	</screen>
-
+	<!-- OBH Script runner -->
 	<screen name="OpenBhScriptRunner" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="VIXScriptRunner"/>
+		<panel name="IpkgInstaller"/>
 	</screen>
-
+	<!-- OBHSwapManager -->
 	<screen name="OpenBhSwap" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="VIXSwap"/>
-	</screen>
-
-	<screen name="DeliteDevicesPanel" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="VIXDevicesPanel"/>
-	</screen>
-
-	<screen name="DeliteSetupDevicePanelConf" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="DeviceMountSetup"/>
-	</screen>
-
-	<screen name="DeliteGreenPanel"  position="fill" flags="wfNoBorder" title="OpenBh Green Panel" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
-		<widget source="list" render="Listbox" position="396,225" size="1130,590" scrollbarMode="showNever" >
+		<widget name="autostart_off" position="396,210" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+		<widget name="autostart_on" position="396,210" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+		<widget name="lab1" position="475,210" size="950,75" font="Regular;30"/>
+		<widget name="lab2" position="396,350" size="225,45" font="Regular;30" valign="center"/>
+		<widget name="labplace" position="620,349" size="330,45" font="Regular;30" valign="center"/>
+		<widget name="lab3" position="396,394" size="225,45" font="Regular;30" valign="center"/>
+		<widget name="labsize" position="620,394" size="330,45" font="Regular;30" valign="center"/>
+		<widget name="lab4" position="396,439" size="225,45" font="Regular;30" valign="center"/>
+		<widget name="inactive" position="620,439" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="red"/>
+		<widget name="active" position="620,439" size="150,45" font="Regular;30" valign="center" zPosition="1" halign="center" backgroundColor="green"/>
+	</screen>
+	<!-- OBHMountManager -->
+	<screen name="DeliteDevicesPanel" position="fill" flags="wfNoBorder" title="Devices Manager" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="get_Dtype" position="center,c-150" size="96,96" zPosition="10" pixmaps="/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/dev_hdd.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/dev_cf.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/dev_mmc.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/dev_sd.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/dev_usb.png" transparent="1" alphatest="blend"/>
+		<widget source="list" render="Listbox" position="396,210" size="1130,672" transparent="1" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (30,7),size = (975,39),font=0,flags = RT_HALIGN_LEFT,text = 0),# index 0 is the name
+						MultiContentEntryText(pos = (30,49),size = (975,57),font=1,flags = RT_HALIGN_LEFT,text = 1),# index 1 is the state
+						MultiContentEntryPixmapAlphaTest(pos = (22,7),size = (72,72),png = 2),# index 2 is the status pixmap
+					],
+				"fonts": [gFont("Regular",33),gFont("Regular",25)],
+				"itemHeight": 112
+				}
+			</convert>
+		</widget>
+		<widget name="lab1" position="406,690" halign="center" size="1110,34" zPosition="1" font="Regular;30" valign="top" transparent="1"/>
+		<widget addon="Pager" connection="menu" position="72,827" size="564,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<!-- Delite Settings -->
+	<screen name="DeliteSettings" position="fill" flags="wfNoBorder" title="OpenBh Apps" backgroundColor="transparent">
+		<panel name="FrameTemplate"/>
+		<widget source="title" render="Label" position="72,864" size="544,62" font="Regular; 34" halign="right" valign="center" backgroundColor="black" transparent="1"/>
+		<widget source="list" render="Listbox" position="72,277" size="564,540" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
+			<convert type="TemplatedMultiContent">
+{"template": [ MultiContentEntryText(pos = (30,14), size = (730,40), flags = RT_HALIGN_LEFT, text = 0),
+MultiContentEntryPixmapAlphaBlend(pos = (10, 8), size = (50, 50), png = 1),
+],
+"fonts": [gFont("Regular", 34)],
+"itemHeight": 66
+}
+</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="BoxLogo" position="203,175" size="302,65" zPosition="10" alphatest="blend"/>
+		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5"/>
+		<widget addon="Pager" connection="list" position="72,827" size="564,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<!-- Delite Addons and Update Manager -->
+	<screen name="DeliteAddons" position="fill" flags="wfNoBorder" title="Feeds and Update Manager" backgroundColor="transparent">
+		<panel name="FrameTemplate"/>
+		<widget source="title" render="Label" position="72,864" size="544,62" font="Regular; 34" halign="right" valign="center" backgroundColor="black" transparent="1"/>
+		<widget source="list" render="Listbox" position="72,277" size="564,540" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
+			<convert type="TemplatedMultiContent">
+{"template": [ MultiContentEntryText(pos = (30,14), size = (730,40), flags = RT_HALIGN_LEFT, text = 0),
+MultiContentEntryPixmapAlphaBlend(pos = (10, 8), size = (50, 50), png = 1),
+],
+"fonts": [gFont("Regular", 34)],
+"itemHeight": 66
+}
+</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="BoxLogo" position="203,175" size="302,65" zPosition="10" alphatest="blend"/>
+		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5"/>
+		<widget addon="Pager" connection="list" position="72,827" size="564,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<!-- Download Manager -->
+	<screen name="Nab_downArea" position="fill" flags="wfNoBorder" title="Download Manager" backgroundColor="transparent">
+		<panel name="FrameTemplate"/>
+		<widget source="title" render="Label" position="72,864" size="544,62" font="Regular; 34" halign="right" valign="center" backgroundColor="black" transparent="1"/>
+		<widget source="list" render="Listbox" position="72,277" size="564,540" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
+			<convert type="TemplatedMultiContent">
+{"template": [ MultiContentEntryText(pos = (30,14), size = (1130,40), flags = RT_HALIGN_LEFT, text = 0),
+MultiContentEntryPixmapAlphaBlend(pos = (10, 8), size = (50, 50), png = 1),
+],
+"fonts": [gFont("Regular", 34)],
+"itemHeight": 66
+}
+</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="BoxLogo" position="203,175" size="302,65" zPosition="10" alphatest="blend"/>
+		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5"/>
+		<widget addon="Pager" connection="list" position="72,827" size="564,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<!-- OpenBh Addons Plugins -->
+	<screen name="Nab_downCat" position="fill" flags="wfNoBorder" title="Download Manager" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget source="list" render="Listbox" position="396,188" size="1130,600" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">
+{"template": [ MultiContentEntryText(pos = (30,14), size = (1130,40), flags = RT_HALIGN_LEFT, text = 0),
+MultiContentEntryPixmapAlphaBlend(pos = (10, 8), size = (50, 50), png = 1),
+],
+"fonts": [gFont("Regular", 34)],
+"itemHeight": 66
+}
+</convert>
+		</widget>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<!-- OpenBh E2 Package Details -->
+	<screen name="Nab_ShowDownFile" position="fill" flags="wfNoBorder" title="OpenBh E2 Package Details" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="infotext" position="396,225" size="1130,600" itemHeight="60" font="Regular;32" enableWrapAround="1" scrollbarMode="showNever" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+		<widget addon="Pager" connection="menu" position="72,827" size="564,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<!-- OBH MountManager Setup -->
+	<screen name="DeliteSetupDevicePanelConf" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+		<widget name="lab1" position="145,865" halign="center" size="1630,30" font="Regular;30" valign="center" zPosition="10"/>
+	</screen>
+	<!-- OBH plugin spinner -->
+	<screen name="SoftcamSpinnerTemplate">
+		<panel name="Screen_Menu1"/>
+		<widget name="connect" position="center,c-150" size="96,96" zPosition="10" pixmaps="/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy1.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy2.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy3.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy4.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy5.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy6.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy7.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy8.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy9.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy9.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy10.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy11.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy12.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy13.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy14.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy15.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy17.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy18.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy19.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy20.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy21.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy22.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy23.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy24.png" transparent="1" alphatest="blend"/>
+		<widget name="lab1" position="center,c+50" halign="center" size="754,90" zPosition="10" font="Regular;30" valign="top"/>
+	</screen>
+	<!-- NetworkMountsMenu -->
+	<screen name="NetworkMountsMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<widget name="menulist" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" zPosition="10" scrollbarMode="showNever"/>
+		<widget source="introduction" render="Label" position="145,865" zPosition="10" size="1630,30" font="Regular;28" foregroundColor="yellow" valign="center" halign="center"/>
+	</screen>
+	<!-- oscam -->
+	<screen name="OscamInfoMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<widget name="mainmenu" position="125,150" size="1670,810" font="Regular;33" zPosition="10" itemHeight="45" scrollbarMode="showOnDemand" enableWrapAround="1"/>
+	</screen>
+	<screen name="OscamInfoConfigScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+		<widget name="status" render="Label" position="145,865" size="1630,30" zPosition="20" font="Regular;32" halign="center" valign="center"/>
+	</screen>
+	<!-- HistoryZapSelector -->
+	<screen name="HistoryZapSelector" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<widget source="menu" render="Listbox" position="125,150" size="1670,750" foregroundColor="foreground" backgroundColor="background" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (120, 0), size = (15, 45), font = 0, flags = RT_HALIGN_CENTER | RT_VALIGN_CENTER, text = 1), #arrow
+						MultiContentEntryText(pos = (145, 0), size = (350, 30), font = 0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 2, color = 0x00ffffff, color_sel = 0x00ffc000), #service name
+						MultiContentEntryText(pos = (425, 0), size = (450, 30), font = 0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 3, color = 0x00ffffff, color_sel = 0x00ffc000), #event name
+						MultiContentEntryText(pos = (145, 30), size = (350, 30), font = 0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 7, color = 0x00ffffff, color_sel = 0x00ffc000), #orbital position
+						MultiContentEntryText(pos = (425, 30), size = (450, 30), font = 0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 5, color = 0x00ffffff, color_sel = 0x00ffc000), #duration
+						MultiContentEntryText(pos = (10, 70), size = (1650, 90), font = 4, flags = RT_HALIGN_LEFT|RT_WRAP, text = 4, color = 0x00ffffff, color_sel = 0x00ffc000), #epg
+						MultiContentEntryPixmapAlphaBlend(pos=(0, 5), size=(110, 60), png=6, flags = BT_SCALE) #picon must be last otherwise won't work
+						],
+				 "fonts": [gFont("Regular", 24), gFont("Regular", 20), gFont("Regular", 17), gFont("Regular", 16), gFont("Regular", 26)],
+				 "itemHeight": 150
+				}
+			</convert>
+		</widget>
+		<widget addon="Pager" connection="menu" position="396,915" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<!-- Record now / record next -->
+	<screen name="RecordTimerQuestion" position="center,center" size="350,295" zPosition="5" flags="wfNoBorder" backgroundColor="background">
+		<widget name="text" position="0,0" size="0,0" font="Regular;21"/>
+		<widget name="list" position="15,15" size="330,150" enableWrapAround="1" itemHeight="45"/>
+		<applet type="onLayoutFinish">
+from enigma import ePoint, eSize, getDesktop, gRGB, BT_ALPHABLEND
+from Components.Label import Label
+from Components.Pixmap import Pixmap
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
+from Tools.LoadPixmap import LoadPixmap
+from Components.Renderer.BoxLogo import setLogo
+
+pxtlc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/small_tl.png"))
+pxtrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/small_tr.png"))
+pxblc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/small_bl.png"))
+pxbrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/small_br.png"))
+
+textsize = self["text"].getSize()
+textHeight = textsize[1]
+textpos = self["text"].instance.position()
+if textpos.x() &lt; 0 and textpos.y() &lt; 0:
+	textHeight = 0
+count = len(self.list)
+count, scrollbar = (10, self["list"].instance.getScrollbarWidth() + 5) if count > 10 else (count, 0)
+offset = self["list"].l.getItemSize().height() * count
+wsizex = max(self["list"].instance.getMaxItemTextWidth(), textsize[0]) + 10 + 30
+descriptionHeight = 0
+wsizey = textHeight + offset + 16
+# move and resize screen
+self["list"].move(2, 6)
+self.instance.resize(eSize(*(wsizex, wsizey)))
+# resize list
+self["list"].resize(wsizex - 4, offset)
+# center window
+width, height = getDesktop(0).size().width(), getDesktop(0).size().height()
+wintlcpos = ePoint((width - wsizex) // 2, (height - wsizey) // 2)
+self.instance.move(wintlcpos)
+self["tlc"] = Pixmap()
+self["tlc"].GUIcreate(self.instance)
+self["tlc"].setPixmap(pxtlc)
+self["tlc"].instance.resize(eSize(5,5))
+self["tlc"].instance.move(ePoint(1,1))
+self["trc"] = Pixmap()
+self["trc"].GUIcreate(self.instance)
+self["trc"].setPixmap(pxtrc)
+self["trc"].instance.resize(eSize(5,5))
+self["trc"].instance.move(ePoint(wsizex-6,1))
+self["blc"] = Pixmap()
+self["blc"].GUIcreate(self.instance)
+self["blc"].setPixmap(pxblc)
+self["blc"].instance.resize(eSize(5,5))
+self["blc"].instance.move(ePoint(1,wsizey-6))
+self["brc"] = Pixmap()
+self["brc"].GUIcreate(self.instance)
+self["brc"].setPixmap(pxbrc)
+self["brc"].instance.resize(eSize(5,5))
+self["brc"].instance.move(ePoint(wsizex-6,wsizey-6))
+self["bcGround"] = Label("")
+self["bcGround"].GUIcreate(self.instance)
+self["bcGround"].instance.setBackgroundColor(gRGB(0x02444444))
+self["bcGround"].instance.resize(eSize(*(wsizex - 2, wsizey - 2)))
+self["bcGround"].instance.move(ePoint(1,1))
+self["bcGround"].setZPosition(-7)
+self["bcGroundOver"] = Label("")
+self["bcGroundOver"].GUIcreate(self.instance)
+self["bcGroundOver"].instance.setBackgroundColor(gRGB(0x02111111))
+self["bcGroundOver"].instance.resize(eSize(*(wsizex-4, wsizey - 4)))
+self["bcGroundOver"].instance.move(ePoint(2,2))
+self["bcGroundOver"].setZPosition(-7)
+		</applet>
+	</screen>
+	<!-- AnimationSetupConfig -->
+	<screen name="AnimationSetupConfig" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+	</screen>
+	<!-- AnimationSetupScreen -->
+	<screen name="AnimationSetupScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+	</screen>
+	<!-- MovieListTags  -->
+	<!-- Press Radio button while in movie list  -->
+	<screen name="MovieListTags" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+	</screen>
+	<!-- VuplusKexec -->
+	<screen name="VuplusKexec" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+	</screen>
+	<screen name="NetworkInadynLog" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Window_Full"/>
+		<widget name="infotext" position="25,123" size="1870,855" font="Regular;24"/>
+	</screen>
+	<screen name="NetworkVpnLog" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Window_Full"/>
+		<widget name="infotext" position="25,123" size="1870,855" font="Regular;24"/>
+	</screen>
+	<!-- NetworkInadyn -->
+	<screen name="NetworkInadyn" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<!-- panel name="Screen_Window_Full"/ -->
+		<panel position="380,125" size="e,e">
+			<!-- convert Screen_Window_Full to Screen_Menu1 -->
+			<widget name="autostart" position="25,163" size="150,45" font="Regular;30" valign="center" transparent="0"/>
+			<widget name="labdisabled" position="175,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="red" zPosition="1"/>
+			<widget name="labactive" position="175,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="status" position="370,163" size="225,45" font="Regular;30" valign="center" transparent="0"/>
+			<widget name="labstop" position="610,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="red" zPosition="1"/>
+			<widget name="labrun" position="610,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="time" position="25,274" size="225,90" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labtime" position="340,274" size="465,90" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="username" position="25,390" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labuser" position="340,390" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="password" position="25,450" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labpass" position="340,450" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="alias" position="25,510" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labalias" position="340,510" size="465,45" font="Regular;30" valign="top" backgroundColor="background"/>
+			<widget name="sinactive" position="25,607" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="sactive" position="25,607" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+			<widget name="system" position="85,607" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labsys" position="340,607" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+		</panel>
+	</screen>
+	<!-- NetworkMiniDLNA -->
+	<screen name="NetworkMiniDLNA" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<panel position="-450,60" size="e,e">
+			<widget name="autostart" position="870,163" size="150,45" font="Regular;30" valign="center" transparent="0"/>
+			<widget name="labdisabled" position="1020,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="red" zPosition="1"/>
+			<widget name="labactive" position="1020,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="status" position="1215,163" size="225,45" font="Regular;30" valign="center" transparent="0"/>
+			<widget name="labstop" position="1455,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="red" zPosition="1"/>
+			<widget name="labrun" position="1455,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="username" position="870,274" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labuser" position="1185,274" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="iface" position="870,330" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labiface" position="1185,330" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="port" position="870,390" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labport" position="1185,390" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="serialno" position="870,450" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labserialno" position="1185,450" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="sharedir" position="870,510" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labsharedir" position="1185,510" size="720,123" font="Regular;30" valign="top" backgroundColor="background"/>
+			<widget name="inotify" position="870,607" size="270,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="inotifyinactive" position="1200,607" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="inotifyactive" position="1200,607" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+			<widget name="tivo" position="870,667" size="270,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="tivoinactive" position="1200,667" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="tivoactive" position="1200,667" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+			<widget name="dlna" position="870,727" size="300,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="dlnainactive" position="1200,727" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="dlnaactive" position="1200,727" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+		</panel>
+	</screen>
+	<!-- NetworkServiceSetup -->
+	<screen name="NetworkServiceSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="lab1" position="405,225" size="225,45" font="Regular;30" valign="center" transparent="0"/>
+		<widget name="labactive" position="645,225" size="375,45" font="Regular;30" valign="center" transparent="0"/>
+		<widget name="lab1" position="405,225" size="225,45" font="Regular;30" valign="center" transparent="0"/>
+		<widget name="lab2" position="405,390" size="225,45" font="Regular;30" valign="top" transparent="0"/>
+		<widget name="labstop" position="645,390" size="375,45" font="Regular;30" valign="center" halign="center" backgroundColor="red"/>
+		<widget name="labrun" position="645,390" size="375,45" zPosition="1" font="Regular;30" valign="center" halign="center" backgroundColor="green"/>
+	</screen>
+	<screen name="uShareSelection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="BackupSelection"/>
+	</screen>
+	<!-- NetworkuShare -->
+	<screen name="NetworkuShare" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<panel position="-450,60" size="e,e">
+			<widget name="autostart" position="870,163" size="150,36" font="Regular;30" valign="center" transparent="0"/>
+			<widget name="labdisabled" position="1030,159" size="150,36" font="Regular;30" valign="center" halign="center" backgroundColor="red" zPosition="1"/>
+			<widget name="labactive" position="1030,159" size="150,36" font="Regular;30" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="status" position="1290,163" size="225,36" font="Regular;30" valign="center" transparent="0"/>
+			<widget name="labstop" position="1530,159" size="150,36" font="Regular;30" valign="center" halign="center" backgroundColor="red" zPosition="1"/>
+			<widget name="labrun" position="1530,159" size="150,36" font="Regular;30" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="username" position="870,250" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labuser" position="1185,250" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="iface" position="870,300" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labiface" position="1185,300" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="port" position="870,350" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labport" position="1185,350" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="telnetport" position="870,400" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labtelnetport" position="1185,400" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="sharedir" position="870,450" size="225,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="labsharedir" position="1185,450" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
+			<widget name="web" position="870,550" size="270,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="webinactive" position="1200,550" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="webactive" position="1200,550" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+			<widget name="telnet" position="870,600" size="270,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="telnetinactive" position="1200,600" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="telnetactive" position="1200,600" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+			<widget name="xbox" position="870,650" size="300,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="xboxinactive" position="1200,650" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="xboxactive" position="1200,650" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+			<widget name="dlna" position="870,700" size="300,45" font="Regular;30" valign="center" transparent="1"/>
+			<widget name="dlnainactive" position="1200,700" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
+			<widget name="dlnaactive" position="1200,700" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+		</panel>
+	</screen>
+	<screen name="DeliteGreenPanel" position="fill" flags="wfNoBorder" title="OpenBh Green Panel" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget source="list" render="Listbox" position="396,188" size="1130,665" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
                                 {"template": [
                                              MultiContentEntryText(pos = (195,4), size = (970,83), flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0),
@@ -54,11 +489,100 @@
         	 	        }
 			</convert>
 		</widget>
-		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
 	</screen>
-	<screen name="DeliteBluePanel"  position="fill" flags="wfNoBorder" title="OpenBh Blue Panel" backgroundColor="transparent">
+	<screen name="BhSetupGreen" position="fill" flags="wfNoBorder" title="OpenBh Green Panel Setup" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
-		<widget name="list" position="500,225" size="635,55" enableWrapAround="1" font="Regular;36" itemHeight="55" zPosition="2" textOffset="10,8" scrollbarMode="showNever"/>
+		<widget source="list" render="Listbox" enableWrapAround="1" position="396,225" size="1130,590" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">
+{"template": [ MultiContentEntryText(pos = (80,11), size = (730,40), flags = RT_HALIGN_LEFT, text = 0),
+MultiContentEntryPixmapAlphaBlend(pos = (10, 5), size = (50, 50), png = 1),
+],
+"fonts": [gFont("Regular", 32)],
+"itemHeight": 60
+}
+</convert>
+		</widget>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<screen name="BhGreenPluginsSetup" position="fill" flags="wfNoBorder" title="OpenBh Green Panel Setup" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="config" position="396,225" size="1130,600" itemHeight="60" font="Regular;32" enableWrapAround="1" scrollbarMode="showNever" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+		<widget name="HelpWindow" position="740,905" zPosition="1" size="1,1" transparent="1" alphatest="blend"/>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<screen name="DeliteSetupFp" position="fill" flags="wfNoBorder" title="OpenBh Fast Plugin Setup" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget source="list" render="Listbox" position="396,225" size="1130,590" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">
+{"template": [
+MultiContentEntryText(pos = (125, 5), size = (670, 40), font=0, text = 0),
+MultiContentEntryText(pos = (125, 42), size = (670, 32), font=1, text = 1),
+MultiContentEntryPixmapAlphaTest(pos = (10, 17), size = (100, 40), png = 2, flags = BT_SCALE)
+],
+"fonts": [gFont("Regular", 30),gFont("Regular", 20)],
+"itemHeight": 83,
+}
+</convert>
+		</widget>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<screen name="DeliteScript" position="fill" flags="wfNoBorder" title="OpenBh Script Panel" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget source="list" render="Listbox" position="396,225" size="1130,462" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
+			<convert type="TemplatedMultiContent">
+{"template": [ MultiContentEntryText(pos = (30,14), size = (730,40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+],
+"fonts": [gFont("Regular", 34)],
+"itemHeight": 66
+}
+</convert>
+		</widget>
+		<widget name="statuslab" position="center,750" size="820,100" font="Regular;32" halign="center" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+		<widget addon="Pager" connection="list" position="396,860" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+    <screen name="Nab_downPanel" position="fill" flags="wfNoBorder" title="Manual Install Bh Packages" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget source="list" render="Listbox" position="396,225" size="1130,462" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
+			<convert type="TemplatedMultiContent">
+{"template": [ MultiContentEntryText(pos = (30,14), size = (1130,40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+],
+"fonts": [gFont("Regular", 34)],
+"itemHeight": 66
+}
+</convert>
+		</widget>
+		<widget addon="Pager" connection="list" position="396,860" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+    <screen name="Nab_downPanelIPK" position="fill" flags="wfNoBorder" title="Manual Install Ipk Packages" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget source="list" render="Listbox" position="396,225" size="1130,462" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
+			<convert type="TemplatedMultiContent">
+{"template": [ MultiContentEntryText(pos = (30,14), size = (1130,40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+],
+"fonts": [gFont("Regular", 34)],
+"itemHeight": 66
+}
+</convert>
+		</widget>
+		<widget addon="Pager" connection="list" position="396,860" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+    <screen name="Nab_uninstPanel" position="fill" flags="wfNoBorder" title="OpenBh Uninstall Panel" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget source="list" render="Listbox" position="396,225" size="1130,462" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
+			<convert type="TemplatedMultiContent">
+{"template": [ MultiContentEntryText(pos = (30,14), size = (1130,40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+],
+"fonts": [gFont("Regular", 34)],
+"itemHeight": 66
+}
+</convert>
+		</widget>
+		<widget addon="Pager" connection="list" position="396,860" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<screen name="DeliteBluePanel" position="fill" flags="wfNoBorder" title="OpenBh Blue Panel" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="list" position="500,225" size="635,55" enableWrapAround="1" font="Regular;36" itemHeight="55" zPosition="2" textOffset="10,5" scrollbarMode="showNever"/>
 		<widget name="lab1" position="1200,285" size="290,35" font="Regular;28" zPosition="2" halign="left"/>
 		<widget name="lab3" position="805,285" size="185,35" font="Regular;28" halign="left" zPosition="2"/>
 		<widget name="activecam" position="510,285" size="450,35" font="Regular;28" halign="left" zPosition="2"/>
@@ -66,30 +590,53 @@
 		<widget name="Ilab2" position="510,363" size="640,35" font="Regular;28" zPosition="2"/>
 		<widget name="Ilab3" position="510,401" size="640,35" font="Regular;28" zPosition="2"/>
 		<widget name="Ilab4" position="510,439" size="640,35" font="Regular;28" zPosition="2"/>
+		<ePixmap pixmap="obh/smartcard.png" position="1150,360" size="300,300" alphatest="blend" zPosition="33" name="smartcard"/>
 		<widget name="Ecmtext" position="510,505" size="790,370" font="Regular;24" halign="left" zPosition="2"/>
-		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+		<eLabel name="" position="1200,232" size="290,35" zPosition="30" text="&lt;&lt; Select Cam &gt;&gt; OK" backgroundColor="white" font="Bold; 28" transparent="1"/>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
 	</screen>
-	    <screen name="BhsysInfo2"  position="fill" flags="wfNoBorder" title="OpenBh System Info" backgroundColor="transparent">
-	    <panel name="Screen_1_1"/>
+	<screen name="Nab_ShowPreviewFile" position="fill" flags="wfNoBorder" title="OpenBh Preview File" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<widget name="lab1" position="center,220" size="1280,720" zPosition="1"/>
+		<widget name="lab2" position="center,150" size="1180,45" zPosition="2" font="Regular;28" halign="center" valign="center" backgroundColor="red" foregroundColor="white"/>
+	</screen>
+	<screen name="Nab_DoStartCam" position="fill" title="Wait while starting Cam..." flags="wfNoBorder">
+		<panel name="Screen_Menu1"/>
+		<widget name="connect" position="center,400" size="220,124" zPosition="-1" pixmaps="obh/startcam_1.png,obh/startcam_2.png,obh/startcam_3.png,obh/startcam_4.png" transparent="1" alphatest="blend"/>
+		<widget name="lab1" position="center,700" halign="center" size="600,100" zPosition="1" font="Regular;32" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+	</screen>
+	<screen name="Nab_ConnectPop" position="center,950" size="675,130" title="Connection in progress" flags="wfNoBorder">
+		<eLabel position="0,0" size="675,130" backgroundColor="background" transparent="0" zPosition="-11"/>
+		<ePixmap pixmap="obh/qbox.png" position="0,70" size="675,45" alphatest="blend" zPosition="-5"/>
+		<widget name="connect" position="65,0" size="75,75" zPosition="-1" pixmaps="obh/connection_1.png,obh/connection_2.png,obh/connection_3.png,obh/connection_4.png,obh/connection_5.png" transparent="1" alphatest="blend"/>
+		<widget name="lab1" position="189,15" halign="center" size="465,45" zPosition="1" font="Regular;26" valign="center" backgroundColor="background" transparent="1"/>
+	</screen>
+	<screen name="PluginDownloadBrowser" position="center,center" size="820,850" title="Plugin browser">
+		<widget name="text" position="20,20" size="780,675" font="Regular;30" halign="center" foregroundColor="white" backgroundColor="background" transparent="1"/>
+		<widget name="list" position="20,70" size="780,747" font="Regular;28" itemHeight="83" enableWrapAround="1" scrollbarMode="showOnDemand" foregroundColor="white" backgroundColor="background" transparent="1"/>
+	</screen>
+	<screen name="BhsysInfo2" position="fill" flags="wfNoBorder" title="OpenBh System Info" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
 		<widget name="smallmon" position="830,495" size="250,240" font="Regular; 28" foregroundColor="white" halign="center" zPosition="4"/>
-		<ePixmap pixmap="buttons/meter_1.png" position="190,130" size="292,292" alphatest="blend"/>
-		<ePixmap pixmap="buttons/meter_1.png" position="500,130" size="292,292" alphatest="blend"/>
-		<ePixmap pixmap="buttons/meter_1.png" position="810,130" size="292,292" alphatest="blend"/>
-		<ePixmap pixmap="buttons/meter_1.png" position="1120,130" size="292,292" alphatest="blend"/>
-		<ePixmap pixmap="buttons/meter_1.png" position="1430,130" size="292,292" alphatest="blend"/>
-		<ePixmap pixmap="buttons/meter_1.png" position="190,465" size="292,292" alphatest="blend"/>
-		<ePixmap pixmap="buttons/meter_1.png" position="500,465" size="292,292" alphatest="blend"/>
-		<ePixmap pixmap="buttons/meter_1.png" position="1120,465" size="292,292" alphatest="blend"/>
-		<ePixmap pixmap="buttons/meter_2.png" position="1430,465" size="292,292" alphatest="blend"/>
-		<widget name="ramg" position="262,200" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
-		<widget name="swapg" position="572,200" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
-		<widget name="memtg" position="882,200" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
-		<widget name="flashg" position="1192,200" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
-		<widget name="spacetg" position="1502,200" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
-		<widget name="mmcfg" position="262,535" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
-		<widget name="usbg" position="572,535" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
-		<widget name="hddg" position="1192,535" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
-		<widget name="hddtempg" position="1502,535" size="150,150" zPosition="1" borderColor="red" transparent="1"/>
+		<ePixmap pixmap="obh/meter_1.png" position="190,130" size="292,292" alphatest="blend" zposition="1"/>
+		<ePixmap pixmap="obh/meter_1.png" position="500,130" size="292,292" alphatest="blend" zposition="1"/>
+		<ePixmap pixmap="obh/meter_1.png" position="810,130" size="292,292" alphatest="blend" zposition="1"/>
+		<ePixmap pixmap="obh/meter_1.png" position="1120,130" size="292,292" alphatest="blend" zposition="1"/>
+		<ePixmap pixmap="obh/meter_1.png" position="1430,130" size="292,292" alphatest="blend" zposition="1"/>
+		<ePixmap pixmap="obh/meter_1.png" position="190,465" size="292,292" alphatest="blend" zposition="1"/>
+		<ePixmap pixmap="obh/meter_1.png" position="500,465" size="292,292" alphatest="blend" zposition="1"/>
+		<ePixmap pixmap="obh/meter_1.png" position="1120,465" size="292,292" alphatest="blend" zposition="1"/>
+		<ePixmap pixmap="obh/meter_2.png" position="1430,465" size="292,292" alphatest="blend" zposition="1"/>
+		<widget name="ramg" position="262,205" size="146,146" zPosition="2" borderColor="red" transparent="1"/>
+		<widget name="swapg" position="572,205" size="146,146" zPosition="2" borderColor="red" transparent="1"/>
+		<widget name="memtg" position="882,205" size="146,146" zPosition="2" borderColor="red" transparent="1"/>
+		<widget name="flashg" position="1192,205" size="146,146" zPosition="2" borderColor="red" transparent="1"/>
+		<widget name="spacetg" position="1502,205" size="146,146" zPosition="2" borderColor="red" transparent="1"/>
+		<widget name="mmcfg" position="262,540" size="146,146" zPosition="2" borderColor="red" transparent="1"/>
+		<widget name="usbg" position="572,540" size="146,146" zPosition="2" borderColor="red" transparent="1"/>
+		<widget name="hddg" position="1192,540" size="146,146" zPosition="2" borderColor="red" transparent="1"/>
+		<widget name="hddtempg" position="1502,540" size="146,146" zPosition="2" borderColor="red" transparent="1"/>
+		<widget name="smallmon" position="830,495" size="250,240" font="Regular; 28" foregroundColor="white" halign="center" zPosition="4"/>
 		<eLabel text="Ram" position="245,425" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
 		<eLabel text="Swap" position="555,425" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
 		<eLabel text="Total Mem" position="865,425" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
@@ -99,43 +646,67 @@
 		<eLabel text="USB" position="555,760" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
 		<eLabel text="HDD Space" position="1175,760" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
 		<eLabel text="HDD Temp" position="1485,760" zPosition="1" size="195,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
-		<ePixmap pixmap="buttons/moni.png" position="810,465" size="292,292" alphatest="blend" backgroundColor="background"/>
-		<ePixmap pixmap="buttons/monibutton.png" size="70,30" position="545,820" alphatest="blend"/>
-		<ePixmap pixmap="buttons/monibutton.png" size="70,30" position="695,820" alphatest="blend"/>
-		<ePixmap pixmap="buttons/monibutton.png" size="70,30" position="855,820" alphatest="blend"/>
-		<ePixmap pixmap="buttons/monibutton.png" size="70,30" position="1020,820" alphatest="blend"/>
-		<ePixmap pixmap="buttons/monibutton.png" size="70,30" position="1160,820" alphatest="blend"/>
-		<ePixmap pixmap="buttons/monibutton.png" size="70,30" position="1325,820" alphatest="blend"/>
+		<ePixmap pixmap="obh/moni.png" position="810,465" size="292,292" alphatest="blend" backgroundColor="background"/>
+		<ePixmap pixmap="obh/monibutton.png" size="70,30" position="545,820" alphatest="blend"/>
+		<ePixmap pixmap="obh/monibutton.png" size="70,30" position="695,820" alphatest="blend"/>
+		<ePixmap pixmap="obh/monibutton.png" size="70,30" position="855,820" alphatest="blend"/>
+		<ePixmap pixmap="obh/monibutton.png" size="70,30" position="1020,820" alphatest="blend"/>
+		<ePixmap pixmap="obh/monibutton.png" size="70,30" position="1160,820" alphatest="blend"/>
+		<ePixmap pixmap="obh/monibutton.png" size="70,30" position="1325,820" alphatest="blend"/>
 		<eLabel text="Ssh" position="545,870" zPosition="1" size="90,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
 		<eLabel text="Telnet" position="667,870" zPosition="1" size="130,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
 		<eLabel text="Ftp" position="847,870" zPosition="1" size="90,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
 		<eLabel text="Vpn" position="1018,870" zPosition="1" size="90,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
 		<eLabel text="Samba" position="1138,870" zPosition="1" size="130,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
 		<eLabel text="Nfs" position="1320,870" zPosition="1" size="90,36" font="Regular;28" halign="center" backgroundColor="background" transparent="1"/>
-		<widget name="spy0" size="45,45" position="545,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
-		<widget name="spy1" size="45,45" position="585,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
-		<widget name="spy2" size="45,45" position="695,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
-		<widget name="spy3" size="45,45" position="735,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
-		<widget name="spy4" size="45,45" position="855,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
-		<widget name="spy5" size="45,45" position="895,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
-		<widget name="spy6" size="45,45" position="1020,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
-		<widget name="spy7" size="45,45" position="1060,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
-		<widget name="spy8" size="45,45" position="1160,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
-		<widget name="spy9" size="45,45" position="1200,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
-		<widget name="spy10" size="45,45" position="1325,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
-		<widget name="spy11" size="45,45" position="1365,820" zPosition="1" pixmap="buttons/monibutton_g.png" alphatest="blend"/>
-		<ePixmap pixmap="buttons/epg_b.png" position="230,795" size="52,52" alphatest="blend"/>
-		<ePixmap pixmap="buttons/epg_b.png" position="230,850" size="52,52" alphatest="blend"/>
-		<ePixmap pixmap="buttons/epg_b.png" position="230,905" size="52,52" alphatest="blend"/>
-		<eLabel text="1" position="247,805" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
-		<eLabel text="2" position="247,860" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
-		<eLabel text="3" position="247,915" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
+		<widget name="spy0" size="45,45" position="545,820" zPosition="1" pixmap="obh/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy1" size="45,45" position="585,820" zPosition="1" pixmap="obh/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy2" size="45,45" position="695,820" zPosition="1" pixmap="obh/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy3" size="45,45" position="735,820" zPosition="1" pixmap="obh/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy4" size="45,45" position="855,820" zPosition="1" pixmap="obh/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy5" size="45,45" position="895,820" zPosition="1" pixmap="obh/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy6" size="45,45" position="1020,820" zPosition="1" pixmap="obh/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy7" size="45,45" position="1060,820" zPosition="1" pixmap="obh/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy8" size="45,45" position="1160,820" zPosition="1" pixmap="obh/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy9" size="45,45" position="1200,820" zPosition="1" pixmap="obh/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy10" size="45,45" position="1325,820" zPosition="1" pixmap="obh/monibutton_g.png" alphatest="blend"/>
+		<widget name="spy11" size="45,45" position="1365,820" zPosition="1" pixmap="obh/monibutton_g.png" alphatest="blend"/>
+		<ePixmap pixmap="obh/epg_b.png" position="230,795" size="52,52" alphatest="blend"/>
+		<ePixmap pixmap="obh/epg_b.png" position="230,850" size="52,52" alphatest="blend"/>
+		<ePixmap pixmap="obh/epg_b.png" position="230,905" size="52,52" alphatest="blend"/>
+		<eLabel text="1" position="249,806" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
+		<eLabel text="2" position="249,861" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
+		<eLabel text="3" position="249,916" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
 		<eLabel text="Settings" position="290,805" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
 		<eLabel text="Service Info" position="290,860" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
-		<eLabel text="About" position="290,920" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
+		<eLabel text="About" position="290,915" zPosition="1" size="180,36" font="Regular;28" halign="left" backgroundColor="background" transparent="1"/>
 		<widget name="moni" size="0,0" position="0,0" zPosition="4" foregroundColor="white" backgroundColor="background"/>
 		<widget name="monipix" size="0,0" position="0,0"/>
-		<widget name="moni2" position="100,75" size="1718,882" font="Regular;28" foregroundColor="foreground" backgroundColor="background" zPosition="5"/>
+		<widget name="moni2" position="110,130" size="1700,825" font="Regular;28" foregroundColor="foreground" backgroundColor="background" textOffset="240,20" zPosition="5"/>
 	</screen>
-	
+	<screen name="BhSpeedUp" position="fill" flags="wfNoBorder" title="OpenBh Speed Up" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="config" position="396,225" size="1130,600" itemHeight="60" font="Regular;32" enableWrapAround="1" scrollbarMode="showNever" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+		<widget name="lab1" position="406,690" halign="center" size="1110,34" zPosition="1" font="Regular;30" valign="top" transparent="1"/>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<screen name="Bp_UsbFormat" position="fill" flags="wfNoBorder" title="OpenBh Usb Format" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="lab1" position="396,225" size="1130,600" font="Regular;30" valign="center" halign="center" foregroundColor="foreground" backgroundColor="background" transparent="1" zPosition="1"/>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<screen name="BlackPoleSwap" position="fill" flags="wfNoBorder" title="OpenBh Swap File Manager" backgroundColor="transparent">
+		<panel name="Screen_Menu1"/>
+		<widget name="lab1" position="406,690" halign="center" size="1110,34" zPosition="1" font="Regular;30" valign="top" transparent="1"/>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+	</screen>
+	<screen name="NabEnsetInfo" position="fill" flags="wfNoBorder" title="OpenBh Settings Info" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<widget name="infotext" position="125,150" size="1670,810" font="Regular;28" zPosition="10" itemHeight="45" scrollbarMode="showOnDemand" enableWrapAround="1"/>
+	</screen>
+	<screen name="NabProcInfo" position="fill" flags="wfNoBorder" title="OpenBh Process Info" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<widget name="pibartit" zPosition="2" position="200,145" size="785,45" font="Regular;28" valign="center" transparent="1" foregroundColor="foreground" backgroundColor="background"/>
+		<widget name="infotext" position="200,215" size="1595,720" font="Regular;28" itemHeight="45" scrollbarMode="showOnDemand" enableWrapAround="1" zPosition="10"/>
+	</screen>
 </skin>
