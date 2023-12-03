@@ -310,7 +310,7 @@
 		<widget source="footnote" render="Label" objectTypes="footnote,StaticText" position="145,865" zPosition="1000" size="1630,30" font="Regular;28" foregroundColor="yellow" valign="center" halign="center"/>
 	</screen>
 
-<!-- Infobar Template -->
+	<!-- Infobar Template -->
 	<screen name="InfoBarTemplate">
 		<ePixmap pixmap="infobar_bg.png" position="38,862" size="1839,184" alphatest="blend" zPosition="-11"/>
 		<ePixmap pixmap="infobar_overlay.png" position="370,864" size="1505,180" alphatest="blend" zPosition="-11"/>
@@ -397,16 +397,16 @@
 		<widget backgroundColor="background2" font="Bold; 30" foregroundColor="white" halign="center" position="1590,990" render="Label" size="320,45" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
 		  <convert type="ClockToText">Format: %d %B %Y</convert>
 		</widget>
-		<!--<eLabel backgroundColor="progress" position="390,978" zPosition="1" size="600,4" />-->
+
 		<widget source="session.Event_Now" render="Progress" position="390,979" zPosition="5" size="1220,4" backgroundColor="background" foregroundColor="blue" transparent="1">
 		  <convert type="EventTime">Progress</convert>
-		  <!--<convert type="ConditionalShowHide"/>-->
 		</widget>
-		<widget source="session.Event_Now" render="Label" position="510,930" size="980,40" font="Regular; 30" halign="left" backgroundColor="dark_grey" transparent="1" foregroundColor="light_yellow">
+		<widget source="session.Event_Now" render="Label" position="500,930" size="980,36" font="Regular; 30" halign="left" backgroundColor="dark_grey" transparent="1" foregroundColor="light_yellow">
 		  <convert type="EventName">Name</convert>
 		</widget>
-		<widget render="FixedLabel" source="session.Event_Now" text="-" position="470,930" size="20,36" font="Bold; 30" halign="left" backgroundColor="dark_grey" transparent="1" noWrap="1" >
-			<!--<convert type="ConditionalShowHide"/>-->
+		<widget render="FixedLabel" source="session.Event_Now" text="•" position="470,930" size="20,36" font="Bold; 30" halign="left" backgroundColor="dark_grey" transparent="1" noWrap="1" >
+			<convert type="EventName">Name</convert>
+			<convert type="ConditionalShowHide"/>
 		</widget>
 		<widget source="session.Event_Now" render="Label" position="1362,930" size="250,35" font="Bold;30" backgroundColor="dark_grey" halign="right" transparent="1" valign="center" foregroundColor="light_yellow">
 			<convert type="EventTime">Remaining</convert>
@@ -417,10 +417,11 @@
 		  <convert type="EventTime">StartTime</convert>
 		  <convert type="ClockToText">Default</convert>
 		</widget>
-		<widget render="FixedLabel" source="session.Event_Next" text="-" position="470,993" size="20,36" font="Bold; 30" halign="left" backgroundColor="dark_grey" transparent="1" noWrap="1" >
-			<!--<convert type="ConditionalShowHide"/>-->
+		<widget render="FixedLabel" source="session.Event_Next" text="•" position="470,993" size="20,36" font="Bold; 30" halign="left" backgroundColor="dark_grey" transparent="1" noWrap="1" >
+			<convert type="EventName">Name</convert>
+			<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="session.Event_Next" render="Label" position="510,993" zPosition="2" size="980,36" font="Regular; 30" valign="bottom" halign="left" transparent="1" noWrap="1" backgroundColor="dark_grey">
+		<widget source="session.Event_Next" render="Label" position="500,993" zPosition="2" size="980,36" font="Regular; 30" valign="bottom" halign="left" transparent="1" noWrap="1" backgroundColor="dark_grey">
 		  <convert type="EventName">Name</convert>
 		</widget>
 		<widget source="session.Event_Next" render="Label" position="1362,993" size="250,35" font="Bold;30" backgroundColor="dark_grey" halign="right" valign="center" transparent="1">
@@ -428,8 +429,8 @@
 			<convert type="ClockToText">InMinutes</convert>
 		</widget>
 	</screen>
-	
-<!-- Remote control templates -->
+
+	<!-- Remote control templates -->
 	<screen name="RcPanel">
 		<widget name="rc" pixmap="rc.png" position="0,0" zPosition="10" size="154,500" alphatest="blend" backgroundColor="black" transparent="1" />
 		<widget name="arrowdown" conditional="arrowdown" pixmap="arrowdown.png" position="-100,-100" size="37,70" zPosition="11" alphatest="blend"/><!-- belongs to old HelpMenu -->
