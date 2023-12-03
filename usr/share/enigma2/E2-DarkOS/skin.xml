@@ -12,6 +12,7 @@
     <font name="Regular" filename="fonts/Ub-R.ttf" scale="100" />
     <font name="Bold" filename="fonts/Core_Bold.ttf" scale="100" />
     <font name="ExtraF_3" filename="fonts/BNR.otf" scale="100" />
+	<font name="CAID" filename="fonts/Bignoodletitling.ttf" scale="100" />
     <font name="LCD" filename="lcd.ttf" scale="100" />
     <font name="Console" filename="tuxtxt.ttf" scale="100" />
     <font name="Fixed" filename="andale.ttf" scale="100" />
@@ -413,9 +414,12 @@
     <widget backgroundColor="background5" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="122,964" valign="center" render="Label" size="950,60" source="session.CurrentService" zPosition="110">
       <convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
     </widget>
-    <widget position="1286,984" render="Pixmap" size="49,22" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
+    <widget position="1120,984" render="Pixmap" size="49,22" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
       <convert type="ConditionalShowHide">Blink</convert>
     </widget>
+	<widget source="session.FrontendInfo" render="Label" position="1185,977" size="150,30" borderWidth="1" borderColor="black" zPosition="1" backgroundColor="background5" halign="center" font="Bold;30">
+		<convert type="FrontendInfo">STRING,20,25</convert>
+	</widget>
 	<ePixmap pixmap="icons/streaming_off_alt2.png" position="1350,983" size="43,26" alphatest="blend"/>
 	<widget source="session.CurrentService" render="Pixmap" pixmap="icons/streaming.png" position="1350,983" size="43,26" zPosition="3" alphatest="blend">
 		<convert type="ClientsStreaming"/>
@@ -512,7 +516,7 @@
     <widget source="session.CurrentService" render="Label" position="423,820" size="1125,35" backgroundColor="background" font="Regular; 26" zPosition="21" halign="center">
       <convert type="CaidInfo2" />
     </widget>
-    <widget source="session.CurrentService" render="Label" position="1453,895" size="325,40" backgroundColor="background" zPosition="1" foregroundColor="foreground" font="Regular;30" valign="center" halign="right">
+    <widget source="session.CurrentService" render="Label" position="1453,895" size="325,40" backgroundColor="background" zPosition="1" foregroundColor="foreground" font="CAID;36" valign="center" halign="right">
       <convert type="PliExtraInfo">CryptoBar</convert>
     </widget>
   </screen>
