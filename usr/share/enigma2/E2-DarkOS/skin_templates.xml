@@ -69,7 +69,7 @@
 			<convert type="ServiceInfo">Is4K</convert>
 			<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget alphatest="blend" pixmap="icons/rec2.png" position="1290,874" render="Pixmap" size="61,26" source="session.RecordState" zPosition="2">
+		<widget alphatest="blend" pixmap="icons/rec2.png" position="1290,880" render="Pixmap" size="49,22" source="session.RecordState" zPosition="2">
 		  <convert type="ConditionalShowHide">Blink</convert>
 		</widget>
 		

@@ -417,8 +417,8 @@
     <widget position="1120,984" render="Pixmap" size="49,22" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
       <convert type="ConditionalShowHide">Blink</convert>
     </widget>
-	<widget source="session.FrontendInfo" render="Label" position="1185,977" size="150,30" borderWidth="1" borderColor="black" zPosition="1" backgroundColor="background5" halign="center" font="Bold;30">
-		<convert type="FrontendInfo">STRING,20,25</convert>
+	<widget source="session.FrontendInfo" render="Label" position="1175,977" size="150,30" borderWidth="1" borderColor="black" zPosition="1" backgroundColor="background5" halign="right" font="Bold;30">
+		<convert type="FrontendInfo">USE_TUNERS_STRING</convert>
 	</widget>
 	<ePixmap pixmap="icons/streaming_off_alt2.png" position="1350,983" size="43,26" alphatest="blend"/>
 	<widget source="session.CurrentService" render="Pixmap" pixmap="icons/streaming.png" position="1350,983" size="43,26" zPosition="3" alphatest="blend">
