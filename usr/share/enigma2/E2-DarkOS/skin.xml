@@ -806,30 +806,28 @@
   <!-- Service Scan -->
   <screen name="ServiceScan" title="Service scan" position="fill" flags="wfNoBorder">
     <panel name="Screen_Window_Full" />
-	<panel position="10,20" size="1900,850">
-		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-s.png" position="30,105" size="96,96" zPosition="2" transparent="1" alphatest="on">
-			<convert type="FrontendInfo">TYPE</convert>
-			<convert type="ValueRange">0,0</convert>
-			<convert type="ConditionalShowHide" />
-		</widget>
-		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-c.png" position="30,105" size="96,96" zPosition="2" transparent="1" alphatest="on">
-			<convert type="FrontendInfo">TYPE</convert>
-			<convert type="ValueRange">1,1</convert>
-			<convert type="ConditionalShowHide" />
-		</widget>
-		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-t.png" position="30,105" size="96,96" zPosition="2" transparent="1" alphatest="on">
-			<convert type="FrontendInfo">TYPE</convert>
-			<convert type="ValueRange">2,2</convert>
-			<convert type="ConditionalShowHide" />
-		</widget>
-		<widget name="network" position="135,105" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
-		<widget name="transponder" position="135,157" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
-		<widget name="scan_progress" position="30,270" size="810,22" pixmap="progress_big.png" borderWidth="2" borderColor="uncccccc" />
-		<widget name="scan_state" position="30,307" zPosition="2" size="810,70" valign="top" font="Regular;30" transparent="1" />
-		<widget name="pass" position="30,380" size="810,45" valign="center" font="Regular;33" transparent="1" />
-		<widget name="servicelist" position="870,100" size="1020,800" itemHeight="45" font="Regular;28" selectionDisabled="1" scrollbarMode="showNever" textOffset="25,5" />
-		<widget addon="Pager" connection="servicelist" position="870,910" size="1020,25" transparent="1" backgroundColor="background"/>
-	</panel>
+	<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-s.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
+		<convert type="FrontendInfo">TYPE</convert>
+		<convert type="ValueRange">0,0</convert>
+		<convert type="ConditionalShowHide" />
+	</widget>
+	<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-c.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
+		<convert type="FrontendInfo">TYPE</convert>
+		<convert type="ValueRange">1,1</convert>
+		<convert type="ConditionalShowHide" />
+	</widget>
+	<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-t.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
+		<convert type="FrontendInfo">TYPE</convert>
+		<convert type="ValueRange">2,2</convert>
+		<convert type="ConditionalShowHide" />
+	</widget>
+	<widget name="network" position="145,125" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
+	<widget name="transponder" position="145,177" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
+	<widget name="scan_progress" position="40,290" size="810,22" pixmap="progress_big.png" borderWidth="2" borderColor="uncccccc" />
+	<widget name="scan_state" position="40,327" zPosition="2" size="810,70" valign="top" font="Regular;30" transparent="1" />
+	<widget name="pass" position="40,400" size="810,45" valign="center" font="Regular;33" transparent="1" />
+	<widget name="servicelist" position="880,120" size="1020,800" itemHeight="45" font="Regular;28" selectionDisabled="1" scrollbarMode="showNever" textOffset="25,5" />
+	<widget addon="Pager" connection="servicelist" position="880,930" size="1020,25" transparent="1" backgroundColor="background"/>
   </screen>
   <!-- FastScan -->
   <screen name="FastScanScreen" title="Fast Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
