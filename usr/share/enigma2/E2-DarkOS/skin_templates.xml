@@ -33,7 +33,7 @@
 		  <convert type="ClockToText">Format: %d %B</convert>
 		</widget>
 		<widget alphatest="blend" path="icons/audioicon" position="1605,860" render="AudioIcon" size="85,50" source="session.CurrentService" zPosition="10">
-		  <convert type="VidAudioInfo">AudioIcon</convert>
+		  <convert type="VAudioInfo">AudioIcon</convert>
 		</widget>
 
 		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/mpeg2.png" size="80,40" position="1700,869" zPosition="2" alphatest="blend">
@@ -72,61 +72,6 @@
 		<widget alphatest="blend" pixmap="icons/rec2.png" position="1290,880" render="Pixmap" size="49,22" source="session.RecordState" zPosition="2">
 		  <convert type="ConditionalShowHide">Blink</convert>
 		</widget>
-		
-		<!-- <widget source="session.CurrentService" render="Label" font="Bold; 28" transparent="1" valign="center" backgroundColor="background" foregroundColor="white" halign="center" size="120,50" position="1422,885" zPosition="1">
-		  <convert type="VAudioInfo">AudioCodec</convert>
-		</widget> -->
-		<!-- <ePixmap pixmap="icons/dd_s_off.png" size="40,25" position="1765,876" alphatest="blend"/>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/dd_s.png" size="40,25" position="1765,876" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">IsMultichannel</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget> -->
-		<!-- <widget source="session.CurrentService" render="Pixmap" pixmap="icons/SD_s_n_d.png" size="50,25" position="1815,875" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">VideoHeight</convert>
-			<convert type="ValueRange">-1,1</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/SD_s_n.png" size="50,25" position="1815,875" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">VideoHeight</convert>
-			<convert type="ValueRange">1,719</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/HD_s_n.png" size="50,25" position="1815,875" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">VideoHeight</convert>
-			<convert type="ValueRange">720,1081</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/4K_s_n.png" size="50,25" position="1815,875" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">VideoHeight</convert>
-			<convert type="ValueRange">1440,2161</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget alphatest="blend" pixmap="icons/rec2.png" position="1290,874" render="Pixmap" size="61,26" source="session.RecordState" zPosition="2">
-		  <convert type="ConditionalShowHide">Blink</convert>
-		</widget> -->
-		<!-- <widget source="session.CurrentService" render="Label" position="c-624,6" size="1248,74" backgroundColor="transparent" zPosition="1" foregroundColor="foreground" borderWidth="2" font="Regular;36" borderColor="black" valign="center" halign="center">
-			<convert type="ServiceName">Name</convert>
-		</widget>
-		<ePixmap pixmap="dvr/scale1024.png" position="42,87" size="1536,12" zPosition="1"/>
-		<widget source="session.CurrentService" render="PositionGauge" position="42,84" size="1536,18" transparent="1" zPosition="4" pointer="dvr/position_pointer1024.png:1536,4">
-			<convert type="ServicePosition">Gauge</convert>
-		</widget>
-		<widget source="session.CurrentService" render="Label" position="42,46" size="135,37" backgroundColor="transparent" zPosition="4" foregroundColor="foreground" borderWidth="2" font="Regular;33" borderColor="black" valign="center" halign="left">
-			<convert type="ServicePosition">Position,ShowHours</convert>
-		</widget>
-		<widget source="session.CurrentService" render="Label" position="1402,46" size="175,37" backgroundColor="transparent" zPosition="4" foregroundColor="foreground" borderWidth="2" font="Regular;33" borderColor="black" valign="center" halign="right">
-			<convert type="ServicePosition">Remaining,Plus,ShowHours</convert>
-		</widget>
-		<widget source="session.RecordState" render="Pixmap" pixmap="buttons/rec.png" position="1590,79" size="30,30" zPosition="3" alphatest="on">
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="global.CurrentTime" render="Label" borderWidth="2" position="1428,4" size="150,37" backgroundColor="transparent" noWrap="1" zPosition="1" foregroundColor="foreground" font="Regular;33" valign="center" halign="right">
-			<convert type="ClockToText">Format:%-H:%M</convert>
-		</widget>
-		<widget source="session.CurrentService" render="Label" position="c-109,105" size="219,31" zPosition="2" backgroundColor="transparent" foregroundColor="foreground" font="Regular;30" borderWidth="2" valign="top" halign="center">
-			<convert type="PliExtraInfo">ResolutionString</convert>
-		</widget>
-		<eLabel position="42,105" size="225,195" backgroundColor="transparent" borderWidth="2" font="Regular;37" borderColor="black" halign="left" text=">" zPosition="1"/> -->
 	</screen>
 	
 	<screen name="BrandLogoTemplate">
@@ -322,10 +267,10 @@
 		<widget backgroundColor="black" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="390,864" valign="center" render="Label" size="950,51" source="session.CurrentService" transparent="1" zPosition="110">
 		  <convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
 		</widget>
-		<eLabel position="1325,878" size="2,28" zPosition="-9" backgroundColor="dark_grey" />
+		<eLabel position="1315,878" size="2,28" zPosition="-9" backgroundColor="dark_grey" />
 		
-		<widget source="session.CurrentService" render="Label" position="1333,876" size="60,32" transparent="1" zPosition="1" backgroundColor="background" foregroundColor="green" font="Bold;25" valign="center" halign="center">
-			<convert type="CaidInfo2">CryptInfo3</convert>
+		<widget source="session.CurrentService" render="Label" position="1323,876" size="70,32" transparent="1" zPosition="1" backgroundColor="background" foregroundColor="green" font="Bold;25" valign="center" halign="center">
+			<convert type="PliExtraInfo">CurrentCrypto</convert>
 		</widget>
 		
 		<eLabel position="1398,878" size="2,28" zPosition="-9" backgroundColor="dark_grey" />
@@ -377,7 +322,7 @@
 			<convert type="ConditionalShowHide"/>
 		</widget>
 		
-		<widget position="1254,880" render="Pixmap" size="49,22" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
+		<widget position="1244,880" render="Pixmap" size="49,22" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
 		  <convert type="ConditionalShowHide">Blink</convert>
 		</widget>
 		

@@ -318,7 +318,7 @@
     <ePixmap position="8,6" size="42,38" pixmap="menu/audio_icon.svg" alphatest="blend" zPosition="-9" />
     <eLabel position="67,24" size="343,4" transparent="1" backgroundColor="progress" zPosition="1" />
     <widget position="67,24" size="343,4" foregroundColor="blue" transparent="1" orientation="orLeftToRight" zPosition="2" name="Volume" />
-    <widget position="423,4" size="60,40" source="global.CurrentTime" render="DEVolumeText" font="Bold;28" backgroundColor="background" foregroundColor="white" halign="left" valign="center" transparent="1" zPosition="20" />
+    <widget position="423,4" size="60,40" source="global.CurrentTime" render="VolumeText" font="Bold;28" backgroundColor="background" foregroundColor="white" halign="left" valign="center" transparent="1" zPosition="20" />
   </screen>
   <screen position="center,30" size="90,90" name="Mute" title="Mute" backgroundColor="transparent" zPosition="10" flags="wfNoBorder">
     <ePixmap position="0,0" size="90,90" pixmap="mute_bg.png" alphatest="blend" zPosition="10" />
@@ -831,16 +831,6 @@
 		<widget addon="Pager" connection="servicelist" position="870,910" size="1020,25" transparent="1" backgroundColor="background"/>
 	</panel>
   </screen>
-  <!-- FastScan -->
-  <screen name="FastScanScreen" title="Fast Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="ConfigScreenTemplate" />
-  </screen>
-  <screen name="FastScanStatus" title="Fast Scan" position="fill" flags="wfNoBorder">
-    <panel name="BasicTemplate" />
-    <widget name="frontend" pixmap="icons/scan-s.png" position="30,105" size="96,96" zPosition="2" transparent="1" alphatest="on" />
-    <widget name="scan_state" position="30,270" zPosition="2" size="810,45" valign="center" font="Regular;30" transparent="1" />
-    <widget name="scan_progress" position="30,322" size="810,22" pixmap="progress_big.png" borderWidth="2" borderColor="uncccccc" />
-  </screen>
   <!-- RecordPathSettings -->
   <screen name="RecordPathsSettings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="ConfigScreenTemplate" />
@@ -1033,6 +1023,7 @@ setLogo(self["logo"].instance, "brand", 54, 34)
   <screen name="MovieSelection" title="Movie Selection" position="fill" flags="wfNoBorder">
 	<panel name="Screen_Window_Full_Pig" />
 	<eLabel position="1200,105" size="1,870" backgroundColor="separator" zPosition="-5" />
+	<widget name="waitingtext" conditional="waitingtext" position="20,100" size="1160,860" font="Regular;36" halign="center" valign="center" zPosition="1"/>
 	<widget name="list" transparent="1" position="20,95" size="1160,860" scrollbarMode="showNever" itemHeights="107,78,50" fontSizesOriginal="36,26,24" fontSizesCompact="36,28" fontSizesMinimal="34,30" pbarShift="17" pbarHeight="20" 
 			pbarLargeWidth="72" spaceLeft="25" spaceRight="25" dateWidth="260" columnsOriginal="270,300" columnsCompactDescription="280,240,200" compactColumn="400" treeDescription="250" partIconeShiftMinimal="12" partIconeShiftCompact="8" 
 			partIconeShiftOriginal="12" iconsWidth="33" spaceIconeText="6" trashShift="10" dirShift="10" font="Regular,30" itemHeight="55" />
