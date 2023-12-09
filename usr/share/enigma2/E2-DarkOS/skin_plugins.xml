@@ -128,19 +128,6 @@
 		<panel name="MovieTagEditor"/>
 	</screen>
 
-	<!-- Cable Scan -->
-
-	<screen name="CableScanScreen" title="Cable Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="ConfigScreenTemplate"/>
-	</screen>
-
-	<screen name="CableScanStatus" title="Cable Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_1_1"/>
-		<widget name="frontend" pixmap="icons/scan-c.png" position="780,180" size="96,96" zPosition="2" transparent="1" alphatest="on"/>
-		<widget name="scan_state" position="780,345" zPosition="2" size="720,45" valign="center" font="Regular;30" transparent="1"/>
-		<widget name="scan_progress" position="780,397" size="720,22" pixmap="progress_big.png" borderWidth="2" borderColor="#cccccc"/>
-	</screen>
-
 	<!-- TempFanControl -->
 
 	<screen name="TempFanControl" position="fill" title="Fan Control" flags="wfNoBorder">
