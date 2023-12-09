@@ -120,6 +120,19 @@ self["list"].instance.setItemHeight(38)
 	<screen name="OpenBhScriptRunner" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="IpkgInstaller"/>
 	</screen>
+	<!-- OBH User Interface Positioner -->
+	<screen name="UserInterfacePositioner" position="fill" backgroundColor="background" flags="wfNoBorder">
+		<eLabel position="238,179" size="1480,720" backgroundColor="background" zPosition="1"/>
+		<ePixmap pixmap="obh/positioner.png" position="0,0" size="1920,1080" alphatest="blend" zPosition="-1"/>
+        <ePixmap pixmap="buttons/key_red.png" position="530,825" size="e,36" alphatest="blend" zPosition="4"/>
+        <ePixmap pixmap="buttons/key_green.png" position="930,825" size="e,36" alphatest="blend" zPosition="4"/>
+        <ePixmap pixmap="buttons/key_yellow.png" position="1330,825" size="e,36" alphatest="blend" zPosition="4"/>
+        <widget source="key_red" render="Label" position="575,820" size="280,36" zPosition="4" font="Regular;26" halign="left" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+        <widget source="key_green" render="Label" position="975,820" size="280,36" zPosition="4" font="Regular;26" halign="left" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+        <widget source="key_yellow" render="Label" position="1375,820" size="280,36" zPosition="4" font="Regular;26" halign="left" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
+		<widget name="config" position="center,250" size="800,280" font="Regular;28" itemHeight="40" enableWrapAround="1" scrollbarMode="showOnDemand" foregroundColor="yellow" backgroundColor="background" transparent="1" zPosition="3"/>
+		<widget source="status" render="Label" position="center,600" size="1200,150" zPosition="10" font="Regular;28" foregroundColor="foreground" halign="center" valign="center" transparent="1" backgroundColor="background"/>
+	</screen>
 	<!-- OBHSwapManager -->
 	<screen name="OpenBhSwap" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
@@ -541,7 +554,7 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 17), size = (100, 40), png = 2, flag
 		<widget name="statuslab" position="center,750" size="820,100" font="Regular;32" halign="center" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
 		<widget addon="Pager" connection="list" position="396,860" size="1130,25" transparent="1" backgroundColor="background"/>
 	</screen>
-    <screen name="Nab_downPanel" position="fill" flags="wfNoBorder" title="Manual Install Bh Packages" backgroundColor="transparent">
+	<screen name="Nab_downPanel" position="fill" flags="wfNoBorder" title="Manual Install Bh Packages" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
 		<widget source="list" render="Listbox" position="396,225" size="1130,462" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
 			<convert type="TemplatedMultiContent">
@@ -554,7 +567,7 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 17), size = (100, 40), png = 2, flag
 		</widget>
 		<widget addon="Pager" connection="list" position="396,860" size="1130,25" transparent="1" backgroundColor="background"/>
 	</screen>
-    <screen name="Nab_downPanelIPK" position="fill" flags="wfNoBorder" title="Manual Install Ipk Packages" backgroundColor="transparent">
+	<screen name="Nab_downPanelIPK" position="fill" flags="wfNoBorder" title="Manual Install Ipk Packages" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
 		<widget source="list" render="Listbox" position="396,225" size="1130,462" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
 			<convert type="TemplatedMultiContent">
@@ -567,7 +580,7 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 17), size = (100, 40), png = 2, flag
 		</widget>
 		<widget addon="Pager" connection="list" position="396,860" size="1130,25" transparent="1" backgroundColor="background"/>
 	</screen>
-    <screen name="Nab_uninstPanel" position="fill" flags="wfNoBorder" title="OpenBh Uninstall Panel" backgroundColor="transparent">
+	<screen name="Nab_uninstPanel" position="fill" flags="wfNoBorder" title="OpenBh Uninstall Panel" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
 		<widget source="list" render="Listbox" position="396,225" size="1130,462" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
 			<convert type="TemplatedMultiContent">
