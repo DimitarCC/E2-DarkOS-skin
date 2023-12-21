@@ -32,7 +32,7 @@ def getDefaultLogo(logoType, width, height):
 def setLogo(px, logoType, width, height):
 	pngname = getLogoPngPath(logoType)
 	is_svg = pngname and pngname.endswith(".svg")
-	png = LoadPixmap(pngname, width=width, height=0 if is_svg else height)
+	png = pngname and LoadPixmap(pngname, width=width, height=0 if is_svg else height)
 	if png != None:
 		px.setPixmap(png)
 	else:
