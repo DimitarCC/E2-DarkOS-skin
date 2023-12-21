@@ -870,7 +870,10 @@ from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from Tools.LoadPixmap import LoadPixmap
-from Components.Renderer.BoxLogo import setLogo
+try:
+	from Components.Renderer.BoxLogo import setLogo as loadLogo
+except:
+	loadLogo = None
 
 pxtlc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tl.png"))
 pxtrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tr.png"))
@@ -940,7 +943,8 @@ self["logo"].GUIcreate(self.instance)
 self["logo"].instance.resize(eSize(54,34))
 self["logo"].instance.move(ePoint(wsizex-74,wsizey-70))
 self["logo"].instance.setAlphatest(BT_ALPHABLEND)
-setLogo(self["logo"].instance, "brand", 54, 34)
+if callable(loadLogo):
+	loadLogo(self["logo"].instance, "brand", 54, 34)
 	</applet>
     <widget name="description" position="-e,-e" size="720,256" zPosition="1" font="Regular;28"/>
   </screen>
@@ -1801,7 +1805,10 @@ from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from Tools.LoadPixmap import LoadPixmap
-from Components.Renderer.BoxLogo import setLogo
+try:
+	from Components.Renderer.BoxLogo import setLogo as loadLogo
+except:
+	loadLogo = None
 
 pxtlc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tl.png"))
 pxtrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tr.png"))
@@ -1899,7 +1906,8 @@ self["logo"].GUIcreate(self.instance)
 self["logo"].instance.resize(eSize(54,34))
 self["logo"].instance.move(ePoint(wsizex-74,wsizey-70))
 self["logo"].instance.setAlphatest(BT_ALPHABLEND)
-setLogo(self["logo"].instance, "brand", 54, 34)
+if callable(loadLogo):
+	loadLogo(self["logo"].instance, "brand", 54, 34)
 		</applet>
 	</screen>
 	<!-- TimeDateInput -->
