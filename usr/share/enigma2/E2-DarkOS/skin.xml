@@ -416,7 +416,7 @@
       <convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
     </widget>
     <widget position="1120,984" render="Pixmap" size="49,22" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
-      <convert type="ConditionalShowHide">Blink</convert>
+      <convert type="ConditionalShowHide">Blink,4000,1000</convert>
     </widget>
 	<widget source="session.FrontendInfo" render="Label" position="1175,977" size="150,30" borderWidth="1" borderColor="black" zPosition="1" backgroundColor="background5" halign="right" font="Bold;30">
 		<convert type="FrontendInfo">USE_TUNERS_STRING</convert>
@@ -2229,7 +2229,7 @@ if callable(loadLogo):
 	<!-- Subservices Quickzap -->
 	<screen name="SubservicesQuickzap" position="c-384,c-15" size="768,300" title="Subservices" backgroundColor="transparent" flags="wfNoBorder">
 		<widget source="session.RecordState" render="Pixmap" pixmap="icons/record.png" position="675,0" zPosition="2" size="21,21" alphatest="on">
-		<convert type="ConditionalShowHide">Blink</convert>
+		<convert type="ConditionalShowHide">Blink,4000,1000</convert>
 		</widget>
 		<eLabel text="Subservices" position="0,0" size="705,30" font="Regular;20" backgroundColor="toptemplatecolor" />
 		<widget name="CurrentSubserviceNumber" position="0,30" size="75,35" font="Regular;32" backgroundColor="toptemplatecolor" />

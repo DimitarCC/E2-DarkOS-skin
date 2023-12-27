@@ -70,7 +70,7 @@
 			<convert type="ConditionalShowHide"/>
 		</widget>
 		<widget alphatest="blend" pixmap="icons/rec2.png" position="1290,880" render="Pixmap" size="49,22" source="session.RecordState" zPosition="2">
-		  <convert type="ConditionalShowHide">Blink</convert>
+		  <convert type="ConditionalShowHide">Blink,4000,1000</convert>
 		</widget>
 	</screen>
 	
@@ -323,7 +323,7 @@
 		</widget>
 		
 		<widget position="1244,880" render="Pixmap" size="49,22" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
-		  <convert type="ConditionalShowHide">Blink</convert>
+		  <convert type="ConditionalShowHide">Blink,4000,1000</convert>
 		</widget>
 		
 		<ePixmap pixmap="icons/streaming_off.png" position="1413,879" size="43,26" alphatest="blend"/>
