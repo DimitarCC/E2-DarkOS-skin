@@ -515,7 +515,7 @@
       <convert type="PliExtraInfo">ServiceInfo</convert>
     </widget>
     <widget source="session.CurrentService" render="Label" position="423,820" size="1125,35" backgroundColor="background" font="Regular; 26" zPosition="21" halign="center">
-      <convert type="CaidInfo2" />
+      <convert type="CryptoInfo">FullInfo</convert>
     </widget>
     <widget source="session.CurrentService" render="Label" position="1453,895" size="325,40" backgroundColor="background" zPosition="1" foregroundColor="foreground" font="CAID;36" valign="center" halign="right">
       <convert type="PliExtraInfo">CryptoBar</convert>
