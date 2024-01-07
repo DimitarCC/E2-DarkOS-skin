@@ -124,7 +124,7 @@
 		</widget>
 		<widget addon="Pager" connection="menu" position="85,812" size="558,25" transparent="1" backgroundColor="background"/>
 		<widget source="ScreenPath" render="Label" position="78,833" size="544,25" backgroundColor="background" zPosition="1" font="Regular;19" valign="top" halign="right"/>
-		<widget source="global.CurrentTime" render="BoxLogo" position="203,175" size="302,65" zPosition="10" alphatest="blend" />
+		<widget source="global.CurrentTime" render="BoxLogo" position="72,175" size="564,65" zPosition="10" alphatest="blend" />
 		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5" />
 	</screen>
 		
