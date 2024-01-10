@@ -180,7 +180,7 @@
 		  <panel name="ConfigButtonsTemplate"/>
 		</panel>
 		
-		<panel position="e-94,e-57" size="74,34">
+		<panel position="e-94,e-57" size="84,44">
 			<panel name="BrandLogoTemplate" />
 		</panel>
 	</screen>
