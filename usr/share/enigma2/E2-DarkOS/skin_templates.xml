@@ -11,9 +11,9 @@
 
 		<eLabel position="38,862" size="1839,184" zPosition="-11" backgroundColor="background5" />
 		<eLabel position="370,864" size="1505,180" zPosition="-10" backgroundColor="background" />
-
-		<eLabel position="380,915" size="1485,2" zPosition="-9" backgroundColor="dark_grey" />
 		
+		<eLabel position="380,915" size="1485,2" zPosition="-9" backgroundColor="dark_grey" />
+
 		<widget name="statusicon" position="160,915" zPosition="3" size="90,90" alphatest="blend" pixmaps="icons/pvr/play.svg,icons/pvr/pause.svg,icons/pvr/stop.svg,icons/pvr/ff.svg,icons/pvr/rew.svg,icons/pvr/slow.svg"/>
 		<widget name="speed"  foregroundColor="white" halign="left" position="260,960" size="90,45" font="Bold; 40" transparent="1"/>
 		<widget source="session.CurrentService" render="Label" position="400,935" size="1120,50" font="Regular; 44" valign="center" noWrap="1" backgroundColor="background" transparent="1">
@@ -81,10 +81,10 @@
 		<widget alphatest="blend" pixmap="icons/rec2.png" position="1290,880" render="Pixmap" size="49,22" source="session.RecordState" zPosition="2">
 		  <convert type="ConditionalShowHide">Blink,4000,1000</convert>
 		</widget>
-	</screen>
+			</screen>
 	
 	<screen name="BrandLogoTemplate">
-		<widget source="global.CurrentTime" render="BoxLogo" logoType="brand" position="0,0" size="54,34" zPosition="-3" alphatest="blend" />
+		<widget source="global.CurrentTime" render="BoxLogo" logoType="brand" position="0,0" size="74,34" zPosition="-3" alphatest="blend" halign="right" />
 	</screen>
 
 	<screen name="ConfigButtonsTemplate">
@@ -131,7 +131,7 @@
 	<screen name="Screen_menu2">
 		<panel position="495,136" size="932,825">
 			<panel name="Screen_1" />
-			<panel position="e-74,e-70" size="54,34">
+			<panel position="e-94,e-70" size="74,34">
 				<panel name="BrandLogoTemplate" />
 			</panel>
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
@@ -180,7 +180,7 @@
 		  <panel name="ConfigButtonsTemplate"/>
 		</panel>
 		
-		<panel position="e-70,e-57" size="54,34">
+		<panel position="e-94,e-57" size="74,34">
 			<panel name="BrandLogoTemplate" />
 		</panel>
 	</screen>
@@ -218,7 +218,7 @@
 	<screen name="Screen_1_1">
 		<panel position="96,54" size="1728,992">
 			<panel name="Screen_1" />
-			<panel position="e-74,e-70" size="54,34">
+			<panel position="e-94,e-70" size="74,34">
 				<panel name="BrandLogoTemplate" />
 			</panel>
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
@@ -237,7 +237,7 @@
 	<screen name="Screen_Menu1">
 		<panel position="370,118" size="1180,858">
 			<panel name="Screen_1" />
-			<panel position="e-74,e-70" size="54,34">
+			<panel position="e-94,e-70" size="74,34">
 				<panel name="BrandLogoTemplate" />
 			</panel>
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
@@ -392,7 +392,7 @@
 			<convert type="ClockToText">InMinutes</convert>
 		</widget>
 	</screen>
-
+	
 	<!-- Remote control templates -->
 	<screen name="RcPanel">
 		<widget name="rc" pixmap="rc.png" position="0,0" zPosition="10" size="154,500" alphatest="blend" backgroundColor="black" transparent="1" />

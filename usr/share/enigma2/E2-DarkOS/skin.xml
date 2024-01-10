@@ -524,7 +524,7 @@
   <!-- Movie Player Infobar -->
   <screen name="MoviePlayer" title="InfoBar" position="fill" backgroundColor="transparent" flags="wfNoBorder">
     <panel name="PlayerTemplate" />
-      </screen>
+  </screen>
   <!-- DVD Player Infobar -->
   <screen name="DVDPlayer" title="InfoBar" position="150,67" size="1620,352" backgroundColor="transparent" flags="wfNoBorder">
     <panel name="PlayerTemplate" />
@@ -546,7 +546,7 @@
   <screen name="ChannelSelection" title="Channel Selection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Window_Full_Pig" />
     <eLabel position="1200,95" size="1,890" backgroundColor="separator" zPosition="-5" />
-	<widget name="list" position="20,95" size="1160,860" enableWrapAround="1" colorServiceDescription="light_yellow" colorServiceDescriptionSelected="light_yellow" 
+	<widget name="list" position="20,95" size="1160,860" enableWrapAround="1" colorServiceDescription="light_yellow" colorServiceDescriptionSelected="light_yellow"
 					colorEventProgressbarBorder="blue" colorEventProgressbarBorderSelected="blue" colorEventProgressbar="blue" colorEventProgressbarSelected="yellow" 
 					picServiceEventProgressbar="window/progress.png" forgroundColorEventProgressbarBorder="background" foregroundColorServiceNotAvail="#777777" 
 					backgroundColor="background" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" 
@@ -805,34 +805,34 @@
     <panel name="ConfigScreenTemplate" />
   </screen>
   <!-- Service Scan -->
-  <screen name="ScanStatusTemplate">
+<screen name="ScanStatusTemplate">
     <panel name="Screen_Window_Full" />
     <widget name="scan_state" position="40,327" zPosition="2" size="810,70" valign="top" font="Regular;30" transparent="1" />
     <widget name="scan_progress" position="40,290" size="810,22" pixmap="progress_big.png" borderWidth="2" borderColor="uncccccc" />
   </screen>
   <screen name="ServiceScan" title="Service scan" position="fill" flags="wfNoBorder">
     <panel name="ScanStatusTemplate" />
-	<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-s.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
-		<convert type="FrontendInfo">TYPE</convert>
-		<convert type="ValueRange">0,0</convert>
-		<convert type="ConditionalShowHide" />
-	</widget>
-	<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-c.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
-		<convert type="FrontendInfo">TYPE</convert>
-		<convert type="ValueRange">1,1</convert>
-		<convert type="ConditionalShowHide" />
-	</widget>
-	<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-t.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
-		<convert type="FrontendInfo">TYPE</convert>
-		<convert type="ValueRange">2,2</convert>
-		<convert type="ConditionalShowHide" />
-	</widget>
-	<widget name="network" position="145,125" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
-	<widget name="transponder" position="145,177" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
-	<widget name="pass" position="40,400" size="810,45" valign="center" font="Regular;33" transparent="1" />
-	<widget name="servicelist" position="880,120" size="1020,800" itemHeight="45" font="Regular;28" selectionDisabled="1" scrollbarMode="showNever" textOffset="25,5" />
-	<widget addon="Pager" connection="servicelist" position="880,930" size="1020,25" transparent="1" backgroundColor="background"/>
-  </screen>
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-s.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">0,0</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-c.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">1,1</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-t.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">2,2</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget name="network" position="145,125" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
+		<widget name="transponder" position="145,177" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
+		<widget name="pass" position="40,400" size="810,45" valign="center" font="Regular;33" transparent="1" />
+		<widget name="servicelist" position="880,120" size="1020,800" itemHeight="45" font="Regular;28" selectionDisabled="1" scrollbarMode="showNever" textOffset="25,5" />
+		<widget addon="Pager" connection="servicelist" position="880,930" size="1020,25" transparent="1" backgroundColor="background"/>
+	  </screen>
   <!-- FastScan -->
   <screen name="FastScanScreen" title="Fast Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="ConfigScreenTemplate" />
@@ -840,7 +840,7 @@
   <screen name="FastScanStatus" title="Fast Scan" position="fill" flags="wfNoBorder">
     <panel name="ScanStatusTemplate" />
     <widget name="frontend" pixmap="icons/scan-s.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on" />
-  </screen>
+    </screen>
   <!-- Cable Scan -->
   <screen name="CableScanScreen" title="Cable Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 	<panel name="ConfigScreenTemplate"/>
@@ -940,11 +940,11 @@ self["bcGroundOver"].instance.move(ePoint(2,2))
 self["bcGroundOver"].setZPosition(-7)
 self["logo"] = Pixmap()
 self["logo"].GUIcreate(self.instance)
-self["logo"].instance.resize(eSize(54,34))
-self["logo"].instance.move(ePoint(wsizex-74,wsizey-70))
+self["logo"].instance.resize(eSize(74,34))
+self["logo"].instance.move(ePoint(wsizex-94,wsizey-70))
 self["logo"].instance.setAlphatest(BT_ALPHABLEND)
 if callable(loadLogo):
-	loadLogo(self["logo"].instance, "brand", 54, 34)
+	loadLogo(self["logo"].instance, "brand", 74, 34, "right")
 	</applet>
     <widget name="description" position="-e,-e" size="720,256" zPosition="1" font="Regular;28"/>
   </screen>
@@ -1904,11 +1904,11 @@ self["bcGroundOver"].instance.move(ePoint(2,2))
 self["bcGroundOver"].setZPosition(-7)
 self["logo"] = Pixmap()
 self["logo"].GUIcreate(self.instance)
-self["logo"].instance.resize(eSize(54,34))
-self["logo"].instance.move(ePoint(wsizex-74,wsizey-70))
+self["logo"].instance.resize(eSize(74,34))
+self["logo"].instance.move(ePoint(wsizex-94,wsizey-70))
 self["logo"].instance.setAlphatest(BT_ALPHABLEND)
 if callable(loadLogo):
-	loadLogo(self["logo"].instance, "brand", 54, 34)
+	loadLogo(self["logo"].instance, "brand", 74, 34, "right")
 		</applet>
 	</screen>
 	<!-- TimeDateInput -->
@@ -1964,7 +1964,7 @@ if callable(loadLogo):
 		</widget>
 		<widget addon="Pager" connection="nimlist" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
-	<!-- Nim setup -->
+		<!-- Nim setup -->
 	<screen name="NimSetup" title="Reception Settings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate" />
 	</screen>
@@ -1972,8 +1972,8 @@ if callable(loadLogo):
 	<!-- Positioner setup -->
 	<screen name="PositionerSetup" title="Positioner setup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
-		<widget name="status_bar" position="center,140" size="330,37" font="Regular;30" foregroundColor="yellow" halign="center"/>
-		<panel position="-375,100" size="e,e">
+			<widget name="status_bar" position="center,140" size="330,37" font="Regular;30" foregroundColor="yellow" halign="center"/>
+			<panel position="-375,100" size="e,e">
 			<widget name="list" position="780,105" size="1110,7*38" itemHeight="38" font="Regular;28" backgroundColor="secondBG" transparent="1"/>
 			<eLabel text="Frequency:" position="795,400" size="330,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
 			<widget name="frequency_value" position="1110,400" size="150,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
@@ -2020,55 +2020,55 @@ if callable(loadLogo):
 	<screen name="Satfinder" title="Satfinder" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Window_Full"/>
 		<widget source="Frontend" render="Progress" pixmap="infobar/bar_big.png" position="30,135" size="1860,75" borderWidth="1" borderColor="darkgrey">
-			<convert type="FrontendInfo">SNR</convert>
+		<convert type="FrontendInfo">SNR</convert>
 		</widget>
 		<eLabel text="SNR:" position="37,135" size="150,75" valign="center" backgroundColor="darkgrey" borderWidth="1" transparent="1" font="Regular;52"/>
 		<widget source="Frontend" render="Label" position="1552,135" size="330,75" halign="right" valign="center" borderWidth="1" transparent="1" font="Regular;52">
-			<convert type="FrontendInfo">SNR</convert>
+		<convert type="FrontendInfo">SNR</convert>
 		</widget>
 		<widget source="Frontend" render="Progress" pixmap="infobar/bar_big.png" position="30,230" size="1860,75" borderWidth="1" borderColor="darkgrey">
-			<convert type="FrontendInfo">AGC</convert>
+		<convert type="FrontendInfo">AGC</convert>
 		</widget>
 		<eLabel text="AGC:" position="37,230" size="150,75" valign="center" backgroundColor="darkgrey" borderWidth="1" transparent="1" font="Regular;52"/>
 		<widget source="Frontend" render="Label" position="1552,230" size="330,75" halign="right" valign="center" borderWidth="1" transparent="1" font="Regular;52">
-			<convert type="FrontendInfo">AGC</convert>
+		<convert type="FrontendInfo">AGC</convert>
 		</widget>
 		<eLabel text="SNR:" position="30,360" size="180,30" backgroundColor="darkgrey" transparent="1" zPosition="5" font="Regular;27"/>
 		<widget source="Frontend" render="Label" position="30,390" size="450,112" font="Regular;108" halign="left" backgroundColor="darkgrey" transparent="1">
-			<convert type="FrontendInfo">SNRdB</convert>
+		<convert type="FrontendInfo">SNRdB</convert>
 		</widget>
 		<eLabel text="AGC:" position="30,540" size="180,30" backgroundColor="darkgrey" transparent="1" zPosition="5" font="Regular;27"/>
 		<widget source="Frontend" render="Label" position="30,570" size="450,112" backgroundColor="darkgrey" transparent="1" font="Regular;108" halign="left">
-			<convert type="FrontendInfo">AGC</convert>
+		<convert type="FrontendInfo">AGC</convert>
 		</widget>
 		<eLabel text="BER:" position="30,720" size="180,30" backgroundColor="darkgrey" transparent="1" zPosition="5" font="Regular;27"/>
 		<widget source="Frontend" render="Label" position="30,750" size="450,112" font="Regular;108" halign="left" backgroundColor="darkgrey" transparent="1">
-			<convert type="FrontendInfo">BER</convert>
+		<convert type="FrontendInfo">BER</convert>
 		</widget>
 		<widget text="LOCK" source="Frontend" render="FixedLabel" position="30,880" size="465,135" font="Regular;108" halign="left" foregroundColor="green" backgroundColor="darkgrey" transparent="1">
-			<convert type="FrontendInfo">LOCK</convert>
-			<convert type="ConditionalShowHide"/>
+		<convert type="FrontendInfo">LOCK</convert>
+		<convert type="ConditionalShowHide"/>
 		</widget>
 		<widget name="config" position="450,360" size="1440,643" itemHeight="49" font="Regular;40" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand"/>
 		<widget name="introduction" position="0,0" size="0,0" zPosition="0"/>
-		<!-- ORB TSID ONID for openvix -->
+				<!-- ORB TSID ONID for openvix -->
 		<widget source="pos" conditional="pos" render="FixedLabel" text="Orb Pos:" position="450,930" size="180,45" font="Regular;40" halign="right">
-			<convert type="ConditionalShowHide"/>
+		<convert type="ConditionalShowHide"/>
 		</widget>
 		<widget source="pos" conditional="pos" render="Label" position="640,930" size="150,45" backgroundColor="darkgrey" font="Regular;40" foregroundColor="selectedFG" halign="center">
-			<convert type="ConditionalShowHide"/>
+		<convert type="ConditionalShowHide"/>
 		</widget>
 		<widget source="onid" conditional="onid" render="FixedLabel" text="ONID:" position="880,930" size="180,45" font="Regular;40" halign="right">
-			<convert type="ConditionalShowHide"/>
+		<convert type="ConditionalShowHide"/>
 		</widget>
 		<widget source="onid" conditional="onid" render="Label" position="1070,930" size="150,45" backgroundColor="darkgrey" font="Regular;40" foregroundColor="selectedFG" halign="center">
-			<convert type="ConditionalShowHide"/>
+		<convert type="ConditionalShowHide"/>
 		</widget>
 		<widget source="tsid" conditional="tsid" render="FixedLabel" text="TSID:" position="1310,930" size="180,45" font="Regular;40" halign="right">
-			<convert type="ConditionalShowHide"/>
+		<convert type="ConditionalShowHide"/>
 		</widget>
 		<widget source="tsid" conditional="tsid" render="Label" position="1500,930" size="150,45" backgroundColor="darkgrey" font="Regular;40" foregroundColor="selectedFG" halign="center">
-			<convert type="ConditionalShowHide"/>
+		<convert type="ConditionalShowHide"/>
 		</widget>
 	</screen>
 
