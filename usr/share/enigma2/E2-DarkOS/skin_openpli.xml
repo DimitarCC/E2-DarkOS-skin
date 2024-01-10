@@ -5,14 +5,12 @@
 		<widget name="text" position="125,150" size="1670,13*45" itemHeight="45" font="Fixed;28" backgroundColor="background" foregroundColor="white" scrollbarMode="showNever" />
 		<widget addon="Pager" connection="text" position="145,915" size="1630,25" backgroundColor="background"/>
   	</screen>
+	<screen name="OpkgInstaller" position="fill" flags="wfNoBorder">
+		<panel name="ConfigScreenTemplate" />
+	</screen>
 	<!--This is PLi plugins and special screens that have to be done-->
 	<!-- Opkg installer
-	<screen name="OpkgInstaller" position="fill" flags="wfNoBorder">
-		<panel name="PigTemplate" />
-		<eLabel text="Install extensions" position="30,7" size="1830,75" backgroundColor="secondBG" transparent="1" zPosition="1" font="Regular;36" valign="center" halign="left" />
-		<widget name="list" position="780,100" size="1110,798" itemHeight="38" font="Regular;28" backgroundColor="background" zPosition="3" transparent="1" scrollbarMode="showOnDemand" />
-		<widget source="introduction" render="Label" position="780,975" size="1110,37" backgroundColor="background" zPosition="1" transparent="1" foregroundColor="white" font="Regular;33" halign="center" />
-	</screen>
+	
 	<screen name="Opkg" title="Installing Software" position="fill" flags="wfNoBorder">
 		<panel name="PigTemplate" />
 		<widget name="package" position="780,110" size="1110,35" backgroundColor="darkgrey" transparent="1" font="Regular;32" />
