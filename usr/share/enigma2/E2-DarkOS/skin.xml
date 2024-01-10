@@ -733,7 +733,7 @@
 		<convert type="EventName">Genre</convert>
 	</widget>-->
     <eLabel position="1510,102" size="1,225" backgroundColor="separator" zPosition="-5" />
-    <widget source="Event" render="Label" position="30,95" size="700,47" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
+    <widget source="Event" render="Label" position="30,95" size="750,47" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
       <convert type="EventName">Name</convert>
     </widget>
     <widget source="Event" render="Label" position="30,183" size="1465,140" font="Regular; 30" backgroundColor="background" transparent="1">
