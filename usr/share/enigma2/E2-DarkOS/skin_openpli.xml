@@ -5,7 +5,7 @@
 		<widget name="text" position="125,150" size="1670,13*45" itemHeight="45" font="Fixed;28" backgroundColor="background" foregroundColor="white" scrollbarMode="showNever" />
 		<widget addon="Pager" connection="text" position="145,915" size="1630,25" backgroundColor="background"/>
   	</screen>
-	<screen name="OpkgInstaller" position="fill" flags="wfNoBorder">
+	<screen name="OpkgInstaller" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate" />
 	</screen>
 	<!--This is PLi plugins and special screens that have to be done-->
