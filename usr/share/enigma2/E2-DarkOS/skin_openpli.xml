@@ -6,7 +6,10 @@
 		<widget addon="Pager" connection="text" position="145,915" size="1630,25" backgroundColor="background"/>
   	</screen>
 	<screen name="OpkgInstaller" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="ConfigScreenTemplate" />
+		<panel name="Screen_1_1" />
+		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" selectionListDescr="80,5,1650,45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
+		<widget source="introduction" render="Label" position="145,865" zPosition="1000" size="1630,36" font="Regular;28" valign="center" halign="center"/>
 	</screen>
 	<!--This is PLi plugins and special screens that have to be done-->
 	<!-- Opkg installer

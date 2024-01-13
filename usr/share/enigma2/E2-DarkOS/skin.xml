@@ -652,7 +652,7 @@
 		<widget alphatest="blend" position="e-304,e-270" render="Picon" size="220,132" source="Service" zPosition="1" transparent="1" backgroundColor="background">
 		  <convert type="ServiceName">Reference</convert>
 		</widget>
-		<panel position="e-74,e-70" size="54,34">
+		<panel position="e-94,e-70" size="74,34">
 			<panel name="BrandLogoTemplate" />
 		</panel>
 	</panel>
@@ -1771,20 +1771,20 @@ if callable(loadLogo):
 			<widget addon="Pager" connection="list" position="396,915" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
 	<!-- TextBox -->
-	<screen name="TextBox" title="Message" position="fill" flags="wfNoBorder">
-		<panel name="Screen_Menu1" />
-		<widget name="text" position="396,210" size="1130,635" font="Regular;30" halign="block" scrollbarMode="showNever"/>
-		<widget addon="Pager" connection="text" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+	<screen name="TextBox" title="Message" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1" />
+		<widget name="text" position="121,138" size="1674,760" font="Fixed;26" halign="block" scrollbarMode="showNever"/>
+		<widget addon="Pager" connection="text" position="121,904" size="1696,26" transparent="1" backgroundColor="background" />
 	</screen>
-	<screen name="TextBoxSplit" title="Message" position="fill" flags="wfNoBorder">
-		<panel name="Screen_Menu1" />
-		<widget name="text" position="396,210" size="1130,635" font="Regular;30" halign="block" split="1" dividechar=":" colposition="0" scrollbarMode="showNever"/>
-		<widget addon="Pager" connection="text" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+	<screen name="TextBoxSplit" title="Message" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1" />
+		<widget name="text" position="121,138" size="1674,760" font="Fixed;26" halign="block" split="1" dividechar=":" colposition="0" scrollbarMode="showNever"/>
+		<widget addon="Pager" connection="text" position="121,904" size="1696,25" transparent="1" backgroundColor="background" />
 	</screen>
-	<screen name="TextBoxPigLess" title="Message" position="fill" flags="wfNoBorder">
-		<panel name="Screen_Menu1" />
-		<widget name="text" position="396,210" size="1130,635" font="Regular;30" halign="left" scrollbarMode="showNever"/><!-- for lists, not halign="block" -->
-		<widget addon="Pager" connection="text" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+	<screen name="TextBoxPigLess" title="Message" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1" />
+		<widget name="text" position="121,138" size="1674,760" font="Fixed;26" halign="left" scrollbarMode="showNever"/><!-- for lists, not halign="block" -->
+		<widget addon="Pager" connection="text" position="121,904" size="1696,25" transparent="1" backgroundColor="background" />
 	</screen>
 	<!-- MessageBox -->
 	<screen name="MessageBox" title="Message" position="center,center" size="920,15" flags="wfNoBorder" backgroundColor="transparent">
@@ -2080,25 +2080,25 @@ if callable(loadLogo):
 	<!-- About -->
 	<screen name="About" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />
-		<widget name="AboutScrollLabel" font="Regular;28" position="125,150" size="1696,734" zPosition="2" split="1" dividechar=":" colposition="0" backgroundColor="background" scrollbarMode="showNever"/>
+		<widget name="AboutScrollLabel" font="Fixed;28" position="125,150" size="1696,734" zPosition="2" split="1" dividechar=":" colposition="0" backgroundColor="background" scrollbarMode="showNever"/>
 		<widget addon="Pager" connection="AboutScrollLabel" position="125,904" size="1696,25" transparent="1" backgroundColor="background"/>
 	</screen>
 	<!-- Memory Info -->
 	<screen name="MemoryInfo" position="fill" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1923,1080">
 		<panel name="Screen_1_1" />
-		<widget name="lmemtext" font="Regular;30" position="124,141" size="750,785" zPosition="1" halign="left" backgroundColor="secondBG" transparent="1" />
-		<widget name="lmemvalue" font="Regular;30" position="125,141" size="750,782" zPosition="2" halign="right" backgroundColor="secondBG" transparent="1" />
-		<widget name="rmemtext" font="Regular;30" position="998,139" size="800,783" zPosition="1" halign="left" backgroundColor="secondBG" transparent="1" />
-		<widget name="rmemvalue" font="Regular;30" position="999,140" size="800,782" zPosition="2" halign="right" backgroundColor="secondBG" transparent="1" />
-		<widget name="pfree" position="853,345" size="105,30" font="Regular;21" zPosition="1" halign="right" backgroundColor="secondBG" transparent="1" />
-		<widget name="pused" position="857,679" size="105,30" font="Regular;21" zPosition="1" halign="right" backgroundColor="secondBG" transparent="1" />
+		<widget name="lmemtext" font="Fixed;30" position="124,141" size="750,785" zPosition="1" halign="left" backgroundColor="secondBG" transparent="1" />
+		<widget name="lmemvalue" font="Fixed;30" position="125,141" size="750,782" zPosition="2" halign="right" backgroundColor="secondBG" transparent="1" />
+		<widget name="rmemtext" font="Fixed;30" position="998,139" size="800,783" zPosition="1" halign="left" backgroundColor="secondBG" transparent="1" />
+		<widget name="rmemvalue" font="Fixed;30" position="999,140" size="800,782" zPosition="2" halign="right" backgroundColor="secondBG" transparent="1" />
+		<widget name="pfree" position="853,345" size="105,30" font="Fixed;21" zPosition="1" halign="right" backgroundColor="secondBG" transparent="1" />
+		<widget name="pused" position="857,679" size="105,30" font="Fixed;21" zPosition="1" halign="right" backgroundColor="secondBG" transparent="1" />
 		<widget name="slide" position="970,138" size="20,782" render="Progress" zPosition="1" borderWidth="1" orientation="orBottomToTop" />
 		<widget name="params" rowsincolumn="26" position="125,140" size="1674,782" />
 	</screen>
 	<!-- Commit Info -->
 	<screen name="CommitInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />
-		<widget name="AboutScrollLabel" font="Regular;26" position="121,138" size="1674,770" zPosition="2" halign="left" scrollbarMode="showNever" />
+		<widget name="AboutScrollLabel" font="Fixed;26" position="121,138" size="1674,770" zPosition="2" halign="left" scrollbarMode="showNever" />
 		<widget addon="Pager" connection="AboutScrollLabel" position="121,904" size="1696,25" transparent="1" backgroundColor="background"/>
 	</screen>
 	<!-- Troubleshoot -->
@@ -2108,8 +2108,8 @@ if callable(loadLogo):
 	<!-- Translation Info -->
 	<screen flags="wfNoBorder" name="TranslationInfo" position="fill" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
-		<widget source="TranslatorName" render="Label" position="401,196" size="1110,120" font="Regular;28" halign="center" backgroundColor="background" transparent="1" />
-		<widget source="TranslationInfo" render="Label" position="401,317" size="1110,570" font="Regular;28" halign="center" backgroundColor="background" transparent="1" />
+		<widget source="TranslatorName" render="Label" position="401,196" size="1110,120" font="Fixed;28" halign="center" backgroundColor="background" transparent="1" />
+		<widget source="TranslationInfo" render="Label" position="401,317" size="1110,570" font="Fixed;28" halign="center" backgroundColor="background" transparent="1" />
 	</screen>
 	<!-- Streaming Clients Info -->
 	<screen name="StreamingClientsInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
