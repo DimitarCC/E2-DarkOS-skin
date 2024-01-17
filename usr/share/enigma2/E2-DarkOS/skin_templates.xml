@@ -2,18 +2,10 @@
 <skin>
 	<!-- Templates -->
 	<screen name="PlayerTemplate">
-		<ePixmap pixmap="ib_tl.png" position="38,862" size="20,20" alphatest="off" zPosition="-9"/>
-		<ePixmap pixmap="ib_bl.png" position="38,1026" size="20,20" alphatest="off" zPosition="-9"/>
-		<ePixmap pixmap="ib_tr.png" position="1857,862" size="20,20" alphatest="off" zPosition="-9"/>
-		<ePixmap pixmap="ib_br.png" position="1857,1026" size="20,20" alphatest="off" zPosition="-9"/>
-		<ePixmap pixmap="ib_tm.png" position="360,862" size="30,23" alphatest="blend" zPosition="-9"/>
-		<ePixmap pixmap="ib_bm.png" position="362,1024" size="30,23" alphatest="blend" zPosition="-9"/>
-
-		<eLabel position="38,862" size="1839,184" zPosition="-11" backgroundColor="background5" />
-		<eLabel position="370,864" size="1505,180" zPosition="-10" backgroundColor="background" />
+		<eLabel position="38,862" size="1839,184" zPosition="-11" backgroundColor="background5" cornerRadius="16"/>
+		<eLabel position="370,864" size="1505,180" zPosition="-10" backgroundColor="background" cornerRadius="14"/>
 		
 		<eLabel position="380,915" size="1485,2" zPosition="-9" backgroundColor="dark_grey" />
-
 		<widget name="statusicon" position="160,915" zPosition="3" size="90,90" alphatest="blend" pixmaps="icons/pvr/play.svg,icons/pvr/pause.svg,icons/pvr/stop.svg,icons/pvr/ff.svg,icons/pvr/rew.svg,icons/pvr/slow.svg"/>
 		<widget name="speed"  foregroundColor="white" halign="left" position="260,960" size="90,45" font="Bold; 40" transparent="1"/>
 		<widget source="session.CurrentService" render="Label" position="400,935" size="1120,50" font="Regular; 44" valign="center" noWrap="1" backgroundColor="background" transparent="1">
@@ -81,10 +73,10 @@
 		<widget alphatest="blend" pixmap="icons/rec2.png" position="1290,880" render="Pixmap" size="49,22" source="session.RecordState" zPosition="2">
 		  <convert type="ConditionalShowHide">Blink,4000,1000</convert>
 		</widget>
-			</screen>
+	</screen>
 	
 	<screen name="BrandLogoTemplate">
-		<widget source="global.CurrentTime" render="BoxLogo" logoType="brand" position="0,0" size="74,34" zPosition="-3" alphatest="blend" halign="right" />
+		<widget source="global.CurrentTime" render="BoxLogo" logoType="brand" position="0,0" size="84,34" zPosition="-3" alphatest="blend" halign="right" />
 	</screen>
 
 	<screen name="ConfigButtonsTemplate">
@@ -94,25 +86,17 @@
 	</screen>
 	
 	<screen name="FrameTemplate">
-		<ePixmap pixmap="Screens/screen_menu_1_tl.png" position="70,145" size="24,24" alphatest="blend" zPosition="-6"/>
-		<ePixmap pixmap="Screens/screen_menu_1_tr.png" position="616,145" size="24,24" alphatest="blend" zPosition="-6"/>
-		<ePixmap pixmap="Screens/screen_menu_1_bl.png" position="70,842" size="24,104" alphatest="blend" zPosition="-6"/>
-		<ePixmap pixmap="Screens/screen_menu_1_br.png" position="616,842" size="24,104" alphatest="blend" zPosition="-6"/>
+		<eLabel position="70,145" size="570,785" backgroundColor="background5" zPosition="-6" cornerRadius="16" />
+		<eLabel position="72,147" size="566,717" backgroundColor="background" zPosition="-5" cornerRadius="14" />
 
 		<eLabel position="94,145" size="522,2" backgroundColor="background5" zPosition="-7" />
-		<eLabel position="94,147" size="522,22" backgroundColor="background" zPosition="-7" />
 		
-		<eLabel position="70,169" size="2,673" backgroundColor="background5" zPosition="-7" />
-		<eLabel position="72,169" size="566,695" backgroundColor="background" zPosition="-7" />
-		<eLabel position="638,169" size="2,673" backgroundColor="background5" zPosition="-7" />
-		
-		<eLabel position="94,864" size="522,62" backgroundColor="background5" zPosition="-7" />
 	</screen>
 	
 	<screen name="MenuTemplate">
 		<panel name="FrameTemplate"/>
 
-		<widget source="title" render="Label" position="72,864" size="544,62" font="Regular; 34" halign="right" valign="center" backgroundColor="black" transparent="1" />
+		<widget source="title" render="Label" position="82,864" size="534,62" font="Regular; 34" halign="right" valign="center" backgroundColor="background5" />
 		<widget source="menu" render="Listbox" position="72,277" size="564,522" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
 			<convert type="TemplatedMultiContent">
 						{"template": [ MultiContentEntryText(pos = (97,5),size = (435,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0),
@@ -131,7 +115,7 @@
 	<screen name="Screen_menu2">
 		<panel position="495,136" size="932,825">
 			<panel name="Screen_1" />
-			<panel position="e-94,e-70" size="74,34">
+			<panel position="e-100,e-70" size="74,34">
 				<panel name="BrandLogoTemplate" />
 			</panel>
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
@@ -152,19 +136,13 @@
 	</screen>
 	
 	<screen name="Screen_Window_Full">
-		<ePixmap pixmap="Screens/win_full_tl.png" position="5,5" size="24,24" alphatest="blend" zPosition="-6"/>
-		<ePixmap pixmap="Screens/win_full_tr.png" position="1893,5" size="24,24" alphatest="blend" zPosition="-6"/>
-		<ePixmap pixmap="Screens/win_full_bl.png" position="5,982" size="24,94" alphatest="blend" zPosition="-6"/>
-		<ePixmap pixmap="Screens/win_full_br.png" position="1893,982" size="24,94" alphatest="blend" zPosition="-6"/>
+		<eLabel position="5,5" size="1912,1071" backgroundColor="background5" zPosition="-11" cornerRadius="16" />
+		<eLabel position="7,7" size="1908,997" backgroundColor="background" zPosition="-10" cornerRadius="14" />
 
 		<eLabel position="29,5" size="1864,2" backgroundColor="background5" zPosition="-7" />
-		<eLabel position="29,7" size="1864,22" backgroundColor="background" zPosition="-7" />
 		
 		<eLabel position="5,29" size="2,982" backgroundColor="background5" zPosition="-7" />
-		<eLabel position="7,29" size="1908,975" backgroundColor="background" zPosition="-7" />
 		<eLabel position="1915,29" size="2,982" backgroundColor="background5" zPosition="-7" />
-		
-		<eLabel position="29,1004" size="1864,72" backgroundColor="background5" zPosition="-7" />
 		
 		<eLabel position="25,75" size="1865,1" backgroundColor="separator" zPosition="-5" />
 		<widget addon="ScreenHeader" connection="Title,ScreenPath" position="45,7" size="1000,68" titleFont="Bold; 28" titleSingleFont="Bold; 34" pathFont="Bold; 18" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
@@ -180,7 +158,7 @@
 		  <panel name="ConfigButtonsTemplate"/>
 		</panel>
 		
-		<panel position="e-94,e-57" size="84,44">
+		<panel position="e-100,e-55" size="74,34">
 			<panel name="BrandLogoTemplate" />
 		</panel>
 	</screen>
@@ -190,21 +168,10 @@
 		<widget source="session.VideoPicture" render="Pig" position="1530,105" size="350,220" zPosition="10" backgroundColor="transparent" />
 	</screen>
 
-	<screen name="Screen_Base">
-		<ePixmap pixmap="Screens/screen_menu_1_tl.png" position="0,0" size="24,24" alphatest="blend" zPosition="-6"/>
-		<ePixmap pixmap="Screens/screen_menu_1_tr.png" position="e-24,0" size="24,24" alphatest="blend" zPosition="-6"/>
-		<ePixmap pixmap="Screens/screen_menu_1_bl.png" position="0,e-104" size="24,104" alphatest="blend" zPosition="-6"/>
-		<ePixmap pixmap="Screens/screen_menu_1_br.png" position="e-24,e-104" size="24,104" alphatest="blend" zPosition="-6"/>
+	<screen name="Screen_Base">		
+		<eLabel position="0,0" size="e,e-20" backgroundColor="background5" zPosition="-11" cornerRadius="16" />
+		<eLabel position="2,2" size="e-4,e-84" backgroundColor="background" zPosition="-10" cornerRadius="14" />
 
-		<eLabel position="24,0" size="e-48,2" backgroundColor="background5" zPosition="-7" />
-		<eLabel position="24,2" size="e-48,22" backgroundColor="background" zPosition="-7" />
-		
-		<eLabel position="0,24" size="2,e-128" backgroundColor="background5" zPosition="-7" />
-		<eLabel position="2,24" size="e-4,e-86" backgroundColor="background" zPosition="-7" />
-		<eLabel position="e-2,24" size="2,e-128" backgroundColor="background5" zPosition="-7" />
-		
-		<eLabel position="24,e-82" size="e-48,62" backgroundColor="background5" zPosition="-7" />
-		
 		<eLabel position="8,66" size="e-16,2" zPosition="-5" backgroundColor="dark_grey" />
 	</screen>
 	
@@ -218,7 +185,7 @@
 	<screen name="Screen_1_1">
 		<panel position="96,54" size="1728,992">
 			<panel name="Screen_1" />
-			<panel position="e-94,e-70" size="74,34">
+			<panel position="e-100,e-70" size="74,34">
 				<panel name="BrandLogoTemplate" />
 			</panel>
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
@@ -237,7 +204,7 @@
 	<screen name="Screen_Menu1">
 		<panel position="370,118" size="1180,858">
 			<panel name="Screen_1" />
-			<panel position="e-94,e-70" size="74,34">
+			<panel position="e-100,e-70" size="74,34">
 				<panel name="BrandLogoTemplate" />
 			</panel>
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
@@ -266,15 +233,8 @@
 
 	<!-- Infobar Template -->
 	<screen name="InfoBarTemplate">
-		<ePixmap pixmap="ib_tl.png" position="38,862" size="20,20" alphatest="off" zPosition="-9"/>
-		<ePixmap pixmap="ib_bl.png" position="38,1026" size="20,20" alphatest="off" zPosition="-9"/>
-		<ePixmap pixmap="ib_tr.png" position="1857,862" size="20,20" alphatest="off" zPosition="-9"/>
-		<ePixmap pixmap="ib_br.png" position="1857,1026" size="20,20" alphatest="off" zPosition="-9"/>
-		<ePixmap pixmap="ib_tm.png" position="360,862" size="30,23" alphatest="blend" zPosition="-9"/>
-		<ePixmap pixmap="ib_bm.png" position="362,1024" size="30,23" alphatest="blend" zPosition="-9"/>
-
-		<eLabel position="38,862" size="1839,184" zPosition="-11" backgroundColor="background5" />
-		<eLabel position="370,864" size="1505,180" zPosition="-10" backgroundColor="background" />
+		<eLabel position="38,862" size="1839,184" zPosition="-11" backgroundColor="background5" cornerRadius="16"/>
+		<eLabel position="370,864" size="1505,180" zPosition="-10" backgroundColor="background" cornerRadius="14"/>
 		
 		<eLabel position="380,915" size="1485,2" zPosition="-9" backgroundColor="dark_grey" />
 		<eLabel position="1630,930" size="2,100" zPosition="-9" backgroundColor="dark_grey" />
