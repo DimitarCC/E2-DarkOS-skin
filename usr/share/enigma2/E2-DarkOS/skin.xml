@@ -89,6 +89,7 @@
     <color name="toptemplatecolor" value="#000d0f16" />
     <color name="transparent" value="#ff000000" />
     <color name="transpBlack" value="#2d101214" />
+	<color name="transpPIG" value="#fa101214" />
     <color name="transponderinfo" value="#00f0f0f0" />
     <color name="un33333a" value="#0033333a" />
     <color name="un40a0aa0" value="#040a0aa0" />
