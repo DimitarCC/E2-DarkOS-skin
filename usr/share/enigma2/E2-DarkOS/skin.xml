@@ -233,7 +233,7 @@
       <pixmap filename="window/bottom_edge.png" pos="bpBottom" />
       <pixmap filename="window/bottom_right_corner.png" pos="bpBottomRight" />
     </borderset>
-    <borderset name="bsListboxEntry">
+    <!--<borderset name="bsListboxEntry">
 	  <pixmap filename="border/top_left_corner.png" pos="bpTopLeft" />
       <pixmap filename="border/top_edge.png" pos="bpTop" />
       <pixmap filename="border/top_right_corner.png" pos="bpTopRight" />
@@ -242,7 +242,7 @@
       <pixmap filename="border/bottom_left_corner.png" pos="bpBottomLeft" />
       <pixmap filename="border/bottom_edge.png" pos="bpBottom" />
       <pixmap filename="border/bottom_right_corner.png" pos="bpBottomRight" />
-    </borderset>
+    </borderset>-->
   </windowstyle>
   <include filename="skin_templates.xml" />
   <include filename="skin_plugins.xml" />
@@ -313,17 +313,15 @@
 		</widget>-->
   <!--</screen>-->
   <!-- Volume -->
-  <screen position="710,65" size="474,50" name="Volume" title="Volume" flags="wfNoBorder" backgroundColor="transparent" zPosition="1">
-    <ePixmap position="0,0" size="474,50" pixmap="vol_bg.png" alphatest="blend" zPosition="-11" />
-    <ePixmap position="2,2" size="470,46" pixmap="vol_overlay.png" alphatest="blend" zPosition="-10" />
+  <screen position="710,65" size="474,50" name="Volume" title="Volume" flags="wfNoBorder" backgroundColor="transparent" zPosition="1" cornerRadius="7">
     <ePixmap position="8,6" size="42,38" pixmap="menu/audio_icon.svg" alphatest="blend" zPosition="-9" />
-    <eLabel position="67,24" size="343,4" transparent="1" backgroundColor="progress" zPosition="1" />
-    <widget position="67,24" size="343,4" foregroundColor="blue" transparent="1" orientation="orLeftToRight" zPosition="2" name="Volume" />
+	<eLabel position="0,0" size="474,50" backgroundColor="background" zPosition="-11" cornerRadius="6" widgetBorderWidth="2" widgetBorderColor="background5" />
+    <eLabel position="67,24" size="343,4" backgroundColor="progress" zPosition="1" cornerRadius="2"/>
+    <widget position="67,24" size="343,4" foregroundColor="blue" backgroundColor="background" orientation="orLeftToRight" zPosition="2" name="Volume" cornerRadius="2"/>
     <widget position="423,4" size="60,40" source="global.CurrentTime" render="VolumeText" font="Bold;28" backgroundColor="background" foregroundColor="white" halign="left" valign="center" transparent="1" zPosition="20" />
   </screen>
-  <screen position="center,30" size="90,90" name="Mute" title="Mute" backgroundColor="transparent" zPosition="10" flags="wfNoBorder">
-    <ePixmap position="0,0" size="90,90" pixmap="mute_bg.png" alphatest="blend" zPosition="10" />
-    <ePixmap position="2,2" size="86,86" pixmap="mute_overlay.png" alphatest="blend" zPosition="11" />
+  <screen position="center,30" size="90,90" name="Mute" title="Mute" backgroundColor="transparent" zPosition="10" flags="wfNoBorder" cornerRadius="7">
+    <eLabel position="0,0" size="90,90" backgroundColor="background" zPosition="-11" cornerRadius="6" widgetBorderWidth="2" widgetBorderColor="background5" />
     <ePixmap position="20,20" size="50,50" pixmap="icons/mute.svg" alphatest="blend" zPosition="12" />
   </screen>
   <!-- Buffer Indicator -->
@@ -361,14 +359,14 @@
     <eLabel position="104,724" size="1712,2" zPosition="-5" backgroundColor="dark_grey" />
     <eLabel position="959,64" size="2,48" zPosition="-5" backgroundColor="dark_grey" />
     <eLabel position="959,130" size="2,580" zPosition="-5" backgroundColor="dark_grey" />
-    <widget backgroundColor="background" font="Regular;35" noWrap="1" position="114,65" render="Label" size="730,45" source="session.Event_Now" foregroundColor="light_yellow">
+    <widget backgroundColor="background" font="Regular; 35" noWrap="1" position="114,65" render="Label" size="730,45" source="session.Event_Now" foregroundColor="light_yellow">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget backgroundColor="background" font="Bold;30" halign="left" position="114,133" render="Label" size="60,40" source="session.Event_Now">
+    <widget backgroundColor="background" font="Bold; 30" halign="left" position="114,133" render="Label" size="60,40" source="session.Event_Now">
       <convert type="EventTime">StartTime</convert>
       <convert type="ClockToText">Default</convert>
     </widget>
-    <widget backgroundColor="background" font="Bold;30" halign="left" position="174,133" render="Label" size="70,40" source="session.Event_Now">
+    <widget backgroundColor="background" font="Bold; 30" halign="left" position="174,133" render="Label" size="70,40" source="session.Event_Now">
       <convert type="EventTime">EndTime</convert>
       <convert type="ClockToText">Format:- %H:%M</convert>
     </widget>
@@ -378,18 +376,18 @@
     <widget source="session.Event_Now" render="Label" position="889,68" size="60,33" font="Regular;30" halign="right" foregroundColor="blue" backgroundColor="background" zPosition="1">
       <convert type="EventName">SmallRating</convert>
     </widget>
-    <widget backgroundColor="background" font="Bold;30" foregroundColor="potem" halign="right" position="840,130" render="Label" size="100,40" source="session.Event_Now">
+    <widget backgroundColor="background" font="Bold; 30" foregroundColor="potem" halign="right" position="840,130" render="Label" size="100,40" source="session.Event_Now">
       <convert type="EventTime">Remaining</convert>
       <convert type="RemainingToText">InMinutes</convert>
     </widget>
-    <widget backgroundColor="background" font="Regular;30" foregroundColor="white" position="114,185" render="Label" size="842,505" source="session.Event_Now">
+    <widget backgroundColor="background" font="Regular; 30" foregroundColor="white" position="114,185" render="Label" size="842,505" source="session.Event_Now">
       <convert type="EventName">FullDescription</convert>
     </widget>
-    <widget backgroundColor="background" font="Bold;30" halign="left" position="975,133" render="Label" size="60,40" source="session.Event_Next">
+    <widget backgroundColor="background" font="Bold; 30" halign="left" position="975,133" render="Label" size="60,40" source="session.Event_Next">
       <convert type="EventTime">StartTime</convert>
       <convert type="ClockToText">Default</convert>
     </widget>
-    <widget backgroundColor="background" font="Bold;30" halign="left" position="1035,133" render="Label" size="70,40" source="session.Event_Next">
+    <widget backgroundColor="background" font="Bold; 30" halign="left" position="1035,133" render="Label" size="70,40" source="session.Event_Next">
       <convert type="EventTime">EndTime</convert>
       <convert type="ClockToText">Format:- %H:%M</convert>
     </widget>
@@ -399,24 +397,24 @@
     <widget source="session.Event_Next" render="Label" position="1740,68" size="60,33" font="Regular;30" halign="right" foregroundColor="blue" backgroundColor="background" zPosition="1">
       <convert type="EventName">SmallRating</convert>
     </widget>
-    <widget font="Bold;30" halign="right" position="1700,130" render="Label" size="100,40" source="session.Event_Next" backgroundColor="background" foregroundColor="potem">
+    <widget font="Bold; 30" halign="right" position="1700,130" render="Label" size="100,40" source="session.Event_Next" backgroundColor="background" foregroundColor="potem">
       <convert type="EventTime">Remaining</convert>
       <convert type="RemainingToText">InMinutes</convert>
     </widget>
-    <widget backgroundColor="background" font="Regular;35" noWrap="1" position="975,65" render="Label" size="730,45" source="session.Event_Next">
+    <widget backgroundColor="background" font="Regular; 35" noWrap="1" position="975,65" render="Label" size="730,45" source="session.Event_Next">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget backgroundColor="background" font="Regular;30" position="975,185" render="Label" size="842,505" source="session.Event_Next">
+    <widget backgroundColor="background" font="Regular; 30" position="975,185" render="Label" size="842,505" source="session.Event_Next">
       <convert type="EventName">FullDescription</convert>
     </widget>
     <widget alphatest="blend" position="138,782" render="Picon" size="227,130" source="session.CurrentService" zPosition="1" backgroundColor="background">
       <convert type="ServiceName">Reference</convert>
     </widget>
-    <widget backgroundColor="background5" font="Regular;32" foregroundColor="white" halign="left" noWrap="1" position="122,964" valign="center" render="Label" size="950,60" source="session.CurrentService" zPosition="110">
+    <widget backgroundColor="background5" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="122,964" valign="center" render="Label" size="950,60" source="session.CurrentService" zPosition="110">
       <convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
     </widget>
-    <widget position="1120,984" render="Pixmap" size="49,22" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
-      <convert type="ConditionalShowHide">Blink,4000,1000</convert>
+    <widget position="1110,984" render="Pixmap" size="49,22" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
+      <convert type="ConditionalShowHide">Blink,1000,4000</convert>
     </widget>
 	<widget source="session.FrontendInfo" render="Label" position="1175,977" size="150,30" borderWidth="1" borderColor="black" zPosition="1" backgroundColor="background5" halign="right" font="Bold;30">
 		<convert type="FrontendInfo">USE_TUNERS_STRING</convert>
@@ -473,17 +471,17 @@
 		<convert type="ServiceInfo">Is4K</convert>
 		<convert type="ConditionalShowHide"/>
     </widget>
-    <widget backgroundColor="background2" font="Bold;60" foregroundColor="white" halign="center" position="1521,762" render="Label" size="320,70" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
+    <widget backgroundColor="background2" font="Bold; 60" foregroundColor="white" halign="center" position="1521,762" render="Label" size="320,70" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
       <convert type="ClockToText">Default</convert>
     </widget>
-    <widget backgroundColor="background2" font="Bold;30" foregroundColor="white" halign="center" position="1521,832" render="Label" size="320,45" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
+    <widget backgroundColor="background2" font="Bold; 30" foregroundColor="white" halign="center" position="1521,832" render="Label" size="320,45" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
       <convert type="ClockToText">Format: %d %B %Y</convert>
     </widget>
     <widget source="session.FrontendStatus" render="FixedLabel" text="SNR" position="433,900" size="75,24" borderWidth="1" borderColor="black" backgroundColor="background" zPosition="2" font="Regular;21">
       <convert type="FrontendInfo">SNR</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.FrontendStatus" render="Progress" position="430,927" size="300,5" backgroundColor="background" foregroundColor="blue" zPosition="1" borderWidth="1" borderColor="grey">
+    <widget source="session.FrontendStatus" render="Progress" position="430,927" size="300,6" backgroundColor="background" foregroundColor="blue" zPosition="1" borderWidth="1" borderColor="grey" cornerRadius="3">
       <convert type="FrontendInfo">SNR</convert>
       <convert type="ConditionalShowHide" />
     </widget>
@@ -495,7 +493,7 @@
       <convert type="FrontendInfo">AGC</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.FrontendStatus" render="Progress" position="850,927" size="300,5" backgroundColor="background" foregroundColor="blue" zPosition="1" borderWidth="1" borderColor="grey">
+    <widget source="session.FrontendStatus" render="Progress" position="850,927" size="300,6" backgroundColor="background" foregroundColor="blue" zPosition="1" borderWidth="1" borderColor="grey" cornerRadius="3">
       <convert type="FrontendInfo">AGC</convert>
       <convert type="ConditionalShowHide" />
     </widget>
@@ -511,10 +509,10 @@
       <convert type="FrontendInfo">BER</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.CurrentService" render="Label" position="423,782" size="1125,35" zPosition="1" foregroundColor="foreground" backgroundColor="background" font="Regular;26" valign="center" halign="center">
+    <widget source="session.CurrentService" render="Label" position="423,782" size="1125,35" backgroundColor="background" zPosition="1" foregroundColor="foreground" font="Regular;26" valign="center" halign="center">
       <convert type="PliExtraInfo">ServiceInfo</convert>
     </widget>
-    <widget source="session.CurrentService" render="Label" position="423,820" size="1125,35" backgroundColor="background" font="Regular;26" zPosition="21" halign="center">
+    <widget source="session.CurrentService" render="Label" position="423,820" size="1125,35" backgroundColor="background" font="Regular; 26" zPosition="21" halign="center">
       <convert type="CryptoInfo">FullInfo</convert>
     </widget>
     <widget source="session.CurrentService" render="Label" position="1453,895" size="325,40" backgroundColor="background" zPosition="1" foregroundColor="foreground" font="CAID;36" valign="center" halign="right">
@@ -552,9 +550,9 @@
 					backgroundColor="background" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" 
 					scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background3" backgroundColorMarkedSelected="background3" 
 					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="53" itemHeightTwoLine="86" nonplayableMargins="0" textSeparator="  •  " sidesMargin="20" markerLine="1" 
-					markerTextAlignment="center" markerLineColor="separator" foregroundColorEventRemaining="potem" foregroundColorEventRemainingSelected="potem" serviceRemainingInfoFont="Regular;22"/>
-	<widget addon="Pager" connection="list" position="20,965" size="1160,25" transparent="1" backgroundColor="background" maxPages="15"/>
-    <widget render="Label" source="ServiceEvent" backgroundColor="background2" halign="left" font="Regular;30" position="1235,455" size="645,343" transparent="1">
+					markerTextAlignment="center" markerLineColor="separator" foregroundColorEventRemaining="potem" foregroundColorEventRemainingSelected="potem" serviceRemainingInfoFont="Regular;22" itemCornerRadius="6"/>
+	<widget addon="Pager" connection="list" position="20,965" size="1160,25" transparent="1" backgroundColor="background" maxPages="15" />
+    <widget render="Label" source="ServiceEvent" backgroundColor="background2" halign="left" font="Regular; 30" position="1235,455" size="645,343" transparent="1">
       <convert type="EventName">FullDescription</convert>
     </widget>
     <widget source="ServiceEvent" render="FixedLabel" text="" position="1235,820" size="645,2" backgroundColor="separator">
@@ -566,24 +564,24 @@
     <widget source="ServiceEvent" render="Picon" position="1260,115" size="220,132" zPosition="12" alphatest="blend">
       <convert type="ServiceName">Reference</convert>
     </widget>
-	<widget source="ServiceEvent" render="Label" position="1260,280" size="220,40" zPosition="14" font="Bold;34" backgroundColor="background" foregroundColor="light_green" transparent="1" halign="center" noWrap="1">
+	<widget source="ServiceEvent" render="Label" position="1260,280" size="220,40" zPosition="14" font="Bold; 34" backgroundColor="background" foregroundColor="light_green" transparent="1" halign="center" noWrap="1">
       <convert type="ServiceName">•,TUNERSYSTEM,ORBPOS</convert>
     </widget>
-    <!--<widget backgroundColor="background2" font="Bold;40" halign="left" position="1200,140" render="Label" size="645,50" source="ServiceEvent" transparent="1" valign="center">
+    <!--<widget backgroundColor="background2" font="Bold; 40" halign="left" position="1200,140" render="Label" size="645,50" source="ServiceEvent" transparent="1" valign="center">
 		  <convert type="ServiceName">Name</convert>
 		</widget>-->
-    <widget source="ServiceEvent" render="Label" position="1235,395" size="645,40" font="Regular;34" backgroundColor="background2" transparent="1" halign="left" noWrap="1" foregroundColor="light_green">
+    <widget source="ServiceEvent" render="Label" position="1235,395" size="645,40" font="Regular; 34" backgroundColor="background2" transparent="1" halign="left" noWrap="1" foregroundColor="light_green">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="ServiceEvent" render="Label" position="1240,345" size="160,30" font="Bold;26" backgroundColor="background2" transparent="1">
+    <widget source="ServiceEvent" render="Label" position="1240,345" size="160,30" font="Bold; 26" backgroundColor="background2" transparent="1">
       <convert type="EventName">•,TIMERANGE</convert>
     </widget>
     <!--<eLabel backgroundColor="progress" position="1350,752" size="412,4" transparent="0" zPosition="3" />-->
-    <widget source="ServiceEvent" render="Progress" position="1380,360" size="412,4" backgroundColor="background" foregroundColor="blue" transparent="1" zPosition="6">
+    <widget source="ServiceEvent" render="Progress" position="1380,360" size="412,4" backgroundColor="background" foregroundColor="blue" zPosition="6" cornerRadius="2">
       <convert type="EventTime">Progress</convert>
       <!--<convert type="ConditionalShowHide"/>-->
     </widget>
-    <widget font="Bold;26" position="1815,345" render="Label" size="90,30" source="ServiceEvent" transparent="1" zPosition="2" halign="left" backgroundColor="background">
+    <widget font="Bold; 26" position="1815,345" render="Label" size="90,30" source="ServiceEvent" transparent="1" zPosition="2" halign="left" backgroundColor="background">
       <convert type="EventTime">Remaining</convert>
       <convert type="RemainingToText">InMinutes</convert>
     </widget>
@@ -637,18 +635,18 @@
 		<widget source="Event" render="Label" position="e-240,93" size="200,80" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Regular;32" halign="right" valign="top">
 		  <convert type="EventName">Rating</convert>
 		</widget>
-		<widget name="channel" position="30,140" size="e-620,50" font="Bold;36" halign="left" foregroundColor="light_yellow" backgroundColor="background" transparent="1" />
-		<widget name="datetime" position="30,e-140" size="340,40" font="Bold;28" halign="left" backgroundColor="background" transparent="1" />
-		<widget name="duration" position="370,e-140" size="340,40" font="Bold;28" halign="left" foregroundColor="light_green" backgroundColor="background" transparent="1" />
+		<widget name="channel" position="30,140" size="e-620,50" font="Bold; 36" halign="left" foregroundColor="light_yellow" backgroundColor="background" transparent="1" />
+		<widget name="datetime" position="30,e-140" size="340,40" font="Bold; 28" halign="left" backgroundColor="background" transparent="1" />
+		<widget name="duration" position="370,e-140" size="340,40" font="Bold; 28" halign="left" foregroundColor="light_green" backgroundColor="background" transparent="1" />
 		<widget source="Event" render="Label" position="714,e-145" size="670,45" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Regular;32" halign="left">
 		  <convert type="EventName">Genre</convert>
 		</widget>
-		<widget name="FullDescription" position="30,212" size="e-50,e-500" font="Regular;32" backgroundColor="background" halign="block" scrollbarMode="showNever" />
+		<widget name="FullDescription" position="30,212" size="e-50,e-500" font="Regular; 32" backgroundColor="background" halign="block" scrollbarMode="showNever" />
 		<widget addon="Pager" connection="FullDescription" position="30,212+e-475" size="e-50,25" />
-		<widget backgroundColor="background2" font="Bold;36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
+		<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
 		  <convert type="ClockToText">Default</convert>
 		</widget>
-		<eLabel position="22,2" size="e-420,64" font="Bold;36" halign="left" valign="center" foregroundColor="yellow" backgroundColor="background2" transparent="1" text="Current program" />
+		<eLabel position="22,2" size="e-420,64" font="Bold; 36" halign="left" valign="center" foregroundColor="yellow" backgroundColor="background2" transparent="1" text="Current program" />
 		<widget alphatest="blend" position="e-304,e-270" render="Picon" size="220,132" source="Service" zPosition="1" transparent="1" backgroundColor="background">
 		  <convert type="ServiceName">Reference</convert>
 		</widget>
@@ -723,7 +721,7 @@
 		backgroundColor="background" transparent="1" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" EntryBackgroundColorSelected="background3" EntryForegroundColorSelected="foreground" 
 		ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="#00323c4d" ServiceNameBackgroundColorSelected="#00fcc000" ServiceBorderVerWidth="3" EventBorderVerWidth="3" RecIconSize="32" IconXPadding="6" IconYPadding="4" 
 		EntryBorderColor="separator" EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryFont="Regular;28" ServiceFont="Regular;28" />
-    <widget source="Event" render="Label" backgroundColor="background" font="Regular;28" position="850,95" size="610,50" transparent="1" halign="right" valign="center" >
+    <widget source="Event" render="Label" backgroundColor="background" font="Regular; 28" position="850,95" size="610,50" transparent="1" halign="right" valign="center" >
 		<convert type="EventName">•,TIMERANGE,DURATION</convert>
 	</widget>
 	<widget source="Event" render="Label" position="1000,100" size="70,47" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Bold;34" halign="center" valign="center">
@@ -733,10 +731,10 @@
 		<convert type="EventName">Genre</convert>
 	</widget>-->
     <eLabel position="1510,102" size="1,225" backgroundColor="separator" zPosition="-5" />
-    <widget source="Event" render="Label" position="30,95" size="750,47" font="Regular;36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
+    <widget source="Event" render="Label" position="30,95" size="750,47" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="Event" render="Label" position="30,183" size="1465,140" font="Regular;30" backgroundColor="background" transparent="1">
+    <widget source="Event" render="Label" position="30,183" size="1465,140" font="Regular; 30" backgroundColor="background" transparent="1">
       <convert type="EventName">FullDescription</convert>
     </widget>
   </screen>
@@ -750,12 +748,12 @@
     <eLabel position="25,405" size="1,576" backgroundColor="separator" zPosition="10" />
     <eLabel position="1890,405" size="1,576" backgroundColor="separator" zPosition="10" />
     <widget name="list" position="25,405" size="1867,576" itemHeight="75" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" backgroundColor="background" transparent="1" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" EntryBackgroundColorSelected="background3" EntryForegroundColorSelected="foreground" ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="#00323c4d" ServiceNameBackgroundColorSelected="#00fcc000" ServiceBorderVerWidth="3" EventBorderVerWidth="3" RecIconSize="32" IconXPadding="6" IconYPadding="4" EntryBorderColor="separator" EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryFont="Regular;28" ServiceFont="Regular;28" />
-    <widget name="epgentrydetails" backgroundColor="background" font="Regular;28" position="850,95" size="610,50" transparent="1" halign="right" valign="center" />
+    <widget name="epgentrydetails" backgroundColor="background" font="Regular; 28" position="850,95" size="610,50" transparent="1" halign="right" valign="center" />
     <eLabel position="1510,102" size="1,225" backgroundColor="separator" zPosition="-5" />
-    <widget source="Event" render="Label" position="30,95" size="900,50" font="Regular;36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
+    <widget source="Event" render="Label" position="30,95" size="900,50" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="Event" render="Label" position="30,175" size="1465,140" font="Regular;30" backgroundColor="background" transparent="1">
+    <widget source="Event" render="Label" position="30,175" size="1465,140" font="Regular; 30" backgroundColor="background" transparent="1">
       <convert type="EventName">FullDescription</convert>
     </widget>
     <ePixmap position="1638,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_epg.png" />
@@ -766,7 +764,7 @@
   </screen>
   <screen name="SelectBouquet" position="fill" title="Choose bouquet" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_menu2" />
-    <widget name="menu" position="516,222" size="889,630" itemHeight="45" font="Regular;36" scrollbarMode="showOnDemand" />
+    <widget name="menu" position="516,222" size="889,630" itemHeight="45" font="Regular;36" scrollbarMode="showOnDemand" itemCornerRadius="6"/>
   </screen>
   <!-- Menus -->
   <screen flags="wfNoBorder" name="Menu" position="fill" backgroundColor="transparent">
@@ -805,7 +803,7 @@
     <panel name="ConfigScreenTemplate" />
   </screen>
   <!-- Service Scan -->
-<screen name="ScanStatusTemplate">
+  <screen name="ScanStatusTemplate">
     <panel name="Screen_Window_Full" />
     <widget name="scan_state" position="40,327" zPosition="2" size="810,70" valign="top" font="Regular;30" transparent="1" />
     <widget name="scan_progress" position="40,290" size="810,22" pixmap="progress_big.png" borderWidth="2" borderColor="uncccccc" />
@@ -817,22 +815,25 @@
 			<convert type="ValueRange">0,0</convert>
 			<convert type="ConditionalShowHide" />
 		</widget>
-		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-c.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-c.png" position="30,105" size="96,96" zPosition="2" transparent="1" alphatest="on">
 			<convert type="FrontendInfo">TYPE</convert>
 			<convert type="ValueRange">1,1</convert>
 			<convert type="ConditionalShowHide" />
 		</widget>
-		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-t.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-t.png" position="30,105" size="96,96" zPosition="2" transparent="1" alphatest="on">
 			<convert type="FrontendInfo">TYPE</convert>
 			<convert type="ValueRange">2,2</convert>
 			<convert type="ConditionalShowHide" />
 		</widget>
-		<widget name="network" position="145,125" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
-		<widget name="transponder" position="145,177" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
-		<widget name="pass" position="40,400" size="810,45" valign="center" font="Regular;33" transparent="1" />
-		<widget name="servicelist" position="880,120" size="1020,800" itemHeight="45" font="Regular;28" selectionDisabled="1" scrollbarMode="showNever" textOffset="25,5" />
-		<widget addon="Pager" connection="servicelist" position="880,930" size="1020,25" transparent="1" backgroundColor="background"/>
-	  </screen>
+		<widget name="network" position="135,105" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
+		<widget name="transponder" position="135,157" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
+		<widget name="scan_progress" position="30,270" size="810,22" pixmap="progress_big.png" borderWidth="2" borderColor="uncccccc" />
+		<widget name="scan_state" position="30,307" zPosition="2" size="810,70" valign="top" font="Regular;30" transparent="1" />
+		<widget name="pass" position="30,380" size="810,45" valign="center" font="Regular;33" transparent="1" />
+		<widget name="servicelist" position="870,100" size="1020,800" itemHeight="45" font="Regular;28" selectionDisabled="1" scrollbarMode="showNever" textOffset="25,5" />
+		<widget addon="Pager" connection="servicelist" position="870,910" size="1020,25" transparent="1" backgroundColor="background"/>
+	</panel>
+  </screen>
   <!-- FastScan -->
   <screen name="FastScanScreen" title="Fast Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="ConfigScreenTemplate" />
@@ -861,24 +862,20 @@
   </screen>
   <!-- ChoiceBox -->
   <screen name="ChoiceBox" position="0,0" size="1920,15" title="Choice Box" flags="wfNoBorder" backgroundColor="transparent">
-	<widget source="Title" render="Label" position="15,3" size="250,40" font="Bold;28" halign="left" foregroundColor="yellow" backgroundColor="transparent" valign="center" zPosition="2" transparent="1" />
-    <widget name="text" position="-e,-e" size="880,30" font="Bold;30" foregroundColor="potem" backgroundColor="background" valign="center" />
-    <widget name="list" position="515,330" size="889,498" itemHeight="45" backgroundColor="background" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" transparent="1" zPosition="2" />
+	<widget source="Title" render="Label" position="15,3" size="250,40" font="Bold; 28" halign="left" foregroundColor="yellow" backgroundColor="transparent" valign="center" zPosition="2" transparent="1" />
+    <widget name="text" position="-e,-e" size="880,30" font="Bold; 30" foregroundColor="potem" backgroundColor="background" valign="center" />
+    <widget name="list" position="515,330" size="889,498" itemHeight="45" backgroundColor="background" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" transparent="1" zPosition="2" itemCornerRadius="6"/>
 	<applet type="onLayoutFinish">
 from enigma import ePoint, eSize, getDesktop, gRGB, BT_ALPHABLEND
 from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from Tools.LoadPixmap import LoadPixmap
+from skin import parseRadius, parseColor
 try:
 	from Components.Renderer.BoxLogo import setLogo as loadLogo
 except:
 	loadLogo = None
-
-pxtlc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tl.png"))
-pxtrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tr.png"))
-pxblc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_bl.png"))
-pxbrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_br.png"))
 
 self["title_sep"] = Label("")
 self["title_sep"].GUIcreate(self.instance)
@@ -896,48 +893,32 @@ wsizex = max(self["list"].instance.getMaxItemTextWidth(), textsize[0]) + 10 + 30
 descriptionHeight = 0
 wsizey = textHeight + offset + descriptionHeight + 50 + 104
 # move and resize screen
-self["list"].move(5, textHeight + 60)
+self["list"].move(15, textHeight + 60)
 self.instance.resize(eSize(*(wsizex, wsizey)))
 # resize list
-self["list"].resize(wsizex - 10, offset)
+self["list"].resize(wsizex - 30, offset)
 # center window
 width, height = getDesktop(0).size().width(), getDesktop(0).size().height()
 wintlcpos = ePoint((width - wsizex) // 2, (height - wsizey) // 2)
+radiusBLayer, edgeValueBLayer = parseRadius("16")
+radiusTLayer, edgeValueTLayer = parseRadius("14")
 self.instance.move(wintlcpos)
 self["title_sep"].instance.move(ePoint(10, 45))
 self["title_sep"].instance.resize(eSize(wsizex - 20, 1))
-self["tlc"] = Pixmap()
-self["tlc"].GUIcreate(self.instance)
-self["tlc"].setPixmap(pxtlc)
-self["tlc"].instance.resize(eSize(24,24))
-self["tlc"].instance.move(ePoint(0,0))
-self["trc"] = Pixmap()
-self["trc"].GUIcreate(self.instance)
-self["trc"].setPixmap(pxtrc)
-self["trc"].instance.resize(eSize(24,24))
-self["trc"].instance.move(ePoint(wsizex-24,0))
-self["blc"] = Pixmap()
-self["blc"].GUIcreate(self.instance)
-self["blc"].setPixmap(pxblc)
-self["blc"].instance.resize(eSize(24,104))
-self["blc"].instance.move(ePoint(0,wsizey-104))
-self["brc"] = Pixmap()
-self["brc"].GUIcreate(self.instance)
-self["brc"].setPixmap(pxbrc)
-self["brc"].instance.resize(eSize(24,104))
-self["brc"].instance.move(ePoint(wsizex-24,wsizey-104))
-self["bcGround"] = Label("")
-self["bcGround"].GUIcreate(self.instance)
-self["bcGround"].instance.setBackgroundColor(gRGB(0x02444444))
-self["bcGround"].instance.resize(eSize(*(wsizex, wsizey - 20)))
-self["bcGround"].instance.move(ePoint(0,0))
-self["bcGround"].setZPosition(-7)
-self["bcGroundOver"] = Label("")
-self["bcGroundOver"].GUIcreate(self.instance)
-self["bcGroundOver"].instance.setBackgroundColor(gRGB(0x02111111))
-self["bcGroundOver"].instance.resize(eSize(*(wsizex-4, wsizey - 20-64)))
-self["bcGroundOver"].instance.move(ePoint(2,2))
-self["bcGroundOver"].setZPosition(-7)
+self["blayer"] = Label()
+self["blayer"].GUIcreate(self.instance)
+self["blayer"].instance.setCornerRadius(radiusBLayer, edgeValueBLayer)
+self["blayer"].instance.resize(eSize(wsizex,wsizey-15))
+self["blayer"].instance.setBackgroundColor(parseColor("background5"))
+self["blayer"].instance.move(ePoint(0,0))
+self["blayer"].setZPosition(-7)
+self["tlayer"] = Label()
+self["tlayer"].GUIcreate(self.instance)
+self["tlayer"].instance.setCornerRadius(radiusTLayer, edgeValueTLayer)
+self["tlayer"].instance.resize(eSize(wsizex-4,wsizey-15-64))
+self["tlayer"].instance.setBackgroundColor(parseColor("background"))
+self["tlayer"].instance.move(ePoint(2,2))
+self["tlayer"].setZPosition(-6)
 self["logo"] = Pixmap()
 self["logo"].GUIcreate(self.instance)
 self["logo"].instance.resize(eSize(74,34))
@@ -951,7 +932,7 @@ if callable(loadLogo):
   <!-- Extensions menu -->
   <screen name="ExtensionsList" title="" position="fill" flags="wfNoBorder" backgroundColor="transparent" size="1931,1080">
     <panel name="Screen_menu2" />
-    <widget name="list" position="514,226" size="889,628" itemHeight="45" scrollbarMode="showNever" />
+    <widget name="list" position="514,226" size="889,628" itemHeight="45" scrollbarMode="showNever" itemCornerRadius="6"/>
   </screen>
   <!-- SelectImage -->
   <screen name="SelectImage" title="" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -986,13 +967,13 @@ if callable(loadLogo):
   <!-- Hotkey -->
   <screen name="HotkeySetup" title="" position="fill" flags="wfNoBorder">
   <panel name="Screen_Window_Full_Pig" />
-  <widget name="list" position="29,94" itemHeight="45" size="1130,874" scrollbarMode="showNever" />
+  <widget name="list" position="29,94" itemHeight="45" size="1130,874" scrollbarMode="showNever" itemCornerRadius="6"/>
   <widget name="choosen" position="1182,401" size="703,545" scrollbarMode="showOnDemand" />
   <widget name="description" position="1179,957" size="708,29" zPosition="1" font="Regular;24" halign="center" />
 </screen>
   <screen name="HotkeySetupSelect" title="" position="fill" flags="wfNoBorder">
   <panel name="Screen_Window_Full_Pig" />
-  <widget name="list" position="29,94" itemHeight="45" size="1130,874" scrollbarMode="showNever" />
+  <widget name="list" position="29,94" itemHeight="45" size="1130,874" scrollbarMode="showNever" itemCornerRadius="6"/>
   <widget name="choosen" position="1182,401" size="703,545" scrollbarMode="showOnDemand" />
   <widget name="description" position="1179,957" size="708,29" zPosition="1" font="Regular;24" halign="center" />
 </screen>
@@ -1048,18 +1029,18 @@ if callable(loadLogo):
 	<widget name="waitingtext" conditional="waitingtext" position="20,100" size="1160,860" font="Regular;36" halign="center" valign="center" zPosition="1"/>
 	<widget name="list" transparent="1" position="20,95" size="1160,860" scrollbarMode="showNever" itemHeights="107,78,50" fontSizesOriginal="36,26,24" fontSizesCompact="36,28" fontSizesMinimal="34,30" pbarShift="17" pbarHeight="20" 
 			pbarLargeWidth="72" spaceLeft="25" spaceRight="25" dateWidth="260" columnsOriginal="270,300" columnsCompactDescription="280,240,200" compactColumn="400" treeDescription="250" partIconeShiftMinimal="12" partIconeShiftCompact="8" 
-			partIconeShiftOriginal="12" iconsWidth="33" spaceIconeText="6" trashShift="10" dirShift="10" font="Regular;30" itemHeight="55" />
+			partIconeShiftOriginal="12" iconsWidth="33" spaceIconeText="6" trashShift="10" dirShift="10" font="Regular;30" itemHeight="55" itemCornerRadius="6"/>
 	<widget addon="Pager" connection="list" position="20,960" size="1160,25" transparent="1" backgroundColor="background" maxPages="15"/>
-	<widget render="Label" source="Service" halign="left" backgroundColor="background2" position="1235,530" size="645,340" font="Regular;30" transparent="1">
+	<widget render="Label" source="Service" halign="left" backgroundColor="background2" position="1235,530" size="645,340" font="Regular; 30" transparent="1">
 		<convert type="EventName">ExtendedDescription</convert>
 	</widget>
-	<widget render="Label" source="Service" backgroundColor="background" font="Regular;28" position="1235,460" size="645,40" halign="left" valign="center" foregroundColor="yellow">
+	<widget render="Label" source="Service" backgroundColor="background" font="Regular; 28" position="1235,460" size="645,40" halign="left" valign="center" foregroundColor="yellow">
 		<convert type="MovieInfo">•,TIMECREATED,DURATION,FILESIZE</convert>
 	</widget>
-	<widget render="Label" source="Service" backgroundColor="background" font="Bold;36" position="1235,360" size="610,40"  foregroundColor="light_yellow" halign="left" valign="center" >
+	<widget render="Label" source="Service" backgroundColor="background" font="Bold; 36" position="1235,360" size="610,40"  foregroundColor="light_yellow" halign="left" valign="center" >
 		<convert type="MovieInfo">RecordServiceName</convert>
 	</widget>
-	<widget source="Service" render="Label" position="1235,410" size="610,40" font="Regular;36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
+	<widget source="Service" render="Label" position="1235,410" size="610,40" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
 		<convert type="EventName">Name</convert>
 	</widget>
 	<widget source="Service" render="Picon" position="1230,145" size="220,132" zPosition="12" alphatest="blend">
@@ -1124,7 +1105,7 @@ if callable(loadLogo):
 					}
 				</convert>
     </widget>
-    <widget addon="Pager" connection="streams" position="515,835" size="889,25" transparent="1" backgroundColor="background" />
+    <widget addon="Pager" connection="streams" position="545,835" size="860,25" transparent="1" backgroundColor="background" />
     <eLabel backgroundColor="red" position="535,239" size="4,35" zPosition="2" />
     <eLabel backgroundColor="green" position="535,285" size="4,35" zPosition="2" />
     <eLabel backgroundColor="yellow" position="535,330" size="4,35" zPosition="2" />
@@ -1172,7 +1153,7 @@ if callable(loadLogo):
 	<!-- ChannelContextMenu -->
 	<screen name="ChannelContextMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_menu2" />
-		<widget name="menu" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" />
+		<widget name="menu" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" itemCornerRadius="6"/>
 		<widget addon="Pager" connection="menu" position="512,849" size="889,25" transparent="1" backgroundColor="background" />
 	</screen>
   <!-- Minute input -->
@@ -1185,9 +1166,9 @@ if callable(loadLogo):
 	<!-- MovieContextMenu -->
 	<screen name="MovieContextMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_menu2" />
-		<widget name="config" conditional="config" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" /><!-- for OE-A -->
+		<widget name="config" conditional="config" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" itemCornerRadius="6"/><!-- for OE-A -->
 		<widget addon="Pager" conditional="config" connection="config" position="512,849" size="889,25" transparent="1" backgroundColor="background"/>
-		<widget name="menu" conditional="menu" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" /><!-- for PLi -->
+		<widget name="menu" conditional="menu" position="512,215" size="889,635" itemHeight="45" scrollbarMode="showNever" itemCornerRadius="6"/><!-- for PLi -->
 		<widget addon="Pager" conditional="menu" connection="menu" position="512,849" size="889,25" transparent="1" backgroundColor="background"/>
 	</screen>
 	<!-- MovieBrowserConfig -->
@@ -1197,7 +1178,7 @@ if callable(loadLogo):
 	<!-- Bouquet Selector -->
 	<screen name="BouquetSelector" position="fill" title="Choose bouquet" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_menu2"/>
-		<widget name="menu" position="512,215" size="889,585" itemHeight="45" textOffset="15,5" font="Regular;30" scrollbarMode="showNever"/>
+		<widget name="menu" position="512,215" size="889,585" itemHeight="45" textOffset="15,5" font="Regular;30" scrollbarMode="showNever" itemCornerRadius="6"/>
 		<widget addon="Pager" conditional="menu" connection="menu" position="512,849" size="889,25" transparent="1" backgroundColor="background"/>
 	</screen>
   <!-- Timers -->
@@ -1222,7 +1203,7 @@ if callable(loadLogo):
     <panel name="Screen_Menu1" />
     <widget name="timer1" position="396,210" size="1110,150" itemHeight="75" rowSplit="40" setEventNameFont="Regular;32" setServiceNameFont="Regular;30" setFont="Regular;27" satPosLeft="250" scrollbarMode="showNever" />
     <widget name="timer2" position="396,400" size="1110,150" itemHeight="75" rowSplit="40" setEventNameFont="Regular;32" setServiceNameFont="Regular;30" setFont="Regular;27" satPosLeft="250" scrollbarMode="showNever" />
-    <widget name="list" position="396,590" size="1110,152" itemHeight="38" font="Regular;28" valign="center" scrollbarMode="showOnDemand" />
+    <widget name="list" position="396,590" size="1110,152" itemHeight="38" font="Regular;28" valign="center" scrollbarMode="showOnDemand" itemCornerRadius="6"/>
   </screen>
   <screen name="TimerSelection" position="fill" title="Timer selection" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
@@ -1231,7 +1212,7 @@ if callable(loadLogo):
   </screen>
   <screen name="PluginBrowser" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
-    <widget name="list" position="396,225" size="1130,610" scrollbarMode="showNever" />
+    <widget name="list" position="396,225" size="1130,610" scrollbarMode="showNever" itemCornerRadius="6"/>
     <widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
   </screen>
   <screen name="PluginDownloadBrowser" title="Downloadable plugins" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -1277,7 +1258,7 @@ if callable(loadLogo):
 	<screen name="SoftwareUpdateChoices" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Window_Full_Pig"/>
 		<eLabel position="1200,105" size="1,870" backgroundColor="separator" zPosition="-5" />
-		<widget name="list" position="25,100" size="1110,550" itemHeight="50" font="Regular;30" scrollbarMode="showOnDemand"/>
+		<widget name="list" position="25,100" size="1110,550" itemHeight="50" font="Regular;30" scrollbarMode="showOnDemand" itemCornerRadius="6"/>
 		<widget name="text" position="25,700" size="1110,200" font="Regular;30" zPosition="2" foregroundColor="yellow" valign="bottom"/>
 		<panel name="FeedsStatusTemplate"/>
 	</screen>
@@ -1792,13 +1773,13 @@ if callable(loadLogo):
 	</screen>
 	<!-- MessageBoxSimple -->
 	<screen name="MessageBoxSimple" position="center,center" size="960,15" title="Message" zPosition="10" flags="wfNoBorder" backgroundColor="transparent">
-		<widget source="Title" render="Label" position="15,3" size="250,40" font="Bold;28" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" zPosition="2" />
+		<widget source="Title" render="Label" position="15,3" size="250,40" font="Bold; 28" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" zPosition="2" />
 		<widget name="text" position="100,12" size="780,0" font="Regular;32" backgroundColor="background"/>
 		<widget name="ErrorPixmap" pixmap="icons/input_error.png" position="10,10" size="80,80" alphatest="blend" />
 		<widget name="QuestionPixmap" pixmap="icons/input_question.png" position="10,10" size="80,80" alphatest="blend" />
 		<widget name="InfoPixmap" pixmap="icons/input_info.png" position="10,10" size="80,80" alphatest="blend" />
 		<widget name="WarningPixmap" pixmap="icons/input_warning.png" position="10,10" size="80,80" alphatest="blend" />
-		<widget name="list" textOffset="20, 2" position="150,150" size="720,570" itemHeight="45" font="Regular;28" zPosition="2" transparent="1" backgroundColor="transparent" />
+		<widget name="list" textOffset="20, 2" position="150,150" size="720,570" itemHeight="45" font="Regular;28" zPosition="2" transparent="1" backgroundColor="transparent" itemCornerRadius="6"/>
 		<widget name="autoresize" conditional="autoresize" position="0,0" size="0,0" font="Regular;28" noWrap="1" />
 		<applet type="onLayoutFinish">
 from enigma import ePoint, eSize, getDesktop, gRGB, BT_ALPHABLEND
@@ -1806,16 +1787,11 @@ from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from Tools.LoadPixmap import LoadPixmap
+from skin import parseRadius, parseColor
 try:
 	from Components.Renderer.BoxLogo import setLogo as loadLogo
 except:
 	loadLogo = None
-
-pxtlc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tl.png"))
-pxtrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_tr.png"))
-pxblc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_bl.png"))
-pxbrc = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "Screens/screen_menu_1_br.png"))
-
 
 if self.timerRunning:
 	titleheight = 0
@@ -1868,40 +1844,26 @@ if self.type == self.TYPE_YESNO:
 	self["list"].instance.resize(eSize(*listsize))
 newwidth = wsize[0]
 self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + (orgheight - wsizey) // 2))
+
+radiusBLayer, edgeValueBLayer = parseRadius("16")
+radiusTLayer, edgeValueTLayer = parseRadius("14")
+
 self["title_sep"].instance.move(ePoint(10, 45))
 self["title_sep"].instance.resize(eSize(wsizex - 20, 1))
-self["tlc"] = Pixmap()
-self["tlc"].GUIcreate(self.instance)
-self["tlc"].setPixmap(pxtlc)
-self["tlc"].instance.resize(eSize(24,24))
-self["tlc"].instance.move(ePoint(0,0))
-self["trc"] = Pixmap()
-self["trc"].GUIcreate(self.instance)
-self["trc"].setPixmap(pxtrc)
-self["trc"].instance.resize(eSize(24,24))
-self["trc"].instance.move(ePoint(wsizex-24,0))
-self["blc"] = Pixmap()
-self["blc"].GUIcreate(self.instance)
-self["blc"].setPixmap(pxblc)
-self["blc"].instance.resize(eSize(24,104))
-self["blc"].instance.move(ePoint(0,wsizey-104))
-self["brc"] = Pixmap()
-self["brc"].GUIcreate(self.instance)
-self["brc"].setPixmap(pxbrc)
-self["brc"].instance.resize(eSize(24,104))
-self["brc"].instance.move(ePoint(wsizex-24,wsizey-104))
-self["bcGround"] = Label("")
-self["bcGround"].GUIcreate(self.instance)
-self["bcGround"].instance.setBackgroundColor(gRGB(0x02444444))
-self["bcGround"].instance.resize(eSize(*(wsizex, wsizey - 20)))
-self["bcGround"].instance.move(ePoint(0,0))
-self["bcGround"].setZPosition(-7)
-self["bcGroundOver"] = Label("")
-self["bcGroundOver"].GUIcreate(self.instance)
-self["bcGroundOver"].instance.setBackgroundColor(gRGB(0x02111111))
-self["bcGroundOver"].instance.resize(eSize(*(wsizex-4, wsizey - 20-64)))
-self["bcGroundOver"].instance.move(ePoint(2,2))
-self["bcGroundOver"].setZPosition(-7)
+self["blayer"] = Label()
+self["blayer"].GUIcreate(self.instance)
+self["blayer"].instance.setCornerRadius(radiusBLayer, edgeValueBLayer)
+self["blayer"].instance.resize(eSize(wsizex,wsizey-20))
+self["blayer"].instance.setBackgroundColor(parseColor("background5"))
+self["blayer"].instance.move(ePoint(0,0))
+self["blayer"].setZPosition(-7)
+self["tlayer"] = Label()
+self["tlayer"].GUIcreate(self.instance)
+self["tlayer"].instance.setCornerRadius(radiusTLayer, edgeValueTLayer)
+self["tlayer"].instance.resize(eSize(wsizex-4,wsizey-20-64))
+self["tlayer"].instance.setBackgroundColor(parseColor("background"))
+self["tlayer"].instance.move(ePoint(2,2))
+self["tlayer"].setZPosition(-6)
 self["logo"] = Pixmap()
 self["logo"].GUIcreate(self.instance)
 self["logo"].instance.resize(eSize(74,34))
@@ -1964,7 +1926,7 @@ if callable(loadLogo):
 		</widget>
 		<widget addon="Pager" connection="nimlist" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
-		<!-- Nim setup -->
+	<!-- Nim setup -->
 	<screen name="NimSetup" title="Reception Settings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate" />
 	</screen>
@@ -1975,25 +1937,25 @@ if callable(loadLogo):
 			<widget name="status_bar" position="center,140" size="330,37" font="Regular;30" foregroundColor="yellow" halign="center"/>
 			<panel position="-375,100" size="e,e">
 			<widget name="list" position="780,105" size="1110,7*38" itemHeight="38" font="Regular;28" backgroundColor="secondBG" transparent="1"/>
-			<eLabel text="Frequency:" position="795,400" size="330,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
+			<eLabel text="Frequency:" position="780,400" size="330,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
 			<widget name="frequency_value" position="1110,400" size="150,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
-			<eLabel text="Polarisation:" position="795,447" size="330,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
+			<eLabel text="Polarisation:" position="780,447" size="330,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
 			<widget name="polarisation" position="1110,447" size="150,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
-			<eLabel text="Symbolrate:" position="795,493" size="330,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
+			<eLabel text="Symbolrate:" position="780,493" size="330,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
 			<widget name="symbolrate_value" position="1110,493" size="150,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
-			<eLabel text="FEC:" position="795,540" size="330,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
+			<eLabel text="FEC:" position="780,540" size="330,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
 			<widget name="fec_value" position="1110,540" size="150,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
 			<widget name="snr_db" position="1110,610" size="300,37" backgroundColor="secondBG" foregroundColor="white" transparent="1" font="Regular;30" halign="center"/>
-			<eLabel text="SNR:" position="795,650" size="120,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
+			<eLabel text="SNR:" position="780,650" size="120,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
 			<widget name="snr_bar" position="1110,653" size="300,26" backgroundColor="secondBG" transparent="1" borderWidth="1"/>
 			<widget name="snr_percentage" position="1425,650" size="120,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
-			<eLabel text="BER:" position="795,695" size="120,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
+			<eLabel text="BER:" position="780,695" size="120,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
 			<widget name="ber_bar" position="1110,698" size="300,26" backgroundColor="secondBG" transparent="1" borderWidth="1"/>
 			<widget name="ber_value" position="1425,695" size="120,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
-			<eLabel text="Lock:" position="795,745" size="120,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
+			<eLabel text="Lock:" position="780,745" size="120,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
 			<widget name="lock_state" position="1110,745" size="300,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
 		</panel>
-		<widget name="status_bar" position="center,465" size="720,37" font="Regular;30" foregroundColor="yellow" halign="center"/>
+		<widget name="status_bar" position="30,600" size="720,37" font="Regular;30" foregroundColor="yellow" halign="center"/>
 	</screen>
 
 	<!-- Positioner Setup - Log -->
@@ -2018,40 +1980,40 @@ if callable(loadLogo):
 	</screen>
 	<!-- Satfinder -->
 	<screen name="Satfinder" title="Satfinder" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Window_Full"/>
-		<widget source="Frontend" render="Progress" pixmap="infobar/bar_big.png" position="30,135" size="1860,75" borderWidth="1" borderColor="darkgrey">
+		<panel name="Screen_Window_Full" />
+		<widget source="Frontend" render="Progress" pixmap="infobar/bar_big.png" position="30,135" size="1860,75" borderWidth="1" borderColor="un808888">
 		<convert type="FrontendInfo">SNR</convert>
 		</widget>
-		<eLabel text="SNR:" position="37,135" size="150,75" valign="center" backgroundColor="darkgrey" borderWidth="1" transparent="1" font="Regular;52"/>
+		<eLabel text="SNR:" position="37,150" size="140,75" valign="center" backgroundColor="darkgrey" borderWidth="1" transparent="1" font="Regular;52" />
 		<widget source="Frontend" render="Label" position="1552,135" size="330,75" halign="right" valign="center" borderWidth="1" transparent="1" font="Regular;52">
 		<convert type="FrontendInfo">SNR</convert>
 		</widget>
-		<widget source="Frontend" render="Progress" pixmap="infobar/bar_big.png" position="30,230" size="1860,75" borderWidth="1" borderColor="darkgrey">
+		<widget source="Frontend" render="Progress" pixmap="infobar/bar_big.png" position="30,230" size="1860,75" borderWidth="1" borderColor="un808888">
 		<convert type="FrontendInfo">AGC</convert>
 		</widget>
-		<eLabel text="AGC:" position="37,230" size="150,75" valign="center" backgroundColor="darkgrey" borderWidth="1" transparent="1" font="Regular;52"/>
-		<widget source="Frontend" render="Label" position="1552,230" size="330,75" halign="right" valign="center" borderWidth="1" transparent="1" font="Regular;52">
+		<eLabel text="AGC:" position="37,230" size="150,75" valign="center" backgroundColor="darkgrey" borderWidth="1" transparent="1" font="Regular;52" />
+		<widget source="Frontend" render="Label" position="1552,240" size="330,75" halign="right" valign="center" borderWidth="1" transparent="1" font="Regular;52">
 		<convert type="FrontendInfo">AGC</convert>
 		</widget>
-		<eLabel text="SNR:" position="30,360" size="180,30" backgroundColor="darkgrey" transparent="1" zPosition="5" font="Regular;27"/>
+		<eLabel text="SNR:" position="30,360" size="180,30" backgroundColor="darkgrey" transparent="1" zPosition="5" font="Regular;27" />
 		<widget source="Frontend" render="Label" position="30,390" size="450,112" font="Regular;108" halign="left" backgroundColor="darkgrey" transparent="1">
 		<convert type="FrontendInfo">SNRdB</convert>
 		</widget>
-		<eLabel text="AGC:" position="30,540" size="180,30" backgroundColor="darkgrey" transparent="1" zPosition="5" font="Regular;27"/>
+		<eLabel text="AGC:" position="30,540" size="180,30" backgroundColor="darkgrey" transparent="1" zPosition="5" font="Regular;27" />
 		<widget source="Frontend" render="Label" position="30,570" size="450,112" backgroundColor="darkgrey" transparent="1" font="Regular;108" halign="left">
 		<convert type="FrontendInfo">AGC</convert>
 		</widget>
-		<eLabel text="BER:" position="30,720" size="180,30" backgroundColor="darkgrey" transparent="1" zPosition="5" font="Regular;27"/>
+		<eLabel text="BER:" position="30,720" size="180,30" backgroundColor="darkgrey" transparent="1" zPosition="5" font="Regular;27" />
 		<widget source="Frontend" render="Label" position="30,750" size="450,112" font="Regular;108" halign="left" backgroundColor="darkgrey" transparent="1">
 		<convert type="FrontendInfo">BER</convert>
 		</widget>
 		<widget text="LOCK" source="Frontend" render="FixedLabel" position="30,880" size="465,135" font="Regular;108" halign="left" foregroundColor="green" backgroundColor="darkgrey" transparent="1">
 		<convert type="FrontendInfo">LOCK</convert>
-		<convert type="ConditionalShowHide"/>
+		<convert type="ConditionalShowHide" />
 		</widget>
-		<widget name="config" position="450,360" size="1440,643" itemHeight="49" font="Regular;40" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand"/>
-		<widget name="introduction" position="0,0" size="0,0" zPosition="0"/>
-				<!-- ORB TSID ONID for openvix -->
+		<widget name="config" position="450,360" size="1440,643" itemHeight="49" font="Regular;40" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" />
+		<widget name="introduction" position="0,0" size="0,0" zPosition="0" />
+		<!-- ORB TSID ONID for openvix -->
 		<widget source="pos" conditional="pos" render="FixedLabel" text="Orb Pos:" position="450,930" size="180,45" font="Regular;40" halign="right">
 		<convert type="ConditionalShowHide"/>
 		</widget>
@@ -2061,13 +2023,13 @@ if callable(loadLogo):
 		<widget source="onid" conditional="onid" render="FixedLabel" text="ONID:" position="880,930" size="180,45" font="Regular;40" halign="right">
 		<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="onid" conditional="onid" render="Label" position="1070,930" size="150,45" backgroundColor="darkgrey" font="Regular;40" foregroundColor="selectedFG" halign="center">
+		<widget source="onid" conditional="onid" render="Label" position="1065,930" size="150,45" backgroundColor="darkgrey" font="Regular;40" foregroundColor="selectedFG" halign="center">
 		<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="tsid" conditional="tsid" render="FixedLabel" text="TSID:" position="1310,930" size="180,45" font="Regular;40" halign="right">
+		<widget source="tsid" conditional="tsid" render="FixedLabel" text="TSID:" position="1315,930" size="180,45" font="Regular;40" halign="right">
 		<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="tsid" conditional="tsid" render="Label" position="1500,930" size="150,45" backgroundColor="darkgrey" font="Regular;40" foregroundColor="selectedFG" halign="center">
+		<widget source="tsid" conditional="tsid" render="Label" position="1520,930" size="150,45" backgroundColor="darkgrey" font="Regular;40" foregroundColor="selectedFG" halign="center">
 		<convert type="ConditionalShowHide"/>
 		</widget>
 	</screen>
@@ -2114,7 +2076,7 @@ if callable(loadLogo):
 	<!-- Streaming Clients Info -->
 	<screen name="StreamingClientsInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 	<panel name="Screen_Menu1" />
-	<widget name="menu" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"/>
+	<widget name="menu" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" itemCornerRadius="6"/>
 	<widget addon="Pager" connection="menu" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	<widget name="info" position="408,213" size="1110,38" font="Regular;28" halign="center" transparent="1" zPosition="2" />
 	</screen>
@@ -2230,7 +2192,7 @@ if callable(loadLogo):
 	<!-- Subservices Quickzap -->
 	<screen name="SubservicesQuickzap" position="c-384,c-15" size="768,300" title="Subservices" backgroundColor="transparent" flags="wfNoBorder">
 		<widget source="session.RecordState" render="Pixmap" pixmap="icons/record.png" position="675,0" zPosition="2" size="21,21" alphatest="on">
-		<convert type="ConditionalShowHide">Blink,4000,1000</convert>
+		<convert type="ConditionalShowHide">Blink,1000,4000</convert>
 		</widget>
 		<eLabel text="Subservices" position="0,0" size="705,30" font="Regular;20" backgroundColor="toptemplatecolor" />
 		<widget name="CurrentSubserviceNumber" position="0,30" size="75,35" font="Regular;32" backgroundColor="toptemplatecolor" />

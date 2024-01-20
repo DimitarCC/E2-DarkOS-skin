@@ -71,7 +71,7 @@
 			<convert type="ConditionalShowHide"/>
 		</widget>
 		<widget alphatest="blend" pixmap="icons/rec2.png" position="1290,880" render="Pixmap" size="49,22" source="session.RecordState" zPosition="2">
-		  <convert type="ConditionalShowHide">Blink,4000,1000</convert>
+		  <convert type="ConditionalShowHide">Blink,1000,4000</convert>
 		</widget>
 	</screen>
 	
@@ -97,10 +97,10 @@
 		<panel name="FrameTemplate"/>
 
 		<widget source="title" render="Label" position="82,864" size="534,62" font="Regular; 34" halign="right" valign="center" backgroundColor="background5" />
-		<widget source="menu" render="Listbox" position="72,277" size="564,522" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
+		<widget source="menu" render="Listbox" position="82,277" size="544,522" scrollbarMode="showNever" enableWrapAround="1" transparent="1" itemCornerRadius="6">
 			<convert type="TemplatedMultiContent">
-						{"template": [ MultiContentEntryText(pos = (97,5),size = (435,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0),
-									   MultiContentEntryPixmapAlphaBlend(pos = (32,5),size = (48,48), png = 5)],
+						{"template": [ MultiContentEntryText(pos = (82,5),size = (440,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0),
+									   MultiContentEntryPixmapAlphaBlend(pos = (17,5),size = (48,48), png = 5)],
 						"fonts": [gFont("Regular",34)],
 						"itemHeight": 58
 						}
@@ -165,7 +165,7 @@
 	
 	<screen name="Screen_Window_Full_Pig">
 		<panel name="Screen_Window_Full" />
-		<widget source="session.VideoPicture" render="Pig" position="1530,105" size="350,220" zPosition="10" backgroundColor="transparent" />
+		<widget source="session.VideoPicture" render="Pig" position="1530,105" size="348,200" zPosition="10" backgroundColor="transparent" />
 	</screen>
 
 	<screen name="Screen_Base">		
@@ -219,9 +219,9 @@
 	
 	<screen name="ConfigScreenTemplate">
 		<panel name="Screen_1_1" />
-		<widget name="config" conditional="config" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget name="config" conditional="config" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" itemCornerRadius="6" />
 		<widget addon="Pager" conditional="config" connection="config" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
-		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" itemCornerRadius="6"/>
 		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 		<widget name="HelpWindow" conditional="HelpWindow" pixmap="icons/vkey_icon.png" position="e,150" zPosition="1" size="1,1" transparent="1" alphatest="blend"/><!-- hidden at the moment -->
 		<widget name="description" objectTypes="description,Button,Label" position="145,755" size="1630,100" font="Regular;28" valign="center" halign="center"/>
@@ -233,8 +233,8 @@
 
 	<!-- Infobar Template -->
 	<screen name="InfoBarTemplate">
-		<eLabel position="38,862" size="1839,184" zPosition="-11" backgroundColor="background5" cornerRadius="16"/>
-		<eLabel position="370,864" size="1505,180" zPosition="-10" backgroundColor="background" cornerRadius="14"/>
+		<eLabel position="38,862" size="1839,184" zPosition="-11" backgroundColor="background5" cornerRadius="12"/>
+		<eLabel position="370,864" size="1505,180" zPosition="-10" backgroundColor="background" cornerRadius="10"/>
 		
 		<eLabel position="380,915" size="1485,2" zPosition="-9" backgroundColor="dark_grey" />
 		<eLabel position="1630,930" size="2,100" zPosition="-9" backgroundColor="dark_grey" />
@@ -301,7 +301,7 @@
 		</widget>
 		
 		<widget position="1244,880" render="Pixmap" size="49,22" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
-		  <convert type="ConditionalShowHide">Blink,4000,1000</convert>
+		  <convert type="ConditionalShowHide">Blink,1000,4000</convert>
 		</widget>
 		
 		<ePixmap pixmap="icons/streaming_off.png" position="1413,879" size="43,26" alphatest="blend"/>
@@ -321,7 +321,7 @@
 		  <convert type="ClockToText">Format: %d %B %Y</convert>
 		</widget>
 
-		<widget source="session.Event_Now" render="Progress" position="390,979" zPosition="5" size="1220,4" backgroundColor="background" foregroundColor="blue" transparent="1">
+		<widget source="session.Event_Now" render="Progress" position="390,979" zPosition="5" size="1220,4" backgroundColor="background" foregroundColor="blue" cornerRadius="2">
 		  <convert type="EventTime">Progress</convert>
 		</widget>
 		<widget source="session.Event_Now" render="Label" position="500,930" size="980,36" font="Regular; 30" halign="left" backgroundColor="dark_grey" transparent="1" foregroundColor="light_yellow">
