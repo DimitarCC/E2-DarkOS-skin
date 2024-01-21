@@ -708,26 +708,26 @@
   <!-- GraphMultiEPG -->
   <screen name="GraphMultiEPG" title="Electronic Program Guide" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Window_Full_Pig" />
-    <widget name="timeline_now" position="5,369" zPosition="2" size="19,574" scale="stretch" pixmap="window/timeline-now.png" alphatest="blend" />
+    <widget name="timeline_now" position="5,369" zPosition="2" size="19,554" scale="stretch" pixmap="window/timeline-now.png" alphatest="blend" />
 	<eLabel position="25,333" size="1866,647" zPosition="-2" widgetBorderWidth="1" widgetBorderColor="separator" backgroundColor="background" cornerRadius="6"/>
     <widget name="timeline_text" position="27,336" size="1862,29" zPosition="2" foregroundColor="foreground" backgroundColor="background" itemCornerRadius="6;top" cornerRadius="6;top" />
 	<eLabel position="25,368" size="1866,1" zPosition="10" backgroundColor="separator" />
-    <widget name="list" position="25,368" size="1865,576" itemHeight="72" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" 
-		backgroundColor="background" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" EntryBackgroundColorSelected="background3" EntryForegroundColorSelected="foreground" 
-		ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="#00323c4d" ServiceNameBackgroundColorSelected="#00fcc000" ServiceBorderVerWidth="3" EventBorderVerWidth="3" RecIconSize="32" IconXPadding="6" IconYPadding="4" 
-		EntryBorderColor="separator" EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryFont="Regular;28" ServiceFont="Regular;28" cornerRadius="6;bottom" itemCornerRadius="6;bottom" widgetBorderWidth="1" widgetBorderColor="separator" />
-	<eLabel position="25,943" size="1866,1" zPosition="10" backgroundColor="separator" />
+    <widget name="list" position="25,368" size="1865,558" itemHeight="72" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" 
+		backgroundColor="background" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" ServiceForegroundColorNow="yellow" EntryBackgroundColorSelected="background3" 
+		ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="#00323c4d" ServiceNameBackgroundColorSelected="#00fcc000" ServiceBorderWidth="1" EventBorderWidth="1" RecIconSize="32" IconXPadding="6" IconYPadding="4" 
+		EntryBorderColor="separator" EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryFont="Regular;28" ServiceFont="Regular;28" />
+	<eLabel position="25,925" size="1866,1" zPosition="10" backgroundColor="separator" />
 	<!--<widget source="Event" render="Progress" position="40,956" zPosition="10" size="1836,10" backgroundColor="background" foregroundColor="blue" cornerRadius="5">
 		<convert type="EventTime">Progress</convert>
 	</widget>-->
-	<ePixmap position="55,948" size="25,25" zPosition="2" alphatest="blend" pixmap="icons/timer_wait.png" />
-    <widget source="Event" render="Label" backgroundColor="background" font="Regular; 26" position="90,943" size="610,34" transparent="1" halign="left" valign="center" >
+	<ePixmap position="55,941" size="22,22" zPosition="2" alphatest="blend" pixmap="icons/clock_22.png"/>
+    <widget source="Event" render="Label" backgroundColor="background" font="Regular; 26" position="90,935" size="610,34" transparent="1" halign="left" valign="center" >
 		<convert type="EventName">•,TIMERANGE,DURATION</convert>
 	</widget>
-	<widget source="Event" render="Label" position="1800,943" size="70,34" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Bold;28" halign="right" valign="center">
+	<widget source="Event" render="Label" position="1800,935" size="70,34" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Bold;28" halign="right" valign="center">
 		<convert type="EventName">SmallRating</convert>
 	</widget>
-	<widget source="Event" render="Label" position="370,943" size="1410,34" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Bold;28" halign="center" valign="center">
+	<widget source="Event" render="Label" position="370,935" size="1410,34" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Bold;28" halign="center" valign="center">
 		<convert type="EventName">Genre</convert>
 	</widget>
     <eLabel position="1510,103" size="1,206" backgroundColor="separator" zPosition="-5" />
@@ -810,29 +810,26 @@
   </screen>
   <screen name="ServiceScan" title="Service scan" position="fill" flags="wfNoBorder">
     <panel name="ScanStatusTemplate" />
-		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-s.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
-			<convert type="FrontendInfo">TYPE</convert>
-			<convert type="ValueRange">0,0</convert>
-			<convert type="ConditionalShowHide" />
-		</widget>
-		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-c.png" position="30,105" size="96,96" zPosition="2" transparent="1" alphatest="on">
-			<convert type="FrontendInfo">TYPE</convert>
-			<convert type="ValueRange">1,1</convert>
-			<convert type="ConditionalShowHide" />
-		</widget>
-		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-t.png" position="30,105" size="96,96" zPosition="2" transparent="1" alphatest="on">
-			<convert type="FrontendInfo">TYPE</convert>
-			<convert type="ValueRange">2,2</convert>
-			<convert type="ConditionalShowHide" />
-		</widget>
-		<widget name="network" position="135,105" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
-		<widget name="transponder" position="135,157" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
-		<widget name="scan_progress" position="30,270" size="810,22" pixmap="progress_big.png" borderWidth="2" borderColor="uncccccc" />
-		<widget name="scan_state" position="30,307" zPosition="2" size="810,70" valign="top" font="Regular;30" transparent="1" />
-		<widget name="pass" position="30,380" size="810,45" valign="center" font="Regular;33" transparent="1" />
-		<widget name="servicelist" position="870,100" size="1020,800" itemHeight="45" font="Regular;28" selectionDisabled="1" scrollbarMode="showNever" textOffset="25,5" />
-		<widget addon="Pager" connection="servicelist" position="870,910" size="1020,25" transparent="1" backgroundColor="background"/>
-	</panel>
+	<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-s.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
+		<convert type="FrontendInfo">TYPE</convert>
+		<convert type="ValueRange">0,0</convert>
+		<convert type="ConditionalShowHide" />
+	</widget>
+	<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-c.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
+		<convert type="FrontendInfo">TYPE</convert>
+		<convert type="ValueRange">1,1</convert>
+		<convert type="ConditionalShowHide" />
+	</widget>
+	<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-t.png" position="40,125" size="96,96" zPosition="2" transparent="1" alphatest="on">
+		<convert type="FrontendInfo">TYPE</convert>
+		<convert type="ValueRange">2,2</convert>
+		<convert type="ConditionalShowHide" />
+	</widget>
+	<widget name="network" position="145,125" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
+	<widget name="transponder" position="145,177" size="675,45" valign="center" zPosition="2" font="Regular;33" transparent="1" />
+	<widget name="pass" position="40,400" size="810,45" valign="center" font="Regular;33" transparent="1" />
+	<widget name="servicelist" position="880,120" size="1020,800" itemHeight="45" font="Regular;28" selectionDisabled="1" scrollbarMode="showNever" textOffset="25,5" />
+	<widget addon="Pager" connection="servicelist" position="880,930" size="1020,25" transparent="1" backgroundColor="background"/>
   </screen>
   <!-- FastScan -->
   <screen name="FastScanScreen" title="Fast Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
