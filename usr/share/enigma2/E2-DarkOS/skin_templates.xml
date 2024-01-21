@@ -165,7 +165,7 @@
 	
 	<screen name="Screen_Window_Full_Pig">
 		<panel name="Screen_Window_Full" />
-		<widget source="session.VideoPicture" render="Pig" position="1530,105" size="348,200" zPosition="10" backgroundColor="transpPIG" cornerRadius="8" widgetBorderWidth="1" widgetBorderColor="background5"/>
+		<widget source="session.VideoPicture" render="Pig" position="1542,105" size="348,200" zPosition="10" backgroundColor="transpPIG" cornerRadius="8" widgetBorderWidth="2" widgetBorderColor="background5" />
 	</screen>
 
 	<screen name="Screen_Base">		

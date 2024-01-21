@@ -34,16 +34,16 @@
 	</screen>
 	<!-- PicturePlayer -->
 	<screen name="picshow" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_1_1"/>
+		<panel name="Screen_1_1" />
 		<panel position="120,130" size="1690,902">
-			<widget name="thn" position="30,10" size="390,375" alphatest="blend"/>
-			<widget name="filelist" position="450,10" size="1220,17*45" itemHeight="45" font="Regular;28" zPosition="3" scrollbarMode="showNever"/>
-			<widget name="label" position="450,868" size="390,34" transparent="1" font="Regular;30"/>
-			<widget addon="Pager" connection="filelist" position="450,790" size="1210,25" transparent="1" backgroundColor="background"/>
+			<widget name="thn" position="30,10" size="390,375" alphatest="blend" />
+			<widget name="filelist" position="450,10" size="1220,17*45" itemHeight="45" font="Regular;28" zPosition="3" scrollbarMode="showNever" />
+			<widget name="label" position="450,868" size="390,34" transparent="1" font="Regular;30" />
+			<widget addon="Pager" connection="filelist" position="450,790" size="1210,25" transparent="1" backgroundColor="background" />
 		</panel>
 	</screen>
 	<screen name="Pic_Exif" title="Info" position="fill" flags="wfNoBorder">
-		<panel name="Screen_1_1"/>
+		<panel name="Screen_1_1" />
 		<widget source="menu" render="Listbox" position="125,150" size="1670,11*52" selectionDisabled="1" transparent="1" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
 				{"template": [MultiContentEntryText(pos = (7,10),size = (375,45),flags = RT_HALIGN_LEFT,text = 0),
@@ -52,99 +52,115 @@
 				"itemHeight": 52 }
 			</convert>
 		</widget>
-		<widget addon="Pager" conditional="menu" connection="menu" position="145,915" size="1630,25" transparent="1" backgroundColor="background"/>
+		<widget addon="Pager" conditional="menu" connection="menu" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
 	<screen name="Pic_Setup" title="Settings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="ConfigScreenTemplate"/>
+		<panel name="ConfigScreenTemplate" />
 	</screen>
 	<screen name="Pic_Full_View" position="fill" title="Picture" flags="wfNoBorder" backgroundColor="background">
-		<widget name="pic" position="fill" zPosition="1" alphatest="blend"/>
-		<eLabel position="22,22" size="45,37" zPosition="2" backgroundColor="black" transparent="1"/>
-		<widget name="point" position="25,25" size="31,31" zPosition="3" pixmap="icons/record.png" alphatest="blend"/>
-		<widget name="play_icon" position="25,25" size="24,24" zPosition="3" pixmap="icons/ico_mp_play.png" alphatest="blend"/>
-		<widget source="file" render="Label" position="90,22" size="900,34" zPosition="3" font="Regular;30" halign="left" noWrap="1" foregroundColor="foreground" backgroundColor="black" transparent="1" borderWidth="2"/>
+		<widget name="pic" position="fill" zPosition="1" alphatest="blend" />
+		<eLabel position="22,22" size="45,37" zPosition="2" backgroundColor="black" transparent="1" />
+		<widget name="point" position="25,25" size="31,31" zPosition="3" pixmap="icons/record.png" alphatest="blend" />
+		<widget name="play_icon" position="25,25" size="24,24" zPosition="3" pixmap="icons/ico_mp_play.png" alphatest="blend" />
+		<widget source="file" render="Label" position="90,22" size="900,34" zPosition="3" font="Regular;30" halign="left" noWrap="1" foregroundColor="foreground" backgroundColor="black" transparent="1" borderWidth="2" />
 	</screen>
 	<!-- PartnerBox -->
-	<screen name="CurrentRemoteTV" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<!--remote info -->
+	<screen name="CurrentRemoteTV" position="fill" flags="wfNoBorder" backgroundColor="transparent"> <!--remote info -->
 		<panel name="Screen_1_1"/>
 		<widget name="text" position="125,150" zPosition="1" size="1670,630" font="Regular;30" halign="center" valign="center"/>
 	</screen>
+
 	<screen name="PartnerboxEntryConfigScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
+
 	<screen name="PartnerboxEntriesListConfigScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
 		<widget name="name" position="780,105" size="150,36" font="Regular;30" halign="left" backgroundColor="secondBG" transparent="1"/>
 		<widget name="ip" position="960,105" size="225,36" font="Regular;30" halign="left" backgroundColor="secondBG" transparent="1"/>
 		<widget name="port" position="1185,105" size="150,36" font="Regular;30" halign="left" backgroundColor="secondBG" transparent="1"/>
 		<widget name="type" position="1395,105" size="300,36" font="Regular;30" halign="left" backgroundColor="secondBG" transparent="1"/>
-		<widget name="entrylist" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"/>
-		<widget addon="Pager" connection="entrylist" position="145,915" size="1630,25" transparent="1" backgroundColor="background"/>
+		<widget name="entrylist" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget addon="Pager" connection="entrylist" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
+
 	<screen name="PartnerboxSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
+
 	<screen name="RemotePlayer" flags="wfNoBorder" position="424,270" size="1080,864" title="Partnerbox - RemotePlayer" backgroundColor="#FFFFFFFF">
 		<!--ePixmap position="61,582" zPosition="-1" size="945,195" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/ExPlayer.png" alphatest="off" transparent="1"/-->
 		<widget name="ServiceName" zPosition="1" position="75,606" size="915,88" valign="center" halign="center" font="Regular;31" foregroundColor="#F0F0F0" backgroundColor="#302C2C39"/>
 		<widget name="DateTime" zPosition="1" position="78,709" size="750,45" halign="left" font="Regular;24" foregroundColor="#F0F0F0" backgroundColor="#302C2C39" transparent="1"/>
 		<widget name="IP" zPosition="2" position="541,709" size="450,45" halign="right" font="Regular;24" foregroundColor="#F0F0F0" backgroundColor="#302C2C39" transparent="1"/>
 	</screen>
+
 	<screen name="ServiceAppDetectPlayers" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
-		<widget name="text" position="center,center" size="490,325" font="Regular;28" halign="center" valign="center"/>
+		<widget name="text" position="center,center" size="490,325" font="Regular;28" halign="center" valign="center" />
 	</screen>
+
 	<screen name="RemoteTimerBouquetList" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<widget name="text" position="780,100" size="1110,912" zPosition="1" halign="center" valign="center"/>
-		<panel name="Screen_menu2"/>
-		<widget name="bouquetlist" position="516,222" size="889,630" scrollbarMode="showOnDemand"/>
+		<panel name="Screen_menu2" />
+    	<widget name="bouquetlist" position="516,222" size="889,630" scrollbarMode="showOnDemand" />	
 	</screen>
+
 	<screen name="RemoteTimer" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_1_1"/>
-		<widget name="timerlist" position="135,160" size="1650,6*90" scrollbarMode="showNever" itemHeight="90" iconMargin="30" rowSplit="45" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" sidesMargin="20"/>
-		<widget addon="Pager" connection="timerlist" position="145,915" size="1630,25" transparent="1" backgroundColor="background"/>
-		<eLabel position="135,720" size="1650,2" backgroundColor="background5" zPosition="-7"/>
+		<panel name="Screen_1_1" />
+		<widget name="timerlist" position="135,160" size="1650,6*90" scrollbarMode="showNever" itemHeight="90" iconMargin="30" rowSplit="45" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" sidesMargin="20" />
+		<widget addon="Pager" connection="timerlist" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
+		<eLabel position="135,720" size="1650,2" backgroundColor="background5" zPosition="-7" />
 		<widget name="text" position="145,730" size="1620,150" backgroundColor="background" font="Regular;30" halign="center" valign="center"/>
 	</screen>
+
 	<screen name="RemoteTimerEPGList" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_1_1"/>
+		<panel name="Screen_1_1" />
 		<widget name="text" position="145,730" size="1620,150" backgroundColor="background" font="Regular;28" halign="center" valign="center"/>
 		<widget name="epglist" pposition="135,160" size="1650,6*90" zPosition="2" scrollbarMode="showNever"/>
 	</screen>
+
 	<screen name="RemoteTimerChannelList" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<widget name="text" position="780,100" size="1110,912" zPosition="1" font="Regular;33" valign="center" halign="center"/>
-		<panel name="Screen_menu2"/>
-		<widget name="channellist" position="516,222" size="889,630" scrollbarMode="showOnDemand"/>
+		<panel name="Screen_menu2" />
+    	<widget name="channellist" position="516,222" size="889,630" scrollbarMode="showOnDemand" />
 	</screen>
+
 	<screen name="RemoteTimerEventView" position="fill" title="Eventview" flags="wfNoBorder" backgroundColor="transparent">
 		<panel position="96,54" size="1728,987">
-			<panel name="Screen_1"/>
+			<panel name="Screen_1" />
 			<widget name="channel" position="30,540" size="720,45" font="Regular;30" foregroundColor="secondFG" transparent="1"/>
 			<widget name="datetime" position="405,540" size="345,45" font="Regular;30" foregroundColor="secondFG" transparent="1"/>
 			<widget name="duration" position="405,540" size="345,45" font="Regular;30" halign="right" foregroundColor="secondFG" transparent="1"/>
 			<widget name="epg_description" position="780,100" size="1110,912" font="Regular;33" transparent="1"/>
 		</panel>
 	</screen>
+
 	<screen name="RemoteTimerEntry" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
+
 	<screen name="PartnerboxAutoTimerOverview" title="AutoTimer Overview" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
-		<widget name="entries" position="396,245" size="1130,600" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand"/>
-		<widget addon="Pager" connection="entries" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+		<panel name="Screen_Menu1" />
+		<widget name="entries" position="396,245" size="1130,600" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
+		<widget addon="Pager" connection="entries" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
+
 	<!-- MovieTagEditor -->
+
 	<screen name="MovieTagEditor" position="fill" title="Edit tags" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_1_1"/>
-		<widget name="list" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"/>
-		<widget addon="Pager" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background"/>
+		<panel name="Screen_1_1" />
+		<widget name="list" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget addon="Pager" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
-	<!-- TagEditor -->
-	<screen name="TagEditor" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+
+	 <!-- TagEditor -->
+
+	 <screen name="TagEditor" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="MovieTagEditor"/>
 	</screen>
 	<!-- TempFanControl -->
+
 	<screen name="TempFanControl" position="fill" title="Fan Control" flags="wfNoBorder">
 		<panel name="PigTemplate"/>
 		<ePixmap pixmap="buttons/red.png" position="192,1030" size="34,34" alphatest="on"/>
@@ -154,7 +170,7 @@
 		<widget name="config" position="780,105" size="1110,180" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand"/>
 		<widget source="SensorTempText0" render="Label" position="795,315" zPosition="1" size="135,60" font="Regular;30" halign="left" valign="top" backgroundColor="secondBG" transparent="1"/>
 		<widget source="SensorTemp0" render="Label" position="930,315" zPosition="1" size="150,30" font="Regular;28" halign="right">
-			<convert type="SensorToText"/>
+	<convert type="SensorToText"/>
 		</widget>
 		<widget source="SensorTempText1" render="Label" position="795,345" zPosition="1" size="135,60" font="Regular;30" halign="left" valign="top" backgroundColor="secondBG" transparent="1"/>
 		<widget source="SensorTemp1" render="Label" position="930,345" zPosition="1" size="150,30" font="Regular;28" halign="right">
@@ -217,41 +233,50 @@
 			<convert type="SensorToText"/>
 		</widget>
 	</screen>
+
 	<!-- EPG Import Configuration -->
+
 	<screen name="EPGImportConfig" position="fill" title="EPG Import Configuration" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
-		<widget name="config" position="396,210" size="1130,500" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png"/>
-		<widget render="Pager" connection="config" position="396,730" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background"/>
-		<widget name="description" position="396,653" size="0,0" itemHeight="45" font="Regular;30" valign="top"/>
-		<widget name="statusbar" position="396,856" size="1110,34" font="Regular;30"/>
-		<widget name="status" position="396,770" size="1110,90" font="Regular;30"/>
+		<widget name="config" position="396,210" size="1130,500" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png" />
+    	<widget render="Pager" connection="config" position="396,730" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
+		<widget name="description" position="396,653" size="0,0" itemHeight="45" font="Regular;30" valign="top" />
+  		<widget name="statusbar" position="396,856" size="1110,34" font="Regular;30" />
+  		<widget name="status" position="396,770" size="1110,90" font="Regular;30" />
 	</screen>
+
 	<!-- EPG Import Profile -->
+
 	<screen name="EPGImportProfile" position="fill" title="EPG Import Profile" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
-		<widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png"/>
-		<widget render="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background"/>
+		<widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png" />
+    	<widget render="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
 	</screen>
+
 	<!-- EPG Import Sources -->
+
 	<screen name="EPGImportSources" position="fill" title="EPG Import Sources" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
-		<widget name="list" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png"/>
-		<widget render="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background"/>
+		<widget name="list" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png" />
+    	<widget render="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
 	</screen>
+
 	<!-- EPG Import Log -->
+
 	<screen name="EPGImportLog" position="fill" title="EPG Import Log" flags="wfNoBorder">
-		<panel name="Screen_1_1"/>
-		<widget name="list" position="135,160" size="1650,12*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png"/>
-		<widget render="Pager" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background"/>
+		<panel name="Screen_1_1" />
+		<widget name="list" position="135,160" size="1650,12*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png" />
+    	<widget render="Pager" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
 	</screen>
+
 	<!-- Cross EPG -->
-	<screen name="downloader" position="0,0" size="1920,60" backgroundColor="transpBlack" flags="wfNoBorder">
-		<!-- Cross EPG satellite download screen -->
+	<screen name="downloader" position="0,0" size="1920,60" backgroundColor="transpBlack" flags="wfNoBorder"> <!-- Cross EPG satellite download screen -->
 		<panel name="DownloadBar"/>
 	</screen>
+
 	<screen name="CrossEPG_Menu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
-		<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,11*60" scrollbarMode="showNever">
+		<panel name="Screen_Menu1" />
+		<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,11*60" scrollbarMode="showNever" >
 			<convert type="TemplatedMultiContent">
 				{"template": [
 				MultiContentEntryPixmapAlphaTest(pos = (18,12), size = (48,48), png = 0),
@@ -262,14 +287,16 @@
 				}
 			</convert>
 		</widget>
-		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
+
 	<screen name="CrossEPG_Setup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
-		<widget name="config" position="396,210" size="1130,10*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"/>
-		<widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+		<panel name="Screen_Menu1" />
+		<widget name="config" position="396,210" size="1130,10*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 		<widget name="information" position="396,700" size="1130,150" font="Regular;30" halign="center" valign="top"/>
 	</screen>
+
 	<screen flags="wfNoBorder" name="CrossEPG_Info" position="fill" title="CrossEPG Info">
 		<panel name="PigTemplate"/>
 		<widget name="version" position="900,199" size="900,37" font="Regular;33"/>
@@ -284,13 +311,15 @@
 		<widget name="events_count" position="900,604" size="900,37" font="Regular;33"/>
 		<widget name="hashes_count" position="900,649" size="900,37" font="Regular;33"/>
 	</screen>
+
 	<screen name="CrossEPG_Extra" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
+		<panel name="Screen_Menu1" />
 		<widget name="menu" scrollbarMode="showNever" font="Regular;33" position="396,210" size="1130,10*45" transparent="1"/>
-		<widget addon="Pager" connection="menu" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+		<widget addon="Pager" connection="menu" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
+
 	<screen name="CrossEPG_Providers" position="fill" title="CrossEPG Providers" flags="wfNoBorder">
-		<panel name="Screen_Menu1"/>
+		<panel name="Screen_Menu1" />
 		<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,10*60" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -302,17 +331,21 @@
 				}
 			</convert>
 		</widget>
-		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
+
 	<screen name="CrossEPG_About" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
-		<widget name="about" position="396,210" size="1130,660" font="Regular;28" backgroundColor="background"/>
+		<panel name="Screen_Menu1" />
+		<widget name="about" position="396,210" size="1130,660" font="Regular;28" backgroundColor="background" />
 	</screen>
+
 	<screen flags="wfNoBorder" name="CrossEPG_Ordering" position="fill" title="Cross EPG - Providers start order">
-		<panel name="Screen_Menu1"/>
+		<panel name="Screen_Menu1" />
 		<widget name="list" position="396,210" size="1130,660" itemHeight="38" font="Regular;28" transparent="1" scrollbarMode="showNever"/>
 	</screen>
+
 	<!-- SetPicon -->
+
 	<screen name="setPicon" position="fill" title="SetPicon" flags="wfNoBorder">
 		<panel name="PigTemplate"/>
 		<panel name="KeyMenuTemplate"/>
@@ -334,47 +367,59 @@
 		<widget name="path" position="945,675" zPosition="2" size="810,33" valign="center" halign="center" font="Regular;27" foregroundColor="white"/>
 		<widget name="search" position="945,787" zPosition="2" size="300,33" valign="center" halign="left" font="Regular;27" foregroundColor="white"/>
 	</screen>
+
 	<screen name="setPiconCfg" position="fill" title="SetPicon Setup" flags="wfNoBorder">
 		<panel name="ConfigScreenTemplate"/>
 		<widget name="statusbar" position="145,865" zPosition="5" size="1630,30" font="Regular;30" halign="center" backgroundColor="background"/>
 	</screen>
+
 	<!-- OpenWebIF -->
+
 	<screen name="OpenWebifConfig" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="ConfigScreenTemplate"/>
+		<panel name="ConfigScreenTemplate" />
 	</screen>
+
 	<!-- Auto Timer -->
+
 	<screen name="AutoTimer" title="Auto Timer" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="AutoTimerServiceEditor"/>
 	</screen>
+
 	<screen name="AutoTimerSettings" title="AutoTimer Settings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="AutoTimerEditor"/>
 		<widget name="HelpWindow" position="e,650" size="80,0"/>
 	</screen>
+
 	<screen name="AutoTimerEditor" title="Edit AutoTimer" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="AutoTimerServiceEditor"/>
 		<widget source="help" render="Label" position="145,755" size="1630,100" font="Regular;28" valign="center" halign="center"/>
 	</screen>
+
 	<screen name="AutoTimerFilterEditor" title="Edit AutoTimer Filters" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="AutoTimerServiceEditor"/>
 		<widget name="HelpWindow" position="e,450" size="80,0"/>
 	</screen>
+
 	<screen name="AutoTimerServiceEditor" title="Edit AutoTimer Services" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_1_1"/>
-		<widget name="config" conditional="config" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"/>
-		<widget addon="Pager" conditional="config" connection="config" position="145,915" size="1630,25" transparent="1" backgroundColor="background"/>
+		<panel name="Screen_1_1" />
+		<widget name="config" conditional="config" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" itemCornerRadius="6" />
+		<widget addon="Pager" conditional="config" connection="config" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
+
 	<screen name="AutoTimerImporter" title="Import AutoTimer" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_menu2"/>
-		<widget name="list" position="516,222" size="889,630" itemHeight="45" backgroundColor="background" enableWrapAround="1" scrollbarMode="showNever"/>
+		<widget name="list" position="516,222" size="889,630" itemHeight="45" backgroundColor="background" enableWrapAround="1" scrollbarMode="showNever" itemCornerRadius="6" />
 	</screen>
+
 	<screen name="AutoTimerOverview" title="AutoTimer Overview" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_1_1"/>
-		<widget name="entries" position="115,160" size="1690,8*90" scrollbarMode="showNever" itemHeight="90" rowSplit1="50" rowSplit2="45" rowHeight="42" iconMargin="20" EventNameFont="Regular;33" ServiceNameFont="Regular;33" DayNameFont="Regular;30"/>
-		<widget addon="Pager" connection="entries" position="145,915" size="1630,25" transparent="1" backgroundColor="background"/>
+		<panel name="Screen_1_1" />
+		<widget name="entries" position="115,160" size="1690,8*90" scrollbarMode="showNever" itemHeight="90" rowSplit1="50" rowSplit2="45" rowHeight="42" iconMargin="20" EventNameFont="Regular;33" ServiceNameFont="Regular;33" DayNameFont="Regular;30" itemCornerRadius="6" />
+		<widget addon="Pager" connection="entries" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
+
 	<screen name="AutoTimerPreview" title="Preview AutoTimer" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PigTemplate"/>
-		<widget source="timerlist" render="Listbox" position="780,105" size="1110,896" backgroundColor="background" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand">
+		<widget source="timerlist" render="Listbox" position="780,105" size="1110,896" backgroundColor="background" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" itemCornerRadius="6">
 			<convert type="TemplatedMultiContent">
 				{
 				"template": [
@@ -389,35 +434,44 @@
 			</convert>
 		</widget>
 	</screen>
+
 	<screen name="AutoTimerHelp" position="fill" title="AutoTimerHelp" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PigTemplate"/>
 		<widget render="Label" source="title" position="780,105" size="1110,75" zPosition="1" halign="left" font="Regular;32"/>
 		<widget name="detailtext" font="Regular;30" position="780,205" size="1110,805" transparent="1"/>
 	</screen>
+
 	<screen name="AutoTimerOverviewSummary" position="fill" backgroundColor="transparent">
 		<widget source="parent.Title" render="Label" position="780,105" size="180,31" font="Regular;27"/>
 		<widget source="entry" render="Label" position="780,133" size="180,31" font="Regular;24"/>
-		<widget source="global.CurrentTime" render="Label" position="969,228" size="123,27" font="Regular;24">
+		<widget source="global.CurrentTime" render="Label" position="969,228" size="123,27" font="Regular;24" >
 			<convert type="ClockToText">WithSeconds</convert>
 		</widget>
 	</screen>
+
 	<!-- EPG Refresh -->
+
 	<screen name="EPGRefreshConfiguration" position="fill" title="Configuration of EPGRefresh" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 		<widget source="help" render="Label" position="145,755" size="1630,100" font="Regular;28" zPosition="1" halign="left" backgroundColor="secondBG" transparent="1"/>
-	</screen>
+	 </screen>
+
 	<screen name="EPGRefreshServiceEditor" position="fill" title="Edit Services to refresh" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
-	</screen>
+	 </screen>
+
 	<screen name="EPGRefreshProfile" position="fill" title="EPGRefreshProfile" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
+
 	<screen name="EPGSaveLoadConfiguration" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 		<widget source="epgcachelocation" render="Label" position="145,755" size="1630,100" font="Regular;28" zPosition="1" halign="left" backgroundColor="secondBG" transparent="1"/>
 		<widget source="help" render="Label" position="e,755" size="1630,100" itemHeight="45" font="Regular;28" zPosition="1" halign="left" backgroundColor="secondBG" transparent="1"/>
 	</screen>
+
 	<!-- BlindScan -->
+
 	<screen name="Blindscan" position="fill" title="Blind scan" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 		<widget name="rotorstatus" position="e,120" size="720,405" font="Regular;60" zPosition="1" transparent="1" foregroundColor="secondFG" valign="center" halign="center"/>
@@ -429,16 +483,18 @@
 		<widget name="post_action" position="145,730" size="1620,150" foregroundColor="foreground" backgroundColor="background" font="Regular;30" halign="center" valign="center"/>
 	</screen>
 	<!-- Remote timer -->
+
 	<screen name="RemoteTimerSetup" position="fill" title="Timer entry" flags="wfNoBorder">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
 	<screen name="RemoteTimerScreen" position="fill" title="Timer Overview" flags="wfNoBorder">
-		<panel name="Screen_1_1"/>
-		<widget name="timerlist" position="135,160" size="1650,6*90" scrollbarMode="showNever" itemHeight="90" iconMargin="30" rowSplit="45" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" sidesMargin="20"/>
-		<widget addon="Pager" connection="timerlist" position="145,915" size="1630,25" transparent="1" backgroundColor="background"/>
-		<eLabel position="135,720" size="1650,2" backgroundColor="background5" zPosition="-7"/>
+		<panel name="Screen_1_1" />
+		<widget name="timerlist" position="135,160" size="1650,6*90" scrollbarMode="showNever" itemHeight="90" iconMargin="30" rowSplit="45" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" sidesMargin="20" />
+		<widget addon="Pager" connection="timerlist" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
+		<eLabel position="135,720" size="1650,2" backgroundColor="background5" zPosition="-7" />
 		<widget name="text" position="145,730" size="1620,150" backgroundColor="background" font="Regular;30" halign="center" valign="center"/>
 	</screen>
+
 	<!-- ## IMDB Plugin ## -->
 	<screen name="IMDB" position="fill" flags="wfNoBorder" title="Internet Movie Database Details Plugin">
 		<panel name="SelectionTemplate"/>
@@ -458,14 +514,15 @@
 		<panel name="ConfigScreenTemplate"/>
 		<widget source="help" render="Label" position="145,755" size="1630,100" font="Regular;28" foregroundColor="secondFG"/>
 	</screen>
+
 	<!-- ## TMBD ##-->
 	<screen name="TMBD" position="fill" flags="wfNoBorder">
 		<panel name="SelectionTemplate"/>
 		<panel name="KeyMenuTemplate"/>
 		<panel name="KeyInfoTemplate"/>
 		<widget name="title" position="7,570" size="715,45" font="RegularSmall;30" foregroundColor="secondFG" halign="center"/>
-		<widget alphatest="blend" name="starsbg" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/starsbar_empty.png" position="265,640" size="315,31" zPosition="2"/>
-		<widget name="stars" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/starsbar_filled.png" position="265,640" size="315,31" transparent="1" zPosition="3"/>
+		<widget alphatest="blend" name="starsbg" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/starsbar_empty.png" position="265,640" size="315,31" zPosition="2" />
+		<widget name="stars" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/starsbar_filled.png" position="265,640"  size="315,31" transparent="1" zPosition="3" />
 		<widget name="ratinglabel" position="7,675" size="715,36" font="Regular;30" foregroundColor="grey" halign="center"/>
 		<widget name="voteslabel" position="7,730" size="715,36" font="Regular;30" foregroundColor="grey" halign="center"/>
 		<widget name="statusbar" position="7,950" size="715,45" font="Regular;30" halign="center" valign="bottom"/>
@@ -481,7 +538,7 @@
 	<screen name="TmbdYTTrailerList" position="fill" flags="wfNoBorder" title="YTTrailer List">
 		<panel name="PigTemplate"/>
 		<widget source="list" render="Listbox" position="780,123" size="1132,874" scrollbarMode="showOnDemand">
-			<convert type="TemplatedMultiContent">
+			<convert type="TemplatedMultiContent" >
 				{"template": [
 					MultiContentEntryPixmapAlphaTest(pos=(0,0), size=(150,108), png=3), # Thumbnail
 					MultiContentEntryText(pos=(160,1), size=(800,100), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text=1)],
@@ -489,27 +546,30 @@
 				"itemHeight": 108}
 			</convert>
 		</widget>
-		<widget name="thumbnail" position="0,0" size="150,108"/> # Thumbnail size in list
+		<widget name="thumbnail" position="0,0" size="150,108" /> # Thumbnail size in list
 		<eLabel text="'OK'= Play trailer" position="652,1030" size="330,39" font="RegularSmall;33" halign="left" zPosition="1"/>
 	</screen>
+
 	<!-- Transcoding Setup -->
 	<screen name="TranscodingSetup" position="fill" flags="wfNoBorder" title="Transcoding Setup" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
-		<widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" selectionPixmap="selections/sel_1130x45.png"/>
-		<widget name="pager" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background"/>
+		<widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" selectionPixmap="selections/sel_1130x45.png" />
+    	<widget name="pager" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
 	</screen>
+
 	<!-- AutoBouquetsMaker (ABM) -->
 	<screen name="AutoBouquetsMaker_Setup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
-		<widget name="config" position="396,210" size="1130,10*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"/>
+		<panel name="Screen_Menu1" />
+		<widget name="config" position="396,210" size="1130,10*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
 		<widget name="pleasewait" position="396,210" size="1130,10*45" font="Regular;28" halign="center" valign="center" transparent="0" zPosition="5"/>
-		<widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+		<widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 		<widget name="description" position="396,700" size="1130,150" font="Regular;30" halign="center" valign="top"/>
 	</screen>
+  
 	<screen name="AutoBouquetsMaker_Menu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
-		<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,11*60" scrollbarMode="showNever">
-			<convert type="TemplatedMultiContent">
+			<panel name="Screen_Menu1" />
+			<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,11*60" scrollbarMode="showNever" >
+				<convert type="TemplatedMultiContent">
 					{"template": [
 					MultiContentEntryPixmapAlphaTest(pos = (18,12), size = (48,48), png = 0),
 					MultiContentEntryText(pos = (87,11), size = (1060,49), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
@@ -518,13 +578,14 @@
 					"itemHeight": 60
 					}
 				</convert>
-		</widget>
-		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+			</widget>
+			<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
+
 	<screen name="AutoBouquetsMaker_Ordering" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
-		<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,14*45" scrollbarMode="showNever">
-			<convert type="TemplatedMultiContent">
+			<panel name="Screen_Menu1" />
+			<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,14*45" scrollbarMode="showNever">
+				<convert type="TemplatedMultiContent">
 					{"template": [
 					MultiContentEntryText(pos = (18,0), size = (1060,45), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
 					],
@@ -532,13 +593,14 @@
 					"itemHeight": 45
 					}
 				</convert>
-		</widget>
-		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+			</widget>
+			<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
+  
 	<screen name="AutoBouquetsMaker_HideSections" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
-		<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,14*45" scrollbarMode="showNever">
-			<convert type="TemplatedMultiContent">
+			<panel name="Screen_Menu1" />
+			<widget source="list" render="Listbox" transparent="0" position="396,210" size="1130,14*45" scrollbarMode="showNever">
+				<convert type="TemplatedMultiContent">
 					{"template": [
 						MultiContentEntryPixmapAlphaBlend(pos = (20,2), size = (38,36), png = 0),
 						MultiContentEntryText(pos = (67,0), size = (700,45), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
@@ -548,36 +610,44 @@
 						"itemHeight":45
 					}
 				</convert>
-		</widget>
-		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
+			</widget>
+			<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
+
 	<screen name="AutoBouquetsMaker_KeepBouquets" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="AutoBouquetsMaker_HideSections"/>
+		<panel name="AutoBouquetsMaker_HideSections" />
 	</screen>
+
 	<screen name="AutoBouquetsMaker_Log" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
+		<panel name="Screen_Menu1" />
 		<widget name="list" position="396,210" size="1130,630" itemHeight="38" font="Regular;28" valign="top"/>
 	</screen>
+
 	<screen name="AutoBouquetsMaker_About" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
-		<widget name="about" position="396,210" size="1130,660" font="Regular;28" backgroundColor="background"/>
+		<panel name="Screen_Menu1" />
+		<widget name="about" position="396,210" size="1130,660" font="Regular;28" backgroundColor="background" />
 		<widget name="oealogo" conditional="oealogo" position="1350,728" size="176,142" backgroundColor="background" transparent="1" alphatest="blend"/>
 	</screen>
+
 	<screen name="AutoBouquetsMaker" position="0,0" size="1920,60" backgroundColor="transpBlack" flags="wfNoBorder">
 		<panel name="DownloadBar"/>
 	</screen>
+
 	<!-- TerrestrialScan -->
 	<screen name="TerrestrialScan" position="0,0" size="1920,60" backgroundColor="transpBlack" flags="wfNoBorder">
 		<panel name="DownloadBar"/>
 	</screen>
+
 	<!-- MisPlsLcnScan -->
 	<screen name="MisPlsLcnScan" position="0,0" size="1920,60" backgroundColor="transpBlack" flags="wfNoBorder">
 		<panel name="DownloadBar"/>
 	</screen>
+
 	<!-- BluetoothSetup -->
 	<screen name="BluetoothSetupConfig" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
+
 	<screen name="BluetoothSetupScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 		<widget source="deviceList" render="Listbox" position="125,150" size="1670,13*45" itemHeight="45" scrollbarMode="showNever">
@@ -595,6 +665,7 @@
 			</convert>
 		</widget>
 	</screen>
+
 	<screen name="BluetoothDiscoveryScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 		<widget source="deviceList" render="Listbox" position="125,150" size="1670,13*45" itemHeight="45" scrollbarMode="showNever">
@@ -615,8 +686,8 @@
 		<panel name="PigTemplate"/>
 		<panel name="KeyMenuInfoTemplate"/>
 		<widget name="text" position="30,560" size="720,210" font="Regular;36" halign="center" zPosition="1"/>
-		<widget source="list" render="Listbox" transparent="0" position="780,100" size="1110,912" scrollbarMode="showOnDemand">
-			<convert type="TemplatedMultiContent">
+		<widget source="list" render="Listbox" transparent="0" position="780,100" size="1110,912" scrollbarMode="showOnDemand" >
+			<convert type="TemplatedMultiContent" >
 				{"template": [
 				MultiContentEntryPixmapAlphaTest(pos=(0,0), flags=BT_SCALE, size=(150,108), png=2), # Thumbnail
 				MultiContentEntryText(pos=(165,1), size=(862,78), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text=3), # Title
@@ -628,15 +699,15 @@
 				}
 			</convert>
 		</widget>
-		<widget name="thumbnail" position="0,0" size="150,108"/> # Thumbnail size in list
+		<widget name="thumbnail" position="0,0" size="150,108" /> # Thumbnail size in list
 	</screen>
+
 	<screen name="YouTubeSearch" position="fill" flags="wfNoBorder">
 		<panel name="PigTemplate"/>
 		<panel name="KeyMenuTemplate"/>
-		<widget name="config" position="780,100" size="1110,45" itemHeight="45" font="Regular;30" halign="center" zPosition="1"/>
-		<!-- Search box -->
-		<widget source="list" render="Listbox" transparent="0" position="780,150" size="1110,712" scrollbarMode="showOnDemand">
-			<convert type="TemplatedMultiContent">
+		<widget name="config" position="780,100" size="1110,45" itemHeight="45" font="Regular;30" halign="center" zPosition="1"/> <!-- Search box -->
+		<widget source="list" render="Listbox" transparent="0" position="780,150" size="1110,712" scrollbarMode="showOnDemand" >
+			<convert type="TemplatedMultiContent" >
 				{"template": [
 				MultiContentEntryText(pos=(15,1), size=(870,45), font=0, flags=RT_HALIGN_LEFT, text=0)
 				],
@@ -647,11 +718,13 @@
 		</widget>
 		<widget name="HelpWindow" position="30,710" size="1,1" transparent="1" zPosition="3" alphatest="on"/>
 	</screen>
+
 	<!-- LCD4linux -->
 	<screen name="LCDdisplayConfig" position="fill" flags="wfNoBorder">
 		<panel name="BasicTemplate"/>
 		<panel name="ButtonTemplate"/>
-		<widget name="config" position="7,123" size="840,855" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" foregroundColor="grey" enableWrapAround="1" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="blue" scrollbarSliderBorderColor="blue" scrollbarBackgroundPicture="infobar/scrollbar.png" scrollbarSliderPicture="infobar/scrlbr.png"/>
+		<widget name="config" position="7,123" size="840,855" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" foregroundColor="grey" enableWrapAround="1"
+				scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="blue" scrollbarSliderBorderColor="blue" scrollbarBackgroundPicture="infobar/scrollbar.png" scrollbarSliderPicture="infobar/scrlbr.png"/>
 		<widget source="introduction" render="Label" position="960,120" size="955,45" zPosition="2" font="Regular;33" foregroundColor="secondFG" halign="center"/>
 		<widget source="LibUSB" render="Label" position="960,170" size="955,45" zPosition="2" font="Regular;33" foregroundColor="secondFG" halign="center"/>
 		<widget source="About" render="Label" position="960,220" size="440,45" zPosition="2" font="Regular;33" foregroundColor="secondFG" halign="left"/>
@@ -665,90 +738,97 @@
 	</screen>
 	<screen name="LCDdisplayMenu" position="fill" flags="wfNoBorder" title="LCD4linux - Config">
 		<panel name="BasicTemplate"/>
-		<widget name="menu" position="780,120" size="1132,855" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" foregroundColor="grey" enableWrapAround="1" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="blue" scrollbarSliderBorderColor="blue" scrollbarBackgroundPicture="infobar/scrollbar.png" scrollbarSliderPicture="infobar/scrlbr.png"/>
+		<widget name="menu" position="780,120" size="1132,855" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" foregroundColor="grey" enableWrapAround="1"
+				scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="blue" scrollbarSliderBorderColor="blue" scrollbarBackgroundPicture="infobar/scrollbar.png" scrollbarSliderPicture="infobar/scrlbr.png"/>
 	</screen>
 	<screen name="LCDdisplayFile" position="fill" flags="wfNoBorder" title="Select File/Dir...">
 		<panel name="BasicTemplate"/>
 		<eLabel text="Select" position="425,1023" size="400,45" font="buttons;33" foregroundColor="buttongreen" backgroundColor="secondBG" transparent="1" halign="left"/>
-		<widget name="LCDfile" position="780,123" size="1132,855" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" foregroundColor="grey" enableWrapAround="1" scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="blue" scrollbarSliderBorderColor="blue" scrollbarBackgroundPicture="infobar/scrollbar.png" scrollbarSliderPicture="infobar/scrlbr.png"/>
+		<widget name="LCDfile" position="780,123" size="1132,855" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" foregroundColor="grey" enableWrapAround="1"
+				scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="blue" scrollbarSliderBorderColor="blue" scrollbarBackgroundPicture="infobar/scrollbar.png" scrollbarSliderPicture="infobar/scrlbr.png"/>
 		<widget source="File" render="Label" position="7,568" size="715,396" font="Regular;33" foregroundColor="secondFG" valign="center" halign="center"/>
 	</screen>
 	<!--CI Assignment-->
-	<screen name="CIselectMainMenu" position="fill" title="CI assignment" backgroundColor="transparent">
-		<panel name="Screen_menu2"/>
-		<widget name="CiList" position="516,222" size="889,630" itemHeight="45" font="Regular;36" scrollbarMode="showOnDemand"/>
+	<screen name="CIselectMainMenu" position="fill" title="CI assignment" backgroundColor="transparent" >
+		<panel name="Screen_menu2" />
+		<widget name="CiList" position="516,222" size="889,630" itemHeight="45" font="Regular;36" scrollbarMode="showOnDemand" />
 	</screen>
-	<screen name="CAidSelect" position="fill" title="Select CAId's" backgroundColor="transparent">
-		<panel name="Screen_menu2"/>
-		<widget name="list" position="516,222" size="889,590" itemHeight="45" font="Regular;36" scrollbarMode="showOnDemand"/>
-		<widget source="introduction" render="Label" position="516,822" size="889,40" zPosition="10" font="Regular;21" halign="center" valign="center" backgroundColor="background"/>
+	<screen name="CAidSelect" position="fill" title="Select CAId's" backgroundColor="transparent" >
+		<panel name="Screen_menu2" />
+		<widget name="list" position="516,222" size="889,590" itemHeight="45" font="Regular;36" scrollbarMode="showOnDemand" />
+		<widget source="introduction" render="Label" position="516,822" size="889,40" zPosition="10" font="Regular;21" halign="center" valign="center" backgroundColor="background" />
 	</screen>
 	<screen name="myProviderSelection" position="fill" title="Select provider to add..." backgroundColor="transparent">
-		<panel name="CAidSelect"/>
+		<panel name="CAidSelect" />
 	</screen>
 	<screen name="myChannelSelection" position="fill" title="Select service to add..." backgroundColor="transparent">
-		<panel name="CAidSelect"/>
+		<panel name="CAidSelect" />
 	</screen>
 	<!--CI Config Menu -->
 	<screen name="CIconfigMenu" title="CI Assignment" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
-		<widget source="CAidList_desc" render="Label" position="473,198" size="990,45" backgroundColor="background" transparent="1" font="Regular;36"/>
-		<eLabel position="473,252" size="990,3" backgroundColor="black"/>
-		<eLabel position="473,251" size="990,3" backgroundColor="grey"/>
-		<widget source="CAidList" render="Label" position="474,267" size="990,112" backgroundColor="background" transparent="1" font="Regular;33"/>
-		<widget source="ServiceList_desc" render="Label" position="475,391" size="990,45" backgroundColor="background" transparent="1" font="Regular;36"/>
-		<eLabel position="473,459" size="990,3" backgroundColor="black"/>
-		<eLabel position="473,459" size="990,3" backgroundColor="grey"/>
-		<widget name="ServiceList" position="522,476" size="900,400" backgroundColor="background" itemHeight="45" zPosition="1" transparent="1" scrollbarMode="showOnDemand"/>
-		<widget source="ServiceList_info" render="Label" position="473,473" size="990,400" backgroundColor="background" zPosition="2" transparent="1" font="Regular;33"/>
+		<panel name="Screen_Menu1" />
+		<widget source="CAidList_desc" render="Label" position="473,198" size="990,45" backgroundColor="background" transparent="1" font="Regular;36" />
+		<eLabel position="473,252" size="990,3" backgroundColor="black" />
+		<eLabel position="473,251" size="990,3" backgroundColor="grey" />
+		<widget source="CAidList" render="Label" position="474,267" size="990,112" backgroundColor="background" transparent="1" font="Regular;33" />
+		<widget source="ServiceList_desc" render="Label" position="475,391" size="990,45" backgroundColor="background" transparent="1" font="Regular;36" />
+		<eLabel position="473,459" size="990,3" backgroundColor="black" />
+		<eLabel position="473,459" size="990,3" backgroundColor="grey" />
+		<widget name="ServiceList" position="522,476" size="900,400" backgroundColor="background" itemHeight="45" zPosition="1" transparent="1" scrollbarMode="showOnDemand" />
+		<widget source="ServiceList_info" render="Label" position="473,473" size="990,400" backgroundColor="background" zPosition="2" transparent="1" font="Regular;33" />
 	</screen>
 	<screen name="RemoteControlCode" position="fill" title="Remote Control Code" backgroundColor="transparent">
-		<panel name="ConfigScreenTemplate"/>
+		<panel name="ConfigScreenTemplate" />
 	</screen>
+
 	<!-- MSN Weather -->
+
 	<screen name="MSNWeatherPlugin" position="fill" title="Weather Plugin" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
 		<panel position="400,208" size="1100,818">
 			<widget render="Label" source="caption" position="10,10" zPosition="1" size="600,60" font="Bold;40" backgroundColor="background"/>
-			<widget render="Label" source="observationtime" position="e-370,10" zPosition="1" size="380,30" font="Regular;20" backgroundColor="background" halign="right"/>
-			<widget render="Label" source="observationpoint" position="e-440,50" zPosition="1" size="450,40" font="Regular;20" backgroundColor="background" halign="right"/>
+			<widget render="Label" source="observationtime" position="e-370,10" zPosition="1" size="380,30" font="Regular;20" backgroundColor="background" halign="right" />
+			<widget render="Label" source="observationpoint" position="e-440,50" zPosition="1" size="450,40" font="Regular;20" backgroundColor="background" halign="right" />
 			<widget name="currenticon" position="10,120" zPosition="1" size="350,240" alphatest="blend"/>
 			<widget render="Label" source="currentTemp" position="440,170" zPosition="1" size="200,80" font="Bold;50" backgroundColor="background" valign="center"/>
 			<widget render="Label" source="feelsliketemp" position="440,260" zPosition="1" size="200,40" font="Bold;35" backgroundColor="background" valign="center"/>
 			<widget render="Label" source="condition" position="680,170" zPosition="1" size="300,40" font="Bold;35" backgroundColor="background" valign="center"/>
 			<widget render="Label" source="wind_condition" position="680,220" zPosition="1" size="300,40" font="Bold;35" backgroundColor="background" valign="center"/>
 			<widget render="Label" source="humidity" position="680,270" zPosition="1" size="300,40" font="Bold;35" backgroundColor="background" valign="center"/>
-			<widget render="Label" source="weekday1" position="10,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background"/>
+			<widget render="Label" source="weekday1" position="10,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background" />
 			<widget name="weekday1_icon" position="10,450" zPosition="1" size="200,132" alphatest="blend"/>
 			<widget render="Label" source="weekday1_temp" position="10,590" zPosition="1" size="200,70" halign="center" valign="top" font="Bold;28" backgroundColor="background"/>
-			<widget render="Label" source="weekday2" position="(e-20)/5 + (e-20)/5 - 200,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background"/>
+			<widget render="Label" source="weekday2" position="(e-20)/5 + (e-20)/5 - 200,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background" />
 			<widget name="weekday2_icon" position="(e-20)/5 + (e-20)/5 - 200,450" zPosition="1" size="200,132" alphatest="blend"/>
 			<widget render="Label" source="weekday2_temp" position="(e-20)/5 + (e-20)/5 - 200,590" zPosition="1" size="200,70" halign="center" valign="top" font="Bold;28" backgroundColor="background"/>
-			<widget render="Label" source="weekday3" position="(e-20)/5*2 + (e-20)/5 - 200,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background"/>
+			<widget render="Label" source="weekday3" position="(e-20)/5*2 + (e-20)/5 - 200,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background" />
 			<widget name="weekday3_icon" position="(e-20)/5*2 + (e-20)/5 - 200,450" zPosition="1" size="200,132" alphatest="blend"/>
 			<widget render="Label" source="weekday3_temp" position="(e-20)/5*2 + (e-20)/5 - 200,590" zPosition="1" size="200,70" halign="center" valign="top" font="Bold;28" backgroundColor="background"/>
-			<widget render="Label" source="weekday4" position="(e-20)/5*3 + (e-20)/5 - 200,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background"/>
+			<widget render="Label" source="weekday4" position="(e-20)/5*3 + (e-20)/5 - 200,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background" />
 			<widget name="weekday4_icon" position="(e-20)/5*3 + (e-20)/5 - 200,450" zPosition="1" size="200,132" alphatest="blend"/>
 			<widget render="Label" source="weekday4_temp" position="(e-20)/5*3 + (e-20)/5 - 200,590" zPosition="1" size="200,70" halign="center" valign="top" font="Bold;28" backgroundColor="background"/>
-			<widget render="Label" source="weekday5" position="(e-20)/5*4 + (e-20)/5 - 200,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background"/>
+			<widget render="Label" source="weekday5" position="(e-20)/5*4 + (e-20)/5 - 200,390" zPosition="1" size="200,40" halign="center" valign="center" font="Bold;35" backgroundColor="background" />
 			<widget name="weekday5_icon" position="(e-20)/5*4 + (e-20)/5 - 200,450" zPosition="1" size="200,132" alphatest="blend"/>
 			<widget render="Label" source="weekday5_temp" position="(e-20)/5*4 + (e-20)/5 - 200,590" zPosition="1" size="200,70" halign="center" valign="top" font="Bold;28" backgroundColor="background"/>
 		</panel>
 	</screen>
+
 	<screen name="MSNWeatherPluginEntryConfigScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
+
 	<screen name="MSNWeatherPluginEntriesListConfigScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 		<widget render="Label" source="city" position="145,150" size="400,50" font="Bold;35" halign="left" backgroundColor="background"/>
 		<widget render="Label" source="degreetype" position="900,150" size="130,50" font="Bold;35" halign="left" backgroundColor="background"/>
-		<widget name="entrylist" conditional="entrylist" position="125,200" size="1670,12*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"/>
-		<widget addon="Pager" conditional="entrylist" connection="entrylist" position="145,915" size="1630,25" transparent="1" backgroundColor="background"/>
+		<widget name="entrylist" conditional="entrylist" position="125,200" size="1670,12*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget addon="Pager" conditional="entrylist" connection="entrylist" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
+
 	<screen name="MSNWeatherPluginSearch" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
-		<widget name="entrylist" conditional="entrylist" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center"/>
-		<widget addon="Pager" conditional="entrylist" connection="entrylist" position="145,915" size="1630,25" transparent="1" backgroundColor="background"/>
+		<widget name="entrylist" conditional="entrylist" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget addon="Pager" conditional="entrylist" connection="entrylist" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
 	<!-- AutoDiseqC -->
 	<screen name="AutoDiseqc" title="Auto DiseqC" position="fill" flags="wfNoBorder">
