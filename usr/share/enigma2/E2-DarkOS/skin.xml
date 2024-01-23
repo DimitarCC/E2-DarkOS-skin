@@ -544,19 +544,20 @@
   <!-- Channel,EPG,EventInfo -->
   <screen name="ChannelSelection" title="Channel Selection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Window_Full_Pig" />
-    <eLabel position="1200,95" size="1,890" backgroundColor="separator" zPosition="-5" />
-	<widget name="list" position="25,95" size="1152,860" enableWrapAround="1" colorServiceDescription="light_yellow" colorServiceDescriptionSelected="light_yellow"
+    <eLabel position="1203,105" size="1,870" backgroundColor="separator" zPosition="-5" />
+	<!--<eLabel position="25,90" size="1185,897" backgroundColor="background" zPosition="-5" cornerRadius="6" widgetBorderWidth="1" widgetBorderColor="separator" />-->
+	<widget name="list" position="28,100" size="1152,840" enableWrapAround="1" colorServiceDescription="light_yellow" colorServiceDescriptionSelected="light_yellow"
 					colorEventProgressbarBorder="blue" colorEventProgressbarBorderSelected="blue" colorEventProgressbar="blue" colorEventProgressbarSelected="yellow" 
 					picServiceEventProgressbar="window/progress.png" forgroundColorEventProgressbarBorder="background" foregroundColorServiceNotAvail="#777777" 
 					backgroundColor="background" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" 
 					scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background3" backgroundColorMarkedSelected="background3" 
-					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="53" itemHeightTwoLine="86" nonplayableMargins="0" textSeparator="  •  " sidesMargin="20" markerLine="1" 
-					markerTextAlignment="center" markerLineColor="separator" foregroundColorEventRemaining="potem" foregroundColorEventRemainingSelected="potem" serviceRemainingInfoFont="Regular;22" itemCornerRadius="6"/>
-	<widget addon="Pager" connection="list" position="20,965" size="1160,25" transparent="1" backgroundColor="background" maxPages="15" />
+					scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="52" itemHeightTwoLine="84" nonplayableMargins="0" textSeparator="  •  " sidesMargin="20" markerLine="1" 
+					markerTextAlignment="center" markerLineColor="separator" foregroundColorEventRemaining="potem" foregroundColorEventRemainingSelected="potem" serviceRemainingInfoFont="Regular;22" itemCornerRadius="6" />
+	<widget addon="Pager" connection="list" position="20,955" size="1160,25" transparent="1" backgroundColor="background" maxPages="15" />
     <widget render="Label" source="ServiceEvent" backgroundColor="background2" halign="left" font="Regular; 30" position="1235,455" size="645,343" transparent="1">
       <convert type="EventName">FullDescription</convert>
     </widget>
-    <widget source="ServiceEvent" render="FixedLabel" text="" position="1235,830" size="645,2" backgroundColor="separator">
+    <widget source="ServiceEvent" render="FixedLabel" text="" position="1235,830" size="645,1" backgroundColor="separator">
 		<convert type="EventName">Name</convert>
 		<convert type="ConditionalShowHide"/>
 	</widget>
@@ -578,11 +579,11 @@
       <convert type="EventName">•,TIMERANGE</convert>
     </widget>
     <!--<eLabel backgroundColor="progress" position="1350,752" size="412,4" transparent="0" zPosition="3" />-->
-    <widget source="ServiceEvent" render="Progress" position="1380,360" size="412,4" backgroundColor="background" foregroundColor="blue" zPosition="6" cornerRadius="2">
+    <widget source="ServiceEvent" render="Progress" position="1378,359" size="400,6" backgroundColor="background" foregroundColor="blue" zPosition="6" cornerRadius="3" borderWidth="1" borderColor="grey">
       <convert type="EventTime">Progress</convert>
       <!--<convert type="ConditionalShowHide"/>-->
     </widget>
-    <widget font="Bold; 26" position="1815,345" render="Label" size="90,30" source="ServiceEvent" transparent="1" zPosition="2" halign="left" backgroundColor="background">
+    <widget font="Bold; 26" position="1800,345" render="Label" size="85,30" source="ServiceEvent" transparent="1" zPosition="2" halign="right" backgroundColor="background">
       <convert type="EventTime">Remaining</convert>
       <convert type="RemainingToText">InMinutes</convert>
     </widget>
@@ -730,7 +731,7 @@
 	<widget source="Event" render="Label" position="370,935" size="1410,34" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Bold;28" halign="center" valign="center">
 		<convert type="EventName">Genre</convert>
 	</widget>
-    <eLabel position="1510,103" size="1,206" backgroundColor="separator" zPosition="-5" />
+    <!--<eLabel position="1515,102" size="1,200" backgroundColor="separator" zPosition="-5" />-->
     <widget source="Event" render="Label" position="30,95" size="1200,47" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
       <convert type="EventName">Name</convert>
     </widget>
