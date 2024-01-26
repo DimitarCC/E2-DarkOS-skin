@@ -714,25 +714,26 @@
     <widget name="timeline_text" position="27,336" size="1862,29" zPosition="2" foregroundColor="foreground" backgroundColor="background" itemCornerRadius="6;top" cornerRadius="6;top" />
 	<eLabel position="25,368" size="1866,1" zPosition="10" backgroundColor="separator" />
     <widget name="list" position="25,368" size="1865,558" itemHeight="72" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" 
-		backgroundColor="background" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" ServiceForegroundColorNow="yellow" EntryBackgroundColorSelected="background3" 
+		backgroundColor="background" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" ServiceForegroundColorNow="yellow" EntryBackgroundColorSelected="background3"
 		ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="#00323c4d" ServiceNameBackgroundColorSelected="#00fcc000" ServiceBorderWidth="1" EventBorderWidth="1" RecIconSize="32" IconXPadding="6" IconYPadding="4" 
-		EntryBorderColor="separator" EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryFont="Regular;28" ServiceFont="Regular;28" />
+		EntryBorderColor="separator" EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryFont="Regular;28" ServiceFont="Regular;28" EventTextSidesMargin="10" />
 	<eLabel position="25,925" size="1866,1" zPosition="10" backgroundColor="separator" />
 	<!--<widget source="Event" render="Progress" position="40,956" zPosition="10" size="1836,10" backgroundColor="background" foregroundColor="blue" cornerRadius="5">
 		<convert type="EventTime">Progress</convert>
 	</widget>-->
-	<ePixmap position="55,941" size="22,22" zPosition="2" alphatest="blend" pixmap="icons/clock_22.png"/>
-    <widget source="Event" render="Label" backgroundColor="background" font="Regular; 26" position="90,935" size="610,34" transparent="1" halign="left" valign="center" >
+	<widget addon="Pager" conditional="list" connection="list" maxPages="20" position="25,940" size="1865,25" transparent="1" backgroundColor="background" />
+	<ePixmap position="1140,112" size="22,22" zPosition="2" alphatest="blend" pixmap="icons/clock_22.png"/>
+    <widget source="Event" render="Label" backgroundColor="background" font="Regular; 26" position="1180,105" size="310,34" transparent="1" halign="left" valign="center" >
 		<convert type="EventName">•,TIMERANGE,DURATION</convert>
 	</widget>
-	<widget source="Event" render="Label" position="1800,935" size="70,34" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Bold;28" halign="right" valign="center">
+	<widget source="Event" render="Label" position="55,935" size="70,34" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Bold;28" halign="left" valign="center">
 		<convert type="EventName">SmallRating</convert>
 	</widget>
-	<widget source="Event" render="Label" position="370,935" size="1410,34" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Bold;28" halign="center" valign="center">
+	<widget source="Event" render="Label" position="1370,935" size="500,34" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Bold;28" halign="right" valign="center">
 		<convert type="EventName">Genre</convert>
 	</widget>
     <!--<eLabel position="1515,102" size="1,200" backgroundColor="separator" zPosition="-5" />-->
-    <widget source="Event" render="Label" position="30,95" size="1200,47" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
+    <widget source="Event" render="Label" position="30,95" size="870,47" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
       <convert type="EventName">Name</convert>
     </widget>
     <widget source="Event" render="Label" position="30,163" size="1465,140" font="Regular; 30" backgroundColor="background" transparent="1">
@@ -2241,5 +2242,23 @@ if callable(loadLogo):
 		<widget name="filelist" position="125,190" size="1670,310" zPosition="1" scrollbarMode="showOnDemand" selectionDisabled="1"/>
 		<widget name="textbook" position="125,562" size="1670,37" font="Regular;33"/>
 		<widget name="booklist" position="132,607" itemHeight="38" font="Regular;28" size="1656,38*8" zPosition="2" scrollbarMode="showOnDemand"/>
+	</screen>
+
+	<!-- Package manager -->
+	<screen name="PackageManager" position="fill" title="Packet manager" backgroundColor="transparent" >
+		<panel name="Screen_menu2" />
+		<widget source="list" render="Listbox" position="514,221" size="889,11*54" itemHeight="54" scrollbarMode="showNever" itemCornerRadius="6">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (5, 2), size = (829, 28), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (5, 28), size = (829, 20), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
+						MultiContentEntryPixmapAlphaBlend(pos = (840, 3), size = (48, 48), png = 4, flags=BT_SCALE), # index 4 is the status pixmap
+					],
+				"fonts": [gFont("Regular", 22),gFont("Regular", 14)],
+				"itemHeight": 54
+				}
+			</convert>
+		</widget>
+		<widget addon="Pager" conditional="list" connection="list" position="514,833" size="889,25" transparent="1" backgroundColor="background" />
 	</screen>
 </skin>
