@@ -2227,6 +2227,14 @@ if callable(loadLogo):
 		<convert type="ClientsStreaming">INFO_RESOLVE_SHORT</convert>
 		</widget>
 	</screen>
+
+	<!--<screen name="Ipkg" position="center,center" size="550,120">
+		<widget name="activityslider" position="0,0" size="550,5" pixmap="progress_small.png"/>
+		<widget name="package" position="10,30" size="550,20" font="Regular;18" transparent="0"/>
+		<widget name="status" position="10,60" size="550,45" font="Regular;18" transparent="0"/>
+		<widget name="slider" position="10,100" size="530,15" foregroundColor="blue" borderWidth="2" borderColor="gray"/>
+	</screen>-->
+
 	<!-- Ipkg installer -->
 	<screen name="IpkgInstaller" position="fill" backgroundColor="transparent" flags="wfNoBorder">
 		<panel name="ConfigScreenTemplate"/>

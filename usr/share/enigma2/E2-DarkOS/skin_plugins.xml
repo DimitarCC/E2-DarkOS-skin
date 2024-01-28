@@ -858,4 +858,18 @@
 		<widget name="scan_state" position="780,345" zPosition="2" size="720,45" valign="center" font="Regular;30" transparent="1"/>
 		<widget name="scan_progress" position="780,397" size="720,22" pixmap="progress_big.png" borderWidth="2" borderColor="#cccccc"/>
 	</screen>
+
+
+	<!-- Filebrowser -->
+	<screen name="FilebrowserConfigScreen" title="File browser config" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+	</screen>
+	<screen name="FilebrowserScreen" title="File browser" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<panel position="120,130" size="1690,902">
+			<widget name="list_left" position="5,10" size="830,790" scrollbarMode="showOnDemand" itemCornerRadius="6" />
+            <widget name="list_right" position="845,10" size="830,790" scrollbarMode="showOnDemand" itemCornerRadius="6" />
+		</panel>
+	</screen>
+	
 </skin>
