@@ -23,20 +23,7 @@
 	</screen>
 	<!-- packet manager -->
 	<screen name="PacketManager" position="fill" title="Packet manager" backgroundColor="transparent" >
-		<panel name="Screen_menu2" />
-		<widget source="list" render="Listbox" position="514,221" size="889,11*54" itemHeight="54" scrollbarMode="showNever" itemCornerRadius="6">
-			<convert type="TemplatedMultiContent">
-				{"template": [
-						MultiContentEntryText(pos = (5, 2), size = (829, 28), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
-						MultiContentEntryText(pos = (5, 28), size = (829, 20), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
-						MultiContentEntryPixmapAlphaBlend(pos = (840, 3), size = (48, 48), png = 4, flags=BT_SCALE), # index 4 is the status pixmap
-					],
-				"fonts": [gFont("Regular", 22),gFont("Regular", 14)],
-				"itemHeight": 54
-				}
-			</convert>
-		</widget>
-		<widget addon="Pager" conditional="list" connection="list" position="514,833" size="889,25" transparent="1" backgroundColor="background" />
+		<panel name="PackageManager" />
 	</screen>
 
 	<!--This is PLi plugins and special screens that have to be done-->
