@@ -319,7 +319,7 @@ self["bcGroundOver"].setZPosition(-7)
 		</applet>
 	</screen>
 
-		<!-- AnimationSetupConfig -->
+	<!-- AnimationSetupConfig -->
 	<screen name="AnimationSetupConfig" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
@@ -352,8 +352,8 @@ self["bcGroundOver"].setZPosition(-7)
 
 	<!-- NetworkInadyn -->
 	<screen name="NetworkInadyn" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1" /><!-- panel name="Screen_Window_Full"/ -->
-		<panel position="380,125" size="e,e"><!-- convert Screen_Window_Full to Screen_Menu1 -->
+		<panel name="Screen_Menu1" />
+		<panel position="380,125" size="e,e">
 			<widget name="autostart" position="25,163" size="150,45" font="Regular;30" valign="center" transparent="0"/>
 			<widget name="labdisabled" position="175,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="red" zPosition="1"/>
 			<widget name="labactive" position="175,159" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
@@ -417,12 +417,11 @@ self["bcGroundOver"].setZPosition(-7)
 		<widget name="labstop" position="645,390" size="375,45" font="Regular;30" valign="center" halign="center" backgroundColor="red"/>
 		<widget name="labrun" position="645,390" size="375,45" zPosition="1" font="Regular;30" valign="center" halign="center" backgroundColor="green"/>
 	</screen>
-
 	<screen name="uShareSelection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="BackupSelection"/>
 	</screen>
 
-		<!-- NetworkuShare -->
+	<!-- NetworkuShare -->
 	<screen name="NetworkuShare" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
 		<panel position="-450,60" size="e,e">

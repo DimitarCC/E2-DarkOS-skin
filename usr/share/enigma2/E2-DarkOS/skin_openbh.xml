@@ -1,68 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin>
-	<screen name="AboutOE" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="About"/>
-	</screen>
-	<screen name="SystemMemoryInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="About"/>
-	</screen>
-	<screen name="SystemNetworkInfo" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="About"/>
-		<panel position="110,-50" size="e,e">
-			<panel name="__NetworkStatusTemplate__"/>
-		</panel>
-	</screen>
-	<screen name="Devices" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_1_1"/>
-		<widget source="TunerHeader" render="Label" position="125,150" size="1696,38" font="Bold;30" transparent="0" zPosition="1"/>
-		<widget source="nims" render="Label" position="125,190" size="1696,300" font="Regular;28" transparent="0" zPosition="1" noWrap="1"/>
-		<widget source="HDDHeader" render="Label" position="125,498" size="1696,38" font="Bold;30" transparent="0" zPosition="1"/>
-		<widget source="hdd" render="Label" position="125,537" size="1696,300" font="Regular;28" transparent="0" zPosition="1" noWrap="1"/>
-		<widget source="MountsHeader" render="Label" position="125,723" size="1696,38" font="Bold;30" transparent="0" zPosition="1"/>
-		<widget source="mounts" render="Label" position="125,762" size="1696,195" font="Regular;28" transparent="0" zPosition="1" noWrap="1"/>
-	</screen>
-	<screen name="ButtonSetup" title="" position="fill" flags="wfNoBorder">
-		<panel name="HotkeySetup"/>
-	</screen>
-	<screen name="ButtonSetupSelect" title="" position="fill" flags="wfNoBorder">
-		<panel name="HotkeySetupSelect"/>
-	</screen>
-	<screen name="GraphicalEPGPIG" position="fill" flags="wfNoBorder">
-		<panel name="GraphMultiEPG"/>
-		<widget name="bouquetlist" position="1512,80" size="384,7*38" font="Regular;28" itemHeight="38" zPosition="100" transparent="0" scrollbarMode="showNever"/>
-	</screen>
-	<screen name="GraphicalEPG" position="fill" flags="wfNoBorder">
-		<panel name="GraphMultiEPGList"/>
-	</screen>
-	<screen name="CronTimers" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
-		<widget name="key" position="396,210" size="1130,35" font="Regular;30" halign="center" transparent="1" valign="center"/>
-		<widget source="list" render="Listbox" position="396,255" size="1130,9*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" halign="center" selectionDisabled="0" backgroundColor="background">
-			<convert type="StringList"/>
-		</widget>
-		<widget name="lab1" position="396,700" size="275,42" font="Regular;28" valign="center"/>
-		<widget name="labdisabled" position="675,700" size="150,42" font="Regular;28" valign="center" halign="center" backgroundColor="red"/>
-		<widget name="labactive" position="675,700" size="150,42" zPosition="1" font="Regular;28" valign="center" halign="center" backgroundColor="green"/>
-		<widget name="lab2" position="396,750" size="275,42" font="Regular;28" valign="center"/>
-		<widget name="labstop" position="675,750" size="150,42" font="Regular;28" valign="center" halign="center" backgroundColor="red"/>
-		<widget name="labrun" position="675,750" size="150,42" font="Regular;28" zPosition="1" valign="center" halign="center" backgroundColor="green"/>
-		<widget name="footnote" position="396,853" size="1130,32" font="Regular;28" valign="center" foregroundColor="grey"/>
-	</screen>
-	<screen name="LogManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
-		<widget name="list" position="396,210" size="1130,16*38" transparent="0" enableWrapAround="1" scrollbarMode="showNever" font="Regular;30"/>
-		<applet type="onLayoutFinish">
-self["list"].instance.setItemHeight(38)
-		</applet>
-		<widget addon="Pager" connection="list" position="396,665" size="1130,25" transparent="1" backgroundColor="background"/>
-	</screen>
-	<screen name="LogManagerViewLog" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1"/>
-		<widget name="list" position="396,210" size="1130,660" font="Console;27"/>
-	</screen>
-	<screen name="LogManagerFb" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="LogManagerViewLog"/>
-	</screen>
 	<screen name="VixListTemplate">
 		<panel name="Screen_1_1"/>
 		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" textOffset="15,5" font="Regular;28" scrollbarMode="showNever"/>
@@ -70,6 +7,7 @@ self["list"].instance.setItemHeight(38)
 		<widget name="backupstatus" conditional="backupstatus" position="145,865" size="1630,40" font="Regular;28" zPosition="5" foregroundColor="orange" valign="center" halign="center"/>
 		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background"/>
 	</screen>
+
 	<!--OBH Menu -->
 	<screen name="OBHMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
@@ -96,30 +34,37 @@ self["list"].instance.setItemHeight(38)
 			</convert>
 		</widget>
 	</screen>
+
 	<!-- OBHBackupManager -->
 	<screen name="OpenBhBackupManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="VixListTemplate"/>
 	</screen>
+
 	<!-- OBHBackupManager -->
 	<screen name="OpenBhBackupManagerLogView" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="VixListTemplate"/>
 	</screen>
+
 	<!-- OBHImageManager -->
 	<screen name="OpenBhImageManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="VixListTemplate"/>
 	</screen>
+
 	<!-- OBHImageManagerDownload -->
 	<screen name="OpenBhImageManagerDownload" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="VixListTemplate"/>
 	</screen>
+
 	<!--PLI call this screen IpkgInstaller -->
 	<screen name="OpenBhIPKInstaller" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="IpkgInstaller"/>
 	</screen>
+
 	<!-- OBH Script runner -->
 	<screen name="OpenBhScriptRunner" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="IpkgInstaller"/>
 	</screen>
+
 	<!-- OBH User Interface Positioner -->
 	<screen name="UserInterfacePositioner" position="fill" backgroundColor="background" flags="wfNoBorder">
 		<eLabel position="238,179" size="1480,720" backgroundColor="background" zPosition="1"/>
@@ -133,6 +78,7 @@ self["list"].instance.setItemHeight(38)
 		<widget name="config" position="center,250" size="800,280" font="Regular;28" itemHeight="40" enableWrapAround="1" scrollbarMode="showOnDemand" foregroundColor="yellow" backgroundColor="background" transparent="1" zPosition="3"/>
 		<widget source="status" render="Label" position="center,600" size="1200,150" zPosition="10" font="Regular;28" foregroundColor="foreground" halign="center" valign="center" transparent="1" backgroundColor="background"/>
 	</screen>
+
 	<!-- OBHSwapManager -->
 	<screen name="OpenBhSwap" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
@@ -147,6 +93,7 @@ self["list"].instance.setItemHeight(38)
 		<widget name="inactive" position="620,439" size="150,45" font="Regular;30" valign="center" halign="center" backgroundColor="red"/>
 		<widget name="active" position="620,439" size="150,45" font="Regular;30" valign="center" zPosition="1" halign="center" backgroundColor="green"/>
 	</screen>
+
 	<!-- OBHMountManager -->
 	<screen name="DeliteDevicesPanel" position="fill" flags="wfNoBorder" title="Devices Manager" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
@@ -166,6 +113,7 @@ self["list"].instance.setItemHeight(38)
 		<widget name="lab1" position="406,690" halign="center" size="1110,34" zPosition="1" font="Regular;30" valign="top" transparent="1"/>
 		<widget addon="Pager" connection="menu" position="72,827" size="564,25" transparent="1" backgroundColor="background"/>
 	</screen>
+
 	<!-- Delite Settings -->
 	<screen name="DeliteSettings" position="fill" flags="wfNoBorder" title="OpenBh Apps" backgroundColor="transparent">
 		<panel name="FrameTemplate"/>
@@ -178,12 +126,13 @@ MultiContentEntryPixmapAlphaBlend(pos = (10, 8), size = (50, 50), png = 1),
 "fonts": [gFont("Regular", 34)],
 "itemHeight": 66
 }
-</convert>
+			</convert>
 		</widget>
 		<widget source="global.CurrentTime" render="BoxLogo" position="203,175" size="302,65" zPosition="10" alphatest="blend"/>
 		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5"/>
 		<widget addon="Pager" connection="list" position="72,827" size="564,25" transparent="1" backgroundColor="background"/>
 	</screen>
+
 	<!-- Delite Addons and Update Manager -->
 	<screen name="DeliteAddons" position="fill" flags="wfNoBorder" title="Feeds and Update Manager" backgroundColor="transparent">
 		<panel name="FrameTemplate"/>
@@ -196,12 +145,13 @@ MultiContentEntryPixmapAlphaBlend(pos = (10, 8), size = (50, 50), png = 1),
 "fonts": [gFont("Regular", 34)],
 "itemHeight": 66
 }
-</convert>
+			</convert>
 		</widget>
 		<widget source="global.CurrentTime" render="BoxLogo" position="203,175" size="302,65" zPosition="10" alphatest="blend"/>
 		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5"/>
 		<widget addon="Pager" connection="list" position="72,827" size="564,25" transparent="1" backgroundColor="background"/>
 	</screen>
+
 	<!-- Download Manager -->
 	<screen name="Nab_downArea" position="fill" flags="wfNoBorder" title="Download Manager" backgroundColor="transparent">
 		<panel name="FrameTemplate"/>
@@ -214,12 +164,13 @@ MultiContentEntryPixmapAlphaBlend(pos = (10, 8), size = (50, 50), png = 1),
 "fonts": [gFont("Regular", 34)],
 "itemHeight": 66
 }
-</convert>
+			</convert>
 		</widget>
 		<widget source="global.CurrentTime" render="BoxLogo" position="203,175" size="302,65" zPosition="10" alphatest="blend"/>
 		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5"/>
 		<widget addon="Pager" connection="list" position="72,827" size="564,25" transparent="1" backgroundColor="background"/>
 	</screen>
+
 	<!-- OpenBh Addons Plugins -->
 	<screen name="Nab_downCat" position="fill" flags="wfNoBorder" title="Download Manager" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
@@ -231,33 +182,38 @@ MultiContentEntryPixmapAlphaBlend(pos = (10, 8), size = (50, 50), png = 1),
 "fonts": [gFont("Regular", 34)],
 "itemHeight": 66
 }
-</convert>
+			</convert>
 		</widget>
 		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
 	</screen>
+
 	<!-- OpenBh E2 Package Details -->
 	<screen name="Nab_ShowDownFile" position="fill" flags="wfNoBorder" title="OpenBh E2 Package Details" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
 		<widget name="infotext" position="396,225" size="1130,600" itemHeight="60" font="Regular;32" enableWrapAround="1" scrollbarMode="showNever" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
 		<widget addon="Pager" connection="menu" position="72,827" size="564,25" transparent="1" backgroundColor="background"/>
 	</screen>
+
 	<!-- OBH MountManager Setup -->
 	<screen name="DeliteSetupDevicePanelConf" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 		<widget name="lab1" position="145,865" halign="center" size="1630,30" font="Regular;30" valign="center" zPosition="10"/>
 	</screen>
+
 	<!-- OBH plugin spinner -->
 	<screen name="SoftcamSpinnerTemplate">
 		<panel name="Screen_Menu1"/>
 		<widget name="connect" position="center,c-150" size="96,96" zPosition="10" pixmaps="/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy1.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy2.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy3.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy4.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy5.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy6.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy7.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy8.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy9.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy9.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy10.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy11.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy12.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy13.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy14.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy15.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy17.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy18.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy19.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy20.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy21.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy22.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy23.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/OBH/images/busy24.png" transparent="1" alphatest="blend"/>
 		<widget name="lab1" position="center,c+50" halign="center" size="754,90" zPosition="10" font="Regular;30" valign="top"/>
 	</screen>
+
 	<!-- NetworkMountsMenu -->
 	<screen name="NetworkMountsMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
 		<widget name="menulist" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" zPosition="10" scrollbarMode="showNever"/>
 		<widget source="introduction" render="Label" position="145,865" zPosition="10" size="1630,30" font="Regular;28" foregroundColor="yellow" valign="center" halign="center"/>
 	</screen>
+
 	<!-- oscam -->
 	<screen name="OscamInfoMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
@@ -267,6 +223,7 @@ MultiContentEntryPixmapAlphaBlend(pos = (10, 8), size = (50, 50), png = 1),
 		<panel name="ConfigScreenTemplate"/>
 		<widget name="status" render="Label" position="145,865" size="1630,30" zPosition="20" font="Regular;32" halign="center" valign="center"/>
 	</screen>
+
 	<!-- HistoryZapSelector -->
 	<screen name="HistoryZapSelector" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
@@ -288,6 +245,7 @@ MultiContentEntryPixmapAlphaBlend(pos = (10, 8), size = (50, 50), png = 1),
 		</widget>
 		<widget addon="Pager" connection="menu" position="396,915" size="1130,25" transparent="1" backgroundColor="background"/>
 	</screen>
+
 	<!-- Record now / record next -->
 	<screen name="RecordTimerQuestion" position="center,center" size="350,295" zPosition="5" flags="wfNoBorder" backgroundColor="background">
 		<widget name="text" position="0,0" size="0,0" font="Regular;21"/>
@@ -359,19 +317,23 @@ self["bcGroundOver"].instance.move(ePoint(2,2))
 self["bcGroundOver"].setZPosition(-7)
 		</applet>
 	</screen>
+
 	<!-- AnimationSetupConfig -->
 	<screen name="AnimationSetupConfig" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
+
 	<!-- AnimationSetupScreen -->
 	<screen name="AnimationSetupScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
+
 	<!-- MovieListTags  -->
 	<!-- Press Radio button while in movie list  -->
 	<screen name="MovieListTags" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
+
 	<!-- VuplusKexec -->
 	<screen name="VuplusKexec" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
@@ -384,6 +346,7 @@ self["bcGroundOver"].setZPosition(-7)
 		<panel name="Screen_Window_Full"/>
 		<widget name="infotext" position="25,123" size="1870,855" font="Regular;24"/>
 	</screen>
+
 	<!-- NetworkInadyn -->
 	<screen name="NetworkInadyn" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
@@ -410,6 +373,7 @@ self["bcGroundOver"].setZPosition(-7)
 			<widget name="labsys" position="340,607" size="465,45" font="Regular;30" valign="center" backgroundColor="background"/>
 		</panel>
 	</screen>
+
 	<!-- NetworkMiniDLNA -->
 	<screen name="NetworkMiniDLNA" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
@@ -441,6 +405,7 @@ self["bcGroundOver"].setZPosition(-7)
 			<widget name="dlnaactive" position="1200,727" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
 		</panel>
 	</screen>
+
 	<!-- NetworkServiceSetup -->
 	<screen name="NetworkServiceSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
@@ -454,6 +419,7 @@ self["bcGroundOver"].setZPosition(-7)
 	<screen name="uShareSelection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="BackupSelection"/>
 	</screen>
+
 	<!-- NetworkuShare -->
 	<screen name="NetworkuShare" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
@@ -514,7 +480,7 @@ MultiContentEntryPixmapAlphaBlend(pos = (10, 5), size = (50, 50), png = 1),
 "fonts": [gFont("Regular", 32)],
 "itemHeight": 60
 }
-</convert>
+			</convert>
 		</widget>
 		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
 	</screen>
@@ -536,7 +502,7 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 17), size = (100, 40), png = 2, flag
 "fonts": [gFont("Regular", 30),gFont("Regular", 20)],
 "itemHeight": 83,
 }
-</convert>
+			</convert>
 		</widget>
 		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background"/>
 	</screen>
@@ -549,7 +515,7 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 17), size = (100, 40), png = 2, flag
 "fonts": [gFont("Regular", 34)],
 "itemHeight": 66
 }
-</convert>
+			</convert>
 		</widget>
 		<widget name="statuslab" position="center,750" size="820,100" font="Regular;32" halign="center" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
 		<widget addon="Pager" connection="list" position="396,860" size="1130,25" transparent="1" backgroundColor="background"/>
@@ -563,7 +529,7 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 17), size = (100, 40), png = 2, flag
 "fonts": [gFont("Regular", 34)],
 "itemHeight": 66
 }
-</convert>
+			</convert>
 		</widget>
 		<widget addon="Pager" connection="list" position="396,860" size="1130,25" transparent="1" backgroundColor="background"/>
 	</screen>
@@ -576,7 +542,7 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 17), size = (100, 40), png = 2, flag
 "fonts": [gFont("Regular", 34)],
 "itemHeight": 66
 }
-</convert>
+			</convert>
 		</widget>
 		<widget addon="Pager" connection="list" position="396,860" size="1130,25" transparent="1" backgroundColor="background"/>
 	</screen>
@@ -589,7 +555,7 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 17), size = (100, 40), png = 2, flag
 "fonts": [gFont("Regular", 34)],
 "itemHeight": 66
 }
-</convert>
+			</convert>
 		</widget>
 		<widget addon="Pager" connection="list" position="396,860" size="1130,25" transparent="1" backgroundColor="background"/>
 	</screen>

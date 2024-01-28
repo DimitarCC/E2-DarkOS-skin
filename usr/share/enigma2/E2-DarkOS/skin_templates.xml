@@ -1,80 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<skin>
-	<!-- Templates -->
-	<screen name="PlayerTemplate">
-		<eLabel position="38,862" size="1839,184" zPosition="-11" backgroundColor="background5" cornerRadius="16"/>
-		<eLabel position="370,864" size="1505,180" zPosition="-10" backgroundColor="background" cornerRadius="14"/>
-		
-		<eLabel position="380,915" size="1485,2" zPosition="-9" backgroundColor="dark_grey" />
-		<widget name="statusicon" position="160,915" zPosition="3" size="90,90" alphatest="blend" pixmaps="icons/pvr/play.svg,icons/pvr/pause.svg,icons/pvr/stop.svg,icons/pvr/ff.svg,icons/pvr/rew.svg,icons/pvr/slow.svg"/>
-		<widget name="speed"  foregroundColor="white" halign="left" position="260,960" size="90,45" font="Bold; 40" transparent="1"/>
-		<widget source="session.CurrentService" render="Label" position="400,935" size="1120,50" font="Regular; 44" valign="center" noWrap="1" backgroundColor="background" transparent="1">
-		  <convert type="ServiceName">Name</convert>
-		</widget>
-		<widget source="session.CurrentService" render="Label" position="405,864" size="110,51" font="Bold; 26" halign="left" valign="center" backgroundColor="background" transparent="1" foregroundColor="white">
-		  <convert type="ServicePosition">Position</convert>
-		</widget>
-		<widget source="session.CurrentService" render="Label" position="511,864" size="110,51" font="Bold; 26" halign="center" valign="center" backgroundColor="background" transparent="1">
-		  <convert type="ServicePosition">Length</convert>
-		</widget>
-		<widget source="session.CurrentService" render="Label" position="621,864" size="110,51" font="Bold; 26" halign="right" valign="center" backgroundColor="background" transparent="1" foregroundColor="white">
-		  <convert type="ServicePosition">Remaining,Negate</convert>
-		</widget>
-		<eLabel backgroundColor="progress" position="400,1010" zPosition="1" size="1170,4" transparent="0" />
-		<widget source="session.CurrentService" render="PositionGauge" position="400,1010" zPosition="3" size="1170,4" transparent="1">
-		  <convert type="ServicePosition">Gauge</convert>
-		</widget>
-		<widget source="session.CurrentService" render="Progress" backgroundColor="background" foregroundColor="blue" position="400,1010" zPosition="2" size="1170,4" transparent="1">
-		  <convert type="ServicePosition">Position</convert>
-		</widget>
-		<widget backgroundColor="background" font="Bold; 60" foregroundColor="white" halign="center" position="1590,925" render="Label" size="320,60" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
-		  <convert type="ClockToText">Default</convert>
-		</widget>
-		<widget backgroundColor="background" font="Bold; 30" foregroundColor="white" halign="center" position="1590,990" render="Label" size="320,35" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
-		  <convert type="ClockToText">Format: %d %B</convert>
-		</widget>
-		<widget alphatest="blend" path="icons/audioicon" position="1605,860" render="AudioIcon" size="85,50" source="session.CurrentService" zPosition="10">
-		  <convert type="VAudioInfo">AudioIcon</convert>
-		</widget>
-
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/mpeg2.png" size="80,40" position="1700,869" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">IsVideoMPEG2</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/h264.png" size="80,40" position="1700,869" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">IsVideoAVC</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/h265.png" size="80,40" position="1700,869" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">IsVideoHEVC</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/480.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">Is480</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/576.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">Is576</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/720.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">Is720</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/1080.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">Is1080</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/4k.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">Is4K</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget alphatest="blend" pixmap="icons/rec2.png" position="1290,880" render="Pixmap" size="49,22" source="session.RecordState" zPosition="2">
-		  <convert type="ConditionalShowHide">Blink,1000,4000</convert>
-		</widget>
-	</screen>
-	
+<skin>	
 	<screen name="BrandLogoTemplate">
 		<widget source="global.CurrentTime" render="BoxLogo" logoType="brand" position="0,0" size="84,34" zPosition="-3" alphatest="blend" halign="right" />
 	</screen>
@@ -84,32 +9,25 @@
 			pixmaps="key_info:buttons/key_info.png,key_help:buttons/key_help.png,key_pvr:buttons/key_pvr.png,key_menu:buttons/key_menu.png,key_text:buttons/key_text.png,VKeyIcon:buttons/key_text.png,key_previous:buttons/key_prev.png,key_next:buttons/key_next.png" 
 			position="0,0" size="220,36" transparent="1" backgroundColor="transparent" alignment="right" zPosition="10"/>
 	</screen>
+
+	<screen name="Color_Buttons_Screen_1">
+		<widget addon="ColorButtonsSequence" connection="key_red,key_green,key_yellow,key_blue" 
+			pixmaps="key_red:buttons/key_red.png,key_green:buttons/key_green.png,key_yellow:buttons/key_yellow.png,key_blue:buttons/key_blue.png" 
+			position="0,0" size="e,36" font="Regular;26" backgroundColor="background5" alignment="left" zPosition="10" spacing="40" spacingPixmapText="10" />
+	</screen>
 	
 	<screen name="FrameTemplate">
 		<eLabel position="70,145" size="570,785" backgroundColor="background5" zPosition="-6" cornerRadius="16" />
 		<eLabel position="72,147" size="566,717" backgroundColor="background" zPosition="-5" cornerRadius="14" />
 
 		<eLabel position="94,145" size="522,2" backgroundColor="background5" zPosition="-7" />
-		
 	</screen>
-	
-	<screen name="MenuTemplate">
-		<panel name="FrameTemplate"/>
 
-		<widget source="title" render="Label" position="82,864" size="534,62" font="Regular; 34" halign="right" valign="center" backgroundColor="background5" />
-		<widget source="menu" render="Listbox" position="82,277" size="544,522" scrollbarMode="showNever" enableWrapAround="1" transparent="1" itemCornerRadius="6">
-			<convert type="TemplatedMultiContent">
-						{"template": [ MultiContentEntryText(pos = (82,5),size = (440,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0),
-									   MultiContentEntryPixmapAlphaBlend(pos = (17,5),size = (48,48), png = 5)],
-						"fonts": [gFont("Regular",34)],
-						"itemHeight": 58
-						}
-			</convert>
-		</widget>
-		<widget addon="Pager" connection="menu" position="85,812" size="558,25" transparent="1" backgroundColor="background"/>
-		<widget source="ScreenPath" render="Label" position="78,833" size="544,25" backgroundColor="background" zPosition="1" font="Regular;19" valign="top" halign="right"/>
-		<widget source="global.CurrentTime" render="BoxLogo" position="72,175" size="564,65" zPosition="10" alphatest="blend" />
-		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5" />
+	<screen name="Screen_Base">		
+		<eLabel position="0,0" size="e,e-20" backgroundColor="background5" zPosition="-11" cornerRadius="16" />
+		<eLabel position="2,2" size="e-4,e-84" backgroundColor="background" zPosition="-10" cornerRadius="14" />
+
+		<eLabel position="8,66" size="e-16,2" zPosition="-5" backgroundColor="dark_grey" />
 	</screen>
 		
 	<screen name="Screen_menu2">
@@ -126,13 +44,6 @@
 			  <panel name="ConfigButtonsTemplate"/>
 			</panel>
 		</panel>
-	</screen>
-
-	
-	<screen name="Color_Buttons_Screen_1">
-		<widget addon="ColorButtonsSequence" connection="key_red,key_green,key_yellow,key_blue" 
-			pixmaps="key_red:buttons/key_red.png,key_green:buttons/key_green.png,key_yellow:buttons/key_yellow.png,key_blue:buttons/key_blue.png" 
-			position="0,0" size="e,36" font="Regular;26" backgroundColor="background5" alignment="left" zPosition="10" spacing="40" spacingPixmapText="10" />
 	</screen>
 	
 	<screen name="Screen_Window_Full">
@@ -166,13 +77,6 @@
 	<screen name="Screen_Window_Full_Pig">
 		<panel name="Screen_Window_Full" />
 		<widget source="session.VideoPicture" render="Pig" position="1536,100" size="354,200" zPosition="10" backgroundColor="transpPIG" cornerRadius="8" widgetBorderWidth="2" widgetBorderColor="background5" />
-	</screen>
-
-	<screen name="Screen_Base">		
-		<eLabel position="0,0" size="e,e-20" backgroundColor="background5" zPosition="-11" cornerRadius="16" />
-		<eLabel position="2,2" size="e-4,e-84" backgroundColor="background" zPosition="-10" cornerRadius="14" />
-
-		<eLabel position="8,66" size="e-16,2" zPosition="-5" backgroundColor="dark_grey" />
 	</screen>
 	
 	<screen name="Screen_1">
@@ -229,6 +133,25 @@
 		<widget name="introduction" conditional="introduction" position="0,0" size="0,0"/><!-- hidden -->
 		<widget name="footnote" objectTypes="footnote,Button,Label" position="145,865" zPosition="5" size="1630,30" font="Regular;28" foregroundColor="yellow" valign="center" halign="center"/>
 		<widget source="footnote" render="Label" objectTypes="footnote,StaticText" position="145,865" zPosition="1000" size="1630,30" font="Regular;28" foregroundColor="yellow" valign="center" halign="center"/>
+	</screen>
+
+	<screen name="MenuTemplate">
+		<panel name="FrameTemplate"/>
+
+		<widget source="title" render="Label" position="82,864" size="534,62" font="Regular; 34" halign="right" valign="center" backgroundColor="background5" />
+		<widget source="menu" render="Listbox" position="82,277" size="544,522" scrollbarMode="showNever" enableWrapAround="1" transparent="1" itemCornerRadius="6">
+			<convert type="TemplatedMultiContent">
+						{"template": [ MultiContentEntryText(pos = (82,5),size = (440,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0),
+									   MultiContentEntryPixmapAlphaBlend(pos = (17,5),size = (48,48), png = 5)],
+						"fonts": [gFont("Regular",34)],
+						"itemHeight": 58
+						}
+			</convert>
+		</widget>
+		<widget addon="Pager" connection="menu" position="85,812" size="558,25" transparent="1" backgroundColor="background"/>
+		<widget source="ScreenPath" render="Label" position="78,833" size="544,25" backgroundColor="background" zPosition="1" font="Regular;19" valign="top" halign="right"/>
+		<widget source="global.CurrentTime" render="BoxLogo" position="72,175" size="564,65" zPosition="10" alphatest="blend" />
+		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5" />
 	</screen>
 
 	<!-- Infobar Template -->
@@ -352,6 +275,81 @@
 			<convert type="ClockToText">InMinutes</convert>
 		</widget>
 	</screen>
+
+	<!-- Movie player template -->
+	<screen name="PlayerTemplate">
+		<eLabel position="38,862" size="1839,184" zPosition="-11" backgroundColor="background5" cornerRadius="16"/>
+		<eLabel position="370,864" size="1505,180" zPosition="-10" backgroundColor="background" cornerRadius="14"/>
+		
+		<eLabel position="380,915" size="1485,2" zPosition="-9" backgroundColor="dark_grey" />
+		<widget name="statusicon" position="160,915" zPosition="3" size="90,90" alphatest="blend" pixmaps="icons/pvr/play.svg,icons/pvr/pause.svg,icons/pvr/stop.svg,icons/pvr/ff.svg,icons/pvr/rew.svg,icons/pvr/slow.svg"/>
+		<widget name="speed"  foregroundColor="white" halign="left" position="260,960" size="90,45" font="Bold; 40" transparent="1"/>
+		<widget source="session.CurrentService" render="Label" position="400,935" size="1120,50" font="Regular; 44" valign="center" noWrap="1" backgroundColor="background" transparent="1">
+		  <convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="405,864" size="110,51" font="Bold; 26" halign="left" valign="center" backgroundColor="background" transparent="1" foregroundColor="white">
+		  <convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="511,864" size="110,51" font="Bold; 26" halign="center" valign="center" backgroundColor="background" transparent="1">
+		  <convert type="ServicePosition">Length</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="621,864" size="110,51" font="Bold; 26" halign="right" valign="center" backgroundColor="background" transparent="1" foregroundColor="white">
+		  <convert type="ServicePosition">Remaining,Negate</convert>
+		</widget>
+		<eLabel backgroundColor="progress" position="400,1010" zPosition="1" size="1170,4" transparent="0" />
+		<widget source="session.CurrentService" render="PositionGauge" position="400,1010" zPosition="3" size="1170,4" transparent="1">
+		  <convert type="ServicePosition">Gauge</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Progress" backgroundColor="background" foregroundColor="blue" position="400,1010" zPosition="2" size="1170,4" transparent="1">
+		  <convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget backgroundColor="background" font="Bold; 60" foregroundColor="white" halign="center" position="1590,925" render="Label" size="320,60" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
+		  <convert type="ClockToText">Default</convert>
+		</widget>
+		<widget backgroundColor="background" font="Bold; 30" foregroundColor="white" halign="center" position="1590,990" render="Label" size="320,35" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
+		  <convert type="ClockToText">Format: %d %B</convert>
+		</widget>
+		<widget alphatest="blend" path="icons/audioicon" position="1605,860" render="AudioIcon" size="85,50" source="session.CurrentService" zPosition="10">
+		  <convert type="VAudioInfo">AudioIcon</convert>
+		</widget>
+
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/mpeg2.png" size="80,40" position="1700,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">IsVideoMPEG2</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/h264.png" size="80,40" position="1700,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">IsVideoAVC</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/h265.png" size="80,40" position="1700,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">IsVideoHEVC</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/480.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">Is480</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/576.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">Is576</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/720.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">Is720</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/1080.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">Is1080</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/4k.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">Is4K</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget alphatest="blend" pixmap="icons/rec2.png" position="1290,880" render="Pixmap" size="49,22" source="session.RecordState" zPosition="2">
+		  <convert type="ConditionalShowHide">Blink,1000,4000</convert>
+		</widget>
+	</screen>
 	
 	<!-- Remote control templates -->
 	<screen name="RcPanel">
@@ -433,6 +431,7 @@
 		<widget name="activityslider" position="30,990" size="1860,6" pixmap="window/slider100.png" transparent="1" zPosition="100"/>
 	</screen>
 	
+	<!-- Virtual keyboard template -->
 	<screen name="VirtualKeyBoardTemplate">
 		<widget name="prompt" position="4,0" size="810,39" font="Regular;30" noWrap="1" transparent="1" valign="top"/>
 		<widget name="text" position="4,70" size="952,48" font="Regular;38" halign="right" noWrap="1" transparent="1" valign="center"/>

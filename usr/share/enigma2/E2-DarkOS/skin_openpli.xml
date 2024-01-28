@@ -150,6 +150,7 @@
 		</widget>
 		<widget source="introduction" render="Label" position="30,560" size="720,34" zPosition="10" font="Regular;30" halign="left" backgroundColor="secondBG" transparent="1" />
 	</screen> -->
+
 	<!-- AutoBackup -->
 	<screen name="Config" position="fill" flags="wfNoBorder">
 		<panel name="ConfigScreenTemplate" />
