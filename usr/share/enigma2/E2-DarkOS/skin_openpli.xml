@@ -1,16 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin>
+	<!-- Console screens -->
 	<screen name="Console_Pig" title="Command execution" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />
 		<widget name="text" position="125,150" size="1670,13*45" itemHeight="45" font="Fixed;28" backgroundColor="background" foregroundColor="white" scrollbarMode="showNever" />
 		<widget addon="Pager" connection="text" position="145,915" size="1630,25" backgroundColor="background"/>
   	</screen>
+
+	<!-- AutoBackup -->
+	<screen name="Config" position="fill" flags="wfNoBorder">
+		<panel name="ConfigScreenTemplate" />
+		<widget name="statusbar" position="145,865" zPosition="5" size="1630,30" font="Regular;28" />
+		<widget name="status" position="145,755" size="1630,100" font="Regular;28" />
+	</screen>
+
+	<!-- ==== Opkg screens ==== -->
 	<screen name="OpkgInstaller" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />
 		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" selectionListDescr="80,5,1650,45" font="Regular;28" scrollbarMode="showNever" valign="center" />
 		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 		<widget source="introduction" render="Label" position="145,865" zPosition="1000" size="1630,36" font="Regular;28" valign="center" halign="center"/>
 	</screen>
+	<!-- packet manager -->
+	<screen name="PacketManager" position="fill" title="Packet manager" backgroundColor="transparent" >
+		<panel name="Screen_menu2" />
+		<widget source="list" render="Listbox" position="514,221" size="889,11*54" itemHeight="54" scrollbarMode="showNever" itemCornerRadius="6">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (5, 2), size = (829, 28), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (5, 28), size = (829, 20), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
+						MultiContentEntryPixmapAlphaBlend(pos = (840, 3), size = (48, 48), png = 4, flags=BT_SCALE), # index 4 is the status pixmap
+					],
+				"fonts": [gFont("Regular", 22),gFont("Regular", 14)],
+				"itemHeight": 54
+				}
+			</convert>
+		</widget>
+		<widget addon="Pager" conditional="list" connection="list" position="514,833" size="889,25" transparent="1" backgroundColor="background" />
+	</screen>
+
 	<!--This is PLi plugins and special screens that have to be done-->
 	<!-- Opkg installer
 	
@@ -32,22 +60,6 @@
 		<widget name="text" position="30,570" size="1860,45" font="Regular;34" zPosition="3" transparent="1" />
 	</screen>
 
-	<screen name="PacketManager" title="OPKG upgrade" position="fill" flags="wfNoBorder">
-		<panel name="PigTemplate" />
-		<widget source="list" render="Listbox" position="780,105" size="1110,858" zPosition="3" transparent="1" scrollbarMode="showOnDemand">
-			<convert type="TemplatedMultiContent">
-				{"template": [
-				MultiContentEntryText(pos = (7,1), size = (975,36), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
-				MultiContentEntryText(pos = (7,40), size = (975,36), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
-				MultiContentEntryPixmapAlphaTest(pos = (993,0), size = (72,72), png = 4), # index 5 is the status pixmap
-				MultiContentEntryPixmapAlphaTest(pos = (0,76), size = (1110,3), png = 5), # index 6 is the div pixmap
-				],
-				"fonts": [gFont("Regular",33),gFont("Regular",27)],
-				"itemHeight": 78
-				}
-			</convert>
-		</widget>
-	</screen>
 	<screen name="UpdatePluginMenu" title="Softwaremanager" position="fill" flags="wfNoBorder">
 		<panel name="PigTemplate" />
 		<panel name="KeyMenuTemplate" />
@@ -151,10 +163,4 @@
 		<widget source="introduction" render="Label" position="30,560" size="720,34" zPosition="10" font="Regular;30" halign="left" backgroundColor="secondBG" transparent="1" />
 	</screen> -->
 
-	<!-- AutoBackup -->
-	<screen name="Config" position="fill" flags="wfNoBorder">
-		<panel name="ConfigScreenTemplate" />
-		<widget name="statusbar" position="145,865" zPosition="5" size="1630,30" font="Regular;28" />
-		<widget name="status" position="145,755" size="1630,100" font="Regular;28" />
-	</screen>
 </skin>
