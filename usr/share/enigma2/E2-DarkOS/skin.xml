@@ -72,6 +72,7 @@
 		<color name="dark" value="#00242424" />
 		<color name="dark_grey" value="#00555556" />
 		<color name="darkgrey" value="#00555556" />
+		<color name="darkorange" value="#00CB6622" />
 		<color name="fallback" value="#00b0b0c0" />
 		<color name="foreground" value="#00f0f0f0" />
 		<color name="green" value="#0056c856" />
@@ -486,7 +487,7 @@
 						colorEventProgressbarBorder="blue" colorEventProgressbarBorderSelected="blue" colorEventProgressbar="blue" colorEventProgressbarSelected="yellow" 
 						picServiceEventProgressbar="window/progress.png" forgroundColorEventProgressbarBorder="background" foregroundColorServiceNotAvail="#777777" 
 						backgroundColor="background" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" 
-						scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background3" backgroundColorMarkedSelected="background3" 
+						scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background2" backgroundColorMarkedSelected="darkorange" 
 						scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="52" itemHeightTwoLine="84" nonplayableMargins="0" textSeparator="  •  " sidesMargin="20" markerLine="1" 
 						markerTextAlignment="center" markerLineColor="separator" foregroundColorEventRemaining="potem" foregroundColorEventRemainingSelected="potem" serviceRemainingInfoFont="Regular;22" itemCornerRadius="6" />
 		<widget addon="Pager" connection="list" position="20,955" size="1160,25" transparent="1" backgroundColor="background" maxPages="15" />
