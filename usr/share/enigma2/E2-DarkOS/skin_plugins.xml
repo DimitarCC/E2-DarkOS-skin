@@ -823,4 +823,27 @@
 		</panel>
 	</screen>
 
+	<!-- IMDB -->
+	<screen name="IMDB" position="fill" flags="wfNoBorder" title="Internet Movie Database Details Plugin" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
+		<panel position="120,130" size="1690,902">
+			<widget name="poster" position="10,10" size="350,470" alphatest="blend" backgroundColor="transparent" transparent="1"/>
+			<widget name="titellabel" position="390,10" size="765,50" font="Regular;30" foregroundColor="secondFG" halign="left"/>
+			<widget name="detailslabel" position="390,140" size="945,270" font="Regular;30" halign="left"/>
+			<widget name="starsbg" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/IMDb/starsbar_empty.png" position="390,80" size="315,31" zPosition="2" alphatest="blend"/>
+			<widget name="stars" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/IMDb/starsbar_filled.png" position="390,80" size="315,31" zPosition="3" transparent="1"/>
+			<widget name="ratinglabel" position="425,70" size="765,50" font="Regular;30" foregroundColor="grey" halign="center"/>
+			<widget name="statusbar" position="10,500" size="350,300" font="Regular;27" halign="center" valign="top"/>
+			<widget name="extralabel" position="390,250" size="1282,555" font="Regular;33" foregroundColor="grey" scrollbarMode="showNever"/>
+			<widget addon="Pager" conditional="extralabel" connection="extralabel" position="390,785" size="1282,25" backgroundColor="background" />
+			<widget name="menu" position="390,190" size="1282,13*45" font="Regular;33" itemHeight="45" scrollbarMode="showNever" zPosition="3" foregroundColor="grey" itemCornerRadius="6"/>
+			<widget addon="Pager" connection="menu" position="390,785" size="1282,25" backgroundColor="background" />
+			<widget name="castlabel" position="390,380" size="1282,400" font="Regular;33" foregroundColor="grey" scrollbarMode="showNever"/>	
+			<widget addon="Pager" conditional="castlabel" connection="castlabel" position="390,790" size="1282,25" backgroundColor="background" />
+		</panel>
+	</screen>
+	<screen name="IMDbSetup" position="fill" flags="wfNoBorder"  backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+	</screen>
+
 </skin>
