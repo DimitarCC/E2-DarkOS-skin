@@ -852,7 +852,7 @@
 		<panel position="120,40" size="1690,902">
 			<widget name="searchinfo" position="30,123" size="830,40" font="Regular;34" foregroundColor="selectedFG" backgroundColor="background"/>
 			<eLabel position="e-342,121" size="324,484" backgroundColor="backgroundColor" cornerRadius="6" widgetBorderWidth="1" widgetBorderColor="separator"/>
-			<widget name="cover" position="e-340,123" size="320,480" zPosition="100" alphatest="blend" cornerRadius="30"/>
+			<widget name="cover" position="e-340,123" size="320,480" zPosition="100" alphatest="blend" cornerRadius="6"/>
 			<widget name="backdrop" conditional="backdrop" position="0,0" size="0,0" zPosition="-5" alphatest="blend"/><!-- silence debug -->
 		</panel>
 	</screen>
@@ -891,7 +891,7 @@
 			<widget name="data" conditional="data" position="30,600" size="830,255" font="Regular;33" scrollbarMode="showNever"/>
 			<widget addon="Pager" connection="data" position="30,870" size="830,25" backgroundColor="background" />
 			<eLabel position="e-342,121" size="324,484" backgroundColor="backgroundColor" cornerRadius="6" widgetBorderWidth="1" widgetBorderColor="separator"/>
-			<widget name="cover" position="e-340,123" size="320,480" zPosition="100" alphatest="blend" cornerRadius="30"/>
+			<widget name="cover" position="e-340,123" size="320,480" zPosition="100" alphatest="blend" cornerRadius="6"/>
 		</panel>
 	</screen>
 
@@ -931,7 +931,7 @@
 			<widget name="list" conditional="list" position="30,183" size="830,680" transparent="1" itemHeight="45" scrollbarMode="showNever" itemCornerRadius="6"/>
 			<widget addon="Pager" connection="list" position="30,860" size="830,25" backgroundColor="background" />
 			<eLabel position="e-342,121" size="324,484" backgroundColor="backgroundColor" cornerRadius="6" widgetBorderWidth="1" widgetBorderColor="separator"/>
-			<widget name="cover" position="e-340,123" size="320,480" zPosition="100" alphatest="blend" cornerRadius="30"/>
+			<widget name="cover" position="e-340,123" size="320,480" zPosition="100" alphatest="blend" cornerRadius="6"/>
 		</panel>
 	</screen>
 
