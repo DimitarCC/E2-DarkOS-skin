@@ -168,70 +168,11 @@
 		<widget backgroundColor="black" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="390,864" valign="center" render="Label" size="950,51" source="session.CurrentService" transparent="1" zPosition="110">
 		  <convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
 		</widget>
-		<eLabel position="1315,878" size="2,28" zPosition="-9" backgroundColor="dark_grey" />
 		
-		<widget source="session.CurrentService" render="Label" position="1323,876" size="70,32" transparent="1" zPosition="1" backgroundColor="background" foregroundColor="green" font="Bold;25" valign="center" halign="center">
-			<convert type="PliExtraInfo">CurrentCrypto</convert>
-		</widget>
-		
-		<eLabel position="1398,878" size="2,28" zPosition="-9" backgroundColor="dark_grey" />
-		<ePixmap pixmap="icons/ico_subs_off.png" position="1464,878" size="40,28" alphatest="blend"/>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/ico_subs_on.png" position="1464,878" size="40,28" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">SubservicesAvailable</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<ePixmap pixmap="icons/ml_s_alt2_off.png" position="1568,881" size="31,25" alphatest="blend"/>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/ml_s_alt2.png" position="1568,881" size="31,25" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">AudioTracksAvailable</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<ePixmap pixmap="icons/subs_s_off.png" position="1516,880" size="40,25" alphatest="blend"/>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/subs_s.png" position="1516,880" size="40,25" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">SubtitlesAvailable</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<ePixmap pixmap="icons/hbbtv_s_off.png" size="48,24" position="1656,881" alphatest="blend"/>
-		<widget render="Pixmap" pixmap="icons/hbbtv_s.png" size="48,24" position="1656,881" zPosition="2" alphatest="blend" source="session.CurrentService">
-			<convert type="ServiceInfo">HasHBBTV</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<ePixmap pixmap="icons/crypt_s_off.png" position="1608,882" size="40,23" alphatest="blend"/>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/crypt_s.png" position="1608,882" size="40,23" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">IsCrypted</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<ePixmap pixmap="icons/dd_s_off.png" size="40,25" position="1714,880" alphatest="blend"/>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/dd_s.png" size="40,25" position="1714,880" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">IsMultichannel</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<ePixmap pixmap="icons/ico_txt_off.png" size="50,25" position="1763,880" alphatest="blend"/>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/ico_txt_on.png" size="50,25" position="1763,880" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">HasTelext</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/SD_s_n.png" size="50,25" position="1815,880" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">IsSD</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/HD_s_n.png" size="50,25" position="1815,880" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">IsHD</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/4K_s_n.png" size="50,25" position="1815,880" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">Is4K</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		
-		<widget position="1244,880" render="Pixmap" size="49,22" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
-		  <convert type="ConditionalShowHide">Blink,1000,4000</convert>
-		</widget>
-		
-		<ePixmap pixmap="icons/streaming_off.png" position="1413,879" size="43,26" alphatest="blend"/>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/streaming.png" position="1413,879" size="43,26" zPosition="3" alphatest="blend">
-			<convert type="ClientsStreaming"/>
-			<convert type="ConditionalShowHide"/>
-		</widget>
+		<widget addon="ServiceInfoBar" connection="session" position="1200,877" size="658,26" zPosition="110" backgroundColor="background" elements="gamma,videoRes,separator,crypt,currentCrypto,separator,txt,dolby,audiotrack,subtitletrack,subservices,stream,hbbtv,separator,record" 
+			pixmaps="IS_HDR:icons/hdr_on.png,IS_HDR10:icons/hdr_on.png,IS_HLG:icons/hdr_on.png,IS_HD:icons/HD_s_n.png,IS_4K:icons/4K_s_n.png,IS_SD:icons/SD_s_n.png,txt:icons/ico_txt_on.png,dolby:icons/dd_s.png,crypt:icons/crypt_s.png,audiotrack:icons/ml_s_alt2.png,subtitletrack:icons/subs_s.png,hbbtv:icons/hbbtv_s.png,subservices:icons/ico_subs_on.png,stream:icons/streaming.png,record:icons/rec2.png"
+			pixmapsDisabled="txt:icons/ico_txt_off.png,dolby:icons/dd_s_off.png,crypt:icons/crypt_s_off.png,audiotrack:icons/ml_s_alt2_off.png,subtitletrack:icons/subs_s_off.png,hbbtv:icons/hbbtv_s_off.png,subservices:icons/ico_subs_off.png,stream:icons/streaming_off.png" 
+			permanent="videoRes,crypt,currentCrypto" alignment="right" spacing="20" autoresizeMode="condensed" separatorLineColor="separator" separatorLineThickness="1" font="Bold;25" foregroundColor="green"/>
 		
 		<widget backgroundColor="dark_grey" font="Bold;32" halign="left" noWrap="1" position="390,927" render="Label" size="80,45" source="session.Event_Now" transparent="1" valign="center" zPosition="3" foregroundColor="light_yellow">
 		  <convert type="EventTime">StartTime</convert>

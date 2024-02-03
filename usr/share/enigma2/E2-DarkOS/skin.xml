@@ -73,6 +73,7 @@
 		<color name="dark_grey" value="#00555556" />
 		<color name="darkgrey" value="#00555556" />
 		<color name="darkorange" value="#00CB6622" />
+		<color name="darkgreen" value="#0016401a" />
 		<color name="fallback" value="#00b0b0c0" />
 		<color name="foreground" value="#00f0f0f0" />
 		<color name="green" value="#0056c856" />
@@ -349,64 +350,10 @@
 		<widget backgroundColor="background5" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="122,964" valign="center" render="Label" size="950,60" source="session.CurrentService" zPosition="110">
 		<convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
 		</widget>
-		<widget position="1110,984" render="Pixmap" size="49,22" pixmap="icons/rec2.png" source="session.RecordState" zPosition="2" alphatest="blend">
-		<convert type="ConditionalShowHide">Blink,1000,4000</convert>
-		</widget>
-		<widget source="session.FrontendInfo" render="Label" position="1175,977" size="150,30" borderWidth="1" borderColor="black" zPosition="1" backgroundColor="background5" halign="right" font="Bold;30">
-			<convert type="FrontendInfo">USE_TUNERS_STRING</convert>
-		</widget>
-		<ePixmap pixmap="icons/streaming_off_alt2.png" position="1350,983" size="43,26" alphatest="blend"/>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/streaming.png" position="1350,983" size="43,26" zPosition="3" alphatest="blend">
-			<convert type="ClientsStreaming"/>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<ePixmap pixmap="icons/ico_subs_off_d.png" position="1402,981" size="40,28" alphatest="blend" />
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/ico_subs_on.png" position="1402,981" size="40,28" zPosition="2" alphatest="blend">
-		<convert type="ServiceInfo">SubservicesAvailable</convert>
-		<convert type="ConditionalShowHide" />
-		</widget>
-		<ePixmap pixmap="icons/ml_s_alt2_off_d.png" position="1506,982" size="31,25" alphatest="blend" />
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/ml_s_alt2.png" position="1506,982" size="31,25" zPosition="2" alphatest="blend">
-		<convert type="ServiceInfo">AudioTracksAvailable</convert>
-		<convert type="ConditionalShowHide" />
-		</widget>
-		<ePixmap pixmap="icons/subs_s_off_d.png" position="1454,981" size="40,25" alphatest="blend" />
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/subs_s.png" position="1454,981" size="40,25" zPosition="2" alphatest="blend">
-		<convert type="ServiceInfo">SubtitlesAvailable</convert>
-		<convert type="ConditionalShowHide" />
-		</widget>
-		<ePixmap pixmap="icons/hbbtv_s_off_d.png" size="48,24" position="1591,982" alphatest="blend" />
-		<widget render="Pixmap" pixmap="icons/hbbtv_s.png" size="48,24" position="1591,982" zPosition="2" alphatest="blend" source="session.CurrentService">
-		<convert type="ServiceInfo">HasHBBTV</convert>
-		<convert type="ConditionalShowHide" />
-		</widget>
-		<ePixmap pixmap="icons/crypt_s_off_d.png" position="1546,983" size="40,23" alphatest="blend" />
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/crypt_s.png" position="1546,983" size="40,23" zPosition="2" alphatest="blend">
-		<convert type="ServiceInfo">IsCrypted</convert>
-		<convert type="ConditionalShowHide" />
-		</widget>
-		<ePixmap pixmap="icons/dd_s_off_d.png" size="40,25" position="1652,981" alphatest="blend" />
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/dd_s.png" size="40,25" position="1652,981" zPosition="2" alphatest="blend">
-		<convert type="ServiceInfo">IsMultichannel</convert>
-		<convert type="ConditionalShowHide" />
-		</widget>
-		<ePixmap pixmap="icons/ico_txt_off_d.png" size="50,25" position="1701,981" alphatest="blend" />
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/ico_txt_on.png" size="50,25" position="1701,981" zPosition="2" alphatest="blend">
-		<convert type="ServiceInfo">HasTelext</convert>
-		<convert type="ConditionalShowHide" />
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/SD_s_n.png" size="50,25" position="1753,981" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">IsSD</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/HD_s_n.png" size="50,25" position="1753,981" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">IsHD</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/4K_s_n.png" size="50,25" position="1753,981" zPosition="2" alphatest="blend">
-			<convert type="ServiceInfo">Is4K</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
+		<widget addon="ServiceInfoBar" connection="session" position="1100,982" size="700,26" zPosition="5" backgroundColor="background5" transparent="1" 
+			elements="videoRes,txt,dolby,audiotrack,subtitletrack,subservices,stream,hbbtv,separator,record" 
+			pixmaps="IS_HD:icons/HD_s_n.png,IS_4K:icons/4K_s_n.png,IS_SD:icons/SD_s_n.png,txt:icons/ico_txt_on.png,dolby:icons/dd_s.png,crypt:icons/crypt_s.png,audiotrack:icons/ml_s_alt2.png,subtitletrack:icons/subs_s.png,hbbtv:icons/hbbtv_s.png,subservices:icons/ico_subs_on.png,stream:icons/streaming.png,record:icons/rec2.png"
+			alignment="right" spacing="20" autoresizeMode="condensed" separatorLineColor="separator" separatorLineThickness="1" font="Bold;25" foregroundColor="green"/>
 		<widget backgroundColor="background2" font="Bold; 60" foregroundColor="white" halign="center" position="1521,762" render="Label" size="320,70" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
 		<convert type="ClockToText">Default</convert>
 		</widget>
@@ -487,7 +434,7 @@
 						colorEventProgressbarBorder="blue" colorEventProgressbarBorderSelected="blue" colorEventProgressbar="blue" colorEventProgressbarSelected="yellow" 
 						picServiceEventProgressbar="window/progress.png" forgroundColorEventProgressbarBorder="background" foregroundColorServiceNotAvail="#777777" 
 						backgroundColor="background" serviceNumberFont="Regular;31" serviceNameFont="Regular;31" serviceInfoFont="Regular;26" additionalInfoFont="Regular;22" 
-						scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background2" backgroundColorMarkedSelected="darkorange" 
+						scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="white" backgroundColorMarked="background2" backgroundColorMarkedSelected="darkgreen" 
 						scrollbarWidth="3" progressbarHeight="10" progressBarWidth="60" progressPercentWidth="80" itemHeight="52" itemHeightTwoLine="84" nonplayableMargins="0" textSeparator="  •  " sidesMargin="20" markerLine="1" 
 						markerTextAlignment="center" markerLineColor="separator" foregroundColorEventRemaining="potem" foregroundColorEventRemainingSelected="potem" serviceRemainingInfoFont="Regular;22" itemCornerRadius="6" />
 		<widget addon="Pager" connection="list" position="20,955" size="1160,25" transparent="1" backgroundColor="background" maxPages="15" />
@@ -1998,19 +1945,19 @@ if callable(loadLogo):
 	<!-- About -->
 	<screen name="About" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />
-		<widget name="AboutScrollLabel" font="Fixed;28" position="125,150" size="1696,734" zPosition="2" split="1" dividechar=":" colposition="0" backgroundColor="background" scrollbarMode="showNever"/>
+		<widget name="AboutScrollLabel" font="Regular;28" position="125,150" size="1696,734" zPosition="2" split="1" dividechar=":" colposition="0" backgroundColor="background" scrollbarMode="showNever"/>
 		<widget addon="Pager" connection="AboutScrollLabel" position="125,904" size="1696,25" transparent="1" backgroundColor="background"/>
 	</screen>
 
 	<!-- Memory Info -->
 	<screen name="MemoryInfo" position="fill" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1923,1080">
 		<panel name="Screen_1_1" />
-		<widget name="lmemtext" font="Fixed;30" position="124,141" size="750,785" zPosition="1" halign="left" backgroundColor="secondBG" transparent="1" />
-		<widget name="lmemvalue" font="Fixed;30" position="125,141" size="750,782" zPosition="2" halign="right" backgroundColor="secondBG" transparent="1" />
-		<widget name="rmemtext" font="Fixed;30" position="998,139" size="800,783" zPosition="1" halign="left" backgroundColor="secondBG" transparent="1" />
-		<widget name="rmemvalue" font="Fixed;30" position="999,140" size="800,782" zPosition="2" halign="right" backgroundColor="secondBG" transparent="1" />
-		<widget name="pfree" position="853,345" size="105,30" font="Fixed;21" zPosition="1" halign="right" backgroundColor="secondBG" transparent="1" />
-		<widget name="pused" position="857,679" size="105,30" font="Fixed;21" zPosition="1" halign="right" backgroundColor="secondBG" transparent="1" />
+		<widget name="lmemtext" font="Regular;30" position="124,141" size="750,785" zPosition="1" halign="left" backgroundColor="secondBG" transparent="1" />
+		<widget name="lmemvalue" font="Regular;30" position="125,141" size="750,782" zPosition="2" halign="right" backgroundColor="secondBG" transparent="1" />
+		<widget name="rmemtext" font="Regular;30" position="998,139" size="800,783" zPosition="1" halign="left" backgroundColor="secondBG" transparent="1" />
+		<widget name="rmemvalue" font="Regular;30" position="999,140" size="800,782" zPosition="2" halign="right" backgroundColor="secondBG" transparent="1" />
+		<widget name="pfree" position="853,345" size="105,30" font="Regular;21" zPosition="1" halign="right" backgroundColor="secondBG" transparent="1" />
+		<widget name="pused" position="857,679" size="105,30" font="Regular;21" zPosition="1" halign="right" backgroundColor="secondBG" transparent="1" />
 		<widget name="slide" position="970,138" size="20,782" render="Progress" zPosition="1" borderWidth="1" orientation="orBottomToTop" />
 		<widget name="params" rowsincolumn="26" position="125,140" size="1674,782" />
 	</screen>
@@ -2030,8 +1977,8 @@ if callable(loadLogo):
 	<!-- Translation Info -->
 	<screen flags="wfNoBorder" name="TranslationInfo" position="fill" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
-		<widget source="TranslatorName" render="Label" position="401,196" size="1110,120" font="Fixed;28" halign="center" backgroundColor="background" transparent="1" />
-		<widget source="TranslationInfo" render="Label" position="401,317" size="1110,570" font="Fixed;28" halign="center" backgroundColor="background" transparent="1" />
+		<widget source="TranslatorName" render="Label" position="401,196" size="1110,120" font="Regular;28" halign="center" backgroundColor="background" transparent="1" />
+		<widget source="TranslationInfo" render="Label" position="401,317" size="1110,570" font="Regular;28" halign="center" backgroundColor="background" transparent="1" />
 	</screen>
 
 	<!-- Streaming Clients Info -->
