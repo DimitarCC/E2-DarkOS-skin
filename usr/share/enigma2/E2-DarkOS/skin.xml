@@ -2076,7 +2076,7 @@ if callable(loadLogo):
 	<!-- QuitMainloopScreen -->
 	<screen name="QuitMainloopScreen" position="fill" flags="wfNoBorder" backgroundColor="#00000000">
 		<ePixmap pixmap="../logo/logo-white-square.png" position="c-200,c-318" size="400,318" scale="1" alphatest="blend" />
-		<widget name="text" position="c-885,c+15" size="1770,150" font="Regular;30" halign="center" />
+		<widget name="text" position="c-885,c+15" size="1770,150" font="Regular;30" halign="center" backgroundColor="#00000000"/>
 	</screen>
 
 	<!-- QuickSubtitlesConfigMenu -->
