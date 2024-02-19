@@ -910,10 +910,21 @@ if callable(loadLogo):
 	</screen>
 
 	<!-- Timeshift state -->
-	<screen name="TimeshiftState" position="150,67" zPosition="0" size="1620,150" backgroundColor="transparent" flags="wfNoBorder">
-		<panel name="PlayerTemplate" />
-		<widget name="state" position="42,105" size="225,45" zPosition="3" backgroundColor="transparent" borderWidth="2" font="Regular;37" borderColor="black" halign="left" />
-	</screen>
+	<screen name="TimeshiftState" position="163,804" zPosition="0" size="1600,58" backgroundColor="transparent" flags="wfNoBorder">
+		<eLabel position="5,2" size="1590,56" zPosition="-11" backgroundColor="background5" cornerRadius="12;top" />
+		<eLabel position="7,4" size="1586,54" zPosition="-10" backgroundColor="background" cornerRadius="10;top"/>
+		<widget name="statusicon" position="15,15" zPosition="3" size="40,35" alphatest="blend" pixmaps="icons/pvr/play.svg,icons/pvr/pause.svg,icons/pvr/stop.svg,icons/pvr/ff.svg,icons/pvr/rew.svg,icons/pvr/slow.svg"/>
+		<widget name="speed" foregroundColor="white" halign="left" position="70,12" size="35,40" font="Bold; 30" backgroundColor="background" valign="center" />
+		<widget source="session.CurrentService" render="PositionGauge" position="265,22" size="1100,18" transparent="1" zPosition="4" pointer="dvr/position_pointer1100.png:1100,4" >
+			<convert type="ServicePosition">Gauge</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="120,5" size="135,50" backgroundColor="background" zPosition="4" foregroundColor="foreground" borderWidth="2" font="Regular;33" borderColor="gray" valign="center" halign="left">
+			<convert type="ServicePosition">Position,ShowHours</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="1395,5" size="175,50" backgroundColor="background" zPosition="4" foregroundColor="foreground" borderWidth="2" font="Regular;33" borderColor="gray" valign="center" halign="right">
+			<convert type="ServicePosition">Remaining,Plus,ShowHours</convert>
+		</widget>
+  	</screen>
 	<screen name="TimeshiftLive" position="105,105" zPosition="2" size="450,45" backgroundColor="transparent" flags="wfNoBorder">
 		<eLabel position="0,0" size="450,45" text="Timeshift Live" backgroundColor="transparent" borderWidth="2" font="Regular;37" borderColor="black" />
 	</screen>
