@@ -232,16 +232,16 @@
 		  <convert type="ServicePosition">Position</convert>
 		</widget>
 		<widget source="session.CurrentService" render="Label" position="511,864" size="110,51" font="Bold; 26" halign="center" valign="center" backgroundColor="background" transparent="1">
-		  <convert type="ServicePosition">Length</convert>
+		  <convert type="ServicePosition">Length,ShowHours</convert>
 		</widget>
 		<widget source="session.CurrentService" render="Label" position="621,864" size="110,51" font="Bold; 26" halign="right" valign="center" backgroundColor="background" transparent="1" foregroundColor="white">
-		  <convert type="ServicePosition">Remaining,Negate</convert>
+		  <convert type="ServicePosition">Remaining,ShowHours,Negate</convert>
 		</widget>
 		<eLabel backgroundColor="progress" position="400,1010" zPosition="1" size="1170,4" transparent="0" />
-		<widget source="session.CurrentService" render="PositionGauge" position="400,1010" zPosition="3" size="1170,4" transparent="1">
+		<widget source="session.CurrentService" render="PositionGauge" position="400,1005" zPosition="3" size="1170,12" transparent="1" cornerRadius="6">
 		  <convert type="ServicePosition">Gauge</convert>
 		</widget>
-		<widget source="session.CurrentService" render="Progress" backgroundColor="background" foregroundColor="blue" position="400,1010" zPosition="2" size="1170,4" transparent="1">
+		<widget source="session.CurrentService" render="Progress" backgroundColor="background" foregroundColor="darkblue" position="400,1005" zPosition="2" size="1170,12" transparent="1" cornerRadius="6">
 		  <convert type="ServicePosition">Position</convert>
 		</widget>
 		<widget backgroundColor="background" font="Bold; 60" foregroundColor="white" halign="center" position="1590,925" render="Label" size="320,60" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
@@ -288,7 +288,7 @@
 			<convert type="ConditionalShowHide"/>
 		</widget>
 		<widget alphatest="blend" pixmap="icons/rec2.png" position="1290,880" render="Pixmap" size="49,22" source="session.RecordState" zPosition="2">
-		  <convert type="ConditionalShowHide">Blink,1000,4000</convert>
+		  <convert type="ConditionalShowHide">Blink,4000,1000</convert>
 		</widget>
 	</screen>
 	

@@ -74,6 +74,7 @@
 		<color name="darkgrey" value="#00555556" />
 		<color name="darkorange" value="#00CB6622" />
 		<color name="darkgreen" value="#0016401a" />
+		<color name="darkblue" value="#000e518e" />
 		<color name="fallback" value="#00b0b0c0" />
 		<color name="foreground" value="#00f0f0f0" />
 		<color name="green" value="#0056c856" />
