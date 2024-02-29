@@ -135,8 +135,8 @@
 		<parameter name="ConfigListSeperator" value="500" />
 		<parameter name="PluginBrowserDownloadIcon" value="10,0,90,76" />
 		<parameter name="ScreenParamSeparatorChar" value="*  •  " />
-		<parameter name="ServiceInfoLeft" value="0,0,843,36"/>
-		<parameter name="ServiceInfoRight" value="843,0,1696,36"/>
+		<parameter name="ServiceInfoLeft" value="0,0,600,36"/>
+		<parameter name="ServiceInfoRight" value="600,0,1940,36"/>
 		<parameter name="SelectionListLock" value="25,6,32,32"/> 
 		<parameter name="SelectionListLockOff" value="25,6,32,32"/>
 		<parameter name="SelectionListDescr" value="80,5,650,45"/>
