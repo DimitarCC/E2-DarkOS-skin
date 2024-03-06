@@ -935,4 +935,137 @@
 		</panel>
 	</screen>
 
+	<!-- Dish -->
+	<screen name="Dish" position="1500,75" size="198,383" title="Dish" zPosition="-1" flags="wfNoBorder" backgroundColor="transparent">
+		<widget name="Dishpixmap" pixmap="icons/dish.png" position="0,60" size="130,160" alphatest="blend" />
+		<widget name="turnTime" position="45,75" size="150,38" zPosition="1" font="Regular;27" halign="right" foregroundColor="white" backgroundColor="background" transparent="1" />
+		<widget name="From" position="0,240" size="83,38" zPosition="1" font="Regular;26" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="posFrom" position="93,240" size="105,38" zPosition="1" font="Regular;27" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="Goto" position="0,273" size="83,38" zPosition="1" font="Regular;26" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="posGoto" position="93,273" size="105,38" zPosition="1" font="Regular;27" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="Tuner" position="0,306" size="83,38" zPosition="2" font="Regular;27" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="tunerName" position="93,306" size="105,38" zPosition="2" font="Regular;27" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="turnSpeed" position="0,330" size="180,38" zPosition="2" font="Regular;27" halign="left" foregroundColor="white" backgroundColor="background" transparent="1" />
+		<widget source="session.FrontendStatus" render="Progress" position="0,366" size="180,15" borderWidth="2" backgroundColor="white" zPosition="2">
+			<convert type="FrontendInfo">SNR</convert>
+		</widget>
+	</screen>
+
+	<screen name="Dishpip" position="1500,75" size="198,383" title="" zPosition="1" flags="wfNoBorder" backgroundColor="transparent">
+		<widget source="Dishpixmap" render="Pixmap" pixmap="icons/dish.png" zPosition="-1" position="0,60" size="130,160" alphatest="blend">
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+		<widget name="turnTime" position="45,75" size="150,38" zPosition="1" font="Regular;27" halign="right" foregroundColor="white" backgroundColor="background" transparent="1" />
+		<widget name="From" position="0,240" size="83,38" zPosition="1" font="Regular;26" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="posFrom" position="93,240" size="105,38" zPosition="1" font="Regular;27" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="Goto" position="0,273" size="83,38" zPosition="1" font="Regular;26" halign="right" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="posGoto" position="93,273" size="105,38" zPosition="1" font="Regular;27" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="Tuner" position="0,306" size="83,38" zPosition="2" font="Regular;27" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="tunerName" position="93,306" size="105,38" zPosition="2" font="Regular;27" halign="left" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<widget name="turnSpeed" position="0,330" size="180,38" zPosition="2" font="Rgular;27" halign="left" foregroundColor="white" backgroundColor="background" transparent="1" />
+		<widget source="Frontend" render="Progress" position="0,366" size="180,15" borderWidth="2" backgroundColor="white" zPosition="2">
+			<convert type="FrontendInfo">SNR</convert>
+		</widget>
+  	</screen>
+
+  	<screen name="DevicesMountPanel" position="fill" flags="wfNoBorder" title="Mount Manager" backgroundColor="transparent">
+  		<panel name="Screen_Menu1" />
+		<widget source="list" render="Listbox" position="396,200" size="990,836"  scrollbarMode="showNever" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+				 MultiContentEntryText(pos = (135, 0), size = (900, 45), font=0, text = 0),
+				 MultiContentEntryText(pos = (165, 45), size = (900, 75), font=1, flags = RT_VALIGN_TOP, text = 1),
+				 MultiContentEntryPixmapAlphaBlend(pos = (0, 0), size = (120, 120), png = 2),
+				],
+				"fonts": [gFont("Regular",36),gFont("Regular",30)],
+				"itemHeight": 128
+				}
+			</convert>
+		</widget>
+		<ePixmap position="1415,910" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
+  		<widget name="key_menu" position="1250,825" zPosition="1" size="278,57" font="Regular; 30" halign="left" valign="center"  foregroundColor="foreground" backgroundColor="background" />
+ 	</screen>
+	<screen name="DeviceMountPanelConf" position="fill" flags="wfNoBorder" title="UserManager" backgroundColor="transparent">
+   		<widget name="config" position="396,200" size="1130,540" itemHeight="45" scrollbarMode="showNever" transparent="1" backgroundColor="background" font="Regular; 30" />
+   		<widget name="Linconn" position="400,825" size="1050,30" font="Regular;27" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  		<panel name="Screen_Menu1" />
+ 	</screen>
+
+	<!-- DeviceManager -->
+   	<screen name="HddSetup" position="fill" title="Hard Drive Setup" flags="wfNoBorder" backgroundColor="transparent">
+  		<panel name="Screen_Menu1" />
+  		<widget source="menu" render="Listbox" position="396,200" size="990,836" transparent="1" backgroundColor="background" foregroundColor="white" enableWrapAround="1">
+			<convert type="TemplatedMultiContent">
+						{"template": [
+							MultiContentEntryPixmapAlphaTest(pos = (8,0), size = (72,72), png = 0),
+							MultiContentEntryText(pos = (98,8), size = (1193,60), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+							MultiContentEntryText(pos = (1410,8), size = (360,60), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+							],
+							"fonts": [gFont("Regular", 42)],
+							"itemHeight": 75
+						}
+			</convert>
+    	</widget>
+		<widget name="lab1" zPosition="2" position="530,294" size="900,60" font="Regular;30" backgroundColor="background" foregroundColor="foreground" halign="center" transparent="1" />
+ 	</screen>
+
+	<!-- Dream Explorer -->
+	<screen name="DreamExplorerII" position="fill"  flags="wfNoBorder" title="Dream-Explorer" backgroundColor="transparent">
+   		<widget name="filelist" position="396,200" size="1130,675" itemHeight="45" font="Regular; 30" scrollbarMode="showNever" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+   		<panel name="Screen_Menu1" />
+ 		<ePixmap position="1388,911" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
+ 	</screen>
+
+	<!-- VLC MediaPlayer -->
+	<screen name="VlcMediaListScreen" position="fill"  title="" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+		<widget name="filelist_button_sel" pixmap="epg_now.png" position="120,207" zPosition="3" size="225,8" alphatest="blend" />
+		<widget name="playlist_button_sel" pixmap="epg_next.png" position="345,207" zPosition="3" size="225,8" alphatest="blend" />
+		<widget name="filelist_text" position="120,168" zPosition="4" size="225,35" font="Regular;30" halign="center" backgroundColor="background" transparent="1" />
+		<widget name="playlist_text" position="345,168" zPosition="4" size="225,35" font="Regular;30" halign="center" backgroundColor="background" transparent="1" />
+		<eLabel position="105,215" size="1080,696" zPosition="1" backgroundColor="background5" />
+		<eLabel position="108,218" size="1074,690" zPosition="2" backgroundColor="background" />
+		<widget name="filelist" position="120,233" size="1050,656" zPosition="3" scrollbarMode="showNever" enableWrapAround="1" backgroundColor="background" transparent="1" />
+		<widget name="playlist" position="120,233" size="1050,656" zPosition="3" scrollbarMode="showNever" enableWrapAround="1" backgroundColor="background" transparent="1" />
+   		<ePixmap position="1600,980" size="45,45" zPosition="10" pixmap="buttons/key_ok.png" transparent="1" alphatest="blend" />
+	</screen>
+	<screen name="VlcServerListScreen" position="fill" title="" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+		<eLabel position="108,218" size="1074,690" zPosition="2" backgroundColor="background" />
+    	<eLabel text="Select a VLC-Server Profile" position="1245,180" size="615,44" font="Regular;39" halign="center" backgroundColor="background" transparent="1" />
+		<widget name="serverlabel" position="105,150" size="1080,38" font="Regular;30" transparent="1" />
+		<eLabel position="105,215" size="1080,696" zPosition="1" backgroundColor="background5" />
+		<widget name="serverlist" position="120,233" size="1050,656" zPosition="3" scrollbarMode="showNever" enableWrapAround="1" transparent="1" />
+    	<ePixmap position="1245,840" zPosition="2" size="600,99" pixmap="E2-DarkOS/icons/db.png" transparent="1" alphatest="blend" />
+		<ePixmap position="1600,980" size="45,45" zPosition="10" pixmap="buttons/key_ok.png" transparent="1" alphatest="blend" />
+	</screen>
+	<screen name="VlcServerConfigScreen" position="fill"  title="" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+		<eLabel text="VLC Video Player" position="87,54" size="1200,75" halign="left" font="global_title;51" foregroundColor="foreground" backgroundColor="background" transparent="1" />
+		<eLabel text="Edit VLC Server" position="1245,180" size="615,44" font="Regular;39" halign="center" backgroundColor="background" transparent="1" />
+		<widget name="config" position="105,180" size="1095,735" scrollbarMode="showNever" enableWrapAround="1" transparent="1" />
+    	<ePixmap position="1245,840" zPosition="2" size="600,99" pixmap="E2-DarkOS/icons/db.png" transparent="1" alphatest="blend" />
+	</screen>
+
+	<!-- HdmiTest -->
+	<screen name="HdmiTest" position="fill"  flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+    	<widget name="config" position="105,158" foregroundColor="foreground" size="1670,315" zPosition="1" itemHeight="45" font="Regular;33" scrollbarMode="showNever"/>
+		<widget name="address" position="105,693" size="465,38" zPosition="1" font="Regular;30" foregroundColor="blue"/>
+		<widget name="sendto" position="525,693" size="465,38" zPosition="1" font="screen_text;30" foregroundColor="blue"/>
+		<eLabel position="105,735" size="1050,3" backgroundColor="background5" />
+		<widget name="ltx" position="105,743" size="60,30" zPosition="1" font="Regular;27" halign="left" foregroundColor="green"/>
+		<widget name="txtext" position="165,743" size="330,180" zPosition="1" font="Regular;27" halign="left"/>
+		<widget name="lrx" position="525,743" size="60,30" zPosition="1" font="screen_text;27" halign="left" foregroundColor="red"/>
+		<widget name="rxtext" position="585,743" size="480,180" zPosition="1" font="Regular;27" halign="left"/>
+   		<ePixmap position="1600,980" size="45,45" zPosition="10" pixmap="buttons/key_menu.png" transparent="1" alphatest="blend" />
+	</screen>
+	<screen name="HdmiTestInfoScreen" position="fill"  flags="wfNoBorder" backgroundColor="transparent">
+  		<widget name="rxtext" position="105,150" size="1050,450" itemHeight="45" font="Regular;35" scrollbarMode="showNever" enableWrapAround="1" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+    	<panel name="Screen_Menu1" />
+	</screen>
+	<screen name="HdmiTestOptions" position="fill"  flags="wfNoBorder" backgroundColor="transparent">
+   		<widget name="config" position="396,200" size="1130,450" itemHeight="45" font="Regular;30" scrollbarMode="showNever" enableWrapAround="1" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+    	<panel name="Screen_Menu1" />
+	</screen>
 </skin>
