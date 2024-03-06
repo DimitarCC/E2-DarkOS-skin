@@ -759,7 +759,7 @@
 	<!-- ChoiceBox -->
 	<screen name="ChoiceBox" position="0,0" size="1920,15" title="Choice Box" flags="wfNoBorder" backgroundColor="transparent">
 		<widget source="Title" render="Label" position="15,3" size="250,40" font="Bold; 28" halign="left" foregroundColor="yellow" backgroundColor="transparent" valign="center" zPosition="2" transparent="1" />
-		<widget name="text" position="-e,-e" size="880,30" font="Bold; 30" foregroundColor="potem" backgroundColor="background" valign="center" />
+		<widget name="text" position="15,15" size="880,30" font="Bold; 30" foregroundColor="potem" backgroundColor="background" valign="center" />
 		<widget name="list" position="525,330" size="869,498" itemHeight="45" backgroundColor="background" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" transparent="1" zPosition="2" itemCornerRadius="6"/>
 		<applet type="onLayoutFinish">
 from enigma import ePoint, eSize, getDesktop, gRGB, BT_ALPHABLEND
@@ -767,29 +767,42 @@ from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from Tools.LoadPixmap import LoadPixmap
-from skin import parseRadius, parseColor
+from skin import parseRadius, parseColor, parseFont
 try:
 	from Components.Renderer.BoxLogo import setLogo as loadLogo
 except:
 	loadLogo = None
+	
+font = parseFont("Bold; 28", ((1, 1), (1, 1)))
+self.textRenderer = Label("")
+self.textRenderer.GUIcreate(self.instance)
+self.textRenderer.resize(1920,40)
+self.textRenderer.move(-1920,-40)
+self.textRenderer.instance.setFont(font)
+self.textRenderer.text = self["Title"].text
+
 
 self["title_sep"] = Label("")
 self["title_sep"].GUIcreate(self.instance)
 self["title_sep"].instance.setBackgroundColor(gRGB(0x00555556))
 
+
+titleSize = self.textRenderer.getSize()
 textsize = self["text"].getSize()
 textHeight = textsize[1]
 textpos = self["text"].instance.position()
 if textpos.x() &lt; 0 and textpos.y() &lt; 0: 
 	textHeight = 0
+self["text"].move(15, 55)
 count = len(self.list)
 count, scrollbar = (10, self["list"].instance.getScrollbarWidth() + 5) if count > 10 else (count, 0)
 offset = self["list"].l.getItemSize().height() * count
-wsizex = max(self["list"].instance.getMaxItemTextWidth(), textsize[0]) + 10 + 30
+wsizex = max(max(self["list"].instance.getMaxItemTextWidth(), textsize[0]), titleSize[0] + 30) + 10 + 30
+self["text"].resize(wsizex - 30, min(100, textHeight))
 descriptionHeight = 0
-wsizey = textHeight + offset + descriptionHeight + 50 + 104
+wsizey = textHeight + offset + descriptionHeight + 80 + 104
 # move and resize screen
-self["list"].move(15, textHeight + 60)
+self["list"].move(15, textHeight + 80)
 self.instance.resize(eSize(*(wsizex, wsizey)))
 # resize list
 self["list"].resize(wsizex - 30, offset)
