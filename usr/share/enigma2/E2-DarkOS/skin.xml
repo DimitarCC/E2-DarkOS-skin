@@ -106,6 +106,7 @@
 		<color name="yellowtransparent" value="#084b4b00" />
 	</colors>
 	<parameters>
+		<parameter name="hasInfobarCryptoInfo" value="False"/>
 		<parameter name="AutoscaleSVG" value="1" />
 		<parameter name="AutotimerEnabledIcon" value="24,8,32,32"/>
 		<parameter name="AutotimerRecordIcon" value="78,10,30,30"/>
