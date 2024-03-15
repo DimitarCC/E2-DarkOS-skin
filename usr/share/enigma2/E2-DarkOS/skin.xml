@@ -352,6 +352,9 @@
 		<widget backgroundColor="background5" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="122,964" valign="center" render="Label" size="950,60" source="session.CurrentService" zPosition="110">
 			<convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
 		</widget>
+		<widget source="session.FrontendInfo" render="Label" position="1175,977" size="150,30" borderWidth="1" borderColor="black" zPosition="1" backgroundColor="background5" halign="right" font="Bold;30">
+			<convert type="FrontendInfo">USE_TUNERS_STRING</convert>
+		</widget>
 		<widget addon="ServiceInfoBar" connection="session" position="1100,982" size="700,26" zPosition="5" backgroundColor="background5" transparent="1" 
 			elements="videoRes,txt,dolby,audiotrack,subtitletrack,subservices,stream,hbbtv,separator,record" 
 			pixmaps="IS_HD:icons/HD_s_n.png,IS_4K:icons/4K_s_n.png,IS_SD:icons/SD_s_n.png,txt:icons/ico_txt_on.png,dolby:icons/dd_s.png,crypt:icons/crypt_s.png,audiotrack:icons/ml_s_alt2.png,subtitletrack:icons/subs_s.png,hbbtv:icons/hbbtv_s.png,subservices:icons/ico_subs_on.png,stream:icons/streaming.png,record:icons/rec2.png"
