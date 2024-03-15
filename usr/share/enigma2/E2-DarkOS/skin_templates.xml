@@ -154,7 +154,7 @@
 		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5" />
 	</screen>
 
-	<!-- Infobar Template -->
+	<!-- Infobar Templates -->
 	<screen name="InfoBarTemplate">
 		<eLabel position="38,862" size="1839,184" zPosition="-11" backgroundColor="background5" cornerRadius="12"/>
 		<eLabel position="370,864" size="1505,180" zPosition="-10" backgroundColor="background" cornerRadius="10"/>
@@ -217,6 +217,84 @@
 		</widget>
 	</screen>
 
+	<screen name="SecondInfoBarTemplate" title="Second InfoBar" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel position="96,54" size="1728,990">
+			<panel name="Screen_Base" />
+		</panel>
+		<eLabel position="104,724" size="1712,2" zPosition="-5" backgroundColor="dark_grey" />
+		<eLabel position="959,64" size="2,48" zPosition="-5" backgroundColor="dark_grey" />
+		<eLabel position="959,130" size="2,580" zPosition="-5" backgroundColor="dark_grey" />
+		<widget backgroundColor="background" font="Regular; 35" noWrap="1" position="114,65" render="Label" size="730,45" source="session.Event_Now" foregroundColor="light_yellow">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget backgroundColor="background" font="Bold; 30" halign="left" position="114,133" render="Label" size="60,40" source="session.Event_Now">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget backgroundColor="background" font="Bold; 30" halign="left" position="174,133" render="Label" size="70,40" source="session.Event_Now">
+		<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Format:- %H:%M</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Label" position="244,130" size="580,40" font="Bold;30" halign="center" valign="center" foregroundColor="blue" backgroundColor="background" zPosition="1">
+			<convert type="EventName">Genre</convert>
+		</widget>
+		<widget source="session.Event_Now" render="RatingIcon" position="913,70" size="32,32" zPosition="1" alphatest="blend" scale="1" small="1">
+			<convert type="EventName">RawRating</convert>
+		</widget>
+		<widget backgroundColor="background" font="Bold; 30" foregroundColor="potem" halign="right" position="840,130" render="Label" size="100,40" source="session.Event_Now">
+			<convert type="EventTime">Remaining</convert>
+			<convert type="RemainingToText">InMinutes</convert>
+		</widget>
+		<widget backgroundColor="background" font="Regular; 30" foregroundColor="white" position="114,185" render="Label" size="842,505" source="session.Event_Now">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+		<widget backgroundColor="background" font="Bold; 30" halign="left" position="975,133" render="Label" size="60,40" source="session.Event_Next">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget backgroundColor="background" font="Bold; 30" halign="left" position="1035,133" render="Label" size="70,40" source="session.Event_Next">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Format:- %H:%M</convert>
+		</widget>
+		<widget source="session.Event_Next" render="Label" position="1105,130" size="620,40" font="Bold;30" halign="center" valign="center" foregroundColor="blue" backgroundColor="background" zPosition="1">
+			<convert type="EventName">Genre</convert>
+		</widget>
+		<widget source="session.Event_Next" render="RatingIcon" position="1775,70" size="32,32" zPosition="1" alphatest="blend" scale="1" small="1">
+			<convert type="EventName">RawRating</convert>
+		</widget>
+		<widget font="Bold; 30" halign="right" position="1700,130" render="Label" size="100,40" source="session.Event_Next" backgroundColor="background" foregroundColor="potem">
+			<convert type="EventTime">Remaining</convert>
+			<convert type="RemainingToText">InMinutes</convert>
+		</widget>
+		<widget backgroundColor="background" font="Regular; 35" noWrap="1" position="975,65" render="Label" size="730,45" source="session.Event_Next">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget backgroundColor="background" font="Regular; 30" position="975,185" render="Label" size="842,505" source="session.Event_Next">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+		<widget alphatest="blend" position="138,782" render="Picon" size="227,130" source="session.CurrentService" zPosition="1" backgroundColor="background">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<widget backgroundColor="background5" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="122,964" valign="center" render="Label" size="950,60" source="session.CurrentService" zPosition="110">
+			<convert type="ServiceName">•,NUMBER,NAME,ORBPOS,PROVIDER</convert>
+		</widget>
+		<widget source="session.FrontendInfo" render="Label" position="1175,977" size="150,30" borderWidth="1" borderColor="black" zPosition="1" backgroundColor="background5" halign="right" font="Bold;30">
+			<convert type="FrontendInfo">USE_TUNERS_STRING</convert>
+		</widget>
+		<widget addon="ServiceInfoBar" connection="session" position="1100,982" size="700,26" zPosition="5" backgroundColor="background5" transparent="1"
+				elements="videoRes,txt,dolby,audiotrack,subtitletrack,subservices,stream,hbbtv,separator,record"
+				pixmaps="IS_HD:icons/HD_s_n.png,IS_4K:icons/4K_s_n.png,IS_SD:icons/SD_s_n.png,txt:icons/ico_txt_on.png,dolby:icons/dd_s.png,crypt:icons/crypt_s.png,audiotrack:icons/ml_s_alt2.png,subtitletrack:icons/subs_s.png,hbbtv:icons/hbbtv_s.png,subservices:icons/ico_subs_on.png,stream:icons/streaming.png,record:icons/rec2.png"
+				alignment="right" spacing="20" autoresizeMode="condensed" separatorLineColor="separator" separatorLineThickness="1" font="Bold;25" foregroundColor="green"/>
+		<widget backgroundColor="background2" font="Bold; 60" foregroundColor="white" halign="center" position="1521,762" render="Label" size="320,70" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget backgroundColor="background2" font="Bold; 30" foregroundColor="white" halign="center" position="1521,832" render="Label" size="320,45" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
+			<convert type="ClockToText">Format: %d %B %Y</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="1453,895" size="325,40" backgroundColor="background" zPosition="1" foregroundColor="foreground" font="CAID;36" valign="center" halign="right">
+			<convert type="PliExtraInfo">CryptoBar</convert>
+		</widget>
+	</screen>
 	<!-- Movie player template -->
 	<screen name="PlayerTemplate">
 		<eLabel position="38,862" size="1839,184" zPosition="-11" backgroundColor="background5" cornerRadius="16"/>
