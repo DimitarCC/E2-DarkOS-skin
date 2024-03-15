@@ -2076,10 +2076,7 @@ if callable(loadLogo):
 		<widget name="input" position="413,609" size="1110,60" font="Regular;75" halign="center" />
 	</screen>
 	<screen name="PinInputPopup" position="center,center" size="1065,240" title="Change pin code" flags="wfNoBorder">
-		<widget name="service" position="15,15" size="1035,40" font="Regular;34" halign="center" />
-		<widget name="text" position="15,65" size="1035,35" font="Regular;30" halign="center" />
-		<widget name="tries" position="15,110" size="1035,35" font="Regular;30" halign="center" />
-		<widget name="input" position="15,160" size="1035,60" font="Regular;75" halign="center" />
+		<panel name="PinInput"/>
 	</screen>
 
 	<!-- PiP -->
