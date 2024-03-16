@@ -2003,7 +2003,7 @@ if callable(loadLogo):
 		<widget name="tries" position="413,536" size="1110,35" font="Regular;30" halign="center" />
 		<widget name="input" position="413,609" size="1110,60" font="Regular;75" halign="center" />
 	</screen>
-	<screen name="PinInputPopup" position="center,center" size="1065,240" title="Change pin code" flags="wfNoBorder">
+	<screen name="PinInputPopup" position="fill" title="Change pin code" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PinInput"/>
 	</screen>
 
