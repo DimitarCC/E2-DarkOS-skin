@@ -384,13 +384,13 @@
 		<convert type="ServiceName">Reference</convert>
 		</widget>
 		<widget source="ServiceEvent" render="Label" position="1260,280" size="220,40" zPosition="14" font="Bold; 34" backgroundColor="background" foregroundColor="light_green" transparent="1" halign="center" noWrap="1">
-		<convert type="ServiceName">•,TUNERSYSTEM,ORBPOS</convert>
+			<convert type="ServiceName" nostrip="1">  •  ,TUNERSYSTEM,ORBPOS</convert>
 		</widget>
 		<widget source="ServiceEvent" render="Label" position="1235,395" size="645,40" font="Regular; 34" backgroundColor="background2" transparent="1" halign="left" noWrap="1" foregroundColor="light_green">
 		<convert type="EventName">Name</convert>
 		</widget>
 		<widget source="ServiceEvent" render="Label" position="1240,345" size="160,30" font="Bold; 26" backgroundColor="background2" transparent="1">
-		<convert type="EventName">•,TIMERANGE</convert>
+		<convert type="EventName" nostrip="1">  •  ,TIMERANGE</convert>
 		</widget>
 		<widget source="ServiceEvent" render="Progress" position="1378,359" size="400,6" backgroundColor="background" foregroundColor="blue" zPosition="6" cornerRadius="3" borderWidth="1" borderColor="grey">
 		<convert type="EventTime">Progress</convert>
@@ -490,7 +490,7 @@
 		  <convert type="EventName">Name</convert>
 		</widget>
 		<widget source="Event" render="Label" position="1240,345" size="160,30" font="Bold; 26" backgroundColor="background2" transparent="1">
-		  <convert type="EventName">•,TIMERANGE</convert>
+		  <convert type="EventName" nostrip="1">  •  ,TIMERANGE</convert>
 		</widget>
 		<widget name="now_button" pixmap="border/epg_off.png" position="155,145" zPosition="2" size="225,50" alphatest="blend"/>
 		<widget name="now_button_sel" pixmap="border/epg_now_on.png" position="155,145" zPosition="3" size="225,50" alphatest="blend"/>
@@ -554,7 +554,7 @@
 		<widget addon="Pager" conditional="list" connection="list" maxPages="20" position="25,940" size="1865,25" transparent="1" backgroundColor="background" />
 		<ePixmap position="1140,112" size="22,22" zPosition="2" alphatest="blend" pixmap="icons/clock_22.png"/>
 		<widget source="Event" render="Label" backgroundColor="background" font="Regular; 26" position="1180,105" size="310,34" transparent="1" halign="left" valign="center" >
-			<convert type="EventName">•,TIMERANGE,DURATION</convert>
+			<convert type="EventName" nostrip="1">  •  ,TIMERANGE,DURATION</convert>
 		</widget>
 		<widget source="Event" render="RatingIcon" position="38,936" size="32,32" zPosition="1" alphatest="blend" small="1">
 			<convert type="EventName">RawRating</convert>
@@ -896,7 +896,7 @@ if callable(loadLogo):
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget render="Label" source="Service" backgroundColor="background" font="Regular; 28" position="1235,460" size="645,40" halign="left" valign="center" foregroundColor="yellow">
-			<convert type="MovieInfo">•,TIMECREATED,DURATION,FILESIZE</convert>
+			<convert type="MovieInfo" nostrip="1">  •  ,TIMECREATED,DURATION,FILESIZE</convert>
 		</widget>
 		<widget render="Label" source="Service" backgroundColor="background" font="Bold; 36" position="1235,360" size="610,40"  foregroundColor="light_yellow" halign="left" valign="center" >
 			<convert type="MovieInfo">RecordServiceName</convert>
