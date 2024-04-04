@@ -687,8 +687,9 @@
 
 	<!-- ChoiceBox -->
 	<screen name="ChoiceBox" position="0,0" size="1920,15" title="Choice Box" flags="wfNoBorder" backgroundColor="transparent">
-		<widget source="Title" render="Label" position="15,3" size="250,40" font="Bold; 28" halign="left" foregroundColor="yellow" backgroundColor="transparent" valign="center" zPosition="2" transparent="1" />
-		<widget name="text" position="15,15" size="880,30" font="Bold; 30" foregroundColor="potem" backgroundColor="background" valign="center" />
+		<widget source="Title" render="Label" position="15,3" size="250,40" font="Bold; 28" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" zPosition="2" transparent="1" />
+		<widget name="text" position="15,15" size="880,0" font="Bold; 30" foregroundColor="potem" backgroundColor="background" valign="center" />
+		<widget name="description" position="0,0" size="570,0" font="Regular; 28" foregroundColor="yellow" backgroundColor="background" transparent="1"/>
 		<widget name="list" position="525,330" size="869,498" itemHeight="45" backgroundColor="background" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" transparent="1" zPosition="2" itemCornerRadius="6"/>
 		<applet type="onLayoutFinish">
 from enigma import ePoint, eSize, getDesktop, gRGB, BT_ALPHABLEND
@@ -722,16 +723,25 @@ textHeight = textsize[1]
 textpos = self["text"].instance.position()
 if textpos.x() &lt; 0 and textpos.y() &lt; 0: 
 	textHeight = 0
-self["text"].move(15, 55)
+self["text"].move(20, 55)
+descriptionHeight = 0
+if hasattr(self, "getIsDescriptionAvailable") and self.getIsDescriptionAvailable():
+	descriptionHeight = 75
 count = len(self.list)
 count, scrollbar = (10, self["list"].instance.getScrollbarWidth() + 5) if count > 10 else (count, 0)
 offset = self["list"].l.getItemSize().height() * count
 wsizex = max(max(self["list"].instance.getMaxItemTextWidth(), textsize[0]), titleSize[0] + 30) + 10 + 30
-self["text"].resize(wsizex - 30, min(100, textHeight))
-descriptionHeight = 0
-wsizey = textHeight + offset + descriptionHeight + 80 + 104
-# move and resize screen
-self["list"].move(15, textHeight + 80)
+self["text"].resize(wsizex - 40, min(100, textHeight))
+textPadding = 0
+if textHeight &gt; 0:
+	textPadding = 10
+wsizey = textHeight + textPadding + offset + descriptionHeight + 60 + 104
+if descriptionHeight &gt; 0:
+	wsizey += 10
+# move and resize elements
+self["description"].move(20, textHeight + textPadding + 60 + offset + 10)
+self["description"].resize(wsizex - 40, descriptionHeight)
+self["list"].move(15, textHeight + textPadding + 60)
 self.instance.resize(eSize(*(wsizex, wsizey)))
 # resize list
 self["list"].resize(wsizex - 30, offset)
@@ -765,7 +775,6 @@ self["logo"].instance.setAlphatest(BT_ALPHABLEND)
 if callable(loadLogo):
 	loadLogo(self["logo"].instance, "brand", 74, 34, "right")
 		</applet>
-		<widget name="description" position="-e,-e" size="720,256" zPosition="1" font="Regular;28"/>
 	</screen>
 
 	<!-- Extensions menu -->
@@ -1080,13 +1089,12 @@ if callable(loadLogo):
 	</screen>
 
 	<!-- Update plugin -->
-	<screen name="UpdatePlugin" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Window_Full_Pig" />
-		<eLabel position="1200,105" size="1,870" backgroundColor="separator" zPosition="-5" />
-		<widget source="package" render="Label" position="25,110" size="1110,35" backgroundColor="darkgrey" transparent="1" font="Regular;30" />
-		<widget source="status" render="Label" position="25,163" size="1110,70" backgroundColor="darkgrey" transparent="1" font="Regular;30" />
-		<panel name="SliderTemplate"/>
-		<panel name="FeedsStatusTemplate"/>
+	<screen name="UpdatePlugin" position="fill" title="Software Update" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Menu1" />
+		<widget source="package" render="Label" position="396,220" size="1050,45" font="Regular;30" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="status" render="Label" position="396,295" size="1050,45" font="Regular;30" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="slider" position="396,670" size="1110,20" zPosition="100" />
+		<widget name="activityslider" position="396,690" size="1860,6" pixmap="window/slider100.png" zPosition="100"/>
 	</screen>
 
   	<!--Softwareupdate choices -->
@@ -1369,13 +1377,13 @@ if callable(loadLogo):
 		</widget>
 		<widget source="introduction" render="Label" position="780,975" size="1110,34" backgroundColor="background" transparent="1" font="Regular;30" halign="center" />
 	</screen>
-	<screen name="AutoMountView" position="fill" flags="wfNoBorder"><!-- What is this? -->
-		<panel name="PigTemplate" />
-		<widget source="legend1" render="Label" position="780,105" size="300,75" transparent="1" zPosition="1" font="Regular;27" valign="center" halign="left" />
-		<widget source="legend2" render="Label" position="1080,105" size="525,75" transparent="1" zPosition="1" font="Regular;27" valign="center" halign="center" />
-		<widget source="legend3" render="Label" position="1590,105" size="300,75" transparent="1" zPosition="1" font="Regular;27" valign="center" halign="right" />
-		<widget source="config" render="Listbox" position="780,210" size="1110,750" scrollbarMode="showOnDemand">
-		<convert type="TemplatedMultiContent">
+	<screen name="AutoMountView" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+		<widget source="legend1" render="Label" position="346,130" size="300,75" transparent="1" zPosition="1" font="Regular;27" valign="center" halign="left" />
+		<widget source="legend2" render="Label" position="696,130" size="525,75" transparent="1" zPosition="1" font="Regular;27" valign="center" halign="center" />
+		<widget source="legend3" render="Label" position="1256,130" size="300,75" transparent="1" zPosition="1" font="Regular;27" valign="center" halign="right" />
+		<widget source="config" render="Listbox" position="396,230" size="1110,630" scrollbarMode="showNever" itemCornerRadius="6">
+			<convert type="TemplatedMultiContent">
 				{"template": [
 						MultiContentEntryPixmapAlphaTest(pos = (22,15),size = (72,72),png = 0),# index 0 is the isMounted pixmap
 						MultiContentEntryText(pos = (150,15),size = (285,37),font=0,flags = RT_HALIGN_LEFT,text = 1),# index 1 is the sharename
@@ -1387,10 +1395,10 @@ if callable(loadLogo):
 					"fonts": [gFont("Regular",37),gFont("Regular",27)],
 					"itemHeight": 75
 				}
-		</convert>
+			</convert>
 		</widget>
-		<widget source="introduction" render="Label" position="780,975" size="1110,34" transparent="1" zPosition="10" font="Regular;30" valign="center" halign="center" />
-	</screen>
+		<widget source="introduction" render="Label" position="780,875" size="1110,34" transparent="1" zPosition="10" font="Regular;30" valign="center" halign="center" />
+	  </screen>
 	<screen name="AutoMountEdit" title="MountEdit" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate" />
 	</screen>
@@ -1812,8 +1820,8 @@ if callable(loadLogo):
 			<eLabel text="Lock:" position="780,745" size="120,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
 			<widget name="lock_state" position="1110,745" size="300,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
 		</panel>
-		<widget name="status_bar" position="30,600" size="720,37" font="Regular;30" foregroundColor="yellow" halign="center"/>
-	</screen>
+		<widget name="status_bar" position="1120,847" size="425,37" font="Regular;29" foregroundColor="yellow" halign="center" />
+	  </screen>
 
 	<!-- Positioner Setup - Log -->
 	<screen name="PositionerSetupLog" position="fill" backgroundColor="transparent">
