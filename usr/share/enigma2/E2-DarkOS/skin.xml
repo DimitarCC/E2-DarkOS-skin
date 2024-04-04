@@ -725,7 +725,7 @@ if textpos.x() &lt; 0 and textpos.y() &lt; 0:
 	textHeight = 0
 self["text"].move(20, 55)
 descriptionHeight = 0
-if hasattr(self, "getIsDescriptionAvailable") and self.getIsDescriptionAvailable():
+if bool(self.list) and any([(True if len(x[0]) &gt; 2 and x[0][2] and isinstance(x[0][2], str) else False) for x in self.list]):
 	descriptionHeight = 75
 count = len(self.list)
 count, scrollbar = (10, self["list"].instance.getScrollbarWidth() + 5) if count > 10 else (count, 0)
