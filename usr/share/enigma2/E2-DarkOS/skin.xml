@@ -1096,8 +1096,8 @@ if callable(loadLogo):
 		<panel name="Screen_Menu1" />
 		<widget source="package" render="Label" position="396,220" size="1050,45" font="Regular;30" backgroundColor="background" foregroundColor="foreground" />
 		<widget source="status" render="Label" position="396,295" size="1050,45" font="Regular;30" backgroundColor="background" foregroundColor="foreground" />
-		<widget name="slider" position="396,670" size="1110,20" zPosition="100" />
-		<widget name="activityslider" position="396,690" size="1860,6" pixmap="window/slider100.png" zPosition="100"/>
+		<widget name="slider" position="396,670" size="1128,20" zPosition="100" backgroundColor="background"/>
+		<widget name="activityslider" position="396,690" size="1128,6" pixmap="window/slider100.png" zPosition="100" backgroundColor="background" alphatest="blend"/>
 	</screen>
 
   	<!--Softwareupdate choices -->
