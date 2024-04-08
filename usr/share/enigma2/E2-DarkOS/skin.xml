@@ -276,7 +276,7 @@
 		<convert type="ProgressToText" />
 		</widget>
 		<widget source="job_status" render="Label" position="408,572" size="1110,39" font="Regular;34" />
-		<widget name="config" position="408,675" size="1110,36" itemHeight="38" font="Regular;28" />
+		<widget name="config" position="408,675" size="1110,36" itemHeight="38" itemCornerRadius="6" font="Regular;28" />
 	</screen>
 	<screen name="ClockScreen" position="center,30" size="235,55" zPosition="-1" backgroundColor="transparent" title="Clock" flags="wfNoBorder">
 		<widget render="Label" position="1,1" size="180,55" backgroundColor="transparent" transparent="1" zPosition="0" foregroundColor="orange" font="Bold;50" valign="center" halign="right" borderWidth="2" borderColor="black" source="global.CurrentTime">
@@ -411,7 +411,7 @@
 	<screen name="EPGSelection" position="fill" flags="wfNoBorder">
 		<panel name="Screen_Window_Full_Pig" />
 		<eLabel position="1135,105" size="1,870" backgroundColor="separator" zPosition="-5" />
-		<widget name="list" position="26,91" size="1095,890" itemHeight="45" setEventItemFont="Regular;32" setColWidths="120,220" setColGap="40" setIconDistance="10" transparent="1" scrollbarMode="showNever" sidesMargin="25" itemCornerRadius="6" />
+		<widget name="list" position="26,91" size="1095,890" itemHeight="45"  setEventItemFont="Regular;32" setColWidths="120,220" setColGap="40" setIconDistance="10" transparent="1" scrollbarMode="showNever" sidesMargin="25" itemCornerRadius="6" />
 		<widget source="Service" render="Label" position="1160,342" size="720,30" foregroundColor="transponderinfo" font="Regular;26" valign="center" halign="center" transparent="1" zPosition="1">
 		<convert type="TransponderInfo" />
 		</widget>
@@ -731,7 +731,10 @@ count = len(self.list)
 count, scrollbar = (10, self["list"].instance.getScrollbarWidth() + 5) if count > 10 else (count, 0)
 offset = self["list"].l.getItemSize().height() * count
 wsizex = max(max(self["list"].instance.getMaxItemTextWidth(), textsize[0]), titleSize[0] + 30) + 10 + 30
-self["text"].resize(wsizex - 40, min(100, textHeight))
+self["text"].resize(wsizex - 40, textHeight)
+textsize = self["text"].getSize()
+textHeight = textsize[1]
+self["text"].resize(wsizex - 40, textHeight)
 textPadding = 0
 if textHeight &gt; 0:
 	textPadding = 10

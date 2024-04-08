@@ -45,7 +45,7 @@
   <screen name="CronTimers" position="fill" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="Screen_Menu1" />
     <widget name="key" position="396,210" size="1130,35" font="Regular;30" halign="center" transparent="1" valign="center"/>
-    <widget source="list" render="Listbox" position="396,255" size="1130,9*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" halign="center" selectionDisabled="0" backgroundColor="background">
+    <widget source="list" render="Listbox" position="396,255" size="1130,9*45" itemHeight="45" itemCornerRadius="6" font="Regular;28" scrollbarMode="showNever" halign="center" selectionDisabled="0" backgroundColor="background">
       <convert type="StringList"/>
     </widget>
     <widget name="lab1" position="396,700" size="275,42" font="Regular;28" valign="center"/>
@@ -76,7 +76,7 @@ self["list"].instance.setItemHeight(38)
 
 	<screen name="VixListTemplate">
 		<panel name="Screen_1_1"/>
-		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever"/>
+		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" itemCornerRadius="6" font="Regular;28" scrollbarMode="showNever"/>
 		<widget name="lab1" conditional="lab1" position="145,755" size="1630,100" zPosition="1" font="Regular;28" halign="center" valign="center" foregroundColor="orange" transparent="1"/>
 		<widget name="backupstatus" conditional="backupstatus" position="145,865" size="1630,40" font="Regular;28" zPosition="5" foregroundColor="orange" valign="center" halign="center"/>
 		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
@@ -210,7 +210,7 @@ self["list"].instance.setItemHeight(38)
 	<!-- NetworkMountsMenu -->
 	<screen name="NetworkMountsMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
-		<widget name="menulist" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" zPosition="10" scrollbarMode="showNever"/>
+		<widget name="menulist" position="125,150" size="1670,13*45" itemHeight="45" itemCornerRadius="6" font="Regular;28" zPosition="10" scrollbarMode="showNever"/>
 		<widget source="introduction" render="Label" position="145,865" zPosition="10" size="1630,30" font="Regular;28" foregroundColor="yellow" valign="center" halign="center"/>
 	</screen>
 

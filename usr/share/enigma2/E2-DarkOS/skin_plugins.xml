@@ -38,7 +38,7 @@
 		<panel name="Screen_1_1" />
 		<panel position="120,130" size="1690,902">
 			<widget name="thn" position="30,10" size="390,375" alphatest="blend" />
-			<widget name="filelist" position="450,10" size="1220,17*45" itemHeight="45" font="Regular;28" zPosition="3" scrollbarMode="showNever" />
+			<widget name="filelist" position="450,10" size="1220,17*45" itemHeight="45" itemCornerRadius="6" font="Regular;28" zPosition="3" scrollbarMode="showNever" />
 			<widget name="label" position="450,868" size="390,34" transparent="1" font="Regular;30" />
 			<widget addon="Pager" connection="filelist" position="450,790" size="1210,25" transparent="1" backgroundColor="background" />
 		</panel>
@@ -80,7 +80,7 @@
 		<widget name="ip" position="960,105" size="225,36" font="Regular;30" halign="left" backgroundColor="secondBG" transparent="1"/>
 		<widget name="port" position="1185,105" size="150,36" font="Regular;30" halign="left" backgroundColor="secondBG" transparent="1"/>
 		<widget name="type" position="1395,105" size="300,36" font="Regular;30" halign="left" backgroundColor="secondBG" transparent="1"/>
-		<widget name="entrylist" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget name="entrylist" position="125,150" size="1670,13*45" itemHeight="45" itemCornerRadius="6" font="Regular;28" scrollbarMode="showNever" valign="center" />
 		<widget addon="Pager" connection="entrylist" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
 	<screen name="PartnerboxSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -103,7 +103,7 @@
 	</screen>
 	<screen name="RemoteTimer" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />
-		<widget name="timerlist" position="135,160" size="1650,6*90" scrollbarMode="showNever" itemHeight="90" iconMargin="30" rowSplit="45" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" sidesMargin="20" />
+		<widget name="timerlist" position="135,160" size="1650,6*90" scrollbarMode="showNever" itemHeight="90" itemCornerRadius="6" iconMargin="30" rowSplit="45" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" sidesMargin="20" />
 		<widget addon="Pager" connection="timerlist" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 		<eLabel position="135,720" size="1650,2" backgroundColor="background5" zPosition="-7" />
 		<widget name="text" position="145,730" size="1620,150" backgroundColor="background" font="Regular;30" halign="center" valign="center"/>
@@ -132,14 +132,14 @@
 	</screen>
 	<screen name="PartnerboxAutoTimerOverview" title="AutoTimer Overview" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
-		<widget name="entries" position="396,245" size="1130,600" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
+		<widget name="entries" position="396,245" size="1130,600" itemHeight="38" itemCornerRadius="6" font="Regular;28" scrollbarMode="showOnDemand" />
 		<widget addon="Pager" connection="entries" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
 
 	<!-- MovieTagEditor -->
 	<screen name="MovieTagEditor" position="fill" title="Edit tags" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />
-		<widget name="list" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget name="list" position="125,150" size="1670,13*45" itemHeight="45" itemCornerRadius="6" font="Regular;28" scrollbarMode="showNever" valign="center" />
 		<widget addon="Pager" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
 
@@ -155,7 +155,7 @@
 		<ePixmap pixmap="buttons/green.png" position="628,1030" size="34,34" alphatest="on"/>
 		<widget source="red" render="Label" position="242,1030" size="370,38" backgroundColor="darkgrey" zPosition="2" transparent="1" foregroundColor="grey" font="Regular;34" halign="left"/>
 		<widget source="green" render="Label" position="678,1030" size="370,38" backgroundColor="darkgrey" zPosition="2" transparent="1" foregroundColor="grey" font="Regular;34" halign="left"/>
-		<widget name="config" position="780,105" size="1110,180" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand"/>
+		<widget name="config" position="780,105" size="1110,180" itemHeight="38" itemCornerRadius="6" font="Regular;28" scrollbarMode="showOnDemand"/>
 		<widget source="SensorTempText0" render="Label" position="795,315" zPosition="1" size="135,60" font="Regular;30" halign="left" valign="top" backgroundColor="secondBG" transparent="1"/>
 		<widget source="SensorTemp0" render="Label" position="930,315" zPosition="1" size="150,30" font="Regular;28" halign="right">
 	<convert type="SensorToText"/>
@@ -225,9 +225,9 @@
 	<!-- EPG Import Configuration -->
 	<screen name="EPGImportConfig" position="fill" title="EPG Import Configuration" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
-		<widget name="config" position="396,210" size="1130,500" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png" />
+		<widget name="config" position="396,210" size="1130,500" itemHeight="45" itemCornerRadius="6" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png" />
     	<widget render="Pager" connection="config" position="396,730" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
-		<widget name="description" position="396,653" size="0,0" itemHeight="45" font="Regular;30" valign="top" />
+		<widget name="description" position="396,653" size="0,0" itemHeight="45" itemCornerRadius="6" font="Regular;30" valign="top" />
   		<widget name="statusbar" position="396,856" size="1110,34" font="Regular;30" />
   		<widget name="status" position="396,770" size="1110,90" font="Regular;30" />
 	</screen>
@@ -235,21 +235,21 @@
 	<!-- EPG Import Profile -->
 	<screen name="EPGImportProfile" position="fill" title="EPG Import Profile" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
-		<widget name="config" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png" />
+		<widget name="config" position="396,210" size="1130,635" itemHeight="45" itemCornerRadius="6" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png" />
     	<widget render="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
 	</screen>
 
 	<!-- EPG Import Sources -->
 	<screen name="EPGImportSources" position="fill" title="EPG Import Sources" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
-		<widget name="list" position="396,210" size="1130,635" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png" />
+		<widget name="list" position="396,210" size="1130,635" itemHeight="45" itemCornerRadius="6" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png" />
     	<widget render="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
 	</screen>
 
 	<!-- EPG Import Log -->
 	<screen name="EPGImportLog" position="fill" title="EPG Import Log" flags="wfNoBorder">
 		<panel name="Screen_1_1" />
-		<widget name="list" position="135,160" size="1650,12*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png" />
+		<widget name="list" position="135,160" size="1650,12*45" itemHeight="45" itemCornerRadius="6" font="Regular;28" scrollbarMode="showNever" valign="center" selectionPixmap="selections/sel_1130x45.png" />
     	<widget render="Pager" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" pagerForeground="white" pagerBackground="background" />
 	</screen>
 
@@ -274,7 +274,7 @@
 	</screen>
 	<screen name="CrossEPG_Setup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
-		<widget name="config" position="396,210" size="1130,10*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget name="config" position="396,210" size="1130,10*45" itemHeight="45" itemCornerRadius="6" font="Regular;28" scrollbarMode="showNever" valign="center" />
 		<widget addon="Pager" connection="config" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 		<widget name="information" position="396,700" size="1130,150" font="Regular;30" halign="center" valign="top"/>
 	</screen>
@@ -318,7 +318,7 @@
 	</screen>
 	<screen flags="wfNoBorder" name="CrossEPG_Ordering" position="fill" title="Cross EPG - Providers start order">
 		<panel name="Screen_Menu1" />
-		<widget name="list" position="396,210" size="1130,660" itemHeight="38" font="Regular;28" transparent="1" scrollbarMode="showNever"/>
+		<widget name="list" position="396,210" size="1130,660" itemHeight="38" itemCornerRadius="6" font="Regular;28" transparent="1" scrollbarMode="showNever"/>
 	</screen>
 
 	<!-- SetPicon -->

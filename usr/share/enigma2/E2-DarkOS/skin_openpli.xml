@@ -17,7 +17,7 @@
 	<!-- ==== Opkg screens ==== -->
 	<screen name="OpkgInstaller" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />
-		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" selectionListDescr="80,5,1650,45" font="Regular;28" scrollbarMode="showNever" valign="center" />
+		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" itemCornerRadius="6" selectionListDescr="80,5,1650,45" font="Regular;28" scrollbarMode="showNever" valign="center" />
 		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 		<widget source="introduction" render="Label" position="145,865" zPosition="1000" size="1630,36" font="Regular;28" valign="center" halign="center"/>
 	</screen>
@@ -27,7 +27,7 @@
 	</screen>
 	<screen name="OPKGMenu" position="fill"  title="IPKG source" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
-		<widget name="filelist" position="396,205" size="1110,450" itemHeight="38" font="Regular;27" zPosition="3" transparent="1" scrollbarMode="showNever"/>
+		<widget name="filelist" position="396,205" size="1110,450" itemHeight="38" itemCornerRadius="6" font="Regular;27" zPosition="3" transparent="1" scrollbarMode="showNever"/>
 	</screen>
 
 	<!-- packet manager -->
@@ -125,7 +125,7 @@
 	<!-- ChangeRootPassword -->
 	<screen name="SetPasswdMain" position="fill" title="Change Root Password " flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
-		<widget name="config" position="396,200" size="1130,765" itemHeight="45" font="Regular; 30" scrollbarMode="showNever" scrollbarWidth="5" enableWrapAround="1" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget name="config" position="396,200" size="1130,765" itemHeight="45" itemCornerRadius="6" font="Regular; 30" scrollbarMode="showNever" scrollbarWidth="5" enableWrapAround="1" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>
 
   	<!-- Backup Suite -->
@@ -138,7 +138,7 @@
 
 	<screen name="Ipkuninstall" position="fill"  title="Ipk-uninstaller" flags="wfNoBorder" backgroundColor="transparent">
   		<panel name="Screen_Menu1" />
-		<widget name="list" position="396,200" size="1095,675" itemHeight="45" font="screen_text; 30" scrollbarMode="showNever" scrollbarWidth="5"  backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget name="list" position="396,200" size="1095,675" itemHeight="45" itemCornerRadius="6" font="screen_text; 30" scrollbarMode="showNever" scrollbarWidth="5"  backgroundColor="background" foregroundColor="foreground" transparent="1" />
 		<widget name="info" position="900,100" size="700,68" font="Regular;27" noWrap="1"  foregroundColor="white" backgroundColor="background" halign="left" valign="bottom" transparent="1" zPosition="1" />
 	</screen>
 

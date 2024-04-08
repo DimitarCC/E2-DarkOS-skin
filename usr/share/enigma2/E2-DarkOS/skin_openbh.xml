@@ -2,7 +2,7 @@
 <skin>
 	<screen name="VixListTemplate">
 		<panel name="Screen_1_1"/>
-		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" textOffset="15,5" font="Regular;28" scrollbarMode="showNever"/>
+		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" itemCornerRadius="6" textOffset="15,5" font="Regular;28" scrollbarMode="showNever"/>
 		<widget name="lab1" conditional="lab1" position="145,755" size="1630,100" zPosition="1" font="Regular;28" halign="center" valign="center" foregroundColor="orange" transparent="1"/>
 		<widget name="backupstatus" conditional="backupstatus" position="145,865" size="1630,40" font="Regular;28" zPosition="5" foregroundColor="orange" valign="center" halign="center"/>
 		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background"/>
@@ -75,7 +75,7 @@
         <widget source="key_red" render="Label" position="575,820" size="280,36" zPosition="4" font="Regular;26" halign="left" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
         <widget source="key_green" render="Label" position="975,820" size="280,36" zPosition="4" font="Regular;26" halign="left" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
         <widget source="key_yellow" render="Label" position="1375,820" size="280,36" zPosition="4" font="Regular;26" halign="left" valign="center" foregroundColor="foreground" backgroundColor="background" transparent="1"/>
-		<widget name="config" position="center,250" size="800,280" font="Regular;28" itemHeight="40" enableWrapAround="1" scrollbarMode="showOnDemand" foregroundColor="yellow" backgroundColor="background" transparent="1" zPosition="3"/>
+		<widget name="config" position="center,250" size="800,280" font="Regular;28" itemHeight="40" itemCornerRadius="6" enableWrapAround="1" scrollbarMode="showOnDemand" foregroundColor="yellow" backgroundColor="background" transparent="1" zPosition="3"/>
 		<widget source="status" render="Label" position="center,600" size="1200,150" zPosition="10" font="Regular;28" foregroundColor="foreground" halign="center" valign="center" transparent="1" backgroundColor="background"/>
 	</screen>
 
