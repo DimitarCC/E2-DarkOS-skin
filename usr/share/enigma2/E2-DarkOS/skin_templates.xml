@@ -136,22 +136,110 @@
 	</screen>
 
 	<screen name="MenuTemplate">
-		<panel name="FrameTemplate"/>
+		<applet type="onContentChanged">
+from enigma import ePoint, eSize, getDesktop, gRGB, BT_ALPHABLEND
+from Components.Label import Label
+from Components.Pixmap import Pixmap
+from Components.Addons.Pager import Pager
+from Components.Addons.MainMenu import MainMenu as MainMenuAddon
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
+from Tools.LoadPixmap import LoadPixmap
+from skin import parseRadius, parseColor, parseFont
+try:
+	from Components.Renderer.BoxLogo import setLogo as loadLogo
+except:
+	loadLogo = None
+minWidth = 610
+if "menu_list" not in self:
+	radiusItem, edgeValueItem = parseRadius("6")
+	self["menu_list"] = MainMenuAddon()
+	self["menu_list"].connectRelatedElement("menu", self)
+	self["menu_list"].GUIcreate(self.instance)
+	self["menu_list"].instance.move(ePoint(82, 277))
+	self["menu_list"].instance.resize(eSize(minWidth, 522))
+	self["menu_list"].setFont("Regular;34")
+	self["menu_list"].setMinWidth(str(minWidth))
+	self["menu_list"].setIconSize("48")
+	self["menu_list"].setForegroundColorSelected("selectedFG")
+	self["menu_list"].setItemHeight("58")
+	self["menu_list"].instance.setItemCornerRadius(radiusItem, edgeValueItem)
+	self["menu_list"].instance.setWrapAround(True)
+	
+menu_list_size = self["menu_list"].instance.size()
+	
+if "logo_sep" not in self:
+	self["logo_sep"] = Label("")
+	self["logo_sep"].GUIcreate(self.instance)
+	self["logo_sep"].instance.setBackgroundColor(gRGB(0x00555556))
+	self["logo_sep"].instance.move(ePoint(102, 259))
+	self["logo_sep"].setZPosition(-5)
 
-		<widget source="title" render="Label" position="82,864" size="534,62" font="Regular; 34" halign="right" valign="center" backgroundColor="background5" />
-		<widget source="menu" render="Listbox" position="82,277" size="544,522" scrollbarMode="showNever" enableWrapAround="1" transparent="1" itemCornerRadius="6">
-			<convert type="TemplatedMultiContent">
-						{"template": [ MultiContentEntryText(pos = (82,5),size = (440,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0),
-									   MultiContentEntryPixmapAlphaBlend(pos = (17,5),size = (48,48), png = 5)],
-						"fonts": [gFont("Regular",34)],
-						"itemHeight": 58
-						}
-			</convert>
-		</widget>
-		<widget addon="Pager" connection="menu" position="85,812" size="558,25" transparent="1" backgroundColor="background"/>
-		<widget source="ScreenPath" render="Label" position="78,833" size="544,25" backgroundColor="background" zPosition="1" font="Regular;19" valign="top" halign="right"/>
-		<widget source="global.CurrentTime" render="BoxLogo" position="72,175" size="564,65" zPosition="10" alphatest="blend" />
-		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5" />
+self["logo_sep"].instance.resize(eSize(menu_list_size.width() - 38, 2))
+
+radiusBLayer, edgeValueBLayer = parseRadius("16")
+radiusTLayer, edgeValueTLayer = parseRadius("14")
+
+if "blayer" not in self:
+	self["blayer"] = Label()
+	self["blayer"].GUIcreate(self.instance)
+	self["blayer"].instance.setCornerRadius(radiusBLayer, edgeValueBLayer)
+	self["blayer"].instance.setBackgroundColor(parseColor("background5"))
+	self["blayer"].instance.move(ePoint(70,145))
+	self["blayer"].setZPosition(-7)
+self["blayer"].instance.resize(eSize(menu_list_size.width() + 26,785))
+
+if "tlayer" not in self:
+	self["tlayer"] = Label()
+	self["tlayer"].GUIcreate(self.instance)
+	self["tlayer"].instance.setCornerRadius(radiusTLayer, edgeValueTLayer)
+	self["tlayer"].instance.setBackgroundColor(parseColor("background"))
+	self["tlayer"].instance.move(ePoint(72,147))
+	self["tlayer"].setZPosition(-6)
+self["tlayer"].instance.resize(eSize(menu_list_size.width() + 22,717))
+
+if "pager" not in self:
+	self["pager"] = Pager()
+	self["pager"].connectRelatedElement("menu", self)
+	self["pager"].GUIcreate(self.instance)
+	self["pager"].instance.move(ePoint(82, 812))
+	
+self["pager"].instance.resize(eSize(menu_list_size.width(), 25))
+
+if "logo" not in self:
+	self["logo"] = Pixmap()
+	self["logo"].GUIcreate(self.instance)
+	self["logo"].instance.setAlphatest(BT_ALPHABLEND)
+	self["logo"].setZPosition(10)
+	self["logo"].instance.move(ePoint(72,175))
+
+logoCurrentSize = self["logo"].instance.size()
+if logoCurrentSize.width() != menu_list_size.width() + 20:
+	self["logo"].instance.resize(eSize(menu_list_size.width() + 20,64))
+
+
+if callable(loadLogo):
+	loadLogo(self["logo"].instance, "model", menu_list_size.width() + 20, 64, "center")
+	
+if "title_label" not in self:
+	font = parseFont("Regular; 34", ((1, 1), (1, 1)))
+	self["title_label"] = Label(self["title"].text)
+	self["title_label"].GUIcreate(self.instance)
+	self["title_label"].instance.setBackgroundColor(parseColor("background5"))
+	self["title_label"].instance.move(ePoint(82,878))
+	self["title_label"].instance.setFont(font)
+	self["title_label"].instance.setHAlign(self["title_label"].instance.alignRight)
+self["title_label"].instance.resize(eSize(menu_list_size.width() - 10,47))
+
+if "screen_path" not in self:
+	font = parseFont("Regular; 19", ((1, 1), (1, 1)))
+	self["screen_path"] = Label(self["ScreenPath"].text)
+	self["screen_path"].GUIcreate(self.instance)
+	self["screen_path"].instance.setBackgroundColor(parseColor("background"))
+	self["screen_path"].instance.move(ePoint(78,833))
+	self["screen_path"].instance.setFont(font)
+	self["screen_path"].instance.setHAlign(self["screen_path"].instance.alignRight)
+self["screen_path"].instance.resize(eSize(menu_list_size.width(),25))
+		</applet>
 	</screen>
 
 	<!-- Infobar Templates -->

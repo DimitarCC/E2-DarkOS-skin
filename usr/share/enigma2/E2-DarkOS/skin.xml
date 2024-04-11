@@ -898,6 +898,32 @@ if callable(loadLogo):
 	<!-- Movie Selection -->
 	<screen name="MovieSelection" title="Movie Selection" position="fill" flags="wfNoBorder">
 		<panel name="Screen_Window_Full_Pig" />
+		<!--<eLabel position="1200,105" size="1,870" backgroundColor="separator" zPosition="-5" />-->
+		<eLabel position="25,328" size="1866,657" zPosition="-2" widgetBorderWidth="1" widgetBorderColor="separator" backgroundColor="background" cornerRadius="6"/>
+		<widget name="waitingtext" conditional="waitingtext" position="35,379" size="1845,558" font="Regular;36" halign="center" valign="center" zPosition="1"/>
+		<widget name="list" transparent="1" position="35,379" size="1845,558" scrollbarMode="showNever" itemHeights="107,78,50" fontSizesOriginal="36,26,24" fontSizesCompact="36,28" fontSizesMinimal="34,30" pbarShift="17" pbarHeight="20" 
+				pbarLargeWidth="72" spaceLeft="10" spaceRight="25" dateWidth="260" columnsOriginal="270,300" columnsCompactDescription="280,240,200" compactColumn="400" treeDescription="250" partIconeShiftMinimal="12" partIconeShiftCompact="8" 
+				partIconeShiftOriginal="12" iconsWidth="33" spaceIconeText="6" trashShift="10" dirShift="10" font="Regular;30" itemHeight="55" itemCornerRadius="6"/>
+		<widget addon="Pager" connection="list" position="30,950" size="1855,25" transparent="1" backgroundColor="background" maxPages="15"/>
+		<widget render="Label" source="Service" halign="left" backgroundColor="background2" position="30,167" size="1465,140" font="Regular; 30" transparent="1">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+		<widget name="movie_sort" pixmaps="icons/az.png,icons/newtop.png,icons/shuffle.png,icons/za.png,icons/oldtop.png,icons/faz.png,icons/fza.png,icons/default.png" position="40,337" zPosition="1" size="42,30" alphatest="blend"/>
+		<widget name="movie_off" pixmaps="icons/ask.png,icons/movielist.png,icons/quit.png,icons/pause.png,icons/playlist.png,icons/playlistquit.png,icons/loop.png,icons/rep.png" position="85,337" zPosition="1" size="52,30" alphatest="blend"/>
+		<widget render="Label" source="Service" backgroundColor="background" font="Regular; 28" position="142,329" size="1200,40" halign="left" valign="center" foregroundColor="yellow">
+			<convert type="MovieInfo" nostrip="1">  •  ,RECSERVICE,TIMECREATED,DURATION,FILESIZE</convert>
+		</widget>
+		<widget source="Service" render="Label" position="30,97" size="1465,40" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<eLabel text="" position="25,940" size="1866,1" backgroundColor="separator"/>
+		<eLabel text="" position="25,370" size="1866,1" backgroundColor="separator"/>
+		<ePixmap position="1846,337" size="24,24" pixmap="icons/hddfree.png" alphatest="blend" zPosition="1" scale="1" />
+		<widget name="freeDiskSpace" position="1311,333" size="525,30" font="Regular;26" backgroundColor="background" zPosition="1" halign="right" valign="center"/>
+	</screen>
+	
+	<screen name="MovieSelectionSlim" title="Movie Selection" position="fill" flags="wfNoBorder">
+		<panel name="Screen_Window_Full_Pig" />
 		<eLabel position="1200,105" size="1,870" backgroundColor="separator" zPosition="-5" />
 		<widget name="waitingtext" conditional="waitingtext" position="20,100" size="1160,860" font="Regular;36" halign="center" valign="center" zPosition="1"/>
 		<widget name="list" transparent="1" position="20,95" size="1160,860" scrollbarMode="showNever" itemHeights="107,78,50" fontSizesOriginal="36,26,24" fontSizesCompact="36,28" fontSizesMinimal="34,30" pbarShift="17" pbarHeight="20" 
