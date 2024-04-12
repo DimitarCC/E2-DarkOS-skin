@@ -159,6 +159,7 @@ if "menu_list" not in self:
 	self["menu_list"].instance.resize(eSize(minWidth, 522))
 	self["menu_list"].setFont("Regular;34")
 	self["menu_list"].setMinWidth(str(minWidth))
+	self["menu_list"].setMaxWidth("900")
 	self["menu_list"].setIconSize("48")
 	self["menu_list"].setForegroundColorSelected("selectedFG")
 	self["menu_list"].setItemHeight("58")
