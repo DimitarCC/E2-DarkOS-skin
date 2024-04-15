@@ -211,15 +211,15 @@ if "logo" not in self:
 	self["logo"].GUIcreate(self.instance)
 	self["logo"].instance.setAlphatest(BT_ALPHABLEND)
 	self["logo"].setZPosition(10)
-	self["logo"].instance.move(ePoint(72,175))
+	self["logo"].instance.move(ePoint(82,175))
 
 logoCurrentSize = self["logo"].instance.size()
 if logoCurrentSize.width() != menu_list_size.width() + 20:
-	self["logo"].instance.resize(eSize(menu_list_size.width() + 20,64))
+	self["logo"].instance.resize(eSize(menu_list_size.width(),64))
 
 
 if callable(loadLogo):
-	loadLogo(self["logo"].instance, "model", menu_list_size.width() + 20, 64, "center")
+	loadLogo(self["logo"].instance, "model", menu_list_size.width(), 64, "center")
 	
 if "title_label" not in self:
 	font = parseFont("Regular; 34", ((1, 1), (1, 1)))
