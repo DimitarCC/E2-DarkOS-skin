@@ -573,25 +573,23 @@
 		</widget>
 	</screen>
 	<screen name="GraphMultiEPGList" title="Electronic Program Guide" position="fill" flags="wfNoBorder">
-		<panel name="Screen_Window_Full_Pig" />
-		<eLabel position="25,350" size="1865,1" backgroundColor="separator" zPosition="-5" />
-		<widget name="timeline_now" position="5,405" zPosition="2" size="19,577" scale="stretch" pixmap="window/timeline-now.png" alphatest="blend" />
-		<widget name="timeline_text" position="75,365" size="1820,40" zPosition="2" foregroundColor="foreground" backgroundColor="background" />
-		<eLabel position="25,405" size="1865,1" backgroundColor="separator" zPosition="10" />
-		<eLabel position="25,981" size="1865,1" backgroundColor="separator" zPosition="10" />
-		<eLabel position="25,405" size="1,576" backgroundColor="separator" zPosition="10" />
-		<eLabel position="1890,405" size="1,576" backgroundColor="separator" zPosition="10" />
-		<widget name="list" position="25,405" size="1867,576" itemHeight="75" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" backgroundColor="background" transparent="1" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" EntryBackgroundColorSelected="background3" EntryForegroundColorSelected="foreground" ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="#00323c4d" ServiceNameBackgroundColorSelected="#00fcc000" ServiceBorderVerWidth="3" EventBorderVerWidth="3" RecIconSize="32" IconXPadding="6" IconYPadding="4" EntryBorderColor="separator" EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryFont="Regular;28" ServiceFont="Regular;28" />
-		<widget name="epgentrydetails" backgroundColor="background" font="Regular; 28" position="850,95" size="610,50" transparent="1" halign="right" valign="center" />
-		<eLabel position="1510,102" size="1,225" backgroundColor="separator" zPosition="-5" />
-		<widget source="Event" render="Label" position="30,95" size="900,50" font="Regular; 36" backgroundColor="background" valign="center" halign="left" transparent="1" foregroundColor="light_green">
-		<convert type="EventName">Name</convert>
+		<panel name="Screen_Window_Full" />
+		<widget name="timeline_now" position="5,131" zPosition="2" size="19,792" scale="stretch" pixmap="window/timeline-now.png" alphatest="blend" />
+		<eLabel position="25,95" size="1866,885" zPosition="-2" widgetBorderWidth="1" widgetBorderColor="separator" backgroundColor="background" cornerRadius="6"/>
+		<eLabel position="25,101" size="1,873" zPosition="3" backgroundColor="separator" />
+		<widget name="timeline_text" position="27,98" size="1862,29" zPosition="2" foregroundColor="foreground" backgroundColor="background" itemCornerRadius="6;top" cornerRadius="6;top" />
+		<widget name="list" position="25,130" size="1865,796" itemHeight="72" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" 
+			backgroundColor="background" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" ServiceForegroundColorNow="yellow" EntryBackgroundColorSelected="background3"
+			ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="#00323c4d" ServiceNameBackgroundColorSelected="#00fcc000" ServiceBorderWidth="1" EventBorderWidth="1" RecIconSize="32" IconXPadding="6" IconYPadding="4" 
+			EntryBorderColor="separator" EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryFont="Regular;28" ServiceFont="Regular;28" EventTextSidesMargin="10" />
+		<eLabel position="25,925" size="1866,1" zPosition="10" backgroundColor="separator" />
+		<widget addon="Pager" conditional="list" connection="list" maxPages="20" position="25,940" size="1865,25" transparent="1" backgroundColor="background" />
+		<widget source="Event" render="RatingIcon" position="38,936" size="32,32" zPosition="1" alphatest="blend" small="1">
+			<convert type="EventName">RawRating</convert>
 		</widget>
-		<widget source="Event" render="Label" position="30,175" size="1465,140" font="Regular; 30" backgroundColor="background" transparent="1">
-		<convert type="EventName">FullDescription</convert>
+		<widget source="Event" render="Label" position="1370,935" size="500,34" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Bold;28" halign="right" valign="center">
+			<convert type="EventName">Genre</convert>
 		</widget>
-		<ePixmap position="1638,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_epg.png" />
-		<ePixmap position="1699,1028" size="36,26" zPosition="2" alphatest="blend" pixmap="buttons/key_menu.png" />
 	</screen>
 	<screen name="GraphMultiEpgSetup" position="fill" title="Electronic Program Guide Setup" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate" />
