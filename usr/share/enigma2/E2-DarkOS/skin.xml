@@ -876,10 +876,10 @@ if callable(loadLogo):
 		<widget source="session.CurrentService" render="PositionGauge" position="265,22" size="1100,18" transparent="1" zPosition="4" pointer="dvr/position_pointer1100.png:1100,4" >
 			<convert type="ServicePosition">Gauge</convert>
 		</widget>
-		<widget source="session.CurrentService" render="Label" position="120,5" size="135,50" backgroundColor="background" zPosition="4" foregroundColor="foreground" borderWidth="2" font="Regular;33" borderColor="gray" valign="center" halign="left">
+		<widget source="session.CurrentService" render="Label" position="120,5" size="135,50" backgroundColor="background" zPosition="4" foregroundColor="foreground" borderWidth="2" font="Regular;33" borderColor="separator" valign="center" halign="left">
 			<convert type="ServicePosition">Position,ShowHours</convert>
 		</widget>
-		<widget source="session.CurrentService" render="Label" position="1395,5" size="175,50" backgroundColor="background" zPosition="4" foregroundColor="foreground" borderWidth="2" font="Regular;33" borderColor="gray" valign="center" halign="right">
+		<widget source="session.CurrentService" render="Label" position="1395,5" size="175,50" backgroundColor="background" zPosition="4" foregroundColor="foreground" borderWidth="2" font="Regular;33" borderColor="separator" valign="center" halign="right">
 			<convert type="ServicePosition">Remaining,Plus,ShowHours</convert>
 		</widget>
   	</screen>
@@ -2143,7 +2143,7 @@ if callable(loadLogo):
 		<widget name="activityslider" position="0,0" size="550,5" pixmap="progress_small.png"/>
 		<widget name="package" position="10,30" size="550,20" font="Regular;18" transparent="0"/>
 		<widget name="status" position="10,60" size="550,45" font="Regular;18" transparent="0"/>
-		<widget name="slider" position="10,100" size="530,15" foregroundColor="blue" borderWidth="2" borderColor="gray"/>
+		<widget name="slider" position="10,100" size="530,15" foregroundColor="blue" borderWidth="2" borderColor="separator"/>
 	</screen>-->
 
 	<!-- Ipkg installer -->
