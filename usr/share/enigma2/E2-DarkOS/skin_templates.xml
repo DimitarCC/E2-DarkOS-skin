@@ -78,6 +78,11 @@
 		<panel name="Screen_Window_Full" />
 		<widget source="session.VideoPicture" render="Pig" position="1536,100" size="354,200" zPosition="10" backgroundColor="transpPIG" cornerRadius="8" widgetBorderWidth="2" widgetBorderColor="background5" />
 	</screen>
+
+	<screen name="Screen_Window_Full_Big_Pig">
+		<panel name="Screen_Window_Full" />
+		<widget source="session.VideoPicture" render="Pig" position="1459,100" size="430,250" zPosition="10" backgroundColor="transpPIG" cornerRadius="8" widgetBorderWidth="2" widgetBorderColor="background5" />
+	</screen>
 	
 	<screen name="Screen_1">
 		<panel name="Screen_Base" />
