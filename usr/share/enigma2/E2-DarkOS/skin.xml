@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <skin>
-	<!-- Skin: E2-DarkOS - Authors: DimitarCC, Huevos -->
+	<!-- Skin: E2-DarkOS -->
+	<!-- Authors: DimitarCC -->
+	<!-- Contributors: Huevos -->
 	<!-- This skin is a Freeware. But is permited use on any E2 image that include the required changes. -->
 	<!-- You can change this skin as you like as long as keep the credits. -->
 	<!-- DO NOT REMOVE OR CHANGE THE LINES ABOVE !!! -->
@@ -540,8 +542,8 @@
 	<!-- GraphMultiEPG -->
 	<screen name="GraphMultiEPG" title="Electronic Program Guide" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Window_Full_Big_Pig" />
-		<widget name="timeline_now" position="5,419" zPosition="2" size="19,554" scale="stretch" pixmap="window/timeline-now.png" alphatest="blend" />
-		<eLabel position="25,373" size="1866,597" zPosition="-2" widgetBorderWidth="1" widgetBorderColor="separator" backgroundColor="background" cornerRadius="6"/>
+		<widget name="timeline_now" position="5,409" zPosition="2" size="19,516" scale="stretch" pixmap="window/timeline-now.png" alphatest="blend" />
+		<eLabel position="25,373" size="1866,607" zPosition="-2" widgetBorderWidth="1" widgetBorderColor="separator" backgroundColor="background" cornerRadius="6"/>
 		<widget name="timeline_text" position="27,376" size="1862,29" zPosition="2" foregroundColor="foreground" backgroundColor="background" itemCornerRadius="6;top" cornerRadius="6;top" />
 		<eLabel position="25,408" size="1866,1" zPosition="10" backgroundColor="separator" />
 		<widget name="list" position="25,408" size="1865,518" itemHeight="64" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" 
