@@ -1807,7 +1807,7 @@ if callable(loadLogo):
 	<!-- Nim selection -->
 	<screen name="NimSelection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
-		<widget source="nimlist" render="Listbox" position="386,203" size="1145,641" scrollbarMode="showNever">
+		<widget source="nimlist" render="Listbox" position="386,203" size="1145,641" itemCornerRadius="6" scrollbarMode="showNever">
 		<convert type="TemplatedMultiContent">
 				{"template": [
 					MultiContentEntryText(pos = (15,3), size = (1005,37), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the nim name,
