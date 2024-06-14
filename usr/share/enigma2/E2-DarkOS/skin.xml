@@ -219,6 +219,11 @@
 		<menuicon key="user_interface" image="menu/gui_settings.svg" />
 		<menuicon key="video_selection" image="menu/video_selection.svg" />
 	</menuicons>
+	<screens>
+		<screen key="default" image="screen_icons/windows.png" />
+		<screen key="ChannelSelection" image="screen_icons/channelsel.png" />
+		<screen key="EPGSelectionGrid" image="screen_icons/epg.png" />
+	</screens>
 
 	<!-- Window -->
 	<windowstyle id="0" type="skinned">

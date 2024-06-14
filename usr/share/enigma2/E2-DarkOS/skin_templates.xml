@@ -56,7 +56,7 @@
 		<eLabel position="1915,29" size="2,982" backgroundColor="background5" zPosition="-7" />
 		
 		<eLabel position="25,75" size="1865,1" backgroundColor="separator" zPosition="-5" />
-		<widget addon="ScreenHeader" connection="Title,ScreenPath" position="45,7" size="1700,68" titleFont="Bold; 28" titleSingleFont="Bold; 34" pathFont="Bold; 18" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
+		<widget addon="ScreenHeader" connection="Image,Title,ScreenPath" position="25,8" size="1700,66" titleFont="Bold; 28" titleSingleFont="Bold; 34" pathFont="Bold; 18" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
 		<widget backgroundColor="black" font="Bold; 40" foregroundColor="white" halign="right" position="1755,5" render="Label" size="120,70" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
 		  <convert type="ClockToText">Default</convert>
 		</widget>
@@ -78,10 +78,10 @@
 		<panel name="Screen_Window_Full" />
 		<widget source="session.VideoPicture" render="Pig" position="1536,100" size="354,200" zPosition="10" backgroundColor="transpPIG" cornerRadius="8" widgetBorderWidth="2" widgetBorderColor="background5" />
 	</screen>
-
+	
 	<screen name="Screen_Window_Full_Big_Pig">
 		<panel name="Screen_Window_Full" />
-		<widget source="session.VideoPicture" render="Pig" position="1459,100" size="430,250" zPosition="10" backgroundColor="transpPIG" cornerRadius="8" widgetBorderWidth="2" widgetBorderColor="background5" />
+		<widget source="session.VideoPicture" render="Pig" position="1455,100" size="435,248" zPosition="10" backgroundColor="transpPIG" cornerRadius="8" widgetBorderWidth="2" widgetBorderColor="background5" />
 	</screen>
 	
 	<screen name="Screen_1">
@@ -100,7 +100,7 @@
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
 			  <convert type="ClockToText">Default</convert>
 			</widget>
-			<widget addon="ScreenHeader" connection="Title,ScreenPath" position="20,2" size="e-260,60" titleFont="Bold; 28" titleSingleFont="Bold; 34" pathFont="Bold; 18" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
+			<widget addon="ScreenHeader" connection="Image,Title,ScreenPath" position="20,3" size="e-260,60" titleFont="Bold; 26" titleSingleFont="Bold; 34" pathFont="Bold; 17" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
 		</panel>
 		<panel position="e-220-220,e-100" size="220,36">
 		  <panel name="ConfigButtonsTemplate"/>
@@ -216,15 +216,15 @@ if "logo" not in self:
 	self["logo"].GUIcreate(self.instance)
 	self["logo"].instance.setAlphatest(BT_ALPHABLEND)
 	self["logo"].setZPosition(10)
-	self["logo"].instance.move(ePoint(82,175))
+	self["logo"].instance.move(ePoint(72,175))
 
 logoCurrentSize = self["logo"].instance.size()
 if logoCurrentSize.width() != menu_list_size.width() + 20:
-	self["logo"].instance.resize(eSize(menu_list_size.width(),64))
+	self["logo"].instance.resize(eSize(menu_list_size.width() + 20,64))
 
 
 if callable(loadLogo):
-	loadLogo(self["logo"].instance, "model", menu_list_size.width(), 64, "center")
+	loadLogo(self["logo"].instance, "model", menu_list_size.width() + 20, 64, "center")
 	
 if "title_label" not in self:
 	font = parseFont("Regular; 34", ((1, 1), (1, 1)))
@@ -259,11 +259,11 @@ self["screen_path"].instance.resize(eSize(menu_list_size.width(),25))
 		<widget alphatest="blend" position="90,891" render="Picon" size="227,130" source="session.CurrentService" zPosition="1" transparent="1" backgroundColor="secondBG">
 		  <convert type="ServiceName">Reference</convert>
 		</widget>
-		<widget backgroundColor="black" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="390,864" valign="center" render="Label" size="950,51" source="session.CurrentService" transparent="1" zPosition="110">
+		<widget backgroundColor="black" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="390,864" valign="center" render="Label" size="1200,51" source="session.CurrentService" transparent="1" zPosition="110">
 		  <convert type="ServiceName" nostrip="1">  •  ,NUMBER,NAME,ORBPOS,PROVIDER</convert>
 		</widget>
 		
-		<widget addon="ServiceInfoBar" connection="session" position="1200,877" size="658,26" zPosition="110" backgroundColor="background" elements="gamma,videoRes,separator,crypt,currentCrypto,separator,txt,dolby,audiotrack,subtitletrack,subservices,stream,hbbtv,separator,record" 
+		<widget addon="ServiceInfoBar" connection="session" position="1200,877" size="658,26" zPosition="100" backgroundColor="background" elements="gamma,videoRes,separator,crypt,currentCrypto,separator,txt,dolby,audiotrack,subtitletrack,subservices,stream,hbbtv,separator,record" 
 			pixmaps="IS_HDR:icons/hdr_on.png,IS_HDR10:icons/hdr_on.png,IS_HLG:icons/hdr_on.png,IS_HD:icons/HD_s_n.png,IS_4K:icons/4K_s_n.png,IS_SD:icons/SD_s_n.png,txt:icons/ico_txt_on.png,dolby:icons/dd_s.png,crypt:icons/crypt_s.png,audiotrack:icons/ml_s_alt2.png,subtitletrack:icons/subs_s.png,hbbtv:icons/hbbtv_s.png,subservices:icons/ico_subs_on.png,stream:icons/streaming.png,record:icons/rec2.png"
 			pixmapsDisabled="txt:icons/ico_txt_off.png,dolby:icons/dd_s_off.png,crypt:icons/crypt_s_off.png,audiotrack:icons/ml_s_alt2_off.png,subtitletrack:icons/subs_s_off.png,hbbtv:icons/hbbtv_s_off.png,subservices:icons/ico_subs_off.png,stream:icons/streaming_off.png" 
 			permanent="videoRes,crypt,currentCrypto" alignment="right" spacing="20" autoresizeMode="condensed" separatorLineColor="separator" separatorLineThickness="1" font="Bold;25" foregroundColor="green" textBackColor="background"/>
