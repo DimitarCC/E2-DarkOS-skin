@@ -39,7 +39,7 @@
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
 			  <convert type="ClockToText">Default</convert>
 			</widget>
-			<widget addon="ScreenHeader" connection="Title,ScreenPath" position="20,2" size="e-260,60" titleFont="Bold; 28" titleSingleFont="Bold; 34" pathFont="Bold; 18" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
+			<widget addon="ScreenHeader" connection="Image,Title,ScreenPath" position="20,2" size="e-260,60" titleFont="Bold; 28" titleSingleFont="Bold; 34" pathFont="Bold; 18" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
 			<panel position="e-220-110,e-65" size="220,36">
 			  <panel name="ConfigButtonsTemplate"/>
 			</panel>
@@ -119,7 +119,7 @@
 			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
 			  <convert type="ClockToText">Default</convert>
 			</widget>
-			<widget addon="ScreenHeader" connection="Title,ScreenPath" position="20,2" size="e-260,60" titleFont="Bold; 28" titleSingleFont="Bold; 34" pathFont="Bold; 18" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
+			<widget addon="ScreenHeader" connection="Image,Title,ScreenPath" position="20,2" size="e-260,60" titleFont="Bold; 28" titleSingleFont="Bold; 34" pathFont="Bold; 18" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
 			<panel position="e-220-126,e-65" size="220,36">
 			  <panel name="ConfigButtonsTemplate"/>
 			</panel>

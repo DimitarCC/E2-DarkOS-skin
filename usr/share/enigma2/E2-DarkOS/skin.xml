@@ -219,6 +219,12 @@
 		<menuicon key="user_interface" image="menu/gui_settings.svg" />
 		<menuicon key="video_selection" image="menu/video_selection.svg" />
 	</menuicons>
+	<menus>
+		<menu key="default" image="screen_icons/windows.png" />
+	</menus>
+	<setups>
+		<setup key="default" image="screen_icons/windows.png" />
+	</setups>
 	<screens>
 		<screen key="default" image="screen_icons/windows.png" />
 		<screen key="ChannelSelection" image="screen_icons/channelsel.png" />
