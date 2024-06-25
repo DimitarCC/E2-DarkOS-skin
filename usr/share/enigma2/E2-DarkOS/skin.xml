@@ -229,6 +229,11 @@
 		<screen key="default" image="screen_icons/windows.png" />
 		<screen key="ChannelSelection" image="screen_icons/channelsel.png" />
 		<screen key="EPGSelectionGrid" image="screen_icons/epg.png" />
+		<screen key="MovieSelection" image="screen_icons/film.png" />
+		<screen key="MessageBox" image="screen_icons/chat.png" />
+		<screen key="MessageBoxSimple" image="screen_icons/chat.png" />
+		<screen key="AudioSelection" image="screen_icons/audiosubs.png" />
+		<screen key="ExtensionsList" image="screen_icons/extension.png" />
 	</screens>
 
 	<!-- Window -->
@@ -262,6 +267,70 @@
 	<include filename="skin_openvix.xml" />
 	<include filename="skin_openbh.xml" />
 	<include filename="skin_openpli.xml" />
+	
+	<!--LCD Display-->
+  <screen name="InfoBarSummary" position="5,5" size="470,310">
+    <ePixmap position="0,0" size="390,230" pixmap="display_bg.png" zPosition="-1" />
+    <widget source="session.RecordState" render="Pixmap" position="214,20" size="68,23" pixmap="iconsVFD/rec2.png" alphatest="blend" zPosition="2">
+      <convert type="ConditionalShowHide">Blink</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="20,20" size="48,23" pixmap="iconsVFD/ico_format_on.png" alphatest="blend" zPosition="2">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">0,719</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="20,20" size="48,23" pixmap="iconsVFD/ico_hd_on.png" alphatest="blend" zPosition="2">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">720,1081</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="20,20" size="48,23" pixmap="iconsVFD/ico_4k_on.png" alphatest="blend" zPosition="2">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">1440,2161</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="78,20" size="48,23" pixmap="iconsVFD/ico_txt_on.png" alphatest="blend" zPosition="2">
+      <convert type="ServiceInfo">HasTelext</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="146,20" size="48,23" pixmap="iconsVFD/ico_dolby_on.png" alphatest="blend" zPosition="2">
+      <convert type="ServiceInfo">IsMultichannel</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" position="305,20" size="48,23" pixmap="iconsVFD/ico_crypt_on.png" alphatest="blend" zPosition="2">
+      <convert type="ServiceInfo">IsCrypted</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <!--<widget source="session.CurrentService" render="Pixmap" position="323,10" size="23,23" zPosition="2" pixmap="iconsVFD/sat.png" alphatest="blend">
+		  <convert type="ServiceInfo">TunerSystemIsSat</convert>
+		  <convert type="ConditionalShowHide"/>
+		</widget>-->
+    <widget source="session.FrontendInfo" render="FixedLabel" font="Bold;22" backgroundColor="black" transparent="1" foregroundColor="green" position="427,20" size="23,23" valign="center" text="B" zPosition="2">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">0,0</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" render="FixedLabel" font="Bold;22" backgroundColor="black" transparent="1" foregroundColor="green" position="427,20" size="23,23" valign="center" text="A" zPosition="2">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">1,1</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <!-- Channellogo (Picon) -->
+    <widget source="session.CurrentService" render="Picon" position="40,105" size="160,90" alphatest="blend" zPosition="1">
+      <convert type="ServiceName">Reference</convert>
+    </widget>
+    <!-- Service Number-->
+    <widget source="session.CurrentService" render="Label" font="ExtraF_3;80" foregroundColor="#26b5ff" backgroundColor="black" position="240,100" size="200,100" halign="center" valign="center" noWrap="1" transparent="1" zPosition="3">
+      <convert type="ServiceName">•,NUMBER</convert>
+    </widget>
+    <widget source="session.Event_Now" render="Progress" position="20,270" size="430,20" borderWidth="1" backgroundColor="black">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <!-- <eLabel position="0,150" size="400,2" backgroundColor="grey2" /> -->
+    <!--<widget font="GoodT;50" foregroundColor="un41c8ff" backgroundColor="black" halign="center" position="0,200" render="Label" size="400,45" source="global.CurrentTime" transparent="1" valign="center">
+		  <convert type="ClockToText">Format:%H:%M</convert>
+		</widget>-->
+  </screen>
   
 	<!-- Volume -->
 	<screen position="710,65" size="474,50" name="Volume" title="Volume" flags="wfNoBorder" backgroundColor="transparent" zPosition="1" cornerRadius="7">
@@ -1424,7 +1493,7 @@ if callable(loadLogo):
 		<widget source="legend2" render="Label" position="696,130" size="525,75" transparent="1" zPosition="1" font="Regular;27" valign="center" halign="center" />
 		<widget source="legend3" render="Label" position="1256,130" size="300,75" transparent="1" zPosition="1" font="Regular;27" valign="center" halign="right" />
 		<widget source="config" render="Listbox" position="396,230" size="1110,630" scrollbarMode="showNever" itemCornerRadius="6">
-			<convert type="TemplatedMultiContent">
+		<convert type="TemplatedMultiContent">
 				{"template": [
 						MultiContentEntryPixmapAlphaTest(pos = (22,15),size = (72,72),png = 0),# index 0 is the isMounted pixmap
 						MultiContentEntryText(pos = (150,15),size = (285,37),font=0,flags = RT_HALIGN_LEFT,text = 1),# index 1 is the sharename
@@ -1436,10 +1505,10 @@ if callable(loadLogo):
 					"fonts": [gFont("Regular",37),gFont("Regular",27)],
 					"itemHeight": 75
 				}
-			</convert>
+		</convert>
 		</widget>
 		<widget source="introduction" render="Label" position="780,875" size="1110,34" transparent="1" zPosition="10" font="Regular;30" valign="center" halign="center" />
-	  </screen>
+	</screen>
 	<screen name="AutoMountEdit" title="MountEdit" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate" />
 	</screen>
@@ -1862,7 +1931,7 @@ if callable(loadLogo):
 			<widget name="lock_state" position="1110,745" size="300,37" backgroundColor="secondBG" transparent="1" font="Regular;30"/>
 		</panel>
 		<widget name="status_bar" position="1120,847" size="425,37" font="Regular;29" foregroundColor="yellow" halign="center" />
-	  </screen>
+	</screen>
 
 	<!-- Positioner Setup - Log -->
 	<screen name="PositionerSetupLog" position="fill" backgroundColor="transparent">
