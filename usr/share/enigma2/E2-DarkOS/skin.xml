@@ -234,6 +234,13 @@
 		<screen key="MessageBoxSimple" image="screen_icons/chat.png" />
 		<screen key="AudioSelection" image="screen_icons/audiosubs.png" />
 		<screen key="ExtensionsList" image="screen_icons/extension.png" />
+		<screen key="NetworkAdapterSelection" image="screen_icons/lan.png" />
+		<screen key="AdapterSetup" image="screen_icons/lan.png" />
+		<screen key="AdapterSetupConfiguration" image="screen_icons/lan.png" />
+		<screen key="NetworkMountsMenu" image="screen_icons/mount.png" />
+		<screen key="NetworkPassword" image="screen_icons/password.png" />
+		<screen key="PluginBrowser" image="screen_icons/extension.png" />
+		<screen key="TimerSelection" image="screen_icons/timer.png" />
 	</screens>
 
 	<!-- Window -->
@@ -1357,7 +1364,7 @@ if callable(loadLogo):
 	</screen>
 	<screen name="AdapterSetupConfiguration" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
-		<widget name="menulist" textOffset="20,5" position="395,206" size="1130,421" itemHeight="45" font="Regular;28" zPosition="10" scrollbarMode="showNever" />
+		<widget name="menulist" textOffset="20,5" position="395,206" size="1130,421" itemHeight="45" font="Regular;28" zPosition="10" itemCornerRadius="6" scrollbarMode="showNever" />
 		<widget source="description" render="Label" position="395,636" size="1130,155" transparent="1" font="Regular;31" valign="center" halign="center" />
 		<widget source="IFtext" render="Label" position="891,812" size="247,37" transparent="1" zPosition="10" font="Regular;31" halign="right" />
 		<widget source="IF" render="Label" position="1149,812" size="375,37" transparent="1" zPosition="10" font="Regular;31" halign="left" />
@@ -1365,42 +1372,43 @@ if callable(loadLogo):
 		<widget name="statuspic" position="709,809" size="52,37" transparent="1" zPosition="10" pixmaps="icons/lock_on.png,icons/lock_off.png" alphatest="blend" />
 	</screen>
 	<screen name="AdapterSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-	<panel name="Screen_Menu1" />
-	<widget name="config" position="392,199" size="1130,418" itemHeight="45" font="Regular;28" scrollbarMode="showNever" />
-	<widget source="introduction" render="Label" position="398,647" size="1110,40" font="Regular;33" halign="center" />
-	<widget source="IPtext" render="Label" position="397,698" size="225,37" zPosition="1" foregroundColor="grey" font="Regular;31" halign="left" />
-	<widget source="Netmasktext" render="Label" position="397,736" size="225,37" zPosition="1" foregroundColor="grey" font="Regular;31" halign="left" />
-	<widget source="Gatewaytext" render="Label" position="399,775" size="225,37" zPosition="1" foregroundColor="grey" font="Regular;31" halign="left" />
-	<widget source="IP" render="Label" position="629,697" size="300,37" zPosition="1" font="Regular;28" />
-	<widget source="Mask" render="Label" position="631,738" size="300,37" zPosition="1" font="Regular;28" />
-	<widget source="Gateway" render="Label" position="633,775" size="300,37" zPosition="1" font="Regular;28" />
-	<widget source="DNS1text" render="Label" position="1006,698" size="225,37" transparent="1" zPosition="1" foregroundColor="grey" font="Regular;31" valign="left" halign="left" />
-	<widget source="DNS2text" render="Label" position="1005,743" size="225,37" transparent="1" zPosition="1" foregroundColor="grey" font="Regular;31" valign="left" halign="left" />
-	<widget source="DNS1" render="Label" position="1228,696" size="300,37" transparent="1" zPosition="1" font="Regular;31" valign="center" halign="left" />
-	<widget source="DNS2" render="Label" position="1230,744" size="300,37" transparent="1" zPosition="1" font="Regular;31" valign="center" halign="left" />
-	<widget source="Adaptertext" render="Label" position="397,825" size="400,34" transparent="1" zPosition="10" foregroundColor="grey" font="Regular;30" halign="left" />
-	<widget source="Adapter" render="Label" position="774,825" size="600,34" transparent="1" zPosition="10" font="Regular;30" halign="left" />
-	<widget source="introduction2" render="Label" position="398,858" size="1110,34" transparent="1" zPosition="10" font="Regular;30" valign="center" halign="center" />
-	<widget name="HelpWindow" position="75,615" size="1,1" transparent="1" zPosition="1" alphatest="blend" />
+		<panel name="Screen_Menu1" />
+		<widget name="config" position="392,199" size="1130,418" itemHeight="45" font="Regular;28" itemCornerRadius="6" scrollbarMode="showNever" />
+		<widget source="introduction" render="Label" position="398,647" size="1110,40" font="Regular;33" halign="center" />
+		<widget source="IPtext" render="Label" position="397,698" size="225,37" zPosition="1" foregroundColor="grey" font="Regular;31" halign="left" />
+		<widget source="Netmasktext" render="Label" position="397,736" size="225,37" zPosition="1" foregroundColor="grey" font="Regular;31" halign="left" />
+		<widget source="Gatewaytext" render="Label" position="399,775" size="225,37" zPosition="1" foregroundColor="grey" font="Regular;31" halign="left" />
+		<widget source="IP" render="Label" position="629,697" size="300,37" zPosition="1" font="Regular;28" />
+		<widget source="Mask" render="Label" position="631,738" size="300,37" zPosition="1" font="Regular;28" />
+		<widget source="Gateway" render="Label" position="633,775" size="300,37" zPosition="1" font="Regular;28" />
+		<widget source="DNS1text" render="Label" position="1006,698" size="225,37" transparent="1" zPosition="1" foregroundColor="grey" font="Regular;31" valign="left" halign="left" />
+		<widget source="DNS2text" render="Label" position="1005,743" size="225,37" transparent="1" zPosition="1" foregroundColor="grey" font="Regular;31" valign="left" halign="left" />
+		<widget source="DNS1" render="Label" position="1228,696" size="300,37" transparent="1" zPosition="1" font="Regular;31" valign="center" halign="left" />
+		<widget source="DNS2" render="Label" position="1230,744" size="300,37" transparent="1" zPosition="1" font="Regular;31" valign="center" halign="left" />
+		<widget source="Adaptertext" render="Label" position="397,825" size="400,34" transparent="1" zPosition="10" foregroundColor="grey" font="Regular;30" halign="left" />
+		<widget source="Adapter" render="Label" position="774,825" size="600,34" transparent="1" zPosition="10" font="Regular;30" halign="left" />
+		<widget source="introduction2" render="Label" position="398,858" size="1110,34" transparent="1" zPosition="10" font="Regular;30" valign="center" halign="center" />
+		<widget name="HelpWindow" position="75,615" size="1,1" transparent="1" zPosition="1" alphatest="blend" />
 	</screen>
 	<screen name="NameserverSetup" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate" />
 	</screen>
 	<screen name="NetworkAdapterSelection" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
-		<widget source="list" render="Listbox" position="392,205" size="1130,635" zPosition="10" scrollbarMode="showOnDemand">
+		<widget source="list" render="Listbox" position="392,205" size="1130,600" zPosition="10" itemCornerRadius="6" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-					MultiContentEntryText(pos = (135,9),size = (660,48),font=0,flags = RT_HALIGN_LEFT|RT_VALIGN_TOP,text = 1),# index 1 is the interfacename
-					MultiContentEntryText(pos = (135,60),size = (660,36),font=1,flags = RT_HALIGN_LEFT|RT_VALIGN_BOTTOM,text = 2),# index 2 is the description
-					MultiContentEntryPixmapAlphaTest(pos = (7,12),size = (81,81),png = 3),# index 3 is the interface pixmap
-					MultiContentEntryPixmapAlphaTest(pos = (105,63),size = (22,24),png = 4),# index 4 is the default pixmap
+					MultiContentEntryText(pos = (125,9),size = (660,48),font=0,flags = RT_HALIGN_LEFT|RT_VALIGN_TOP,text = 1),# index 1 is the interfacename
+					MultiContentEntryText(pos = (125,60),size = (660,36),font=1,flags = RT_HALIGN_LEFT|RT_VALIGN_BOTTOM,text = 2),# index 2 is the description
+					MultiContentEntryPixmapAlphaBlend(pos = (12,12),size = (81,81),png = 3),# index 3 is the interface pixmap
+					MultiContentEntryPixmapAlphaBlend(pos = (105,63),size = (22,24),png = 4),# index 4 is the default pixmap
 				],
 				"fonts": [gFont("Regular",42),gFont("Regular",30)],
 				"itemHeight": 105
 				}
 			</convert>
 		</widget>
+		<widget addon="Pager" conditional="list" connection="list" position="392,815" size="1130,25" transparent="1" backgroundColor="background" />
 		<widget source="introduction" render="Label" position="393,844" size="1130,34" transparent="1" zPosition="10" font="Regular;30" valign="center" halign="center" />
 	</screen>
 	<screen name="NetworkAdapterTest" title="Network test" position="fill" flags="wfNoBorder" backgroundColor="transparent">
