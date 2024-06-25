@@ -207,13 +207,6 @@ MultiContentEntryPixmapAlphaBlend(pos = (10, 8), size = (50, 50), png = 1),
 		<widget name="lab1" position="center,c+50" halign="center" size="754,90" zPosition="10" font="Regular;30" valign="top"/>
 	</screen>
 
-	<!-- NetworkMountsMenu -->
-	<screen name="NetworkMountsMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_1_1"/>
-		<widget name="menulist" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" zPosition="10" scrollbarMode="showNever"/>
-		<widget source="introduction" render="Label" position="145,865" zPosition="10" size="1630,30" font="Regular;28" foregroundColor="yellow" valign="center" halign="center"/>
-	</screen>
-
 	<!-- oscam -->
 	<screen name="OscamInfoMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>

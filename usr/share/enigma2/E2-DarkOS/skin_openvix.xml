@@ -86,7 +86,7 @@ self["list"].instance.setItemHeight(38)
 	<screen name="VIXMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
 		<!-- This is the menu list -->
-		<widget source="menu" render="Listbox" position="125,150" size="1670,600" zPosition="3" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand">
+		<widget source="menu" render="Listbox" position="125,150" size="1670,565" zPosition="3" transparent="1" enableWrapAround="1" itemCornerRadius="6" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
 			{"template": [
 					MultiContentEntryText(pos = (75,15),size = (1670,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 1),# index 0 is the MenuText,
@@ -96,6 +96,7 @@ self["list"].instance.setItemHeight(38)
 			}
 			</convert>
 		</widget>
+		<widget addon="Pager" conditional="menu" connection="menu" position="125,725" size="1670,25" transparent="1" backgroundColor="background" />
 		<!-- This is the description of menu list item -->
 		<widget source="menu" render="Listbox" position="125,800" size="1670,120" backgroundColor="darkgrey" zPosition="3" selectionDisabled="1" transparent="1" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
@@ -142,8 +143,8 @@ self["list"].instance.setItemHeight(38)
  	<!-- VIXSwapManager -->
 	<screen name="VIXSwap" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
-		<widget name="autostart_off" position="396,210" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="on"/>
-		<widget name="autostart_on" position="396,210" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="on"/>
+		<widget name="autostart_off" position="396,210" zPosition="1" pixmap="icons/lock_off.png" size="48,48" alphatest="blend"/>
+		<widget name="autostart_on" position="396,210" zPosition="2" pixmap="icons/lock_on.png" size="48,48" alphatest="blend"/>
 		<widget name="lab1" position="475,210" size="950,75" font="Regular;30"/>
 		<widget name="lab2" position="396,350" size="225,45" font="Regular;30" valign="center"/>
 		<widget name="labplace" position="620,349" size="330,45" font="Regular;30" valign="center"/>
@@ -157,18 +158,19 @@ self["list"].instance.setItemHeight(38)
 	<!-- VixMountManager -->
 	<screen name="VIXDevicesPanel"  position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
-		<widget source="list" render="Listbox" position="396,210" size="1130,672" transparent="1" scrollbarMode="showOnDemand">
+		<widget source="list" render="Listbox" position="396,210" size="1130,637" transparent="1" itemCornerRadius="6" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
 				{"template": [
 						MultiContentEntryText(pos = (135,7),size = (975,39),font=0,flags = RT_HALIGN_LEFT,text = 0),# index 0 is the name
 						MultiContentEntryText(pos = (135,49),size = (975,57),font=1,flags = RT_HALIGN_LEFT,text = 1),# index 1 is the state
-						MultiContentEntryPixmapAlphaTest(pos = (22,7),size = (72,72),png = 2),# index 2 is the status pixmap
+						MultiContentEntryPixmapAlphaBlend(pos = (22,7),size = (72,72),png = 2),# index 2 is the status pixmap
 					],
 				"fonts": [gFont("Regular",33),gFont("Regular",25)],
 				"itemHeight": 112
 				}
 			</convert>
 		</widget>
+		<widget addon="Pager" conditional="list" connection="list" position="396,857" size="1130,25" transparent="1" backgroundColor="background" />
 		<widget name="lab1" position="406,690" halign="center" size="1110,34" zPosition="1" font="Regular;30" valign="top" transparent="1"/>
 	</screen>
 
@@ -178,13 +180,13 @@ self["list"].instance.setItemHeight(38)
 		<widget name="lab1" position="145,865" halign="center" size="1630,30" font="Regular;30" valign="center" zPosition="10"/>
 	</screen>
 
-	<!-- Vix MountManager Setup -->
+	<!-- Vix SoftcamManager Setup -->
 	<screen name="VIXSoftcamManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
 		<widget name="lab2" position="396,210" size="255,45" font="Regular;33" halign="left" zPosition="2" foregroundColor="foreground"/>
 		<widget name="activecam" position="673,210" size="360,225" font="Regular;30" halign="left" zPosition="2" noWrap="1" foregroundColor="foreground"/>
 		<widget name="lab1" position="396,481" size="255,40" font="Regular;30" halign="left" zPosition="2" foregroundColor="foreground"/>
-		<widget name="list" position="673,481" size="450,9*40" font="SelectionList;30" scrollbarMode="showOnDemand" valign="center" foregroundColor="foreground" enableWrapAround="1"/>
+		<widget name="list" position="673,481" size="450,9*40" font="SelectionList;30" itemCornerRadius="6" scrollbarMode="showNever" valign="center" foregroundColor="foreground" enableWrapAround="1"/>
 		<applet type="onLayoutFinish">
 			self["list"].instance.setItemHeight(40)
 		</applet>
@@ -210,14 +212,15 @@ self["list"].instance.setItemHeight(38)
 	<!-- NetworkMountsMenu -->
 	<screen name="NetworkMountsMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
-		<widget name="menulist" position="125,150" size="1670,13*45" itemHeight="45" itemCornerRadius="6" font="Regular;28" zPosition="10" scrollbarMode="showNever"/>
+		<widget name="menulist" position="125,150" size="1670,13*45" itemHeight="45" itemCornerRadius="6" font="Regular;28" zPosition="10" sidesMargin="20" scrollbarMode="showNever"/>
 		<widget source="introduction" render="Label" position="145,865" zPosition="10" size="1630,30" font="Regular;28" foregroundColor="yellow" valign="center" halign="center"/>
 	</screen>
 
 		<!-- oscam -->
 	<screen name="OscamInfoMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
-		<widget name="mainmenu" position="125,150" size="1670,810" font="Regular;33" zPosition="10" itemHeight="45" scrollbarMode="showOnDemand" enableWrapAround="1"/>
+		<widget name="mainmenu" position="125,150" size="1670,775" font="Regular;33" zPosition="10" itemHeight="45" scrollbarMode="showNever" enableWrapAround="1"/>
+		<widget addon="Pager" conditional="mainmenu" connection="mainmenu" position="125,935" size="1670,25" transparent="1" backgroundColor="background" />
 	</screen>
 
  	<screen name="OscamInfoConfigScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
@@ -484,7 +487,7 @@ self["bcGroundOver"].setZPosition(-7)
 			<widget alphatest="blend" position="e-304,e-270" render="Picon" size="227,130" source="Service" zPosition="1" transparent="1" backgroundColor="background">
 			  <convert type="MovieInfo">RecordServiceRef</convert>
 			</widget>
-			<panel position="e-74,e-70" size="54,34">
+			<panel position="e-104,e-70" size="54,34">
 				<panel name="BrandLogoTemplate" />
 			</panel>
 		</panel>
