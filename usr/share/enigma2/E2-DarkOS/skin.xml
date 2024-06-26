@@ -241,6 +241,8 @@
 		<screen key="NetworkPassword" image="screen_icons/password.png" />
 		<screen key="PluginBrowser" image="screen_icons/extension.png" />
 		<screen key="TimerSelection" image="screen_icons/timer.png" />
+		<screen key="TimerEditList" image="screen_icons/timer.png" />
+		<screen key="TimerEntry" image="screen_icons/timer.png" />
 	</screens>
 
 	<!-- Window -->
@@ -1166,6 +1168,8 @@ if callable(loadLogo):
 		<widget name="timerlist" position="396,210" size="1130,635" scrollbarMode="showNever" itemHeight="76" rowSplit="42" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" itemCornerRadius="6" />
 		<widget addon="Pager" connection="timerlist" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
+
+	<!-- Plugin browser -->
 	<screen name="PluginBrowser" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
 		<widget name="list" position="396,225" size="1130,610" scrollbarMode="showNever" itemCornerRadius="6"/>
@@ -1175,10 +1179,14 @@ if callable(loadLogo):
 		<panel name="PluginBrowser" />
 		<widget name="text" position="399,225" size="1110,75" zPosition="-1" transparent="1" font="Regular;32" valign="center" halign="center" />
 	</screen>
+
+	<!-- File Browser -->
 	<screen name="FileBrowser" title="DVD File Browser" position="fill" flags="wfNoBorder">
 		<panel name="Screen_Menu1" />
 		<widget name="filelist" position="396,201" size="1110,640" scrollbarMode="showOnDemand" itemCornerRadius="6"/>
 	</screen>
+
+	<!-- Service Info -->
 	<screen name="ServiceInfoSimple" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />
 		<widget name="infolist" position="125,150" size="1696,776" itemHeight="38" font="Regular;28" selectionDisabled="1" scrollbarMode="showOnDemand" />
