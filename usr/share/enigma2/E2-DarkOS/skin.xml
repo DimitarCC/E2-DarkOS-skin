@@ -208,10 +208,15 @@
 		<menuicon key="sleep" image="menu/sleep.svg" />
 		<menuicon key="standby" image="menu/standby.svg" />
 		<menuicon key="standby_restart_list" image="menu/standby_restart_list.svg" />
+		<menuicon key="deep_standby" image="menu/standby.svg" />
+		<menuicon key="multiboot" image="menu/multiboot.svg" />
 		<menuicon key="system" image="menu/system_selection.svg" />
 		<menuicon key="system_selection" image="menu/system_selection.svg" />
 		<menuicon key="timer_edit" image="menu/timer_edit.svg" />
 		<menuicon key="timermenu" image="menu/timer_edit.svg" />
+		<menuicon key="autotimer_setup" image="menu/auto_timer.svg" />
+		<menuicon key="crontimer_edit" image="menu/cron_timer.svg" />
+		<menuicon key="powertimer_edit" image="menu/power_timer.svg" />
 		<menuicon key="timezone_setup" image="menu/timezone_setup.svg" />
 		<menuicon key="time_setup" image="menu/timezone_setup.svg" />
 		<menuicon key="tuner_setup" image="menu/tuner_setup.svg" />
@@ -223,10 +228,20 @@
 		<menu key="default" image="screen_icons/windows.png" />
 	</menus>
 	<setups>
-		<setup key="default" image="screen_icons/windows.png" />
+		<setup key="default" image="screen_icons/setup.png" />
+		<setup key="timerentry" image="screen_icons/timer_setup.png" />
 	</setups>
 	<screens>
 		<screen key="default" image="screen_icons/windows.png" />
+		<screen key="About" image="screen_icons/info.png" />
+		<screen key="SystemMemoryInfo" image="screen_icons/chip.png" />
+		<screen key="SystemNetworkInfo" image="screen_icons/lan_info.png" />
+		<screen key="ServiceInfo" image="screen_icons/channel_info.png" />
+		<screen key="Devices" image="screen_icons/dev.png" />
+		<screen key="AboutBoxInfo" image="screen_icons/stb.png" />
+		<screen key="AboutBoxBranding" image="screen_icons/stb.png" />
+		<screen key="AboutBoxBrandingInfo" image="screen_icons/stb.png" />
+		<screen key="StreamingClientsInfo" image="screen_icons/cast_info.png" />
 		<screen key="ChannelSelection" image="screen_icons/channelsel.png" />
 		<screen key="EPGSelectionGrid" image="screen_icons/epg.png" />
 		<screen key="MovieSelection" image="screen_icons/film.png" />
@@ -235,14 +250,16 @@
 		<screen key="AudioSelection" image="screen_icons/audiosubs.png" />
 		<screen key="ExtensionsList" image="screen_icons/extension.png" />
 		<screen key="NetworkAdapterSelection" image="screen_icons/lan.png" />
-		<screen key="AdapterSetup" image="screen_icons/lan.png" />
-		<screen key="AdapterSetupConfiguration" image="screen_icons/lan.png" />
+		<screen key="AdapterSetup" image="screen_icons/lan_setup.png" />
+		<screen key="AdapterSetupConfiguration" image="screen_icons/lan_setup.png" />
 		<screen key="NetworkMountsMenu" image="screen_icons/mount.png" />
 		<screen key="NetworkPassword" image="screen_icons/password.png" />
 		<screen key="PluginBrowser" image="screen_icons/extension.png" />
 		<screen key="TimerSelection" image="screen_icons/timer.png" />
 		<screen key="TimerEditList" image="screen_icons/timer.png" />
-		<screen key="TimerEntry" image="screen_icons/timer.png" />
+		<screen key="AutoTimerOverview" image="screen_icons/timer.png" />
+		<screen key="AutoTimerEditor" image="screen_icons/timer_setup.png" />
+		<screen key="ParentalControlSetup" image="screen_icons/parental_ctrl.png" />
 	</screens>
 
 	<!-- Window -->
@@ -623,7 +640,7 @@
 	<screen name="EPGSearchHistory" title="EPGSearch - History" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
 		<widget source="help" render="Label" position="30,570" size="0,0" backgroundColor="background" transparent="1" font="Regular;30" />
-		<widget source="history" position="396,210" render="Listbox" size="1130,635" itemHeight="38" font="Regular;28" backgroundColor="background" transparent="1" scrollbarMode="showOnDemand">
+		<widget source="history" position="396,210" render="Listbox" size="1130,635" itemHeight="38" font="Regular;28" backgroundColor="background" transparent="1" itemCornerRadius="6" scrollbarMode="showNever">
 		<convert type="StringList" />
 		</widget>
 	</screen>
@@ -913,13 +930,13 @@ if callable(loadLogo):
 	<screen name="HotkeySetup" title="" position="fill" flags="wfNoBorder">
 		<panel name="Screen_Window_Full_Big_Pig" />
 		<widget name="list" position="29,94" itemHeight="45" size="1130,874" scrollbarMode="showNever" itemCornerRadius="6"/>
-		<widget name="choosen" position="1182,451" size="703,495" scrollbarMode="showOnDemand" />
+		<widget name="choosen" position="1182,451" size="703,495" scrollbarMode="showOnDemand" itemCornerRadius="6" />
 		<widget name="description" position="1179,957" size="708,29" zPosition="1" font="Regular;24" halign="center" />
 	</screen>
 	<screen name="HotkeySetupSelect" title="" position="fill" flags="wfNoBorder">
 		<panel name="Screen_Window_Full_Big_Pig" />
 		<widget name="list" position="29,94" itemHeight="45" size="1130,874" scrollbarMode="showNever" itemCornerRadius="6"/>
-		<widget name="choosen" position="1182,451" size="703,495" scrollbarMode="showOnDemand" />
+		<widget name="choosen" position="1182,451" size="703,495" scrollbarMode="showOnDemand" itemCornerRadius="6"/>
 		<widget name="description" position="1179,957" size="708,29" zPosition="1" font="Regular;24" halign="center" />
 	</screen>
 
@@ -1290,7 +1307,7 @@ if callable(loadLogo):
 							"itemHeight": 42 }
 						</convert>
 			</widget>
-			<widget name="config" position="0,0" size="1300,502" zPosition="1" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" transparent="1" />
+			<widget name="config" position="0,0" size="1300,502" zPosition="1" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" itemCornerRadius="6" transparent="1" />
 		</panel>
 		</panel>
 	</screen>
@@ -1314,7 +1331,7 @@ if callable(loadLogo):
 			<widget name="portpic" position="top" zPosition="10" size="150,150" transparent="1" alphatest="on" />
 			</panel>
 			<panel position="fill" layout="stack">
-			<widget source="list" render="Listbox" position="fill" font="Regular;34" scrollbarMode="showOnDemand">
+			<widget source="list" render="Listbox" position="fill" font="Regular;34" scrollbarMode="showOnDemand" itemCornerRadius="6">
 				<convert type="TemplatedMultiContent">
 								{"template": [ MultiContentEntryText(pos = (0,0),size = (1035,42),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 0) ],
 								"fonts": [gFont("Regular",34)],
@@ -1334,7 +1351,7 @@ if callable(loadLogo):
 		<panel position="fill">
 		<widget name="text" position="top" size="*,240" font="Regular;34" valign="center" />
 		<panel position="bottom" size="*,50" />
-		<widget source="languages" render="Listbox" position="fill" scrollbarMode="showOnDemand">
+		<widget source="languages" render="Listbox" position="fill" scrollbarMode="showOnDemand" itemCornerRadius="6">
 			<convert type="TemplatedMultiContent">
 						{"template": [
 								MultiContentEntryText(pos = (80, 10), size = (200, 50), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the language name,
@@ -1361,14 +1378,14 @@ if callable(loadLogo):
 		<panel name="Screen_Window_Full" />
 		<eLabel text="Welcome..." position="30,7" size="1830,75" backgroundColor="secondBG" transparent="1" zPosition="1" font="Regular;36" valign="center" halign="left" />
 		<widget name="text" position="1090,153" size="510,495" font="Regular;33" />
-		<widget source="list" render="Listbox" position="864,661" size="735,270" scrollbarMode="showOnDemand">
+		<widget source="list" render="Listbox" position="864,661" size="735,270" scrollbarMode="showOnDemand" itemCornerRadius="6">
 		<convert type="StringList" />
 		</widget>
-		<widget name="config" position="127,655" size="637,270" itemHeight="38" font="Regular;28" transparent="1" zPosition="1" scrollbarMode="showOnDemand" />
+		<widget name="config" position="127,655" size="637,270" itemHeight="38" font="Regular;28" transparent="1" zPosition="1" scrollbarMode="showOnDemand" itemCornerRadius="6" />
 		<ePixmap pixmap="buttons/red.png" position="810,485" size="34,34" alphatest="on" />
 		<widget name="languagetext" position="860,485" size="165,34" font="Regular;28" />
-		<widget name="wizard" pixmap="wizard.png" position="811,120" size="165,261" zPosition="10" alphatest="on" />
-		<widget name="rc" position="1623,148" size="231,750" zPosition="10" pixmaps="rc.png,rcold.png" alphatest="on" />
+		<widget name="wizard" pixmap="wizard.png" position="811,120" size="165,261" zPosition="10" alphatest="blend" />
+		<widget name="rc" position="1623,148" size="231,750" zPosition="10" pixmaps="rc.png,rcold.png" alphatest="blend" />
 	</screen>
 	<screen name="AdapterSetupConfiguration" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
@@ -1455,7 +1472,7 @@ if callable(loadLogo):
 	</screen>
 	<screen name="NetworkBrowser" title="Network Neighbourhood" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
-		<widget source="list" render="Listbox" position="405,205" size="1110,7*78" zPosition="10" scrollbarMode="showOnDemand">
+		<widget source="list" render="Listbox" position="405,205" size="1110,7*78" zPosition="10" scrollbarMode="showOnDemand" itemCornerRadius="6">
 		<convert type="TemplatedMultiContent">
 			{"template": [
 					MultiContentEntryPixmapAlphaTest(pos = (2,15),size = (72,72),png = 1),# index 1 is the expandable/expanded/verticalline icon
@@ -1474,7 +1491,7 @@ if callable(loadLogo):
 	</screen>
 	<screen name="AutoMountManager" title="MountManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
-		<widget source="config" render="Listbox" position="405,205" size="1110,6*90" transparent="1" scrollbarMode="showOnDemand">
+		<widget source="config" render="Listbox" position="405,205" size="1110,6*90" transparent="1" scrollbarMode="showOnDemand" itemCornerRadius="6">
 		<convert type="TemplatedMultiContent">
 					{"template": [
 							MultiContentEntryText(pos = (90,7),size = (870,42),font=0,flags = RT_HALIGN_LEFT,text = 0),# index 2 is the Menu Titel
@@ -1490,7 +1507,7 @@ if callable(loadLogo):
 	</screen>
 	<screen name="UserManager" title="UserManager" position="fill" flags="wfNoBorder"><!-- What is this? -->
 		<panel name="PigTemplate" />
-		<widget source="config" render="Listbox" position="780,105" size="1110,630" zPosition="3" transparent="1" scrollbarMode="showOnDemand">
+		<widget source="config" render="Listbox" position="780,105" size="1110,630" zPosition="3" transparent="1" scrollbarMode="showOnDemand" itemCornerRadius="6">
 		<convert type="TemplatedMultiContent">
 					{"template": [
 							MultiContentEntryText(pos = (120,6),size = (885,75),font=0,flags = RT_HALIGN_LEFT,text = 0),# index 0 is the name
@@ -1580,7 +1597,7 @@ if callable(loadLogo):
 	<!-- Input Device Configuration -->
 	<screen name="InputDeviceSelection" title="Select input device" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
-		<widget source="list" render="Listbox" position="389,195" size="1145,649" transparent="1" scrollbarMode="showOnDemand">
+		<widget source="list" render="Listbox" position="389,195" size="1145,649" transparent="1" scrollbarMode="showOnDemand" itemCornerRadius="6">
 		<convert type="TemplatedMultiContent">
 			<!-- device, description, devicepng, divpng -->
 		{"template": [
@@ -1886,7 +1903,7 @@ if callable(loadLogo):
 		<panel name="Screen_Menu1" />
 		<widget name="preview" position="767,554" size="420,315" alphatest="blend" backgroundColor="transparent"/>
 		<widget source="description" render="Label" position="394,198" size="0,0" font="Regular;24" valign="center" />
-		<widget source="skins" render="Listbox" position="394,198" size="1130,350" enableWrapAround="1" scrollbarMode="showNever">
+		<widget source="skins" render="Listbox" position="394,198" size="1130,350" enableWrapAround="1" scrollbarMode="showNever" itemCornerRadius="6">
 		<convert type="TemplatedMultiContent">
 						{
 						"template": [
@@ -2006,7 +2023,7 @@ if callable(loadLogo):
 		<convert type="FrontendInfo">LOCK</convert>
 		<convert type="ConditionalShowHide" />
 		</widget>
-		<widget name="config" position="450,360" size="1440,643" itemHeight="49" font="Regular;40" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" />
+		<widget name="config" position="450,360" size="1440,643" itemHeight="49" font="Regular;40" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" itemCornerRadius="6" />
 		<widget name="introduction" position="0,0" size="0,0" zPosition="0" />
 		<!-- ORB TSID ONID for openvix -->
 		<widget source="pos" conditional="pos" render="FixedLabel" text="Orb Pos:" position="450,930" size="180,45" font="Regular;40" halign="right">
@@ -2185,7 +2202,7 @@ if callable(loadLogo):
 		<panel name="Screen_Menu1" />
 		<widget name="title" position="396,212" size="900,35" font="Regular;32" />
 		<widget name="subtitle" position="396,248" size="900,35" font="Regular;32" />
-		<widget name="entries" position="396,294" size="1130,510" itemHeight="35" font="Regular;32" scrollbarMode="showOnDemand" />
+		<widget name="entries" position="396,294" size="1130,510" itemHeight="35" font="Regular;32" scrollbarMode="showOnDemand" itemCornerRadius="6" />
 		<widget addon="Pager" connection="entries" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 		<widget name="bottom" position="397,797" size="900,35" font="Regular;32" />
 	</screen>
@@ -2194,7 +2211,7 @@ if callable(loadLogo):
 	<screen name="CiSelection" position="fill" title="Common Interface" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
 		<widget name="text" position="395,202" size="1100,35" font="Regular;32" />
-		<widget name="entries" position="396,245" size="1130,600" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
+		<widget name="entries" position="396,245" size="1130,600" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" itemCornerRadius="6" />
 		<widget addon="Pager" connection="entries" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
 
@@ -2257,7 +2274,7 @@ if callable(loadLogo):
 		<widget name="target" position="125,195" size="1670,37" valign="center" font="Regular;33"/>
 		<widget name="filelist" position="125,190" size="1670,310" zPosition="1" scrollbarMode="showOnDemand" selectionDisabled="1"/>
 		<widget name="textbook" position="125,562" size="1670,37" font="Regular;33"/>
-		<widget name="booklist" position="132,607" itemHeight="38" font="Regular;28" size="1656,38*8" zPosition="2" scrollbarMode="showOnDemand"/>
+		<widget name="booklist" position="132,607" itemHeight="38" font="Regular;28" size="1656,38*8" zPosition="2" scrollbarMode="showOnDemand" itemCornerRadius="6" />
 	</screen>
 
 	<!-- Package manager -->

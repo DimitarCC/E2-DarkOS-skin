@@ -99,7 +99,7 @@
 	<screen name="RemoteTimerBouquetList" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<widget name="text" position="780,100" size="1110,912" zPosition="1" halign="center" valign="center"/>
 		<panel name="Screen_menu2" />
-    	<widget name="bouquetlist" position="516,222" size="889,630" scrollbarMode="showOnDemand" />	
+    	<widget name="bouquetlist" position="516,222" size="889,630" scrollbarMode="showOnDemand" itemCornerRadius="6" />	
 	</screen>
 	<screen name="RemoteTimer" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />
@@ -116,7 +116,7 @@
 	<screen name="RemoteTimerChannelList" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<widget name="text" position="780,100" size="1110,912" zPosition="1" font="Regular;33" valign="center" halign="center"/>
 		<panel name="Screen_menu2" />
-    	<widget name="channellist" position="516,222" size="889,630" scrollbarMode="showOnDemand" />
+    	<widget name="channellist" position="516,222" size="889,630" scrollbarMode="showOnDemand" itemCornerRadius="6"/>
 	</screen>
 	<screen name="RemoteTimerEventView" position="fill" title="Eventview" flags="wfNoBorder" backgroundColor="transparent">
 		<panel position="96,54" size="1728,987">
@@ -466,7 +466,7 @@
 		<widget name="statusbar" position="7,900" size="765,110" font="Regular;27" halign="center" valign="bottom"/>
 		<widget name="poster" position="780,123" size="165,270" alphatest="blend"/>
 		<widget name="detailslabel" position="960,123" size="945,270" font="Regular;30" halign="center"/>
-		<widget name="menu" position="780,213" size="1132,765" font="Regular;30" itemHeight="45" scrollbarMode="showOnDemand" zPosition="3" enableWrapAround="1" foregroundColor="grey"/>
+		<widget name="menu" position="780,213" size="1132,765" font="Regular;30" itemHeight="45" scrollbarMode="showOnDemand" zPosition="3" enableWrapAround="1" foregroundColor="grey" itemCornerRadius="6"/>
 		<widget name="castlabel" position="780,397" size="1132,610" font="Regular;30" foregroundColor="grey"/>
 		<widget name="extralabel" position="780,123" size="1132,850" font="Regular;30" foregroundColor="grey"/>
 	</screen>
@@ -488,16 +488,16 @@
 		<widget name="statusbar" position="7,950" size="715,45" font="Regular;30" halign="center" valign="bottom"/>
 		<widget name="poster" position="750,120" size="165,270" alphatest="blend"/>
 		<widget name="detailslabel" position="920,120" size="995,45" font="Regular;30" halign="center" foregroundColor="secondFG"/>
-		<widget name="menu" position="920,170" size="995,405" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" zPosition="3" enableWrapAround="1" foregroundColor="grey"/>
-		<widget name="castlabel" position="735,580" size="1177,395" font="Regular;33" foregroundColor="grey"/>
-		<widget name="extralabel" position="920,120" size="995,455" font="Regular;30" foregroundColor="grey"/>
+		<widget name="menu" position="920,170" size="995,405" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" zPosition="3" enableWrapAround="1" foregroundColor="separator" itemCornerRadius="6"/>
+		<widget name="castlabel" position="735,580" size="1177,395" font="Regular;33" foregroundColor="separator"/>
+		<widget name="extralabel" position="920,120" size="995,455" font="Regular;30" foregroundColor="separator"/>
 	</screen>
 	<screen name="TMBDSettings" position="fill" flags="wfNoBorder">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
 	<screen name="TmbdYTTrailerList" position="fill" flags="wfNoBorder" title="YTTrailer List">
 		<panel name="PigTemplate"/>
-		<widget source="list" render="Listbox" position="780,123" size="1132,874" scrollbarMode="showOnDemand">
+		<widget source="list" render="Listbox" position="780,123" size="1132,874" scrollbarMode="showOnDemand" itemCornerRadius="6">
 			<convert type="TemplatedMultiContent" >
 				{"template": [
 					MultiContentEntryPixmapAlphaTest(pos=(0,0), size=(150,108), png=3), # Thumbnail
@@ -638,7 +638,7 @@
 		<panel name="PigTemplate"/>
 		<panel name="KeyMenuInfoTemplate"/>
 		<widget name="text" position="30,560" size="720,210" font="Regular;36" halign="center" zPosition="1"/>
-		<widget source="list" render="Listbox" transparent="0" position="780,100" size="1110,912" scrollbarMode="showOnDemand" >
+		<widget source="list" render="Listbox" transparent="0" position="780,100" size="1110,912" scrollbarMode="showOnDemand" itemCornerRadius="6" >
 			<convert type="TemplatedMultiContent" >
 				{"template": [
 				MultiContentEntryPixmapAlphaTest(pos=(0,0), flags=BT_SCALE, size=(150,108), png=2), # Thumbnail
@@ -657,7 +657,7 @@
 		<panel name="PigTemplate"/>
 		<panel name="KeyMenuTemplate"/>
 		<widget name="config" position="780,100" size="1110,45" itemHeight="45" font="Regular;30" halign="center" zPosition="1"/> <!-- Search box -->
-		<widget source="list" render="Listbox" transparent="0" position="780,150" size="1110,712" scrollbarMode="showOnDemand" >
+		<widget source="list" render="Listbox" transparent="0" position="780,150" size="1110,712" scrollbarMode="showOnDemand" itemCornerRadius="6">
 			<convert type="TemplatedMultiContent" >
 				{"template": [
 				MultiContentEntryText(pos=(15,1), size=(870,45), font=0, flags=RT_HALIGN_LEFT, text=0)
@@ -674,7 +674,7 @@
 	<screen name="LCDdisplayConfig" position="fill" flags="wfNoBorder">
 		<panel name="BasicTemplate"/>
 		<panel name="ButtonTemplate"/>
-		<widget name="config" position="7,123" size="840,855" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" foregroundColor="grey" enableWrapAround="1"
+		<widget name="config" position="7,123" size="840,855" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" foregroundColor="grey" enableWrapAround="1" itemCornerRadius="6"
 				scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="blue" scrollbarSliderBorderColor="blue" scrollbarBackgroundPicture="infobar/scrollbar.png" scrollbarSliderPicture="infobar/scrlbr.png"/>
 		<widget source="introduction" render="Label" position="960,120" size="955,45" zPosition="2" font="Regular;33" foregroundColor="secondFG" halign="center"/>
 		<widget source="LibUSB" render="Label" position="960,170" size="955,45" zPosition="2" font="Regular;33" foregroundColor="secondFG" halign="center"/>
@@ -689,13 +689,13 @@
 	</screen>
 	<screen name="LCDdisplayMenu" position="fill" flags="wfNoBorder" title="LCD4linux - Config">
 		<panel name="BasicTemplate"/>
-		<widget name="menu" position="780,120" size="1132,855" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" foregroundColor="grey" enableWrapAround="1"
+		<widget name="menu" position="780,120" size="1132,855" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" foregroundColor="grey" enableWrapAround="1" itemCornerRadius="6"
 				scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="blue" scrollbarSliderBorderColor="blue" scrollbarBackgroundPicture="infobar/scrollbar.png" scrollbarSliderPicture="infobar/scrlbr.png"/>
 	</screen>
 	<screen name="LCDdisplayFile" position="fill" flags="wfNoBorder" title="Select File/Dir...">
 		<panel name="BasicTemplate"/>
 		<eLabel text="Select" position="425,1023" size="400,45" font="buttons;33" foregroundColor="buttongreen" backgroundColor="secondBG" transparent="1" halign="left"/>
-		<widget name="LCDfile" position="780,123" size="1132,855" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" foregroundColor="grey" enableWrapAround="1"
+		<widget name="LCDfile" position="780,123" size="1132,855" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" foregroundColor="grey" enableWrapAround="1" itemCornerRadius="6"
 				scrollbarWidth="6" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="blue" scrollbarSliderBorderColor="blue" scrollbarBackgroundPicture="infobar/scrollbar.png" scrollbarSliderPicture="infobar/scrlbr.png"/>
 		<widget source="File" render="Label" position="7,568" size="715,396" font="Regular;33" foregroundColor="secondFG" valign="center" halign="center"/>
 	</screen>
@@ -703,11 +703,11 @@
 	<!--CI Assignment-->
 	<screen name="CIselectMainMenu" position="fill" title="CI assignment" backgroundColor="transparent" >
 		<panel name="Screen_menu2" />
-		<widget name="CiList" position="516,222" size="889,630" itemHeight="45" font="Regular;36" scrollbarMode="showOnDemand" />
+		<widget name="CiList" position="516,222" size="889,630" itemHeight="45" font="Regular;36" scrollbarMode="showOnDemand" itemCornerRadius="6"/>
 	</screen>
 	<screen name="CAidSelect" position="fill" title="Select CAId's" backgroundColor="transparent" >
 		<panel name="Screen_menu2" />
-		<widget name="list" position="516,222" size="889,590" itemHeight="45" font="Regular;36" scrollbarMode="showOnDemand" />
+		<widget name="list" position="516,222" size="889,590" itemHeight="45" font="Regular;36" scrollbarMode="showOnDemand" itemCornerRadius="6"/>
 		<widget source="introduction" render="Label" position="516,822" size="889,40" zPosition="10" font="Regular;21" halign="center" valign="center" backgroundColor="background" />
 	</screen>
 	<screen name="myProviderSelection" position="fill" title="Select provider to add..." backgroundColor="transparent">
@@ -727,7 +727,7 @@
 		<widget source="ServiceList_desc" render="Label" position="475,391" size="990,45" backgroundColor="background" transparent="1" font="Regular;36" />
 		<eLabel position="473,459" size="990,3" backgroundColor="black" />
 		<eLabel position="473,459" size="990,3" backgroundColor="grey" />
-		<widget name="ServiceList" position="522,476" size="900,400" backgroundColor="background" itemHeight="45" zPosition="1" transparent="1" scrollbarMode="showOnDemand" />
+		<widget name="ServiceList" position="522,476" size="900,400" backgroundColor="background" itemHeight="45" zPosition="1" transparent="1" scrollbarMode="showOnDemand" itemCornerRadius="6"/>
 		<widget source="ServiceList_info" render="Label" position="473,473" size="990,400" backgroundColor="background" zPosition="2" transparent="1" font="Regular;33" />
 	</screen>
 	<screen name="RemoteControlCode" position="fill" title="Remote Control Code" backgroundColor="transparent">
@@ -786,7 +786,7 @@
 		<ePixmap pixmap="icons/scan-s.png" position="30,105" size="96,96" zPosition="2" transparent="1" alphatest="on"/>
 		<widget source="statusbar" render="Label" position="150,105" size="600,96" zPosition="10" halign="left" valign="center" font="Regular;33" transparent="1" shadowColor="black" shadowOffset="-1,-1"/>
 		<widget source="tunerstatusbar" render="Label" position="30,240" size="720,45" zPosition="10" halign="left" valign="center" font="Regular;33" transparent="1" shadowColor="black" shadowOffset="-1,-1"/>
-		<widget name="config" position="30,315" size="720,450" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand"/>
+		<widget name="config" position="30,315" size="720,450" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" itemCornerRadius="6"/>
 	</screen>
 
 	<!-- FastScan -->
