@@ -210,7 +210,7 @@ MultiContentEntryPixmapAlphaBlend(pos = (10, 8), size = (50, 50), png = 1),
 	<!-- oscam -->
 	<screen name="OscamInfoMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
-		<widget name="mainmenu" position="125,150" size="1670,810" font="Regular;33" zPosition="10" itemHeight="45" scrollbarMode="showOnDemand" enableWrapAround="1"/>
+		<widget name="mainmenu" position="125,150" size="1670,810" font="Regular;33" zPosition="10" itemHeight="45" scrollbarMode="showOnDemand" enableWrapAround="1" itemCornerRadius="6"/>
 	</screen>
 	<screen name="OscamInfoConfigScreen" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
@@ -585,7 +585,7 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 17), size = (100, 40), png = 2, flag
 	</screen>
 	<screen name="PluginDownloadBrowser" position="center,center" size="820,850" title="Plugin browser">
 		<widget name="text" position="20,20" size="780,675" font="Regular;30" halign="center" foregroundColor="white" backgroundColor="background" transparent="1"/>
-		<widget name="list" position="20,70" size="780,747" font="Regular;28" itemHeight="83" enableWrapAround="1" scrollbarMode="showOnDemand" foregroundColor="white" backgroundColor="background" transparent="1"/>
+		<widget name="list" position="20,70" size="780,747" font="Regular;28" itemHeight="83" enableWrapAround="1" scrollbarMode="showOnDemand" foregroundColor="white" backgroundColor="background" transparent="1" itemCornerRadius="6"/>
 	</screen>
 	<screen name="BhsysInfo2" position="fill" flags="wfNoBorder" title="OpenBh System Info" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
@@ -674,11 +674,11 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 17), size = (100, 40), png = 2, flag
 	</screen>
 	<screen name="NabEnsetInfo" position="fill" flags="wfNoBorder" title="OpenBh Settings Info" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
-		<widget name="infotext" position="125,150" size="1670,810" font="Regular;28" zPosition="10" itemHeight="45" scrollbarMode="showOnDemand" enableWrapAround="1"/>
+		<widget name="infotext" position="125,150" size="1670,810" font="Regular;28" zPosition="10" itemHeight="45" scrollbarMode="showOnDemand" enableWrapAround="1" itemCornerRadius="6"/>
 	</screen>
 	<screen name="NabProcInfo" position="fill" flags="wfNoBorder" title="OpenBh Process Info" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
 		<widget name="pibartit" zPosition="2" position="200,145" size="785,45" font="Regular;28" valign="center" transparent="1" foregroundColor="foreground" backgroundColor="background"/>
-		<widget name="infotext" position="200,215" size="1595,720" font="Regular;28" itemHeight="45" scrollbarMode="showOnDemand" enableWrapAround="1" zPosition="10"/>
+		<widget name="infotext" position="200,215" size="1595,720" font="Regular;28" itemHeight="45" scrollbarMode="showOnDemand" enableWrapAround="1" zPosition="10" itemCornerRadius="6"/>
 	</screen>
 </skin>
