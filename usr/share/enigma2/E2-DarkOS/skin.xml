@@ -348,7 +348,7 @@
 			<convert type="ConditionalShowHide" />
 		</widget>
 		<widget source="session.FrontendStatus" render="Label" position="577,900" size="150,24" borderWidth="1" borderColor="black" zPosition="2" backgroundColor="background" halign="right" font="Regular;21">
-			<convert type="FrontendInfo">SNR</convert>
+			<convert type="FrontendInfo">SNRdB</convert>
 			<convert type="ConditionalShowHide" />
 		</widget>
 		<widget source="session.FrontendStatus" render="FixedLabel" text="AGC" position="853,900" size="75,24" borderWidth="1" borderColor="black" backgroundColor="background" zPosition="2" font="Regular;21">
@@ -586,12 +586,14 @@
 		<panel name="Screen_Window_Full_Big_Pig" />
 		<widget name="timeline_now" position="5,409" zPosition="2" size="19,516" scale="stretch" pixmap="window/timeline-now.png" alphatest="blend" />
 		<eLabel position="25,373" size="1866,607" zPosition="-2" widgetBorderWidth="1" widgetBorderColor="separator" backgroundColor="background" cornerRadius="6"/>
-		<widget name="timeline_text" position="27,376" size="1862,29" zPosition="2" foregroundColor="foreground" backgroundColor="background" itemCornerRadius="6;top" cornerRadius="6;top" />
+		<widget name="timeline_text" position="27,375" size="1862,31" zPosition="2" foregroundColor="foreground" backgroundColor="background" borderWidth="1" fullBorder="0" borderColor="separator"/>
 		<eLabel position="25,408" size="1866,1" zPosition="10" backgroundColor="separator" />
 		<widget name="list" position="25,408" size="1865,518" itemHeight="64" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" 
-			backgroundColor="background" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" ServiceForegroundColorNow="yellow" EntryBackgroundColorSelected="background3"
-			ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="#00323c4d" ServiceNameBackgroundColorSelected="#00fcc000" ServiceBorderWidth="1" EventBorderWidth="1" RecIconSize="32" IconXPadding="6" IconYPadding="4" 
-			EntryBorderColor="separator" EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryFont="Regular;28" ServiceFont="Regular;28" EventTextSidesMargin="10" />
+			backgroundColor="background" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" ServiceForegroundColorNow="yellow" EntryBackgroundColorSelected="#000A3153"
+			ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="background" ServiceNameBackgroundColorSelected="#00003F1F" ServiceBorderWidth="1" EventBorderWidth="1" RecIconSize="32" IconXPadding="6" IconYPadding="4" 
+			EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryBackgroundColorNow="#00272728" EntryBackgroundColorNowSelected="#000A3153" EntryFont="Regular;28" ServiceFont="Regular;28"
+			EventTextSidesMargin="10" RecordBackgroundColor="#006C0000" RecordBackgroundColorSelected="#00771A1A" ZapBackgroundColor="#0083440F" ZapBackgroundColorSelected="#00A1520B" ServiceBackgroundColor="background" ServiceBorderColor="#20555555"
+			EntryBorderColor="#20555555"/>
 		<eLabel position="25,925" size="1866,1" zPosition="10" backgroundColor="separator" />
 		<!--<widget source="Event" render="Progress" position="40,956" zPosition="10" size="1836,10" backgroundColor="background" foregroundColor="blue" cornerRadius="5">
 			<convert type="EventTime">Progress</convert>
