@@ -166,7 +166,7 @@
 						<convert type="ConditionalShowHide" />
 		</widget>
 		<widget source="session.FrontendStatus" render="Label" position="550,115" size="130,30" valign="center" zPosition="2" backgroundColor="background" halign="right" font="Regular;26">
-						<convert type="FrontendInfo">SNR</convert>
+						<convert type="FrontendInfo">SNRdB</convert>
 						<convert type="ConditionalShowHide" />
 		</widget>
 	</screen>
