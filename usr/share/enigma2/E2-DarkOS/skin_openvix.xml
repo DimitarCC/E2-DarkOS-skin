@@ -82,34 +82,6 @@ self["list"].instance.setItemHeight(38)
 		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 	</screen>
 
-	<!--Vix Menu -->
-	<screen name="VIXMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_1_1"/>
-		<!-- This is the menu list -->
-		<widget source="menu" render="Listbox" position="125,150" size="1670,565" zPosition="3" transparent="1" enableWrapAround="1" itemCornerRadius="6" scrollbarMode="showNever">
-			<convert type="TemplatedMultiContent">
-			{"template": [
-					MultiContentEntryText(pos = (75,15),size = (1670,45),flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 1),# index 0 is the MenuText,
-				],
-			"fonts": [gFont("Regular",36)],
-			"itemHeight": 75
-			}
-			</convert>
-		</widget>
-		<widget addon="Pager" conditional="menu" connection="menu" position="125,725" size="1670,25" transparent="1" backgroundColor="background" />
-		<!-- This is the description of menu list item -->
-		<widget source="menu" render="Listbox" position="125,800" size="1670,120" backgroundColor="darkgrey" zPosition="3" selectionDisabled="1" transparent="1" scrollbarMode="showNever">
-			<convert type="TemplatedMultiContent">
-			{"template": [
-					MultiContentEntryText(pos = (20,0),size = (1630,120),flags = RT_HALIGN_CENTER|RT_VALIGN_TOP|RT_WRAP,text = 2),# index 0 is the MenuText,
-				],
-			"fonts": [gFont("Regular",30)],
-			"itemHeight": 120
-			}
-			</convert>
-		</widget>
-	</screen>
-
 	<!-- VIXBackupManager -->
 	<screen name="VIXBackupManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="VixListTemplate"/>
