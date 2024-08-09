@@ -128,7 +128,7 @@
 	
 	<screen name="ConfigScreenTemplate">
 		<panel name="Screen_1_1" />
-		<widget name="config" conditional="config" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" itemCornerRadius="6" />
+		<widget name="config" conditional="config" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" itemCornerRadius="6" sepLineColor="separator"/>
 		<widget addon="Pager" conditional="config" connection="config" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" itemCornerRadius="6"/>
 		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
