@@ -1100,4 +1100,20 @@
 		</widget>
 		<widget name="HelpWindow" position="1050,710" size="1,1" transparent="1" zPosition="3" alphatest="blend"/>
   	</screen>
+	<!-- IPTV Manager Plugin -->
+	<screen name="M3UIPTVManagerConfig" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1" />
+		<widget source="list" render="Listbox" position="125,150" size="1670,13*45" scrollbarMode="showNever" itemCornerRadius="6">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (10,5), size = (1650,45), flags = RT_HALIGN_LEFT, text = 1), # index 0 is the MenuText,
+					],
+				"fonts": [gFont("Regular",30)],
+				"itemHeight":45
+				}
+			</convert>
+		</widget>
+		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
+		<widget source="description" render="Label" objectTypes="description,StaticText" position="145,755" size="1630,100" font="Regular;28" valign="center" halign="center"/>
+	</screen>
 </skin>
