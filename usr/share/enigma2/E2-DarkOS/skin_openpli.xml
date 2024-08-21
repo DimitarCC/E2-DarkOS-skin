@@ -147,28 +147,32 @@
 		<eLabel position="0,0" size="1145,160" zPosition="-11" backgroundColor="background5" cornerRadius="12"/>
 		<eLabel position="2,2" size="1141,156" zPosition="-10" backgroundColor="background" cornerRadius="10"/>
 		<widget source="session.CurrentService" render="Label" position="10,10" size="1125,35" backgroundColor="background" zPosition="1" foregroundColor="foreground" font="Regular;26" valign="center" halign="center">
-						<convert type="PliExtraInfo">ServiceInfo</convert>
+			<convert type="PliExtraInfo">ServiceInfo</convert>
 		</widget>
 		<widget source="session.CurrentService" render="Label" position="10,45" size="1125,35" backgroundColor="background" font="Regular; 26" zPosition="21" halign="center">
-						<convert type="CryptoInfo">FullInfo</convert>
+			<convert type="CryptoInfo">FullInfo</convert>
 		</widget>
 		<widget source="session.CurrentService" render="Label" position="10,80" size="1125,35" backgroundColor="background" font="Regular; 26" zPosition="21" halign="center">
-						<convert type="ServiceName">StreamUrl</convert>
+			<convert type="ServiceName">StreamUrl</convert>
 		</widget>
 		<widget source="session.CurrentService" render="Label" position="10,115" size="325,40" backgroundColor="background" zPosition="1" foregroundColor="foreground" font="CAID;36" valign="center" halign="left">
-						<convert type="PliExtraInfo">CryptoBar</convert>
+			<convert type="PliExtraInfo">CryptoBar</convert>
 		</widget>
-		<widget source="session.FrontendInfo" render="Label" position="980,115" size="150,30" backgroundColor="background" zPosition="1" foregroundColor="foreground" font="CAID;36" valign="center" halign="right">
-		<convert type="FrontendInfo">USE_TUNERS_STRING</convert>
+		<widget source="session.FrontendInfo" render="Label" position="980,115" size="150,35" backgroundColor="background" zPosition="1" foregroundColor="foreground" font="CAID;36" valign="center" halign="right">
+			<convert type="FrontendInfo">USE_TUNERS_STRING</convert>
 		</widget>
-		<widget source="session.FrontendStatus" render="FixedLabel" text="SNR" position="470,115" size="50,30" valign="center" backgroundColor="background" zPosition="2" font="Regular;26">
-						<convert type="FrontendInfo">SNR</convert>
-						<convert type="ConditionalShowHide" />
+		<widget source="session.FrontendStatus" render="FixedLabel" text="SNR" position="435,115" size="50,24" valign="center" backgroundColor="background" zPosition="2" font="Regular;21">
+			<convert type="FrontendInfo">SNR</convert>
+			<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="session.FrontendStatus" render="Label" position="550,115" size="130,30" valign="center" zPosition="2" backgroundColor="background" halign="right" font="Regular;26">
-						<convert type="FrontendInfo">SNRdB</convert>
-						<convert type="ConditionalShowHide" />
+		<widget source="session.FrontendStatus" render="Label" position="595,115" size="140,24" valign="center" zPosition="2" backgroundColor="background" halign="right" font="Regular;21">
+			<convert type="FrontendInfo">SNRdB</convert>
+			<convert type="ConditionalShowHide"/>
 		</widget>
-	</screen>
+		<widget source="session.FrontendStatus" render="Progress" position="435,147" size="300,6" backgroundColor="background" foregroundColor="blue" zPosition="1" borderWidth="1" borderColor="grey" cornerRadius="3">
+			<convert type="FrontendInfo">SNR</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+</screen>
 
 </skin>
