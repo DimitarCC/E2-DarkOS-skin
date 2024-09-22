@@ -1114,6 +1114,7 @@
 			</convert>
 		</widget>
 		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
-		<widget source="description" render="Label" objectTypes="description,StaticText" position="145,755" size="1630,100" font="Regular;28" valign="center" halign="center"/>
+		<widget source="description" render="Label" objectTypes="description,StaticText" position="145,801" size="1630,94" font="Regular;28" valign="center" halign="center"/>
+		<widget source="progress" render="Progress" position="145,755" size="1630,6" backgroundColor="background" foregroundColor="blue" zPosition="1" borderWidth="0" borderColor="grey" cornerRadius="3"/>
 	</screen>
 </skin>
