@@ -162,7 +162,9 @@ if "menu_list" not in self:
 	self["menu_list"].GUIcreate(self.instance)
 	self["menu_list"].instance.move(ePoint(82, 277))
 	self["menu_list"].instance.resize(eSize(minWidth, 522))
-	self["menu_list"].setFont("Regular;34")
+	font = parseFont("Regular;34", ((1, 1), (1, 1)))
+	self["menu_list"].font = font
+	self["menu_list"].l.setFont(0, font)
 	self["menu_list"].setMinWidth(str(minWidth))
 	self["menu_list"].setMaxWidth("900")
 	self["menu_list"].setIconSize("48")
