@@ -1117,4 +1117,68 @@
 		<widget source="description" render="Label" objectTypes="description,StaticText" position="145,801" size="1630,94" font="Regular;28" valign="center" halign="center"/>
 		<widget source="progress" render="Progress" position="145,755" size="1630,6" backgroundColor="background" foregroundColor="blue" zPosition="1" borderWidth="0" borderColor="grey" cornerRadius="3"/>
 	</screen>
+	<screen name="CatchupPlayer" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<eLabel position="38,862" size="1839,184" zPosition="-11" backgroundColor="background5" cornerRadius="16"/>
+		<eLabel position="370,864" size="1505,180" zPosition="-10" backgroundColor="background" cornerRadius="14"/>
+		
+		<eLabel position="380,915" size="1485,2" zPosition="-9" backgroundColor="dark_grey" />
+		<eLabel position="1630,930" size="2,100" zPosition="-9" backgroundColor="dark_grey" />
+		<widget name="statusicon" position="160,915" zPosition="3" size="90,90" alphatest="blend" pixmaps="icons/pvr/play.svg,icons/pvr/pause.svg,icons/pvr/stop.svg,icons/pvr/ff.svg,icons/pvr/rew.svg,icons/pvr/slow.svg"/>
+		<widget name="speed"  foregroundColor="white" halign="left" position="260,960" size="90,45" font="Bold; 40" transparent="1"/>
+		<widget source="session.CurrentService" render="Label" position="400,935" size="1120,50" font="Regular; 44" valign="center" noWrap="1" backgroundColor="background" transparent="1">
+		  <convert type="ServiceName">Name</convert>
+		</widget>
+		<widget name="time_info" position="405,864" size="440,51" font="Bold; 26" halign="left" valign="center" backgroundColor="background" transparent="1" foregroundColor="white"/>
+		<eLabel backgroundColor="progress" position="400,1010" zPosition="1" size="1170,4" transparent="0" />
+		<!--<widget source="progress" render="PositionGauge" position="400,1005" zPosition="3" size="1170,12" transparent="1" cornerRadius="6">
+		  <convert type="ServicePosition">Gauge</convert>
+		</widget>-->
+		<widget source="progress" render="Progress" backgroundColor="background" foregroundColor="darkblue" position="400,1005" zPosition="2" size="1170,12" transparent="1" cornerRadius="6"/>
+		<widget backgroundColor="background" font="Bold; 60" foregroundColor="white" halign="center" position="1590,925" render="Label" size="320,60" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
+		  <convert type="ClockToText">Default</convert>
+		</widget>
+		<widget backgroundColor="background" font="Bold; 30" foregroundColor="white" halign="center" position="1590,990" render="Label" size="320,35" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
+		  <convert type="ClockToText">Format: %d %B</convert>
+		</widget>
+		<widget alphatest="blend" path="icons/audioicon" position="1605,860" render="AudioIcon" size="85,50" source="session.CurrentService" zPosition="10">
+		  <convert type="VAudioInfo">AudioIcon</convert>
+		</widget>
+
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/mpeg2.png" size="80,40" position="1700,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">IsVideoMPEG2</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/h264.png" size="80,40" position="1700,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">IsVideoAVC</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/h265.png" size="80,40" position="1700,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">IsVideoHEVC</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/480.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">Is480</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/576.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">Is576</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/720.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">Is720</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/1080.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">Is1080</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="icons/videoicon/4k.png" size="80,40" position="1780,869" zPosition="2" alphatest="blend">
+			<convert type="ServiceInfo">Is4K</convert>
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget alphatest="blend" pixmap="icons/rec2.png" position="1290,880" render="Pixmap" size="49,22" source="session.RecordState" zPosition="2">
+		  <convert type="ConditionalShowHide">Blink,4000,1000</convert>
+		</widget>
+	</screen>
 </skin>
