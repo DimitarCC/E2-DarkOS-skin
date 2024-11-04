@@ -5,9 +5,9 @@
 	</screen>
 
 	<screen name="ConfigButtonsTemplate">
-		<widget addon="ButtonSequence" connection="key_info,key_help,key_pvr,key_next,key_menu,key_previous,key_text,VKeyIcon" 
-			pixmaps="key_info:buttons/key_info.png,key_help:buttons/key_help.png,key_pvr:buttons/key_pvr.png,key_menu:buttons/key_menu.png,key_text:buttons/key_text.png,VKeyIcon:buttons/key_text.png,key_previous:buttons/key_prev.png,key_next:buttons/key_next.png" 
-			position="0,0" size="220,36" transparent="1" backgroundColor="transparent" alignment="right" zPosition="10"/>
+		<widget addon="ButtonSequence" connection="key_info,key_help,key_pvr,key_next,key_menu,key_previous,key_text,VKeyIcon,key_play" 
+			pixmaps="key_play:buttons/key_play.png,key_info:buttons/key_info.png,key_help:buttons/key_help.png,key_pvr:buttons/key_pvr.png,key_menu:buttons/key_menu.png,key_text:buttons/key_text.png,VKeyIcon:buttons/key_text.png,key_previous:buttons/key_prev.png,key_next:buttons/key_next.png" 
+			position="0,0" size="270,36" transparent="1" backgroundColor="transparent" alignment="right" zPosition="10"/>
 	</screen>
 
 	<screen name="Color_Buttons_Screen_1">
@@ -40,7 +40,7 @@
 			  <convert type="ClockToText">Default</convert>
 			</widget>
 			<widget addon="ScreenHeader" connection="Image,Title,ScreenPath" position="20,2" size="e-260,60" titleFont="Bold; 28" titleSingleFont="Bold; 34" pathFont="Bold; 18" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
-			<panel position="e-220-110,e-65" size="220,36">
+			<panel position="e-270-110,e-65" size="270,36">
 			  <panel name="ConfigButtonsTemplate"/>
 			</panel>
 		</panel>
@@ -61,11 +61,11 @@
 		  <convert type="ClockToText">Default</convert>
 		</widget>
 		
-		<panel position="5,e-58" size="e-734,62">
+		<panel position="5,e-58" size="e-804,62">
 			<panel name="Color_Buttons_Screen_1" />
 		</panel>
 		
-		<panel position="e-220-110,e-52" size="220,36">
+		<panel position="e-270-110,e-52" size="270,36">
 		  <panel name="ConfigButtonsTemplate"/>
 		</panel>
 		
@@ -86,7 +86,7 @@
 	
 	<screen name="Screen_1">
 		<panel name="Screen_Base" />
-		<panel position="2,e-68" size="e-275,62">
+		<panel position="2,e-68" size="e-345,62">
 			<panel name="Color_Buttons_Screen_1" />
 		</panel>
 	</screen>
@@ -102,7 +102,7 @@
 			</widget>
 			<widget addon="ScreenHeader" connection="Image,Title,ScreenPath" position="20,3" size="e-260,60" titleFont="Bold; 26" titleSingleFont="Bold; 34" pathFont="Bold; 17" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
 		</panel>
-		<panel position="e-220-220,e-100" size="220,36">
+		<panel position="e-270-220,e-100" size="270,36">
 		  <panel name="ConfigButtonsTemplate"/>
 		</panel>
 		
@@ -120,7 +120,7 @@
 			  <convert type="ClockToText">Default</convert>
 			</widget>
 			<widget addon="ScreenHeader" connection="Image,Title,ScreenPath" position="20,2" size="e-260,60" titleFont="Bold; 28" titleSingleFont="Bold; 34" pathFont="Bold; 18" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
-			<panel position="e-220-126,e-65" size="220,36">
+			<panel position="e-270-126,e-65" size="270,36">
 			  <panel name="ConfigButtonsTemplate"/>
 			</panel>
 		</panel>
