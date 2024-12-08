@@ -267,6 +267,7 @@ self["screen_path"].instance.resize(eSize(menu_list_size.width(),25))
 		
 		<widget addon="ServiceInfoBar" connection="session" position="1200,877" size="658,26" zPosition="100" backgroundColor="background" elements="gamma,videoRes,separator,crypt,currentCrypto,separator,txt,dolby,audiotrack,subtitletrack,subservices,stream,hbbtv,separator,catchup,separator,servicetype,separator,record" 
 			pixmaps="IS_HDR:icons/hdr_on.png,IS_HDR10:icons/hdr_on.png,IS_HLG:icons/hdr_on.png,IS_HD:icons/HD_s_n.png,IS_4K:icons/4K_s_n.png,IS_SD:icons/SD_s_n.png,txt:icons/ico_txt_on.png,dolby:icons/dd_s.png,crypt:icons/crypt_s.png,audiotrack:icons/ml_s_alt2.png,subtitletrack:icons/subs_s.png,hbbtv:icons/hbbtv_s.png,subservices:icons/ico_subs_on.png,stream:icons/streaming.png,record:icons/rec2.png,catchup:icons/catchup.png,sat:icons/ico_dvb-s.png,cable:icons/ico_dvb-c.png,terestrial:icons/ico_dvb-t.png,stream:icons/ico_stream.png"
+			pixmapsDisabled="crypt:icons/crypt_s_off.png"
 			permanent="videoRes,crypt,currentCrypto" alignment="right" spacing="20" autoresizeMode="condensed" separatorLineColor="separator" separatorLineThickness="1" font="Bold;25" foregroundColor="green" textBackColor="background"/>
 		
 		<widget backgroundColor="dark_grey" font="Bold;32" halign="left" noWrap="1" position="390,927" render="Label" size="80,45" source="session.Event_Now" transparent="1" valign="center" zPosition="3" foregroundColor="light_yellow">
