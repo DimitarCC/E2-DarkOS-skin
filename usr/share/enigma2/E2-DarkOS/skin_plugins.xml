@@ -455,11 +455,6 @@
 		<widget name="text" position="145,730" size="1620,150" backgroundColor="background" font="Regular;30" halign="center" valign="center"/>
 	</screen>
 
-	<screen name="IMDbSetup" position="fill" flags="wfNoBorder">
-		<panel name="ConfigScreenTemplate"/>
-		<widget source="help" render="Label" position="145,755" size="1630,100" font="Regular;28" foregroundColor="secondFG"/>
-	</screen>
-
 	<!-- Transcoding Setup -->
 	<screen name="TranscodingSetup" position="fill" flags="wfNoBorder" title="Transcoding Setup" backgroundColor="transparent">
 		<panel name="Screen_Menu1"/>
@@ -792,8 +787,9 @@
 			<widget addon="Pager" conditional="castlabel" connection="castlabel" position="390,790" size="1282,25" backgroundColor="background" />
 		</panel>
 	</screen>
-	<screen name="IMDbSetup" position="fill" flags="wfNoBorder"  backgroundColor="transparent">
+	<screen name="IMDbSetup" position="fill" flags="wfNoBorder">
 		<panel name="ConfigScreenTemplate"/>
+		<widget source="help" render="Label" position="145,755" size="1630,100" font="Regular;28" foregroundColor="secondFG"/>
 	</screen>
 
 	<!-- TMDb -->
