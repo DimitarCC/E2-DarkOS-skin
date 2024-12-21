@@ -455,59 +455,9 @@
 		<widget name="text" position="145,730" size="1620,150" backgroundColor="background" font="Regular;30" halign="center" valign="center"/>
 	</screen>
 
-	<!-- ## IMDB Plugin ## -->
-	<screen name="IMDB" position="fill" flags="wfNoBorder" title="Internet Movie Database Details Plugin">
-		<panel name="SelectionTemplate"/>
-		<panel name="KeyMenuTemplate"/>
-		<widget name="starsbg" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/IMDb/starsbar_empty_HD.png" position="223,570" size="315,31" zPosition="2" alphatest="blend"/>
-		<widget name="stars" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/IMDb/starsbar_filled_HD.png" position="223,570" size="315,31" zPosition="3" transparent="1"/>
-		<widget name="ratinglabel" position="7,615" size="765,75" font="Regular;30" foregroundColor="grey" halign="center"/>
-		<widget name="titellabel" position="7,695" size="765,100" font="Regular;30" foregroundColor="secondFG" halign="center"/>
-		<widget name="statusbar" position="7,900" size="765,110" font="Regular;27" halign="center" valign="bottom"/>
-		<widget name="poster" position="780,123" size="165,270" alphatest="blend"/>
-		<widget name="detailslabel" position="960,123" size="945,270" font="Regular;30" halign="center"/>
-		<widget name="menu" position="780,213" size="1132,765" font="Regular;30" itemHeight="45" scrollbarMode="showOnDemand" zPosition="3" enableWrapAround="1" foregroundColor="grey" itemCornerRadius="6"/>
-		<widget name="castlabel" position="780,397" size="1132,610" font="Regular;30" foregroundColor="grey"/>
-		<widget name="extralabel" position="780,123" size="1132,850" font="Regular;30" foregroundColor="grey"/>
-	</screen>
 	<screen name="IMDbSetup" position="fill" flags="wfNoBorder">
 		<panel name="ConfigScreenTemplate"/>
 		<widget source="help" render="Label" position="145,755" size="1630,100" font="Regular;28" foregroundColor="secondFG"/>
-	</screen>
-
-	<!-- ## TMBD ##-->
-	<screen name="TMBD" position="fill" flags="wfNoBorder">
-		<panel name="SelectionTemplate"/>
-		<panel name="KeyMenuTemplate"/>
-		<panel name="KeyInfoTemplate"/>
-		<widget name="title" position="7,570" size="715,45" font="RegularSmall;30" foregroundColor="secondFG" halign="center"/>
-		<widget alphatest="blend" name="starsbg" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/starsbar_empty.png" position="265,640" size="315,31" zPosition="2" />
-		<widget name="stars" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TMBD/starsbar_filled.png" position="265,640"  size="315,31" transparent="1" zPosition="3" />
-		<widget name="ratinglabel" position="7,675" size="715,36" font="Regular;30" foregroundColor="grey" halign="center"/>
-		<widget name="voteslabel" position="7,730" size="715,36" font="Regular;30" foregroundColor="grey" halign="center"/>
-		<widget name="statusbar" position="7,950" size="715,45" font="Regular;30" halign="center" valign="bottom"/>
-		<widget name="poster" position="750,120" size="165,270" alphatest="blend"/>
-		<widget name="detailslabel" position="920,120" size="995,45" font="Regular;30" halign="center" foregroundColor="secondFG"/>
-		<widget name="menu" position="920,170" size="995,405" font="Regular;33" itemHeight="45" scrollbarMode="showOnDemand" zPosition="3" enableWrapAround="1" foregroundColor="separator" itemCornerRadius="6"/>
-		<widget name="castlabel" position="735,580" size="1177,395" font="Regular;33" foregroundColor="separator"/>
-		<widget name="extralabel" position="920,120" size="995,455" font="Regular;30" foregroundColor="separator"/>
-	</screen>
-	<screen name="TMBDSettings" position="fill" flags="wfNoBorder">
-		<panel name="ConfigScreenTemplate"/>
-	</screen>
-	<screen name="TmbdYTTrailerList" position="fill" flags="wfNoBorder" title="YTTrailer List">
-		<panel name="PigTemplate"/>
-		<widget source="list" render="Listbox" position="780,123" size="1132,874" scrollbarMode="showOnDemand" itemCornerRadius="6">
-			<convert type="TemplatedMultiContent" >
-				{"template": [
-					MultiContentEntryPixmapAlphaTest(pos=(0,0), size=(150,108), png=3), # Thumbnail
-					MultiContentEntryText(pos=(160,1), size=(800,100), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text=1)],
-					"fonts": [gFont("Regular",30)],
-				"itemHeight": 108}
-			</convert>
-		</widget>
-		<widget name="thumbnail" position="0,0" size="150,108" /> # Thumbnail size in list
-		<eLabel text="'OK'= Play trailer" position="652,1030" size="330,39" font="RegularSmall;33" halign="left" zPosition="1"/>
 	</screen>
 
 	<!-- Transcoding Setup -->

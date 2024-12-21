@@ -121,6 +121,24 @@
 		</panel>
 	</screen>
 
+	<screen name="TMBDSettings" position="fill" flags="wfNoBorder">
+		<panel name="ConfigScreenTemplate"/>
+	</screen>
+	<screen name="TmbdYTTrailerList" position="fill" flags="wfNoBorder" title="YTTrailer List">
+		<panel name="Screen_1_1"/>
+		<widget source="list" render="Listbox" position="780,123" size="1132,874" scrollbarMode="showOnDemand" itemCornerRadius="6">
+			<convert type="TemplatedMultiContent" >
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos=(0,0), size=(150,108), png=3), # Thumbnail
+					MultiContentEntryText(pos=(160,1), size=(800,100), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text=1)],
+					"fonts": [gFont("Regular",30)],
+				"itemHeight": 108}
+			</convert>
+		</widget>
+		<widget name="thumbnail" position="0,0" size="150,108" /> # Thumbnail size in list
+		<eLabel text="'OK'= Play trailer" position="652,1030" size="330,39" font="RegularSmall;33" halign="left" zPosition="1"/>
+	</screen>
+
 	
 	<!-- ChangeRootPassword -->
 	<screen name="SetPasswdMain" position="fill" title="Change Root Password " flags="wfNoBorder" backgroundColor="transparent">
