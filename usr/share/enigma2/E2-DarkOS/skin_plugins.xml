@@ -1015,12 +1015,12 @@
 		<widget source="list" render="Listbox" position="125,150" size="1670,13*45" scrollbarMode="showNever" itemCornerRadius="6">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-						MultiContentEntryText(pos = (10,5), size = (990,35), flags = RT_HALIGN_LEFT, text = 1), # index 0 is the MenuText,
-						MultiContentEntryText(pos = (1010,5), size = (500,35), flags = RT_HALIGN_RIGHT, text = 4),
+						MultiContentEntryText(pos = (10,5), size = (950,35), flags = RT_HALIGN_LEFT, text = 1), # index 0 is the MenuText,
+						MultiContentEntryText(pos = (970,10), size = (500,35), font=1, flags = RT_HALIGN_RIGHT, text = 4),
 		 				MultiContentEntryPixmapAlphaBlend(pos = (1520,1), size = (42,42), flags = BT_SCALE | BT_KEEP_ASPECT_RATIO, png = 3),
 						MultiContentEntryPixmapAlphaBlend(pos = (1572,12), size = (88,20), flags = BT_SCALE | BT_KEEP_ASPECT_RATIO, png = 2),
 					],
-				"fonts": [gFont("Regular",30)],
+				"fonts": [gFont("Regular",30), gFont("Regular",20)],
 				"itemHeight":45
 				}
 			</convert>
