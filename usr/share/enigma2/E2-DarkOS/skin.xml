@@ -265,6 +265,7 @@
 	<!-- Window -->
 	<windowstyle id="0" type="skinned">
 		<title offset="25,10" font="Bold;36" />
+		<configList entryFont="Regular;28" valueFont="Regular;28" />
 		<color name="Background" color="background" />
 		<color name="LabelForeground" color="foreground" />
 		<color name="ListboxBackground" color="background" />
