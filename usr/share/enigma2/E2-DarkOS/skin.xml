@@ -1025,25 +1025,25 @@ if callable(loadLogo):
 							{"default": ( 45, [ 
 								MultiContentEntryText(pos = (25, 2), size = (60, 40),font = 0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER,text = 2), # key,
 								MultiContentEntryText(pos = (90, 2), size = (310, 40), font = 0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER,text = 3), # description,
-								MultiContentEntryText(pos = (420, 2), size = (500, 40), font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 4), # language,
+								MultiContentEntryText(pos = (420, 2), size = (400, 40), font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 4), # language,
 								MultiContentEntryPixmapAlphaBlend(pos = (840, 6), size = (32, 32), png = 6), # selection,
 							], True, "showNever"),
 							"notselected": (45, [ 
 								MultiContentEntryText(pos = (25, 2), size = (60, 40),font = 0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER,text = 2), # key,
 								MultiContentEntryText(pos = (90, 2), size = (310, 40), font = 0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER,text = 3), # description,
-								MultiContentEntryText(pos = (420, 2), size = (500, 40), font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 4), # language,
+								MultiContentEntryText(pos = (420, 2), size = (400, 40), font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 4), # language,
 								MultiContentEntryPixmapAlphaBlend(pos = (840, 6), size = (32, 32), png = 6), # selection,
 							], False, "showNever"),
 							"subs": (45,[
 								MultiContentEntryText(pos = (25, 2), size = (60, 40),font = 0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER,text = 2), # key,
 								MultiContentEntryText(pos = (90, 2), size = (310, 40), font = 0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER,text = 3), # description,
-								MultiContentEntryText(pos = (420, 2), size = (500, 40), font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 4), # language,
+								MultiContentEntryText(pos = (420, 2), size = (400, 40), font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 4), # language,
 								MultiContentEntryPixmapAlphaBlend(pos = (840, 6), size = (32, 32), png = 6), # selection,
 							],True,"showNever"),
 							"subs_notselected": (45,[
 								MultiContentEntryText(pos = (25, 2), size = (60, 40),font = 0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER,text = 2), # key,
 								MultiContentEntryText(pos = (90, 2), size = (310, 40), font = 0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER,text = 3), # description,
-								MultiContentEntryText(pos = (420, 2), size = (500, 40), font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 4), # language,
+								MultiContentEntryText(pos = (420, 2), size = (400, 40), font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,text = 4), # language,
 								MultiContentEntryPixmapAlphaBlend(pos = (840, 6), size = (32, 32), png = 6), # selection,
 							],False,"showNever")
 							},
