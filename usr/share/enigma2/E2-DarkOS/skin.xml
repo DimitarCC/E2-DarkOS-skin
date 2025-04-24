@@ -125,6 +125,14 @@
 		<parameter name="ExpandableListDescr" value="55,2,1000,45" />
 		<parameter name="VirtualKeyBoard" value="69,68" />
 		<parameter name="VirtualKeyBoardShiftColors" value="0x00ffffff,0x00ffffff,0x0000ffff,0x00ff00ff" />
+		<parameter name="VirtualKeyBoardCellBackgroundColor" value="0x00042340" />
+		<parameter name="VirtualKeyBoardCellBorderColor" value="0x02111111" />
+		<parameter name="VirtualKeyBoardCellBorderWidth" value="1" />
+		<parameter name="VirtualKeyBoardCellSelectedColor" value="0x00ffffff" />
+		<parameter name="VirtualKeyBoardCellEnterColor" value="0x0056c856" />
+		<parameter name="VirtualKeyBoardCellShiftColor" value="0x00FEB60A" />
+		<parameter name="VirtualKeyBoardCellUpperColor" value="0x0037CCFD" />
+		<parameter name="VirtualKeyBoardCellExitColor" value="0x00F00B0B" />
 		<parameter name="ImsSelectionListDescr" value="46,4,1000,45" />
 		<parameter name="ImsSelectionListLock" value="0,2,36,36" />
 		<parameter name="FcFileListIcon" value="10,4,30,30" />
@@ -260,6 +268,7 @@
 		<screen key="AutoTimerOverview" image="screen_icons/timer.png" />
 		<screen key="AutoTimerEditor" image="screen_icons/timer_setup.png" />
 		<screen key="ParentalControlSetup" image="screen_icons/parental_ctrl.png" />
+		<screen key="VirtualKeyBoard" image="screen_icons/vkeyboard.png" />
 	</screens>
 
 	<!-- Window -->
@@ -1737,7 +1746,7 @@ if callable(loadLogo):
 	<!-- Virtual Keyboard -->
 	<screen name="VirtualKeyBoard" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
-		<panel position="center,center" size="952,580">
+		<panel position="center,center" size="964,580">
 			<panel name="VirtualKeyBoardTemplate" />
 		</panel>
 	</screen>
