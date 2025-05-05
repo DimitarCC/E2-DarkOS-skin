@@ -3,6 +3,12 @@
 	<screen name="BrandLogoTemplate">
 		<widget source="global.CurrentTime" render="BoxLogo" logoType="brand" position="0,0" size="84,34" zPosition="-3" alphatest="blend" halign="right" />
 	</screen>
+	
+	<screen name="ButtonsBarTemplate">
+		<widget addon="ScreenButtonsBar" connection="key_red,key_green,key_yellow,key_blue,key_info,key_help,key_pvr,key_next,key_menu,key_previous,key_text,VKeyIcon,key_play" 
+			pixmaps="key_red:buttons/key_red.png,key_green:buttons/key_green.png,key_yellow:buttons/key_yellow.png,key_blue:buttons/key_blue.png,key_play:buttons/key_play.png,key_info:buttons/key_info.png,key_help:buttons/key_help.png,key_pvr:buttons/key_pvr.png,key_menu:buttons/key_menu.png,key_text:buttons/key_text.png,VKeyIcon:buttons/key_text.png,key_previous:buttons/key_prev.png,key_next:buttons/key_next.png" 
+			position="0,0" size="e,36" backgroundColor="background5" font="Regular;26" actionButtonsPos="farRight" zPosition="10" spacing="60" spacingPixmapText="10" spacingActionColorGroups="60" layoutStyle="fluid"/>
+	</screen>
 
 	<screen name="ConfigButtonsTemplate">
 		<widget addon="ButtonSequence" connection="key_info,key_help,key_pvr,key_next,key_menu,key_previous,key_text,VKeyIcon,key_play" 
@@ -40,9 +46,6 @@
 			  <convert type="ClockToText">Default</convert>
 			</widget>
 			<widget addon="ScreenHeader" connection="Image,Title,ScreenPath" position="20,2" size="e-260,60" titleFont="Bold; 28" titleSingleFont="Bold; 34" pathFont="Bold; 18" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
-			<panel position="e-270-110,e-65" size="270,36">
-			  <panel name="ConfigButtonsTemplate"/>
-			</panel>
 		</panel>
 	</screen>
 	
@@ -61,12 +64,8 @@
 		  <convert type="ClockToText">Default</convert>
 		</widget>
 		
-		<panel position="5,e-58" size="e-804,62">
-			<panel name="Color_Buttons_Screen_1" />
-		</panel>
-		
-		<panel position="e-270-110,e-52" size="270,36">
-		  <panel name="ConfigButtonsTemplate"/>
+		<panel position="5,e-55" size="e-110,62">
+			<panel name="ButtonsBarTemplate" />
 		</panel>
 		
 		<panel position="e-100,e-55" size="74,34">
@@ -86,8 +85,8 @@
 	
 	<screen name="Screen_1">
 		<panel name="Screen_Base" />
-		<panel position="2,e-68" size="e-345,62">
-			<panel name="Color_Buttons_Screen_1" />
+		<panel position="2,e-68" size="e-110,62">
+			<panel name="ButtonsBarTemplate" />
 		</panel>
 	</screen>
 
@@ -101,13 +100,8 @@
 			  <convert type="ClockToText">Default</convert>
 			</widget>
 			<widget addon="ScreenHeader" connection="Image,Title,ScreenPath" position="20,3" size="e-260,60" titleFont="Bold; 26" titleSingleFont="Bold; 34" pathFont="Bold; 17" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
-		</panel>
-		<panel position="e-270-220,e-100" size="270,36">
-		  <panel name="ConfigButtonsTemplate"/>
-		</panel>
-		
+		</panel>	
 		<eLabel position="104,120" size="1712,2" zPosition="-5" backgroundColor="dark_grey" />
-
 	</screen>
 
 	<screen name="Screen_Menu1">
@@ -120,9 +114,6 @@
 			  <convert type="ClockToText">Default</convert>
 			</widget>
 			<widget addon="ScreenHeader" connection="Image,Title,ScreenPath" position="20,2" size="e-260,60" titleFont="Bold; 28" titleSingleFont="Bold; 34" pathFont="Bold; 18" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
-			<panel position="e-270-126,e-65" size="270,36">
-			  <panel name="ConfigButtonsTemplate"/>
-			</panel>
 		</panel>
 	</screen>
 	
@@ -261,14 +252,14 @@ self["screen_path"].instance.resize(eSize(menu_list_size.width(),25))
 		<widget alphatest="blend" position="90,891" render="Picon" size="227,130" source="session.CurrentService" zPosition="1" transparent="1" backgroundColor="secondBG">
 		  <convert type="ServiceName">Reference</convert>
 		</widget>
-		<widget backgroundColor="black" font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="390,864" valign="center" render="Label" size="1200,51" source="session.CurrentService" transparent="1" zPosition="110">
+		<widget font="Regular; 32" foregroundColor="white" halign="left" noWrap="1" position="390,864" valign="center" render="Label" size="1200,51" source="session.CurrentService" backgroundColor="background" zPosition="100">
 		  <convert type="ServiceName" nostrip="1">  •  ,NUMBER,NAME,ORBPOS,PROVIDER</convert>
 		</widget>
 		
-		<widget addon="ServiceInfoBar" connection="session" position="1200,877" size="658,26" zPosition="100" backgroundColor="background" elements="gamma,videoRes,separator,crypt,currentCrypto,separator,txt,dolby,audiotrack,subtitletrack,subservices,stream,hbbtv,separator,catchup,separator,servicetype,separator,record" 
+		<widget addon="ServiceInfoBar" connection="session" position="1200,877" size="658,26" zPosition="110" backgroundColor="background" transparent="1" elements="gamma,videoRes,separator,crypt,currentCrypto,separator,txt,dolby,audiotrack,subtitletrack,subservices,stream,hbbtv,separator,catchup,separator,servicetype,separator,record" 
 			pixmaps="IS_HDR:icons/hdr_on.png,IS_HDR10:icons/hdr_on.png,IS_HLG:icons/hdr_on.png,IS_HD:icons/HD_s_n.png,IS_4K:icons/4K_s_n.png,IS_SD:icons/SD_s_n.png,txt:icons/ico_txt_on.png,dolby:icons/dd_s.png,crypt:icons/crypt_s.png,audiotrack:icons/ml_s_alt2.png,subtitletrack:icons/subs_s.png,hbbtv:icons/hbbtv_s.png,subservices:icons/ico_subs_on.png,stream:icons/streaming.png,record:icons/rec2.png,catchup:icons/ico_catchup.png,sat:icons/satdish.png,cable:icons/ico_dvb-c.png,terestrial:icons/ico_dvb-t.png,iptv:icons/ico_stream.png"
 			pixmapsDisabled="crypt:icons/crypt_s_off.png"
-			permanent="videoRes,crypt,currentCrypto" alignment="right" spacing="20" autoresizeMode="condensed" separatorLineColor="separator" separatorLineThickness="1" font="Bold;25" foregroundColor="green" textBackColor="background"/>
+			permanent="videoRes,crypt,currentCrypto" alignment="right" spacing="20" autoresizeMode="condensed" separatorLineColor="separator" separatorLineThickness="1" font="Bold;25" foregroundColor="green" />
 		
 		<widget backgroundColor="dark_grey" font="Bold;32" halign="left" noWrap="1" position="390,927" render="Label" size="80,45" source="session.Event_Now" transparent="1" valign="center" zPosition="3" foregroundColor="light_yellow">
 		  <convert type="EventTime">StartTime</convert>
