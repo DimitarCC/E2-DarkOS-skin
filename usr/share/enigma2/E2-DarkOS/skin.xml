@@ -1139,9 +1139,9 @@ if callable(loadLogo):
 
 	<!-- Plugin browser -->
 	<screen name="PluginBrowser" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_Menu1" />
-		<widget name="list" position="396,225" size="1130,610" scrollbarMode="showNever" itemCornerRadius="6"/>
-		<widget addon="Pager" connection="list" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
+		<panel name="Screen_3" />
+		<widget name="list" position="center,210" size="1356,610" scrollbarMode="showNever" itemCornerRadius="6"/>
+		<widget addon="Pager" connection="list" position="396,835" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
 	<screen name="PluginDownloadBrowser" title="Downloadable plugins" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PluginBrowser" />
@@ -1771,9 +1771,9 @@ if callable(loadLogo):
 		<ePixmap pixmap="~/img/AudioSyncBarBGVert.png" zPosition="2" position="30,70" size="21,370" alphatest="on" transparent="1" />
 		<widget name="AudioSliderBar" pixmap="~/img/AudioSyncBarVert.png" zPosition="3" position="30,70" size="21,370" transparent="1" orientation="orBottomToTop" />
 		<widget name="AudioSlider" zPosition="4" position="5,245" size="70,22" font="Regular;20" halign="center" valign="center" backgroundColor="#232323" foregroundColor="#eeeeee" transparent="1" />
-		<ePixmap pixmap="buttons/red30.png" position="310,15" zPosition="5" size="20,20" transparent="1" alphatest="blend" />
-		<ePixmap pixmap="buttons/green30.png" position="415,15" zPosition="5" size="20,20" transparent="1" alphatest="blend" />
-		<ePixmap pixmap="buttons/blue30.png" position="415,40" zPosition="5" size="20,20" transparent="1" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_red.png" position="310,15" zPosition="5" size="20,20" transparent="1" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_green.png" position="415,15" zPosition="5" size="20,20" transparent="1" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_blue.png" position="415,40" zPosition="5" size="20,20" transparent="1" alphatest="blend" />
 		<widget name="key_red" position="335,15" zPosition="4" size="85,22" font="Regular;20" valign="center" halign="left" backgroundColor="#232323" foregroundColor="#ffffff" transparent="1" />
 		<widget name="key_green" position="440,15" zPosition="4" size="85,22" font="Regular;20" valign="center" halign="left" backgroundColor="#232323" foregroundColor="#ffffff" transparent="1" />
 		<widget name="key_blue" position="440,40" zPosition="4" size="160,22" font="Regular;20" valign="center" halign="left" backgroundColor="#232323" foregroundColor="#ffffff" transparent="1" />

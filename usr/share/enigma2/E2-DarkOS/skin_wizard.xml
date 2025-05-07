@@ -36,7 +36,7 @@
 			<widget name="backtext" position="left" size="350,*" font="Regular;34"/>
 			<widget name="languagetext" position="left" size="350,*" font="Regular;34"/>
 			<eLabel text="&gt;&gt;&gt;" position="right" zPosition="0" size="75,34" transparent="1" alphatest="blend" font="Regular;34" halign="right"/>
-			<ePixmap pixmap="buttons/blue.png" position="right" zPosition="0" size="34,34" transparent="1" alphatest="blend"/>
+			<ePixmap pixmap="buttons/key_blue.png" position="right" zPosition="0" size="34,34" transparent="1" alphatest="blend"/>
 			<panel position="right" size="16,*"/>
 			<widget name="nexttext" position="right" size="350,*" font="Regular;34" halign="right"/>
 		</panel>
