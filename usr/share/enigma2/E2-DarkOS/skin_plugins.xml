@@ -689,31 +689,30 @@
 	</screen>
 
 	<!-- AutoDiseqC -->
-	<screen name="AutoDiseqc" title="Auto DiseqC" position="fill" flags="wfNoBorder">
-		<panel name="BasicTemplate"/>
-		<ePixmap pixmap="icons/scan-s.png" position="30,105" size="96,96" zPosition="2" transparent="1" alphatest="on"/>
-		<widget source="statusbar" render="Label" position="150,105" size="600,96" zPosition="10" halign="left" valign="center" font="Regular;33" transparent="1" shadowColor="black" shadowOffset="-1,-1"/>
-		<widget source="tunerstatusbar" render="Label" position="30,240" size="720,45" zPosition="10" halign="left" valign="center" font="Regular;33" transparent="1" shadowColor="black" shadowOffset="-1,-1"/>
-		<widget name="config" position="30,315" size="720,450" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" itemCornerRadius="6"/>
+	<screen name="AutoDiseqc" title="Auto DiseqC" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+		<ePixmap pixmap="icons/scan-s.png" position="145,745" size="96,96" zPosition="2" alphatest="blend"/>
+		<widget source="statusbar" render="Label" position="255,745" size="1520,96" zPosition="10" halign="left" valign="center" font="Regular;33" transparent="1" shadowColor="black" shadowOffset="-1,-1"/>
+		<widget source="tunerstatusbar" render="Label" position="255,805" size="1520,45" zPosition="10" halign="left" valign="center" font="Regular;33" transparent="1" shadowColor="black" shadowOffset="-1,-1"/>
 	</screen>
 
 	<!-- FastScan -->
 	<screen name="FastScanScreen" title="Fast Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
-	<screen name="FastScanStatus" title="Fast Scan" position="fill" flags="wfNoBorder">
-		<panel name="BasicTemplate"/>
+	<screen name="FastScanStatus" title="Fast Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
 		<widget name="frontend" pixmap="icons/scan-s.png" position="30,105" size="96,96" zPosition="2" transparent="1" alphatest="on"/>
 		<widget name="scan_state" position="30,270" zPosition="2" size="810,45" valign="center" font="Regular;30" transparent="1"/>
 		<widget name="scan_progress" position="30,322" size="810,22" pixmap="progress_big.png" borderWidth="2" borderColor="uncccccc"/>
 	</screen>
 
 	<!-- Cable Scan -->
-	<screen name="CableScanScreen" title="Cable Scan" position="fill" flags="wfNoBorder">
+	<screen name="CableScanScreen" title="Cable Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
 	</screen>
-	<screen name="CableScanStatus" title="Cable Scan" position="fill" flags="wfNoBorder">
-		<panel name="PigTemplate"/>
+	<screen name="CableScanStatus" title="Cable Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1"/>
 		<widget name="frontend" pixmap="icons/scan-c.png" position="780,180" size="96,96" zPosition="2" transparent="1" alphatest="on"/>
 		<widget name="scan_state" position="780,345" zPosition="2" size="720,45" valign="center" font="Regular;30" transparent="1"/>
 		<widget name="scan_progress" position="780,397" size="720,22" pixmap="progress_big.png" borderWidth="2" borderColor="#cccccc"/>
