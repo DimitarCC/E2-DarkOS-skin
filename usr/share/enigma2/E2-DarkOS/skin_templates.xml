@@ -7,7 +7,7 @@
 	<screen name="ButtonsBarTemplate">
 		<widget addon="ScreenButtonsBar" connection="key_red,key_green,key_yellow,key_blue,key_play,key_previous,key_left,key_info,key_help,key_pvr,key_menu,key_text,VKeyIcon,key_next,key_right,key_0" 
 			pixmaps="key_red:buttons/key_red.png,key_green:buttons/key_green.png,key_yellow:buttons/key_yellow.png,key_blue:buttons/key_blue.png,key_play:buttons/key_play.png,key_info:buttons/key_info.png,key_help:buttons/key_help.png,key_pvr:buttons/key_pvr.png,key_menu:buttons/key_menu.png,key_text:buttons/key_text.png,VKeyIcon:buttons/key_text.png,key_previous:buttons/key_prev.png,key_next:buttons/key_next.png,key_left:buttons/key_left.png,key_right:buttons/key_right.png,key_0:buttons/key_0.png" 
-			position="0,0" size="e,36" backgroundColor="background5" font="Regular;26" actionButtonsPos="farRight" zPosition="10" spacing="60" spacingPixmapText="10" spacingActionColorGroups="60" layoutStyle="fluid"/>
+			position="0,0" size="e,36" backgroundColor="background5" font="Regular;26" actionButtonsPos="farRight" zPosition="10" spacingColor="120" spacingPixmapText="10" spacingActionColorGroups="60" layoutStyle="fluid"/>
 	</screen>
 
 	<screen name="ConfigButtonsTemplate">
