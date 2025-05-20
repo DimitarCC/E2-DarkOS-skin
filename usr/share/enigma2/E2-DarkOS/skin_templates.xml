@@ -37,7 +37,7 @@
 	</screen>
 		
 	<screen name="Screen_menu2">
-		<panel position="495,136" size="1120,990">
+		<panel position="495,136" size="932,825">
 			<panel name="Screen_1" />
 			<panel position="e-100,e-70" size="74,34">
 				<panel name="BrandLogoTemplate" />

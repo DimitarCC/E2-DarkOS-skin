@@ -847,7 +847,9 @@ if callable(loadLogo):
 	<!-- SelectImage -->
 	<screen name="SelectImage" title="" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_menu2" />
-		<widget name="list" position="515,230" size="889,592" itemHeight="45" backgroundColor="background" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" transparent="1" />
+		<widget name="list" position="515,230" size="889,592" itemHeight="45" backgroundColor="background" scrollbarMode="showNever" 
+				enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" 
+				scrollbarSliderBorderColor="#080808" transparent="1" itemCornerRadius="6" />
 		<widget addon="Pager" connection="list" position="516,838" size="887,25" transparent="1" backgroundColor="background"/>
 	</screen>
 
