@@ -882,13 +882,13 @@ if callable(loadLogo):
 	<!-- Hotkey -->
 	<screen name="HotkeySetup" title="" position="fill" flags="wfNoBorder">
 		<panel name="Screen_Window_Full_Big_Pig" />
-		<widget name="list" position="29,94" itemHeight="45" size="1130,874" scrollbarMode="showNever" itemCornerRadius="6"/>
+		<widget name="list" position="29,94" itemHeight="45" size="1130,900" scrollbarMode="showNever" itemCornerRadius="6"/>
 		<widget name="choosen" position="1182,451" size="703,495" scrollbarMode="showOnDemand" itemCornerRadius="6" />
 		<widget name="description" position="1179,957" size="708,29" zPosition="1" font="Regular;24" halign="center" />
 	</screen>
 	<screen name="HotkeySetupSelect" title="" position="fill" flags="wfNoBorder">
 		<panel name="Screen_Window_Full_Big_Pig" />
-		<widget name="list" position="29,94" itemHeight="45" size="1130,874" scrollbarMode="showNever" itemCornerRadius="6"/>
+		<widget name="list" position="29,94" itemHeight="45" size="1130,900" scrollbarMode="showNever" itemCornerRadius="6"/>
 		<widget name="choosen" position="1182,451" size="703,495" scrollbarMode="showOnDemand" itemCornerRadius="6"/>
 		<widget name="description" position="1179,957" size="708,29" zPosition="1" font="Regular;24" halign="center" />
 	</screen>
