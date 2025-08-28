@@ -980,7 +980,7 @@
 	<screen name="YouTubeMain" position="fill"  flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Menu1" />
 		<widget name="text" position="1000,130" size="400,50" font="Regular;30" halign="center" zPosition="1"/>
-		<widget source="list" render="Listbox" transparent="0" position="396,225" size="1130,610" scrollbarMode="showNever" itemCornerRadius="6">
+		<widget source="list" render="Listbox" transparent="0" position="396,225" size="1130,648" scrollbarMode="showNever" itemCornerRadius="6">
 			<convert type="TemplatedMultiContent" >
 				{"template": [
 						MultiContentEntryPixmapAlphaTest(pos=(0,0), flags=BT_SCALE, size=(150,108), png=2), # Thumbnail
