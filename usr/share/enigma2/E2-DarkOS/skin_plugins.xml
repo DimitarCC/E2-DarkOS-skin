@@ -1209,25 +1209,25 @@
 	</screen>
 	<screen name="CutListEditor" position="fill" title="Cutlist editor" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Window_Full" />
-		<widget name="Video" position="771,158" zPosition="1" size="1044,566" backgroundColor="transparent" />
-		<widget source="session.CurrentService" render="Label" position="771,750" size="1044,75" font="Regular;33" halign="center" valign="center">
+		<widget name="Video" position="771,118" zPosition="1" size="1044,566" backgroundColor="transparent" />
+		<widget source="session.CurrentService" render="Label" position="771,710" size="1044,75" font="Regular;33" halign="center" valign="center">
 			<convert type="ServiceName">Name</convert>
 		</widget>
-		<widget source="session.CurrentService" render="Label" position="771,827" zPosition="1" size="1044,42" font="Regular;30" halign="center" valign="center">
+		<widget source="session.CurrentService" render="Label" position="771,787" zPosition="1" size="1044,42" font="Regular;30" halign="center" valign="center">
 			<convert type="ServicePosition">Position,Detailed</convert>
 		</widget>
-		<widget name="SeekState" position="771,870" zPosition="1" size="1044,38" halign="center" font="Regular;30" valign="center" />
-		<widget source="cutlist" position="105,158" zPosition="1" size="420,750" enableWrapAround="1" scrollbarMode="showNever" render="Listbox" itemCornerRadius="6">
+		<widget name="SeekState" position="771,830" zPosition="1" size="1044,38" halign="center" font="Regular;30" valign="center" />
+		<widget source="cutlist" position="105,118" zPosition="1" size="430,750" enableWrapAround="1" scrollbarMode="showNever" render="Listbox" itemCornerRadius="6">
 			<convert type="TemplatedMultiContent">
 						{"template": [
 								MultiContentEntryText(size=(188, 30), text = 1, backcolor = MultiContentTemplateColor(3)),
-								MultiContentEntryText(pos=(188,0), size=(75, 30), text = 2, flags = RT_HALIGN_RIGHT, backcolor = MultiContentTemplateColor(3))
+								MultiContentEntryText(pos=(198,0), size=(75, 30), text = 2, flags = RT_HALIGN_RIGHT, backcolor = MultiContentTemplateColor(3))
 							],
 							"fonts": [gFont("Regular", 27)],
 							"itemHeight": 30
 						}
 			</convert>
 		</widget>
-		<widget name="Timeline" position="105,965" size="1712,30" backgroundColor="grey" pointer="skin_default/position_arrow.png:3,5" foregroundColor="black" />
+		<widget name="Timeline" position="105,925" size="1712,30" backgroundColor="grey" pointer="skin_default/position_arrow.png:3,5" foregroundColor="black" />
 	</screen>
 </skin>
