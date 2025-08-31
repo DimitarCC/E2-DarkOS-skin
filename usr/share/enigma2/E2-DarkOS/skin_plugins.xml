@@ -1132,4 +1132,102 @@
 		<widget name="poster" position="1496,151" size="300,445" cornerRadius="6" zPosition="12"/>
 		<widget source="description" render="Label" position="125,790" zPosition="10" size="1670,140" halign="center" valign="center" font="Regular;30" backgroundColor="background" shadowColor="black" shadowOffset="-1,-1" />
 	</screen>
+
+	<!-- Subs support Plugin -->
+	<screen name="SubsSupportSettings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_menu2" />
+		<widget source="menuList" render="Listbox" scrollbarMode="showNever" position="515,234" size="890,400" font="Regular;28" zPosition="3" transparent="1" itemCornerRadius="6">
+			<convert type="TemplatedMultiContent">
+				{"templates":
+					{"default": (45, [
+						MultiContentEntryText(pos=(10, 0), size=(860, 45), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text=0)
+					], True, "showNever"),
+					},
+				"fonts": [gFont("Regular", 28)],
+				"itemHeight": 45
+				}
+			</convert>
+		</widget>
+		<widget addon="Pager" connection="menuList" position="545,424" size="860,25" transparent="1" backgroundColor="background" />
+	</screen>
+	<screen name="SubsSetupGeneral" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ConfigScreenTemplate"/>
+	</screen>
+	<screen name="SubsSearchSettings" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="SubsSetupGeneral"/>
+	</screen>
+	<screen name="SubsSetupExternal" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="SubsSetupGeneral"/>
+	</screen>
+	<screen name="SubsSetupEmbedded" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="SubsSetupGeneral"/>
+	</screen>
+	<screen name="SubsSetupDVBPlayer" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="SubsSetupGeneral"/>
+	</screen>
+	<screen name="SubsSearch" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1" />
+		<panel position="125,150" size="1670,13*45">
+			<widget source="search_info" render="Listbox" position="15,15" size="1640,225" zPosition="3" scrollbarMode="showNever"  transparent="1" >
+				<convert type="TemplatedMultiContent">
+					{"templates":
+						{"default": (33, [
+							MultiContentEntryText(pos = (0,0),   size = (620,33),  font = 0, color = 0xDAA520, flags = RT_HALIGN_LEFT,  text = 0), # langname,
+							MultiContentEntryText(pos = (307,0),   size = (920,33),  font = 0, flags = RT_HALIGN_LEFT,  text = 1)
+						], False, "showNever"),
+						},
+					"fonts": [gFont("Regular", 27)],
+					"itemHeight":33,
+					}
+				</convert>
+			</widget>
+			<widget source="header_country" render="Label" position = "20,262" size="500,37" font="Regular;27" halign="left" foregroundColor="#0xcccccc" />
+			<widget source="header_release" render="Label" position = "227,262" size="500,37" font="Regular;27" halign="left" foregroundColor="#0xcccccc" />
+			<widget source="header_provider" render="Label" position = "1277,262" size="400,37" font="Regular;27" halign="left" foregroundColor="#0xcccccc" />
+			<widget source="header_sync" render="Label" position = "1620,262" size="30,37" font="Regular;27" halign="left" foregroundColor="#0xcccccc" />
+			<eLabel position="7,307" size="1655,1" backgroundColor="#999999" />
+			<widget name="loadmessage"  position="7,315" size="1655,390" valign="center" halign="center" font="Regular;28" foregroundColor="#ffffff" zPosition="4" />
+			<widget name="errormessage" position="7,315" size="1655,390" valign="center" halign="center" font="Regular;28" foregroundColor="#ff0000" zPosition="5" />
+			<widget source="subtitles" render="Listbox" scrollbarMode="showNever" position="7,315" size="1655,440" zPosition="3" transparent="1" itemCornerRadius="6" >
+				<convert type="TemplatedMultiContent">
+					{"templates":
+						{"default": (40, [
+							MultiContentEntryPixmapAlphaBlend(pos = (10,4),   size = (36,36), png=0), # key,
+							MultiContentEntryText(pos = (55,2),   size = (150,37),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # language,
+							MultiContentEntryText(pos = (220,2),  size = (1022,37),  font = 0, flags = RT_HALIGN_LEFT,  text = 2), # filename,
+							MultiContentEntryText(pos = (1270,2), size = (302,37), font = 0, flags = RT_HALIGN_LEFT,  text = 3), # site,
+							MultiContentEntryPixmapAlphaBlend(pos = (1607,8),   size = (36,36), png=4), # syncPng,
+						], True, "showNever"),
+						},
+					"fonts": [gFont("Regular", 27), gFont("Regular", 16)],
+					"itemHeight": 40
+					}
+				</convert>
+			</widget>
+			<widget addon="Pager" connection="subtitles" position="7,765" size="1655,25" transparent="1" backgroundColor="background" />
+		</panel>
+	</screen>
+	<screen name="CutListEditor" position="fill" title="Cutlist editor" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_Window_Full" />
+		<widget name="Video" position="771,118" zPosition="1" size="1044,566" backgroundColor="transparent" />
+		<widget source="session.CurrentService" render="Label" position="771,710" size="1044,75" font="Regular;33" halign="center" valign="center">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="771,787" zPosition="1" size="1044,42" font="Regular;30" halign="center" valign="center">
+			<convert type="ServicePosition">Position,Detailed</convert>
+		</widget>
+		<widget name="SeekState" position="771,830" zPosition="1" size="1044,38" halign="center" font="Regular;30" valign="center" />
+		<widget source="cutlist" position="105,118" zPosition="1" size="430,750" enableWrapAround="1" scrollbarMode="showNever" render="Listbox" itemCornerRadius="6">
+			<convert type="TemplatedMultiContent">
+						{"template": [
+								MultiContentEntryText(size=(188, 30), text = 1, backcolor = MultiContentTemplateColor(3)),
+								MultiContentEntryText(pos=(198,0), size=(75, 30), text = 2, flags = RT_HALIGN_RIGHT, backcolor = MultiContentTemplateColor(3))
+							],
+							"fonts": [gFont("Regular", 27)],
+							"itemHeight": 30
+						}
+			</convert>
+		</widget>
+		<widget name="Timeline" position="105,925" size="1712,30" backgroundColor="grey" pointer="skin_default/position_arrow.png:3,5" foregroundColor="black" />
+	</screen>
 </skin>

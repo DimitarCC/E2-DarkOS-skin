@@ -1030,7 +1030,7 @@ if callable(loadLogo):
 	<!-- Audio and subtitle selection -->
 	<screen flags="wfNoBorder" name="AudioSelection" position="fill" title="Audio" backgroundColor="transparent">
 		<panel name="Screen_menu2" />
-		<widget name="config" position="545,234" size="860,180" itemHeight="45" scrollbarMode="showNever" font="Regular;28" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" backgroundColor="background" transparent="1" />
+		<widget name="config" position="545,234" size="860,180" itemHeight="45" scrollbarMode="showNever" font="Regular;28" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" backgroundColor="background" transparent="1" itemCornerRadius="6"/>
 		<widget addon="Pager" connection="config" position="545,424" size="860,25" transparent="1" backgroundColor="background" />
 		<eLabel position="515,460" size="889,2" zPosition="-5" backgroundColor="dark_grey" />
 		<widget source="streams" render="Listbox" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" position="515,495" size="889,320" zPosition="3" transparent="1" itemCornerRadius="6">
