@@ -1041,9 +1041,6 @@
 		</widget>
 		<widget name="time_info" position="405,864" size="440,51" font="Bold; 26" halign="left" valign="center" backgroundColor="background" transparent="1" foregroundColor="white"/>
 		<eLabel backgroundColor="progress" position="400,1010" zPosition="1" size="1170,4" transparent="0" />
-		<!--<widget source="progress" render="PositionGauge" position="400,1005" zPosition="3" size="1170,12" transparent="1" cornerRadius="6">
-		  <convert type="ServicePosition">Gauge</convert>
-		</widget>-->
 		<widget source="progress" render="Progress" backgroundColor="background" foregroundColor="darkblue" position="400,1005" zPosition="2" size="1170,12" transparent="1" cornerRadius="6"/>
 		<widget backgroundColor="background" font="Bold; 60" foregroundColor="white" halign="center" position="1590,925" render="Label" size="320,60" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
 		  <convert type="ClockToText">Default</convert>
@@ -1229,5 +1226,11 @@
 			</convert>
 		</widget>
 		<widget name="Timeline" position="105,925" size="1712,30" backgroundColor="grey" pointer="skin_default/position_arrow.png:3,5" foregroundColor="black" />
+	</screen>
+	<screen name="BluetoothDevicesManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_menu2" />
+		<widget name="devicelist" position="545,234" size="860,11*45" itemHeight="45" scrollbarMode="showNever" font="Regular;28" enableWrapAround="1" transparent="1" itemCornerRadius="6"/>
+		<widget addon="Pager" connection="devicelist" position="545,750" size="860,25" transparent="1" backgroundColor="background" />
+		<widget name="ConnStatus" position="545,780" size="860,75" zPosition="1" font="Regular;20" halign="center" valign="center" alphatest="blend" foregroundColor="yellow" transparent="1" />
 	</screen>
 </skin>
