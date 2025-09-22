@@ -597,7 +597,7 @@
 	<!-- GraphMultiEPG -->
 	<screen name="GraphMultiEPG" title="Electronic Program Guide" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_Window_Full_Big_Pig" />
-		<widget name="timeline_now" position="5,409" zPosition="2" size="19,516" scale="stretch" pixmap="window/timeline-now.png" alphatest="blend" />
+		<widget name="timeline_now" position="5,409" zPosition="2" size="19,516" scale="1" pixmap="window/timeline-now.png" alphatest="blend" />
 		<eLabel position="25,373" size="1866,607" zPosition="-2" widgetBorderWidth="1" widgetBorderColor="separator" backgroundColor="background" cornerRadius="6"/>
 		<widget name="timeline_text" position="27,375" size="1862,31" zPosition="2" foregroundColor="foreground" backgroundColor="background" borderWidth="1" fullBorder="0" borderColor="separator"/>
 		<eLabel position="25,408" size="1866,1" zPosition="10" backgroundColor="separator" />
@@ -632,7 +632,7 @@
 	</screen>
 	<screen name="GraphMultiEPGList" title="Electronic Program Guide" position="fill" flags="wfNoBorder">
 		<panel name="Screen_Window_Full" />
-		<widget name="timeline_now" position="5,131" zPosition="2" size="19,792" scale="stretch" pixmap="window/timeline-now.png" alphatest="blend" />
+		<widget name="timeline_now" position="5,131" zPosition="2" size="19,792" scale="1" pixmap="window/timeline-now.png" alphatest="blend" />
 		<eLabel position="25,95" size="1866,885" zPosition="-2" widgetBorderWidth="1" widgetBorderColor="separator" backgroundColor="background" cornerRadius="6"/>
 		<eLabel position="25,101" size="1,873" zPosition="3" backgroundColor="separator" />
 		<widget name="timeline_text" position="27,98" size="1862,29" zPosition="2" foregroundColor="foreground" backgroundColor="background" itemCornerRadius="6;top" cornerRadius="6;top" />
@@ -903,7 +903,7 @@ if callable(loadLogo):
 	<screen name="NumberZapExt" position="40,40" size="860,155" title=" " flags="wfNoBorder" backgroundColor="transparent">
 		<ePixmap position="2,2" size="856,151" pixmap="extzap_overlay.png" zPosition="-11" alphatest="blend" />
 		<ePixmap position="0,0" size="860,155" pixmap="extzap_bg.png" zPosition="-12" alphatest="blend" />
-		<widget alphatest="blend" name="chPicon" position="30,10" scale="stretch" size="220,132" />
+		<widget alphatest="blend" name="chPicon" position="30,10" scale="1" size="220,132" />
 		<widget font="Regular;45" halign="left" name="chNumName" position="290,50" size="560,55" backgroundColor="background" valign="center" />
 	</screen>
 	<screen name="NumberZap" title="Channel" position="150,67" size="860,155" backgroundColor="transparent" flags="wfNoBorder">
