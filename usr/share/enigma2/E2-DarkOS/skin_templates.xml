@@ -132,7 +132,7 @@
 	
 	<screen name="ConfigScreenTemplate">
 		<panel name="Screen_1_1" />
-		<widget name="config" conditional="config" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" itemCornerRadius="6" sepLineColor="separator"/>
+		<widget name="config" conditional="config" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" itemCornerRadius="6" separatorLineColor="separator"/>
 		<widget addon="Pager" conditional="config" connection="config" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
 		<widget name="list" conditional="list" position="125,150" size="1670,13*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" itemCornerRadius="6"/>
 		<widget addon="Pager" conditional="list" connection="list" position="145,915" size="1630,25" transparent="1" backgroundColor="background" />
@@ -339,9 +339,8 @@ self["screen_path"].instance.resize(eSize(menu_list_size.width(),25))
 			<convert type="EventName">Genre</convert>
 		</widget>
 		<widget source="session.Event_Now" render="RatingIconLabel" position="913,70" size="32,32" zPosition="1" font="Bold; 22" halign="center" valign="center" borderColor="black" borderWidth="1"
-				colors="4:green,5:green,6:green,7:blue,8:blue,9:blue,10:orange,11:orange,12:orange,13:#FF47A6,14:#FF47A6,15:#FF47A6,16:red,17:red,18:red" 
 				alphatest="blend" cornerRadius="6" widgetBorderColor="separator" widgetBorderWidth="1">
-			<convert type="EventName">RawRating</convert>
+			<convert type="EventName">RawRatingAndCountry</convert>
 		</widget>
 		<widget backgroundColor="background" font="Bold; 30" foregroundColor="potem" halign="right" position="840,130" render="Label" size="100,40" source="session.Event_Now">
 			<convert type="EventTime">Remaining</convert>
@@ -362,9 +361,8 @@ self["screen_path"].instance.resize(eSize(menu_list_size.width(),25))
 			<convert type="EventName">Genre</convert>
 		</widget>
 		<widget source="session.Event_Next" render="RatingIconLabel" position="1775,70" size="32,32" zPosition="1" font="Bold; 22" halign="center" valign="center" borderColor="black" borderWidth="1"
-				colors="4:green,5:green,6:green,7:blue,8:blue,9:blue,10:orange,11:orange,12:orange,13:#FF47A6,14:#FF47A6,15:#FF47A6,16:red,17:red,18:red" 
 				alphatest="blend" cornerRadius="6" widgetBorderColor="separator" widgetBorderWidth="1">
-			<convert type="EventName">RawRating</convert>
+			<convert type="EventName">RawRatingAndCountry</convert>
 		</widget>
 		<widget font="Bold; 30" halign="right" position="1700,130" render="Label" size="100,40" source="session.Event_Next" backgroundColor="background" foregroundColor="potem">
 			<convert type="EventTime">Remaining</convert>

@@ -508,10 +508,9 @@
 		<panel position="96,54" size="1728,987">
 			<panel name="Screen_1" />
 			<widget name="epg_eventname" position="30,93" size="e-260,70" backgroundColor="background" font="Regular;30" halign="left" valign="top" foregroundColor="light_green" />
-			<widget source="Event" render="RatingIconLabel" position="e-122,92" size="96,96" zPosition="1" font="Bold; 80" halign="center" valign="center" borderColor="black" borderWidth="1"
-				colors="4:green,5:green,6:green,7:blue,8:blue,9:blue,10:orange,11:orange,12:orange,13:#FF47A6,14:#FF47A6,15:#FF47A6,16:red,17:red,18:red" 
-				alphatest="blend" cornerRadius="6" widgetBorderColor="separator" widgetBorderWidth="2">
-				<convert type="EventName">RawRating</convert>
+			<widget source="Event" render="RatingIconLabel" position="e-122,92" size="96,96" extendDirection="left" zPosition="1" font="Bold; 75" halign="center" valign="center" borderColor="black" borderWidth="1"
+				alphatest="blend" cornerRadius="12" widgetBorderColor="separator" widgetBorderWidth="2">
+				<convert type="EventName">RawRatingAndCountry</convert>
 			</widget>
 			<widget name="channel" position="30,140" size="e-620,50" font="Bold; 36" halign="left" foregroundColor="light_yellow" backgroundColor="background" transparent="1" />
 			<widget name="datetime" position="30,e-140" size="340,40" font="Bold; 28" halign="left" backgroundColor="background" transparent="1" />
@@ -620,9 +619,8 @@
 			<convert type="EventName" nostrip="1">  •  ,TIMERANGE,DURATION</convert>
 		</widget>
 		<widget source="Event" render="RatingIconLabel" position="38,936" size="32,32" zPosition="1" font="Bold; 22" halign="center" valign="center" borderColor="black" borderWidth="1"
-				colors="4:green,5:green,6:green,7:blue,8:blue,9:blue,10:orange,11:orange,12:orange,13:#FF47A6,14:#FF47A6,15:#FF47A6,16:red,17:red,18:red" 
 				alphatest="blend" cornerRadius="6" widgetBorderColor="separator" widgetBorderWidth="1">
-			<convert type="EventName">RawRating</convert>
+			<convert type="EventName">RawRatingAndCountry</convert>
 		</widget>
 		<widget source="Event" render="Label" position="1370,935" size="500,34" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Bold;28" halign="right" valign="center">
 			<convert type="EventName">Genre</convert>
@@ -648,9 +646,8 @@
 		<eLabel position="25,925" size="1866,1" zPosition="10" backgroundColor="separator" />
 		<widget addon="Pager" conditional="list" connection="list" maxPages="20" position="25,940" size="1865,25" transparent="1" backgroundColor="background" />
 		<widget source="Event" render="RatingIconLabel" position="38,936" size="32,32" zPosition="1" font="Bold; 22" halign="center" valign="center" borderColor="black" borderWidth="1"
-				colors="4:green,5:green,6:green,7:blue,8:blue,9:blue,10:orange,11:orange,12:orange,13:#FF47A6,14:#FF47A6,15:#FF47A6,16:red,17:red,18:red" 
 				alphatest="blend" cornerRadius="6" widgetBorderColor="separator" widgetBorderWidth="1">
-			<convert type="EventName">RawRating</convert>
+			<convert type="EventName">RawRatingAndCountry</convert>
 		</widget>
 		<widget source="Event" render="Label" position="1370,935" size="500,34" backgroundColor="background" zPosition="1" foregroundColor="blue" font="Bold;28" halign="right" valign="center">
 			<convert type="EventName">Genre</convert>
