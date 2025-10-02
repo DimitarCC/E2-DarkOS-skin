@@ -340,7 +340,7 @@ self["screen_path"].instance.resize(eSize(menu_list_size.width(),25))
 		</widget>
 		<widget source="session.Event_Now" render="RatingIconLabel" position="913,70" size="32,32" zPosition="1" font="Bold; 22" halign="center" valign="center" borderColor="black" borderWidth="1"
 				alphatest="blend" cornerRadius="6" widgetBorderColor="separator" widgetBorderWidth="1">
-			<convert type="EventName">RawRatingAndCountry</convert>
+			<convert type="EventName">RatingTextAndColor</convert>
 		</widget>
 		<widget backgroundColor="background" font="Bold; 30" foregroundColor="potem" halign="right" position="840,130" render="Label" size="100,40" source="session.Event_Now">
 			<convert type="EventTime">Remaining</convert>
@@ -362,7 +362,7 @@ self["screen_path"].instance.resize(eSize(menu_list_size.width(),25))
 		</widget>
 		<widget source="session.Event_Next" render="RatingIconLabel" position="1775,70" size="32,32" zPosition="1" font="Bold; 22" halign="center" valign="center" borderColor="black" borderWidth="1"
 				alphatest="blend" cornerRadius="6" widgetBorderColor="separator" widgetBorderWidth="1">
-			<convert type="EventName">RawRatingAndCountry</convert>
+			<convert type="EventName">RatingTextAndColor</convert>
 		</widget>
 		<widget font="Bold; 30" halign="right" position="1700,130" render="Label" size="100,40" source="session.Event_Next" backgroundColor="background" foregroundColor="potem">
 			<convert type="EventTime">Remaining</convert>
