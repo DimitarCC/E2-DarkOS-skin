@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+	<screen name="Screen_1_1">
+		<panel position="96,54" size="1728,992">
+			<panel name="Screen_1" />
+			<panel position="e-100,e-70" size="74,34">
+				<panel name="BrandLogoTemplate" />
+			</panel>
+			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
+			  <convert type="ClockToText">Default</convert>
+			</widget>
+
+            <eLabel position="20,3" size="e-260,60" backgroundColor="background" zPosition="19" />
+            <widget name="Image" position="24,15" size="50,50" alphatest="blend" conditional="Image" zPosition="20"/>
+            <widget source="Title" render="Label" position="74,15" size="e-300,50" halign="left" font="Bold; 34" foregroundColor="yellow" zPosition="20">
+                <convert type="ConfigEntryTestVisible">config.usage.showScreenPath,small,Invert</convert>
+            </widget>
+            <widget source="Title" render="Label" position="74,15" size="e-300,30" halign="left" font="Bold; 26" foregroundColor="yellow" zPosition="20">
+                <convert type="ConfigEntryTestVisible">config.usage.showScreenPath,small</convert>
+            </widget>
+            <widget source="ScreenPath" render="Label" position="74,45" size="e-300,20" halign="left" font="Bold; 17" foregroundColor="yellow" zPosition="20">
+                <convert type="ConfigEntryTestVisible">config.usage.showScreenPath,small</convert>
+            </widget>
+
+		</panel>	
+		<eLabel position="104,120" size="1712,2" zPosition="-5" backgroundColor="dark_grey" />
+	</screen>
+
+	<menus>
+		<menu key="default" image="menu/missing.svg" />
+		<menu key="a_setup" image="menu/a_setup.svg" />
+		<menu key="animation_setup" image="menu/animation_setup.svg" />
+		<menu key="audio_icon" image="menu/audio_icon.svg" />
+		<menu key="auto_scan" image="menu/auto_scan.svg" />
+		<menu key="autolanguage_setup" image="menu/autolanguage_setup.svg" />
+		<menu key="av" image="menu/av_setup.svg" />
+		<menu key="av_setup" image="menu/av_setup.svg" />
+		<menu key="channelselection_setup" image="menu/gui_settings.svg" />
+		<menu key="ci_assign" image="menu/ci_assign.svg" />
+		<menu key="ci_setup" image="menu/ci_setup.svg" />
+		<menu key="cicam" image="menu/ci_setup.svg" />
+		<menu key="devices_selection" image="menu/devices_selection.svg" />
+		<menu key="device_setup" image="menu/network_setup.svg" />
+		<menu key="display_skin_selector" image="menu/display_skin_selector.svg" />
+		<menu key="epg" image="menu/epg_menu.svg" />
+		<menu key="epg_menu" image="menu/epg_menu.svg" />
+		<menu key="epg_setup" image="menu/epg_setup.svg" />
+		<menu key="factory_reset" image="menu/factory_reset.svg" />
+		<menu key="gui_menu" image="menu/gui_settings.svg" />
+		<menu key="gui_settings" image="menu/gui_settings.svg" />
+		<menu key="hardisk" image="menu/hardisk_selection.svg" />
+		<menu key="hardisk_selection" image="menu/hardisk_selection.svg" />
+		<menu key="info_screen" image="menu/info_screen.svg" />
+		<menu key="information" image="menu/info_screen.svg" />
+		<menu key="hdmi_cec" image="menu/hdmi_cec.svg" />
+		<menu key="input_device_setup" image="menu/input_device_setup.svg" />
+		<menu key="keyboard" image="menu/keyboard.svg" />
+		<menu key="keyboard_setup" image="menu/keyboard_setup.svg" />
+		<menu key="language_setup" image="menu/language_setup.svg" />
+		<menu key="manual_scan" image="menu/manual_scan.svg" />
+		<menu key="network" image="menu/network_setup.svg" />
+		<menu key="network_setup" image="menu/network_setup.svg" />
+		<menu key="network_tools" image="menu/network_tools.svg" />
+		<menu key="netservices" image="menu/network_tools.svg" />
+		<menu key="osd_video_audio_selection" image="menu/osd_video_audio_selection.svg" />
+		<menu key="parental_setup" image="menu/parental_setup.svg" />
+		<menu key="plugin_selection" image="menu/plugin_selection.svg" />
+		<menu key="primary_skin_selector" image="menu/primary_skin_selector.svg" />
+		<menu key="rec" image="menu/record_paths.svg" />
+		<menu key="record_paths" image="menu/record_paths.svg" />
+		<menu key="restart" image="menu/restart.svg" />
+		<menu key="restart_enigma" image="menu/restart_enigma.svg" />
+		<menu key="scan" image="menu/service_searching_selection.svg" />
+		<menu key="service_searching_selection" image="menu/service_searching_selection.svg" />
+		<menu key="setup" image="menu/setup_selection.svg" />
+		<menu key="setup_selection" image="menu/setup_selection.svg" />
+		<menu key="setup_epgsingle" image="menu/epg_setup.svg" />
+		<menu key="setup_epggrid" image="menu/epg_setup.svg" />
+		<menu key="setup_epginfobarsingle" image="menu/epg_setup.svg" />
+		<menu key="setup_epginfobargrid" image="menu/epg_setup.svg" />
+		<menu key="setup_epgmulti" image="menu/epg_setup.svg" />
+		<menu key="shutdown" image="menu/standby.svg" />
+		<menu key="skin_setup" image="menu/gui_settings.svg" />
+		<menu key="sleep" image="menu/sleep.svg" />
+		<menu key="standby" image="menu/standby.svg" />
+		<menu key="standby_restart_list" image="menu/standby_restart_list.svg" />
+		<menu key="deep_standby" image="menu/standby.svg" />
+		<menu key="multiboot" image="menu/multiboot.svg" />
+		<menu key="system" image="menu/system_selection.svg" />
+		<menu key="system_selection" image="menu/system_selection.svg" />
+		<menu key="timer_edit" image="menu/timer_edit.svg" />
+		<menu key="timermenu" image="menu/timer_edit.svg" />
+		<menu key="autotimer_setup" image="menu/auto_timer.svg" />
+		<menu key="crontimer_edit" image="menu/cron_timer.svg" />
+		<menu key="powertimer_edit" image="menu/power_timer.svg" />
+		<menu key="timezone_setup" image="menu/timezone_setup.svg" />
+		<menu key="time_setup" image="menu/timezone_setup.svg" />
+		<menu key="tuner_setup" image="menu/tuner_setup.svg" />
+		<menu key="usage_setup" image="menu/usage_setup.svg" />
+		<menu key="user_interface" image="menu/gui_settings.svg" />
+		<menu key="video_selection" image="menu/video_selection.svg" />
+		<menu key="iptv_vod_menu" image="menu/vod.svg" />
+		<menu key="vod_movies" image="menu/film.svg" />
+		<menu key="vod_series" image="menu/tvshow.svg" />
+	</menus>
+	<screen name="MenuTemplate">
+		<panel name="FrameTemplate"/>
+
+		<widget source="Title" render="Label" position="72,864" size="544,62" font="Regular; 34" halign="right" valign="center" backgroundColor="black" transparent="1" />
+		<widget source="menu" render="Listbox" position="82,277" size="544,522" scrollbarMode="showNever" enableWrapAround="1" transparent="1" itemCornerRadius="6">
+			<convert type="TemplatedMultiContent">
+						{"templates": 
+						   {
+							"default": (58,
+								[
+								MultiContentEntryText(pos=(32, 5), size=(500, 45), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=0)
+								]),
+							"text": (58,
+								[
+								MultiContentEntryText(pos=(32, 5), size=(700, 45), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=3),
+								]),
+							"number": (58,
+								[
+								MultiContentEntryText(pos=(32, 5), size=(48, 48), font=0, flags=RT_HALIGN_RIGHT | RT_VALIGN_CENTER, text=2),
+								MultiContentEntryText(pos=(97, 5), size=(435, 45), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=3),
+								]),
+							"image": (58,
+								[
+								MultiContentEntryPixmapAlphaBlend(pos=(32, 5), size=(48, 48), png=1, flags=BT_SCALE | BT_KEEP_ASPECT_RATIO),
+								MultiContentEntryText(pos=(97, 5), size=(435, 45), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=3),
+								]),
+							"both": (58,
+								[
+								MultiContentEntryPixmapAlphaBlend(pos=(32, 5), size=(48, 48), png=1, flags=BT_SCALE | BT_KEEP_ASPECT_RATIO),
+								MultiContentEntryText(pos=(97, 5), size=(48, 48), font=0, flags=RT_HALIGN_RIGHT | RT_VALIGN_CENTER, text=2),
+								MultiContentEntryText(pos=(150, 5), size=(382, 45), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=3),
+								])
+							},
+						"fonts": [gFont("Regular",34)],
+						"itemHeight": 58
+						}
+			</convert>
+		</widget>
+		<widget addon="Pager" connection="menu" position="85,812" size="558,25" transparent="1" backgroundColor="background"/>
+		<widget source="ScreenPath" render="Label" position="78,833" size="544,25" backgroundColor="background" zPosition="1" font="Regular;19" valign="top" halign="right"/>
+		<widget source="global.CurrentTime" render="BoxLogo" position="203,175" size="302,65" zPosition="10" alphatest="blend" />
+		<eLabel position="102,259" size="506,2" backgroundColor="separator" zPosition="-5" />
+	</screen>
+</skin>

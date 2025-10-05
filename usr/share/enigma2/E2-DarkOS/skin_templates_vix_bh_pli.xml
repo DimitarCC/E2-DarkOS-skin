@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+	<screen name="Screen_1_1">
+		<panel position="96,54" size="1728,992">
+			<panel name="Screen_1" />
+			<panel position="e-100,e-70" size="74,34">
+				<panel name="BrandLogoTemplate" />
+			</panel>
+			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
+			  <convert type="ClockToText">Default</convert>
+			</widget>
+			<widget addon="ScreenHeader" connection="Image,Title,ScreenPath" position="20,3" size="e-260,60" titleFont="Bold; 26" titleSingleFont="Bold; 34" pathFont="Bold; 17" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
+		</panel>	
+		<eLabel position="104,120" size="1712,2" zPosition="-5" backgroundColor="dark_grey" />
+	</screen>
+	<menuicons>
+		<menuicon key="default" image="menu/missing.svg" />
+		<menuicon key="a_setup" image="menu/a_setup.svg" />
+		<menuicon key="animation_setup" image="menu/animation_setup.svg" />
+		<menuicon key="audio_icon" image="menu/audio_icon.svg" />
+		<menuicon key="auto_scan" image="menu/auto_scan.svg" />
+		<menuicon key="autolanguage_setup" image="menu/autolanguage_setup.svg" />
+		<menuicon key="av" image="menu/av_setup.svg" />
+		<menuicon key="av_setup" image="menu/av_setup.svg" />
+		<menuicon key="channelselection_setup" image="menu/gui_settings.svg" />
+		<menuicon key="ci_assign" image="menu/ci_assign.svg" />
+		<menuicon key="ci_setup" image="menu/ci_setup.svg" />
+		<menuicon key="cicam" image="menu/ci_setup.svg" />
+		<menuicon key="devices_selection" image="menu/devices_selection.svg" />
+		<menuicon key="device_setup" image="menu/network_setup.svg" />
+		<menuicon key="display_skin_selector" image="menu/display_skin_selector.svg" />
+		<menuicon key="epg" image="menu/epg_menu.svg" />
+		<menuicon key="epg_menu" image="menu/epg_menu.svg" />
+		<menuicon key="epg_setup" image="menu/epg_setup.svg" />
+		<menuicon key="factory_reset" image="menu/factory_reset.svg" />
+		<menuicon key="gui_menu" image="menu/gui_settings.svg" />
+		<menuicon key="gui_settings" image="menu/gui_settings.svg" />
+		<menuicon key="hardisk" image="menu/hardisk_selection.svg" />
+		<menuicon key="hardisk_selection" image="menu/hardisk_selection.svg" />
+		<menuicon key="info_screen" image="menu/info_screen.svg" />
+		<menuicon key="information" image="menu/info_screen.svg" />
+		<menuicon key="hdmi_cec" image="menu/hdmi_cec.svg" />
+		<menuicon key="input_device_setup" image="menu/input_device_setup.svg" />
+		<menuicon key="keyboard" image="menu/keyboard.svg" />
+		<menuicon key="keyboard_setup" image="menu/keyboard_setup.svg" />
+		<menuicon key="language_setup" image="menu/language_setup.svg" />
+		<menuicon key="manual_scan" image="menu/manual_scan.svg" />
+		<menuicon key="network" image="menu/network_setup.svg" />
+		<menuicon key="network_setup" image="menu/network_setup.svg" />
+		<menuicon key="network_tools" image="menu/network_tools.svg" />
+		<menuicon key="netservices" image="menu/network_tools.svg" />
+		<menuicon key="osd_video_audio_selection" image="menu/osd_video_audio_selection.svg" />
+		<menuicon key="parental_setup" image="menu/parental_setup.svg" />
+		<menuicon key="plugin_selection" image="menu/plugin_selection.svg" />
+		<menuicon key="primary_skin_selector" image="menu/primary_skin_selector.svg" />
+		<menuicon key="rec" image="menu/record_paths.svg" />
+		<menuicon key="record_paths" image="menu/record_paths.svg" />
+		<menuicon key="restart" image="menu/restart.svg" />
+		<menuicon key="restart_enigma" image="menu/restart_enigma.svg" />
+		<menuicon key="scan" image="menu/service_searching_selection.svg" />
+		<menuicon key="service_searching_selection" image="menu/service_searching_selection.svg" />
+		<menuicon key="setup" image="menu/setup_selection.svg" />
+		<menuicon key="setup_selection" image="menu/setup_selection.svg" />
+		<menuicon key="setup_epgsingle" image="menu/epg_setup.svg" />
+		<menuicon key="setup_epggrid" image="menu/epg_setup.svg" />
+		<menuicon key="setup_epginfobarsingle" image="menu/epg_setup.svg" />
+		<menuicon key="setup_epginfobargrid" image="menu/epg_setup.svg" />
+		<menuicon key="setup_epgmulti" image="menu/epg_setup.svg" />
+		<menuicon key="shutdown" image="menu/standby.svg" />
+		<menuicon key="skin_setup" image="menu/gui_settings.svg" />
+		<menuicon key="sleep" image="menu/sleep.svg" />
+		<menuicon key="standby" image="menu/standby.svg" />
+		<menuicon key="standby_restart_list" image="menu/standby_restart_list.svg" />
+		<menuicon key="deep_standby" image="menu/standby.svg" />
+		<menuicon key="multiboot" image="menu/multiboot.svg" />
+		<menuicon key="system" image="menu/system_selection.svg" />
+		<menuicon key="system_selection" image="menu/system_selection.svg" />
+		<menuicon key="timer_edit" image="menu/timer_edit.svg" />
+		<menuicon key="timermenu" image="menu/timer_edit.svg" />
+		<menuicon key="autotimer_setup" image="menu/auto_timer.svg" />
+		<menuicon key="crontimer_edit" image="menu/cron_timer.svg" />
+		<menuicon key="powertimer_edit" image="menu/power_timer.svg" />
+		<menuicon key="timezone_setup" image="menu/timezone_setup.svg" />
+		<menuicon key="time_setup" image="menu/timezone_setup.svg" />
+		<menuicon key="tuner_setup" image="menu/tuner_setup.svg" />
+		<menuicon key="usage_setup" image="menu/usage_setup.svg" />
+		<menuicon key="user_interface" image="menu/gui_settings.svg" />
+		<menuicon key="video_selection" image="menu/video_selection.svg" />
+		<menuicon key="iptv_vod_menu" image="menu/vod.svg" />
+		<menuicon key="vod_movies" image="menu/film.svg" />
+		<menuicon key="vod_series" image="menu/tvshow.svg" />
+	</menuicons>
+	<menus>
+		<menu key="default" image="screen_icons/windows.png" />
+	</menus>
+	<screen name="MenuTemplate">
+		<applet type="onContentChanged">
+from enigma import ePoint, eSize, getDesktop, gRGB, BT_ALPHABLEND
+from Components.Label import Label
+from Components.Pixmap import Pixmap
+from Components.Addons.Pager import Pager
+from Components.Addons.MainMenu import MainMenu as MainMenuAddon
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
+from Tools.LoadPixmap import LoadPixmap
+from skin import parseRadius, parseColor, parseFont
+try:
+	from Components.Renderer.BoxLogo import setLogo as loadLogo
+except:
+	loadLogo = None
+minWidth = 610
+if "menu_list" not in self:
+	radiusItem, edgeValueItem = parseRadius("6")
+	self["menu_list"] = MainMenuAddon()
+	self["menu_list"].connectRelatedElement("menu", self)
+	self["menu_list"].GUIcreate(self.instance)
+	self["menu_list"].instance.move(ePoint(82, 277))
+	self["menu_list"].instance.resize(eSize(minWidth, 522))
+	font = parseFont("Regular;34", ((1, 1), (1, 1)))
+	self["menu_list"].font = font
+	self["menu_list"].l.setFont(0, font)
+	self["menu_list"].setMinWidth(str(minWidth))
+	self["menu_list"].setMaxWidth("900")
+	self["menu_list"].setIconSize("48")
+	self["menu_list"].setForegroundColorSelected("selectedFG")
+	self["menu_list"].setItemHeight("58")
+	self["menu_list"].instance.setItemCornerRadius(radiusItem, edgeValueItem)
+	self["menu_list"].instance.setWrapAround(True)
+	
+menu_list_size = self["menu_list"].instance.size()
+	
+if "logo_sep" not in self:
+	self["logo_sep"] = Label("")
+	self["logo_sep"].GUIcreate(self.instance)
+	self["logo_sep"].instance.setBackgroundColor(gRGB(0x00555556))
+	self["logo_sep"].instance.move(ePoint(102, 259))
+	self["logo_sep"].setZPosition(-5)
+
+self["logo_sep"].instance.resize(eSize(menu_list_size.width() - 38, 2))
+
+radiusBLayer, edgeValueBLayer = parseRadius("16")
+radiusTLayer, edgeValueTLayer = parseRadius("14")
+
+if "blayer" not in self:
+	self["blayer"] = Label()
+	self["blayer"].GUIcreate(self.instance)
+	self["blayer"].instance.setCornerRadius(radiusBLayer, edgeValueBLayer)
+	self["blayer"].instance.setBackgroundColor(parseColor("background5"))
+	self["blayer"].instance.move(ePoint(70,145))
+	self["blayer"].setZPosition(-7)
+self["blayer"].instance.resize(eSize(menu_list_size.width() + 26,785))
+
+if "tlayer" not in self:
+	self["tlayer"] = Label()
+	self["tlayer"].GUIcreate(self.instance)
+	self["tlayer"].instance.setCornerRadius(radiusTLayer, edgeValueTLayer)
+	self["tlayer"].instance.setBackgroundColor(parseColor("background"))
+	self["tlayer"].instance.move(ePoint(72,147))
+	self["tlayer"].setZPosition(-6)
+self["tlayer"].instance.resize(eSize(menu_list_size.width() + 22,717))
+
+if "pager" not in self:
+	self["pager"] = Pager()
+	self["pager"].connectRelatedElement("menu", self)
+	self["pager"].GUIcreate(self.instance)
+	self["pager"].instance.move(ePoint(82, 812))
+	
+self["pager"].instance.resize(eSize(menu_list_size.width(), 25))
+
+if "logo" not in self:
+	self["logo"] = Pixmap()
+	self["logo"].GUIcreate(self.instance)
+	self["logo"].instance.setAlphatest(BT_ALPHABLEND)
+	self["logo"].setZPosition(10)
+	self["logo"].instance.move(ePoint(72,175))
+
+logoCurrentSize = self["logo"].instance.size()
+if logoCurrentSize.width() != menu_list_size.width() + 20:
+	self["logo"].instance.resize(eSize(menu_list_size.width() + 20,64))
+
+
+if callable(loadLogo):
+	loadLogo(self["logo"].instance, "model", menu_list_size.width() + 20, 64, "center")
+	
+if "title_label" not in self:
+	font = parseFont("Regular; 34", ((1, 1), (1, 1)))
+	self["title_label"] = Label(self["Title"].text)
+	self["title_label"].GUIcreate(self.instance)
+	self["title_label"].instance.setBackgroundColor(parseColor("background5"))
+	self["title_label"].instance.move(ePoint(82,878))
+	self["title_label"].instance.setFont(font)
+	self["title_label"].instance.setHAlign(self["title_label"].instance.alignRight)
+self["title_label"].instance.resize(eSize(menu_list_size.width() - 10,47))
+
+if "screen_path" not in self:
+	font = parseFont("Regular; 19", ((1, 1), (1, 1)))
+	self["screen_path"] = Label(self["ScreenPath"].text)
+	self["screen_path"].GUIcreate(self.instance)
+	self["screen_path"].instance.setBackgroundColor(parseColor("background"))
+	self["screen_path"].instance.move(ePoint(78,833))
+	self["screen_path"].instance.setFont(font)
+	self["screen_path"].instance.setHAlign(self["screen_path"].instance.alignRight)
+self["screen_path"].instance.resize(eSize(menu_list_size.width(),25))
+		</applet>
+	</screen>
+</skin>

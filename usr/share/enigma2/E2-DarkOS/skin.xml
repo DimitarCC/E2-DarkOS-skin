@@ -158,86 +158,6 @@
 		<pixmap name="menu_on" filename="icons/menu_on.png" />
 		<pixmap name="menu_off" filename="icons/menu_off.png" />
 	</switchpixmap>
-	<menuicons>
-		<menuicon key="default" image="menu/missing.svg" />
-		<menuicon key="a_setup" image="menu/a_setup.svg" />
-		<menuicon key="animation_setup" image="menu/animation_setup.svg" />
-		<menuicon key="audio_icon" image="menu/audio_icon.svg" />
-		<menuicon key="auto_scan" image="menu/auto_scan.svg" />
-		<menuicon key="autolanguage_setup" image="menu/autolanguage_setup.svg" />
-		<menuicon key="av" image="menu/av_setup.svg" />
-		<menuicon key="av_setup" image="menu/av_setup.svg" />
-		<menuicon key="channelselection_setup" image="menu/gui_settings.svg" />
-		<menuicon key="ci_assign" image="menu/ci_assign.svg" />
-		<menuicon key="ci_setup" image="menu/ci_setup.svg" />
-		<menuicon key="cicam" image="menu/ci_setup.svg" />
-		<menuicon key="devices_selection" image="menu/devices_selection.svg" />
-		<menuicon key="device_setup" image="menu/network_setup.svg" />
-		<menuicon key="display_skin_selector" image="menu/display_skin_selector.svg" />
-		<menuicon key="epg" image="menu/epg_menu.svg" />
-		<menuicon key="epg_menu" image="menu/epg_menu.svg" />
-		<menuicon key="epg_setup" image="menu/epg_setup.svg" />
-		<menuicon key="factory_reset" image="menu/factory_reset.svg" />
-		<menuicon key="gui_menu" image="menu/gui_settings.svg" />
-		<menuicon key="gui_settings" image="menu/gui_settings.svg" />
-		<menuicon key="hardisk" image="menu/hardisk_selection.svg" />
-		<menuicon key="hardisk_selection" image="menu/hardisk_selection.svg" />
-		<menuicon key="info_screen" image="menu/info_screen.svg" />
-		<menuicon key="information" image="menu/info_screen.svg" />
-		<menuicon key="hdmi_cec" image="menu/hdmi_cec.svg" />
-		<menuicon key="input_device_setup" image="menu/input_device_setup.svg" />
-		<menuicon key="keyboard" image="menu/keyboard.svg" />
-		<menuicon key="keyboard_setup" image="menu/keyboard_setup.svg" />
-		<menuicon key="language_setup" image="menu/language_setup.svg" />
-		<menuicon key="manual_scan" image="menu/manual_scan.svg" />
-		<menuicon key="network" image="menu/network_setup.svg" />
-		<menuicon key="network_setup" image="menu/network_setup.svg" />
-		<menuicon key="network_tools" image="menu/network_tools.svg" />
-		<menuicon key="netservices" image="menu/network_tools.svg" />
-		<menuicon key="osd_video_audio_selection" image="menu/osd_video_audio_selection.svg" />
-		<menuicon key="parental_setup" image="menu/parental_setup.svg" />
-		<menuicon key="plugin_selection" image="menu/plugin_selection.svg" />
-		<menuicon key="primary_skin_selector" image="menu/primary_skin_selector.svg" />
-		<menuicon key="rec" image="menu/record_paths.svg" />
-		<menuicon key="record_paths" image="menu/record_paths.svg" />
-		<menuicon key="restart" image="menu/restart.svg" />
-		<menuicon key="restart_enigma" image="menu/restart_enigma.svg" />
-		<menuicon key="scan" image="menu/service_searching_selection.svg" />
-		<menuicon key="service_searching_selection" image="menu/service_searching_selection.svg" />
-		<menuicon key="setup" image="menu/setup_selection.svg" />
-		<menuicon key="setup_selection" image="menu/setup_selection.svg" />
-		<menuicon key="setup_epgsingle" image="menu/epg_setup.svg" />
-		<menuicon key="setup_epggrid" image="menu/epg_setup.svg" />
-		<menuicon key="setup_epginfobarsingle" image="menu/epg_setup.svg" />
-		<menuicon key="setup_epginfobargrid" image="menu/epg_setup.svg" />
-		<menuicon key="setup_epgmulti" image="menu/epg_setup.svg" />
-		<menuicon key="shutdown" image="menu/standby.svg" />
-		<menuicon key="skin_setup" image="menu/gui_settings.svg" />
-		<menuicon key="sleep" image="menu/sleep.svg" />
-		<menuicon key="standby" image="menu/standby.svg" />
-		<menuicon key="standby_restart_list" image="menu/standby_restart_list.svg" />
-		<menuicon key="deep_standby" image="menu/standby.svg" />
-		<menuicon key="multiboot" image="menu/multiboot.svg" />
-		<menuicon key="system" image="menu/system_selection.svg" />
-		<menuicon key="system_selection" image="menu/system_selection.svg" />
-		<menuicon key="timer_edit" image="menu/timer_edit.svg" />
-		<menuicon key="timermenu" image="menu/timer_edit.svg" />
-		<menuicon key="autotimer_setup" image="menu/auto_timer.svg" />
-		<menuicon key="crontimer_edit" image="menu/cron_timer.svg" />
-		<menuicon key="powertimer_edit" image="menu/power_timer.svg" />
-		<menuicon key="timezone_setup" image="menu/timezone_setup.svg" />
-		<menuicon key="time_setup" image="menu/timezone_setup.svg" />
-		<menuicon key="tuner_setup" image="menu/tuner_setup.svg" />
-		<menuicon key="usage_setup" image="menu/usage_setup.svg" />
-		<menuicon key="user_interface" image="menu/gui_settings.svg" />
-		<menuicon key="video_selection" image="menu/video_selection.svg" />
-		<menuicon key="iptv_vod_menu" image="menu/vod.svg" />
-		<menuicon key="vod_movies" image="menu/film.svg" />
-		<menuicon key="vod_series" image="menu/tvshow.svg" />
-	</menuicons>
-	<menus>
-		<menu key="default" image="screen_icons/windows.png" />
-	</menus>
 	<setups>
 		<setup key="default" image="screen_icons/setup.png" />
 		<setup key="timerentry" image="screen_icons/timer_setup.png" />
@@ -301,6 +221,8 @@
 		</borderset>
 	</windowstyle>
 	<include filename="skin_templates.xml" />
+	<include filename="skin_templates_vix_bh_pli.xml" conditional="BoxInfo.getItem('distro') != 'openatv'"/>
+	<include filename="skin_templates_atv.xml" conditional="BoxInfo.getItem('distro') == 'openatv'"/>
 	<include filename="skin_wizard.xml" />
 	<include filename="skin_plugins.xml" />
 	<include filename="skin_oea.xml" />
