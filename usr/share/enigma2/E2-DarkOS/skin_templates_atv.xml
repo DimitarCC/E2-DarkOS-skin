@@ -15,10 +15,10 @@
             <widget source="Title" render="Label" position="74,15" size="e-300,50" halign="left" font="Bold; 34" foregroundColor="yellow" zPosition="20">
                 <convert type="ConfigEntryTestVisible">config.usage.showScreenPath,small,Invert</convert>
             </widget>
-            <widget source="Title" render="Label" position="74,15" size="e-300,30" halign="left" font="Bold; 26" foregroundColor="yellow" zPosition="20">
+            <widget source="Title" render="Label" position="74,7" size="e-300,30" halign="left" font="Bold; 26" foregroundColor="yellow" zPosition="20">
                 <convert type="ConfigEntryTestVisible">config.usage.showScreenPath,small</convert>
             </widget>
-            <widget source="ScreenPath" render="Label" position="74,45" size="e-300,20" halign="left" font="Bold; 17" foregroundColor="yellow" zPosition="20">
+            <widget source="ScreenPath" render="Label" position="74,37" size="e-300,20" halign="left" font="Bold; 17" foregroundColor="yellow" zPosition="20">
                 <convert type="ConfigEntryTestVisible">config.usage.showScreenPath,small</convert>
             </widget>
 

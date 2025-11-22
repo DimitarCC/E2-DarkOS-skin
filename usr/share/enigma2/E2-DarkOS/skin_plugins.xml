@@ -672,9 +672,11 @@
 	</screen>
 	<screen name="FastScanStatus" title="Fast Scan" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1"/>
-		<widget name="frontend" pixmap="icons/scan-s.png" position="30,105" size="96,96" zPosition="2" transparent="1" alphatest="on"/>
-		<widget name="scan_state" position="30,270" zPosition="2" size="810,45" valign="center" font="Regular;30" transparent="1"/>
-		<widget name="scan_progress" position="30,322" size="810,22" pixmap="progress_big.png" borderWidth="2" borderColor="uncccccc"/>
+		<panel position="105,130" size="1690,902">
+			<widget name="frontend" pixmap="icons/scan-s.png" position="30,105" size="96,96" zPosition="2" transparent="1" alphatest="blend"/>
+			<widget name="scan_state" position="30,270" zPosition="2" size="810,45" valign="center" font="Regular;30" transparent="1"/>
+			<widget name="scan_progress" position="30,322" size="810,22" pixmap="progress_big.png" borderWidth="2" borderColor="uncccccc"/>
+		</panel>
 	</screen>
 
 	<!-- Cable Scan -->

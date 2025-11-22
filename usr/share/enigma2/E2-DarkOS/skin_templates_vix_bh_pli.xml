@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin>
-	<screen name="Screen_1_1">
-		<panel position="96,54" size="1728,992">
-			<panel name="Screen_1" />
-			<panel position="e-100,e-70" size="74,34">
-				<panel name="BrandLogoTemplate" />
-			</panel>
-			<widget backgroundColor="background2" font="Bold; 36" foregroundColor="white" halign="right" position="e-438,2" render="Label" size="420,64" source="global.CurrentTime" transparent="1" valign="center" zPosition="20">
-			  <convert type="ClockToText">Default</convert>
-			</widget>
-			<widget addon="ScreenHeader" connection="Image,Title,ScreenPath" position="20,3" size="e-260,60" titleFont="Bold; 26" titleSingleFont="Bold; 34" pathFont="Bold; 17" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" />
-		</panel>	
-		<eLabel position="104,120" size="1712,2" zPosition="-5" backgroundColor="dark_grey" />
-	</screen>
 	<menuicons>
 		<menuicon key="default" image="menu/missing.svg" />
 		<menuicon key="a_setup" image="menu/a_setup.svg" />

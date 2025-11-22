@@ -222,6 +222,8 @@
 	</windowstyle>
 	<include filename="skin_templates.xml" />
 	<include filename="skin_templates_vix_bh_pli.xml" conditional="BoxInfo.getItem('distro') != 'openatv'"/>
+	<include filename="skin_templates_vix_bh.xml" conditional="BoxInfo.getItem('distro') == 'openvix' or BoxInfo.getItem('distro') == 'openbh'"/>
+	<include filename="skin_templates_pli.xml" conditional="BoxInfo.getItem('distro') == 'openpli'"/>
 	<include filename="skin_templates_atv.xml" conditional="BoxInfo.getItem('distro') == 'openatv'"/>
 	<include filename="skin_wizard.xml" />
 	<include filename="skin_plugins.xml" />
