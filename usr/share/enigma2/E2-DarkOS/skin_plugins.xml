@@ -1199,6 +1199,18 @@
 		</widget>
 		<widget name="Timeline" position="105,925" size="1712,30" backgroundColor="grey" pointer="skin_default/position_arrow.png:3,5" foregroundColor="black" />
 	</screen>
+	<screen name="CutListContextMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_menu2"/>
+		<widget source="menu" render="Listbox" position="515,220" size="889,10*60" font="Regular;30" itemHeight="60" scrollbarMode="showNever" foregroundColor="grey" enableWrapAround="1" itemCornerRadius="6">
+			<convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (60,0), size = (809,60), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0) ],
+					"fonts": [gFont("Regular",36)],
+					"itemHeight": 60
+				}
+			</convert>
+		</widget>
+		<widget addon="Pager" connection="menu" position="515,837" size="889,25" transparent="1" backgroundColor="background" />
+	</screen>
 	<screen name="BluetoothDevicesManager" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_menu2" />
 		<widget name="devicelist" position="545,234" size="860,11*45" itemHeight="45" scrollbarMode="showNever" font="Regular;28" enableWrapAround="1" transparent="1" itemCornerRadius="6"/>
