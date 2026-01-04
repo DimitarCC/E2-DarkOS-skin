@@ -837,9 +837,9 @@ if callable(loadLogo):
 	<screen name="NumberZap" title="Channel" position="150,67" size="860,155" backgroundColor="transparent" flags="wfNoBorder">
 		<ePixmap position="2,2" size="856,151" pixmap="extzap_overlay.png" zPosition="-11" alphatest="blend" />
 		<ePixmap position="0,0" size="860,155" pixmap="extzap_bg.png" zPosition="-12" alphatest="blend" />
-		<widget name="channel" position="10,10" size="180,60" backgroundColor="transparent" transparent="1" font="Regular;39" borderColor="black" borderWidth="2" valign="center" halign="left" />
-		<widget name="number" position="190,10" size="150,60" backgroundColor="transparent" transparent="1" font="Regular;39" borderColor="black" borderWidth="2" valign="center" halign="left" />
-		<widget name="servicename" position="10,72" size="651,70" backgroundColor="transparent" transparent="1" font="Regular;33" borderColor="black" borderWidth="2" valign="center" halign="left" />
+		<widget name="channel" position="10,10" size="180,60" backgroundColor="transparent" transparent="1" font="Regular;39" borderColor="black" borderWidth="2" valign="center" halign="left" alphatest="blend" />
+		<widget name="number" position="190,10" size="150,60" backgroundColor="transparent" transparent="1" font="Regular;39" borderColor="black" borderWidth="2" valign="center" halign="left" alphatest="blend" />
+		<widget name="servicename" position="10,72" size="651,70" backgroundColor="transparent" transparent="1" font="Regular;33" borderColor="black" borderWidth="2" valign="center" halign="left" alphatest="blend" />
 	</screen>
 
 	<!-- VideoMode -->
