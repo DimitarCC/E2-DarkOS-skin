@@ -21,6 +21,7 @@
 		<menuicon key="epg_setup" image="menu/epg_setup.svg" />
 		<menuicon key="factory_reset" image="menu/factory_reset.svg" />
 		<menuicon key="gui_menu" image="menu/gui_settings.svg" />
+		<menuicon key="skin_selection" image="menu/gui_settings.svg" />
 		<menuicon key="gui_settings" image="menu/gui_settings.svg" />
 		<menuicon key="hardisk" image="menu/hardisk_selection.svg" />
 		<menuicon key="hardisk_selection" image="menu/hardisk_selection.svg" />

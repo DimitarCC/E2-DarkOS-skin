@@ -11,16 +11,7 @@
 			</widget>
 
             <eLabel position="20,3" size="e-260,60" backgroundColor="background" zPosition="19" />
-            <widget name="Image" position="24,15" size="50,50" alphatest="blend" conditional="Image" zPosition="20"/>
-            <widget source="Title" render="Label" position="74,15" size="e-300,50" halign="left" font="Bold; 34" foregroundColor="yellow" zPosition="20">
-                <convert type="ConfigEntryTestVisible">config.usage.showScreenPath,small,Invert</convert>
-            </widget>
-            <widget source="Title" render="Label" position="74,7" size="e-300,30" halign="left" font="Bold; 26" foregroundColor="yellow" zPosition="20">
-                <convert type="ConfigEntryTestVisible">config.usage.showScreenPath,small</convert>
-            </widget>
-            <widget source="ScreenPath" render="Label" position="74,37" size="e-300,20" halign="left" font="Bold; 17" foregroundColor="yellow" zPosition="20">
-                <convert type="ConfigEntryTestVisible">config.usage.showScreenPath,small</convert>
-            </widget>
+            <widget addon="ScreenHeader" connection="Image,Title,ScreenPath" position="20,2" size="e-260,60" titleFont="Bold; 28" titleSingleFont="Bold; 34" pathFont="Bold; 18" titleForegroundColor="yellow" pathForegroundColor="yellow" backgroundColor="background" zPosition="20"/>
 
 		</panel>	
 		<eLabel position="104,120" size="1712,2" zPosition="-5" backgroundColor="dark_grey" />
