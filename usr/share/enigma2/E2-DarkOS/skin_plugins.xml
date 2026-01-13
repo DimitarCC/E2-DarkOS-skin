@@ -416,7 +416,6 @@
 	<!-- EPG Refresh -->
 	<screen name="EPGRefreshConfiguration" position="fill" title="Configuration of EPGRefresh" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
-		<widget source="help" render="Label" position="145,755" size="1630,100" font="Regular;28" zPosition="1" halign="left" backgroundColor="secondBG" transparent="1"/>
 	 </screen>
 	<screen name="EPGRefreshServiceEditor" position="fill" title="Edit Services to refresh" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
