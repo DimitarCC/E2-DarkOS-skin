@@ -259,8 +259,8 @@
 		<convert type="TemplatedMultiContent">
 					{"template": [
 							MultiContentEntryText(pos = (90,7),size = (870,42),font=0,flags = RT_HALIGN_LEFT,text = 0),# index 2 is the Menu Titel
-							MultiContentEntryText(pos = (105,52),size = (855,30),font=1,flags = RT_HALIGN_LEFT,text = 2),# index 3 is the Description
-							MultiContentEntryPixmapAlphaTest(pos = (15,15),size = (72,72),png = 3),# index 4 is the pixmap
+							MultiContentEntryText(pos = (90,52),size = (870,30),font=1,flags = RT_HALIGN_LEFT,text = 2),# index 3 is the Description
+							MultiContentEntryPixmapAlphaBlend(pos = (15,15),size = (72,72),png = 3),# index 4 is the pixmap
 						],
 					"fonts": [gFont("Regular",33),gFont("Regular",23)],
 					"itemHeight": 90
@@ -269,20 +269,20 @@
 		</widget>
 		<widget source="introduction" render="Label" position="405,780" size="1110,34" transparent="1" zPosition="10" font="Regular;30" valign="center" halign="center" />
 	</screen>
-	<screen name="UserManager" title="UserManager" position="fill" flags="wfNoBorder"><!-- What is this? -->
-		<panel name="PigTemplate" />
-		<widget source="config" render="Listbox" position="780,105" size="1110,630" zPosition="3" transparent="1" scrollbarMode="showOnDemand" itemCornerRadius="6">
+	<screen name="UserManager" title="UserManager" position="fill" flags="wfNoBorder" backgroundColor="transparent"><!-- What is this? -->
+		<panel name="Screen_Menu1" />
+		<widget source="config" render="Listbox" position="405,205" size="1110,6*90" transparent="1" scrollbarMode="showOnDemand" itemCornerRadius="6">
 		<convert type="TemplatedMultiContent">
 					{"template": [
-							MultiContentEntryText(pos = (120,6),size = (885,75),font=0,flags = RT_HALIGN_LEFT,text = 0),# index 0 is the name
-							MultiContentEntryPixmapAlphaTest(pos = (15,15),size = (72,72),png = 3),# index 4 is the status pixmap
+							MultiContentEntryText(pos = (90,24),size = (870,42),font=0,flags = RT_HALIGN_LEFT,text = 0),
+							MultiContentEntryPixmapAlphaBlend(pos = (15,15),size = (72,72),png = 3),
 						],
-					"fonts": [gFont("Regular",30)],
+					"fonts": [gFont("Regular",33),gFont("Regular",23)],
 					"itemHeight": 90
 					}
 				</convert>
 		</widget>
-		<widget source="introduction" render="Label" position="780,975" size="1110,34" backgroundColor="background" transparent="1" font="Regular;30" halign="center" />
+		<widget source="introduction" render="Label" position="405,780" size="1110,34" transparent="1" zPosition="10" font="Regular;30" valign="center" halign="center" />
 	</screen>
 	<screen name="AutoMountView" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="ConfigScreenTemplate"/>
