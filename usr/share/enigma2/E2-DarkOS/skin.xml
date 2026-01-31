@@ -1008,6 +1008,12 @@ if callable(loadLogo):
 		<widget addon="Pager" connection="menu" position="512,849" size="889,25" transparent="1" backgroundColor="background" />
 	</screen>
 
+	<screen name="EventViewContextMenu" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_menu2" />
+		<widget name="menu" position="512,215" size="889,635" textOffset="15,7" itemHeight="45" font="Regular;28" scrollbarMode="showNever" itemCornerRadius="6"/>
+		<widget addon="Pager" connection="menu" position="512,849" size="889,25" transparent="1" backgroundColor="background" />
+	</screen>
+
   	<!-- Minute input -->
 	<screen name="MinuteInput" position="center,center" size="360,82" flags="wfNoBorder">
 		<ePixmap position="0,0" size="364,86" pixmap="chzap_bg.png" alphatest="blend" zPosition="-9" />
