@@ -152,7 +152,8 @@
 		<parameter name="SelectionListLockOff" value="25,6,32,32"/>
 		<parameter name="SelectionListDescr" value="80,5,650,45"/>
 		<parameter name="EPGImportSelectionListDescr" value="60,5,1000,45"/>
-		<parameter name="EPGImportSelectionListLock" value="5,6,53,45"/> 
+		<parameter name="EPGImportSelectionListLock" value="5,6,53,45"/>
+		<parameter name="AllowUserDatesAndTimes" value="1,1"/> 
 	</parameters>
 	<switchpixmap>
 		<pixmap name="menu_on" filename="icons/menu_on.png" />

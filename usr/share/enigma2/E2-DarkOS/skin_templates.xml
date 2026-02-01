@@ -146,8 +146,8 @@
 		</widget>
 		
 		<widget addon="ServiceInfoBar" connection="session" position="1200,877" size="658,26" zPosition="110" backgroundColor="background" transparent="1" elements="gamma,videoRes,separator,crypt,currentCrypto,separator,txt,dolby,audiotrack,subtitletrack,subservices,stream,hbbtv,separator,catchup,separator,servicetype,separator,record" 
-			pixmaps="IS_HDR:icons/hdr_on.png,IS_HDR10:icons/hdr_on.png,IS_HLG:icons/hdr_on.png,IS_HD:icons/HD_s_n.png,IS_4K:icons/4K_s_n.png,IS_SD:icons/SD_s_n.png,txt:icons/ico_txt_on.png,dolby:icons/dd_s.png,crypt:icons/crypt_s.png,audiotrack:icons/ml_s_alt2.png,subtitletrack:icons/subs_s.png,hbbtv:icons/hbbtv_s.png,subservices:icons/ico_subs_on.png,stream:icons/streaming.png,record:icons/rec2.png,catchup:icons/ico_catchup.png,sat:icons/satdish.png,cable:icons/ico_dvb-c.png,terestrial:icons/ico_dvb-t.png,iptv:icons/ico_stream.png"
-			pixmapsDisabled="crypt:icons/crypt_s_off.png"
+			pixmaps="IS_HDR:icons/hdr_on.png,IS_HDR10:icons/hdr_on.png,IS_HLG:icons/hdr_on.png,IS_HD:icons/HD_s_n.png,IS_4K:icons/4K_s_n.png,IS_SD:icons/SD_s_n.png,txt:icons/ico_txt_on.png,dolby:icons/dd_s.png,crypt:icons/crypt.png,IS_CRYPT:icons/crypt.png,IS_CRYPT_CSA:icons/cryptscsa.png,audiotrack:icons/ml_s_alt2.png,subtitletrack:icons/subs_s.png,hbbtv:icons/hbbtv_s.png,subservices:icons/ico_subs_on.png,stream:icons/streaming.png,record:icons/rec2.png,catchup:icons/ico_catchup.png,sat:icons/satdish.png,cable:icons/ico_dvb-c.png,terestrial:icons/ico_dvb-t.png,iptv:icons/ico_stream.png"
+			pixmapsDisabled="crypt:icons/crypt_off.png"
 			permanent="videoRes,crypt,currentCrypto" alignment="right" spacing="20" autoresizeMode="condensed" separatorLineColor="separator" separatorLineThickness="1" font="Bold;25" foregroundColor="green" />
 		
 		<widget backgroundColor="dark_grey" font="Bold;32" halign="left" noWrap="1" position="390,927" render="Label" size="80,45" source="session.Event_Now" transparent="1" valign="center" zPosition="3" foregroundColor="light_yellow">
@@ -260,7 +260,7 @@
 		<convert type="FrontendInfo">USE_TUNERS_STRING</convert>
 		</widget>-->
 		<widget addon="ServiceInfoBar" connection="session" position="1100,979" size="700,30" zPosition="110" backgroundColor="background5" transparent="1" elements="videoRes,txt,dolby,audiotrack,subtitletrack,subservices,stream,hbbtv,separator,catchup,separator,servicetype,separator,record,separator,tuners" 
-				pixmaps="IS_HD:icons/HD_s_n.png,IS_4K:icons/4K_s_n.png,IS_SD:icons/SD_s_n.png,txt:icons/ico_txt_on.png,dolby:icons/dd_s.png,crypt:icons/crypt_s.png,audiotrack:icons/ml_s_alt2.png,subtitletrack:icons/subs_s.png,hbbtv:icons/hbbtv_s.png,subservices:icons/ico_subs_on.png,stream:icons/streaming.png,record:icons/rec2.png,catchup:icons/ico_catchup.png,sat:icons/satdish.png,cable:icons/ico_dvb-c.png,terestrial:icons/ico_dvb-t.png,iptv:icons/ico_stream.png"
+				pixmaps="IS_HD:icons/HD_s_n.png,IS_4K:icons/4K_s_n.png,IS_SD:icons/SD_s_n.png,txt:icons/ico_txt_on.png,dolby:icons/dd_s.png,crypt:icons/crypt_s.png,cryptscsa:icons/cryptscsa.png,audiotrack:icons/ml_s_alt2.png,subtitletrack:icons/subs_s.png,hbbtv:icons/hbbtv_s.png,subservices:icons/ico_subs_on.png,stream:icons/streaming.png,record:icons/rec2.png,catchup:icons/ico_catchup.png,sat:icons/satdish.png,cable:icons/ico_dvb-c.png,terestrial:icons/ico_dvb-t.png,iptv:icons/ico_stream.png"
 				alignment="right" spacing="20" autoresizeMode="condensed" separatorLineColor="separator" separatorLineThickness="1" font="Bold;30" foregroundColor="green" textBackColor="background5" />
 		<widget backgroundColor="background2" font="Bold; 60" foregroundColor="white" halign="center" position="1521,762" render="Label" size="320,70" source="global.CurrentTime" transparent="1" valign="top" zPosition="20">
 			<convert type="ClockToText">Default</convert>
