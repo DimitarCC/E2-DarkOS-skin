@@ -77,6 +77,8 @@
 		<menuicon key="iptv_vod_menu" image="menu/vod.svg" />
 		<menuicon key="vod_movies" image="menu/film.svg" />
 		<menuicon key="vod_series" image="menu/tvshow.svg" />
+		<menuicon key="e2_emby_menu" image="menu/e2_emby_menu.png" />
+		<menuicon key="e2_jellyfin_menu" image="menu/e2_jellyfin_menu.png" />
 	</menuicons>
 	<menus>
 		<menu key="default" image="screen_icons/windows.png" />
