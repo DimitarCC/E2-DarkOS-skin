@@ -1364,10 +1364,12 @@ if callable(loadLogo):
 	<screen name="MessageBoxSimple" position="center,center" size="960,15" title="Message" zPosition="10" flags="wfNoBorder" backgroundColor="transparent">
 		<widget source="Title" render="Label" position="15,3" size="250,40" font="Bold; 28" halign="left" foregroundColor="yellow" backgroundColor="background" valign="center" zPosition="2" />
 		<widget name="text" position="100,12" size="780,0" font="Regular;32" backgroundColor="background"/>
-		<widget name="ErrorPixmap" pixmap="icons/input_error.png" position="10,10" size="80,80" alphatest="blend" />
-		<widget name="QuestionPixmap" pixmap="icons/input_question.png" position="10,10" size="80,80" alphatest="blend" />
-		<widget name="InfoPixmap" pixmap="icons/input_info.png" position="10,10" size="80,80" alphatest="blend" />
-		<widget name="WarningPixmap" pixmap="icons/input_warning.png" position="10,10" size="80,80" alphatest="blend" />
+		<widget name="icon" pixmaps="icons/input_question.png,icons/input_info.png,icons/input_warning.png,icons/input_error.png,icons/input_message.png" position="10,10" size="80,80" alphatest="blend" conditional="icon"/>
+		<!-- ErrorPixmap, QuestionPixmap, InfoPixmap, WarningPixmap no longer used by openatv, openvix -->
+		<widget name="ErrorPixmap" pixmap="icons/input_error.png" position="10,10" size="80,80" alphatest="blend" conditional="ErrorPixmap"/>
+		<widget name="QuestionPixmap" pixmap="icons/input_question.png" position="10,10" size="80,80" alphatest="blend" conditional="QuestionPixmap"/>
+		<widget name="InfoPixmap" pixmap="icons/input_info.png" position="10,10" size="80,80" alphatest="blend" conditional="icon"/>
+		<widget name="WarningPixmap" pixmap="icons/input_warning.png" position="10,10" size="80,80" alphatest="blend" conditional="WarningPixmap"/>
 		<widget name="list" textOffset="20, 2" position="150,150" size="720,570" itemHeight="45" font="Regular;28" zPosition="2" transparent="1" backgroundColor="transparent" itemCornerRadius="6"/>
 		<widget name="autoresize" conditional="autoresize" position="0,0" size="0,0" font="Regular;28" noWrap="1" />
 		<applet type="onLayoutFinish">
@@ -1419,14 +1421,21 @@ wsize = (wsizex, wsizey + titleheight)
 self.instance.resize(eSize(*wsize))
 self["text"].instance.move(ePoint(130, 75 + titleheight))
 self["text"].instance.resize(eSize(*textsize))
-self["ErrorPixmap"].instance.move(ePoint(30, 80 + titleheight))
-self["ErrorPixmap"].instance.resize(eSize(80,80))
-self["WarningPixmap"].instance.move(ePoint(30, 80 + titleheight))
-self["WarningPixmap"].instance.resize(eSize(80,80))
-self["QuestionPixmap"].instance.move(ePoint(30, 80 + titleheight))
-self["QuestionPixmap"].instance.resize(eSize(80,80))
-self["InfoPixmap"].instance.move(ePoint(30, 80 + titleheight))
-self["InfoPixmap"].instance.resize(eSize(80,80))
+if "ErrorPixmap" in self:
+	self["ErrorPixmap"].instance.move(ePoint(30, 80 + titleheight))
+	self["ErrorPixmap"].instance.resize(eSize(80,80))
+if "WarningPixmap" in self:
+	self["WarningPixmap"].instance.move(ePoint(30, 80 + titleheight))
+	self["WarningPixmap"].instance.resize(eSize(80,80))
+if "QuestionPixmap" in self:
+	self["QuestionPixmap"].instance.move(ePoint(30, 80 + titleheight))
+	self["QuestionPixmap"].instance.resize(eSize(80,80))
+if "InfoPixmap" in self:
+	self["InfoPixmap"].instance.move(ePoint(30, 80 + titleheight))
+	self["InfoPixmap"].instance.resize(eSize(80,80))
+if "icon" in self:
+	self["icon"].instance.move(ePoint(30, 80 + titleheight))
+	self["icon"].instance.resize(eSize(80,80))
 if self.type == self.TYPE_YESNO:
 	listsize = (wsizex-20, lenlist)
 	self["list"].instance.move(ePoint(10, wsizey - lenlist + titleheight - 94 - 3))
