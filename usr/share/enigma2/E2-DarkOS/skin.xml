@@ -1083,17 +1083,6 @@ if callable(loadLogo):
 		<widget addon="Pager" connection="timerlist" position="396,849" size="1130,25" transparent="1" backgroundColor="background" />
 	</screen>
 
-	<!-- Plugin browser -->
-	<screen name="PluginBrowser" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="Screen_3" />
-		<widget name="list" position="center,210" size="1356,610" scrollbarMode="showNever" itemCornerRadius="6"/>
-		<widget addon="Pager" connection="list" position="396,835" size="1130,25" transparent="1" backgroundColor="background" />
-	</screen>
-	<screen name="PluginDownloadBrowser" title="Downloadable plugins" position="fill" flags="wfNoBorder" backgroundColor="transparent">
-		<panel name="PluginBrowser" />
-		<widget name="text" position="399,225" size="1110,75" zPosition="-1" transparent="1" font="Regular;32" valign="center" halign="center" />
-	</screen>
-
 	<!-- File Browser -->
 	<screen name="FileBrowser" title="DVD File Browser" position="fill" flags="wfNoBorder">
 		<panel name="Screen_Menu1" />
@@ -1784,8 +1773,8 @@ if callable(loadLogo):
 	</screen>
 
 	<!-- QuitMainloopScreen -->
-	<screen name="QuitMainloopScreen" position="fill" flags="wfNoBorder" backgroundColor="#00000000">
-		<ePixmap pixmap="../logo/logo-white-square.png" position="c-200,c-318" size="400,318" scale="1" alphatest="blend" />
+	<screen name="QuitMainloopScreen" position="fill" flags="wfNoBorder" backgroundColor="#000000" zPosition="100">
+		<widget source="global.CurrentTime" render="BoxLogo" position="center,c-65" size="302,65" zPosition="10" alphatest="blend" />
 		<widget name="text" position="c-885,c+15" size="1770,150" font="Regular;30" halign="center" backgroundColor="#00000000"/>
 	</screen>
 

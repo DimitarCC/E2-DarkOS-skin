@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin>
+	<!-- Plugin browser -->
+	<screen name="PluginBrowser" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_3" />
+		<widget name="list" position="center,210" size="1356,610" scrollbarMode="showNever" itemCornerRadius="6"/>
+		<widget addon="Pager" connection="list" position="396,835" size="1130,25" transparent="1" backgroundColor="background" />
+	</screen>
+	<screen name="PluginDownloadBrowser" title="Downloadable plugins" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="PluginBrowser" />
+		<widget name="text" position="399,225" size="1110,75" zPosition="-1" transparent="1" font="Regular;32" valign="center" halign="center" />
+	</screen>
+	
 	<!-- Console screens -->
 	<screen name="Console_Pig" title="Command execution" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />
