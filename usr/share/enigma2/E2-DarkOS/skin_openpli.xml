@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin>
+	<!-- QuitMainloopScreen -->
+	<screen name="QuitMainloopScreen" position="fill" flags="wfNoBorder" backgroundColor="#00000000">
+		<ePixmap pixmap="../logo/logo-white-square.png" position="c-200,c-318" size="400,318" scale="1" alphatest="blend" />
+		<widget name="text" position="c-885,c+15" size="1770,150" font="Regular;30" halign="center" backgroundColor="#00000000"/>
+	</screen>
+	
 	<!-- Plugin browser -->
 	<screen name="PluginBrowser" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_3" />
@@ -10,7 +16,7 @@
 		<panel name="PluginBrowser" />
 		<widget name="text" position="399,225" size="1110,75" zPosition="-1" transparent="1" font="Regular;32" valign="center" halign="center" />
 	</screen>
-	
+
 	<!-- Console screens -->
 	<screen name="Console_Pig" title="Command execution" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />

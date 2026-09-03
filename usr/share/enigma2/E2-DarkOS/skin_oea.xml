@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin>
+	<!-- QuitMainloopScreen -->
+	<screen name="QuitMainloopScreen" position="fill" flags="wfNoBorder" backgroundColor="#000000" zPosition="100">
+		<widget source="global.CurrentTime" render="BoxLogo" position="center,c-65" size="302,65" zPosition="10" alphatest="blend" />
+		<widget name="text" position="c-885,c+15" size="1770,150" font="Regular;30" halign="center" backgroundColor="#00000000"/>
+	</screen>
+	
 	<!-- Plugin browser -->
 	<screen name="PluginBrowser" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_3" />
