@@ -6,6 +6,12 @@
 		<widget name="text" position="c-885,c+15" size="1770,150" font="Regular;30" halign="center" backgroundColor="#00000000"/>
 	</screen>
 	
+	<!-- HDMI Test -->
+	<screen name="HdmiTestInfoScreen" position="fill" flags="wfNoBorder" title="HdmiTest - incomming messages" backgroundColor="transparent">
+		<panel name="Screen_Menu1" />
+		<widget name="rxtext" position="400,228" size="1120,616" zPosition="1" font="Regular;24" halign="left"/>
+	</screen>
+	
 	<!-- Plugin browser -->
 	<screen name="PluginBrowser" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_3" />
