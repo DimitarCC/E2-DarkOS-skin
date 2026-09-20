@@ -33,8 +33,8 @@
 	<!-- AutoBackup -->
 	<screen name="Config" position="fill" flags="wfNoBorder">
 		<panel name="ConfigScreenTemplate" />
-		<widget name="statusbar" position="145,865" zPosition="5" size="1630,30" font="Regular;28" />
-		<widget name="status" position="145,755" size="1630,100" font="Regular;28" />
+		<widget name="statusbar" position="145,975" zPosition="5" size="1630,30" font="Regular;28" />
+		<widget name="status" position="145,865" size="1630,100" font="Regular;28" />
 	</screen>
 
 	<!-- ==== Opkg screens ==== -->
