@@ -32,9 +32,13 @@
 
 	<!-- AutoBackup -->
 	<screen name="Config" position="fill" flags="wfNoBorder">
-		<panel name="ConfigScreenTemplate" />
-		<widget name="statusbar" position="145,975" zPosition="5" size="1630,30" font="Regular;28" />
-		<widget name="status" position="145,865" size="1630,100" font="Regular;28" />
+		<panel name="Screen_1_1" />
+		<widget name="config" conditional="config" position="125,150" size="1670,10*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" itemCornerRadius="6" separatorLineColor="separator"/>
+		<widget name="HelpWindow" conditional="HelpWindow" pixmap="icons/vkey_icon.png" position="e,150" zPosition="1" size="1,1" transparent="1" alphatest="blend"/><!-- hidden at the moment -->
+		<widget name="description" objectTypes="description,Button,Label" position="145,600" size="1630,100" font="Regular;28" valign="center" halign="center"/>
+		<widget source="description" render="Label" objectTypes="description,StaticText" position="145,600" size="1630,100" font="Regular;28" valign="center" halign="center"/>
+		<widget name="statusbar" position="145,820" zPosition="5" size="1630,30" font="Regular;28" />
+		<widget name="status" position="145,710" size="1630,100" font="Regular;28" />
 	</screen>
 
 	<!-- ==== Opkg screens ==== -->
