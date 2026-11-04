@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -v \"<panel name=\\\\\"\\\\\\(ConfigScreenTemplate\\\\|Screen_1_1\\\\\\)\\\\\" */\\\\?>\")",
+      "WebFetch(domain:raw.githubusercontent.com)"
+    ]
+  }
+}

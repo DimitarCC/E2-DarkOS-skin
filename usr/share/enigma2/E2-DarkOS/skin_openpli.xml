@@ -41,6 +41,16 @@
 		<widget name="status" position="145,710" size="1630,100" font="Regular;28" />
 	</screen>
 
+	<screen name="ArchiveList" title="Backup archive list" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Screen_1_1" />
+		<widget name="list" position="125,150" size="810,15*45" itemHeight="45" font="Regular;28" scrollbarMode="showNever" valign="center" itemCornerRadius="6" />
+		<widget addon="Pager" connection="list" position="145,915" size="770,25" transparent="1" backgroundColor="background" />
+		<widget name="message" position="125,150" size="810,15*45" font="Regular;28" halign="center" valign="center" transparent="1" />
+		<eLabel position="950,150" size="2,15*45" zPosition="-5" backgroundColor="dark_grey" />
+		<widget name="preview" position="965,150" size="830,15*45" font="Regular;28" scrollbarMode="showNever" />
+		<widget addon="Pager" connection="preview" position="985,915" size="790,25" transparent="1" backgroundColor="background" />
+	</screen>
+
 	<!-- ==== Opkg screens ==== -->
 	<screen name="OpkgInstaller" position="fill" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="Screen_1_1" />
