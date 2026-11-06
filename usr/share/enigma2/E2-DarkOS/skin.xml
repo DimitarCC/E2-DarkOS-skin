@@ -644,7 +644,7 @@
 		<eLabel position="25,373" size="1866,607" zPosition="-2" widgetBorderWidth="1" widgetBorderColor="separator" backgroundColor="background" cornerRadius="6"/>
 		<widget name="timeline_text" position="27,375" size="1862,31" zPosition="2" foregroundColor="foreground" backgroundColor="background" borderWidth="1" fullBorder="0" borderColor="separator"/>
 		<eLabel position="25,408" size="1866,1" zPosition="10" backgroundColor="separator" />
-		<widget name="list" position="25,408" size="1865,518" itemHeight="64" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" 
+		<widget name="list" position="26,408" size="1864,518" itemHeight="64" scrollbarMode="showNever" enableWrapAround="1" scrollbarWidth="3" scrollbarSliderBorderWidth="0" scrollbarSliderForegroundColor="#e6e6e6" scrollbarSliderBorderColor="#080808" 
 			backgroundColor="background" EntryActiveBackgroundColor="#752626" EntryActiveBackgroundColorSelected="#0a3981" EntryForegroundColor="foreground" ServiceForegroundColorNow="yellow" EntryBackgroundColorSelected="#000A3153"
 			ServiceNameForegroundColor="foreground" ServiceNameBackgroundColor="background" ServiceNameBackgroundColorSelected="#00003F1F" ServiceBorderWidth="1" EventBorderWidth="1" RecIconSize="32" IconXPadding="6" IconYPadding="4" 
 			EventNamePadding="6" ServiceNamePadding="6" EntryBackgroundColor="background" EntryBackgroundColorNow="#00272728" EntryBackgroundColorNowSelected="#000A3153" EntryFont="Regular;28" ServiceFont="Regular;28"
