@@ -2,11 +2,29 @@
   "permissions": {
     "allow": [
       "Bash(grep -v \"<panel name=\\\\\"\\\\\\(ConfigScreenTemplate\\\\|Screen_1_1\\\\\\)\\\\\" */\\\\?>\")",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(python -c \"import ast;ast.parse\\(open\\('python/skin.py',encoding='utf-8'\\).read\\(\\)\\);print\\('skin.py syntax ok'\\)\")",
+      "Bash(python patch_elistbox.py \"e:/Enigma2Dev/OpenViX/enigma2/OpenViX-enigma2/lib/gui\" \"C:/Users/dimit/AppData/Local/Temp/claude/9b31268c08a5c090/22ce6305-87a5-49df-a0ca-5168d228fc92/scratchpad\")",
+      "Bash(python patch_tpl_span.py \"e:/Enigma2Dev/OpenViX/enigma2/OpenViX-enigma2/lib\")",
+      "Bash(python -c \"import ast;ast.parse\\(open\\('e:/Enigma2Dev/OpenViX/enigma2/OpenViX-enigma2/lib/python/skin.py',encoding='utf-8'\\).read\\(\\)\\);print\\('skin.py ok'\\)\")",
+      "Bash(tr -d '\\\\r')",
+      "Read(//tmp/**)",
+      "Bash(python patch_rowheights.py \"e:/Enigma2Dev/OpenViX/enigma2/OpenViX-enigma2/lib\" \"C:/Users/dimit/AppData/Local/Temp/claude/9b31268c08a5c090/22ce6305-87a5-49df-a0ca-5168d228fc92/scratchpad\")",
+      "Bash(python -c \"import ast;ast.parse\\(open\\('patch_rowheights.py',encoding='utf-8'\\).read\\(\\)\\);print\\('syntax ok'\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(python \"C:/Users/dimit/AppData/Local/Temp/claude/9b31268c08a5c090/22ce6305-87a5-49df-a0ca-5168d228fc92/scratchpad/patch_vertical.py\" .)",
+      "Bash(python \"C:/Users/dimit/AppData/Local/Temp/claude/9b31268c08a5c090/22ce6305-87a5-49df-a0ca-5168d228fc92/scratchpad/patch_headers.py\" .)",
+      "Bash(python -c \"import ast;ast.parse\\(open\\('skin.py',encoding='utf-8'\\).read\\(\\)\\);print\\('skin ok'\\)\")",
+      "Bash(cat)",
+      "Bash(python -c \"import ast;[ast.parse\\(open\\(f,encoding='utf-8'\\).read\\(\\)\\) for f in \\('config.py','ListHeader.py'\\)];print\\('ok'\\)\")",
+      "Bash(python \"C:/Users/dimit/AppData/Local/Temp/claude/9b31268c08a5c090/22ce6305-87a5-49df-a0ca-5168d228fc92/scratchpad/balance.py\" . gui/elistbox.cpp gui/elistbox.h gui/elistboxcontent.cpp gui/elistboxcontent.h service/listboxservicetpl.cpp service/listboxservicetpl.h)",
+      "Bash(python \"C:/Users/dimit/AppData/Local/Temp/claude/9b31268c08a5c090/22ce6305-87a5-49df-a0ca-5168d228fc92/scratchpad/patch_scroll.py\" .)",
+      "Bash(python \"C:/Users/dimit/AppData/Local/Temp/claude/9b31268c08a5c090/22ce6305-87a5-49df-a0ca-5168d228fc92/scratchpad/balance.py\" . gui/elistbox.cpp gui/elistbox.h)"
     ],
     "additionalDirectories": [
       "e:\\Enigma2Dev\\OpenViX\\enigma2\\OpenViX-enigma2\\lib\\python",
-      "e:\\Enigma2Dev\\OpenViX\\enigma2\\OpenViX-enigma2\\lib\\service"
+      "e:\\Enigma2Dev\\OpenViX\\enigma2\\OpenViX-enigma2\\lib\\service",
+      "e:\\Enigma2Dev\\OpenViX\\enigma2\\OpenViX-enigma2\\lib\\python\\Components\\Addons"
     ]
   }
 }

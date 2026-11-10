@@ -141,9 +141,9 @@
 				<item type="progress" width="60" style="bar" visible="cfg.barright,event" />
 			</row>
 			<row id="marker" for="marker" gap="16" padding="20,20">
-				<item type="line" width="*" height="1" style="separator" />
+				<item type="line" width="*" height="1" valign="center" style="separator" />
 				<item type="text" text="{name}" width="auto" font="Regular;31" fontGroup="name" style="name" />
-				<item type="line" width="*" height="1" style="separator" />
+				<item type="line" width="*" height="1" valign="center" style="separator" />
 			</row>
 			<row id="folder" for="directory" gap="16" padding="20,20">
 				<item type="kind" width="auto" />
@@ -153,7 +153,19 @@
 
 		<!-- Two lines: name + icons / event, progress and remaining time, picon spans both lines -->
 		<template name="double" base="single" title="Two lines" itemHeight="84">
-			<row id="main" for="service" height="42" gap="15" padding="16,15,0,0">
+			<!-- no event: only the name line, centred in the whole cell -->
+			<row id="main_noevent" for="service" visible="!event" gap="15" padding="16,15">
+				<item type="picon" pos="16,0,150,84" visible="cfg.picons" />
+				<item type="spacer" width="149" visible="cfg.picons" />
+				<item type="text" text="{number|  •  }{name}" width="*" valign="center" font="Regular;31" fontGroup="name" style="name" />
+				<item type="record" valign="center" visible="recorded" />
+				<item type="catchup" valign="center" visible="catchup" />
+				<item type="backup" valign="center" visible="backup" />
+				<item type="crypto" valign="center" visible="cfg.cryptoAny,crypted" />
+				<item type="servicetype" valign="center" visible="cfg.typeAny" />
+				<item type="resolution" valign="center" />
+			</row>
+			<row id="main" for="service" visible="event" height="42" gap="15" padding="16,15,0,0">
 				<item type="picon" pos="16,0,150,84" visible="cfg.picons" />
 				<item type="spacer" width="149" visible="cfg.picons" />
 				<item type="text" text="{number|  •  }{name}" width="*" valign="bottom" font="Regular;31" fontGroup="name" style="name" />
@@ -175,6 +187,8 @@
 
 		<!-- Two lines + next event: name, event, icons, progress / NEXT: title -->
 		<template name="double_next" base="double" title="Two lines + next event">
+			<!-- this template's own "main" row already handles no event; disable the inherited one (never visible) -->
+			<row id="main_noevent" for="service" visible="event,!event" />
 			<row id="main" for="service" gap="15" padding="16,15">
 				<item type="picon" pos="16,0,125,84" visible="cfg.picons" />
 				<item type="spacer" width="149" visible="cfg.picons" />
@@ -195,30 +209,41 @@
 			</row>
 		</template>
 
-		<!-- Grid: picon centred over the name, event and a progress bar; number top left, icons top right.
-		     6 columns x 6 rows in the 1152x840 list. -->
-		<template name="grid" title="Grid" layout="grid" large="0" itemWidth="192" itemHeight="140">
-			<row id="picon" for="service" height="74">
-				<item type="picon" width="*" margin="6" align="center" visible="cfg.picons" />
-				<item type="number" text="{number}" pos="10,4,70,26" font="Regular;22" fontGroup="number" style="number" visible="hasnumber" />
-				<item type="crypto" pos="112,6,34,26" align="right" visible="cfg.cryptoAny,crypted" />
-				<item type="record" pos="150,6,34,26" align="right" visible="recorded" />
+		<!-- Grid: picon centred over the name, event and a progress bar; number top left, icons top right on dark rounded plates.
+		     3 columns x 3 rows in the 1152x840 list (tiles are 2x the size of the old 6x6 grid). -->
+		<template name="grid" title="Grid" layout="grid" large="0" spanMarkers="1" markerHeight="56" itemWidth="384" itemHeight="280">
+			<row id="picon" for="service" height="160" padding="12,12,6,8">
+				<item type="picon" pos="20,20,384,140" align="center" z="-2" visible="cfg.picons" />
+				<item type="number" text="{number}" pos="20,8,140,52" font="Regular;30" fontGroup="number" style="number" visible="hasnumber" />
+				<!-- top right corner: two stacks with the same box, items and conditions, so they lay out identically: the first holds the
+				     dark plates (behind), the second the icons (in front). Both fill from the right: record takes the corner, crypto
+				     takes the corner when there is no record, otherwise the slot next to it. -->
+				<stack layout="horizontal" spacing="8" pos="198,6,164,44">
+					<item type="rect" width="52" color="#80000000" radius="8" z="-1" stackAlign="right" visible="recorded" />
+					<item type="rect" width="52" color="#80000000" radius="8" z="-1" stackAlign="right" visible="cfg.cryptoAny,crypted" />
+				</stack>
+				<stack layout="horizontal" spacing="8" pos="198,6,164,44">
+					<item type="record" width="52" align="center" valign="center" stackAlign="right" visible="recorded" />
+					<item type="crypto" width="52" align="center" valign="center" stackAlign="right" visible="cfg.cryptoAny,crypted" />
+				</stack>
 			</row>
-			<row id="name" for="service" height="30" padding="6,6">
-				<item type="text" text="{name}" width="*" align="center" font="Regular;24" fontGroup="name" style="name" />
+			<row id="name" for="service" height="54" padding="12,12">
+				<item type="text" text="{name}" width="*" align="center" font="Regular;34" fontGroup="name" style="name" />
 			</row>
-			<row id="event" for="service" height="24" padding="6,6">
-				<item type="text" text="{event}" width="*" align="center" font="Regular;20" fontGroup="info" style="event" visible="event" />
+			<row id="event" for="service" height="42" padding="12,12">
+				<item type="text" text="{event}" width="*" align="center" font="Regular;26" fontGroup="info" style="event" visible="event" />
 			</row>
-			<row id="bar" for="service" height="12" padding="24,24">
+			<row id="bar" for="service" height="20" padding="48,48">
 				<item type="progress" width="*" style="bar" visible="event" />
 			</row>
-			<row id="marker" for="marker" padding="8,8">
-				<item type="text" text="{name}" width="*" align="center" font="Regular;24" fontGroup="name" style="name" />
+			<row id="marker" for="marker" gap="16" padding="16,16,0,0">
+				<item type="line" width="*" height="1" valign="center" style="separator" />
+				<item type="text" text="{name}" width="auto" valign="center" font="Regular;34" fontGroup="name" style="name" />
+				<item type="line" width="*" height="1" valign="center" style="separator" />
 			</row>
-			<row id="folder" for="directory" gap="8" padding="8,8">
+			<row id="folder" for="directory" gap="16" padding="16,16">
 				<item type="kind" width="auto" />
-				<item type="text" text="{name}" width="*" font="Regular;24" fontGroup="name" style="name" />
+				<item type="text" text="{name}" width="*" font="Regular;34" fontGroup="name" style="name" />
 			</row>
 		</template>
 	</servicelisttemplates>
