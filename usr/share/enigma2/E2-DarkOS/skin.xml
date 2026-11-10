@@ -153,23 +153,23 @@
 
 		<!-- Two lines: name + icons / event, progress and remaining time, picon spans both lines -->
 		<template name="double" base="single" title="Two lines" itemHeight="84">
-			<row id="main" for="service" gap="15" padding="16,15">
-				<item type="picon" pos="16,0,125,84" visible="cfg.picons" />
+			<row id="main" for="service" height="42" gap="15" padding="16,15,0,0">
+				<item type="picon" pos="16,0,150,84" visible="cfg.picons" />
 				<item type="spacer" width="149" visible="cfg.picons" />
-				<item type="text" text="{number|  •  }{name}" width="*" font="Regular;31" fontGroup="name" style="name" />
-				<item type="record" visible="recorded" />
-				<item type="catchup" visible="catchup" />
-				<item type="backup" visible="backup" />
-				<item type="crypto" visible="cfg.cryptoAny,crypted" />
-				<item type="servicetype" visible="cfg.typeAny" />
-				<item type="resolution" />
+				<item type="text" text="{number|  •  }{name}" width="*" valign="bottom" font="Regular;31" fontGroup="name" style="name" />
+				<item type="record" valign="bottom" visible="recorded" lineHeight="34"/>
+				<item type="catchup" valign="bottom" visible="catchup" lineHeight="34"/>
+				<item type="backup" valign="bottom" visible="backup" lineHeight="34"/>
+				<item type="crypto" valign="bottom" visible="cfg.cryptoAny,crypted" lineHeight="34"/>
+				<item type="servicetype" valign="bottom" visible="cfg.typeAny" lineHeight="34"/>
+				<item type="resolution" valign="bottom" lineHeight="34"/>
 			</row>
-			<row id="line2" for="service" visible="event" gap="8" padding="16,15">
+			<row id="line2" for="service" visible="event" height="42" gap="8" padding="16,15,2,0">
 				<item type="spacer" width="149" visible="cfg.picons" />
-				<item type="progress" width="60" style="bar" visible="!cfg.percent" />
-				<item type="text" text="{event}" width="*" font="Regular;26" fontGroup="info" style="event" visible="!cfg.percent" />
-				<item type="text" text="{percent|  •  }{event}" width="*" font="Regular;26" fontGroup="info" style="event" visible="cfg.percent" />
-				<item type="text" text="{remaining}" width="auto" font="Regular;22" fontGroup="remaining" style="remain" />
+				<item type="progress" width="60" valign="top" lineHeight="38" style="bar" visible="!cfg.percent" />
+				<item type="text" text="{event}" width="*" valign="top" font="Regular;26" fontGroup="info" style="event" visible="!cfg.percent" lineHeight="34"/>
+				<item type="text" text="{percent|  •  }{event}" width="*" valign="top" font="Regular;26" fontGroup="info" style="event" visible="cfg.percent" lineHeight="34"/>
+				<item type="text" text="{remaining}" width="auto" valign="top" font="Regular;22" fontGroup="remaining" style="remain" lineHeight="34"/>
 			</row>
 		</template>
 

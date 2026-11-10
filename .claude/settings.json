@@ -3,6 +3,10 @@
     "allow": [
       "Bash(grep -v \"<panel name=\\\\\"\\\\\\(ConfigScreenTemplate\\\\|Screen_1_1\\\\\\)\\\\\" */\\\\?>\")",
       "WebFetch(domain:raw.githubusercontent.com)"
+    ],
+    "additionalDirectories": [
+      "e:\\Enigma2Dev\\OpenViX\\enigma2\\OpenViX-enigma2\\lib\\python",
+      "e:\\Enigma2Dev\\OpenViX\\enigma2\\OpenViX-enigma2\\lib\\service"
     ]
   }
 }
